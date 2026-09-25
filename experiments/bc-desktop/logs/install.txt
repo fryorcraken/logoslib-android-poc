@@ -1,0 +1,107 @@
+== lgx package ==
+total 47524
+dr-xr-xr-x. 1 fryorcraken fryorcraken       98 Jan  1  1970 .
+drwxr-xr-x. 1 fryorcraken fryorcraken  4090638 Sep 25 18:04 ..
+-r--r--r--. 1 fryorcraken fryorcraken 48664128 Jan  1  1970 logos-blockchain_module-module-lib.lgx
+dr-xr-xr-x. 1 fryorcraken fryorcraken       38 Jan  1  1970 nix-support
+lgx: ${REPO_ROOT}/.work/experiments/bc-desktop/blockchain-lgx/logos-blockchain_module-module-lib.lgx size=48664128
+== lgx contents ==
+drwxr-xr-x 0/0               0 1970-01-01 10:00 assets/
+drwxr-xr-x 0/0               0 1970-01-01 10:00 assets/lidl/
+-rw-r--r-- 0/0            3494 1970-01-01 10:00 assets/lidl/blockchain_module.lidl
+-rw-r--r-- 0/0             736 1970-01-01 10:00 manifest.json
+drwxr-xr-x 0/0               0 1970-01-01 10:00 variants/
+drwxr-xr-x 0/0               0 1970-01-01 10:00 variants/linux-amd64-dev/
+-rwxr-xr-x 0/0         3553248 1970-01-01 10:00 variants/linux-amd64-dev/blockchain_module_plugin.so
+-rwxr-xr-x 0/0          804584 1970-01-01 10:00 variants/linux-amd64-dev/libfyaml.so.0
+-rwxr-xr-x 0/0        89783760 1970-01-01 10:00 variants/linux-amd64-dev/liblogos_blockchain.so
+== seed built-in modules ==
+== lgpm install ==
+Installing from file: ${REPO_ROOT}/.work/experiments/bc-desktop/blockchain-lgx/logos-blockchain_module-module-lib.lgx... done
+Installed to: ${REPO_ROOT}/.work/experiments/bc-desktop/modules
+
+real	0m0.621s
+user	0m0.299s
+sys	0m0.316s
+== lgpm list ==
+Found 3 installed module(s):
+
+NAME                           VERSION         TYPE       CATEGORY       
+----------------------------------------------------------------------
+blockchain_module              0.0.999         core       blockchain     
+capability_module              1.0.0           core       security       
+modules_state                  0.1.0           core       system         
+== modules dir ==
+${REPO_ROOT}/.work/experiments/bc-desktop/modules:
+total 0
+drwxr-xr-x. 1 fryorcraken fryorcraken  94 Sep 25 18:05 .
+drwxr-xr-x. 1 fryorcraken fryorcraken 172 Sep 25 18:05 ..
+drwxr-xr-x. 1 fryorcraken fryorcraken 176 Sep 25 18:05 blockchain_module
+drwxr-xr-x. 1 fryorcraken fryorcraken  94 Sep 25 18:05 capability_module
+drwxr-xr-x. 1 fryorcraken fryorcraken  86 Sep 25 18:05 modules_state
+
+${REPO_ROOT}/.work/experiments/bc-desktop/modules/blockchain_module:
+total 91948
+drwxr-xr-x. 1 fryorcraken fryorcraken      176 Sep 25 18:05 .
+drwxr-xr-x. 1 fryorcraken fryorcraken       94 Sep 25 18:05 ..
+drwxr-xr-x. 1 fryorcraken fryorcraken        8 Sep 25 18:05 assets
+-rwxr-xr-x. 1 fryorcraken fryorcraken  3553248 Sep 25 18:05 blockchain_module_plugin.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken   804584 Sep 25 18:05 libfyaml.so.0
+-rwxr-xr-x. 1 fryorcraken fryorcraken 89783760 Sep 25 18:05 liblogos_blockchain.so
+-rw-r--r--. 1 fryorcraken fryorcraken      736 Sep 25 18:05 manifest.json
+-rw-r--r--. 1 fryorcraken fryorcraken       15 Sep 25 18:05 variant
+== manifest ==
+{
+  "author": "Logos Blockchain Team",
+  "category": "blockchain",
+  "dependencies": [],
+  "description": "Logos blockchain node for logos-core",
+  "display_name": "Blockchain Module",
+  "hashes": {
+    "assets": "b1ee6afbb0e5051c40308cc4e5cfb625822eed42b264df292c73a799c6f1cddb",
+    "root": "8bff8a7e0d3a3061ec3a91979d3a92ed38b716d8b080b1b802f5d51dbca20346",
+    "variants": "f68ac65e0938b65ec18c9e701db03507c2cf231ae2b36aae5bbfdb0fa80a0129",
+    "variants/linux-amd64-dev": "9868e46512b4939f3061e59050989e0297bb9556cce1b5fb216fddc9610efc3a"
+  },
+  "icon": "",
+  "main": {
+    "linux-amd64-dev": "blockchain_module_plugin.so"
+  },
+  "manifestVersion": "0.6.0",
+  "name": "blockchain_module",
+  "type": "core",
+  "version": "0.0.999"
+}
+linux-amd64-dev
+== file / NEEDED / RUNPATH / SONAME ==
+--- ${REPO_ROOT}/.work/experiments/bc-desktop/modules/blockchain_module/blockchain_module_plugin.so (3553248 B)
+${REPO_ROOT}/.work/experiments/bc-desktop/modules/blockchain_module/blockchain_module_plugin.so: ELF 64-bit LSB shared object, x86-64, version 1 (GNU/Linux), dynamically linked, not stripped
+ 0x0000000000000001 (NEEDED)             Shared library: [liblogos_blockchain.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libfyaml.so.0]
+ 0x0000000000000001 (NEEDED)             Shared library: [libQt6RemoteObjects.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libQt6Network.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libQt6Core.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libboost_system.so.1.87.0]
+ 0x0000000000000001 (NEEDED)             Shared library: [libssl.so.3]
+ 0x0000000000000001 (NEEDED)             Shared library: [libcrypto.so.3]
+ 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-x86-64.so.2]
+ 0x000000000000000e (SONAME)             Library soname: [blockchain_module_plugin.so]
+ 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN:/nix/store/5qkgj4wc46nm2f0mk6giijfh0x7wxm6a-logos-blockchain_module-module-lib-0.0.999/lib:/nix/store/gi615r79j260ihhzdkhrg6qva9wfrbyy-openssl-3.5.1/lib:/nix/store/dkfr32yi7p8cdxsnll05q1kax19fl7ay-qtbase-6.9.2/lib:/nix/store/r2cq6la02msp6kfcl9a17d2l2n96qpvs-qtremoteobjects-6.9.2/lib:/nix/store/x0cccj6ww4hkl1hlirx60f32r13dvfmf-boost-1.87.0/lib:/nix/store/776irwlgfb65a782cxmyk61pck460fs9-glibc-2.40-66/lib:/nix/store/41ym1jm1b7j3rhglk82gwg9jml26z1km-gcc-14.3.0-lib/lib]
+--- ${REPO_ROOT}/.work/experiments/bc-desktop/modules/blockchain_module/libfyaml.so.0 (804584 B)
+${REPO_ROOT}/.work/experiments/bc-desktop/modules/blockchain_module/libfyaml.so.0: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, not stripped
+ 0x0000000000000001 (NEEDED)             Shared library: [libpthread.so.0]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x000000000000000e (SONAME)             Library soname: [libfyaml.so.0]
+ 0x000000000000001d (RUNPATH)            Library runpath: [/nix/store/776irwlgfb65a782cxmyk61pck460fs9-glibc-2.40-66/lib]
+--- ${REPO_ROOT}/.work/experiments/bc-desktop/modules/blockchain_module/liblogos_blockchain.so (89783760 B)
+${REPO_ROOT}/.work/experiments/bc-desktop/modules/blockchain_module/liblogos_blockchain.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped
+ 0x000000000000001d (RUNPATH)            Library runpath: [/nix/store/57iz36553175g3178pvxjij8z5rcsd4n-glibc-2.42-61/lib:/nix/store/chqq8mpmpyfi9kgsngya71akv5xicn03-gcc-15.2.0-lib/lib]
+ 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-x86-64.so.2]

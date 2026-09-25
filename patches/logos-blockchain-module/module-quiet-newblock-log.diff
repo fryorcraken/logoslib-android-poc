@@ -1,0 +1,11 @@
+# Rationale: on_new_block_callback dumps every full block JSON to stderr (logcat noise, large lines on Android); keep the event, drop the dump.
+--- a/src/logos_blockchain_module.cpp
++++ b/src/logos_blockchain_module.cpp
+@@ -487,7 +487,6 @@ void LogosBlockchainModule::on_new_block_callback(const char* block) {
+         s_instance->newBlock("null");
+         return;
+     }
+-    fprintf(stderr, "Received new block: %s\n", block);
+     json j;
+     j["block"] = std::string(block);
+     s_instance->newBlock(j.dump());

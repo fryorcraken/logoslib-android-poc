@@ -136,24 +136,65 @@ An instrumented test (`connectedAndroidTest`) asserts all of it.
 
 ### M5: blockchain_module on Android
 
-To be detailed once the blockchain-module research lands:
-- **Research questions:** its API, what a syncing node needs at runtime, and whether it
-  proves or only verifies.
-- **Build:** `liblogos_blockchain.so` for Android, which needs Android-built Bedrock circuit
-  libraries or stubs, rapidsnark, rocksdb and so on, plus `blockchain_module_plugin`.
-- **Driving it:** a node configuration that the emulator can use.
+Research is done ([`research/exp-bc-*.md`](research)). Every native piece is proven for
+Android; the Android package itself has not yet been built or run.
 
-**Accept when** the app starts a node and shows it doing real work, e.g. peers connected and
-chain height advancing.
+- **Node library, `liblogos_blockchain.so`: already cross-built for x86_64 and arm64**
+  (logos-blockchain `35a4a666`, the revision module `4b07e58` pins; Rust 1.98.1, NDK r27c,
+  API 34, fat LTO, about 8.5 min).
+  - The Bedrock circuits are built properly for Android. circom 2.2.2 generates the C++
+    (its `.dat` output is byte-identical to the release), GMP 6.2.1 comes from rapidsnark's
+    own `build_gmp.sh`, and the witness libraries are compiled with NDK clang++ against
+    libc++. The zkeys, vkeys and `.dat` files come unchanged from the v0.5.7 release bundle.
+  - rapidsnark uses the iden3 v0.0.8 Android prebuilts.
+  - Two link fixes: `patches/logos-blockchain-circuits/` makes lbc-build emit libc++, and a
+    one-line linker shim redirects librocksdb-sys's `-lstdc++` to `libc++_shared`.
+  - Result: 87 MB (x86_64) / 82 MB (arm64), of which 35.6 MB is embedded circuit data. It
+    needs only `libc++_shared`, libc, libdl and libm, and is 16 KB-aligned.
+  - To do: turn the experiment into `scripts/android/build-blockchain.sh`.
+- **Module plugin, `blockchain_module_plugin`:** built with logos-module-builder's CMake path
+  from M3, plus an NDK build of libfyaml (and the boost/nlohmann headers).
+  `patches/logos-blockchain-module/` silences the full-block-JSON-on-stderr log, which would
+  flood logcat.
+- **Node revision:** build the node at tag `0.3.0-rc.4`. It is the pin plus the devnet
+  genesis, with identical C bindings, so `start(cfg, "")` joins devnet. The alternative is
+  the pin plus `config/blockchain/deployment-devnet-0.3.0-rc.4.yaml` (with `tx_ttl`), which
+  is what joined devnet on desktop.
+- **Driving it:**
+  1. `generate_user_config` with `config/blockchain/devnet-rc4-gen-args.json`, with absolute
+     app-private paths and `http_addr` pinned to 127.0.0.1.
+  2. `merge_user_config` with `follower-mode.extra.yaml`: `prolonged_bootstrap_period` of
+     1 year, so the node syncs and follows the chain but never proves.
+  3. `start` with a long timeout; `start()` blocks until the services are up.
+  4. Poll `get_network_info` and `get_cryptarchia_info`, and subscribe to `newBlock`.
+
+  On desktop this synced about 5k devnet blocks in about 40 s, then followed the head at
+  about 0.1% CPU with 288 MB RSS.
+- **Android runtime risks:**
+  - rapidsnark writes `MyLogFile.log` into the working directory, so the host needs a
+    writable cwd;
+  - `/etc/resolv.conf` is missing (hickory DNS);
+  - netlink (NAT gateway monitor) is restricted on Android 11+;
+  - the node's panic hook calls `exit(1)`, which only kills the module's child process;
+  - stopping within about 250 ms of start deadlocks.
+- **Offline alternative:** a standalone single-node chain (`config/blockchain/02-*.diff`).
+  It produces a block per slot and exercises the on-device PoL proving path (witness
+  generator + rapidsnark).
+
+**Accept when:**
+- The app starts a devnet follower on the emulator, `n_peers` > 0, and the height climbs to
+  the devnet tip, with `newBlock` events reaching Kotlin.
+- Stretch: the standalone chain produces blocks with on-device proofs.
 
 ### M6: inter-module call
 
-A tiny core module, `bc_probe`, declares `dependencies: ["blockchain_module"]` and calls a
-read-only method through the generated `modules().blockchain_module.*` wrappers. That is the
-`lez_probe` pattern, already proven on desktop. The app calls `bc_probe`, and liblogos's own
-QtRO transport carries the hop, with no glue code.
+[`modules/bc_probe`](../modules/bc_probe), built and run on desktop, declares
+`dependencies: ["blockchain_module"]`. It calls `get_cryptarchia_info`, `get_time_info` and
+`get_network_info` through the generated `modules().blockchain_module.*` wrappers, in 0-1 ms
+each, tracking the live height. On Android the app calls `bc_probe`, and liblogos's own QtRO
+transport carries the hop, with no glue code.
 
-**Accept when** the UI shows `bc_probe`'s result and the logs show `capability_module`
+**Accept when** the UI shows `bc_probe`'s live height and the logs show `capability_module`
 issuing a token and the `bc_probe` → `blockchain_module` invocation.
 
 ### M7: size and packaging report, arm64-v8a, CI
@@ -164,8 +205,9 @@ issuing a token and the `bc_probe` → `blockchain_module` invocation.
 
 ## Risks, in order
 
-1. The blockchain node's native build for Android (circuits, rocksdb, …) and its runtime
-   needs on a phone. Being researched now.
+1. The node's runtime behaviour on Android: DNS without `/etc/resolv.conf`, netlink, a
+   writable cwd for rapidsnark, on-device proving time and memory. Its native build is
+   proven.
 2. The volume of native dependencies to cross-build (Boost, OpenSSL, libsodium, Qt glue):
    proven piece by piece, not yet end to end.
 3. The Android 12+ phantom-process limit on long-lived module children. Untested.

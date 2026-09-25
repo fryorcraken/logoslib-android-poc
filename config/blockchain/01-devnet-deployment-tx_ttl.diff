@@ -1,0 +1,8 @@
+# rationale: mempool.tx_ttl is the only key-level difference between devnet 0.3.0-rc.4's deployment and node 35a4a666's schema (deploydiff.txt); added preemptively (parsing without it was not tried). With it, the master-built module joined devnet (run3).
+--- a/settings-0.3.0-rc.4.yaml
++++ b/deployment-devnet-0.3.0-rc.4.yaml
+@@ -429,3 +429,4 @@
+   slot_duration: '1.000000000'
+ mempool:
+   pubsub_topic: /logos-blockchain-devnet-0.3.0-rc.4/mempool/1.0.0
++  tx_ttl: '86400.000000000'

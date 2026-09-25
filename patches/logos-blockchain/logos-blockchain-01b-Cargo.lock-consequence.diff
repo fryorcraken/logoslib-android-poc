@@ -1,0 +1,13 @@
+# rationale: automatic Cargo.lock consequence of patch 01 (lbc-build source becomes a path); not hand-edited.
+diff --git a/Cargo.lock b/Cargo.lock
+index c57076f..82119b4 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -4393,7 +4393,6 @@ dependencies = [
+ [[package]]
+ name = "logos-blockchain-circuits-build"
+ version = "0.5.7"
+-source = "git+https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.7#ebf7ddf5b5b625ef4ea7c803171c670beebd05ef"
+ dependencies = [
+  "dirs",
+  "fd-lock",

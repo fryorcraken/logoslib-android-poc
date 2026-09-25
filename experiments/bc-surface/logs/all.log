@@ -1,0 +1,390 @@
+== 2026-09-25T17:49:41+10:00 bc-surface-all
+== 1. remote tags
+lb tags: 63
+pre-0.1.3
+pre-0.1.5
+pre-0.1.6
+pre-0.1.7
+pre-0.1.8
+pre-0.1.9
+pre-0.2.0
+pre-0.2.1
+release-ci-test
+v0.1
+v0.2
+v0.3
+c4c86be18c58b5b09c3650e93871c8cfb624885b	HEAD
+c4c86be18c58b5b09c3650e93871c8cfb624885b	refs/heads/master
+module tags:
+0.1.3-rc.13
+0.2.0
+0.2.0-rc.1
+0.2.0-rc.2
+0.2.1
+0.2.1-rc.1
+0.2.1-rc.2
+0.2.1-rc.3
+0.2.2
+0.2.3
+0.2.4
+0.3.0-rc.1
+0.3.0-rc.2
+0.3.0-rc.3
+0.3.0-rc.4
+v0.0.1
+v0.0.2
+v0.0.3
+4b07e58b8ae9bfea3e953f234c97d1f276e799a0	HEAD
+4b07e58b8ae9bfea3e953f234c97d1f276e799a0	refs/heads/master
+== 2. release tags: deployment identity + FFI
+latest rc=0.3.0-rc.4 latest release=0.2.4
+---- tag 0.3.0-rc.4: 39916dc8c76c09afc5ea36bfcda138544cbf1553 2026-09-23 10:45:36 +0200 Update cargo files
+6:    protocol_name: /logos-blockchain-devnet-0.3.0-rc.4/blend/1.0.0
+--
+18:    activity_threshold_sensitivity: 1
+--
+20:  kademlia_protocol_name: /logos-blockchain-devnet-0.3.0-rc.4/kad/1.0.0
+21:  identify_protocol_name: /logos-blockchain-devnet-0.3.0-rc.4/identify/1.0.0
+22:  chain_sync_protocol_name: /logos-blockchain-devnet-0.3.0-rc.4/chainsync/1.0.0
+--
+28:  security_param: 120
+--
+59:    min_stake:
+60:      threshold: 1000000000
+--
+62:  gossipsub_protocol: /logos-blockchain-devnet-0.3.0-rc.4/cryptarchia/1.0.0
+--
+362:            inscription: 0a302e332e302d72632e3428aab36a2d2ddf918544bca603c5a291c7dd1b902d6769ff4b00021506780e075c06051a
+--
+368:            locators:
+369:            - /ip4/65.108.203.235/udp/3400/quic-v1
+--
+376:            locators:
+377:            - /ip4/65.108.203.235/udp/3401/quic-v1
+--
+384:            locators:
+385:            - /ip4/65.108.203.235/udp/3402/quic-v1
+--
+392:            locators:
+393:            - /ip4/65.108.203.235/udp/50002/quic-v1
+--
+427:  faucet_pk: 3956ddb6ed8cb0b002f9839bfecd1d31f852594b46c3dee8d72df926be3bb625
+--
+429:  slot_duration: '1.000000000'
+--
+431:  pubsub_topic: /logos-blockchain-devnet-0.3.0-rc.4/mempool/1.0.0
+-- c-bindings extern fns at 0.3.0-rc.4:
+add_key blend_info blend_join_as_core_node channel_deposit channel_deposit_with_notes free_claimable_vouchers free_cryptarchia_info free_cstring free_known_addresses free_leader_aged_notes free_pow_claimable_rewards free_time_info free_wallet_notes generate_key generate_user_config get_balance get_block get_block_events get_blocks get_build_version_info get_chain_id get_channel_state get_claimable_vouchers get_cryptarchia_info get_known_addresses get_leader_aged_notes get_network_info get_peer_id get_time_info get_transaction get_wallet_notes is_error is_ok leader_claim merge_user_config migrate_user_config migrate_user_config_0_1_2 participate pow_claim pow_claimable_rewards pow_start_auto_claim pow_start_mining pow_stop_auto_claim pow_stop_mining remove_key shutdown_node start_lb_node submit_signed_transaction subscribe_to_lib_blocks subscribe_to_new_blocks subscribe_to_processed_blocks transfer_funds update_user_config wallet_fund_tx 
+channel = "1.98.1"
+lbc-poq-sys = { default-features = false, git = "https://github.com/logos-blockchain/logos-blockchain-circuits.git", package = "logos-blockchain-circuits-poq-sys", tag = "v0.5.7" }
+# Must stay in sync with the rust-rapidsnark flake input in flake.nix.
+rust-rapidsnark = { default-features = false, git = "https://github.com/logos-blockchain/logos-blockchain-rust-rapidsnark.git", rev = "e91187f8ccb5bbfc7bb00dac88169112428da78f" } # feat/nixify
+---- tag 0.2.4: adc72a456011795710b8bced1a21d05715f96c1d 2026-09-04 13:50:05 +0300 Bump cargo version to 0.2.4
+5:    protocol_name: /logos-blockchain-testnet-0.2.4/blend/1.0.0
+--
+15:    activity_threshold_sensitivity: 1
+--
+17:  kademlia_protocol_name: /logos-blockchain-testnet-0.2.4/kad/1.0.0
+18:  identify_protocol_name: /logos-blockchain-testnet-0.2.4/identify/1.0.0
+19:  chain_sync_protocol_name: /logos-blockchain-testnet-0.2.4/chainsync/1.0.0
+--
+25:  security_param: 120
+--
+35:    min_stake:
+36:      threshold: 1000000000
+--
+38:  gossipsub_protocol: /logos-blockchain-testnet-0.2.4/cryptarchia/1.0.0
+--
+337:            inscription: '05302e322e34c8b99a6a2d2ddf918544bca603c5a291c7dd1b902d6769ff4b00021506780e075c06051a'
+--
+343:            locators:
+344:            - /ip4/65.109.51.37/udp/3400/quic-v1
+--
+351:            locators:
+352:            - /ip4/65.109.51.37/udp/3401/quic-v1
+--
+359:            locators:
+360:            - /ip4/65.109.51.37/udp/3402/quic-v1
+--
+367:            locators:
+368:            - /ip4/65.109.51.37/udp/50002/quic-v1
+--
+402:  faucet_pk: c2a6a4a0981d5bdcf8ddeb8d7934fd8c5510efeb1053f613b45871670b6f7b19
+--
+404:  slot_duration: '1.000000000'
+--
+406:  pubsub_topic: /logos-blockchain-testnet-0.2.4/mempool/1.0.0
+-- c-bindings extern fns at 0.2.4:
+add_key blend_join_as_core_node channel_deposit channel_deposit_with_notes free_claimable_vouchers free_cryptarchia_info free_cstring free_known_addresses free_time_info free_wallet_notes generate_key generate_user_config get_balance get_block get_block_events get_blocks get_channel_state get_claimable_vouchers get_cryptarchia_info get_known_addresses get_peer_id get_time_info get_transaction get_wallet_notes is_error is_ok leader_claim migrate_user_config migrate_user_config_0_1_2 participate remove_key shutdown_node start_lb_node submit_signed_transaction subscribe_to_lib_blocks subscribe_to_new_blocks subscribe_to_processed_blocks transfer_funds update_user_config wallet_fund_tx 
+channel = "1.96.0"
+lbc-poq-sys                      = { default-features = false, git = "https://github.com/logos-blockchain/logos-blockchain-circuits.git", package = "logos-blockchain-circuits-poq-sys", tag = "v0.5.3" }
+# Must stay in sync with the rust-rapidsnark flake input in flake.nix.
+rust-rapidsnark       = { default-features = false, git = "https://github.com/logos-blockchain/logos-blockchain-rust-rapidsnark.git", rev = "e91187f8ccb5bbfc7bb00dac88169112428da78f" } # feat/nixify
+== 3. local clone at module pin 35a4a666e22a51eb98fe8a050854e57fe3420899
+HEAD 35a4a666e22a51eb98fe8a050854e57fe3420899 2026-09-22 16:07:54 +0000 chore(dependdencies): Update overwatch (#3622)
+-- c-bindings extern fns at pin:
+add_key blend_info blend_join_as_core_node channel_deposit channel_deposit_with_notes free_claimable_vouchers free_cryptarchia_info free_cstring free_known_addresses free_leader_aged_notes free_pow_claimable_rewards free_time_info free_wallet_notes generate_key generate_user_config get_balance get_block get_block_events get_blocks get_build_version_info get_chain_id get_channel_state get_claimable_vouchers get_cryptarchia_info get_known_addresses get_leader_aged_notes get_network_info get_peer_id get_time_info get_transaction get_wallet_notes is_error is_ok leader_claim merge_user_config migrate_user_config migrate_user_config_0_1_2 participate pow_claim pow_claimable_rewards pow_start_auto_claim pow_start_mining pow_stop_auto_claim pow_stop_mining remove_key shutdown_node start_lb_node submit_signed_transaction subscribe_to_lib_blocks subscribe_to_new_blocks subscribe_to_processed_blocks transfer_funds update_user_config wallet_fund_tx 
+-- FFI symbols the module (4b07e58) calls that the pin lacks:
+any_of
+array
+back_inserter
+does_state_exist
+err
+errc
+exists
+find
+from_chars
+from_operation_status
+getenv
+hex_lower
+move
+object
+ok
+on_lib_block_callback
+on_new_block_callback
+on_processed_block_callback
+parse
+path
+pow_configure
+purge_state
+read_accounts
+read_pow_config
+remove_all
+start
+stop
+string
+subscribe
+take_message
+tolower
+to_string
+transform
+trim
+unhex
+wallet_get_balance
+wallet_get_claimable_vouchers
+wallet_get_known_addresses
+wallet_get_leader_aged_notes
+wallet_get_notes
+wallet_transfer_funds
+-- module calls missing at 0.3.0-rc.4:
+any_of array back_inserter does_state_exist err errc exists find from_chars from_operation_status getenv hex_lower move object ok on_lib_block_callback on_new_block_callback on_processed_block_callback parse path pow_configure purge_state read_accounts read_pow_config remove_all start stop string subscribe take_message tolower to_string transform trim unhex wallet_get_balance wallet_get_claimable_vouchers wallet_get_known_addresses wallet_get_leader_aged_notes wallet_get_notes wallet_transfer_funds 
+-- module calls missing at 0.2.4:
+any_of array back_inserter blend_info does_state_exist err errc exists find free_leader_aged_notes free_pow_claimable_rewards from_chars from_operation_status get_chain_id getenv get_leader_aged_notes get_network_info hex_lower merge_user_config move object ok on_lib_block_callback on_new_block_callback on_processed_block_callback parse path pow_claim pow_claimable_rewards pow_configure pow_start_auto_claim pow_start_mining pow_stop_auto_claim pow_stop_mining purge_state read_accounts read_pow_config remove_all start stop string subscribe take_message tolower to_string transform trim unhex wallet_get_balance wallet_get_claimable_vouchers wallet_get_known_addresses wallet_get_leader_aged_notes wallet_get_notes wallet_transfer_funds 
+== 4. offline cargo tree/metadata (android)
+cargo 1.98.1 (797e8a9bc 2026-08-05)
+tree aarch64-linux-android exit=0 lines=2414
+tree x86_64-linux-android exit=0 lines=2417
+metadata exit=0 bytes=3902347
+native exit=0
+# Cargo.lock BFS from logos-blockchain-c: 740 packages (over-approximation)
+# -sys crates reachable in Cargo.lock:
+LOCK-SYS	bzip2-sys	0.1.13+1.0.8
+LOCK-SYS	clang-sys	1.8.1
+LOCK-SYS	core-foundation-sys	0.8.7
+LOCK-SYS	dirs-sys	0.5.0
+LOCK-SYS	js-sys	0.3.102
+LOCK-SYS	librocksdb-sys	0.17.3+10.4.2
+LOCK-SYS	libz-sys	1.1.29
+LOCK-SYS	linux-raw-sys	0.12.1
+LOCK-SYS	linux-raw-sys	0.4.15
+LOCK-SYS	logos-blockchain-circuits-poc-sys	0.5.7
+LOCK-SYS	logos-blockchain-circuits-pol-sys	0.5.7
+LOCK-SYS	logos-blockchain-circuits-poq-sys	0.5.7
+LOCK-SYS	logos-blockchain-circuits-signature-sys	0.5.7
+LOCK-SYS	netlink-sys	0.8.8
+LOCK-SYS	openssl-sys	0.9.117
+LOCK-SYS	security-framework-sys	2.17.0
+LOCK-SYS	system-configuration-sys	0.6.0
+LOCK-SYS	tikv-jemalloc-sys	0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7
+LOCK-SYS	web-sys	0.3.102
+LOCK-SYS	windows-sys	0.52.0
+LOCK-SYS	windows-sys	0.59.0
+LOCK-SYS	windows-sys	0.61.2
+
+# cargo tree (normal+build, android target): 547 unique packages
+TREE-SYS	clang-sys	1.8.1
+TREE-SYS	dirs-sys	0.5.0
+TREE-SYS	librocksdb-sys	0.17.3+10.4.2
+TREE-SYS	linux-raw-sys	0.12.1
+TREE-SYS	logos-blockchain-circuits-poc-sys	0.5.7
+TREE-SYS	logos-blockchain-circuits-pol-sys	0.5.7
+TREE-SYS	logos-blockchain-circuits-poq-sys	0.5.7
+TREE-SYS	logos-blockchain-circuits-signature-sys	0.5.7
+TREE-SYS	netlink-sys	0.8.8
+
+# -sys crates in Cargo.lock BFS but NOT in the android normal+build tree:
+LOCK-ONLY	bzip2-sys	0.1.13+1.0.8
+LOCK-ONLY	core-foundation-sys	0.8.7
+LOCK-ONLY	js-sys	0.3.102
+LOCK-ONLY	libz-sys	1.1.29
+LOCK-ONLY	linux-raw-sys	0.4.15
+LOCK-ONLY	openssl-sys	0.9.117
+LOCK-ONLY	security-framework-sys	2.17.0
+LOCK-ONLY	system-configuration-sys	0.6.0
+LOCK-ONLY	tikv-jemalloc-sys	0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7
+LOCK-ONLY	web-sys	0.3.102
+LOCK-ONLY	windows-sys	0.52.0
+LOCK-ONLY	windows-sys	0.59.0
+LOCK-ONLY	windows-sys	0.61.2
+
+# 62 tree crates with build script/links/-sys
+NATIVE	ahash	0.8.12	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	anyhow	1.0.103	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	async-io	2.6.0	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	bindgen	0.72.1	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	cbindgen	0.29.4	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	clang-sys	1.8.1	build.rs	links=clang	SYS	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	crc32fast	1.5.0	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	crossbeam-epoch	0.9.20	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	crossbeam-utils	0.8.21	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	crunchy	0.2.4	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	curve25519-dalek	4.1.3	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	dirs-sys	0.5.0	-	-	SYS	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	eyre	0.6.12	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	generic-array	0.14.7	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	getrandom	0.3.4	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	getrandom	0.4.3	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	httparse	1.10.1	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	icu_normalizer_data	2.2.0	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	icu_properties_data	2.2.0	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	libc	0.2.186	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	libm	0.2.16	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	librocksdb-sys	0.17.3+10.4.2	build.rs	links=rocksdb	SYS	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	linux-raw-sys	0.12.1	-	-	SYS	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	logos-blockchain-c	0.0.0	build.rs	-	-	path
+NATIVE	logos-blockchain-circuits-poc-sys	0.5.7	build.rs	-	SYS	git+https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.7#ebf7ddf5b5b625ef4ea7c803171c670beebd05ef
+NATIVE	logos-blockchain-circuits-pol-sys	0.5.7	build.rs	-	SYS	git+https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.7#ebf7ddf5b5b625ef4ea7c803171c670beebd05ef
+NATIVE	logos-blockchain-circuits-poq-sys	0.5.7	build.rs	-	SYS	git+https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.7#ebf7ddf5b5b625ef4ea7c803171c670beebd05ef
+NATIVE	logos-blockchain-circuits-signature-sys	0.5.7	build.rs	-	SYS	git+https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.7#ebf7ddf5b5b625ef4ea7c803171c670beebd05ef
+NATIVE	logos-blockchain-version	0.0.0	build.rs	-	-	path
+NATIVE	mime_guess	2.0.5	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	netlink-sys	0.8.8	-	-	SYS	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	nix	0.31.3	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	num-traits	0.2.19	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	nutype_macros	0.6.2	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	object	0.37.3	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	oid-registry	0.8.1	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	owo-colors	4.3.0	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	parking_lot_core	0.9.12	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	paste	1.0.15	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	portable-atomic	1.13.1	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	proc-macro2	1.0.106	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	quinn	0.11.11	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	quinn-udp	0.5.14	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	quote	1.0.46	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	rayon-core	1.13.0	build.rs	links=rayon-core	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	ring	0.17.14	build.rs	links=ring_core_0_17_14_	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	rust-rapidsnark	0.1.3	build.rs	-	-	git+https://github.com/logos-blockchain/logos-blockchain-rust-rapidsnark.git?rev=e91187f8ccb5bbfc7bb00dac88169112428da78f#e91187f8ccb5bbfc7bb00dac88169112428da78f
+NATIVE	rustix	1.1.4	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	rustls	0.23.45	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	rustversion	1.0.22	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	serde	1.0.228	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	serde_core	1.0.228	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	serde_json	1.0.150	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	snap	1.1.1	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	syn	1.0.109	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	thiserror	1.0.69	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	thiserror	2.0.18	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	tiny-keccak	2.0.2	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	utoipa-swagger-ui	8.0.3	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	zerocopy	0.8.52	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	zip	2.4.2	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+NATIVE	zmij	1.0.21	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+== 5. why-trees for native crates
+393
+-- rustls/ring/tls feature view:
+rustls v0.23.45
+├── rustls feature "log"
+│   └── rustls feature "logging"
+│       └── ureq v3.3.0
+│           ├── ureq feature "_ring"
+│           │   └── ureq feature "rustls"
+│           │       └── ureq feature "default"
+│           │           └── logos-blockchain-circuits-build v0.5.7 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.7#ebf7ddf5)
+│           │               ├── logos-blockchain-circuits-build feature "default"
+│           │               │   [build-dependencies]
+│           │               │   ├── logos-blockchain-circuits-poc-sys v0.5.7 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.7#ebf7ddf5)
+│           │               │   │   └── logos-blockchain-circuits-poc-sys feature "prebuilt"
+│           │               │   │       └── logos-blockchain-poc v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/zk/proofs/poc)
+│           │               │   │           └── logos-blockchain-core v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/core)
+│           │               │   │               ├── logos-blockchain-blend-message v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/blend/message)
+│           │               │   │               │   ├── logos-blockchain-blend v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/blend/core)
+│           │               │   │               │   │   ├── logos-blockchain-blend-service v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/services/blend)
+│           │               │   │               │   │   │   ├── logos-blockchain-api-service v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/services/api)
+│           │               │   │               │   │   │   │   ├── logos-blockchain-c v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/c-bindings)
+│           │               │   │               │   │   │   │   │   └── logos-blockchain-c feature "default" (command-line)
+│           │               │   │               │   │   │   │   └── logos-blockchain-node v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/nodes/node/binary)
+│           │               │   │               │   │   │   │       └── logos-blockchain-c v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/c-bindings) (*)
+│           │               │   │               │   │   │   ├── logos-blockchain-c v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/c-bindings) (*)
+│           │               │   │               │   │   │   ├── logos-blockchain-chain-leader-service v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/services/chain/chain-leader)
+│           │               │   │               │   │   │   │   ├── logos-blockchain-api-service v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/services/api) (*)
+│           │               │   │               │   │   │   │   ├── logos-blockchain-c v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/c-bindings) (*)
+│           │               │   │               │   │   │   │   └── logos-blockchain-node v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/nodes/node/binary) (*)
+│           │               │   │               │   │   │   ├── logos-blockchain-node v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/nodes/node/binary) (*)
+│           │               │   │               │   │   │   └── logos-blockchain-pow-service v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/services/pow)
+│           │               │   │               │   │   │       ├── logos-blockchain-api-service v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/services/api) (*)
+│           │               │   │               │   │   │       ├── logos-blockchain-c v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/c-bindings) (*)
+│           │               │   │               │   │   │       └── logos-blockchain-node v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/nodes/node/binary) (*)
+│           │               │   │               │   │   └── logos-blockchain-node v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/nodes/node/binary) (*)
+│           │               │   │               │   ├── logos-blockchain-blend-network v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/blend/network)
+│           │               │   │               │   │   └── logos-blockchain-blend v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/blend/core) (*)
+│           │               │   │               │   ├── logos-blockchain-blend-provers v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/blend/provers)
+│           │               │   │               │   │   ├── logos-blockchain-blend v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/blend/core) (*)
+│           │               │   │               │   │   └── logos-blockchain-blend-scheduling v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/blend/scheduling)
+│           │               │   │               │   │       └── logos-blockchain-blend v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/blend/core) (*)
+│           │               │   │               │   ├── logos-blockchain-blend-scheduling v0.0.0 (${REPO_ROOT}/.work/experiments/bc-surface/src/logos-blockchain/blend/scheduling) (*)
+error: specification `reqwest` is ambiguous
+help: re-run this command with one of the following specifications
+  reqwest@0.12.28
+  reqwest@0.13.4
+== 6. sizes of embedded circuit data (host bundle in nix store, v0.5.3 as proxy)
+/nix/store/ai2mn1mcxlrbhpp9b4rpgqxc2ibpqn9v-logos-blockchain-circuits-0.5.3/lib/:
+total 1316
+dr-xr-xr-x. 1 fryorcraken fryorcraken      16 Jan  1  1970 .
+dr-xr-xr-x. 1 fryorcraken fryorcraken      84 Jan  1  1970 ..
+-r--r--r--. 1 fryorcraken fryorcraken 1346282 Jan  1  1970 libgmp.a
+
+/nix/store/ai2mn1mcxlrbhpp9b4rpgqxc2ibpqn9v-logos-blockchain-circuits-0.5.3/poc/:
+total 6608
+dr-xr-xr-x. 1 fryorcraken fryorcraken     146 Jan  1  1970 .
+dr-xr-xr-x. 1 fryorcraken fryorcraken      84 Jan  1  1970 ..
+dr-xr-xr-x. 1 fryorcraken fryorcraken      86 Jan  1  1970 include
+-r--r--r--. 1 fryorcraken fryorcraken 1359570 Jan  1  1970 libpoc.a
+-r--r--r--. 1 fryorcraken fryorcraken 5317965 Jan  1  1970 proving_key.zkey
+-r--r--r--. 1 fryorcraken fryorcraken    3291 Jan  1  1970 verification_key.json
+-r--r--r--. 1 fryorcraken fryorcraken   80728 Jan  1  1970 witness_generator.dat
+
+/nix/store/ai2mn1mcxlrbhpp9b4rpgqxc2ibpqn9v-logos-blockchain-circuits-0.5.3/pol/:
+total 14104
+dr-xr-xr-x. 1 fryorcraken fryorcraken      146 Jan  1  1970 .
+dr-xr-xr-x. 1 fryorcraken fryorcraken       84 Jan  1  1970 ..
+dr-xr-xr-x. 1 fryorcraken fryorcraken       86 Jan  1  1970 include
+-r--r--r--. 1 fryorcraken fryorcraken  1528794 Jan  1  1970 libpol.a
+-r--r--r--. 1 fryorcraken fryorcraken 12719421 Jan  1  1970 proving_key.zkey
+-r--r--r--. 1 fryorcraken fryorcraken     4389 Jan  1  1970 verification_key.json
+-r--r--r--. 1 fryorcraken fryorcraken   179032 Jan  1  1970 witness_generator.dat
+
+/nix/store/ai2mn1mcxlrbhpp9b4rpgqxc2ibpqn9v-logos-blockchain-circuits-0.5.3/poq/:
+total 12944
+dr-xr-xr-x. 1 fryorcraken fryorcraken      146 Jan  1  1970 .
+dr-xr-xr-x. 1 fryorcraken fryorcraken       84 Jan  1  1970 ..
+dr-xr-xr-x. 1 fryorcraken fryorcraken       86 Jan  1  1970 include
+-r--r--r--. 1 fryorcraken fryorcraken  1585122 Jan  1  1970 libpoq.a
+-r--r--r--. 1 fryorcraken fryorcraken 11493761 Jan  1  1970 proving_key.zkey
+-r--r--r--. 1 fryorcraken fryorcraken     4573 Jan  1  1970 verification_key.json
+-r--r--r--. 1 fryorcraken fryorcraken   160048 Jan  1  1970 witness_generator.dat
+
+/nix/store/ai2mn1mcxlrbhpp9b4rpgqxc2ibpqn9v-logos-blockchain-circuits-0.5.3/signature/:
+total 5760
+dr-xr-xr-x. 1 fryorcraken fryorcraken     158 Jan  1  1970 .
+dr-xr-xr-x. 1 fryorcraken fryorcraken      84 Jan  1  1970 ..
+dr-xr-xr-x. 1 fryorcraken fryorcraken      86 Jan  1  1970 include
+-r--r--r--. 1 fryorcraken fryorcraken 1313238 Jan  1  1970 libsignature.a
+-r--r--r--. 1 fryorcraken fryorcraken 4491237 Jan  1  1970 proving_key.zkey
+-r--r--r--. 1 fryorcraken fryorcraken    8783 Jan  1  1970 verification_key.json
+-r--r--r--. 1 fryorcraken fryorcraken   76064 Jan  1  1970 witness_generator.dat
+total 0
+drwxr-xr-x. 1 fryorcraken fryorcraken  0 Sep 25 17:43 .
+drwxr-xr-x. 1 fryorcraken fryorcraken 38 Sep 25 17:43 ..
+141M	${REPO_ROOT}/.work/experiments/bc-surface
+== DONE 2026-09-25T17:50:12+10:00

@@ -1,0 +1,16 @@
+{
+  "initial_peers": [
+    "/ip4/65.108.203.235/udp/3000/quic-v1",
+    "/ip4/65.108.203.235/udp/3001/quic-v1",
+    "/ip4/65.108.203.235/udp/3002/quic-v1",
+    "/ip4/65.108.203.235/udp/50001/quic-v1"
+  ],
+  "net_port": 3220,
+  "blend_port": 3221,
+  "http_addr": "127.0.0.1:18482",
+  "output": "${REPO_ROOT}/.work/experiments/bc-desktop/devnet-data/user_config.yaml",
+  "kms_file": "${REPO_ROOT}/.work/experiments/bc-desktop/devnet-data/keystore.yaml",
+  "state_path": "${REPO_ROOT}/.work/experiments/bc-desktop/devnet-data/state",
+  "storage_path": "${REPO_ROOT}/.work/experiments/bc-desktop/devnet-data/db",
+  "logs_path": "${REPO_ROOT}/.work/experiments/bc-desktop/devnet-data/logs"
+}

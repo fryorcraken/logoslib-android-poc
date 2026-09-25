@@ -1,0 +1,12 @@
+[32mtemplate instances[0m: 71
+non-linear constraints: 7681
+linear constraints: 0
+public inputs: 1
+private inputs: 32
+public outputs: 32
+wires: 7715
+labels: 29411
+[32mWritten successfully:[0m ${REPO_ROOT}/.work/experiments/bc-android-build/build/circuits-gen/signature/signature.r1cs
+[32mWritten successfully:[0m ${REPO_ROOT}/.work/experiments/bc-android-build/build/circuits-gen/signature/signature_cpp/signature.cpp and ${REPO_ROOT}/.work/experiments/bc-android-build/build/circuits-gen/signature/signature_cpp/signature.dat
+[32mWritten successfully:[0m ${REPO_ROOT}/.work/experiments/bc-android-build/build/circuits-gen/signature/signature_cpp/main.cpp, circom.hpp, calcwit.hpp, calcwit.cpp, fr.hpp, fr.cpp and Makefile
+[32mEverything went okay[0m

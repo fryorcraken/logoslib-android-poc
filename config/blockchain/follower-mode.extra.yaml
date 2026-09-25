@@ -1,0 +1,9 @@
+# Rationale: keep the node in Bootstrapping (PBP) so chain-leader and blend never start -> no PoL/PoQ/PoW proving on device; blocks are still applied from IBD + gossip.
+# Apply after generate_user_config, before start():
+#   blockchain_module.merge_user_config(<cfg>, <cfg>, <this YAML>, false, false)
+# (same source==destination pattern the module's own pow_configure uses, logos_blockchain_module.cpp:1052-1054)
+# 31536000 s = 1 year; stays well inside tokio's timer range. Default written by generate_user_config is '3600.000000000'.
+cryptarchia:
+  service:
+    bootstrap:
+      prolonged_bootstrap_period: '31536000.000000000'

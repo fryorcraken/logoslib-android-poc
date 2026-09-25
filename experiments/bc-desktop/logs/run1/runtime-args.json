@@ -1,0 +1,8 @@
+{
+  "skip_ibd": true,
+  "net_port": 3200,
+  "blend_port": 3201,
+  "http_addr": "127.0.0.1:18480",
+  "output": "user_config.yaml",
+  "use_persistence_paths": true
+}

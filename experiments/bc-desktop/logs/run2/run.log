@@ -1,0 +1,383 @@
+== run2 start 2026-09-25T18:06:44+10:00 ==
+== config diff vs upstream standalone-node-config.yaml ==
+5c5
+<       port: 3000
+---
+>       port: 3210
+165c165
+<     listen_address: 127.0.0.1:8080
+---
+>     listen_address: 127.0.0.1:18481
+210c210
+<       directory: .
+---
+>       directory: ${REPO_ROOT}/.work/experiments/bc-desktop/logs/run2/nodelog
+237c237
+<   base_folder: ./state
+---
+>   base_folder: ${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state
+daemon up after 272 ms
+$ logoscore load-module blockchain_module -> rc=0 (102 ms)
+  {"dependencies_loaded":[],"module":"blockchain_module","status":"ok","version":"0.0.999"}
+
+blockchain_module host pid: 3639944
+18:06:44 loaded pid=3639944 rss_kb=34156 hwm_kb=34156 threads=2 cpu_ticks=3 fds=8
+== start (standalone node config + standalone deployment) ==
+$ logoscore call blockchain_module start ${REPO_ROOT}/.work/experiments/bc-desktop/standalone/node.yaml ${REPO_ROOT}/.work/experiments/bc-desktop/standalone/deployment.yaml -> rc=0 (46 ms)
+  {"method":"start","module":"blockchain_module","result":{"error":null,"success":true,"value":null},"status":"ok"}
+
+start wall: 48 ms
+18:06:45 started pid=3639944 rss_kb=66456 hwm_kb=66456 threads=26 cpu_ticks=7 fds=26
+$ logoscore call blockchain_module get_time_info -> rc=0 (14 ms)
+  {"method":"get_time_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"current_epoch\":2007,\"current_slot\":12042756,\"genesis_time_unix_ms\":1778280849000,\"slot_duration_ms\":1000}"},"status":"ok"}
+
+$ logoscore call blockchain_module get_chain_id -> rc=0 (17 ms)
+  {"method":"get_chain_id","module":"blockchain_module","result":{"error":null,"success":true,"value":"standalone-local"},"status":"ok"}
+
+== sockets / ports of the host after start ==
+udp   UNCONN 0      0                                     0.0.0.0:3210       0.0.0.0:*    users:(("logos_host",pid=3639944,fd=28),("logos_host",pid=3639944,fd=20))
+tcp   LISTEN 0      128                                 127.0.0.1:18481      0.0.0.0:*    users:(("logos_host",pid=3639944,fd=31))                                 
+== inter-module: load bc_probe (declares dependencies [blockchain_module]) ==
+$ logoscore load-module bc_probe -> rc=0 (39 ms)
+  {"dependencies_loaded":[],"module":"bc_probe","status":"ok","version":"0.0.1"}
+
+bc_probe host pid: 3640131
+$ logoscore call bc_probe ping -> rc=0 (16 ms)
+  {"method":"ping","module":"bc_probe","result":"pong","status":"ok"}
+
+$ logoscore call bc_probe chain_info_via_bc -> rc=0 (16 ms)
+  {"method":"chain_info_via_bc","module":"bc_probe","result":"{\"error\":\"\",\"ms\":1,\"success\":true,\"value\":\"{\\\"height\\\":0,\\\"lib\\\":\\\"bacd543e2ca38403ee9845e0732588a1bd79468c6b31b9c4a188329c05ebd003\\\",\\\"lib_slot\\\":0,\\\"mode\\\":\\\"Bootstrapping\\\",\\\"slot\\\":0,\\\"tip\\\":\\\"bacd543e2ca38403ee9845e0732588a1bd79468c6b31b9c4a188329c05ebd003\\\"}\"}","status":"ok"}
+
+$ logoscore call bc_probe time_info_via_bc -> rc=0 (16 ms)
+  {"method":"time_info_via_bc","module":"bc_probe","result":"{\"error\":\"\",\"ms\":0,\"success\":true,\"value\":\"{\\\"current_epoch\\\":2007,\\\"current_slot\\\":12042757,\\\"genesis_time_unix_ms\\\":1778280849000,\\\"slot_duration_ms\\\":1000}\"}","status":"ok"}
+
+18:07:01 poll=1 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":10,\"lib\":\"bacd543e2ca38403ee9845e0732588a1bd79468c6b31b9c4a188329c05ebd003\",\"lib_slot\":0,\"mode\":\"Online\",\"slot\":12042771,\"tip\":\"67635f6a35f7afff00861669fd9ff197a65d
+18:07:01 poll=1 pid=3639944 rss_kb=98640 hwm_kb=98640 threads=57 cpu_ticks=1359 fds=28
+18:07:01 poll=1 data_bytes=219830 nodelog_bytes=11025 daemonlog_bytes=25977 events=20 newBlock=10 processedBlock=10 libBlock=0
+18:07:16 poll=2 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":25,\"lib\":\"bacd543e2ca38403ee9845e0732588a1bd79468c6b31b9c4a188329c05ebd003\",\"lib_slot\":0,\"mode\":\"Online\",\"slot\":12042786,\"tip\":\"1fe1e96728e23b9c34d60d8f31f678b75bfc
+18:07:16 poll=2 pid=3639944 rss_kb=99248 hwm_kb=99248 threads=57 cpu_ticks=3437 fds=28
+18:07:16 poll=2 data_bytes=424847 nodelog_bytes=14355 daemonlog_bytes=45267 events=50 newBlock=25 processedBlock=25 libBlock=0
+18:07:31 poll=3 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":41,\"lib\":\"ee30d7151accefd5fe918e18117b41961b317c964d20d05480309946c8cf3d7a\",\"lib_slot\":12042772,\"mode\":\"Online\",\"slot\":12042802,\"tip\":\"0f1da773008b737eb3df36498337d
+18:07:31 poll=3 pid=3639944 rss_kb=100628 hwm_kb=100628 threads=57 cpu_ticks=5557 fds=28
+18:07:31 poll=3 data_bytes=990642 nodelog_bytes=20377 daemonlog_bytes=68833 events=93 newBlock=41 processedBlock=41 libBlock=11
+18:07:46 poll=4 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":56,\"lib\":\"cef141e7c65c1f57db35d16e6a95e304385574c4f1376f61a12ef5e1d776f216\",\"lib_slot\":12042787,\"mode\":\"Online\",\"slot\":12042817,\"tip\":\"9572315df928111bde1daa0ccae00
+18:07:46 poll=4 pid=3639944 rss_kb=102936 hwm_kb=102936 threads=57 cpu_ticks=7526 fds=28
+18:07:46 poll=4 data_bytes=2411603 nodelog_bytes=27412 daemonlog_bytes=92608 events=138 newBlock=56 processedBlock=56 libBlock=26
+$ logoscore call bc_probe height_via_bc -> rc=0 (17 ms)
+  {"method":"height_via_bc","module":"bc_probe","result":"56","status":"ok"}
+
+18:08:01 poll=5 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":71,\"lib\":\"0f1da773008b737eb3df36498337d8dbcdd953380193d68d7b9499380f8af3b1\",\"lib_slot\":12042802,\"mode\":\"Online\",\"slot\":12042832,\"tip\":\"55c5b65bae9a297bfdd86bf736922
+18:08:01 poll=5 pid=3639944 rss_kb=106600 hwm_kb=106600 threads=57 cpu_ticks=9431 fds=28
+18:08:01 poll=5 data_bytes=4677827 nodelog_bytes=34447 daemonlog_bytes=116383 events=183 newBlock=71 processedBlock=71 libBlock=41
+18:08:16 poll=6 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":86,\"lib\":\"9572315df928111bde1daa0ccae00942fcf551c77dd24f76cdac3f7e829e11c2\",\"lib_slot\":12042817,\"mode\":\"Online\",\"slot\":12042847,\"tip\":\"7dd23f325d9bc356e496b2f8e5b84
+18:08:16 poll=6 pid=3639944 rss_kb=110732 hwm_kb=110732 threads=57 cpu_ticks=11325 fds=28
+18:08:16 poll=6 data_bytes=7801936 nodelog_bytes=41482 daemonlog_bytes=140158 events=228 newBlock=86 processedBlock=86 libBlock=56
+18:08:31 poll=7 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":101,\"lib\":\"55c5b65bae9a297bfdd86bf7369224f398c0001fd0328c09ea05d50d6dd4a48c\",\"lib_slot\":12042832,\"mode\":\"Online\",\"slot\":12042862,\"tip\":\"151d9a8f49a2aaac4e545bf83750
+18:08:31 poll=7 pid=3639944 rss_kb=116048 hwm_kb=116048 threads=57 cpu_ticks=13213 fds=28
+18:08:31 poll=7 data_bytes=11778164 nodelog_bytes=48517 daemonlog_bytes=163933 events=273 newBlock=101 processedBlock=101 libBlock=71
+18:08:46 poll=8 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":116,\"lib\":\"7dd23f325d9bc356e496b2f8e5b8420a4f455aa52f78058f01f62674577e55f1\",\"lib_slot\":12042847,\"mode\":\"Online\",\"slot\":12042877,\"tip\":\"65e5ac0e77903015dab5d88ba243
+18:08:46 poll=8 pid=3639944 rss_kb=122660 hwm_kb=122660 threads=57 cpu_ticks=15230 fds=28
+18:08:46 poll=8 data_bytes=16615906 nodelog_bytes=55552 daemonlog_bytes=187708 events=318 newBlock=116 processedBlock=116 libBlock=86
+$ logoscore call blockchain_module get_network_info -> rc=0 (15 ms)
+  {"method":"get_network_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"n_connections\":0,\"n_discovered_peers\":0,\"n_peers\":0,\"n_pending_connections\":0}"},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_balance e3635f207984ae779cf76b5f20714b514373f61ff96260879fe0a6d71f2dce07 -> rc=0 (15 ms)
+  {"method":"wallet_get_balance","module":"blockchain_module","result":{"error":null,"success":true,"value":"100000"},"status":"ok"}
+
+$ logoscore call bc_probe height_via_bc -> rc=0 (15 ms)
+  {"method":"height_via_bc","module":"bc_probe","result":"116","status":"ok"}
+
+18:09:01 poll=9 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":131,\"lib\":\"151d9a8f49a2aaac4e545bf83750be3b68511c488f9218fddc152a05a79cc875\",\"lib_slot\":12042862,\"mode\":\"Online\",\"slot\":12042892,\"tip\":\"4aa43a9990a6e036a8ac26d8579a
+18:09:01 poll=9 pid=3639944 rss_kb=129744 hwm_kb=129744 threads=57 cpu_ticks=17156 fds=28
+18:09:01 poll=9 data_bytes=22302873 nodelog_bytes=62587 daemonlog_bytes=211641 events=363 newBlock=131 processedBlock=131 libBlock=101
+18:09:16 poll=10 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":146,\"lib\":\"65e5ac0e77903015dab5d88ba243d63afa52f509afd3fdb035410c8a9cb4029f\",\"lib_slot\":12042877,\"mode\":\"Online\",\"slot\":12042907,\"tip\":\"9e4e4377242a51341f06cb8bf7c7
+18:09:16 poll=10 pid=3639944 rss_kb=138472 hwm_kb=138472 threads=57 cpu_ticks=19104 fds=28
+18:09:16 poll=10 data_bytes=28841962 nodelog_bytes=69622 daemonlog_bytes=235416 events=408 newBlock=146 processedBlock=146 libBlock=116
+18:09:31 poll=11 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":161,\"lib\":\"4aa43a9990a6e036a8ac26d8579a4b672d62f42d69dfb6625a77bcde5aefbd16\",\"lib_slot\":12042892,\"mode\":\"Online\",\"slot\":12042922,\"tip\":\"f0630ace8a27ace640cae28d416e
+18:09:31 poll=11 pid=3639944 rss_kb=147956 hwm_kb=147956 threads=57 cpu_ticks=21138 fds=28
+18:09:31 poll=11 data_bytes=35914905 nodelog_bytes=76657 daemonlog_bytes=259191 events=453 newBlock=161 processedBlock=161 libBlock=131
+18:09:46 poll=12 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":176,\"lib\":\"9e4e4377242a51341f06cb8bf7c75718105762c1b26313d5c0599669343341d6\",\"lib_slot\":12042907,\"mode\":\"Online\",\"slot\":12042937,\"tip\":\"25e05c09eead76939be6106dd391
+18:09:46 poll=12 pid=3639944 rss_kb=158020 hwm_kb=158020 threads=57 cpu_ticks=23115 fds=28
+18:09:46 poll=12 data_bytes=44165582 nodelog_bytes=83692 daemonlog_bytes=282966 events=498 newBlock=176 processedBlock=176 libBlock=146
+$ logoscore call bc_probe height_via_bc -> rc=0 (21 ms)
+  {"method":"height_via_bc","module":"bc_probe","result":"176","status":"ok"}
+
+18:10:01 poll=13 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":191,\"lib\":\"f0630ace8a27ace640cae28d416e584cc43b919e2e750ce7f9271f17d8f53954\",\"lib_slot\":12042922,\"mode\":\"Online\",\"slot\":12042952,\"tip\":\"3903395ee319de04392a0cd36cdb
+18:10:01 poll=13 pid=3639944 rss_kb=168820 hwm_kb=168820 threads=57 cpu_ticks=25020 fds=28
+18:10:01 poll=13 data_bytes=53264296 nodelog_bytes=90727 daemonlog_bytes=306741 events=543 newBlock=191 processedBlock=191 libBlock=161
+18:10:16 poll=14 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":206,\"lib\":\"25e05c09eead76939be6106dd3915db4b329e57b20237d5c5409f1f77c4546d9\",\"lib_slot\":12042937,\"mode\":\"Online\",\"slot\":12042967,\"tip\":\"7bd6662254cb21524d6cf2af63d0
+18:10:16 poll=14 pid=3639944 rss_kb=180944 hwm_kb=180944 threads=57 cpu_ticks=26918 fds=29
+18:10:16 poll=14 data_bytes=1626751 nodelog_bytes=97762 daemonlog_bytes=330516 events=588 newBlock=206 processedBlock=206 libBlock=176
+18:10:31 poll=15 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":221,\"lib\":\"3903395ee319de04392a0cd36cdb70ca8bd88db203c9394069fcb8248cd528ed\",\"lib_slot\":12042952,\"mode\":\"Online\",\"slot\":12042982,\"tip\":\"b87fa81cea1191073df55c49789f
+18:10:31 poll=15 pid=3639944 rss_kb=181636 hwm_kb=181636 threads=57 cpu_ticks=28815 fds=29
+18:10:31 poll=15 data_bytes=12432866 nodelog_bytes=104797 daemonlog_bytes=354291 events=633 newBlock=221 processedBlock=221 libBlock=191
+18:10:46 poll=16 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":236,\"lib\":\"7bd6662254cb21524d6cf2af63d0e6e89b1001b6d8c8777d21134748be7ea0f1\",\"lib_slot\":12042967,\"mode\":\"Online\",\"slot\":12042997,\"tip\":\"b23f726f15dd5c5d273b496ac375
+18:10:46 poll=16 pid=3639944 rss_kb=185312 hwm_kb=185312 threads=57 cpu_ticks=30698 fds=29
+18:10:46 poll=16 data_bytes=24104560 nodelog_bytes=111832 daemonlog_bytes=378066 events=678 newBlock=236 processedBlock=236 libBlock=206
+$ logoscore call blockchain_module get_network_info -> rc=0 (15 ms)
+  {"method":"get_network_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"n_connections\":0,\"n_discovered_peers\":0,\"n_peers\":0,\"n_pending_connections\":0}"},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_balance e3635f207984ae779cf76b5f20714b514373f61ff96260879fe0a6d71f2dce07 -> rc=0 (15 ms)
+  {"method":"wallet_get_balance","module":"blockchain_module","result":{"error":null,"success":true,"value":"100000"},"status":"ok"}
+
+$ logoscore call bc_probe height_via_bc -> rc=0 (15 ms)
+  {"method":"height_via_bc","module":"bc_probe","result":"236","status":"ok"}
+
+18:11:01 poll=17 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":251,\"lib\":\"b87fa81cea1191073df55c49789fcfcc8df21d24ec9b03da3895d3ad95451d5b\",\"lib_slot\":12042982,\"mode\":\"Online\",\"slot\":12043012,\"tip\":\"cec9880a6eddc928f1262ecea93e
+18:11:01 poll=17 pid=3639944 rss_kb=190408 hwm_kb=190408 threads=57 cpu_ticks=32573 fds=29
+18:11:01 poll=17 data_bytes=36615031 nodelog_bytes=118867 daemonlog_bytes=401999 events=723 newBlock=251 processedBlock=251 libBlock=221
+18:11:16 poll=18 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":266,\"lib\":\"b23f726f15dd5c5d273b496ac375fe232ded273e0fcc8cbe4a6ce5a83c61287b\",\"lib_slot\":12042997,\"mode\":\"Online\",\"slot\":12043027,\"tip\":\"aee5c6ffeb6345863769370a391a
+18:11:16 poll=18 pid=3639944 rss_kb=198224 hwm_kb=198224 threads=57 cpu_ticks=34451 fds=29
+18:11:16 poll=18 data_bytes=49983410 nodelog_bytes=125902 daemonlog_bytes=425774 events=768 newBlock=266 processedBlock=266 libBlock=236
+18:11:32 poll=19 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":281,\"lib\":\"cec9880a6eddc928f1262ecea93eacc178aa30f7198042e7ff08a3e2921be56f\",\"lib_slot\":12043012,\"mode\":\"Online\",\"slot\":12043042,\"tip\":\"b90c4886417cc5c28f8283ce6f80
+18:11:32 poll=19 pid=3639944 rss_kb=213372 hwm_kb=213372 threads=57 cpu_ticks=36330 fds=29
+18:11:32 poll=19 data_bytes=64522440 nodelog_bytes=132937 daemonlog_bytes=449549 events=813 newBlock=281 processedBlock=281 libBlock=251
+18:11:47 poll=20 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":296,\"lib\":\"aee5c6ffeb6345863769370a391aac17430843c3e933d903b65ae657e83f9be8\",\"lib_slot\":12043027,\"mode\":\"Online\",\"slot\":12043057,\"tip\":\"7661fce2d24e276416340e4a0df7
+18:11:47 poll=20 pid=3639944 rss_kb=216256 hwm_kb=216256 threads=57 cpu_ticks=38284 fds=30
+18:11:47 poll=20 data_bytes=14653235 nodelog_bytes=140107 daemonlog_bytes=473511 events=858 newBlock=296 processedBlock=296 libBlock=266
+$ logoscore call bc_probe height_via_bc -> rc=0 (19 ms)
+  {"method":"height_via_bc","module":"bc_probe","result":"296","status":"ok"}
+
+18:12:02 poll=21 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":311,\"lib\":\"b90c4886417cc5c28f8283ce6f801c55b5ea3da267f5081ae05ddbf67d7e05b6\",\"lib_slot\":12043042,\"mode\":\"Online\",\"slot\":12043072,\"tip\":\"8dd75e849f31036878ad6df992b4
+18:12:02 poll=21 pid=3639944 rss_kb=217276 hwm_kb=217276 threads=57 cpu_ticks=40218 fds=30
+18:12:02 poll=21 data_bytes=31330114 nodelog_bytes=147611 daemonlog_bytes=498871 events=906 newBlock=312 processedBlock=312 libBlock=282
+18:12:17 poll=22 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":327,\"lib\":\"d5f916fc81849814e42979b8df1947b7287f379ba9fe654c21174aed414702f2\",\"lib_slot\":12043058,\"mode\":\"Online\",\"slot\":12043088,\"tip\":\"900f2b320e06ced7541aeadeb634
+18:12:17 poll=22 pid=3639944 rss_kb=222944 hwm_kb=222944 threads=57 cpu_ticks=42104 fds=30
+18:12:17 poll=22 data_bytes=48161689 nodelog_bytes=154646 daemonlog_bytes=522646 events=951 newBlock=327 processedBlock=327 libBlock=297
+18:12:32 poll=23 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":342,\"lib\":\"558858d519498c28de0a35815b41a3c7ee99848a71a06e3c69e80b6744f0d057\",\"lib_slot\":12043073,\"mode\":\"Online\",\"slot\":12043103,\"tip\":\"b551b15102d841b3e722f0640778
+18:12:32 poll=23 pid=3639944 rss_kb=243392 hwm_kb=243392 threads=58 cpu_ticks=43975 fds=30
+18:12:32 poll=23 data_bytes=65844115 nodelog_bytes=161681 daemonlog_bytes=546421 events=996 newBlock=342 processedBlock=342 libBlock=312
+18:12:47 poll=24 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":357,\"lib\":\"900f2b320e06ced7541aeadeb63491a9623bd3e51149d4bc6414bd4a816511c1\",\"lib_slot\":12043088,\"mode\":\"Online\",\"slot\":12043118,\"tip\":\"e4a3e9eed40291eee23562f15602
+18:12:47 poll=24 pid=3639944 rss_kb=244216 hwm_kb=244216 threads=58 cpu_ticks=45841 fds=31
+18:12:47 poll=24 data_bytes=18271342 nodelog_bytes=168716 daemonlog_bytes=570196 events=1041 newBlock=357 processedBlock=357 libBlock=327
+$ logoscore call blockchain_module get_network_info -> rc=0 (14 ms)
+  {"method":"get_network_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"n_connections\":0,\"n_discovered_peers\":0,\"n_peers\":0,\"n_pending_connections\":0}"},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_balance e3635f207984ae779cf76b5f20714b514373f61ff96260879fe0a6d71f2dce07 -> rc=0 (14 ms)
+  {"method":"wallet_get_balance","module":"blockchain_module","result":{"error":null,"success":true,"value":"100000"},"status":"ok"}
+
+$ logoscore call bc_probe height_via_bc -> rc=0 (15 ms)
+  {"method":"height_via_bc","module":"bc_probe","result":"357","status":"ok"}
+
+18:13:02 poll=25 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":372,\"lib\":\"b551b15102d841b3e722f0640778b51e41569270dd91f9d79915cf06cb29954d\",\"lib_slot\":12043103,\"mode\":\"Online\",\"slot\":12043133,\"tip\":\"2464fd9f7d56ad4166a65ff462da
+18:13:02 poll=25 pid=3639944 rss_kb=247144 hwm_kb=247144 threads=58 cpu_ticks=47716 fds=31
+18:13:02 poll=25 data_bytes=37646565 nodelog_bytes=175751 daemonlog_bytes=594129 events=1086 newBlock=372 processedBlock=372 libBlock=342
+18:13:17 poll=26 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":387,\"lib\":\"e4a3e9eed40291eee23562f156024bfe8c732a15fea7d7814bae6431f1210a6b\",\"lib_slot\":12043118,\"mode\":\"Online\",\"slot\":12043148,\"tip\":\"9e7c5383089670bc564c026c9c67
+18:13:17 poll=26 pid=3639944 rss_kb=253072 hwm_kb=253072 threads=58 cpu_ticks=49584 fds=31
+18:13:17 poll=26 data_bytes=57867292 nodelog_bytes=182786 daemonlog_bytes=617904 events=1131 newBlock=387 processedBlock=387 libBlock=357
+18:13:32 poll=27 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":402,\"lib\":\"2464fd9f7d56ad4166a65ff462daa48f5d9cbfaeb85223faa7407096a007017d\",\"lib_slot\":12043133,\"mode\":\"Online\",\"slot\":12043163,\"tip\":\"426c8f9e5e2c07d4179726f6b392
+18:13:32 poll=27 pid=3639944 rss_kb=259872 hwm_kb=259872 threads=58 cpu_ticks=51460 fds=29
+18:13:32 poll=27 data_bytes=11731462 nodelog_bytes=189821 daemonlog_bytes=641679 events=1176 newBlock=402 processedBlock=402 libBlock=372
+18:13:47 poll=28 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":417,\"lib\":\"9e7c5383089670bc564c026c9c67975260877ae4c3d2b251a2dc37843822f7c8\",\"lib_slot\":12043148,\"mode\":\"Online\",\"slot\":12043178,\"tip\":\"50847c1b755f89002242d65d77cb
+18:13:47 poll=28 pid=3639944 rss_kb=259872 hwm_kb=259872 threads=58 cpu_ticks=53345 fds=29
+18:13:47 poll=28 data_bytes=33660777 nodelog_bytes=196856 daemonlog_bytes=665454 events=1221 newBlock=417 processedBlock=417 libBlock=387
+$ logoscore call bc_probe height_via_bc -> rc=0 (15 ms)
+  {"method":"height_via_bc","module":"bc_probe","result":"417","status":"ok"}
+
+18:14:02 poll=29 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":432,\"lib\":\"426c8f9e5e2c07d4179726f6b392441f97b603cd7f78a82810bf253ce91274b1\",\"lib_slot\":12043163,\"mode\":\"Online\",\"slot\":12043193,\"tip\":\"49b7aaa8fc9b62e31fcfc8b084c9
+18:14:02 poll=29 pid=3639944 rss_kb=266436 hwm_kb=266436 threads=58 cpu_ticks=55179 fds=29
+18:14:02 poll=29 data_bytes=56414164 nodelog_bytes=203891 daemonlog_bytes=689229 events=1266 newBlock=432 processedBlock=432 libBlock=402
+18:14:17 poll=30 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":447,\"lib\":\"50847c1b755f89002242d65d77cb71e1f6bbb335221010e8f39a2f2222d6fda0\",\"lib_slot\":12043178,\"mode\":\"Online\",\"slot\":12043208,\"tip\":\"067c59b8a13731f1fcc41792252b
+18:14:17 poll=30 pid=3639944 rss_kb=271456 hwm_kb=271456 threads=58 cpu_ticks=56894 fds=30
+18:14:17 poll=30 data_bytes=13058912 nodelog_bytes=210926 daemonlog_bytes=713004 events=1311 newBlock=447 processedBlock=447 libBlock=417
+18:14:32 poll=31 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":462,\"lib\":\"49b7aaa8fc9b62e31fcfc8b084c962517b8650c44d7d011b0c0e0f9d1d6722e1\",\"lib_slot\":12043193,\"mode\":\"Online\",\"slot\":12043223,\"tip\":\"8acd9b650eb5bda05a89f4b77130
+18:14:32 poll=31 pid=3639944 rss_kb=273424 hwm_kb=273424 threads=58 cpu_ticks=58606 fds=30
+18:14:32 poll=31 data_bytes=37504214 nodelog_bytes=217961 daemonlog_bytes=736779 events=1356 newBlock=462 processedBlock=462 libBlock=432
+18:14:47 poll=32 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":477,\"lib\":\"067c59b8a13731f1fcc41792252b9ae2a0fae0469b916fa3d25c303a18978718\",\"lib_slot\":12043208,\"mode\":\"Online\",\"slot\":12043238,\"tip\":\"50bbce5e5eead131179e5d037c16
+18:14:47 poll=32 pid=3639944 rss_kb=278496 hwm_kb=278496 threads=58 cpu_ticks=60341 fds=30
+18:14:47 poll=32 data_bytes=62812454 nodelog_bytes=224996 daemonlog_bytes=760554 events=1401 newBlock=477 processedBlock=477 libBlock=447
+$ logoscore call blockchain_module get_network_info -> rc=0 (14 ms)
+  {"method":"get_network_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"n_connections\":0,\"n_discovered_peers\":0,\"n_peers\":0,\"n_pending_connections\":0}"},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_balance e3635f207984ae779cf76b5f20714b514373f61ff96260879fe0a6d71f2dce07 -> rc=0 (13 ms)
+  {"method":"wallet_get_balance","module":"blockchain_module","result":{"error":null,"success":true,"value":"100000"},"status":"ok"}
+
+$ logoscore call bc_probe height_via_bc -> rc=0 (14 ms)
+  {"method":"height_via_bc","module":"bc_probe","result":"477","status":"ok"}
+
+18:15:02 poll=33 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":492,\"lib\":\"8acd9b650eb5bda05a89f4b771300209738606954611e3e30983bcf4ebb5c556\",\"lib_slot\":12043223,\"mode\":\"Online\",\"slot\":12043253,\"tip\":\"594bb9a0eed3dda16afad3b0c941
+18:15:02 poll=33 pid=3639944 rss_kb=275760 hwm_kb=282756 threads=58 cpu_ticks=62059 fds=31
+18:15:02 poll=33 data_bytes=23013842 nodelog_bytes=232031 daemonlog_bytes=784487 events=1446 newBlock=492 processedBlock=492 libBlock=462
+18:15:17 poll=34 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":507,\"lib\":\"50bbce5e5eead131179e5d037c16cdd8dbc0c8ef0b0b24a5ea9d03f0f8c0385d\",\"lib_slot\":12043238,\"mode\":\"Online\",\"slot\":12043268,\"tip\":\"6f9eec5b02a109fb38d76ce829c3
+18:15:17 poll=34 pid=3639944 rss_kb=289108 hwm_kb=289108 threads=58 cpu_ticks=63776 fds=31
+18:15:17 poll=34 data_bytes=49990354 nodelog_bytes=239066 daemonlog_bytes=808262 events=1491 newBlock=507 processedBlock=507 libBlock=477
+18:15:32 poll=35 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":522,\"lib\":\"594bb9a0eed3dda16afad3b0c941aadf6261a0d2d47087d5aeec819a73e032ce\",\"lib_slot\":12043253,\"mode\":\"Online\",\"slot\":12043283,\"tip\":\"d2d9bbe5117d28e6942061dd4943
+18:15:32 poll=35 pid=3639944 rss_kb=261340 hwm_kb=294724 threads=58 cpu_ticks=65495 fds=32
+18:15:32 poll=35 data_bytes=11457704 nodelog_bytes=246101 daemonlog_bytes=832037 events=1536 newBlock=522 processedBlock=522 libBlock=492
+18:15:47 poll=36 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":537,\"lib\":\"6f9eec5b02a109fb38d76ce829c3654f937fc4aa11e33b0f0da275ed06fb29ea\",\"lib_slot\":12043268,\"mode\":\"Online\",\"slot\":12043298,\"tip\":\"59d9dd55d538661b359e863cd30b
+18:15:47 poll=36 pid=3639944 rss_kb=277296 hwm_kb=294724 threads=58 cpu_ticks=67214 fds=32
+18:15:47 poll=36 data_bytes=40149652 nodelog_bytes=253136 daemonlog_bytes=855812 events=1581 newBlock=537 processedBlock=537 libBlock=507
+$ logoscore call bc_probe height_via_bc -> rc=0 (15 ms)
+  {"method":"height_via_bc","module":"bc_probe","result":"537","status":"ok"}
+
+18:16:02 poll=37 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":552,\"lib\":\"d2d9bbe5117d28e6942061dd4943a26449a2bb21bd55af49c05cf92c4ac6adde\",\"lib_slot\":12043283,\"mode\":\"Online\",\"slot\":12043313,\"tip\":\"c99a521ef9504e4962633be8cc31
+18:16:02 poll=37 pid=3639944 rss_kb=294432 hwm_kb=294724 threads=58 cpu_ticks=68938 fds=32
+18:16:02 poll=37 data_bytes=69656043 nodelog_bytes=260171 daemonlog_bytes=879587 events=1626 newBlock=552 processedBlock=552 libBlock=522
+18:16:17 poll=38 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":567,\"lib\":\"59d9dd55d538661b359e863cd30b04259fab03c6d6766e6e84aceccb167bedb0\",\"lib_slot\":12043298,\"mode\":\"Online\",\"slot\":12043328,\"tip\":\"d6305dbd9d61d1a379181eb245cf
+18:16:17 poll=38 pid=3639944 rss_kb=273416 hwm_kb=294752 threads=58 cpu_ticks=70678 fds=29
+18:16:17 poll=38 data_bytes=31521738 nodelog_bytes=267206 daemonlog_bytes=903362 events=1671 newBlock=567 processedBlock=567 libBlock=537
+18:16:32 poll=39 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":582,\"lib\":\"c99a521ef9504e4962633be8cc31d7698fb2af226d2f4d5f581b659a4e68bfc8\",\"lib_slot\":12043313,\"mode\":\"Online\",\"slot\":12043343,\"tip\":\"0b96049b54b514d7daf43151836e
+18:16:32 poll=39 pid=3639944 rss_kb=298240 hwm_kb=298240 threads=58 cpu_ticks=72402 fds=29
+18:16:32 poll=39 data_bytes=62716523 nodelog_bytes=274241 daemonlog_bytes=927137 events=1716 newBlock=582 processedBlock=582 libBlock=552
+18:16:48 poll=40 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":597,\"lib\":\"d6305dbd9d61d1a379181eb245cff503eca502d61a49f47e75d0a4078b7e6771\",\"lib_slot\":12043328,\"mode\":\"Online\",\"slot\":12043358,\"tip\":\"3a7c773d8f4fc43014c51e6953d5
+18:16:48 poll=40 pid=3639944 rss_kb=292516 hwm_kb=302368 threads=58 cpu_ticks=74145 fds=30
+18:16:48 poll=40 data_bytes=29050811 nodelog_bytes=281411 daemonlog_bytes=951099 events=1761 newBlock=597 processedBlock=597 libBlock=567
+$ logoscore call blockchain_module get_network_info -> rc=0 (25 ms)
+  {"method":"get_network_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"n_connections\":0,\"n_discovered_peers\":0,\"n_peers\":0,\"n_pending_connections\":0}"},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_balance e3635f207984ae779cf76b5f20714b514373f61ff96260879fe0a6d71f2dce07 -> rc=0 (18 ms)
+  {"method":"wallet_get_balance","module":"blockchain_module","result":{"error":null,"success":true,"value":"100000"},"status":"ok"}
+
+$ logoscore call bc_probe height_via_bc -> rc=0 (16 ms)
+  {"method":"height_via_bc","module":"bc_probe","result":"597","status":"ok"}
+
+18:17:03 poll=41 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":612,\"lib\":\"0b96049b54b514d7daf43151836e0e2377ddc2513576ea998f35614c57f9b9b2\",\"lib_slot\":12043343,\"mode\":\"Online\",\"slot\":12043373,\"tip\":\"80634f049520dc98e70569c5d85d
+18:17:03 poll=41 pid=3639944 rss_kb=308252 hwm_kb=308252 threads=58 cpu_ticks=75941 fds=30
+18:17:03 poll=41 data_bytes=62716651 nodelog_bytes=288915 daemonlog_bytes=976617 events=1809 newBlock=613 processedBlock=613 libBlock=583
+18:17:18 poll=42 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":628,\"lib\":\"2420985094f279aae01e6a57a0edec3b8927a39bdc5c2470c2ddd7ee7692f133\",\"lib_slot\":12043359,\"mode\":\"Online\",\"slot\":12043389,\"tip\":\"f67ccf762a68b75e9a6cd0946eaf
+18:17:18 poll=42 pid=3639944 rss_kb=305340 hwm_kb=321532 threads=58 cpu_ticks=77665 fds=31
+18:17:18 poll=42 data_bytes=31298266 nodelog_bytes=295950 daemonlog_bytes=1000392 events=1854 newBlock=628 processedBlock=628 libBlock=598
+18:17:33 poll=43 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":643,\"lib\":\"dd2a3b3708ca7a8d143e546c645a3fc17fe9f11f41a981ab9dc5dd27365ebbe1\",\"lib_slot\":12043374,\"mode\":\"Online\",\"slot\":12043404,\"tip\":\"fbbdf0fe36656c1fb8d3c3d66572
+18:17:33 poll=43 pid=3639944 rss_kb=324620 hwm_kb=324620 threads=58 cpu_ticks=79377 fds=31
+18:17:33 poll=43 data_bytes=65930957 nodelog_bytes=302985 daemonlog_bytes=1024167 events=1899 newBlock=643 processedBlock=643 libBlock=613
+18:17:48 poll=44 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":658,\"lib\":\"f67ccf762a68b75e9a6cd0946eaf668f7d82cc9f4b1279302bd7e23fcf429a67\",\"lib_slot\":12043389,\"mode\":\"Online\",\"slot\":12043419,\"tip\":\"bb0a0503a17f7aaeea52d0c4f6bb
+18:17:48 poll=44 pid=3639944 rss_kb=304440 hwm_kb=325984 threads=58 cpu_ticks=81096 fds=32
+18:17:48 poll=44 data_bytes=35112806 nodelog_bytes=310020 daemonlog_bytes=1047942 events=1944 newBlock=658 processedBlock=658 libBlock=628
+$ logoscore call bc_probe height_via_bc -> rc=0 (15 ms)
+  {"method":"height_via_bc","module":"bc_probe","result":"658","status":"ok"}
+
+18:18:03 poll=45 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":673,\"lib\":\"fbbdf0fe36656c1fb8d3c3d665721fbc5f65e8a94a89c6f30852d140ebb11127\",\"lib_slot\":12043404,\"mode\":\"Online\",\"slot\":12043434,\"tip\":\"a83d5c61d4415ac8aaf38622e06d
+18:18:03 poll=45 pid=3639944 rss_kb=327756 hwm_kb=327756 threads=58 cpu_ticks=82807 fds=29
+18:18:03 poll=45 data_bytes=2232570 nodelog_bytes=317055 daemonlog_bytes=1071717 events=1989 newBlock=673 processedBlock=673 libBlock=643
+18:18:18 poll=46 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":688,\"lib\":\"bb0a0503a17f7aaeea52d0c4f6bb4044aaf89e988c86669aebc2a6f4989f608d\",\"lib_slot\":12043419,\"mode\":\"Online\",\"slot\":12043449,\"tip\":\"d19e35a964a5366562737e55d8b4
+18:18:18 poll=46 pid=3639944 rss_kb=331084 hwm_kb=331084 threads=58 cpu_ticks=84529 fds=29
+18:18:18 poll=46 data_bytes=39396816 nodelog_bytes=324090 daemonlog_bytes=1095492 events=2034 newBlock=688 processedBlock=688 libBlock=658
+18:18:33 poll=47 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":703,\"lib\":\"a83d5c61d4415ac8aaf38622e06d742357d34cf71908bf3ea59dfd7cc952811a\",\"lib_slot\":12043434,\"mode\":\"Online\",\"slot\":12043464,\"tip\":\"608ceb3593b6d8603e473ace6d7e
+18:18:33 poll=47 pid=3639944 rss_kb=301300 hwm_kb=339544 threads=58 cpu_ticks=86256 fds=30
+18:18:33 poll=47 data_bytes=11683838 nodelog_bytes=331125 daemonlog_bytes=1119267 events=2079 newBlock=703 processedBlock=703 libBlock=673
+18:18:48 poll=48 cryptarchia={"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":718,\"lib\":\"d19e35a964a5366562737e55d8b4023ffb3695594fed31e385d60f7737476306\",\"lib_slot\":12043449,\"mode\":\"Online\",\"slot\":12043479,\"tip\":\"2ea2f847006368cfc91911442315
+18:18:48 poll=48 pid=3639944 rss_kb=310352 hwm_kb=339544 threads=58 cpu_ticks=87976 fds=30
+18:18:48 poll=48 data_bytes=50557522 nodelog_bytes=338160 daemonlog_bytes=1143042 events=2124 newBlock=718 processedBlock=718 libBlock=688
+$ logoscore call blockchain_module get_network_info -> rc=0 (14 ms)
+  {"method":"get_network_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"n_connections\":0,\"n_discovered_peers\":0,\"n_peers\":0,\"n_pending_connections\":0}"},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_balance e3635f207984ae779cf76b5f20714b514373f61ff96260879fe0a6d71f2dce07 -> rc=0 (14 ms)
+  {"method":"wallet_get_balance","module":"blockchain_module","result":{"error":null,"success":true,"value":"100000"},"status":"ok"}
+
+$ logoscore call bc_probe height_via_bc -> rc=0 (14 ms)
+  {"method":"height_via_bc","module":"bc_probe","result":"718","status":"ok"}
+
+== inter-module: final probe calls ==
+$ logoscore call bc_probe chain_info_via_bc -> rc=0 (15 ms)
+  {"method":"chain_info_via_bc","module":"bc_probe","result":"{\"error\":\"\",\"ms\":0,\"success\":true,\"value\":\"{\\\"height\\\":718,\\\"lib\\\":\\\"d19e35a964a5366562737e55d8b4023ffb3695594fed31e385d60f7737476306\\\",\\\"lib_slot\\\":12043449,\\\"mode\\\":\\\"Online\\\",\\\"slot\\\":12043479,\\\"tip\\\":\\\"2ea2f847006368cfc919114423158e513f2942daf175b151d0cb4834b88699f7\\\"}\"}","status":"ok"}
+
+$ logoscore call bc_probe network_info_via_bc -> rc=0 (15 ms)
+  {"method":"network_info_via_bc","module":"bc_probe","result":"{\"error\":\"\",\"ms\":1,\"success\":true,\"value\":\"{\\\"n_connections\\\":0,\\\"n_discovered_peers\\\":0,\\\"n_peers\\\":0,\\\"n_pending_connections\\\":0}\"}","status":"ok"}
+
+$ logoscore call bc_probe height_via_bc -> rc=0 (13 ms)
+  {"method":"height_via_bc","module":"bc_probe","result":"718","status":"ok"}
+
+20 CLI calls bc_probe.height_via_bc (each = CLI->bc_probe->blockchain_module) took 257 ms total
+== unix stream connections held by the bc_probe host ==
+* 392666462 * 392688967 users:(("logos_host",pid=3640131,fd=9))
+${REPO_ROOT}/.work/bcs/logos_bc_probe_f143b59f32f5 392666460 * 392665759 users:(("logos_host",pid=3640131,fd=8))
+${REPO_ROOT}/.work/bcs/logos_bc_probe_f143b59f32f5 392666459 * 392665754 users:(("logos_host",pid=3640131,fd=7))
+* 392666463 * 392665763 users:(("logos_host",pid=3640131,fd=10))
+18:18:48 bc_probe pid=3640131 rss_kb=24680 hwm_kb=24680 threads=2 cpu_ticks=9 fds=11
+== end-of-run read-only calls ==
+$ logoscore call blockchain_module get_cryptarchia_info -> rc=0 (15 ms)
+  {"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":718,\"lib\":\"d19e35a964a5366562737e55d8b4023ffb3695594fed31e385d60f7737476306\",\"lib_slot\":12043449,\"mode\":\"Online\",\"slot\":12043479,\"tip\":\"2ea2f847006368cfc919114423158e513f2942daf175b151d0cb4834b88699f7\"}"},"status":"ok"}
+
+tip=2ea2f847006368cfc919114423158e513f2942daf175b151d0cb4834b88699f7
+$ logoscore call blockchain_module get_block 2ea2f847006368cfc919114423158e513f2942daf175b151d0cb4834b88699f7 -> rc=0 (14 ms)
+  {"method":"get_block","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"header\":{\"version\":\"Bedrock\",\"parent_block\":\"42e2dcbe821728468729dd5128d57925e048dcd85199504d3d26980d2a3917b5\",\"slot\":12043479,\"body_root\":\"273a6e9869625d85c45e53afff1d3100aec613d403be494c173030e6a05e4c9c\",\"proof_of_leadership\":{\"proof\":\"59b6a1ddae3217f64f970861a720369f8316a4175867a9bb003799dff7ff7013678fae890fddfddb30e3d805ec957d43c294bd187bfd81cd9028ab07fce1d12e1a1ba6c6fd4468f513125612634bee800d6aff14a2ca84490272934271b3b5215e7c78b7c0aca903c2874d5e2d71647e32b4ea484f6e88a5a4d05842ea6eea9a\",\"entropy_contribution\":\"9038aa6a1c0572d497357222bcd1be1fbbf9940020b146be570552393fefd602\",\"leader_key\":\"54eb12d71f9689f113c11845324a578580e2070c4994f659afa25fcb81fa3a34\",\"voucher_cm\":\"f64fb2065af206ea5a003d2ddbb6d76b93c8fb70851d87ca9ee16e795a90b922\"}},\"signature\":\"4a5aa9d229603a3662b27b448a5c62f13debdfbd51aa9021f8180132bee49f5fcd886c333c370d08a1659bb233157c479aac96c9fc3fd8271a23b3bb889cd209\",\"uncle_headers\":[],\"transactions\":[]}"},"status":"ok"}
+
+$ logoscore call blockchain_module get_block_events 2ea2f847006368cfc919114423158e513f2942daf175b151d0cb4834b88699f7 -> rc=0 (15 ms)
+  {"method":"get_block_events","module":"blockchain_module","result":{"error":null,"success":true,"value":"[]"},"status":"ok"}
+
+$ logoscore call blockchain_module get_time_info -> rc=0 (14 ms)
+  {"method":"get_time_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"current_epoch\":2007,\"current_slot\":12043479,\"genesis_time_unix_ms\":1778280849000,\"slot_duration_ms\":1000}"},"status":"ok"}
+
+$ logoscore call blockchain_module get_network_info -> rc=0 (18 ms)
+  {"method":"get_network_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"n_connections\":0,\"n_discovered_peers\":0,\"n_peers\":0,\"n_pending_connections\":0}"},"status":"ok"}
+
+$ logoscore call blockchain_module blend_info -> rc=0 (22 ms)
+  {"method":"blend_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"node_id\":\"12D3KooWMHh7zzDWkasS3DD2nvHbLouKtfQmToZTs9c7ehXrgEoy\",\"core_info\":null}"},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_known_addresses -> rc=0 (28 ms)
+  {"method":"wallet_get_known_addresses","module":"blockchain_module","result":{"error":null,"success":true,"value":["39e16b432574571a6bcd8ee36e370589641bd9f35367f6f97a972453c46c3225","852efb444db8c3c811625850df39425f43aeffc69571192c0be9f72523256e0a","e3635f207984ae779cf76b5f20714b514373f61ff96260879fe0a6d71f2dce07","9750fa86471fddc69749aa9f8568ef6635e64d9f9aa815e8cb932cea183c8e18","cce9796339efd968df9cd463bc2248e4b29c86409496e8b2599da8c4c1074d22"]},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_balance 39e16b432574571a6bcd8ee36e370589641bd9f35367f6f97a972453c46c3225 -> rc=0 (18 ms)
+  {"method":"wallet_get_balance","module":"blockchain_module","result":{"error":null,"success":true,"value":"100"},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_balance 852efb444db8c3c811625850df39425f43aeffc69571192c0be9f72523256e0a -> rc=0 (22 ms)
+  {"method":"wallet_get_balance","module":"blockchain_module","result":{"error":null,"success":true,"value":"1"},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_balance e3635f207984ae779cf76b5f20714b514373f61ff96260879fe0a6d71f2dce07 -> rc=0 (16 ms)
+  {"method":"wallet_get_balance","module":"blockchain_module","result":{"error":null,"success":true,"value":"100000"},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_balance 9750fa86471fddc69749aa9f8568ef6635e64d9f9aa815e8cb932cea183c8e18 -> rc=0 (15 ms)
+  {"method":"wallet_get_balance","module":"blockchain_module","result":{"error":null,"success":true,"value":"100"},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_balance cce9796339efd968df9cd463bc2248e4b29c86409496e8b2599da8c4c1074d22 -> rc=0 (14 ms)
+  {"method":"wallet_get_balance","module":"blockchain_module","result":{"error":"Unknown wallet address.","success":false,"value":null},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_leader_aged_notes  -> rc=0 (14 ms)
+  {"method":"wallet_get_leader_aged_notes","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"notes\":[{\"id\":\"7302de07081f1558b6705822ea852113b936efc2ba63483bd62b6c1976678f2d\",\"public_key\":\"39e16b432574571a6bcd8ee36e370589641bd9f35367f6f97a972453c46c3225\",\"value\":\"100\"},{\"id\":\"ac541ea94f0db28a51a6990b69c6b94d3f02c49d454f871e9946e948d6dcbc1f\",\"public_key\":\"9750fa86471fddc69749aa9f8568ef6635e64d9f9aa815e8cb932cea183c8e18\",\"value\":\"100\"},{\"id\":\"f08aaa6388c8aa77e71fbc3a2a2b3edea5684e3b80bd7e778b8755bc893c0b0f\",\"public_key\":\"e3635f207984ae779cf76b5f20714b514373f61ff96260879fe0a6d71f2dce07\",\"value\":\"100000\"},{\"id\":\"a4405fdbd782bd39c4e388ac470c98fdca3e9edfdf7d2672bc63223d75dab721\",\"public_key\":\"852efb444db8c3c811625850df39425f43aeffc69571192c0be9f72523256e0a\",\"value\":\"1\"}],\"tip\":\"94ffab5fdf66637a9a5fd72b7e30e4debfcd1825542bec85093d30707ee5f049\",\"total_value\":\"100201\"}"},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_claimable_vouchers -> rc=0 (15 ms)
+  {"method":"wallet_get_claimable_vouchers","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"reward_amount\":\"0\",\"tip\":\"94ffab5fdf66637a9a5fd72b7e30e4debfcd1825542bec85093d30707ee5f049\",\"total_claimable\":\"0\",\"vouchers\":[]}"},"status":"ok"}
+
+$ logoscore call blockchain_module pow_claimable_rewards -> rc=0 (14 ms)
+  {"method":"pow_claimable_rewards","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"claimable_tickets\":0,\"slots_until_expiry\":[]}"},"status":"ok"}
+
+== ports ==
+udp   UNCONN 0      0                                     0.0.0.0:3210       0.0.0.0:*    users:(("logos_host",pid=3639944,fd=28),("logos_host",pid=3639944,fd=20))
+tcp   LISTEN 0      128                                 127.0.0.1:18481      0.0.0.0:*    users:(("logos_host",pid=3639944,fd=31))                                 
+== established inet conns of host ==
+== open files of host (non socket/pipe) ==
+      2 ${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db
+      1 ${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/MANIFEST-000009
+      1 ${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/LOG
+      1 ${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/LOCK
+      1 ${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/000040.sst
+      1 ${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/000039.log
+      1 ${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/000038.sst
+      1 ${REPO_ROOT}/.work/experiments/bc-desktop/logs/run2/nodelog/1780937654
+      1 ${REPO_ROOT}/MyLogFile.log
+      1 0
+== data dir tree ==
+10	${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data
+4	${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state
+238	${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db
+0	${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/LOCK
+36	${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/IDENTITY
+12527	${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/OPTIONS-000007
+39868	${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/LOG.old.1790323605726337
+128428	${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/LOG
+2850	${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/MANIFEST-000009
+16	${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/CURRENT
+12527	${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/OPTIONS-000011
+1231961	${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/000038.sst
+50868924	${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/000039.log
+880269	${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db/000040.sst
+53177406	${REPO_ROOT}/.work/experiments/bc-desktop/standalone-data/state/db
+== stop node ==
+$ logoscore call blockchain_module stop -> rc=0 (23 ms)
+  {"method":"stop","module":"blockchain_module","result":{"error":null,"success":true,"value":null},"status":"ok"}
+
+stop wall: 26 ms
+18:18:49 stopped pid=3639944 rss_kb=244792 hwm_kb=339544 threads=23 cpu_ticks=88102 fds=18
+events: 2127 lines; first 2000 bytes:
+{"data":{"arg0":"{\"block\":{\"header\":{\"id\":\"759ec14db4869f8585bc36107b254f4b633396c0f540d03491fd26ec12c12571\",\"parent_block\":\"bacd543e2ca38403ee9845e0732588a1bd79468c6b31b9c4a188329c05ebd003\",\"slot\":12042762,\"body_root\":\"273a6e9869625d85c45e53afff1d3100aec613d403be494c173030e6a05e4c9c\",\"proof_of_leadership\":{\"proof\":\"a3c15556a809f6be2a8e1fc6571d843dfbca8a71031d21897d02a6a60a99c49ba1f0f0cc74ba8d6998512cab64c534fa12db1ab6652346391758804687821921277dad90745aec8d05cab7ce97a6ce2b0a9ead85640d3d139ecf9c792c8b911118e67e6df631b336a5a2027a656db8cb079b4c83fa020d0729ef965ad78cc195\",\"entropy_contribution\":\"e831af2b88f25c94e2d0f2e65cf55781e3b578c13d36ee581ac61a8450de5530\",\"leader_key\":\"1841c5e9fcc9d579a784222fa96292e9577fd6b92f670429239b7cd769431336\",\"voucher_cm\":\"2d784f0fe87b93c04d6ac26e047d78c078cff60a873e707ffb013e493cf39c1b\"}},\"uncle_headers\":[],\"transactions\":[]},\"tip\":\"759ec14db4869f8585bc36107b254f4b633396c0f540d03491fd26ec12c12571\",\"tip_slot\":12042762,\"lib\":\"bacd543e2ca38403ee9845e0732588a1bd79468c6b31b9c4a188329c05ebd003\",\"lib_slot\":0}"},"event":"processedBlock","module":"blockchain_module","timestamp":"2026-09-25T08:06:51Z"}
+{"data":{"arg0":"{\"block\":\"{\\\"header\\\":{\\\"version\\\":\\\"Bedrock\\\",\\\"parent_block\\\":\\\"bacd543e2ca38403ee9845e0732588a1bd79468c6b31b9c4a188329c05ebd003\\\",\\\"slot\\\":12042762,\\\"body_root\\\":\\\"273a6e9869625d85c45e53afff1d3100aec613d403be494c173030e6a05e4c9c\\\",\\\"proof_of_leadership\\\":{\\\"proof\\\":\\\"a3c15556a809f6be2a8e1fc6571d843dfbca8a71031d21897d02a6a60a99c49ba1f0f0cc74ba8d6998512cab64c534fa12db1ab6652346391758804687821921277dad90745aec8d05cab7ce97a6ce2b0a9ead85640d3d139ecf9c792c8b911118e67e6df631b336a5a2027a656db8cb079b4c83fa020d0729ef965ad78cc195\\\",\\\"entropy_contribution\\\":\\\"e831af2b88f25c94e2d0f2e65cf55781e3b578c13d36ee581ac61a8450de5530\\\",\\\"leader_key\\\":\\\"1841c5e9fcc9d579a784222fa96292e9577fd6b92f670429239b7cd769431336\\\",\\\"voucher_cm\\\":\\\
+== stop daemon ==
+$ logoscore stop -> rc=0 (13 ms)
+  {"message":"Daemon shutting down.","status":"ok"}
+
+daemon (strace 3639925) exited
+leftover:
+total 0
+drwxr-xr-x. 1 fryorcraken fryorcraken   0 Sep 25 18:18 .
+drwxr-xr-x. 1 fryorcraken fryorcraken 404 Sep 25 18:13 ..
+== run2 end 2026-09-25T18:18:49+10:00 ==

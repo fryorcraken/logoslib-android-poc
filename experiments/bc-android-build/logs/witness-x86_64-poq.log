@@ -1,0 +1,956 @@
+make: Entering directory '${REPO_ROOT}/.work/experiments/bc-android-build/build/circuits/x86_64/poq'
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang++ -I${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/gmp/package_android_x86_64/include -I${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include -std=c++11 -O3 -I. -Wno-address-of-packed-member -Dmain=circom_main -fPIC -c main.cpp -o main.o
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang++ -I${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/gmp/package_android_x86_64/include -I${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include -std=c++11 -O3 -I. -Wno-address-of-packed-member -Dmain=circom_main -fPIC -c calcwit.cpp -o calcwit.o
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang++ -I${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/gmp/package_android_x86_64/include -I${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include -std=c++11 -O3 -I. -Wno-address-of-packed-member -Dmain=circom_main -fPIC -c fr.cpp -o fr.o
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang++ -I${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/gmp/package_android_x86_64/include -I${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include -std=c++11 -O3 -I. -Wno-address-of-packed-member -Dmain=circom_main -fPIC -c poq.cpp -o poq.o
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang++ -I${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/gmp/package_android_x86_64/include -I${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include -std=c++11 -O3 -I. -Wno-address-of-packed-member -Dmain=circom_main -fPIC -c poq/ffi.cpp -o poq/ffi.o
+In file included from main.cpp:9:
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14405:9: warning: 'sub' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 14405 |         JSON_ASSERT(x.f >= y.f);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14402:18: note: function declared non-throwing here
+ 14402 |     static diyfp sub(const diyfp& x, const diyfp& y) noexcept
+       |                  ^                                   ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14404:9: warning: 'sub' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 14404 |         JSON_ASSERT(x.e == y.e);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14402:18: note: function declared non-throwing here
+ 14402 |     static diyfp sub(const diyfp& x, const diyfp& y) noexcept
+       |                  ^                                   ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14481:9: warning: 'normalize' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 14481 |         JSON_ASSERT(x.f != 0);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14479:18: note: function declared non-throwing here
+ 14479 |     static diyfp normalize(diyfp x) noexcept
+       |                  ^                  ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14501:9: warning: 'normalize_to' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 14501 |         JSON_ASSERT(((x.f << delta) >> delta) == x.f);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14496:18: note: function declared non-throwing here
+ 14496 |     static diyfp normalize_to(const diyfp& x, const int target_exponent) noexcept
+       |                  ^                                                       ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14500:9: warning: 'normalize_to' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 14500 |         JSON_ASSERT(delta >= 0);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14496:18: note: function declared non-throwing here
+ 14496 |     static diyfp normalize_to(const diyfp& x, const int target_exponent) noexcept
+       |                  ^                                                       ~~~~~~~~
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang++ -I${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/gmp/package_android_x86_64/include -I${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include -std=c++11 -O3 -I. -Wno-address-of-packed-member -Dmain=circom_main -fPIC -c circom_adapter.cpp -o circom_adapter.o
+main.cpp:60:17: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   60 |       u32 index[get_size_of_io_map()];
+      |                 ^~~~~~~~~~~~~~~~~~~~
+main.cpp:60:17: note: non-constexpr function 'get_size_of_io_map' cannot be used in a constant expression
+./circom.hpp:86:6: note: declared here
+   86 | uint get_size_of_io_map();
+      |      ^
+main.cpp:67:21: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   67 |       u32 dataiomap[(sb.st_size-inisize)/sizeof(u32)];
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.cpp:67:22: note: read of non-constexpr variable 'sb' is not allowed in a constant expression
+   67 |       u32 dataiomap[(sb.st_size-inisize)/sizeof(u32)];
+      |                      ^
+main.cpp:26:17: note: declared here
+   26 |     struct stat sb;
+      |                 ^
+main.cpp:74:18: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   74 |         IOFieldDef defs[n];
+      |                         ^
+main.cpp:74:18: note: read of non-const variable 'n' is not allowed in a constant expression
+main.cpp:71:6: note: declared here
+   71 |         u32 n = *pu32;
+      |             ^
+main.cpp:98:18: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   98 |         IOFieldDef defs[n];
+      |                         ^
+main.cpp:98:18: note: read of non-const variable 'n' is not allowed in a constant expression
+main.cpp:95:6: note: declared here
+   95 |         u32 n = *pu32;
+      |             ^
+main.cpp:118:43: warning: unqualified call to 'std::move' [-Wunqualified-std-cast-call]
+  118 |     circuit->templateInsId2IOSignalInfo = move(templateInsId2IOSignalInfo1);
+      |                                           ^
+      |                                           std::
+In file included from main.cpp:9:
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10856:9: warning: 'iter_impl' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10856 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:21008:24: note: in instantiation of member function 'nlohmann::detail::iter_impl<const nlohmann::basic_json<>>::iter_impl' requested here
+ 21008 |         const_iterator result(this);
+       |                        ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:20978:16: note: in instantiation of member function 'nlohmann::basic_json<>::cbegin' requested here
+ 20978 |         return cbegin();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:4644:38: note: in instantiation of member function 'nlohmann::basic_json<>::begin' requested here
+ 4644 |             for (const auto& element : j)
+      |                                      ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25197:34: note: in instantiation of function template specialization 'nlohmann::detail::hash<nlohmann::basic_json<>>' requested here
+ 25197 |         return nlohmann::detail::hash(j);
+       |                                  ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10854:14: note: function declared non-throwing here
+ 10854 |     explicit iter_impl(pointer object) noexcept : m_object(object)
+       |              ^                         ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10942:9: warning: 'set_begin' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10942 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:21009:16: note: in instantiation of member function 'nlohmann::detail::iter_impl<const nlohmann::basic_json<>>::set_begin' requested here
+ 21009 |         result.set_begin();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:20978:16: note: in instantiation of member function 'nlohmann::basic_json<>::cbegin' requested here
+ 20978 |         return cbegin();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:4644:38: note: in instantiation of member function 'nlohmann::basic_json<>::begin' requested here
+ 4644 |             for (const auto& element : j)
+      |                                      ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25197:34: note: in instantiation of function template specialization 'nlohmann::detail::hash<nlohmann::basic_json<>>' requested here
+ 25197 |         return nlohmann::detail::hash(j);
+       |                                  ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10940:10: note: function declared non-throwing here
+ 10940 |     void set_begin() noexcept
+       |          ^           ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10979:9: warning: 'set_end' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10979 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:21080:16: note: in instantiation of member function 'nlohmann::detail::iter_impl<const nlohmann::basic_json<>>::set_end' requested here
+ 21080 |         result.set_end();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:21049:16: note: in instantiation of member function 'nlohmann::basic_json<>::cend' requested here
+ 21049 |         return cend();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:4644:38: note: in instantiation of member function 'nlohmann::basic_json<>::end' requested here
+ 4644 |             for (const auto& element : j)
+      |                                      ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25197:34: note: in instantiation of function template specialization 'nlohmann::detail::hash<nlohmann::basic_json<>>' requested here
+ 25197 |         return nlohmann::detail::hash(j);
+       |                                  ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10977:10: note: function declared non-throwing here
+ 10977 |     void set_end() noexcept
+       |          ^         ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17715:9: warning: 'assert_invariant' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 17715 |         JSON_ASSERT(m_type != value_t::binary || m_value.binary != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:22368:9: note: in instantiation of member function 'nlohmann::basic_json<>::assert_invariant' requested here
+ 22368 |         assert_invariant();
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25232:8: note: in instantiation of member function 'nlohmann::basic_json<>::swap' requested here
+ 25232 |     j1.swap(j2);
+       |        ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17710:10: note: function declared non-throwing here
+ 17710 |     void assert_invariant() const noexcept
+       |          ^                        ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17714:9: warning: 'assert_invariant' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 17714 |         JSON_ASSERT(m_type != value_t::string || m_value.string != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17710:10: note: function declared non-throwing here
+ 17710 |     void assert_invariant() const noexcept
+       |          ^                        ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17713:9: warning: 'assert_invariant' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 17713 |         JSON_ASSERT(m_type != value_t::array || m_value.array != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17710:10: note: function declared non-throwing here
+ 17710 |     void assert_invariant() const noexcept
+       |          ^                        ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17712:9: warning: 'assert_invariant' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 17712 |         JSON_ASSERT(m_type != value_t::object || m_value.object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17710:10: note: function declared non-throwing here
+ 17710 |     void assert_invariant() const noexcept
+       |          ^                        ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:6017:9: warning: 'get_decimal_point' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 6017 |         JSON_ASSERT(loc != nullptr);
+      |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:5997:57: note: in instantiation of member function 'nlohmann::detail::lexer<nlohmann::basic_json<>, nlohmann::detail::iterator_input_adapter<const char *>>::get_decimal_point' requested here
+ 5997 |         , decimal_point_char(static_cast<char_int_type>(get_decimal_point()))
+      |                                                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10179:11: note: in instantiation of member function 'nlohmann::detail::lexer<nlohmann::basic_json<>, nlohmann::detail::iterator_input_adapter<const char *>>::lexer' requested here
+ 10179 |         , m_lexer(std::move(adapter), skip_comments)
+       |           ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:16691:16: note: in instantiation of member function 'nlohmann::detail::parser<nlohmann::basic_json<>, nlohmann::detail::iterator_input_adapter<const char *>>::parser' requested here
+ 16691 |         return ::nlohmann::detail::parser<basic_json, InputAdapterType>(std::move(adapter),
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:23181:9: note: in instantiation of function template specialization 'nlohmann::basic_json<>::parser<nlohmann::detail::iterator_input_adapter<const char *>>' requested here
+ 23181 |         parser(detail::input_adapter(std::move(first), std::move(last)), cb, allow_exceptions, ignore_comments).parse(true, result);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25255:28: note: in instantiation of function template specialization 'nlohmann::basic_json<>::parse<const char *>' requested here
+ 25255 |     return nlohmann::json::parse(s, s + n);
+       |                            ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:6014:17: note: function declared non-throwing here
+ 6014 |     static char get_decimal_point() noexcept
+      |                 ^                   ~~~~~~~~
+In file included from circom_adapter.cpp:2:
+In file included from ./circom_fwd.hpp:13:
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14405:9: warning: 'sub' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 14405 |         JSON_ASSERT(x.f >= y.f);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14402:18: note: function declared non-throwing here
+ 14402 |     static diyfp sub(const diyfp& x, const diyfp& y) noexcept
+       |                  ^                                   ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14404:9: warning: 'sub' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 14404 |         JSON_ASSERT(x.e == y.e);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14402:18: note: function declared non-throwing here
+ 14402 |     static diyfp sub(const diyfp& x, const diyfp& y) noexcept
+       |                  ^                                   ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14481:9: warning: 'normalize' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 14481 |         JSON_ASSERT(x.f != 0);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14479:18: note: function declared non-throwing here
+ 14479 |     static diyfp normalize(diyfp x) noexcept
+       |                  ^                  ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14501:9: warning: 'normalize_to' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 14501 |         JSON_ASSERT(((x.f << delta) >> delta) == x.f);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14496:18: note: function declared non-throwing here
+ 14496 |     static diyfp normalize_to(const diyfp& x, const int target_exponent) noexcept
+       |                  ^                                                       ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14500:9: warning: 'normalize_to' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 14500 |         JSON_ASSERT(delta >= 0);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14496:18: note: function declared non-throwing here
+ 14496 |     static diyfp normalize_to(const diyfp& x, const int target_exponent) noexcept
+       |                  ^                                                       ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10856:9: warning: 'iter_impl' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10856 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:20968:18: note: in instantiation of member function 'nlohmann::detail::iter_impl<nlohmann::basic_json<>>::iter_impl' requested here
+ 20968 |         iterator result(this);
+       |                  ^
+main.cpp:232:33: note: in instantiation of member function 'nlohmann::basic_json<>::begin' requested here
+  232 |     for (json::iterator it = in.begin(); it != in.end(); ++it) {
+      |                                 ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10854:14: note: function declared non-throwing here
+ 10854 |     explicit iter_impl(pointer object) noexcept : m_object(object)
+       |              ^                         ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10942:9: warning: 'set_begin' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10942 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:20969:16: note: in instantiation of member function 'nlohmann::detail::iter_impl<nlohmann::basic_json<>>::set_begin' requested here
+ 20969 |         result.set_begin();
+       |                ^
+main.cpp:232:33: note: in instantiation of member function 'nlohmann::basic_json<>::begin' requested here
+  232 |     for (json::iterator it = in.begin(); it != in.end(); ++it) {
+      |                                 ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10940:10: note: function declared non-throwing here
+ 10940 |     void set_begin() noexcept
+       |          ^           ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10979:9: warning: 'set_end' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10979 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:21040:16: note: in instantiation of member function 'nlohmann::detail::iter_impl<nlohmann::basic_json<>>::set_end' requested here
+ 21040 |         result.set_end();
+       |                ^
+main.cpp:232:51: note: in instantiation of member function 'nlohmann::basic_json<>::end' requested here
+  232 |     for (json::iterator it = in.begin(); it != in.end(); ++it) {
+      |                                                   ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10977:10: note: function declared non-throwing here
+ 10977 |     void set_end() noexcept
+       |          ^         ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:6017:9: warning: 'get_decimal_point' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 6017 |         JSON_ASSERT(loc != nullptr);
+      |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:5997:57: note: in instantiation of member function 'nlohmann::detail::lexer<nlohmann::basic_json<>, nlohmann::detail::input_stream_adapter>::get_decimal_point' requested here
+ 5997 |         , decimal_point_char(static_cast<char_int_type>(get_decimal_point()))
+      |                                                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10179:11: note: in instantiation of member function 'nlohmann::detail::lexer<nlohmann::basic_json<>, nlohmann::detail::input_stream_adapter>::lexer' requested here
+ 10179 |         , m_lexer(std::move(adapter), skip_comments)
+       |           ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:16691:16: note: in instantiation of member function 'nlohmann::detail::parser<nlohmann::basic_json<>, nlohmann::detail::input_stream_adapter>::parser' requested here
+ 16691 |         return ::nlohmann::detail::parser<basic_json, InputAdapterType>(std::move(adapter),
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:23370:9: note: in instantiation of function template specialization 'nlohmann::basic_json<>::parser<nlohmann::detail::input_stream_adapter>' requested here
+ 23370 |         parser(detail::input_adapter(i)).parse(false, j);
+       |         ^
+main.cpp:244:12: note: in instantiation of member function 'nlohmann::operator>>' requested here
+  244 |   inStream >> jin;
+      |            ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:6014:17: note: function declared non-throwing here
+ 6014 |     static char get_decimal_point() noexcept
+      |                 ^                   ~~~~~~~~
+In file included from poq/ffi.cpp:2:
+In file included from ./circom_fwd.hpp:13:
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14405:9: warning: 'sub' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 14405 |         JSON_ASSERT(x.f >= y.f);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14402:18: note: function declared non-throwing here
+ 14402 |     static diyfp sub(const diyfp& x, const diyfp& y) noexcept
+       |                  ^                                   ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14404:9: warning: 'sub' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 14404 |         JSON_ASSERT(x.e == y.e);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14402:18: note: function declared non-throwing here
+ 14402 |     static diyfp sub(const diyfp& x, const diyfp& y) noexcept
+       |                  ^                                   ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14481:9: warning: 'normalize' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 14481 |         JSON_ASSERT(x.f != 0);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14479:18: note: function declared non-throwing here
+ 14479 |     static diyfp normalize(diyfp x) noexcept
+       |                  ^                  ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14501:9: warning: 'normalize_to' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 14501 |         JSON_ASSERT(((x.f << delta) >> delta) == x.f);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14496:18: note: function declared non-throwing here
+ 14496 |     static diyfp normalize_to(const diyfp& x, const int target_exponent) noexcept
+       |                  ^                                                       ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14500:9: warning: 'normalize_to' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 14500 |         JSON_ASSERT(delta >= 0);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:14496:18: note: function declared non-throwing here
+ 14496 |     static diyfp normalize_to(const diyfp& x, const int target_exponent) noexcept
+       |                  ^                                                       ~~~~~~~~
+circom_adapter.cpp:41:19: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   41 |         u32 index[get_size_of_io_map()];
+      |                   ^~~~~~~~~~~~~~~~~~~~
+circom_adapter.cpp:41:19: note: non-constexpr function 'get_size_of_io_map' cannot be used in a constant expression
+./circom.hpp:86:6: note: declared here
+   86 | uint get_size_of_io_map();
+      |      ^
+circom_adapter.cpp:48:23: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   48 |         u32 dataiomap[(circuit_bytes.size - inisize) / sizeof(u32)];
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+circom_adapter.cpp:48:24: note: function parameter 'circuit_bytes' with unknown value cannot be used in a constant expression
+   48 |         u32 dataiomap[(circuit_bytes.size - inisize) / sizeof(u32)];
+      |                        ^
+circom_adapter.cpp:19:47: note: declared here
+   19 | Circom_Circuit* loadCircuit(const ConstBytes& circuit_bytes) {
+      |                                               ^
+circom_adapter.cpp:55:29: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   55 |             IOFieldDef defs[n];
+      |                             ^
+circom_adapter.cpp:55:29: note: read of non-const variable 'n' is not allowed in a constant expression
+circom_adapter.cpp:52:17: note: declared here
+   52 |             u32 n = *pu32;
+      |                 ^
+circom_adapter.cpp:79:29: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   79 |             IOFieldDef defs[n];
+      |                             ^
+circom_adapter.cpp:79:29: note: read of non-const variable 'n' is not allowed in a constant expression
+circom_adapter.cpp:76:17: note: declared here
+   76 |             u32 n = *pu32;
+      |                 ^
+circom_adapter.cpp:99:43: warning: unqualified call to 'std::move' [-Wunqualified-std-cast-call]
+   99 |     circuit->templateInsId2IOSignalInfo = move(templateInsId2IOSignalInfo1);
+      |                                           ^
+      |                                           std::
+In file included from circom_adapter.cpp:2:
+In file included from ./circom_fwd.hpp:13:
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10856:9: warning: 'iter_impl' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10856 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:21008:24: note: in instantiation of member function 'nlohmann::detail::iter_impl<const nlohmann::basic_json<>>::iter_impl' requested here
+ 21008 |         const_iterator result(this);
+       |                        ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:20978:16: note: in instantiation of member function 'nlohmann::basic_json<>::cbegin' requested here
+ 20978 |         return cbegin();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:4644:38: note: in instantiation of member function 'nlohmann::basic_json<>::begin' requested here
+ 4644 |             for (const auto& element : j)
+      |                                      ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25197:34: note: in instantiation of function template specialization 'nlohmann::detail::hash<nlohmann::basic_json<>>' requested here
+ 25197 |         return nlohmann::detail::hash(j);
+       |                                  ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10854:14: note: function declared non-throwing here
+ 10854 |     explicit iter_impl(pointer object) noexcept : m_object(object)
+       |              ^                         ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10942:9: warning: 'set_begin' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10942 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:21009:16: note: in instantiation of member function 'nlohmann::detail::iter_impl<const nlohmann::basic_json<>>::set_begin' requested here
+ 21009 |         result.set_begin();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:20978:16: note: in instantiation of member function 'nlohmann::basic_json<>::cbegin' requested here
+ 20978 |         return cbegin();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:4644:38: note: in instantiation of member function 'nlohmann::basic_json<>::begin' requested here
+ 4644 |             for (const auto& element : j)
+      |                                      ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25197:34: note: in instantiation of function template specialization 'nlohmann::detail::hash<nlohmann::basic_json<>>' requested here
+ 25197 |         return nlohmann::detail::hash(j);
+       |                                  ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10940:10: note: function declared non-throwing here
+ 10940 |     void set_begin() noexcept
+       |          ^           ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10979:9: warning: 'set_end' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10979 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:21080:16: note: in instantiation of member function 'nlohmann::detail::iter_impl<const nlohmann::basic_json<>>::set_end' requested here
+ 21080 |         result.set_end();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:21049:16: note: in instantiation of member function 'nlohmann::basic_json<>::cend' requested here
+ 21049 |         return cend();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:4644:38: note: in instantiation of member function 'nlohmann::basic_json<>::end' requested here
+ 4644 |             for (const auto& element : j)
+      |                                      ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25197:34: note: in instantiation of function template specialization 'nlohmann::detail::hash<nlohmann::basic_json<>>' requested here
+ 25197 |         return nlohmann::detail::hash(j);
+       |                                  ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10977:10: note: function declared non-throwing here
+ 10977 |     void set_end() noexcept
+       |          ^         ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17715:9: warning: 'assert_invariant' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 17715 |         JSON_ASSERT(m_type != value_t::binary || m_value.binary != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:22368:9: note: in instantiation of member function 'nlohmann::basic_json<>::assert_invariant' requested here
+ 22368 |         assert_invariant();
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25232:8: note: in instantiation of member function 'nlohmann::basic_json<>::swap' requested here
+ 25232 |     j1.swap(j2);
+       |        ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17710:10: note: function declared non-throwing here
+ 17710 |     void assert_invariant() const noexcept
+       |          ^                        ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17714:9: warning: 'assert_invariant' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 17714 |         JSON_ASSERT(m_type != value_t::string || m_value.string != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17710:10: note: function declared non-throwing here
+ 17710 |     void assert_invariant() const noexcept
+       |          ^                        ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17713:9: warning: 'assert_invariant' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 17713 |         JSON_ASSERT(m_type != value_t::array || m_value.array != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17710:10: note: function declared non-throwing here
+ 17710 |     void assert_invariant() const noexcept
+       |          ^                        ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17712:9: warning: 'assert_invariant' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 17712 |         JSON_ASSERT(m_type != value_t::object || m_value.object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17710:10: note: function declared non-throwing here
+ 17710 |     void assert_invariant() const noexcept
+       |          ^                        ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:6017:9: warning: 'get_decimal_point' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 6017 |         JSON_ASSERT(loc != nullptr);
+      |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:5997:57: note: in instantiation of member function 'nlohmann::detail::lexer<nlohmann::basic_json<>, nlohmann::detail::iterator_input_adapter<const char *>>::get_decimal_point' requested here
+ 5997 |         , decimal_point_char(static_cast<char_int_type>(get_decimal_point()))
+      |                                                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10179:11: note: in instantiation of member function 'nlohmann::detail::lexer<nlohmann::basic_json<>, nlohmann::detail::iterator_input_adapter<const char *>>::lexer' requested here
+ 10179 |         , m_lexer(std::move(adapter), skip_comments)
+       |           ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:16691:16: note: in instantiation of member function 'nlohmann::detail::parser<nlohmann::basic_json<>, nlohmann::detail::iterator_input_adapter<const char *>>::parser' requested here
+ 16691 |         return ::nlohmann::detail::parser<basic_json, InputAdapterType>(std::move(adapter),
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:23181:9: note: in instantiation of function template specialization 'nlohmann::basic_json<>::parser<nlohmann::detail::iterator_input_adapter<const char *>>' requested here
+ 23181 |         parser(detail::input_adapter(std::move(first), std::move(last)), cb, allow_exceptions, ignore_comments).parse(true, result);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25255:28: note: in instantiation of function template specialization 'nlohmann::basic_json<>::parse<const char *>' requested here
+ 25255 |     return nlohmann::json::parse(s, s + n);
+       |                            ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:6014:17: note: function declared non-throwing here
+ 6014 |     static char get_decimal_point() noexcept
+      |                 ^                   ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10856:9: warning: 'iter_impl' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10856 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:21008:24: note: in instantiation of member function 'nlohmann::detail::iter_impl<const nlohmann::basic_json<>>::iter_impl' requested here
+ 21008 |         const_iterator result(this);
+       |                        ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:20978:16: note: in instantiation of member function 'nlohmann::basic_json<>::cbegin' requested here
+ 20978 |         return cbegin();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:4644:38: note: in instantiation of member function 'nlohmann::basic_json<>::begin' requested here
+ 4644 |             for (const auto& element : j)
+      |                                      ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25197:34: note: in instantiation of function template specialization 'nlohmann::detail::hash<nlohmann::basic_json<>>' requested here
+ 25197 |         return nlohmann::detail::hash(j);
+       |                                  ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10854:14: note: function declared non-throwing here
+ 10854 |     explicit iter_impl(pointer object) noexcept : m_object(object)
+       |              ^                         ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10942:9: warning: 'set_begin' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10942 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:21009:16: note: in instantiation of member function 'nlohmann::detail::iter_impl<const nlohmann::basic_json<>>::set_begin' requested here
+ 21009 |         result.set_begin();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:20978:16: note: in instantiation of member function 'nlohmann::basic_json<>::cbegin' requested here
+ 20978 |         return cbegin();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:4644:38: note: in instantiation of member function 'nlohmann::basic_json<>::begin' requested here
+ 4644 |             for (const auto& element : j)
+      |                                      ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25197:34: note: in instantiation of function template specialization 'nlohmann::detail::hash<nlohmann::basic_json<>>' requested here
+ 25197 |         return nlohmann::detail::hash(j);
+       |                                  ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10940:10: note: function declared non-throwing here
+ 10940 |     void set_begin() noexcept
+       |          ^           ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10979:9: warning: 'set_end' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10979 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:21080:16: note: in instantiation of member function 'nlohmann::detail::iter_impl<const nlohmann::basic_json<>>::set_end' requested here
+ 21080 |         result.set_end();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:21049:16: note: in instantiation of member function 'nlohmann::basic_json<>::cend' requested here
+ 21049 |         return cend();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:4644:38: note: in instantiation of member function 'nlohmann::basic_json<>::end' requested here
+ 4644 |             for (const auto& element : j)
+      |                                      ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25197:34: note: in instantiation of function template specialization 'nlohmann::detail::hash<nlohmann::basic_json<>>' requested here
+ 25197 |         return nlohmann::detail::hash(j);
+       |                                  ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10977:10: note: function declared non-throwing here
+ 10977 |     void set_end() noexcept
+       |          ^         ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17715:9: warning: 'assert_invariant' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 17715 |         JSON_ASSERT(m_type != value_t::binary || m_value.binary != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:22368:9: note: in instantiation of member function 'nlohmann::basic_json<>::assert_invariant' requested here
+ 22368 |         assert_invariant();
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25232:8: note: in instantiation of member function 'nlohmann::basic_json<>::swap' requested here
+ 25232 |     j1.swap(j2);
+       |        ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17710:10: note: function declared non-throwing here
+ 17710 |     void assert_invariant() const noexcept
+       |          ^                        ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17714:9: warning: 'assert_invariant' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 17714 |         JSON_ASSERT(m_type != value_t::string || m_value.string != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17710:10: note: function declared non-throwing here
+ 17710 |     void assert_invariant() const noexcept
+       |          ^                        ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17713:9: warning: 'assert_invariant' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 17713 |         JSON_ASSERT(m_type != value_t::array || m_value.array != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17710:10: note: function declared non-throwing here
+ 17710 |     void assert_invariant() const noexcept
+       |          ^                        ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17712:9: warning: 'assert_invariant' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 17712 |         JSON_ASSERT(m_type != value_t::object || m_value.object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:17710:10: note: function declared non-throwing here
+ 17710 |     void assert_invariant() const noexcept
+       |          ^                        ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:6017:9: warning: 'get_decimal_point' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 6017 |         JSON_ASSERT(loc != nullptr);
+      |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:5997:57: note: in instantiation of member function 'nlohmann::detail::lexer<nlohmann::basic_json<>, nlohmann::detail::iterator_input_adapter<const char *>>::get_decimal_point' requested here
+ 5997 |         , decimal_point_char(static_cast<char_int_type>(get_decimal_point()))
+      |                                                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10179:11: note: in instantiation of member function 'nlohmann::detail::lexer<nlohmann::basic_json<>, nlohmann::detail::iterator_input_adapter<const char *>>::lexer' requested here
+ 10179 |         , m_lexer(std::move(adapter), skip_comments)
+       |           ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:16691:16: note: in instantiation of member function 'nlohmann::detail::parser<nlohmann::basic_json<>, nlohmann::detail::iterator_input_adapter<const char *>>::parser' requested here
+ 16691 |         return ::nlohmann::detail::parser<basic_json, InputAdapterType>(std::move(adapter),
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:23181:9: note: in instantiation of function template specialization 'nlohmann::basic_json<>::parser<nlohmann::detail::iterator_input_adapter<const char *>>' requested here
+ 23181 |         parser(detail::input_adapter(std::move(first), std::move(last)), cb, allow_exceptions, ignore_comments).parse(true, result);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25255:28: note: in instantiation of function template specialization 'nlohmann::basic_json<>::parse<const char *>' requested here
+ 25255 |     return nlohmann::json::parse(s, s + n);
+       |                            ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:6014:17: note: function declared non-throwing here
+ 6014 |     static char get_decimal_point() noexcept
+      |                 ^                   ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10856:9: warning: 'iter_impl' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10856 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:20968:18: note: in instantiation of member function 'nlohmann::detail::iter_impl<nlohmann::basic_json<>>::iter_impl' requested here
+ 20968 |         iterator result(this);
+       |                  ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:5621:46: note: in instantiation of member function 'nlohmann::basic_json<>::begin' requested here
+ 5621 |             for (auto it = ref_stack.back()->begin(); it != ref_stack.back()->end(); ++it)
+      |                                              ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10310:60: note: in instantiation of member function 'nlohmann::detail::json_sax_dom_callback_parser<nlohmann::basic_json<>>::end_object' requested here
+ 10310 |                             if (JSON_HEDLEY_UNLIKELY(!sax->end_object()))
+       |                                                            ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10201:13: note: in instantiation of function template specialization 'nlohmann::detail::parser<nlohmann::basic_json<>, nlohmann::detail::iterator_input_adapter<const char *>>::sax_parse_internal<nlohmann::detail::json_sax_dom_callback_parser<nlohmann::basic_json<>>>' requested here
+ 10201 |             sax_parse_internal(&sdp);
+       |             ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:23181:113: note: in instantiation of member function 'nlohmann::detail::parser<nlohmann::basic_json<>, nlohmann::detail::iterator_input_adapter<const char *>>::parse' requested here
+ 23181 |         parser(detail::input_adapter(std::move(first), std::move(last)), cb, allow_exceptions, ignore_comments).parse(true, result);
+       |                                                                                                                 ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25255:28: note: in instantiation of function template specialization 'nlohmann::basic_json<>::parse<const char *>' requested here
+ 25255 |     return nlohmann::json::parse(s, s + n);
+       |                            ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10854:14: note: function declared non-throwing here
+ 10854 |     explicit iter_impl(pointer object) noexcept : m_object(object)
+       |              ^                         ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10942:9: warning: 'set_begin' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10942 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:20969:16: note: in instantiation of member function 'nlohmann::detail::iter_impl<nlohmann::basic_json<>>::set_begin' requested here
+ 20969 |         result.set_begin();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:5621:46: note: in instantiation of member function 'nlohmann::basic_json<>::begin' requested here
+ 5621 |             for (auto it = ref_stack.back()->begin(); it != ref_stack.back()->end(); ++it)
+      |                                              ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10310:60: note: in instantiation of member function 'nlohmann::detail::json_sax_dom_callback_parser<nlohmann::basic_json<>>::end_object' requested here
+ 10310 |                             if (JSON_HEDLEY_UNLIKELY(!sax->end_object()))
+       |                                                            ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10201:13: note: in instantiation of function template specialization 'nlohmann::detail::parser<nlohmann::basic_json<>, nlohmann::detail::iterator_input_adapter<const char *>>::sax_parse_internal<nlohmann::detail::json_sax_dom_callback_parser<nlohmann::basic_json<>>>' requested here
+ 10201 |             sax_parse_internal(&sdp);
+       |             ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:23181:113: note: in instantiation of member function 'nlohmann::detail::parser<nlohmann::basic_json<>, nlohmann::detail::iterator_input_adapter<const char *>>::parse' requested here
+ 23181 |         parser(detail::input_adapter(std::move(first), std::move(last)), cb, allow_exceptions, ignore_comments).parse(true, result);
+       |                                                                                                                 ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25255:28: note: in instantiation of function template specialization 'nlohmann::basic_json<>::parse<const char *>' requested here
+ 25255 |     return nlohmann::json::parse(s, s + n);
+       |                            ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10940:10: note: function declared non-throwing here
+ 10940 |     void set_begin() noexcept
+       |          ^           ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10979:9: warning: 'set_end' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10979 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:21040:16: note: in instantiation of member function 'nlohmann::detail::iter_impl<nlohmann::basic_json<>>::set_end' requested here
+ 21040 |         result.set_end();
+       |                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:5621:79: note: in instantiation of member function 'nlohmann::basic_json<>::end' requested here
+ 5621 |             for (auto it = ref_stack.back()->begin(); it != ref_stack.back()->end(); ++it)
+      |                                                                               ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10310:60: note: in instantiation of member function 'nlohmann::detail::json_sax_dom_callback_parser<nlohmann::basic_json<>>::end_object' requested here
+ 10310 |                             if (JSON_HEDLEY_UNLIKELY(!sax->end_object()))
+       |                                                            ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10201:13: note: in instantiation of function template specialization 'nlohmann::detail::parser<nlohmann::basic_json<>, nlohmann::detail::iterator_input_adapter<const char *>>::sax_parse_internal<nlohmann::detail::json_sax_dom_callback_parser<nlohmann::basic_json<>>>' requested here
+ 10201 |             sax_parse_internal(&sdp);
+       |             ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:23181:113: note: in instantiation of member function 'nlohmann::detail::parser<nlohmann::basic_json<>, nlohmann::detail::iterator_input_adapter<const char *>>::parse' requested here
+ 23181 |         parser(detail::input_adapter(std::move(first), std::move(last)), cb, allow_exceptions, ignore_comments).parse(true, result);
+       |                                                                                                                 ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:25255:28: note: in instantiation of function template specialization 'nlohmann::basic_json<>::parse<const char *>' requested here
+ 25255 |     return nlohmann::json::parse(s, s + n);
+       |                            ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10977:10: note: function declared non-throwing here
+ 10977 |     void set_end() noexcept
+       |          ^         ~~~~~~~~
+16 warnings generated.
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10856:9: warning: 'iter_impl' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10856 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:20968:18: note: in instantiation of member function 'nlohmann::detail::iter_impl<nlohmann::basic_json<>>::iter_impl' requested here
+ 20968 |         iterator result(this);
+       |                  ^
+circom_adapter.cpp:119:32: note: in instantiation of member function 'nlohmann::basic_json<>::begin' requested here
+  119 |     for (json::iterator it = j.begin(); it != j.end(); ++it) {
+      |                                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10854:14: note: function declared non-throwing here
+ 10854 |     explicit iter_impl(pointer object) noexcept : m_object(object)
+       |              ^                         ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10942:9: warning: 'set_begin' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10942 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:20969:16: note: in instantiation of member function 'nlohmann::detail::iter_impl<nlohmann::basic_json<>>::set_begin' requested here
+ 20969 |         result.set_begin();
+       |                ^
+circom_adapter.cpp:119:32: note: in instantiation of member function 'nlohmann::basic_json<>::begin' requested here
+  119 |     for (json::iterator it = j.begin(); it != j.end(); ++it) {
+      |                                ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10940:10: note: function declared non-throwing here
+ 10940 |     void set_begin() noexcept
+       |          ^           ~~~~~~~~
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10979:9: warning: 'set_end' has a non-throwing exception specification but can still throw [-Wexceptions]
+ 10979 |         JSON_ASSERT(m_object != nullptr);
+       |         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:2100:28: note: expanded from macro 'JSON_ASSERT'
+ 2100 |     #define JSON_ASSERT(x) assert(x)
+      |                            ^
+./assert.h:26:25: note: expanded from macro 'assert'
+   26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      |                         ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:21040:16: note: in instantiation of member function 'nlohmann::detail::iter_impl<nlohmann::basic_json<>>::set_end' requested here
+ 21040 |         result.set_end();
+       |                ^
+circom_adapter.cpp:119:49: note: in instantiation of member function 'nlohmann::basic_json<>::end' requested here
+  119 |     for (json::iterator it = j.begin(); it != j.end(); ++it) {
+      |                                                 ^
+${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json/single_include/nlohmann/json.hpp:10977:10: note: function declared non-throwing here
+ 10977 |     void set_end() noexcept
+       |          ^         ~~~~~~~~
+21 warnings generated.
+22 warnings generated.
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld -r -o poq_local.o main.o calcwit.o fr.o poq.o poq/ffi.o circom_adapter.o
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-objcopy --keep-global-symbol=poq_generate_witness --keep-global-symbol=poq_generate_witness_from_files poq_local.o
+rm -f libpoq.a
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar rcs libpoq.a poq_local.o
+rm poq_local.o
+make: Leaving directory '${REPO_ROOT}/.work/experiments/bc-android-build/build/circuits/x86_64/poq'

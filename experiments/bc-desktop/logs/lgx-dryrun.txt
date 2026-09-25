@@ -1,0 +1,1245 @@
+warning: ignoring untrusted flake configuration setting 'extra-substituters'.
+Pass '--accept-flake-config' to trust it
+warning: ignoring untrusted flake configuration setting 'extra-trusted-public-keys'.
+Pass '--accept-flake-config' to trust it
+copying path '/nix/store/gw7fxaw8z5szcqlzyzcnrshzi60zj664-source' from 'https://cache.nixos.org'...
+unpacking 'github:oxalica/rust-overlay/9eccf73c5b810052f08aa77ae0548c383259f17f?narHash=sha256-PSPDCdbEBEbSDCWcqv5GkbyD2ACQ9Diz6vmEbWdy4dM%3D' into the Git cache...
+unpacking 'github:logos-blockchain/logos-blockchain-circuits/ebf7ddf5b5b625ef4ea7c803171c670beebd05ef?narHash=sha256-wL5m64kEcQE%2BCFYXLrUxbcOlqicBfSx%2Bf/3i8fkBy1I%3D' into the Git cache...
+remote: Enumerating objects: 937, done.        
+remote: Counting objects:   0% (1/225)        remote: Counting objects:   1% (3/225)        remote: Counting objects:   2% (5/225)        remote: Counting objects:   3% (7/225)        remote: Counting objects:   4% (9/225)        remote: Counting objects:   5% (12/225)        remote: Counting objects:   6% (14/225)        remote: Counting objects:   7% (16/225)        remote: Counting objects:   8% (18/225)        remote: Counting objects:   9% (21/225)        remote: Counting objects:  10% (23/225)        remote: Counting objects:  11% (25/225)        remote: Counting objects:  12% (27/225)        remote: Counting objects:  13% (30/225)        remote: Counting objects:  14% (32/225)        remote: Counting objects:  15% (34/225)        remote: Counting objects:  16% (36/225)        remote: Counting objects:  17% (39/225)        remote: Counting objects:  18% (41/225)        remote: Counting objects:  19% (43/225)        remote: Counting objects:  20% (45/225)        remote: Counting objects:  21% (48/225)        remote: Counting objects:  22% (50/225)        remote: Counting objects:  23% (52/225)        remote: Counting objects:  24% (54/225)        remote: Counting objects:  25% (57/225)        remote: Counting objects:  26% (59/225)        remote: Counting objects:  27% (61/225)        remote: Counting objects:  28% (63/225)        remote: Counting objects:  29% (66/225)        remote: Counting objects:  30% (68/225)        remote: Counting objects:  31% (70/225)        remote: Counting objects:  32% (72/225)        remote: Counting objects:  33% (75/225)        remote: Counting objects:  34% (77/225)        remote: Counting objects:  35% (79/225)        remote: Counting objects:  36% (81/225)        remote: Counting objects:  37% (84/225)        remote: Counting objects:  38% (86/225)        remote: Counting objects:  39% (88/225)        remote: Counting objects:  40% (90/225)        remote: Counting objects:  41% (93/225)        remote: Counting objects:  42% (95/225)        remote: Counting objects:  43% (97/225)        remote: Counting objects:  44% (99/225)        remote: Counting objects:  45% (102/225)        remote: Counting objects:  46% (104/225)        remote: Counting objects:  47% (106/225)        remote: Counting objects:  48% (108/225)        remote: Counting objects:  49% (111/225)        remote: Counting objects:  50% (113/225)        remote: Counting objects:  51% (115/225)        remote: Counting objects:  52% (117/225)        remote: Counting objects:  53% (120/225)        remote: Counting objects:  54% (122/225)        remote: Counting objects:  55% (124/225)        remote: Counting objects:  56% (126/225)        remote: Counting objects:  57% (129/225)        remote: Counting objects:  58% (131/225)        remote: Counting objects:  59% (133/225)        remote: Counting objects:  60% (135/225)        remote: Counting objects:  61% (138/225)        remote: Counting objects:  62% (140/225)        remote: Counting objects:  63% (142/225)        remote: Counting objects:  64% (144/225)        remote: Counting objects:  65% (147/225)        remote: Counting objects:  66% (149/225)        remote: Counting objects:  67% (151/225)        remote: Counting objects:  68% (153/225)        remote: Counting objects:  69% (156/225)        remote: Counting objects:  70% (158/225)        remote: Counting objects:  71% (160/225)        remote: Counting objects:  72% (162/225)        remote: Counting objects:  73% (165/225)        remote: Counting objects:  74% (167/225)        remote: Counting objects:  75% (169/225)        remote: Counting objects:  76% (171/225)        remote: Counting objects:  77% (174/225)        remote: Counting objects:  78% (176/225)        remote: Counting objects:  79% (178/225)        remote: Counting objects:  80% (180/225)        remote: Counting objects:  81% (183/225)        remote: Counting objects:  82% (185/225)        remote: Counting objects:  83% (187/225)        remote: Counting objects:  84% (189/225)        remote: Counting objects:  85% (192/225)        remote: Counting objects:  86% (194/225)        remote: Counting objects:  87% (196/225)        remote: Counting objects:  88% (198/225)        remote: Counting objects:  89% (201/225)        remote: Counting objects:  90% (203/225)        remote: Counting objects:  91% (205/225)        remote: Counting objects:  92% (207/225)        remote: Counting objects:  93% (210/225)        remote: Counting objects:  94% (212/225)        remote: Counting objects:  95% (214/225)        remote: Counting objects:  96% (216/225)        remote: Counting objects:  97% (219/225)        remote: Counting objects:  98% (221/225)        remote: Counting objects:  99% (223/225)        remote: Counting objects: 100% (225/225)        remote: Counting objects: 100% (225/225), done.        
+remote: Compressing objects:   0% (1/117)        remote: Compressing objects:   1% (2/117)        remote: Compressing objects:   2% (3/117)        remote: Compressing objects:   3% (4/117)        remote: Compressing objects:   4% (5/117)        remote: Compressing objects:   5% (6/117)        remote: Compressing objects:   6% (8/117)        remote: Compressing objects:   7% (9/117)        remote: Compressing objects:   8% (10/117)        remote: Compressing objects:   9% (11/117)        remote: Compressing objects:  10% (12/117)        remote: Compressing objects:  11% (13/117)        remote: Compressing objects:  12% (15/117)        remote: Compressing objects:  13% (16/117)        remote: Compressing objects:  14% (17/117)        remote: Compressing objects:  15% (18/117)        remote: Compressing objects:  16% (19/117)        remote: Compressing objects:  17% (20/117)        remote: Compressing objects:  18% (22/117)        remote: Compressing objects:  19% (23/117)        remote: Compressing objects:  20% (24/117)        remote: Compressing objects:  21% (25/117)        remote: Compressing objects:  22% (26/117)        remote: Compressing objects:  23% (27/117)        remote: Compressing objects:  24% (29/117)        remote: Compressing objects:  25% (30/117)        remote: Compressing objects:  26% (31/117)        remote: Compressing objects:  27% (32/117)        remote: Compressing objects:  28% (33/117)        remote: Compressing objects:  29% (34/117)        remote: Compressing objects:  30% (36/117)        remote: Compressing objects:  31% (37/117)        remote: Compressing objects:  32% (38/117)        remote: Compressing objects:  33% (39/117)        remote: Compressing objects:  34% (40/117)        remote: Compressing objects:  35% (41/117)        remote: Compressing objects:  36% (43/117)        remote: Compressing objects:  37% (44/117)        remote: Compressing objects:  38% (45/117)        remote: Compressing objects:  39% (46/117)        remote: Compressing objects:  40% (47/117)        remote: Compressing objects:  41% (48/117)        remote: Compressing objects:  42% (50/117)        remote: Compressing objects:  43% (51/117)        remote: Compressing objects:  44% (52/117)        remote: Compressing objects:  45% (53/117)        remote: Compressing objects:  46% (54/117)        remote: Compressing objects:  47% (55/117)        remote: Compressing objects:  48% (57/117)        remote: Compressing objects:  49% (58/117)        remote: Compressing objects:  50% (59/117)        remote: Compressing objects:  51% (60/117)        remote: Compressing objects:  52% (61/117)        remote: Compressing objects:  53% (63/117)        remote: Compressing objects:  54% (64/117)        remote: Compressing objects:  55% (65/117)        remote: Compressing objects:  56% (66/117)        remote: Compressing objects:  57% (67/117)        remote: Compressing objects:  58% (68/117)        remote: Compressing objects:  59% (70/117)        remote: Compressing objects:  60% (71/117)        remote: Compressing objects:  61% (72/117)        remote: Compressing objects:  62% (73/117)        remote: Compressing objects:  63% (74/117)        remote: Compressing objects:  64% (75/117)        remote: Compressing objects:  65% (77/117)        remote: Compressing objects:  66% (78/117)        remote: Compressing objects:  67% (79/117)        remote: Compressing objects:  68% (80/117)        remote: Compressing objects:  69% (81/117)        remote: Compressing objects:  70% (82/117)        remote: Compressing objects:  71% (84/117)        remote: Compressing objects:  72% (85/117)        remote: Compressing objects:  73% (86/117)        remote: Compressing objects:  74% (87/117)        remote: Compressing objects:  75% (88/117)        remote: Compressing objects:  76% (89/117)        remote: Compressing objects:  77% (91/117)        remote: Compressing objects:  78% (92/117)        remote: Compressing objects:  79% (93/117)        remote: Compressing objects:  80% (94/117)        remote: Compressing objects:  81% (95/117)        remote: Compressing objects:  82% (96/117)        remote: Compressing objects:  83% (98/117)        remote: Compressing objects:  84% (99/117)        remote: Compressing objects:  85% (100/117)        remote: Compressing objects:  86% (101/117)        remote: Compressing objects:  87% (102/117)        remote: Compressing objects:  88% (103/117)        remote: Compressing objects:  89% (105/117)        remote: Compressing objects:  90% (106/117)        remote: Compressing objects:  91% (107/117)        remote: Compressing objects:  92% (108/117)        remote: Compressing objects:  93% (109/117)        remote: Compressing objects:  94% (110/117)        remote: Compressing objects:  95% (112/117)        remote: Compressing objects:  96% (113/117)        remote: Compressing objects:  97% (114/117)        remote: Compressing objects:  98% (115/117)        remote: Compressing objects:  99% (116/117)        remote: Compressing objects: 100% (117/117)        remote: Compressing objects: 100% (117/117), done.        
+Receiving objects:   0% (1/937)Receiving objects:   1% (10/937)Receiving objects:   2% (19/937)Receiving objects:   3% (29/937)Receiving objects:   4% (38/937)Receiving objects:   5% (47/937)Receiving objects:   6% (57/937)Receiving objects:   7% (66/937)Receiving objects:   8% (75/937)Receiving objects:   9% (85/937)Receiving objects:  10% (94/937)Receiving objects:  11% (104/937)Receiving objects:  12% (113/937)Receiving objects:  13% (122/937)Receiving objects:  14% (132/937)Receiving objects:  15% (141/937)Receiving objects:  16% (150/937)Receiving objects:  17% (160/937)Receiving objects:  18% (169/937)Receiving objects:  19% (179/937)Receiving objects:  20% (188/937)Receiving objects:  21% (197/937)Receiving objects:  22% (207/937)Receiving objects:  23% (216/937)Receiving objects:  24% (225/937)Receiving objects:  25% (235/937)Receiving objects:  26% (244/937)Receiving objects:  27% (253/937)Receiving objects:  28% (263/937)Receiving objects:  29% (272/937)Receiving objects:  30% (282/937)Receiving objects:  31% (291/937)Receiving objects:  32% (300/937)Receiving objects:  33% (310/937)Receiving objects:  34% (319/937)Receiving objects:  35% (328/937)Receiving objects:  36% (338/937)Receiving objects:  37% (347/937)Receiving objects:  37% (348/937), 18.97 MiB | 18.94 MiB/sReceiving objects:  37% (348/937), 41.73 MiB | 20.52 MiB/sReceiving objects:  37% (348/937), 64.57 MiB | 21.12 MiB/sReceiving objects:  37% (349/937), 87.71 MiB | 21.46 MiB/sReceiving objects:  37% (349/937), 110.83 MiB | 22.48 MiB/sReceiving objects:  37% (349/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  38% (357/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  39% (366/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  40% (375/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  41% (385/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  42% (394/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  43% (403/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  44% (413/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  45% (422/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  46% (432/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  47% (441/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  48% (450/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  49% (460/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  50% (469/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  51% (478/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  52% (488/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  53% (497/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  54% (506/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  55% (516/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  56% (525/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  57% (535/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  58% (544/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  59% (553/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  60% (563/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  61% (572/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  62% (581/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  63% (591/937), 134.07 MiB | 22.42 MiB/sremote: Total 937 (delta 153), reused 110 (delta 108), pack-reused 712 (from 3)        
+Receiving objects:  64% (600/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  65% (610/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  66% (619/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  67% (628/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  68% (638/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  69% (647/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  70% (656/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  71% (666/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  72% (675/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  73% (685/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  74% (694/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  75% (703/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  76% (713/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  77% (722/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  78% (731/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  79% (741/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  80% (750/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  81% (759/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  82% (769/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  83% (778/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  84% (788/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  85% (797/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  86% (806/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  87% (816/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  88% (825/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  89% (834/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  90% (844/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  91% (853/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  92% (863/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  93% (872/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  94% (881/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  95% (891/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  96% (900/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  97% (909/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  98% (919/937), 134.07 MiB | 22.42 MiB/sReceiving objects:  99% (928/937), 134.07 MiB | 22.42 MiB/sReceiving objects: 100% (937/937), 134.07 MiB | 22.42 MiB/sReceiving objects: 100% (937/937), 144.41 MiB | 21.91 MiB/s, done.
+Resolving deltas:   0% (0/424)Resolving deltas:   1% (5/424)Resolving deltas:   2% (9/424)Resolving deltas:   3% (13/424)Resolving deltas:   4% (17/424)Resolving deltas:   5% (22/424)Resolving deltas:   6% (26/424)Resolving deltas:   7% (30/424)Resolving deltas:   8% (34/424)Resolving deltas:   9% (39/424)Resolving deltas:  10% (43/424)Resolving deltas:  11% (47/424)Resolving deltas:  12% (51/424)Resolving deltas:  13% (56/424)Resolving deltas:  14% (60/424)Resolving deltas:  15% (64/424)Resolving deltas:  16% (68/424)Resolving deltas:  17% (73/424)Resolving deltas:  18% (77/424)Resolving deltas:  19% (81/424)Resolving deltas:  20% (85/424)Resolving deltas:  21% (90/424)Resolving deltas:  22% (94/424)Resolving deltas:  23% (98/424)Resolving deltas:  24% (102/424)Resolving deltas:  25% (106/424)Resolving deltas:  26% (111/424)Resolving deltas:  27% (115/424)Resolving deltas:  28% (119/424)Resolving deltas:  29% (123/424)Resolving deltas:  30% (128/424)Resolving deltas:  31% (132/424)Resolving deltas:  32% (136/424)Resolving deltas:  33% (140/424)Resolving deltas:  34% (145/424)Resolving deltas:  35% (149/424)Resolving deltas:  36% (153/424)Resolving deltas:  37% (157/424)Resolving deltas:  38% (162/424)Resolving deltas:  39% (166/424)Resolving deltas:  40% (170/424)Resolving deltas:  41% (174/424)Resolving deltas:  42% (179/424)Resolving deltas:  43% (183/424)Resolving deltas:  44% (187/424)Resolving deltas:  45% (191/424)Resolving deltas:  46% (196/424)Resolving deltas:  47% (200/424)Resolving deltas:  48% (204/424)Resolving deltas:  49% (208/424)Resolving deltas:  50% (212/424)Resolving deltas:  51% (217/424)Resolving deltas:  52% (221/424)Resolving deltas:  53% (225/424)Resolving deltas:  54% (229/424)Resolving deltas:  55% (234/424)Resolving deltas:  56% (238/424)Resolving deltas:  57% (242/424)Resolving deltas:  58% (246/424)Resolving deltas:  59% (251/424)Resolving deltas:  60% (255/424)Resolving deltas:  61% (259/424)Resolving deltas:  62% (263/424)Resolving deltas:  63% (268/424)Resolving deltas:  64% (272/424)Resolving deltas:  65% (276/424)Resolving deltas:  66% (280/424)Resolving deltas:  67% (285/424)Resolving deltas:  68% (289/424)Resolving deltas:  69% (293/424)Resolving deltas:  70% (297/424)Resolving deltas:  71% (302/424)Resolving deltas:  72% (306/424)Resolving deltas:  73% (310/424)Resolving deltas:  74% (314/424)Resolving deltas:  75% (318/424)Resolving deltas:  76% (323/424)Resolving deltas:  77% (327/424)Resolving deltas:  78% (332/424)Resolving deltas:  79% (336/424)Resolving deltas:  80% (340/424)Resolving deltas:  81% (344/424)Resolving deltas:  82% (348/424)Resolving deltas:  83% (352/424)Resolving deltas:  84% (357/424)Resolving deltas:  85% (362/424)Resolving deltas:  86% (365/424)Resolving deltas:  87% (369/424)Resolving deltas:  88% (374/424)Resolving deltas:  89% (378/424)Resolving deltas:  90% (382/424)Resolving deltas:  91% (386/424)Resolving deltas:  92% (391/424)Resolving deltas:  93% (395/424)Resolving deltas:  94% (399/424)Resolving deltas:  95% (403/424)Resolving deltas:  96% (408/424)Resolving deltas:  97% (412/424)Resolving deltas:  98% (416/424)Resolving deltas:  99% (420/424)Resolving deltas: 100% (424/424)Resolving deltas: 100% (424/424), done.
+From https://github.com/logos-blockchain/logos-blockchain-circuits
+ * branch            ebf7ddf5b5b625ef4ea7c803171c670beebd05ef -> FETCH_HEAD
+these 1002 derivations will be built:
+  /nix/store/00w8lh35nq6fi0zzv7mjzbmcmdi0s51x-cargo-package-rustc-demangle-0.1.27.drv
+  /nix/store/01plgwipb5h3hw461qjpls9qc5nkkxkp-cargo-package-ark-crypto-primitives-macros-0.5.0.drv
+  /nix/store/7fvdy7l323z7sk8da56cdm98ylva4yd2-cargo-src-arrayvec-0.7.7.drv
+  /nix/store/01w3bq8a7z04y9sz959njk1k1mg47z7v-cargo-package-arrayvec-0.7.7.drv
+  /nix/store/04k23i7ci80lmgjv554ykl9cv7h317c3-cargo-package-num-integer-0.1.46.drv
+  /nix/store/05xpgiwj0xs91mwmw40c674dwb022rik-cargo-package-hkdf-0.12.4.drv
+  /nix/store/0621zivvhf5qsbvdpvp4a1i6kprpbl29-cargo-package-plotters-svg-0.3.7.drv
+  /nix/store/9fklawdakjh7cn1rygvsz1rx546lg2x5-dummyBuild.rs.drv
+  /nix/store/1blrhz9id4qzbfj15vm47rmb0mf1h434-toml_edit-0.25.12+spec-1.1.0.drv
+  /nix/store/593zrrj6did04ffdf1xm1j9d4ji5daq9-cargo-vendor-dir.drv
+  /nix/store/yc8i09jn2mh77nci8g226c7abw482wjm-crane-utils-0.0.1.drv
+  /nix/store/0649qaaadfsbskr2dg58wdvkhjdja4wh-Cargo.toml.drv
+  /nix/store/076q7klhipfw8cfgq28x3dhjymxka72w-cargo-package-tinyvec-1.11.0.drv
+  /nix/store/0cqdrk67k8nwwfx6nbc2h4gd6w9p01ps-cargo-package-derivative-2.2.0.drv
+  /nix/store/0fgr93fnq1ss8mqzl16wic9zfgqyxib0-cargo-src-quick-xml-0.41.0.drv
+  /nix/store/0livnii0zy66jmygr9pk53rnmq6s4dka-cargo-package-windows-future-0.2.1.drv
+  /nix/store/0lpgi37nr1ivxlsh83dlms2lhywpahpk-cargo-package-unsigned-varint-0.7.2.drv
+  /nix/store/s8wjpgnq72db5a7az359mb5namkk0ylz-cargo-src-wasm-bindgen-shared-0.2.125.drv
+  /nix/store/0lwfpygsvqsav4n9crnm3j11chng2ynw-cargo-package-wasm-bindgen-shared-0.2.125.drv
+  /nix/store/0pdp006r6nfpq5h0c5wpf3d1l7380b9q-cargo-package-humansize-2.1.3.drv
+  /nix/store/0q9mh84gkd8ir0f465bmq0gi498dfpdc-cargo-package-unicode-ident-1.0.24.drv
+  /nix/store/0sff1g3fwxhz3m249grlb579grl56h72-cargo-package-xattr-1.6.1.drv
+  /nix/store/0sw4k5n0xz6h483rpf7k1zsmabci6n5z-cargo-package-jsonptr-0.7.1.drv
+  /nix/store/0w9zk4i36anja6x0y6jwkzqbpfjrbcav-cargo-package-convert_case-0.6.0.drv
+  /nix/store/yix0haxfpg4a16z5mccd21vnriiq3f2s-cargo-src-quickcheck-1.1.0.drv
+  /nix/store/0wkbb8cpjvka8da0dh4gl06la91b9n6g-cargo-package-quickcheck-1.1.0.drv
+  /nix/store/0wvb9r2603db6laligbksfc3a8dc4mpd-cargo-package-der-parser-10.0.0.drv
+  /nix/store/0x7jvw3zc6vhjdfijpsb9i2y8hwcx4zz-cargo-package-ureq-3.3.0.drv
+  /nix/store/0yk6c8i21vryapmv1y5xsy6mv73zhm63-cargo-package-widestring-1.2.1.drv
+  /nix/store/0yrqy8hwr6jf1ws9xkkm6ak8zdr455wy-cargo-package-libp2p-swarm-derive-0.35.1.drv
+  /nix/store/0zilfgga6q06k06ly0mmlrh4hpzs1a4c-cargo-package-lru-slab-0.1.2.drv
+  /nix/store/0zxkr9gwzvfqhnydn1cgwqzqm2wkzmz0-cargo-package-generic-array-0.14.7.drv
+  /nix/store/10nyvv93r5gafapky8hyy5gwgfha3dxn-cargo-package-stable_deref_trait-1.2.1.drv
+  /nix/store/10yq4w89a5s50w6m9r3ql501320g3w8n-cargo-package-rand_chacha-0.9.0.drv
+  /nix/store/122ry8kdimnnfvnw1qhrgr3ka9vpd7qn-cargo-package-spki-0.7.3.drv
+  /nix/store/12mw68jiizljcy56phdhh9qpy3gfpb07-cargo-package-pin-project-1.1.13.drv
+  /nix/store/12q24mad2skc1rv0398acwx643bf81rc-cargo-package-ipnet-2.12.0.drv
+  /nix/store/1432609jlwb2p7khravszdcdfc0bk6vk-cargo-package-zerovec-derive-0.11.3.drv
+  /nix/store/15glp802qi1p0a3wyngqmmwa58sxvqmh-cargo-package-ident_case-1.0.1.drv
+  /nix/store/163hk25ps0k3izc8ir2bskga4mhw4wpg-cargo-src-libsqlite3-sys-0.33.0.drv
+  /nix/store/rm7fypw8h3kdzp8dncwxid3fp4waljrd-cargo-src-utoipa-5.5.0.drv
+  /nix/store/17pln2gxdjcqgmzlxwpvas553bzm6q8s-cargo-package-utoipa-5.5.0.drv
+  /nix/store/18isig4r59kydqwli83blw1lavyz5cin-cargo-package-ahash-0.8.12.drv
+  /nix/store/1916kkswvsyzlbwfsyscppms78r9vidz-cargo-src-rgb-0.8.53.drv
+  /nix/store/18qvna54dyyk8wl0150xji5k5rx4b8a0-cargo-package-rgb-0.8.53.drv
+  /nix/store/1a1b1pf0q7zjvlfc9cakg7d5w9qzi06h-cargo-package-sysinfo-0.37.2.drv
+  /nix/store/rp6mwdy4rgyzbkpzl2798zdpkccgs3d4-cargo-src-webpki-roots-1.0.8.drv
+  /nix/store/1a5qmgvprlxiqpskswc176n5pqg8h8fn-cargo-package-webpki-roots-1.0.8.drv
+  /nix/store/1dc6q79ykmjjf5fxkiqahz4jrfn601zw-cargo-package-http-body-util-0.1.3.drv
+  /nix/store/1fjkf6z0i7llbs3l8cddzck2vk1nrvwv-cargo-package-libredox-0.1.17.drv
+  /nix/store/c5lwnpf5adm34q63arpjfkxjdkp5zp6c-cargo-src-regex-lite-0.1.9.drv
+  /nix/store/1gc21sql2pg9zcaqaxwf54big93yab60-cargo-package-regex-lite-0.1.9.drv
+  /nix/store/1glz6hw3awj9a04r3rp59z085xy5q4vv-cargo-package-tracing-appender-0.2.5.drv
+  /nix/store/1gq84m9g1669830iw93hbrmgnp1avcnd-cargo-package-futures-bounded-0.2.4.drv
+  /nix/store/1k4chl2b7vw819vjncix2jp20zhif07j-cargo-src-libp2p-swarm-test-0.6.0.drv
+  /nix/store/1lxh6m8jxhig225ygw5ii9qzk1bvzsz9-cargo-package-pkcs8-0.10.2.drv
+  /nix/store/1lz5vqbcjsv20r4c8kn4wv3ljw1ik5wz-cargo-package-libm-0.2.16.drv
+  /nix/store/1pglc3jp3jygndyrzbfr76nxv942g1g8-cargo-package-mio-1.2.1.drv
+  /nix/store/1pir749mnv49sl35cpn8b58jflirpix8-cargo-package-anstream-1.0.0.drv
+  /nix/store/1rrdrl6xbad0fjyz831d6mkyqsz252xy-cargo-package-anyhow-1.0.103.drv
+  /nix/store/1rrvyyj7wp6v0a8q7kk76n7145x452gg-cargo-package-textwrap-0.16.2.drv
+  /nix/store/1vbrjkvbr3gj267a1dygjsqi54rqx5mb-cargo-package-clang-sys-1.8.1.drv
+  /nix/store/21q6zl5xzpn0f3nn6bgb03hd7dlwldgk-replaceCargoLockHook.drv
+  /nix/store/22jb0bn0nzsw8afl49i3zsk6xcwvcwy9-Cargo.toml.drv
+  /nix/store/232bpw2x79f0h3xahn4r8g2dp6c4b0wn-Cargo.toml.drv
+  /nix/store/2aki7bnk9asqmcm3lg4c75pspwk3491h-Cargo.toml.drv
+  /nix/store/3vy9cg0cyks3axbjdpv7w7lwjl8fsdlz-Cargo.toml.drv
+  /nix/store/5gppyvyys1qqr5rckfn0ln68zybhcp86-Cargo.toml.drv
+  /nix/store/5griypvd87c8sdd8r1gj4bif2pyr3yqw-Cargo.toml.drv
+  /nix/store/5q930gfcxz126pvmf292nwvimk7a3lka-Cargo.toml.drv
+  /nix/store/6mrkfvmkhi8fssnv395j57yhj5fnsx0p-Cargo.toml.drv
+  /nix/store/6n7z3xrmm3bc7y5pinlkbsg63j5mxg88-Cargo.toml.drv
+  /nix/store/71j70ih3rp4f9gqrpkqhznw0ingv5vsq-Cargo.toml.drv
+  /nix/store/774124imfpcfl4724mb4az9scrj8dnpj-Cargo.toml.drv
+  /nix/store/81sc9vw4pypxg1ms5m5lg8qsbcga61gc-Cargo.toml.drv
+  /nix/store/84z4jigwyw6s4691krmz4lar5yrpx1h0-Cargo.toml.drv
+  /nix/store/8c1jk35ayhgpfxxinqjwp76hcxylyjik-Cargo.toml.drv
+  /nix/store/8gwgvfygz8alx2c2dfrc85ih772pw2p3-dummy.rs.drv
+  /nix/store/8ki87h4nxi30xak8kwzgj4sy4pnq3lhg-Cargo.toml.drv
+  /nix/store/92ra7wx3p367d8l5yan474si6jwmcmfj-Cargo.toml.drv
+  /nix/store/99ycy5gnx8sax7bfag6q1q8w13md9s7z-Cargo.toml.drv
+  /nix/store/9gv3li3nfq4l61qq8gsd66a5aw4a29hg-Cargo.toml.drv
+  /nix/store/9v4whd0yv4fw8i81pyv65yyz2rc25v7g-Cargo.toml.drv
+  /nix/store/a855jh88r9bbxra68bllf2dz83aja5ns-Cargo.toml.drv
+  /nix/store/b1116a20svk729wk5v0y6ncipan9sq4x-Cargo.toml.drv
+  /nix/store/bln5sk0bnq1jc9b1ahfaahm329jni8h6-Cargo.toml.drv
+  /nix/store/bp1sf9f9nhrvic2p8srfjjw98lbbg0ah-Cargo.toml.drv
+  /nix/store/bwcg7d7khib582z0va20wkpa6wa2jvnv-Cargo.toml.drv
+  /nix/store/bxdlvgfc40g1xyh1sz2vwyds5xl2p6ya-Cargo.toml.drv
+  /nix/store/dmnjjgqn2acb14n8gpdn57jk36phdf1z-Cargo.toml.drv
+  /nix/store/drnssk9j2b0q9l32c8qz44wzizcsmi98-Cargo.toml.drv
+  /nix/store/f0biszb80avz4fd9739nsw2zw28crlg5-Cargo.toml.drv
+  /nix/store/fzhmg44a1mqmwwjd6spdpff8c0n7rvqc-Cargo.toml.drv
+  /nix/store/g8n287jigjm2znjb2q85d5nn5wzbvm3n-Cargo.toml.drv
+  /nix/store/gam898vn8dxs0k0jy0qb4ymzvlji6dl3-Cargo.toml.drv
+  /nix/store/hhv2bhf852q4qwsk9vca45amq82garbg-Cargo.toml.drv
+  /nix/store/hmy5sh1drpvmmbfn7j009xf2c09fg9k1-Cargo.toml.drv
+  /nix/store/hnakqsvfakgkx874vgp6cnqlbin9ki1g-Cargo.toml.drv
+  /nix/store/igknm81znhcvrxgib9avnk6cx4zp7az4-Cargo.toml.drv
+  /nix/store/ihnbgn22p0vsjwhn6l0z16vz3v82q5wm-Cargo.toml.drv
+  /nix/store/in4rf6k26bnspjp3kgz7d0ws0qysgxci-Cargo.toml.drv
+  /nix/store/j2c0x8l1lw7l35mpbg38d7sg9pgpqzaj-Cargo.toml.drv
+  /nix/store/j9gxw8v8gf3khfxclw32zphiilvpz1zr-Cargo.toml.drv
+  /nix/store/jrcrv5g5w7kfwmsxmps929dihaxhdg6q-Cargo.toml.drv
+  /nix/store/l1g8pw19qlgafmxljb71pz22rpq8bw3y-Cargo.toml.drv
+  /nix/store/l5j97vminw8q9dkcysvx1k1f4pgbkkvj-Cargo.toml.drv
+  /nix/store/la5153caharwk79424v937ykricf3y6x-Cargo.toml.drv
+  /nix/store/m22rd23awy7sfkndk4sjq6v2900dz91h-Cargo.toml.drv
+  /nix/store/m8db09y2cmyih1iapjfv6szbplfh9jb8-Cargo.toml.drv
+  /nix/store/mda3nnvkacrzicnmdcg0zcwypmq63sdy-Cargo.toml.drv
+  /nix/store/mk9qj4pil5r3vnbwf6yfx3yyk9izxdxi-Cargo.toml.drv
+  /nix/store/mrma3j8535i8y239wdanlgwhqlh6d8am-Cargo.toml.drv
+  /nix/store/nl42hykd1dsfbg6276njhn1aj0c5irg4-Cargo.toml.drv
+  /nix/store/nwcrg8j2vgkmbgx4kvl6vz7c0myyrmda-dummy.rs.drv
+  /nix/store/nypy39lya3wgkd95c4lm0h4kji4ysxqd-Cargo.toml.drv
+  /nix/store/qfk4vrq6szvlkmwm9ra1xq0caml4xaz6-Cargo.toml.drv
+  /nix/store/rcs7gckzyyvz90ghksdkh5ymg97xid6z-Cargo.toml.drv
+  /nix/store/rn49i5102kqi394ahnk2dh79f0v9d19w-Cargo.toml.drv
+  /nix/store/rs11cni422f3alb7ic8fgffl7r87x7ln-Cargo.toml.drv
+  /nix/store/shsp56f80x84fdici7m9hgy80mjfbkb1-Cargo.toml.drv
+  /nix/store/sr9bvpady7b0zrr96z5sn4dqh33s4vjm-Cargo.toml.drv
+  /nix/store/v0gap9mf8j43sy3kw8ja5pcg8zfzd6h9-Cargo.toml.drv
+  /nix/store/v3wryzhkcjnmpapbnhnzki2x6c4rlffk-Cargo.toml.drv
+  /nix/store/vbqg123w52nm2iafdnd044qsr2y8cjsz-Cargo.toml.drv
+  /nix/store/vg1j9w2ff4d3g1491dkrqba25ycpvmb8-Cargo.toml.drv
+  /nix/store/vsdy6329zspgs3rn3kl3s9wp9c009wan-Cargo.toml.drv
+  /nix/store/wgix7knm1nd0p3wymq66j7l5zf47mdgq-Cargo.toml.drv
+  /nix/store/wm0vr0yc7yf3qpyqf56ga32j3zz4n8kz-Cargo.toml.drv
+  /nix/store/xbb2yclifv5wwhljjdpgfbqlhds71f9k-Cargo.toml.drv
+  /nix/store/xj5j4shr385dm0qnasxdpapj4c0n0xb2-Cargo.toml.drv
+  /nix/store/y13zn1960hhdw34ak2divikfjqq3ipzi-Cargo.toml.drv
+  /nix/store/yx36m7wpvh00bk836fxry2a8yxq572w4-Cargo.toml.drv
+  /nix/store/yz36xja4y5ghhbdr4clirx1qpnbrb10p-Cargo.toml.drv
+  /nix/store/5z3i0iyjp3gwv6qlnil4524gh8z5z7q7-source.drv
+  /nix/store/xa1gbrffs7ylmfnhcjd35bhkw1ym3qcm-rustc-1.98.1-x86_64-unknown-linux-gnu.tar.xz.drv
+  /nix/store/510h6mv9fb157kzzr6whv55n7hjlr06k-rustc-1.98.1-x86_64-unknown-linux-gnu.drv
+  /nix/store/q0dqg4k337cp2jxi76sgl4kgjy8brg8i-rust-docs-1.98.1-x86_64-unknown-linux-gnu.tar.xz.drv
+  /nix/store/9gq0vjiq0567gq87wc8zjk6ws9yp58nk-rust-docs-1.98.1-x86_64-unknown-linux-gnu.drv
+  /nix/store/p853nzq4jd1i38p73xji10v0x2m0fb7m-clippy-1.98.1-x86_64-unknown-linux-gnu.tar.xz.drv
+  /nix/store/9zrzrsn1j0pscq64bynl2d2394rbijh9-clippy-preview-1.98.1-x86_64-unknown-linux-gnu.drv
+  /nix/store/pm481s7z24znw34bssnqr7vgird66k1g-cargo-1.98.1-x86_64-unknown-linux-gnu.tar.xz.drv
+  /nix/store/gvsknwvjn5akz617ns29r498jd76c7in-cargo-1.98.1-x86_64-unknown-linux-gnu.drv
+  /nix/store/fxs4sa4pnr5fw7qydv10c78rlpwlczr3-rustfmt-1.98.1-x86_64-unknown-linux-gnu.tar.xz.drv
+  /nix/store/nhgqdzzayn1xi9d3yk5k0ddxkbnxfndh-rustfmt-preview-1.98.1-x86_64-unknown-linux-gnu.drv
+  /nix/store/dx3zsma9vaypzbwkpddnrv15zkpakjyy-rust-std-1.98.1-x86_64-unknown-linux-gnu.tar.xz.drv
+  /nix/store/xsacyq3qqsazfhq7437h8ij1n7m7zmz2-rust-std-1.98.1-x86_64-unknown-linux-gnu.drv
+  /nix/store/csw3zq1jnl3prfvg7sficfb03nm464ll-rust-default-1.98.1.drv
+  /nix/store/f1ssggny9fqa05h68z0sb8lgxl2gsq1p-configureCargoVendoredDepsHook.drv
+  /nix/store/fpdmgn4dggnd1r3gihh8blpwnndmfmia-inheritCargoArtifactsHook.drv
+  /nix/store/iijl51pypnjai0lrzjqr18zszpviiv5m-configureCargoCommonVarsHook.drv
+  /nix/store/jhw332hhir3y5gw06yqqyd5q2cfxnw8a-cargoHelperFunctionsHook.drv
+  /nix/store/p09mm556xi6pza6ai1aqqadk3v9ni7lj-installCargoArtifactsHook.drv
+  /nix/store/jrwd7spb5x5w0g9cvw6ip2kc3rnrq1wq-logos-blockchain-circuits-v0.5.7-linux-x86_64.tar.gz.drv
+  /nix/store/w4314plbmw8n9bbx37bgdfss51c4brnq-logos-blockchain-circuits-0.5.7.drv
+  /nix/store/fx8jnb0q82hvc9cmdhhmpby5f3hwjam5-cargo-git-https-github.com-arkworks-rs-spongefish.git-3ded547f7f56d7f8a1fc4c9a5c0ce965310bba5f.drv
+  /nix/store/7xabb932jdvw3x2imkjrmcw7igykymf5-linkLockedDeps.drv
+  /nix/store/90mmq1xzv3r0zc63xfxzpdbnknpyi0jq-cargo-git-https-github.com-EspressoSystems-jellyfish.git-8d80230358e900f8d63765a937f63f4978ca1daa.drv
+  /nix/store/arzdp3qkx1gyb4h6g4ypm9b54ih6kab5-linkLockedDeps.drv
+  /nix/store/pyrrr2n0l4f6hs7792gsfasp2zidh76y-cargo-git-https-github.com-logos-co-Overwatch-8f06c685948620d5d9931ed8f5bdb86e6cbffcd9.drv
+  /nix/store/dvgdz6587i91a1wjm5vdb2ghqn4ldxws-linkLockedDeps.drv
+  /nix/store/zbm9fj51aqi0r8l314f3l35bxwq6vaq8-cargo-src-protobuf-3.7.2.drv
+  /nix/store/1wdffzgckb5aijg3g74zgi057n5p5p4l-cargo-package-protobuf-3.7.2.drv
+  /nix/store/1xa0b1ali3c0plsnd21nbzglbj3cf56v-cargo-package-thiserror-impl-2.0.18.drv
+  /nix/store/1ymlaqkqsxnvp7akprm33vq2fa19rj4m-cargo-package-half-2.7.1.drv
+  /nix/store/i84is615s5cjwwvvbag0i1z10dhgdhcs-cargo-src-utoipa-gen-5.5.0.drv
+  /nix/store/20gavpi6jf509cdb9f8h2niaar85m5zw-cargo-package-utoipa-gen-5.5.0.drv
+  /nix/store/20v6ibjzcdqhgrw649rwl6zmkv2ccnv6-cargo-package-idna_adapter-1.2.2.drv
+  /nix/store/21sfsccqc3bxkz7vac9kgdj73lk9c9ld-cargo-package-multiaddr-0.18.2.drv
+  /nix/store/232b1w28iawmfaiv6yyhan40kh6pn8zd-cargo-package-libp2p-connection-limits-0.6.0.drv
+  /nix/store/lq3nxadsbszvmf5yhgsywbmsclrkghy6-cargo-src-is-terminal-0.4.17.drv
+  /nix/store/24cbjrfp8lpv2s6172shplx55y5y0nvr-cargo-package-is-terminal-0.4.17.drv
+  /nix/store/aw20kbm1407q7gb0dm2b4a2bs9ybpyr7-cargo-src-enum-ordinalize-derive-4.4.2.drv
+  /nix/store/27a3bs3j9p9kxkgl943b44f5s1ypxzch-cargo-package-enum-ordinalize-derive-4.4.2.drv
+  /nix/store/29kkvbaqhpqq5whvbadhqxyp64qy4hvr-cargo-package-ark-ff-asm-0.5.0.drv
+  /nix/store/29vv43fk60p82am2kxirvni40zyzmyci-cargo-package-netlink-packet-route-0.17.1.drv
+  /nix/store/pmvbgd1y8hxx46403ldvddzwlrh8f18x-cargo-src-log-0.4.33.drv
+  /nix/store/2a5lnrndhvccrsy5bmlilyi26729d5h6-cargo-package-log-0.4.33.drv
+  /nix/store/2avrha4zmqxa47bhk7nf8pkk2iajhrby-cargo-package-itertools-0.14.0.drv
+  /nix/store/2bffpn1wilw8c82rks97cz95lkfpq5d1-cargo-package-futures-task-0.3.32.drv
+  /nix/store/2cbq63723diilzrk4x61jana57ybcfw6-cargo-package-astro-float-macro-0.4.5.drv
+  /nix/store/2dk26q7pxf6v6hbnzygpsm0776cpk3zk-cargo-package-inferno-0.11.21.drv
+  /nix/store/2gj1fk1cf6slzcl257zgw2irmki5nzs2-cargo-package-unarray-0.1.4.drv
+  /nix/store/2jh83gc3iqj2m90flbizyx1677bg7m4y-cargo-package-atomic-waker-1.1.2.drv
+  /nix/store/2lbvadncml44q2diiaz7cmn8fcjv17vr-cargo-package-allocator-api2-0.2.21.drv
+  /nix/store/m1r7f9n2v6mz2vkcfalsisn3ybc4lcjf-cargo-src-divan-macros-0.1.21.drv
+  /nix/store/2ldjwnymb3hbwfp39nxghmk93j5nkv3q-cargo-package-divan-macros-0.1.21.drv
+  /nix/store/2nb5icxzfi31qxi167xfb4xsxbm8j9mi-cargo-package-hmac-0.12.1.drv
+  /nix/store/2pi3rcc73vscp73w7s9vyrsnf57l66by-cargo-package-pem-3.0.6.drv
+  /nix/store/icpmwvb3gaz208qsclwsbrrhfbarvykq-cargo-src-libp2p-plaintext-0.43.0.drv
+  /nix/store/2r4sjrkyalgjb7cwkjwf6l2spwfs4aj6-cargo-package-libp2p-plaintext-0.43.0.drv
+  /nix/store/2w5s3qhk70294nkshk2xfwqny0pd24zw-cargo-package-fastbloom-0.14.1.drv
+  /nix/store/2x46mi51lajr2bmqs1bawfnyppfmihz2-cargo-package-foreign-types-shared-0.1.1.drv
+  /nix/store/2x4qbvbfbx0vr78r5l3gy5qj60sn3n7q-cargo-package-ed25519-2.2.3.drv
+  /nix/store/2x6gwxf43nqr382kxyflyln43jqjwlrl-cargo-package-ark-std-0.5.0.drv
+  /nix/store/2y0hpy22l6nv321cyv8arsy93msl8b5i-cargo-package-zerofrom-derive-0.1.7.drv
+  /nix/store/90v2sxppdy78xhf0nwx959p88knsbnkn-cargo-src-proc-macro-error3-3.1.1.drv
+  /nix/store/2yhdyncd4v5i343mwyxzszlxfxpl990g-cargo-package-proc-macro-error3-3.1.1.drv
+  /nix/store/2z9qrqp0zraf2yq2zk4dgcab8s18gja2-cargo-package-dirs-6.0.0.drv
+  /nix/store/2zbffi6jnlvzml4ckcfv2diqmcmxp1vk-cargo-package-libp2p-upnp-0.5.0.drv
+  /nix/store/2zncfjdsy3insq9b7a9h9gd0a98bjca6-cargo-package-zmij-1.0.21.drv
+  /nix/store/2zsggfc8y9al5ipvdxa57vay6bkf8rgm-cargo-package-serde_spanned-1.1.1.drv
+  /nix/store/w7fyzaf06anska8z38vyrh157zby53z2-cargo-src-pest-2.8.6.drv
+  /nix/store/34acpb8ixjycbiwd1k9nb4hz9hddp7z9-cargo-package-pest-2.8.6.drv
+  /nix/store/34h270a7lrhl2mggibcip5cpnns2fsdg-cargo-package-netlink-packet-core-0.8.1.drv
+  /nix/store/35zfkh7vx4hl7686h8sgkggcksbbh3q7-cargo-package-synstructure-0.13.2.drv
+  /nix/store/3cr003dy2kwvpp5mfwv3ivphjrnnrnbv-cargo-package-futures-rustls-0.26.0.drv
+  /nix/store/3d1llr6p4acgawsfz85j4izza08z4fhz-cargo-package-once_cell-1.21.4.drv
+  /nix/store/3fl13mjcqqpfaifmgvmdp7qpsjsx7f4k-cargo-package-opentelemetry-0.32.0.drv
+  /nix/store/3gd1npv2qa3zli7rvf64jga1cgvy7g25-cargo-package-hashbrown-0.14.5.drv
+  /nix/store/3h0jhlrjm634msbgisnfhf1gvmmzymr5-cargo-package-base64-0.21.7.drv
+  /nix/store/3ipvd5idnpk4j7ddd7a4j1r1n5yd3142-cargo-package-redox_syscall-0.5.18.drv
+  /nix/store/3iv128hfldlr9arcrl4f3rnwibdrj3lg-cargo-package-asn1-rs-derive-0.6.0.drv
+  /nix/store/3jv3wj1ahmb1c38755v4l836nil5vpwl-cargo-package-crossbeam-utils-0.8.21.drv
+  /nix/store/hi24fqa29gyljl9vyjkfrw65axy5a314-cargo-src-str_stack-0.1.1.drv
+  /nix/store/3lmjchiq1gfmh6ksxpxi0k61q6nnjq8b-cargo-package-str_stack-0.1.1.drv
+  /nix/store/3ngrwcbqx3p09yjzzz4cg5f284zpr594-cargo-package-rayon-1.12.0.drv
+  /nix/store/3p10qgx6wxlaqkzjfqpn337ysc4byscv-cargo-package-nom-7.1.3.drv
+  /nix/store/w61c3b29a496bq7j3hcm9x7pnk11z10q-cargo-src-boon-0.6.1.drv
+  /nix/store/3p7lx9hxrnylpw8dca8pa65q1b61bgl8-cargo-package-boon-0.6.1.drv
+  /nix/store/3pdgk6z0cak4c80a1zhi165fbq8npynw-cargo-package-fd-lock-4.0.4.drv
+  /nix/store/3qv8xx8xncpbj3f9xn5w4dd7rna28xfg-cargo-package-httpdate-1.0.3.drv
+  /nix/store/3vnvlq5k1qqd2hqb5l2qy9lmfbwn9vcd-cargo-package-kinded_macros-0.3.0.drv
+  /nix/store/3wjslyn4v0aj3abh29qs4xqcvq7sbp7h-cargo-package-merlin-3.0.0.drv
+  /nix/store/3yzb9iyyhcdb2czys7mcmnn21czdrbrr-cargo-package-ucd-trie-0.1.7.drv
+  /nix/store/3zfyv7izq0isgk2d1ya12x72qlfifxc8-cargo-package-ppv-lite86-0.2.21.drv
+  /nix/store/3zl3wjh22crz5nxgx7f4dzxk6mn950fh-cargo-package-light-poseidon-0.4.0.drv
+  /nix/store/40w90ha0695l25l5fpwmic0f4ard7v8i-cargo-package-getrandom-0.3.4.drv
+  /nix/store/41pa8ambw665lq2mc6chg8yaqvh18bn8-cargo-package-serde_urlencoded-0.7.1.drv
+  /nix/store/41xrslrnkn8q3pgi3narkl839jh1fflr-cargo-package-crunchy-0.2.4.drv
+  /nix/store/43mb0bwbnjrjxc8l23fpxr82mbzzwzna-cargo-package-tracing-0.1.44.drv
+  /nix/store/x7mpdpp87nn21brcjkv9ixbd5whj8s1x-cargo-src-cbindgen-0.29.4.drv
+  /nix/store/445k97bijkcp1gvqsj52v1ivqcjaywnp-cargo-package-cbindgen-0.29.4.drv
+  /nix/store/mg5khmdlxx1gylf95625lh1rc6hry972-cargo-src-gherkin-0.16.0.drv
+  /nix/store/47rw8k3v6xilnz5q5r2kg0jy6ks45bb4-cargo-package-gherkin-0.16.0.drv
+  /nix/store/489ishims5ifi655i58cnllp88nc80yi-cargo-package-fork_stream-0.1.0.drv
+  /nix/store/48qdm5bvpbskgkjnjlkqlfhzfshwym6z-cargo-package-deranged-0.5.8.drv
+  /nix/store/ygq7q141xj23h0k9pgim29ggk9850451-cargo-src-protobuf-support-3.7.2.drv
+  /nix/store/49cgn3p7cw9nyr1481gdw1b9nmi7mydm-cargo-package-protobuf-support-3.7.2.drv
+  /nix/store/4b0w0iglw8a2g4qmd179s52ci0yhw8dg-cargo-package-ark-bn254-0.5.0.drv
+  /nix/store/4cbjhza19kj57744yk4a6y7q4ln4ysip-cargo-package-redox_users-0.5.2.drv
+  /nix/store/m6q3844cs90pbsx1xj6g4ki21fprr0l8-cargo-src-educe-0.7.6.drv
+  /nix/store/4cx7bqcvxxgvgqj74q6bx42c9j227n2m-cargo-package-educe-0.7.6.drv
+  /nix/store/4dmmff7nlf8zyybxrz57nr92grvh5i5k-cargo-package-bs58-0.5.1.drv
+  /nix/store/4dni09kgapx7nsm7ydx58a8xgwsk7xp7-cargo-package-equator-0.4.2.drv
+  /nix/store/4dwwdv0jpgs04cykxhxdjvq9zjk9fhll-cargo-package-dirs-sys-0.5.0.drv
+  /nix/store/4fr3gwr2a7qxxh67gh918byw9x7pq0ps-cargo-package-potential_utf-0.1.5.drv
+  /nix/store/4g9fsm4fhfr0qk34gmdqh6synfjbipyi-cargo-package-fastrand-2.4.1.drv
+  /nix/store/4h9w9w5pf4z799bl9z213s6gs4xgz6ry-cargo-package-strsim-0.11.1.drv
+  /nix/store/4hsah0zxzh1pfkd5gx48dhi64y2darqw-cargo-package-asynchronous-codec-0.7.0.drv
+  /nix/store/4ih4s6nqg6bykqcs7i0gsba0k451lpd7-cargo-package-windows-result-0.3.4.drv
+  /nix/store/4j96msfkwkdfr381lmfj5pw7nv314ikl-cargo-package-moka-0.12.15.drv
+  /nix/store/4k8027iyzkawq3bqygws2rqqljrjd51v-cargo-package-system-configuration-0.6.1.drv
+  /nix/store/4m7r5627xyx643x1b858mq84281w18yp-cargo-package-group-0.13.0.drv
+  /nix/store/4mahilj0sfk8qi8l9jr2z26yi8lxmzps-cargo-package-flate2-1.1.9.drv
+  /nix/store/4n0ffrq6yflx8bn9w1x9xhiwskpavsir-cargo-package-windows-threading-0.2.1.drv
+  /nix/store/4nc9p1a4ghgv2wbn3qr0mfcql4ad06bf-cargo-package-manyhow-macros-0.11.4.drv
+  /nix/store/4pq0954xjb2fmybf01mz2zbssbfxdxb7-cargo-package-tower-0.5.3.drv
+  /nix/store/4q08wcp7gzh1ajzd2fwzgpmsfssxmxac-cargo-package-owo-colors-4.3.0.drv
+  /nix/store/4qm49hvbw34k5n8ir9dl3r9sc8nf2mm8-cargo-package-if-watch-3.2.2.drv
+  /nix/store/4vmjxamal14sni2vwc7hbv34xx6d7f5c-cargo-package-netlink-sys-0.8.8.drv
+  /nix/store/4ynxi95lfb7x9mdp8701zxqcbbhblb1f-cargo-package-subtle-2.6.1.drv
+  /nix/store/520gssvna49bpzfdr75xxqxahiw1h0dg-cargo-package-parse-zoneinfo-0.3.1.drv
+  /nix/store/549cva2yasf871a7mbp47lafbshfq3l2-cargo-package-attohttpc-0.30.1.drv
+  /nix/store/57q6fv1s4dnd0by7jqf0fpkiaryd4lw3-cargo-package-num_enum_derive-0.7.6.drv
+  /nix/store/583cx3ymzhyrwwd1l3xm7hz6dfprckz3-cargo-package-rtnetlink-0.20.0.drv
+  /nix/store/58nb7hmi0bj02i1nhv6nrffrsxr6npz9-cargo-package-libp2p-request-response-0.29.0.drv
+  /nix/store/58wyrd0jayab680hr9jyxwmcg5x8q50y-cargo-package-plotters-0.3.7.drv
+  /nix/store/599wc338k2msxk10ysz5jjx9iir6s4ry-cargo-package-curve25519-dalek-4.1.3.drv
+  /nix/store/5a8w1mz379rc7cqkkm6db2hx4n6zbsnj-cargo-package-wasm-streams-0.4.2.drv
+  /nix/store/5bma5p5igynjppv9zry41j13n3zvjvmi-cargo-package-lru-0.18.2.drv
+  /nix/store/nm1qxaqw2nanvb3m39g8rrfa3ddw2v12-cargo-src-junit-report-0.9.1.drv
+  /nix/store/5cnaw0izsyrlfk6w6g3cavrlgah6ivi2-cargo-package-junit-report-0.9.1.drv
+  /nix/store/5gxqf0lwz2g6ki16idijn9bl3rnnyiwf-cargo-package-iana-time-zone-0.1.65.drv
+  /nix/store/5k2ys21nq3206jq3g6jdfxj3cxmdx9p1-cargo-package-libp2p-dns-0.44.0.drv
+  /nix/store/5k5xa8hscqfs3vr602cpjisyajhmmw20-cargo-package-unsigned-varint-0.8.0.drv
+  /nix/store/5ki6cvldzindr13jk0mhmn6nwwm5k3x8-cargo-package-windows-sys-0.52.0.drv
+  /nix/store/5lzxa4xpg3r7049c4snmhf598f4pf4qp-cargo-package-unicode-xid-0.2.6.drv
+  /nix/store/5p5s1bh9f0yv6lb7x21kfnpk9nfrvdhk-cargo-package-mime-0.3.17.drv
+  /nix/store/ivrv9dc9c6zmknr5z77x7qc5w7kg7zas-cargo-src-rusqlite-0.35.0.drv
+  /nix/store/5p7a03bwy2w8fbxbphrzi5dmqf2hwsyd-cargo-package-rusqlite-0.35.0.drv
+  /nix/store/5q2qz84bapiqvn4r46ymn4b37x4vgxcc-cargo-package-parking_lot-0.12.5.drv
+  /nix/store/vlbfi33wyrbghczvivnp121j725qqkln-cargo-src-test-log-macros-0.2.21.drv
+  /nix/store/5w37j0p24wwl1cqp639bxw71n2l288zd-cargo-package-test-log-macros-0.2.21.drv
+  /nix/store/5xhfy4mljq5jgh4rliycb557s15m2fm8-cargo-package-wit-bindgen-0.57.1.drv
+  /nix/store/5z1fpkmlp4a3n2x329zndzsi0ls0sifk-cargo-package-async-broadcast-0.7.2.drv
+  /nix/store/5zxx0zajgl6395dz627zpwhn432v9dcj-cargo-package-libp2p-allow-block-list-0.6.0.drv
+  /nix/store/4ycw2iadgxh57b8dhbckrqn9vwr08rk0-cargo-src-yoke-0.8.3.drv
+  /nix/store/608ba3wv6a7irp696gn51idrs2jayaxb-cargo-package-yoke-0.8.3.drv
+  /nix/store/iaj3zhic9ffwif3msi71700k7l4nvip8-cargo-src-cc-1.2.65.drv
+  /nix/store/62hilsqprf56arnx7v3vljaclbpynd1v-cargo-package-cc-1.2.65.drv
+  /nix/store/pn4rp8pjgnpxay0ja5wd3vprlazwfqry-cargo-src-pest_derive-2.8.6.drv
+  /nix/store/648x3fyj98qpz2n0r67vq0xsi61203y9-cargo-package-pest_derive-2.8.6.drv
+  /nix/store/64pvyygi00qsg9b2fdny6i4p9mgk6h9f-cargo-package-writeable-0.6.3.drv
+  /nix/store/67p54c7730x6h09jxfw5wpxhdwwnxn3a-cargo-package-colorchoice-1.0.5.drv
+  /nix/store/67sghrxvm95j9sh60bhcw41mps3rjdi5-cargo-package-const-hex-1.19.1.drv
+  /nix/store/69yb097yz9s6c81c1949r92qch8xjyff-cargo-package-triomphe-0.1.15.drv
+  /nix/store/69ylirfg2r3xgpjb86psfqwpr6n1xkrm-cargo-package-console-0.16.3.drv
+  /nix/store/6bwpf4l9ym58wh2a7y2f8jzdl95h93f8-cargo-package-url-2.5.8.drv
+  /nix/store/6cn4ac8aihwwxhd3bd02dkviml4v73g8-cargo-package-rand_core-0.6.4.drv
+  /nix/store/6d5nlmaiym16ypkbz9qr6934l7lz2f9y-cargo-package-tracing-log-0.2.0.drv
+  /nix/store/6i9l9dmxpb9f4b9jghh9icp4dwf1z3g0-cargo-package-hostname-0.3.1.drv
+  /nix/store/6ig43nxcqrmy3qm5nkjw0jcnf04aarcf-cargo-package-windows-sys-0.59.0.drv
+  /nix/store/6kwdnikg76sqca8qsyiy5n05rspyibav-cargo-package-chrono-tz-0.9.0.drv
+  /nix/store/6md3ryps42bdnn53mnl7zz8bbfblbjk1-cargo-package-tower-service-0.3.3.drv
+  /nix/store/6n39fhnzng4q9g5w9n2p9gqab7lkgnax-cargo-package-hex-0.4.3.drv
+  /nix/store/6n497iabb7fbyi4b1i8d71qdaylnlf50-cargo-package-icu_normalizer_data-2.2.0.drv
+  /nix/store/6sax3gypg18aa862niy9v7zzg642n207-cargo-package-oid-registry-0.8.1.drv
+  /nix/store/gcbj5z066ng4w77dr2p31jwzyii6yk4g-cargo-src-yamux-0.12.1.drv
+  /nix/store/6vi3lilf4diy281d46j77b4h5kp4h86b-cargo-package-yamux-0.12.1.drv
+  /nix/store/6wmdcr5q16ycmwp3if5r4zrn921pnzj7-cargo-package-itertools-0.10.5.drv
+  /nix/store/l44ailfmqwrsbdn03vgyg83i5mksn6z7-cargo-src-h2-0.4.16.drv
+  /nix/store/6wpls34d2sr5y81yg8fb48cnm66gxs0k-cargo-package-h2-0.4.16.drv
+  /nix/store/hliis06nnr00qj86634ak448lx6kbjby-cargo-src-wasm-bindgen-macro-support-0.2.125.drv
+  /nix/store/6x811m4a5klv4a60kwbmbd7cghi7lxsx-cargo-package-wasm-bindgen-macro-support-0.2.125.drv
+  /nix/store/6xq3flkl3s5gs07i55399m0f7gy8wars-cargo-package-tokio-util-0.7.18.drv
+  /nix/store/6xs1cvmq8ps001ii41lndap50fc57s7w-cargo-package-axum-0.7.9.drv
+  /nix/store/6z46k73vn26kmw9h7nrdinrsf9lcxsdx-cargo-package-ark-poly-0.5.0.drv
+  /nix/store/726fah6yfpxgj4ifd8i59ljif6mfhy3w-cargo-package-ring-0.17.14.drv
+  /nix/store/73m8yxwfv3m0h96xqlhmdjylajknyb8n-cargo-package-dlopen2-0.5.0.drv
+  /nix/store/7446nk17kvjm8bly084zdaqh6g2qvx28-cargo-package-rw-stream-sink-0.4.0.drv
+  /nix/store/74m1kzn9qxym0qyavx6xkx2sjkqzj2r0-cargo-package-elliptic-curve-0.13.8.drv
+  /nix/store/75jlnyvm2sq6y6v945n3f8q02lr4mmkp-cargo-package-anstyle-1.0.14.drv
+  /nix/store/igk9zg89r7bcg0v6q55brpxlmaqraf6d-cargo-src-rustc-hash-1.1.0.drv
+  /nix/store/769002c6q27hqxcscw6my4cdlk228p8v-cargo-package-rustc-hash-1.1.0.drv
+  /nix/store/76k30jr5gb8jd8hxvqilb8qrnc4p91rb-cargo-package-netlink-packet-core-0.7.0.drv
+  /nix/store/qvf5nh3z1w8fi767j1bwq7s6axaxylvp-cargo-src-prost-derive-0.14.4.drv
+  /nix/store/77bxz0ns3gdxfd551x84abjm412ha1vp-cargo-package-prost-derive-0.14.4.drv
+  /nix/store/783ah3dg7df3722c2714d0fnqrfafqzp-cargo-package-tonic-types-0.14.6.drv
+  /nix/store/7861ddijcvy3w8nk0dlxi636p0gdb6lm-cargo-package-fallible-iterator-0.3.0.drv
+  /nix/store/79gw3m56ndkg66zgd6mcr9mj4y9mwvs6-cargo-package-axum-core-0.5.6.drv
+  /nix/store/p2jbgavw7azgwaaxixzc4pin1v0b5xij-cargo-src-prost-types-0.14.4.drv
+  /nix/store/7d0km0s192r94m9a7cl14d43x8qb1w22-cargo-package-prost-types-0.14.4.drv
+  /nix/store/7dh4qwrs1pyrjajfn614sd01r7pd7d6a-cargo-package-bytecount-0.6.9.drv
+  /nix/store/7fwzgwj6j7lds5i7sbvh7saf7y4vdd7n-cargo-package-sec1-0.7.3.drv
+  /nix/store/7jqfgwf346g19c0drb4wkg9101jhh7zm-cargo-package-windows_aarch64_gnullvm-0.52.6.drv
+  /nix/store/7k1b64zak5cllz6hw74zkm8lqmmlydb1-cargo-package-icu_properties_data-2.2.0.drv
+  /nix/store/7mp79ilgfq2sashq36l117w5lims45h9-cargo-package-find-msvc-tools-0.1.9.drv
+  /nix/store/7rwcj2b31m9s6yjlp1nm1xa6lnr4536a-cargo-package-r-efi-5.3.0.drv
+  /nix/store/7sld0bkjiiydws78ghjdwz2y4v4kndf8-cargo-package-percent-encoding-2.3.2.drv
+  /nix/store/7ss3z1si347c8d6lypn3qrj6rhasnkhw-cargo-package-untrusted-0.9.0.drv
+  /nix/store/7v2ccjng5mqfdh4rjm60hszrzs28761g-cargo-package-synthez-core-0.4.0.drv
+  /nix/store/j7iryz0pxzz36gpg2d836y7yap8hpxw5-cargo-src-dhat-0.3.3.drv
+  /nix/store/7wpbjcfk1wnrq6kvr5fgfdskfsyrabqv-cargo-package-dhat-0.3.3.drv
+  /nix/store/80ng3l7iypaf0x1273dd7igsydmpg0ld-cargo-package-unicode-width-0.2.2.drv
+  /nix/store/81m7fybhmyawg8plklr88j4jb40d3ag9-cargo-package-hashlink-0.9.1.drv
+  /nix/store/82xcsbw14i7rwz9jhh4n52l180s02ifw-cargo-package-jobserver-0.1.34.drv
+  /nix/store/83ylmw8cp1k4fl01q0nk4cvdq41gpc8g-cargo-package-proc-macro-error2-2.0.1.drv
+  /nix/store/84iq2qp0wrkn5cd26xaz1gy5bn1axnlq-cargo-package-tokio-1.52.3.drv
+  /nix/store/85hkl4vsimy6f33njqm3f2ji83bpw6kv-cargo-package-convert_case-0.10.0.drv
+  /nix/store/883xj4nzm16gkvkl6hj915gk9r5vm71m-cargo-package-axum-0.8.9.drv
+  /nix/store/886i1pcxnb2r982j3cxz4ha0p2lr0zdd-cargo-package-rustix-0.38.44.drv
+  /nix/store/89h6jlwq87s0djzqly8wlhxsggxw9wrb-cargo-package-hermit-abi-0.5.2.drv
+  /nix/store/8d71b045h9xkrp0xczgfkang8fhx1h4p-cargo-package-rand_chacha-0.3.1.drv
+  /nix/store/8dxssmk6al6n1hfyijf7vrj9lmj61jkv-cargo-package-rand-0.9.4.drv
+  /nix/store/8f88cq01yzl7i6vmfzrw8jhx88msbsq8-cargo-package-tinyvec_macros-0.1.1.drv
+  /nix/store/8giiahwpir8w9rfmkf4bsnia5svihskz-cargo-package-const-oid-0.9.6.drv
+  /nix/store/8hz9c984ghl9g3i92ihm9dyvknaz0v9l-cargo-package-color-eyre-0.6.5.drv
+  /nix/store/8islim0hvapjhvad9gankqinymyms0hl-cargo-package-anstyle-wincon-3.0.11.drv
+  /nix/store/8j6zxbwc99qzalbvyq8ib9n3j566cknw-cargo-package-syn-1.0.109.drv
+  /nix/store/8l0i9r8r5nlbfrwsjqas5fk17lg2az45-cargo-package-winapi-x86_64-pc-windows-gnu-0.4.0.drv
+  /nix/store/8l4bald7idafhg292zvsfm0y4qqqf3a4-cargo-package-tera-1.20.1.drv
+  /nix/store/8p4v13ywjb18z2xjjmjxyw8blp07vawi-cargo-package-opentelemetry-http-0.32.0.drv
+  /nix/store/8pqmahbiv8n2aq745gwv5cp79vvyj6rv-cargo-package-is_terminal_polyfill-1.70.2.drv
+  /nix/store/8sq4x9hszqdp8jscawxkkxlq79k63w8y-cargo-package-serde_yaml-0.9.34+deprecated.drv
+  /nix/store/japsx0k5fxqi3wqk1p4gkdi329pj8wnz-cargo-src-derive-getters-0.5.0.drv
+  /nix/store/8y2f8cg0pyr6q86chs2zd5ivf08r4pm7-cargo-package-derive-getters-0.5.0.drv
+  /nix/store/8y80irw4zi617dips67q1qxhhh1lrh73-cargo-package-windows-link-0.1.3.drv
+  /nix/store/91fblq727kzhih425jmjw463572l7lqc-cargo-package-toml_datetime-0.7.5+spec-1.1.0.drv
+  /nix/store/92qa09dam5wq71f62xhvxcjdb7qfmnws-cargo-package-hex_fmt-0.3.0.drv
+  /nix/store/9409fw80sxbsqmkjsv4568dambbj5fgm-cargo-package-serde-1.0.228.drv
+  /nix/store/9456445gvzhlpzfbr3k2ca7ad6jnkh7r-cargo-package-libp2p-kad-0.48.0.drv
+  /nix/store/96cr7xzmga04i02baxfxri7x9p4fskkw-cargo-package-serde-value-0.7.0.drv
+  /nix/store/ilqk8616m9cpg6bf17fls7qqc6dsv30d-cargo-src-nohash-hasher-0.2.0.drv
+  /nix/store/96plxgndynrzd7971w8gms75skjfphnk-cargo-package-nohash-hasher-0.2.0.drv
+  /nix/store/97wia79j96lqbd9d3187sn9i5pb2cqkm-cargo-package-icu_collections-2.2.0.drv
+  /nix/store/987i7p8bzp2027sn6yrwrvwqjqvh07wq-cargo-package-synthez-codegen-0.4.0.drv
+  /nix/store/9afy6dv0yfqlcfyy2awidl5ddaw80h5j-cargo-package-winapi-0.3.9.drv
+  /nix/store/9b7rd9mppxwmxp09jiwfdhm1s6q82yai-cargo-package-typenum-1.20.1.drv
+  /nix/store/9dxly7ckidq2an72yzhralklip0babsr-cargo-package-ctrlc-3.5.2.drv
+  /nix/store/9fjx914wgv845q0yghlwwjk4q9b4k4ph-cargo-package-futures-core-0.3.32.drv
+  /nix/store/9gbjfk8dplyj1fagsi7k8k0ms6hb372k-cargo-package-prometheus-client-derive-encode-0.4.2.drv
+  /nix/store/9jz39kx1grqplrq7nwwjr4jy4rgvb42k-cargo-package-regex-automata-0.4.14.drv
+  /nix/store/9q4x197fsv85nb0xpsn2swd8s6gr05a4-cargo-package-multibase-0.9.2.drv
+  /nix/store/9r2gy6qvp0qcsccp0mqvq0vlnaz7pgm0-cargo-package-findshlibs-0.10.2.drv
+  /nix/store/9rjhjmm9l3dc33lq4ywhr9gfac0r749r-cargo-package-linked-hash-map-0.5.6.drv
+  /nix/store/9slsf644g4fi6p0alj2mdq3w3x4rjd44-cargo-package-convert_case-0.8.0.drv
+  /nix/store/9v8ijcf1x9iv1k9dal6d8m3627lg9bz4-cargo-package-derive_more-2.1.1.drv
+  /nix/store/9x5ji1501j0hivgy7y4a8765rwbaya7z-cargo-package-debugid-0.8.0.drv
+  /nix/store/9xbb515j9ky3cdndq6a6r705002kpk6k-cargo-package-async-io-2.6.0.drv
+  /nix/store/9xl5x0100gy9bkzimbzdgd8camnm83jk-cargo-package-indenter-0.3.4.drv
+  /nix/store/9xpbws7837c3z7l3y82k5r963bvqkxa0-cargo-package-rand_core-0.10.1.drv
+  /nix/store/9xwm12gg08gzl88n9fl0lyj9b3x9qwx2-cargo-package-equivalent-1.0.2.drv
+  /nix/store/9z7w1sfz9877pvdjjqcd65f99rv4337d-cargo-package-windows_i686_msvc-0.52.6.drv
+  /nix/store/fysvzq0g1mx7czqly68g7wsq630jcz9n-cargo-src-jiff-static-0.2.29.drv
+  /nix/store/9zm9gabqkgwxv8ncajxhjydw6bv7prmy-cargo-package-jiff-static-0.2.29.drv
+  /nix/store/9zp5f9dqj4b8gc6hk2myggpvwqn568ms-cargo-package-windows-implement-0.60.2.drv
+  /nix/store/a0x0p6ky0vj0m3ciyqn30dpmq54wvi32-cargo-package-hashlink-0.10.0.drv
+  /nix/store/jc7j1y7nh2zb3wbrkp0fsh14ph3s4vh8-cargo-src-zeroize_derive-1.5.0.drv
+  /nix/store/a3s2h8l77jhll5w2nfmlyzbmvz2ry162-cargo-package-zeroize_derive-1.5.0.drv
+  /nix/store/njcfdi0zpfjl4m8l7zhkw9lz4dy9xj2k-cargo-src-wasm-bindgen-0.2.125.drv
+  /nix/store/a47frlakibvm7cakp271y274pyc0fx1k-cargo-package-wasm-bindgen-0.2.125.drv
+  /nix/store/a4jrpvn5q7lz5b185hkxgnxr78b9hr6r-cargo-package-num-conv-0.2.2.drv
+  /nix/store/a8hpa6sibvnpxff7i6w2vi4qj1ph48az-cargo-package-crossbeam-deque-0.8.6.drv
+  /nix/store/aaxizmxmi4iwvhlk985pk5r3c1xpa8pv-cargo-package-match_cfg-0.1.0.drv
+  /nix/store/adc7dyfcd6l9bhsj1qz09kr7fmg4gcid-cargo-package-ark-serialize-derive-0.5.0.drv
+  /nix/store/agaxhng9qipd12ljdf86p79159j3c7gg-cargo-package-nom-8.0.0.drv
+  /nix/store/ahhg5nd1cqia19kqh9bgjx5j1rrh615v-cargo-package-bitflags-2.13.0.drv
+  /nix/store/aipxjnsva8lvjvpp62hjh6si65d0fs6y-cargo-package-serde_core-1.0.228.drv
+  /nix/store/ajlgb80jl15yskmlr2jnsx20xhldhxm1-cargo-package-zopfli-0.8.3.drv
+  /nix/store/ajsy8cbk2pddbfz24ylnc7xr0s60998d-cargo-package-rcgen-0.13.2.drv
+  /nix/store/al0pb70nnvnnavi6n0zggzzihr6s6342-cargo-package-backon-1.6.0.drv
+  /nix/store/qdx9cww31afxmfkq5nndhdvfnwnvjhng-cargo-src-syn-2.0.118.drv
+  /nix/store/alav3wiq3yq4q1s8h0sagd0q4qkl8c5n-cargo-package-syn-2.0.118.drv
+  /nix/store/amv74475hck85iswfi1b0j18p0zxy905-cargo-package-critical-section-1.2.0.drv
+  /nix/store/anhc2l0piz5s0c994kqs9kr3q2sql6b1-cargo-package-windows-collections-0.2.0.drv
+  /nix/store/ar32qv7zfwswxypccz2g5s104xl8r1xs-cargo-package-foldhash-0.1.5.drv
+  /nix/store/avilxvxs8harydfqasfr1y38b5vqblqm-cargo-package-reqwest-0.13.4.drv
+  /nix/store/avj4wdai6jkp6z29q0ar5m023lzw1q3z-cargo-package-pin-project-internal-1.1.13.drv
+  /nix/store/zspxx2vazgf13sbhsghgiyjzcgdhaqjv-cargo-src-fallible-streaming-iterator-0.1.9.drv
+  /nix/store/aybzcrcsmq10f14vj220g2grgpwrc6r8-cargo-package-fallible-streaming-iterator-0.1.9.drv
+  /nix/store/ayxvmxaawv86yvviglr7l9ivv39xipdy-cargo-package-parking_lot_core-0.9.12.drv
+  /nix/store/b1bxfa4mfkh4dk1bxsj3mjrmn2pjgb52-cargo-package-windows-registry-0.6.1.drv
+  /nix/store/b1j4xcn5lggg3rd65pyghljqyh4s6sf5-cargo-package-rand_core-0.9.5.drv
+  /nix/store/7vlld9krqi5zkfan8bggbzybyyl38agn-cargo-src-defmt-parser-1.0.0.drv
+  /nix/store/b2xbhygifgkp50rb2rb7fg3amavvmnb7-cargo-package-defmt-parser-1.0.0.drv
+  /nix/store/b38kd9j57cjwzhkj9dc22ah6j5sf2j8g-cargo-package-peg-macros-0.6.3.drv
+  /nix/store/bbcjbry3szz2rfx8q40dbv5z65vp2s0v-cargo-package-version_check-0.9.5.drv
+  /nix/store/bf76sy26scbzgy8dh056jb287gppyk26-cargo-package-windows-interface-0.59.3.drv
+  /nix/store/bfag6fi5vxlbxmsmjcg7adi3jkzbnmfi-cargo-package-zerofrom-0.1.8.drv
+  /nix/store/bfi474z2hqc74jq7s9li0fg205vnx9jv-cargo-package-chkstk_stub-0.1.0.drv
+  /nix/store/bglvq3qr460d0ml8c9hw4bz7pl9sb361-cargo-package-bumpalo-3.20.3.drv
+  /nix/store/bhbzqfczaikd6jx3y59ga88xpy32zjdc-cargo-package-zerovec-0.11.6.drv
+  /nix/store/xklndxa700hijalaj490zhkynhhi7y3h-cargo-src-cucumber-codegen-0.23.0.drv
+  /nix/store/bkc14s3i6swl99w3ljwh5cyx7djs7977-cargo-package-cucumber-codegen-0.23.0.drv
+  /nix/store/bmgcnr4zljfmvzr47hxv6jba9clxhzky-cargo-package-futures-executor-0.3.32.drv
+  /nix/store/bvs4z1zpwvxk1z3xlwwcb56p7i15m04y-cargo-package-rand-0.10.1.drv
+  /nix/store/c2rd6q43g5k216m7b7b12bz54y6mnbzq-cargo-package-tokio-rustls-0.26.4.drv
+  /nix/store/c2x6nigywblmiilchrs2w9gscf4spkna-cargo-package-criterion-0.5.1.drv
+  /nix/store/c5r6xqkpp362pfpzan458qiixvfigzsw-cargo-package-serde_ignored-0.1.14.drv
+  /nix/store/ssxl14pacdf06a22i0gf6dxa193bn7zd-cargo-src-quote-1.0.46.drv
+  /nix/store/c62xg79aaj9z38qjaxhfg0jpg49a9jw2-cargo-package-quote-1.0.46.drv
+  /nix/store/c7v9cpyjbpz3j94wngm3k1fjci5n09by-cargo-package-opentelemetry-otlp-0.32.0.drv
+  /nix/store/c7z0kc87gqr8qhbmk9pd5znrcp38aygd-cargo-package-symlink-0.1.0.drv
+  /nix/store/c8w1wk1nvpgsl8nil5jafqw7hxdhg0b7-cargo-package-libp2p-autonat-0.15.0.drv
+  /nix/store/c90fk3sza82q68bm6ldlfiva9ynkxzkw-cargo-package-bzip2-sys-0.1.13+1.0.8.drv
+  /nix/store/c95kjral5vmjy74qwadypz49g5fclk80-cargo-package-inflections-1.1.1.drv
+  /nix/store/c9pgyq4586cg3sgxig188zmiwazyn75m-cargo-package-encode_unicode-1.0.0.drv
+  /nix/store/cai8lxnpqfxzdx0yy3rbswwpv9rg3ky3-cargo-package-windows-core-0.61.2.drv
+  /nix/store/cfjfqy1270s97xjilph2vply1f3g7b24-cargo-package-windows-core-0.62.2.drv
+  /nix/store/cg5bdz49vz55qda91814fiic98jj2ci0-cargo-package-nutype_macros-0.6.2.drv
+  /nix/store/ciry4jnbna3fp2135kssdizawgdcjg1a-cargo-package-openssl-0.10.81.drv
+  /nix/store/cli7mb0kjknw9j3z75nai2rpff0f741k-cargo-package-plotters-backend-0.3.7.drv
+  /nix/store/cpdwrrwz1lmfhyxqhr8kxcl31xmcms3p-cargo-package-lock_api-0.4.14.drv
+  /nix/store/cq084y3cnavhs59llfsv0z05573qahpy-cargo-package-security-framework-sys-2.17.0.drv
+  /nix/store/cqqvr2p5wrkbdc1xa48g5dxhwj54azy0-cargo-package-async-stream-impl-0.3.6.drv
+  /nix/store/cs78f45a3sm2k714m848wq124bijaxlg-cargo-package-linux-raw-sys-0.4.15.drv
+  /nix/store/cszz04jfrk74zawqgma4m6m12inc3cgp-cargo-package-pin-project-lite-0.2.17.drv
+  /nix/store/cvvg2n1090q0p5r0rfw7sad5q0250qba-cargo-package-aho-corasick-1.1.4.drv
+  /nix/store/6rd3i6rcjczm33kffixjhx9l82adszc2-cargo-src-pest_generator-2.8.6.drv
+  /nix/store/cvy7sx1cvn49b4c99xc3lgyygq5y477r-cargo-package-pest_generator-2.8.6.drv
+  /nix/store/cws8iv64ifkqizddzzjx5a2sx6bif7k5-cargo-package-typed-builder-macro-0.23.2.drv
+  /nix/store/cxfclp7ls7fp5ga4rb8l0lc2rq43z0v8-cargo-package-icu_provider-2.2.0.drv
+  /nix/store/cxmliwcx4330f39fbbj46nin6654py6j-cargo-package-ff-0.13.1.drv
+  /nix/store/d4sz7r783ki4ichyf4apbm0309513dxw-cargo-package-static_assertions-1.1.0.drv
+  /nix/store/d8lxyrhsxfnky8fri88ga8bm8gam8s5b-cargo-package-tinystr-0.8.3.drv
+  /nix/store/30c9r886fz1jvl7whwvk6jjyajwx623g-cargo-src-test-log-core-0.2.21.drv
+  /nix/store/d96aylr6br2sgk9fclqq3jjhr0dmhndq-cargo-package-test-log-core-0.2.21.drv
+  /nix/store/dbidcc08x3z6pmkx2w7q58p4c4cz18vh-cargo-package-openssl-sys-0.9.117.drv
+  /nix/store/dhbw3902pv0xx3hmhhmw4k5xixbhiisv-cargo-package-android_system_properties-0.1.5.drv
+  /nix/store/diy7q0cy7bqfmba93gbl6ljbj4448dff-cargo-package-unicode-segmentation-1.13.3.drv
+  /nix/store/dj06ywqcfgrq6nl1klhwrkk5sp1sxr35-cargo-package-ipconfig-0.3.4.drv
+  /nix/store/dk12y5pj1fzrkzmf62k538150sw4pla2-cargo-package-icu_properties-2.2.0.drv
+  /nix/store/dmpf3amg93v1kc6ap5qz9nifkwk301v1-cargo-package-portable-atomic-util-0.2.7.drv
+  /nix/store/dmry1y1r4hm57s46xpfc0cg49cx4s19s-cargo-package-darling_macro-0.23.0.drv
+  /nix/store/dqwhqhcmk5gv29pv6c8yq9ibbi584qid-cargo-package-libp2p-identity-0.2.14.drv
+  /nix/store/dqz0hnchrglisa2s9nsvwwn4n7jdaa8y-cargo-package-digest-0.10.7.drv
+  /nix/store/dqzx1hdxfihffmwx6gp9v7ms6g6x3sh4-cargo-package-hyper-util-0.1.20.drv
+  /nix/store/f0vah89ncm81062llflbqkjljykbm844-cargo-package-deunicode-1.6.2.drv
+  /nix/store/f1a1b472wwgwldgymyxl4yc96iqj8vzn-cargo-package-tonic-prost-0.14.6.drv
+  /nix/store/f1c3j6ir45s5pbafrkdjslbcbi5ynd69-cargo-package-x25519-dalek-2.0.1.drv
+  /nix/store/f21l4scr89g9002ic0vr0yr34b0lfqyi-cargo-package-astro-float-0.9.5.drv
+  /nix/store/f62y2ra9y8y1wnnc5c6zmz686agbb3r7-cargo-package-const-str-0.4.3.drv
+  /nix/store/f6m9cnh8a5lgr02j9646cswmn71qndg6-cargo-package-tokio-native-tls-0.3.1.drv
+  /nix/store/f7z3i34jyk872r3a7w4h7iv25i0a55jn-cargo-package-windows-strings-0.4.2.drv
+  /nix/store/f9a5sj5wcw47jmny3rcms08aws2d0a0x-cargo-package-prometheus-client-0.23.1.drv
+  /nix/store/fa4xnslizssbsjgnzvxrg878p8bs823l-cargo-package-tracing-subscriber-0.3.23.drv
+  /nix/store/fdarjiqfr26k95s6s6kmsl25ngw36xa6-cargo-package-toml_parser-1.1.2+spec-1.1.0.drv
+  /nix/store/fdxjjj9dy29rmssm4rqkarxdlmc0j9dy-cargo-package-libz-sys-1.1.29.drv
+  /nix/store/ffg8xnslp17rn472nyd5l6nmskanylhp-cargo-package-objc2-0.6.4.drv
+  /nix/store/fg02pp4dx7ndwjwp7m8bidjrxbb83id5-cargo-package-data-encoding-macro-internal-0.1.18.drv
+  /nix/store/fizv3c4d7xnhd6cnb0fjhd21vsrsphyy-cargo-package-windows-targets-0.52.6.drv
+  /nix/store/fknvd3j7hg04j015z4qshi8081hr3y8z-cargo-package-hyper-rustls-0.27.9.drv
+  /nix/store/fnjaknkibffldrbqlgldqxvikw76mpfc-cargo-package-pprof-0.15.0.drv
+  /nix/store/fpjqmidxvfhgs7pbh1kwk0syhfr1lfyg-cargo-package-system-configuration-0.7.0.drv
+  /nix/store/fpp6xzlbxm02yjj8p51b306bq0g6p08k-cargo-package-autocfg-1.5.1.drv
+  /nix/store/fqg024q433qdgbibbvilmazn1x7p1qk3-cargo-package-tokio-macros-2.7.0.drv
+  /nix/store/fqs6ihsq8vh63ympz7laaarz2i3b5xyv-cargo-package-peg-runtime-0.6.3.drv
+  /nix/store/fssc09d1gjml28n9hbqzrprjs0hiim72-cargo-package-sealed-0.6.0.drv
+  /nix/store/w84wwf9f6ps4wm0npmx1ryzxh4w76wfi-cargo-src-fluent-uri-0.3.2.drv
+  /nix/store/fv7i50fpv6jzdaxrqnbf46dxg0bi92sm-cargo-package-fluent-uri-0.3.2.drv
+  /nix/store/fxlqdy0qnmkizisirc9clq58m77mnxj8-cargo-package-addr2line-0.25.1.drv
+  /nix/store/fy675aim4sdn25szmiqkfqvwq8dmkg9r-cargo-package-xml-rs-0.8.28.drv
+  /nix/store/g0d8b2fcp5s874gb2jd763g27lpyaa20-cargo-package-openssl-macros-0.1.1.drv
+  /nix/store/g1345fj7rr2k68knk4inrds18jgw91ff-cargo-package-pkg-config-0.3.33.drv
+  /nix/store/g1r9hr65prx880bpwshk99w0rn1b3l9r-cargo-package-tinytemplate-1.2.1.drv
+  /nix/store/g2wl94cjli4fm4arfqclw0ikqg7azpdx-cargo-package-slab-0.4.12.drv
+  /nix/store/g46a3g8448x5h28kq25bivjad1xby3d4-cargo-package-igd-next-0.16.2.drv
+  /nix/store/g608ajsfrrcwrnks1qvm1rzczip28p6p-cargo-package-toml-0.9.12+spec-1.1.0.drv
+  /nix/store/g6mwidm5v6yl4p71vk63k8knllybpr51-cargo-package-core-foundation-0.10.1.drv
+  /nix/store/g75n2nnm0jfjk5ar1w6x1vxdbfy32wiq-cargo-package-winapi-i686-pc-windows-gnu-0.4.0.drv
+  /nix/store/g79n9vghxnqf3ikhrnhykr2a0pjxjq2q-cargo-package-ark-relations-0.5.1.drv
+  /nix/store/g7g61l9rqsg0hspcjhpgppi5vkb2iajw-cargo-package-zerotrie-0.2.4.drv
+  /nix/store/gbqscgb62v24l06c391hxawf43nzf9cv-cargo-package-rayon-core-1.13.0.drv
+  /nix/store/gd74q0l0darg7rsczljdpzd0nyxamskc-cargo-package-paste-1.0.15.drv
+  /nix/store/gfgbaf1c8z3vlx6m4zlplz4azx8114jr-cargo-package-async-channel-2.5.0.drv
+  /nix/store/gfrpf166i3pq9fvkfbrh7vay6vx06h9g-cargo-package-tokio-stream-0.1.18.drv
+  /nix/store/ghcdh4z8zlpn5kim418ll7x50rjjs6kw-cargo-package-libp2p-core-0.43.2.drv
+  /nix/store/ghm4qj68iflabbjzbmjhw6r8286d8a43-cargo-package-gloo-timers-0.3.0.drv
+  /nix/store/gi6wyx1zjpf1a8wash96n4akb5v525bc-cargo-package-libp2p-metrics-0.17.0.drv
+  /nix/store/4i4336qh9w05f96arsmg70fjpa1inrkn-cargo-src-which-4.4.2.drv
+  /nix/store/gijdym4x0dj5jbn10zsp51sp6b9bdz35-cargo-package-which-4.4.2.drv
+  /nix/store/56y46398j1hzyn0v2lxxra0c5gnbdk4s-cargo-src-wasm-bindgen-macro-0.2.125.drv
+  /nix/store/gjz7pknjq3zi0c4044s21qzhfzbqi30y-cargo-package-wasm-bindgen-macro-0.2.125.drv
+  /nix/store/gmaynswvllbfyc2hfcjwn7rvplx9njqp-cargo-package-memchr-2.8.2.drv
+  /nix/store/gn322zy4zw3r81fm9kq1cfvxhy0d1wjl-cargo-package-manyhow-0.11.4.drv
+  /nix/store/gns47iqss7r3s0vn3dc3nsp4ay2rjpnp-cargo-package-ark-serialize-0.5.0.drv
+  /nix/store/gplfln1bvxadsg8d8c92mqsf20kcm1py-cargo-package-windows-future-0.3.2.drv
+  /nix/store/gr233822hi89xi3d361vrgq7jlqw1spd-cargo-package-system-configuration-sys-0.6.0.drv
+  /nix/store/gsy76bck5ym5y4w38fril1g7bydbp5dy-cargo-package-oorandom-11.1.5.drv
+  /nix/store/gx1d590h4xsnd1rrygh10l16zxxi9dpn-cargo-package-phf_codegen-0.11.3.drv
+  /nix/store/gxwyng40arwrlq38xx3c2c6yl90gg6mb-cargo-package-serde_with-3.21.0.drv
+  /nix/store/gy8323npnlg2sp2l1xhd7qn5183x2255-cargo-package-rand-0.8.6.drv
+  /nix/store/gzq8lvvs07g88dvcd3pq81b48mwwbahd-cargo-package-match-lookup-0.1.2.drv
+  /nix/store/h3yni0g8p679s44ks0f94a0vw6mmyjsf-cargo-package-windows-threading-0.1.0.drv
+  /nix/store/h66jriyqk4m5f76z4w6vvrv951znrc34-cargo-package-r-efi-6.0.0.drv
+  /nix/store/h75689bkagdvsljylyd24g1adm31gavy-cargo-package-objc2-core-foundation-0.3.2.drv
+  /nix/store/h7mi77gghgrx1d5zi45xc3jiazs6zawg-cargo-package-loki-api-0.1.3.drv
+  /nix/store/h7ya7qa30srjf3qk00wgi29kmhvcbl3w-cargo-package-concurrent-queue-2.5.0.drv
+  /nix/store/h88zls99sgysibmc3xp0vsqrqqslj75z-cargo-package-filetime-0.2.29.drv
+  /nix/store/h8ivy2mljif2ay5q7rlw0qcagkdw5jgm-cargo-package-k256-0.13.4.drv
+  /nix/store/haknl0ggjf2hqws891rma5j72zw6wwwi-cargo-package-once_cell_polyfill-1.70.2.drv
+  /nix/store/hcvlv9h0ppzqnhw64vgkqwsggmvwpbk4-cargo-package-netlink-packet-utils-0.5.2.drv
+  /nix/store/hd9qn2a9z3fjvk4cbqcxba7ira2wsj3j-cargo-package-opentelemetry-semantic-conventions-0.32.1.drv
+  /nix/store/hga7adma3sklj73ssqn149y2p8wsx7hv-cargo-package-matchit-0.8.4.drv
+  /nix/store/hgdnc8mqj7kzxwyw2j338nfaiqdwg6fr-cargo-package-hickory-proto-0.25.2.drv
+  /nix/store/hhk8dpj3khn60vp5rl8a893akca5v963-cargo-package-miniz_oxide-0.8.9.drv
+  /nix/store/hk6d19bc78pmi9jqb1f2mlwdixiy8np1-cargo-package-netdev-0.31.0.drv
+  /nix/store/hlildf1qha9c25kq8z335mcslirjsvhw-cargo-package-inventory-0.3.24.drv
+  /nix/store/hm0nhminasl27nv9y4cq5g9yp6wsgk0h-cargo-package-netlink-packet-route-0.28.0.drv
+  /nix/store/hmmnidg8l4s6sd5mrmbx2ckinr15w8mz-cargo-package-nutype-0.6.2.drv
+  /nix/store/syxijd5vl0232329p3rpsv6j2a6ajgv1-cargo-src-quinn-0.11.11.drv
+  /nix/store/hmzpm26dhj5qlfa0z2kvl4lp2p0p3j7b-cargo-package-quinn-0.11.11.drv
+  /nix/store/hn24rlnzqf9768p9sw4bzkfmpjzcznyd-cargo-package-ordered-float-2.10.1.drv
+  /nix/store/hn8wahd39q8xdil87zn8x0fyszrn5z81-cargo-package-json-patch-4.2.0.drv
+  /nix/store/hv25z1s430088hycrgsv2m5nvlxyg52a-cargo-package-try-lock-0.2.5.drv
+  /nix/store/hvgcmrlwnndil3jlasrjp4jk4l50s6jr-cargo-package-rand_xorshift-0.4.0.drv
+  /nix/store/hz279pzicc5zlnx798jvs16jvsacbx73-cargo-package-bytemuck-1.25.0.drv
+  /nix/store/i2z58xalxpngczrrxv93pzw0w9k56grb-cargo-package-windows-strings-0.5.1.drv
+  /nix/store/i3w0v66c9c4xhacggwsvkxzwgw515qwm-cargo-package-backtrace-0.3.76.drv
+  /nix/store/i4ryfs4hypmngxnkrc15liia1sw623nm-cargo-package-ark-snark-0.5.1.drv
+  /nix/store/i69msvpp5bl9gdmy78jcfwscpvlzkcnq-cargo-package-hyper-tls-0.6.0.drv
+  /nix/store/i6nir199mqi985hz7fjp91ixi59srb5y-cargo-package-tagptr-0.2.0.drv
+  /nix/store/ia2i6cn6vr537025kc2fgrk0nlcx2apj-cargo-package-ark-ec-0.5.0.drv
+  /nix/store/icj6kgan94kra0c6ba6jlgfh3g70f4hk-cargo-package-libp2p-stream-0.4.0-alpha.drv
+  /nix/store/idjhqyrqpk6dmjm0l5fzz10my7v938db-cargo-package-nix-0.31.3.drv
+  /nix/store/s4m4vmy110ifcdv5pqc0mpinn7hh3ysp-cargo-src-rust-embed-8.11.0.drv
+  /nix/store/ig56v50f2zf016vyszd56wlg8874k7ll-cargo-package-rust-embed-8.11.0.drv
+  /nix/store/ih0ygf2bqb6sdqwig507qzw5900wv49g-cargo-package-ecdsa-0.16.9.drv
+  /nix/store/iizxw2gn98iyrjnr6fr55wi9s4cvh2pg-cargo-package-async-ctrlc-1.2.0.drv
+  /nix/store/zgj70qgz04wb2pafc0zl4yj0pgcdkvbj-cargo-src-quickcheck_macros-1.2.0.drv
+  /nix/store/ijk385h6a6s3f4v0r72s1379xx7qyi8l-cargo-package-quickcheck_macros-1.2.0.drv
+  /nix/store/iklk517aqhj43ijjay4ka9hrwp0k8mcp-cargo-package-errno-0.3.14.drv
+  /nix/store/h6khj6zzq4i6fcn8qsnkvnc20fg14z23-cargo-src-libp2p-yamux-0.47.0.drv
+  /nix/store/ilzrpxyscz89blb016vsdazmzlrl70c1-cargo-package-libp2p-yamux-0.47.0.drv
+  /nix/store/iqlcr2fik70lfnnk4l4ip5idacqcw6g0-cargo-package-futures-util-0.3.32.drv
+  /nix/store/iqpn4gbv01kdrqd6f7h8zgzx0i4w7rd6-cargo-package-chrono-tz-build-0.3.0.drv
+  /nix/store/irhrm84halhj26z8ghxzjns76l154mwf-cargo-package-tokio-retry-0.3.2.drv
+  /nix/store/is1xp04brhrck4j1fxr8y6vvncv91ghq-cargo-package-aligned-vec-0.6.4.drv
+  /nix/store/rbc2kd5s3c42lb156ahs21kbjx680lx1-cargo-src-pest_meta-2.8.6.drv
+  /nix/store/iv13s3zlwhmkzxvmfj6sx68lm1c1hppd-cargo-package-pest_meta-2.8.6.drv
+  /nix/store/iv1x83xb4sd6f7rnk4dhvhipc4grnxhp-cargo-package-rustls-native-certs-0.8.4.drv
+  /nix/store/iwi5p0n47wyzkbqll67gzms1bbgangy8-cargo-package-validator-0.20.0.drv
+  /nix/store/59b5ziaz0vz0vp58ikhsb81w66v9pfwx-cargo-src-bytes-1.12.0.drv
+  /nix/store/j09ca7n9v9vlbc236cji31npcv2qrrn5-cargo-package-bytes-1.12.0.drv
+  /nix/store/j1kdn3fk5p02gh3alpa8c4y3bcvr7r2n-cargo-package-ark-ff-macros-0.5.0.drv
+  /nix/store/j4bx12ib7pcvccnxcsnqgpafm3my1wv7-cargo-package-regex-1.12.4.drv
+  /nix/store/j6xs30p5l3j8gsg0dgr34h4nrjjh2icg-cargo-package-thread_local-1.1.9.drv
+  /nix/store/j6ysms3qwdr7b1rv1v1pkbzbaih1dlms-cargo-package-opentelemetry-proto-0.32.0.drv
+  /nix/store/y4diaazhq1yyr5v5jz2idwbyvhrwalgm-cargo-src-proc-macro-error-attr3-3.1.1.drv
+  /nix/store/j81qqq9rpj4qv16p60agkh6mj0f7kqw1-cargo-package-proc-macro-error-attr3-3.1.1.drv
+  /nix/store/j852by7pf6cf594l934hxk1qzqh5g14z-cargo-package-toml_writer-1.1.1+spec-1.1.0.drv
+  /nix/store/j8p5rw2h9yx4djh8x9wb68byjcmba651-cargo-package-quick-protobuf-codec-0.3.1.drv
+  /nix/store/j9mvgyg78v1b2xf2jij90s2vpf9lk3ml-cargo-package-anes-0.1.6.drv
+  /nix/store/j9rl3zw984hm27p1b215m3qsmjsw7yyr-cargo-package-walkdir-2.5.0.drv
+  /nix/store/jbgapdgkjixkyy4wf7i49a8a2czj5s50-cargo-package-linux-raw-sys-0.12.1.drv
+  /nix/store/jbsz603c39706fgkijiyrczglaxffqdb-cargo-package-sync_wrapper-1.0.2.drv
+  /nix/store/jggsr891628kyl4wziw6hgllvn16c47h-cargo-package-idna-1.1.0.drv
+  /nix/store/ji8gc0n5c3f5n0mq0c4kg7g74fah45s2-cargo-package-winnow-1.0.3.drv
+  /nix/store/jis6p9ga52700d6hck4x40nakr3l9m1h-cargo-package-num-traits-0.2.19.drv
+  /nix/store/74sfv142dhbrl29vxwxvzgj0jpr2b9p2-cargo-src-serial_test_derive-3.5.0.drv
+  /nix/store/jiz8x1snxc9j50prz18dq4nj61w97mls-cargo-package-serial_test_derive-3.5.0.drv
+  /nix/store/jlfln8h0kfy4wj9savchazvl52ynqgm2-cargo-package-ciborium-io-0.2.2.drv
+  /nix/store/jmck8bgwvgm18pn8rlxh7mj5s8vczg11-cargo-package-wasi-0.11.1+wasi-snapshot-preview1.drv
+  /nix/store/jmfdd6jc08h9bhrndwja0liddzlpnvnn-cargo-package-unicase-2.9.0.drv
+  /nix/store/jqfsqz1ga85hmywkgyr7s275xw8vdx59-cargo-package-mime_guess-2.0.5.drv
+  /nix/store/k2jk19imdqydfrnzv1y4r0bshgpgfr1h-cargo-package-tikv-jemallocator-0.6.1.drv
+  /nix/store/k5mn8909ik51fq5ymjxcdcp9kwkw2pa6-cargo-package-futures-io-0.3.32.drv
+  /nix/store/k5z34w75cbbp05xw4bv9a0sjx06kx70r-cargo-package-archery-1.2.2.drv
+  /nix/store/k6k5vykw98fmgc247p6awznzxapxax1n-cargo-package-k8s-openapi-0.27.1.drv
+  /nix/store/k6s1jdgsj8mp9sgmymrb7lgvg5d8ssfx-cargo-package-libp2p-mdns-0.48.0.drv
+  /nix/store/7dvf6bcayg2sm9d9qnykvkmhgplchafq-cargo-src-cucumber-0.23.0.drv
+  /nix/store/k7iq0hc297q8nblz097l0cn7qlxg0z7l-cargo-package-cucumber-0.23.0.drv
+  /nix/store/q29xpvn4801ff3m48bbb1srllsmk116s-cargo-src-spin-0.10.1.drv
+  /nix/store/k7jlgq5nq1kwsini8ifnl6hav5bpkbnw-cargo-package-spin-0.10.1.drv
+  /nix/store/kafj4xp2mj1rvpmdfv36fjlvz6jc5qlw-cargo-package-num-format-0.4.4.drv
+  /nix/store/kc71zi5yi8vw7732kxaxkynzwxnk7ghl-cargo-package-clap_derive-4.6.1.drv
+  /nix/store/kdl4nyd1637qv680wc9hkrpb4h03cbxn-cargo-package-futures-timer-3.0.4.drv
+  /nix/store/kh05z8gdym69bpz3i2igj7pii60hiwkz-cargo-package-num-bigint-0.4.6.drv
+  /nix/store/khcrqrz1dwlxkxrg4b9kmy2pjm8y0l83-cargo-package-phf_shared-0.11.3.drv
+  /nix/store/yvyywx6gwpyx5vhx7fmx7jjc156ybcx5-cargo-src-symbolic-demangle-12.18.3.drv
+  /nix/store/khz2ah47qw7i7bdl1mz1fppanq79dfry-cargo-package-symbolic-demangle-12.18.3.drv
+  /nix/store/kiy61ndy36s1lgs7w0w5brc9byfkhazv-cargo-package-ark-groth16-0.5.0.drv
+  /nix/store/klgyajqyadw680sc5ivags4llag1sxm4-cargo-package-futures-sink-0.3.32.drv
+  /nix/store/km3167h4n33s8sh44y1agbmydcccpkzc-cargo-package-num_enum-0.7.6.drv
+  /nix/store/kvibjm0fb19fj0sv2zs8q97hg7c45pff-cargo-package-crypto-bigint-0.5.5.drv
+  /nix/store/kvsy2ifpw0b5cdpypzccfxxpj687nzzl-cargo-package-parking-2.2.1.drv
+  /nix/store/kvwf720y7xn1jmh3hvj5dqrl7gf89qgx-cargo-package-serde_path_to_error-0.1.20.drv
+  /nix/store/kxm57dwc972d7n9lvbw8bfg9p4akfb94-cargo-package-block2-0.6.2.drv
+  /nix/store/kywmi0ixrhj0qa4yalsqann1prwgfidv-cargo-package-valuable-0.1.1.drv
+  /nix/store/x1mxxrd3inc5ll66hyn45a29gzl5n644-cargo-src-condtype-1.3.0.drv
+  /nix/store/kz020a9l6pn1q3rn3djgw3csf95wxll4-cargo-package-condtype-1.3.0.drv
+  /nix/store/l1baxy3czz6yk4qq9c2ss7q4xdnl7jjx-cargo-package-cfg-if-1.0.4.drv
+  /nix/store/l1f14nif0fvlc80a2jz4yr8lnb59lcc5-cargo-package-tracing-core-0.1.36.drv
+  /nix/store/l24nvridf8lblc6gmch2gzi1yxqbhdpy-cargo-package-thiserror-impl-1.0.69.drv
+  /nix/store/l3c918zdvyz2h0v9jsfr2qwbhix1m40v-cargo-package-prost-types-0.13.5.drv
+  /nix/store/cdzaj5y2f1s3k92g27w17cmqdir2lgr6-cargo-src-event-listener-5.4.2.drv
+  /nix/store/l3vk08gr63xc0vcl308imn7nak0ji046-cargo-package-event-listener-5.4.2.drv
+  /nix/store/l4jhavxk68gl24494nrrbd0fcykrg8kl-cargo-package-keccak-0.1.6.drv
+  /nix/store/l5dj0h2xfynl1z6wdpf24awjrah6209a-cargo-package-ryu-1.0.23.drv
+  /nix/store/l5i108i8lmw3v8ksb3xskca6zkffrixl-cargo-package-smawk-0.3.3.drv
+  /nix/store/3n194bgjksrxrn88wck4sz2irh29v6ay-cargo-src-symbolic-common-12.18.3.drv
+  /nix/store/ldkv1wrc16mblk0rsfcaacmdlkc4ahsw-cargo-package-symbolic-common-12.18.3.drv
+  /nix/store/zbsapcnwzkv42cd054bp323l09ksvwqp-cargo-src-rust-embed-utils-8.11.0.drv
+  /nix/store/lfkqda13iwkkm9wm0rfywp33jz0cn44b-cargo-package-rust-embed-utils-8.11.0.drv
+  /nix/store/lghjy9pdjddf11gvw5a23v3p0f3w5fwi-cargo-package-crc32fast-1.5.0.drv
+  /nix/store/9kymm0pxlp5cwpcvfd7h0d0rxnqjx5dk-cargo-src-uuid-1.23.3.drv
+  /nix/store/lh6ajqp4bs09bl4nyl1x49r6nk6p9wa8-cargo-package-uuid-1.23.3.drv
+  /nix/store/ljni1k4hddnx8ga1lmk7kpnrzkyrpzxi-cargo-package-portable-atomic-1.13.1.drv
+  /nix/store/p64w3qqmf7lfpjz9y04dvibr4m3l6pb0-cargo-src-web-sys-0.3.102.drv
+  /nix/store/lmjkr60kac11glq9zm8fn2mhazrqmbkz-cargo-package-web-sys-0.3.102.drv
+  /nix/store/lmnksfqs3gy54kwlbn15q1l4xck9qm6v-cargo-package-globwalk-0.9.1.drv
+  /nix/store/lqi5lanpwipzrq6arw268chx85qz1w5g-cargo-package-crypto-common-0.1.7.drv
+  /nix/store/lrcg9vss1n43z3rmk09r2xlg1a507fhm-cargo-package-foldhash-0.2.0.drv
+  /nix/store/lrcqgfv34qhkc60pw47qs60srjjfmm5k-cargo-package-terminal_size-0.4.4.drv
+  /nix/store/lrki8n8r7cjbhi1pb5bchzh89swnafnr-cargo-package-darling-0.23.0.drv
+  /nix/store/ls9ks3zdfn7s33mzd7bfbrg5c1ybnv5q-cargo-package-fs_extra-1.3.0.drv
+  /nix/store/nkcmm3dyy45yhgfik169b5x6jwz96n1n-cargo-src-console-subscriber-0.5.0.drv
+  /nix/store/lsbchb3xn8vsrr1qh3w2q5fp9r8h2q3a-cargo-package-console-subscriber-0.5.0.drv
+  /nix/store/lv1l5xak8y74fpwwn4biir2c51dbcjgr-cargo-package-asn1-rs-impl-0.2.0.drv
+  /nix/store/lvsmv4mv5mdzks3bd5mp48hai432ridm-cargo-package-unicode-linebreak-0.1.5.drv
+  /nix/store/lwg6xfqkf9g8nz8i8864h3wc31i94lxp-cargo-package-clap_lex-1.1.0.drv
+  /nix/store/lx6c6mppjgkvc0z9ph0cs8csbv37mrnr-cargo-package-resolv-conf-0.7.6.drv
+  /nix/store/lxhcwfa68hzwk532h21dy32cvn4bv50g-cargo-package-nix-0.30.1.drv
+  /nix/store/lyahdjpkz9b5qg8jxsc6b4gvlgj27kfh-cargo-package-tower-layer-0.3.3.drv
+  /nix/store/lz82104hx7ghyi6hm4c25qr42y0glklr-cargo-package-asn1_der-0.7.7.drv
+  /nix/store/m05rrnyc23rmygyh17g8l046104j7fgq-cargo-package-xmltree-0.10.3.drv
+  /nix/store/m1vwvyq8z2fyp18slfavj8k25jkca93m-cargo-package-clap_builder-4.6.0.drv
+  /nix/store/m1x35fk06qkk4jyrdi70cg2n0b64z4rz-cargo-package-ciborium-ll-0.2.2.drv
+  /nix/store/m29pwbscw4g1hqhv980h7dln8xl4n8jv-cargo-package-matchers-0.2.0.drv
+  /nix/store/m4fiyncd02dxq02925n7mhq6hx8rq5yz-cargo-package-getrandom-0.4.3.drv
+  /nix/store/8mzv190dsxyr77bb9yy7c226rkhjqcxg-cargo-src-zerocopy-0.8.52.drv
+  /nix/store/m4vkf47wah6cld1pwvr7gnlcdaq1hwjq-cargo-package-zerocopy-0.8.52.drv
+  /nix/store/m53i56cvmw2akvn7vvmr2x0mp5i3rxi4-cargo-package-astro-float-num-0.3.6.drv
+  /nix/store/m5r7c429nxwjgxpxzpw2j6b61rj83616-cargo-package-shlex-1.3.0.drv
+  /nix/store/m5y2xgbx97wld2jg38ffaf0hswc1ff71-cargo-package-indexmap-2.14.0.drv
+  /nix/store/m70gz1ikjddjvwvnvn8633q1k5qnvdfc-cargo-package-prost-0.13.5.drv
+  /nix/store/m7cblbl6fj09ncwb9mxafm44rm0jgx54-cargo-package-signal-hook-registry-1.4.8.drv
+  /nix/store/m7ix6hrd8igii5gdam8cja8cj3k4h77w-cargo-package-tiny-keccak-2.0.2.drv
+  /nix/store/m7jqx4rcxwch1ihfmd206d876mhxlg0d-cargo-package-windows-sys-0.61.2.drv
+  /nix/store/ma120yrwcpalrdfhg3s1m4knz7q9mbrj-cargo-package-librocksdb-sys-0.17.3+10.4.2.drv
+  /nix/store/ma3rhphwc489gylsfclg02rmzdc6yh14-cargo-package-nu-ansi-term-0.50.3.drv
+  /nix/store/malacq16yrd0jkm9jfcs3av50i53vr4i-cargo-package-ref-cast-1.0.25.drv
+  /nix/store/mallncwkfjsk9g767asncghh346avd2l-cargo-package-windows-numerics-0.3.1.drv
+  /nix/store/mbkhysiiq06vjzydyi5cf68yiw2zgq2m-cargo-package-windows-0.61.3.drv
+  /nix/store/mcbkwf4vxnh2g9lrzz4l8m7a4pswqnix-cargo-package-criterion-plot-0.5.0.drv
+  /nix/store/mcvbfr4z8ra2w15ffls1wl8vrggvj3hb-cargo-package-tower-http-0.6.11.drv
+  /nix/store/mdcaiwz8d35i9f5f36zhy2s27m5q97pm-cargo-package-bitflags-1.3.2.drv
+  /nix/store/mghh1lhq7pakvdxa1w2mz4ib4vqfhy17-cargo-package-kinded-0.3.0.drv
+  /nix/store/mhidyv2h0ai5f4r29mdz1b3njm38q7p8-cargo-package-lazy_static-1.5.0.drv
+  /nix/store/mhrkgv7i79w753f9skv4ywijx1gfhdnv-cargo-package-regex-syntax-0.8.11.drv
+  /nix/store/rahw2bvmb41m2brdg3wpv5g0mrpc64m4-cargo-src-smallvec-1.15.2.drv
+  /nix/store/milnr1xzwqg64zgy22fil1gnj8w7z8fb-cargo-package-smallvec-1.15.2.drv
+  /nix/store/mkqljcq6cpyyy6zm95v4h385ha9vsl5a-cargo-package-adler2-2.0.1.drv
+  /nix/store/ml19imc1180v4pi901cl7pcd08br1bxn-cargo-package-sntpc-0.5.2.drv
+  /nix/store/mlr5jz5chv5zicxcibs85a61y3837lky-cargo-package-nom_locate-5.0.0.drv
+  /nix/store/mnp0fih927wn4ccimrjm23sv30n73dws-cargo-package-thiserror-2.0.18.drv
+  /nix/store/mp94j98sa984av9xg3p4z5gi29zmyf7k-cargo-package-async-trait-0.1.89.drv
+  /nix/store/mb7yid2xkpwk69pdfq1wwg1vlr7k2c7s-cargo-src-validator_derive-0.20.1.drv
+  /nix/store/msv1v7yrp2y51i07p82abhr0x254afw1-cargo-package-validator_derive-0.20.1.drv
+  /nix/store/mvz6dn3f0g48rl0h06dfzisl7zl7pimn-cargo-package-ark-crypto-primitives-0.5.0.drv
+  /nix/store/myd034ph9fh36029wf611wm0rkbxhr94-cargo-package-hashbrown-0.17.1.drv
+  /nix/store/mypzw1lj3x1np5r6fq6zkcsddh769210-cargo-package-crossbeam-channel-0.5.15.drv
+  /nix/store/n0ki2cbr417gy4dhyap64d6iwjc0zn3n-cargo-package-slug-0.1.6.drv
+  /nix/store/n122ghv6iwqnxqmlazkvr9a4kyqfvix6-cargo-package-tracing-attributes-0.1.31.drv
+  /nix/store/pvhi38kbn54lidvim831l8lq6ndlh89c-cargo-src-rust-embed-impl-8.11.0.drv
+  /nix/store/n38v1abgja8qfszlmh1cfjbyiqc4rrn0-cargo-package-rust-embed-impl-8.11.0.drv
+  /nix/store/sgzv1ix7lvxx4fjpw1rckpmqpb5kwm83-cargo-src-defmt-1.1.0.drv
+  /nix/store/n3n6l9sp2chyd8m34l65jy651v2na847-cargo-package-defmt-1.1.0.drv
+  /nix/store/n58gwxjxs7prr7vn7c35f199w494a0ha-cargo-package-core-foundation-0.9.4.drv
+  /nix/store/n618j0c0j3n1lnqsgap516pim1xvfmv3-cargo-package-objc2-encode-4.1.0.drv
+  /nix/store/n6h3qhdkmgrl4nwji7ynjd5n81mz0idz-cargo-package-libc-0.2.186.drv
+  /nix/store/n6yz65w6yyji6w0qwvhqi9ha22zzzydp-cargo-package-utf8parse-0.2.2.drv
+  /nix/store/3pnpf6x1x4gx5xfvz9n4acny14gs5cif-cargo-src-hasher-0.1.4.drv
+  /nix/store/n7b6c35l0a0cfdqbsn3bhq7q1zfc58iz-cargo-package-hasher-0.1.4.drv
+  /nix/store/nacvfvb65m85353m7p4hfpbnary5iha0-cargo-package-kube-3.1.0.drv
+  /nix/store/6qsjwxg5mxh18czd7vvkjyi52wnjwvv7-cargo-src-enum-ordinalize-4.4.2.drv
+  /nix/store/ndki6mn044ama2wz3rrd85wiaa1wdf4q-cargo-package-enum-ordinalize-4.4.2.drv
+  /nix/store/ndwsfnwvizsszcjgiw62na0svzyd1xd4-cargo-package-natpmp-0.5.0.drv
+  /nix/store/nf1n0wnv5avkbksn3645h9yjhl3bajx9-cargo-package-scopeguard-1.2.0.drv
+  /nix/store/ngd83431qm4l4m4ib5yblamdzfm9hwxa-cargo-package-utoipa-swagger-ui-vendored-0.1.2.drv
+  /nix/store/nh3zhfwvm057w69yfa7w4pb177diykyd-cargo-package-rusticata-macros-4.1.0.drv
+  /nix/store/nh5rim00r22p6xv1xv2fhq05bkwsdzc4-cargo-package-strum-0.27.2.drv
+  /nix/store/ni69namwddjqdc41wx42a55916sayrbw-cargo-package-block-buffer-0.10.4.drv
+  /nix/store/njsljl86hnj8ays0nzgb811qrsgfv4zq-cargo-package-displaydoc-0.2.6.drv
+  /nix/store/njywbp79w5c3xx43lpr4p8g2w15kb338-cargo-package-reqwest-0.12.28.drv
+  /nix/store/nl47kj45gpca6xkjid060gfhnfib0pr8-cargo-package-tikv-jemalloc-sys-0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7.drv
+  /nix/store/nlghgqyi0r57xq89gfn6nxjs9cyp90gb-cargo-package-quinn-proto-0.11.15.drv
+  /nix/store/npcp6pva49xw2mi1p2lkzhlpvzm3r571-cargo-package-windows-link-0.2.1.drv
+  /nix/store/ns6fh6mn8gvgcblbambggikskm9nddhg-cargo-package-kube-core-3.1.0.drv
+  /nix/store/nv611ca4v7yapdkahif7xjr9p2j70kxp-cargo-package-shlex-2.0.1.drv
+  /nix/store/nx0z0dnk1yn6w7lh8s086qy651paqs74-cargo-package-security-framework-3.7.0.drv
+  /nix/store/j72cfcm95mwy38yk5x4gl7djlxnb2vmi-cargo-src-syn-3.0.5.drv
+  /nix/store/nzxkw2jpis8izz3cicylmbd69yvaf6zn-cargo-package-syn-3.0.5.drv
+  /nix/store/p4f87v8jg0npmgqy3bg6z1qm9qf2w3j5-cargo-package-data-encoding-macro-0.1.20.drv
+  /nix/store/p51ax95zprd1sq8nca9n56f7as0p7hzl-cargo-package-want-0.3.1.drv
+  /nix/store/p5d599rc7i9ys3sicsx7434hdsichm71-cargo-package-libp2p-gossipsub-0.49.5.drv
+  /nix/store/p77igm61qklasxpjw6q9fzhxifk7z77k-cargo-package-zip-2.4.2.drv
+  /nix/store/z303if3vjxgj1l6wiqxy1x5500pzsci6-cargo-src-protobuf-parse-3.7.2.drv
+  /nix/store/p7jc7jm79h6pwjqhdf01fxmc5rm7lv0w-cargo-package-protobuf-parse-3.7.2.drv
+  /nix/store/p9y61z0rraf2svsmrdssmqdmkrpr9f1a-cargo-package-home-0.5.12.drv
+  /nix/store/pa52x740hc3yh86g0qmj1mi2r6xabz99-cargo-package-ntapi-0.4.3.drv
+  /nix/store/pas737s7f64jfpss82nc8y1jqzzn5xag-cargo-package-smart-default-0.7.1.drv
+  /nix/store/pay4wcm4g91q2nmxrg80prg522pb8wpa-cargo-package-proc-macro2-1.0.106.drv
+  /nix/store/pcqhln5jvly2knn9dxd3xjg95m50jvwz-cargo-package-nix-0.26.4.drv
+  /nix/store/pfg2fk7rw7s7v1wscgmi8gpd8yh03y96-cargo-package-web-time-1.1.0.drv
+  /nix/store/pg1xxg06p5yz0van76w513dkz3cnqv7y-cargo-package-option-ext-0.2.0.drv
+  /nix/store/pgwvgrwa99imadh7d14vjkw5l625nhpw-cargo-package-siphasher-1.0.3.drv
+  /nix/store/pid9q826jk9z8d86vwyiijw0qrp0wqy6-cargo-package-libp2p-swarm-test-0.6.0.drv
+  /nix/store/pk5nhqvwm7k6q1a360kr0fhdcd80i4yb-cargo-package-cfg_aliases-0.2.1.drv
+  /nix/store/pkrf66x4nd49k10paw5nzjacn0jqdmhw-cargo-package-derive_arbitrary-1.4.2.drv
+  /nix/store/pmkcz7a3rhpfbx9vcmn7j1kqdb4wc3m0-cargo-package-kube-runtime-3.1.0.drv
+  /nix/store/pmw63qn9ibffqlvd4ixm06z0r71j57rh-cargo-package-libp2p-tls-0.6.2.drv
+  /nix/store/j5gjldhjqr4gpw9zha8cfcdwg80wrz0g-cargo-src-mintex-0.1.4.drv
+  /nix/store/pqdwinpawjrwsjvmdf1xazvcspi1vg67-cargo-package-mintex-0.1.4.drv
+  /nix/store/pqzwrn35nbxfrq5n7mzlyjw9jg5i6iq6-cargo-package-urlencoding-2.1.3.drv
+  /nix/store/31rk095i45w8rcfldv3nn8jl3bvdxc41-cargo-src-prost-0.14.4.drv
+  /nix/store/pr10fmk52bqi7rcq9pkpxcbh3spwwg47-cargo-package-prost-0.14.4.drv
+  /nix/store/pr7i1p2a0jh1rxi9vjhzp8m72v99iq6b-cargo-package-ureq-proto-0.6.0.drv
+  /nix/store/xrvpmf805i0jvg1wwfgayg8xl0cayz5s-cargo-src-time-macros-0.2.30.drv
+  /nix/store/psgwr18zsxabfx2c7dbswfky2h75sfz5-cargo-package-time-macros-0.2.30.drv
+  /nix/store/m5lziycjd0p0gq4khmrw60nrwxcksn5f-cargo-src-divan-0.1.21.drv
+  /nix/store/q5cqq6wydzzv1q8awjz9y3vqrz6g9zff-cargo-package-divan-0.1.21.drv
+  /nix/store/q5gf7rp641a7fdkx2j6vbk2n3vx8fflp-cargo-package-windows_i686_gnu-0.52.6.drv
+  /nix/store/q6v7ab85d2gi2ndmvm4dgbg0lqm4ygmv-cargo-package-generic-array-1.4.3.drv
+  /nix/store/q894x4m66g1bhkbfifvqfz5jxv8q17af-cargo-package-hyper-timeout-0.5.2.drv
+  /nix/store/847hfn7b06dj02zjz80k2lcayxsi72rk-cargo-src-time-0.3.51.drv
+  /nix/store/q8d7ggbfj2ivrfqc0vidqq37cdvhxr67-cargo-package-time-0.3.51.drv
+  /nix/store/q90b0991flcbhyjd745kb86b04s20q8p-cargo-package-rocksdb-0.24.0.drv
+  /nix/store/qa6sah4yz4111dvn07q1fj740s5mnqj9-cargo-package-educe-0.6.0.drv
+  /nix/store/qcm3678iy7p60sxazwip9ldrwnhycwby-cargo-package-arrayref-0.3.9.drv
+  /nix/store/qgm19ssbrmnzyvc6i2gnamamc9ra3lbp-cargo-package-thiserror-1.0.69.drv
+  /nix/store/qi27nrnkcs76kjbh3rcm0p3fy4za3nax-cargo-package-cpufeatures-0.3.0.drv
+  /nix/store/qi299yrhk1slfkzmf37paapn2i1rnr0y-cargo-package-simd-adler32-0.3.9.drv
+  /nix/store/ql37j00m00a29rbvrixrqs7lw6w6p0bk-cargo-package-httparse-1.10.1.drv
+  /nix/store/qnkdiqkp436s6a5i0sjlsb3z5jy9b5fs-cargo-package-multihash-0.19.5.drv
+  /nix/store/qqaj9zng6vchnflgydq289j2486wvjng-cargo-package-bstr-1.12.1.drv
+  /nix/store/qvfrix4g1a0zh0cl71prgpiavwycgqsi-cargo-package-serde_json-1.0.150.drv
+  /nix/store/qvr9gjqcwzc4wgrnwap3iynicczxkkn4-cargo-package-yoke-derive-0.8.2.drv
+  /nix/store/qvsw5bdsfj2mk74ygsmli5z8pc42d5i0-cargo-package-iana-time-zone-haiku-0.1.2.drv
+  /nix/store/qw8mivkssn5jyygsscl1zqrrzy251pbf-cargo-package-futures-channel-0.3.32.drv
+  /nix/store/qxrgq46hcsd6bb19hsbr2lbph77l0svw-cargo-package-powerfmt-0.2.0.drv
+  /nix/store/nkwkd4f9fjjwbzd7wf52yrw9y8qh1hnm-cargo-src-defmt-macros-1.1.0.drv
+  /nix/store/qyjq6siwwcrmqbszjs58ibd88ih23g7c-cargo-package-defmt-macros-1.1.0.drv
+  /nix/store/qywljvwg0ncli9px2wcvnbjngkz7d4jn-cargo-package-base256emoji-1.0.2.drv
+  /nix/store/r38sw683njgjy39hignyawnxrn4adf13-cargo-package-byteorder-1.5.0.drv
+  /nix/store/r3mzs0np8r6xyi7vhvfpfxahyl236qmd-cargo-package-blake2-0.10.6.drv
+  /nix/store/r5fiv93pkmn7h8pgi8xflpifmb3xli0n-cargo-package-proc-macro-utils-0.10.0.drv
+  /nix/store/bfryb687xdaw1gs8y3wp4h3giakhs4kg-cargo-src-globset-0.4.18.drv
+  /nix/store/r6vjinp59v9mav88yiyw8xg4fxv12hks-cargo-package-globset-0.4.18.drv
+  /nix/store/r8h649l29990snrljsxycsh374jciqhr-cargo-package-secrecy-0.10.3.drv
+  /nix/store/r9pd1bi5vahvrfg7ivppzgyfkxx7g21n-cargo-package-same-file-1.0.6.drv
+  /nix/store/ral4z2hmy9dvx76ycfryfhj01y8yiy9k-cargo-package-serde-big-array-0.5.1.drv
+  /nix/store/rc0gvdlnxar08jrd48xd1x01jp2d0h10-cargo-package-serde_with_macros-3.21.0.drv
+  /nix/store/rcr39d7g9mqxdrk7w9s90v55f6w3aswg-cargo-package-anstyle-parse-1.0.0.drv
+  /nix/store/rfy3fxl67a5iqsr69kp91wahyb93kkb3-cargo-package-dtoa-1.0.11.drv
+  /nix/store/rg372pv8bz1jqv9712hpjbr7ads0mh4q-cargo-package-winapi-util-0.1.11.drv
+  /nix/store/rgk1r8gd14l0nmf2g73mvfy6r5p3shbj-cargo-package-rfc6979-0.4.0.drv
+  /nix/store/ri3gh2xymmp3d9sbbn2w48l5fvll7a34-cargo-package-prometheus-http-query-0.8.3.drv
+  /nix/store/wbdrd5644va6hmabykp4rihjm8y4gahw-cargo-src-borrow-or-share-0.2.4.drv
+  /nix/store/rmqjm0hdjmgfiwk8m5mgjwz6c93jbs8x-cargo-package-borrow-or-share-0.2.4.drv
+  /nix/store/rn6zrsi1j0ckycavyfwrz6mwqcyhaqif-cargo-package-asn1-rs-0.7.2.drv
+  /nix/store/rnrpby5ycafak0h9say7xfcxjk7kmdxg-cargo-package-anstyle-query-1.1.5.drv
+  /nix/store/rpaw56s1665w34fhm7yk2zdipx3yhl6h-cargo-package-schannel-0.1.29.drv
+  /nix/store/rpxl8syvv24vxyf2xz221cblpk3ijlpx-cargo-package-either-1.16.0.drv
+  /nix/store/rvhvgd8ib2c01rf07929zzgcjfg8akma-cargo-package-rs-merkle-tree-0.1.0.drv
+  /nix/store/540v01yv270jhr962239sdmk3n29bpv9-cargo-src-serial_test-3.5.0.drv
+  /nix/store/rxdskdbzmasl4969fwbdmvbkffs8lfjc-cargo-package-serial_test-3.5.0.drv
+  /nix/store/rxmmvhzgfc9w8jnq5i4zm46bbdk19a7m-cargo-package-bincode-1.3.3.drv
+  /nix/store/ryqd7n8idd7zhvpafyb5xk2i73h9w08p-cargo-package-icu_locale_core-2.2.0.drv
+  /nix/store/rzch03q25zdr0i7i8fm53c97wig9mq76-cargo-package-windows_x86_64_gnu-0.52.6.drv
+  /nix/store/s1x6ks6bcabjhbma0pqmrjknvzb5h3sq-cargo-package-signature-2.2.0.drv
+  /nix/store/s292qpyvf24j8vflcwchqh9gqy7sn6v6-cargo-package-equator-macro-0.4.2.drv
+  /nix/store/s2pnf7x3ssmpg6vlia04gfcpfbqy6vvc-cargo-package-windows-0.62.2.drv
+  /nix/store/s49mazrdy5iyyvf4dgbjs912ljnbx0k4-cargo-package-yasna-0.5.2.drv
+  /nix/store/s4x4a8d97kss2jl27l48rh1486y2aifb-cargo-package-glob-0.3.3.drv
+  /nix/store/s5n3qdadr4xf23xsvd4312b1z2ikjrdv-cargo-package-getrandom-0.2.17.drv
+  /nix/store/s83rdjq2wsb9kd10gh969ly0q6jgm567-cargo-package-libp2p-swarm-0.47.1.drv
+  /nix/store/s8rsy2gab87y8i7010rvhp4hfjdka54h-cargo-package-libsqlite3-sys-0.33.0.drv
+  /nix/store/s8sfkyaglkkxgp2wgnqbjaqwzg469qzf-cargo-package-tracing-opentelemetry-0.33.0.drv
+  /nix/store/sc1ddp9v7cqmynaba4a29fzanfxxlj3m-cargo-package-http-body-1.0.1.drv
+  /nix/store/sd368zm4valmjylcaaamv1ci9705gpkf-cargo-package-ref-cast-impl-1.0.25.drv
+  /nix/store/sfc66fmzwjswqlkjyaqvw8v3x6j8hlxm-cargo-package-quick-xml-0.26.0.drv
+  /nix/store/sfqkqdlg9jis7rsdk0q7amx05w2a0fjh-cargo-package-der-0.7.10.drv
+  /nix/store/sfx0jh4a5zdwbrcs5w0985876cvcb69x-cargo-package-cpufeatures-0.2.17.drv
+  /nix/store/sgsbp5ghrjcm3fhd5j6xnpi6pxw8ws16-cargo-package-ed25519-dalek-2.2.0.drv
+  /nix/store/shfz6iw156fjir15f1y592si1v8zivpl-cargo-package-sharded-slab-0.1.7.drv
+  /nix/store/sicrwbwqziqxlrxhslxq2wvj9l6ibj73-cargo-package-strum_macros-0.27.2.drv
+  /nix/store/sif7p455m4ywy1s48rwgz630sjzkw0mv-cargo-package-prost-derive-0.13.5.drv
+  /nix/store/sjarpnvfsvzjr9qz2pg9sfr4k9rblxy8-cargo-package-form_urlencoded-1.2.2.drv
+  /nix/store/sjda920mfmbpx52axpbx2aihvrlp9zd7-cargo-package-unsafe-libyaml-0.2.11.drv
+  /nix/store/slglfs46j8gh1qvi8l0jwmrvn7k4cc0f-cargo-package-base64-0.22.1.drv
+  /nix/store/smihkf6j2fka8g0kdd3rw8ii68zs2z5p-cargo-package-litemap-0.8.2.drv
+  /nix/store/spbx30n4846dj67rqvxajfqjcdmlwp5j-cargo-package-tar-0.4.46.drv
+  /nix/store/sr1pzm6yd54v0dz5xzj61d0mi6chq10i-cargo-package-ark-ff-0.5.0.drv
+  /nix/store/sv266j3gb645fpmparkbm18iwj333x29-cargo-package-rpds-1.2.1.drv
+  /nix/store/swsn9v6jfhi6vp34gc6yz93rddm4lv98-cargo-package-event-listener-strategy-0.5.4.drv
+  /nix/store/sy0ki2w0cz78zbjh7axpvcmyfgqpwr1s-cargo-package-async-stream-0.3.6.drv
+  /nix/store/syg2p3h50jl11xsilwmzsxa4gm5vl7vx-cargo-package-if-addrs-0.15.0.drv
+  /nix/store/syglzqajb5gnbxlp9vqk51ibgkbylq9v-cargo-package-matchit-0.7.3.drv
+  /nix/store/sz0m190ds342rm00py1vl1bcm0cfhxkd-cargo-package-futures-macro-0.3.32.drv
+  /nix/store/v2argsjm2kjx6yrlyl26zzzgv97dz6hs-cargo-package-base-x-0.2.11.drv
+  /nix/store/v4knaf57rs2zc8w1frg3g7b339p7483y-cargo-package-windows-collections-0.3.2.drv
+  /nix/store/v4nlpv9d3bl3ia16c6yqv5xfjdm2n1y1-cargo-package-fnv-1.0.7.drv
+  /nix/store/v6khsm9gsx8clpfaj0wdfsy94qn1p5p5-cargo-package-uint-0.10.0.drv
+  /nix/store/v9yf3ygdcvxjd942ngaj483amjx8scy3-cargo-package-eyre-0.6.12.drv
+  /nix/store/vc9f1q1fjvkca2f215n2xq7qmh61dl2f-cargo-package-tempfile-3.27.0.drv
+  /nix/store/vcfjm0aldp5lcxn2a1b9fjishvjf0w7z-cargo-package-windows-result-0.4.1.drv
+  /nix/store/vf1va0nd1ifrijdb2iknyy8lrrbh7xa9-cargo-package-rustix-1.1.4.drv
+  /nix/store/vhxjywh0apgsljmj0h250v05qd9pd019-cargo-package-quinn-udp-0.5.14.drv
+  /nix/store/vifk3i5px0y5p3qrxb5lvhbs63rlfm98-cargo-package-native-tls-0.2.18.drv
+  /nix/store/vixbaavkylzhfblih85mc125cr4mj50v-cargo-package-base16ct-0.2.0.drv
+  /nix/store/vl187d87516cl0cbrh6c9id0abhcj5fd-cargo-package-gimli-0.32.3.drv
+  /nix/store/y4yb4ydb6can5kgbapwbfmr175cnjhc0-cargo-src-http-1.4.2.drv
+  /nix/store/vn4k191frik2ljjbrjr7qcp2dbagcr98-cargo-package-http-1.4.2.drv
+  /nix/store/bcgdb2irw8inxskrg49fvrywjxv2lx77-cargo-src-chrono-0.4.45.drv
+  /nix/store/vnmjfnhiqh13sprsqi9w63n2b3zg25aw-cargo-package-chrono-0.4.45.drv
+  /nix/store/vnzviky358sj4pk4gg6b1jw4sjb2003p-cargo-package-hostname-0.4.2.drv
+  /nix/store/vpdlncx9mrcw9jcfgcpgmzbybjg0qxyf-cargo-package-vcpkg-0.2.15.drv
+  /nix/store/vpnnkd719zp7xm80zip3svzhr9q6l71l-cargo-package-cucumber-expressions-0.5.0.drv
+  /nix/store/2rawdj18yyawv6gv9m884w674f2n4rvk-cargo-src-rustls-webpki-0.103.15.drv
+  /nix/store/vrnkr0vhq6jj3avw0vhgwjycc1g83jmj-cargo-package-rustls-webpki-0.103.15.drv
+  /nix/store/vvaaf4j4g177c9is59vmmdc820gjz7ql-cargo-package-tracing-serde-0.2.0.drv
+  /nix/store/q4hwdsvfsqa8xp97mi1cbpp62ags756g-cargo-src-proptest-macro-0.2.0.drv
+  /nix/store/vw79zn9zypfxnsc459wq3s524gax48q5-cargo-package-proptest-macro-0.2.0.drv
+  /nix/store/vwvwkrb859lzxz2sr38j3alh1kk9ysb1-cargo-package-multistream-select-0.13.0.drv
+  /nix/store/qjs2zb9jsd5vi6b3y0xnknszdksqwpjw-cargo-src-console-api-0.9.0.drv
+  /nix/store/vx8bc15m43lss031s2gk0vqkp90d31jx-cargo-package-console-api-0.9.0.drv
+  /nix/store/psv3ilpcmgnhm2ia67962zdzhy1y6p91-cargo-src-zeroize-1.9.0.drv
+  /nix/store/vzzhwsify8arqz0pdihqlg5998zqfw7l-cargo-package-zeroize-1.9.0.drv
+  /nix/store/w07y9ad5jhflc57h9bz3kjg1rwsh5l2x-cargo-package-x509-parser-0.17.0.drv
+  /nix/store/w1v76j3wlv3zliknwmmg36xfjfdz0m1y-cargo-package-libp2p-identify-0.47.0.drv
+  /nix/store/w2hcd5zfqhd6m5rjivglh70p73ljvbgy-cargo-package-rustc-hash-2.1.2.drv
+  /nix/store/w4201ajva424p56262w5ak156rv0i7y9-cargo-package-quick-protobuf-0.8.1.drv
+  /nix/store/w58rm7m289nwz0g96xanx8dbp2n0s8qg-cargo-package-utf8-zero-0.8.1.drv
+  /nix/store/w61qdfa03big48pvbcgkrjlrgb0j5w89-cargo-package-snap-1.1.1.drv
+  /nix/store/w6dj0a0chhz6cjq36d6mj5xqlb2p0v7p-cargo-package-phf_generator-0.11.3.drv
+  /nix/store/wr9059948i0f4jy2s5vm69iigqy4rhy6-cargo-src-arbitrary-int-2.2.0.drv
+  /nix/store/w7wvbzk3xz8zp063x454gp4jv6j3jxj0-cargo-package-arbitrary-int-2.2.0.drv
+  /nix/store/w9ld3591216awp758wvp7kyi152y3gvj-cargo-package-base64ct-1.8.3.drv
+  /nix/store/w9x9dk6pdi80583apgd8ljv0d507azs3-cargo-package-polling-3.11.0.drv
+  /nix/store/wb099ych00jcmh4jrqq18n6yh39s02gf-cargo-package-enum-as-inner-0.6.1.drv
+  /nix/store/wbwir22mzrjgyrwfk23yal9wjd6q21mf-cargo-package-chacha20-0.10.2.drv
+  /nix/store/wcv80zx6jm3f0wsqkly66yw3brg1d7sl-cargo-package-serde_derive-1.0.228.drv
+  /nix/store/wd5a9cvww5xg366lzw33pzx44d3csg5j-cargo-package-axum-core-0.4.5.drv
+  /nix/store/wf1inv6jk3pyma49lzam7rwi2myk3qmb-cargo-package-dispatch2-0.3.1.drv
+  /nix/store/wh2j0560fdzf90d239val6cx8a7bcg4b-cargo-package-opentelemetry-appender-tracing-0.32.0.drv
+  /nix/store/wh6g8xrwr73l0si69pmgmxpmm86fh10s-cargo-package-crossbeam-epoch-0.9.20.drv
+  /nix/store/wijp7yx34d4lgpzl78zpkiy71faq7q6h-cargo-package-utf8_iter-1.0.4.drv
+  /nix/store/wimvgfl9xjzidb0wr178ay67n1lmh5hz-cargo-package-windows-numerics-0.2.0.drv
+  /nix/store/wisqc1g3pqbcic4iliqd0n5wsnr8mcal-cargo-package-minimal-lexical-0.2.1.drv
+  /nix/store/wj8rz77sy26xgij0x112jdazr2bmcw92-cargo-package-libp2p-tcp-0.44.1.drv
+  /nix/store/wjkk50zkvhrhi5f6cabnf2mndkzz0k65-cargo-package-cexpr-0.6.0.drv
+  /nix/store/wmm8y5bc7npam37kq902mils8znb4ssf-cargo-package-time-core-0.1.9.drv
+  /nix/store/wmprbv64rmw9zxzl0911qdhmv6rgnfaw-cargo-package-tracing-futures-0.2.5.drv
+  /nix/store/2ka1bxhms4kag844fq7k7984dhl61zk4-cargo-src-utoipa-swagger-ui-8.0.3.drv
+  /nix/store/wnd1qggim7i9mk1f73ksd7w2yvx0504r-cargo-package-utoipa-swagger-ui-8.0.3.drv
+  /nix/store/wnsxgbzc50883sjkn3ph1ld2m8kcca1s-cargo-package-openssl-probe-0.2.1.drv
+  /nix/store/wwn7xzafwkk4iw4gysikbvi3fjly2fyy-cargo-package-itertools-0.13.0.drv
+  /nix/store/wwv501vh7fpnh81ing516gfai4m2d057-cargo-package-tracing-gelf-0.7.1.drv
+  /nix/store/wxlpfiafm01qgv44fmygz1wzqg767mar-cargo-package-rustc_version-0.4.1.drv
+  /nix/store/wxznvb341dxdbx8h6qkbsnsg5j0ya8vk-cargo-package-tonic-0.14.6.drv
+  /nix/store/wyf5mkz0fbw0r25qvz96mr6pvq273vym-cargo-package-futures-0.3.32.drv
+  /nix/store/wzkxi75apl6yvq79niqf6g2inyx1jk6v-cargo-package-windows_i686_gnullvm-0.52.6.drv
+  /nix/store/x0jkjbdhc0gy6sbvzjshvz8g0j5fizkc-cargo-package-arbitrary-1.4.2.drv
+  /nix/store/x0qcwk5s45lr65gansj0xgazmnbimqgj-cargo-package-libloading-0.8.9.drv
+  /nix/store/x1n10knmysrwcjl7hpjcdfhamjzshz7j-cargo-package-winnow-0.7.15.drv
+  /nix/store/x4vp9nw2pjg7wyaq5zq72v32vck9spfz-cargo-package-itoa-1.0.18.drv
+  /nix/store/x55x9wqd9w47awfgaxmqqdvv9c5mg8lx-cargo-package-opentelemetry_sdk-0.32.1.drv
+  /nix/store/x5bk248xfyk716mmhk4lhh27pijl1nd6-cargo-package-rustversion-1.0.22.drv
+  /nix/store/x7vriiq1x76zjk6z5nb9kvfqlzgwdvxm-cargo-package-synthez-0.4.0.drv
+  /nix/store/6mk6imxg5s8mwg0z5qx0jm8ad50q0lpv-cargo-src-wasip2-1.0.4+wasi-0.2.12.drv
+  /nix/store/x8ljfy3m8n6lpahfnn1rppd9n5r4a14l-cargo-package-wasip2-1.0.4+wasi-0.2.12.drv
+  /nix/store/x92p0bv6d5r1msnaf7rsx60andbn0yx0-cargo-package-tracing-loki-0.2.7.drv
+  /nix/store/x9p4lyffcfnxszd8xb1fav24jrbwbq17-cargo-package-proc-macro-error-attr2-2.0.0.drv
+  /nix/store/xch28hyca2hs5ah54gmg1l3yl3zn1bj5-cargo-package-windows_aarch64_msvc-0.52.6.drv
+  /nix/store/xcjgrk1i8xjhlr29dihxvsvbw26lfk4h-cargo-package-libp2p-quic-0.13.1.drv
+  /nix/store/xddq3kg30m4jv3mvr12z1c634sckr95f-cargo-package-bindgen-0.72.1.drv
+  /nix/store/xdh6bqzlj6hfjksk98jvglf3ncarnb6r-cargo-package-netlink-proto-0.12.0.drv
+  /nix/store/xds70aznmpgs9b7wz9hn688k6iw3y0k3-cargo-package-hashbrown-0.16.1.drv
+  /nix/store/xgs02fzii3ycwn89hb3xy7hnm63dwnzi-cargo-package-heck-0.5.0.drv
+  /nix/store/y2ka6438k9l4fb61wfyr1wgv2c049qlk-cargo-src-appendlist-1.4.0.drv
+  /nix/store/xipyqc1c9ysj2blsbdl0f47krmzl05bp-cargo-package-appendlist-1.4.0.drv
+  /nix/store/xk8ls403z6nyhv0d0gcndvq15d3j960h-cargo-package-peg-0.6.3.drv
+  /nix/store/sy3qfmfnavpwnsni2b3qsgz9rnkpmcw8-cargo-src-ignore-0.4.26.drv
+  /nix/store/xkrwn1i7cgi2g6qz5k82n43pl64v4fcj-cargo-package-ignore-0.4.26.drv
+  /nix/store/xl43pihpns4nfh2m7zbjz9m8xv9nq7ar-cargo-package-proptest-1.11.0.drv
+  /nix/store/saz6zsjwiyf11pf8ccgla3qs1xf9xsm6-cargo-src-yamux-0.13.10.drv
+  /nix/store/xl7mxsqk4y7hhfqxdpm7iw6cgg28dzyr-cargo-package-yamux-0.13.10.drv
+  /nix/store/xmp6rglap4vfcp4yvg3fc3284yh5xggr-cargo-package-sha3-0.10.9.drv
+  /nix/store/xn7ain9gq27pnxmmj5jj5r6ylzlj8jys-cargo-package-futures-lite-2.6.1.drv
+  /nix/store/xnks5r96d64fdv9rchfdz4czj91b94zl-cargo-package-fiat-crypto-0.2.9.drv
+  /nix/store/qqxbmmyc2amzn1f12c4gblqasshj1djv-cargo-src-protobuf-codegen-3.7.2.drv
+  /nix/store/xxax6j07p8w9sjb7s56689x4hjd9pk4p-cargo-package-protobuf-codegen-3.7.2.drv
+  /nix/store/xxknfaa0jg5m2l0wry043aha41x6kd3n-cargo-package-quick-xml-0.41.0.drv
+  /nix/store/xynx6rc5ph2h32l2bby3vp7wbxh59bkf-cargo-package-ciborium-0.2.2.drv
+  /nix/store/d8ki1g2j5sv9dvkmbhyybmhff5w2iprs-cargo-src-rustls-0.23.45.drv
+  /nix/store/xyy7xipgsg17qlkxm9l3lpjkvgikj5fs-cargo-package-rustls-0.23.45.drv
+  /nix/store/xzacw1ikazlsaswf1h97qw86ykcz8y5y-cargo-package-data-encoding-2.11.0.drv
+  /nix/store/vl1p6cld93j597rmqnrff7ib0mhnfhjv-cargo-src-js-sys-0.3.102.drv
+  /nix/store/y01j0i29vp2dwfrymkbfs3zq4vg7yx7n-cargo-package-js-sys-0.3.102.drv
+  /nix/store/y1042ifmrgzfblr1aa0vlqk0xzdxsddf-cargo-package-foreign-types-0.3.2.drv
+  /nix/store/y2qaa0w8k7k1ajv4abbfiz3hk0xhh79y-cargo-package-libp2p-0.56.0.drv
+  /nix/store/yds9fjjf2a8wvd5g0rbiqz04z3hzd8n8-cargo-package-curve25519-dalek-derive-0.1.1.drv
+  /nix/store/d6di7wlxnmypzzsv6yrpwaaa37sp1snc-cargo-src-thousands-0.2.0.drv
+  /nix/store/yhq6kgp9dqc3m5lis6h254qbnh7m9l6f-cargo-package-thousands-0.2.0.drv
+  /nix/store/yj8m6ci6pzd1pnqzn017myx7nrw86bmn-cargo-package-windows_x86_64_msvc-0.52.6.drv
+  /nix/store/yk4kx5lddfymqqd4j4qzwlla6q87b8rh-cargo-package-socket2-0.5.10.drv
+  /nix/store/ym1bi048p1ss8zdf9j0pq23lfkcnqdy2-cargo-package-serde_arrays-0.2.0.drv
+  /nix/store/yn5h19amxif1laav8amsibl7xrmqlifx-cargo-package-kube-client-3.1.0.drv
+  /nix/store/ypmy5jkrqybiv10ycb3as7av6lfq5lks-cargo-package-derive_more-impl-2.1.1.drv
+  /nix/store/yqs06zncgy0qjc0qxh3zg194fsic82a3-cargo-package-darling_core-0.23.0.drv
+  /nix/store/yqzvrk5ycs17kg050dazl9h3bq4kacla-cargo-package-cast-0.3.0.drv
+  /nix/store/yr5pwd0m2c185a9lpqfnxmlka911alkk-cargo-package-hashbrown-0.15.5.drv
+  /nix/store/6ipqr1gn32pn5iqakg0mf2v86w57s4gm-cargo-src-test-log-0.2.21.drv
+  /nix/store/yrl7sndshh26xdpadfc0war012arv7zw-cargo-package-test-log-0.2.21.drv
+  /nix/store/yvfb1f1jscvcawz5zj425i5j653q6d7s-cargo-package-object-0.37.3.drv
+  /nix/store/xxk8ddrs2gpqq35i5rarkc8yivsv2nzv-cargo-src-jsonpath-rust-1.0.4.drv
+  /nix/store/yw84bb76ywbaxmv6m2pj1fx3yx8mgk3x-cargo-package-jsonpath-rust-1.0.4.drv
+  /nix/store/yxj18n3fcjnyrxp13i3hzsaf5hj399b7-cargo-package-icu_normalizer-2.2.0.drv
+  /nix/store/yz6z9iqff2nhqfhciba198fdgjwji8n4-cargo-package-windows_x86_64_gnullvm-0.52.6.drv
+  /nix/store/ck8ncyzi3qq4pcsbjs6131nzvnzkxnlr-cargo-src-memmap2-0.9.11.drv
+  /nix/store/z1d777ich5b2dbw1rxmf469a8v1wpvdv-cargo-package-memmap2-0.9.11.drv
+  /nix/store/z1gc47621f3c2hzdk98mjcx3w5lzk7fj-cargo-package-phf-0.11.3.drv
+  /nix/store/v3sr3skj8j7mkygsdxb192s9vmpky4km-cargo-src-wasm-bindgen-futures-0.4.75.drv
+  /nix/store/z22134hdc1jjdxzg47xw8x0lamkffbc4-cargo-package-wasm-bindgen-futures-0.4.75.drv
+  /nix/store/z76ckc65slb2dn6aa2vn8k4yj09w3l45-cargo-package-hyper-1.10.1.drv
+  /nix/store/z7i2bw6ww45x2i05bd795q9zx5fy5zjw-cargo-package-core-foundation-sys-0.8.7.drv
+  /nix/store/jixdnd5mwnfb69gyd82z75xfq60bhxzi-cargo-src-hdrhistogram-7.5.4.drv
+  /nix/store/z93yl5q8yncsh9fanjpi3sgj8k0983yg-cargo-package-hdrhistogram-7.5.4.drv
+  /nix/store/zajvp4rjkymxyl46gpdwp0z4165wjik9-cargo-package-objc2-io-kit-0.3.2.drv
+  /nix/store/zccz5kkr9cbbdkg8k18fnfg3p1smmrad-cargo-package-rustls-pki-types-1.14.1.drv
+  /nix/store/zdxda5hb1ha73bsqqdl8fmckz1v6yn90-cargo-package-hickory-resolver-0.25.2.drv
+  /nix/store/lxig2hm3gq6k9jcy8vs503api64y5qvm-cargo-src-jiff-0.2.29.drv
+  /nix/store/zf9km0g6rscqb12ax6fs148vbwvjqvav-cargo-package-jiff-0.2.29.drv
+  /nix/store/zfgrrs37k9417ajwb5v48j4szishicb9-cargo-package-sha2-0.10.9.drv
+  /nix/store/igzgicjklihgbn97x4syrp9jiki3nl5k-cargo-src-zerocopy-derive-0.8.52.drv
+  /nix/store/zfxcjf8gkcp7n7ysfqxf7sfjdhq2z5mx-cargo-package-zerocopy-derive-0.8.52.drv
+  /nix/store/zgk8h206cmxnx147hsc382zj6ps7gp3p-cargo-package-typed-builder-0.23.2.drv
+  /nix/store/zgswr9fs95pfsf3nlfafz30f2lcv6sxc-cargo-package-semver-1.0.28.drv
+  /nix/store/zl1iyab15qj5a6rpbifpxdrf7a4756x1-cargo-package-clap-4.6.1.drv
+  /nix/store/znm73nb07mdjbrx20fcy2lj9ma7cfgij-cargo-package-humantime-2.3.0.drv
+  /nix/store/zq8y26jy61ygm7k7l41xy7i7bswijf5q-cargo-package-tower-0.4.13.drv
+  /nix/store/zswbm66n6179nhrzkshr0gli7hwf36vl-cargo-package-socket2-0.6.4.drv
+  /nix/store/f12vi9jyhbws3dgmcvczq29glkrwdxlr-vendor-registry.drv
+  /nix/store/qyrv4mfgg8rk8lzply8qaxqavwbgsnjf-cargo-git-https-github.com-logos-blockchain-logos-blockchain-rust-rapidsnark.git-e91187f8ccb5bbfc7bb00dac88169112428da78f.drv
+  /nix/store/ndsqq2s6hrwd40m8m8cckc1838y54xjm-linkLockedDeps.drv
+  /nix/store/i1sl9927xkx5bcxvdf7zj68qrbf0cx7i-cargo-git-https-github.com-logos-blockchain-logos-blockchain-testing.git-db880d61155db3a4f32177ef16b0f1e4bf22b1f6.drv
+  /nix/store/q592sidmj82wibm9hyiqbfaipwldqgq5-linkLockedDeps.drv
+  /nix/store/aljb8w27a2rn4har68x5zxd6d6lhv0db-cargo-git-https-github.com-logos-blockchain-logos-blockchain-circuits.git-ebf7ddf5b5b625ef4ea7c803171c670beebd05ef.drv
+  /nix/store/s38g0rdhzzfxg2nbgax68268f2bsz8wj-linkLockedDeps.drv
+  /nix/store/k9p762ings69ky2r8ghscidg9wv57xzc-cargo-git-https-github.com-EspressoSystems-jellyfish-f1538793f7f0e391495cb17bbb0c8703ec5f689d.drv
+  /nix/store/w8f7vbf78yfib4jwwdy5bp99bm97afpq-linkLockedDeps.drv
+  /nix/store/wdhnnms8mywnw0p73nv9n7rb9jidam3w-vendor-cargo-deps.drv
+  /nix/store/1vww38rixxyjij472i6jrfmmb06lyrb0-logos-blockchain-c-deps-0.0.0.drv
+  /nix/store/1yqp322cc2rc9wsprb8cnqfds6g72r08-logos-blockchain_module-module-lib-metadata.json.drv
+  /nix/store/2zlibm4is3awjdy26qfx0jr1wa6vrbsl-removeReferencesToRustToolchainHook.drv
+  /nix/store/54k43avjyi4m5wnj5blr2d8qfkl6m81y-installFromCargoBuildLogHook.drv
+  /nix/store/74ysmcazda3w8ic0862gpsndj2yw882a-removeReferencesToVendoredSourcesHook.drv
+  /nix/store/7pzi542f1aw8k3gpzd8a1wlvvh4v6hf4-logos-blockchain-c-0.0.0.drv
+  /nix/store/995kvcy600r3cbghxbdf6qrih1f9a9rr-lgx-0.1.0.drv
+  /nix/store/ni0hqhfmgh45plijhygh7l26d3vvkbxc-logos-blockchain_module-module-lib-0.0.999.drv
+  /nix/store/vsd13s9q2ksbydrxkg7w1y0d13gkbpqv-logos-blockchain_module-module-lib-lgx-0.0.999.drv
+these 226 paths will be fetched (1.0 GiB download, 3.8 GiB unpacked):
+  /nix/store/yxla342pd0453pz2k0yybnyy1hig8dv4-acl-2.3.2
+  /nix/store/lah9wsj6iyx866swq2aq2iyvm235hl6h-anyhow-1.0.102
+  /nix/store/v2dzxxlyf0z8njnr3nar1wmdiw6hssb6-attr-2.5.2
+  /nix/store/qcirwg5rxnijaa0zs04f92i1craafnj8-auditable-cargo-1.95.0
+  /nix/store/7jn2vfdmg6gacnwss0697rhfxbyrn2n5-auto-patchelf-0-unstable-2024-08-14
+  /nix/store/iws2w7ijjjl47m71hmlhsb84pij133i7-auto-patchelf-hook
+  /nix/store/gik3rh1vz2jlgnifb9dh6vc6sxwwz9jj-bash-5.3p9
+  /nix/store/cgjr3kj3hs7ngznyws5qfg16c8scpys0-bash-interactive-5.3p9
+  /nix/store/s2946bl9ciwzhafd66jhansrmxq9xhqm-binutils-2.46
+  /nix/store/6h5x436gsbc92ahp2bmxfl8h7h318p17-binutils-2.46-lib
+  /nix/store/drxcv33qq9ava7gdpik5xs9q2wfnhdb0-binutils-wrapper-2.46
+  /nix/store/mbyy19mdwnfvfwmdi0gqgggx0njvpl1w-binutils-wrapper-2.46
+  /nix/store/k1shjmzyzw8bf7vp8gyrqn4dn70xpdxx-brotli-1.2.0-lib
+  /nix/store/3lnvi6r17y9kki4r9klzvavranaz3131-bzip2-1.0.8
+  /nix/store/3y3kzc5njlj7nwj1s78am0yzjnpicv9x-bzip2-1.0.8-bin
+  /nix/store/z480b23kymbmrijrl49246mrzyphli15-cargo-1.95.0
+  /nix/store/35899xz5nby0wwvvlgvqlwsg7sl4y9jc-cargo-auditable-0.7.2
+  /nix/store/a6yk8ks6psxcdcagxjx53wqajcaf5ny6-cargo-bootstrap-1.95.0
+  /nix/store/17fzacfmy6b6zmia8rrx937mh7fl0azn-cargo-build-hook.sh
+  /nix/store/v0dl78cq5yf3ikfacvn4987vwk83hskc-cargo-check-hook.sh
+  /nix/store/zdl4qpv8cz7swbwr4phsi2ycinkj356r-cargo-install-hook.sh
+  /nix/store/0kkppa57hwc4kqip4xv6g4h8crvxcl0a-cargo-setup-hook.sh
+  /nix/store/8bpyli07zaqpd2wwga3mw4nyy7c0rs8x-cargo-src-aligned-vec-0.6.4
+  /nix/store/9cwha013c8ncflxbf3d2kj5fsg5c8rsv-cargo-src-bitflags-2.13.0
+  /nix/store/d1k4wfk2nhwk2zysaay60vy7n1ik0wmr-cargo-src-bstr-1.12.1
+  /nix/store/rymmgydd0i19afpy4sfr1n4f9a53ggvb-cargo-src-criterion-0.5.1
+  /nix/store/anf07mh1n8jx1ic5zx2y6qjskf4hisng-cargo-src-criterion-plot-0.5.0
+  /nix/store/s68ipprr7lq0xhrzbh5lm37l8pab033d-cargo-src-debugid-0.8.0
+  /nix/store/cy45gj504amww1ivmyshcg2pxfi93qfv-cargo-src-equator-0.4.2
+  /nix/store/wjjgjyp3wwa5mg9kfvymxr9js2kjimnw-cargo-src-equator-macro-0.4.2
+  /nix/store/nksvfr1mn2m544lx9c84gymji82allpl-cargo-src-eyre-0.6.12
+  /nix/store/l737gk7v40m4w5rrja1aa7cgzqpg4qrh-cargo-src-findshlibs-0.10.2
+  /nix/store/04nb3527lhl5ga4k2mqw6639xpyh3a6j-cargo-src-getrandom-0.4.3
+  /nix/store/40xhb2wf81cky2zxiwkq3bhq4548iyap-cargo-src-inferno-0.11.21
+  /nix/store/81553n28hv3nqj9v1226qc16dvlqxh9y-cargo-src-linux-raw-sys-0.4.15
+  /nix/store/j3461m32c8knn0rm29qmizrzra2c5c9a-cargo-src-memchr-2.8.2
+  /nix/store/ybz99niiwnhhp7vafsm0byciiza5i93n-cargo-src-nix-0.26.4
+  /nix/store/9h1fdsg8y8abz5vsiqp9xszhq4v4fri6-cargo-src-num-format-0.4.4
+  /nix/store/mazqhjrjvjxgfigv52mw15cg1zgz9x8f-cargo-src-pprof-0.15.0
+  /nix/store/w40qss55ajsy8x4h62d3h0balnrrx8wy-cargo-src-quick-xml-0.26.0
+  /nix/store/vnkv1y11qlvs0jfrjswqsk4bxnyv2acc-cargo-src-regex-1.12.4
+  /nix/store/sydwv20y961rnis24g2l5nhlgv555yjw-cargo-src-regex-syntax-0.8.11
+  /nix/store/86anawi4j69j91s4shw6xvh46bh5khcm-cargo-src-rustix-0.38.44
+  /nix/store/2r5v3b3237srvbykfhxd48y8v8ibrdal-cargo-src-serde_with-3.21.0
+  /nix/store/v6d8fd69pvjrf5bjfwwi7w4rminfi1hn-cargo-src-serde_with_macros-3.21.0
+  /nix/store/kxh1wy9libdyx6nd0bf4gqcyiivmb0z3-cargo-src-tikv-jemalloc-sys-0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7
+  /nix/store/1g8bv5q9nwcsw8y5f52kwgry0sgfsai3-cargo-src-tikv-jemallocator-0.6.1
+  /nix/store/jzn383qli18a6zaxplfz6pldbaahrnbp-cargo-src-time-core-0.1.9
+  /nix/store/wcwr4iq7c8f4ygn8bd1q0k3i51lmhz35-clang-21.1.8
+  /nix/store/jdgw7h0g0l8clmcasaspxnx6v62jz1il-clang-21.1.8-lib
+  /nix/store/874j5xydsj6nr6i1zdrjvhln5gmxvvrr-clang-wrapper-21.1.8
+  /nix/store/jg984hgvy0m3h9xycqlddhllyxlwfm8y-compiler-rt-libc-21.1.8
+  /nix/store/0balwgpf53vhjycd97mq1bkmz45nc1ks-compiler-rt-libc-21.1.8-dev
+  /nix/store/9ypz3flqsrl5xl495mm8h645gadjsxi1-coreutils-9.11
+  /nix/store/rmnwhljwqp4q6pyhv8237spagnvw80n8-curl-8.20.0
+  /nix/store/xm1x557414bq1lgrx18gvb7cbz1qrdy8-curl-8.20.0
+  /nix/store/cm6gh3m6bg97hb56ra416bn0cpnfviwd-curl-8.20.0-bin
+  /nix/store/azim31fjrmanwb4i0f15ywpk1jkizfxj-curl-8.20.0-dev
+  /nix/store/npqnj4bi9jx354sgzf0knpakvaggjb57-curl-8.20.0-man
+  /nix/store/5y1v5mjsrlz3i2pwg43hdc6ghjjylbpq-die-hook
+  /nix/store/jh6zxl7dsfyz1mj16xjmjfamnmafrd9n-diff-0.1.13
+  /nix/store/ww555mznia5v7sz2w85lblg4amvhkhv1-diffutils-3.12
+  /nix/store/3zsxawygch41cizjvhpacmgaq7y3vhjg-ed-1.22.5
+  /nix/store/yvm2753aikbszw8bd6gc172ic8ibivsl-equivalent-1.0.2
+  /nix/store/d6j5cifzkwjlimawmjhywqx9l6bk43q6-expand-response-params
+  /nix/store/hi0fdcqdkmzwxhzlx7y6z2yf6d5lw8ix-expand-response-params
+  /nix/store/d8927sznk6qnqln6hl9p4d42h8pq49vg-expat-2.8.0
+  /nix/store/kyz3mm5snbb8998kbkm28jps1phk9509-file-5.47
+  /nix/store/c1cjgg6p8m8fssivzrc2p13mwwml3p3v-findutils-4.10.0
+  /nix/store/wp1cshqv98i8abs8rcx91s54igqgll0f-gawk-5.4.0
+  /nix/store/qxaq7jz61a6zkr2mq49i0zvqip2m2jj8-gcc-15.2.0
+  /nix/store/788mx070y81zjlg5ipcl0cra3afviw9k-gcc-wrapper-15.2.0
+  /nix/store/zswf4c2na0d8ykb59rrp14748jb0w2wc-gdbm-1.26-lib
+  /nix/store/rb8rna9gkhs0ybl6z2p904myslh8llg8-gettext-1.0
+  /nix/store/bcnisk3ydfgv26v2gw3zlky24g00yww2-git-2.54.0
+  /nix/store/l444690y78nfdwyzm6mghagl7xa97myf-git-2.54.0-doc
+  /nix/store/jlyahda14aya375lv7k9fsin2zk90nxz-glib-2.88.1
+  /nix/store/bsh7n2nx8ndmm1mmww6v2h4851nalj13-glibc-2.42-61-bin
+  /nix/store/15h9askp4k1lx44d9871wid23j2a8ijp-glibc-2.42-61-dev
+  /nix/store/r50gpjb5pcl01c7nvhrn31rnwsnhzplg-gmp-6.3.0
+  /nix/store/cspsij182bd9hsx64mz1p7p143inkrjn-gmp-with-cxx-6.3.0
+  /nix/store/zmvllxxx62iys7vpyg020rni3v29bcxi-gnu-config-2024-01-01
+  /nix/store/gn94gpcp5q08x4v6g8mvw8v4r65rcjzk-gnugrep-3.12
+  /nix/store/vlq7nnw39j7rwk0pp68w1fcwzpxahm9h-gnumake-4.4.1
+  /nix/store/kgxafhycw2kybbqih759ykc2043qyi5j-gnused-4.9
+  /nix/store/55nbxpjrgrrsplq739z1z8n05h16cgsq-gnutar-1.35
+  /nix/store/k5akwnrn9x2afaj2va7g4a2zpdim8l43-gnutar-1.35
+  /nix/store/ndpbjk6jhw0da5h272dqqnyxa35a9gmx-gzip-1.14
+  /nix/store/sw915hj42sqyfcxgsraiyna5ywsyfwyx-hashbrown-0.17.0
+  /nix/store/42ln15xbm9fclnr9bhpyzpk908dja04d-indexmap-2.14.0
+  /nix/store/17rqw7p3j0vvvwja05l6bq2im8qpxcl7-isl-0.20
+  /nix/store/n7iv6m46q8r5pm20yb2il5xf1cry10ib-itoa-1.0.18
+  /nix/store/7a1hndk12kz9wwh9sz8hzkkwgxq6rrnk-jq-1.8.1
+  /nix/store/s04d6wm3kqjdgr7zdhlk214f6a2291ks-jq-1.8.1-bin
+  /nix/store/fmsvbcz2s85pmszdvwp4mhlamiv5lnzg-jq-1.8.1-dev
+  /nix/store/wn2byajlpr3w4pii81n6r0bjfrp5ca31-keyutils-1.6.3-lib
+  /nix/store/xgi6pr9l6vdlzh1wsjfa46v8w4c3l0i7-krb5-1.22.1
+  /nix/store/hbwlczcg3ip7cn9ff6cwxm2wi5hm1kc2-krb5-1.22.1-dev
+  /nix/store/5cbjxz04crbjnawysjx5q717gvbsx7k8-krb5-1.22.1-lib
+  /nix/store/7f0ml50fn89ca4np3ysn800jkwv4iri3-krb5-1.22.1-lib
+  /nix/store/2zs4bbi72plfm8j6zxf1js4f3yc4yzwy-libffi-3.5.2
+  /nix/store/db0q13n5xqb0ywi6cjg7virpyxlg8mq6-libfyaml-0.9
+  /nix/store/pkavyrz7mi0q4na0kfgw020m9xdlppv3-libfyaml-0.9-bin
+  /nix/store/c8lhhhlgajl0a9sz0qccdwgbbl9cl83d-libfyaml-0.9-dev
+  /nix/store/56nmfisvhchafp5xsidvqij97ikb5zn1-libgcrypt-1.11.2-lib
+  /nix/store/x7qp6h5bdyjf0d6c5s65h6gn24lgmhr1-libgpg-error-1.59
+  /nix/store/0j6jil4xc4ndp0kcqzjwbfywxvifl160-libmpc-1.4.0
+  /nix/store/f0gsxi5sc6hvrwmjk4r7dpb71d4vjgn0-libpsl-0.21.5
+  /nix/store/mn75280qc354bcpasg8hi4nhsplrfc9n-libsecret-0.21.7
+  /nix/store/6lfzc2r9ifczrfanhzw8knf3zg4f2mix-libselinux-3.10
+  /nix/store/w3br983xcky4vdsz4df4splnbqhvnwp6-libssh2-1.11.1
+  /nix/store/wwyaldsyx465j7izd20lpl3crb1rsi0b-libssh2-1.11.1
+  /nix/store/jxdvdqbvnp58vcx554n9pmrm5jj76b31-libssh2-1.11.1-dev
+  /nix/store/g23gmzxz2asin32kxdnz7cvq5i4fx3an-libxcrypt-4.5.2
+  /nix/store/bck1xkk9m0f60352gnjb512ix0n4x9qm-libxml2-2.15.2
+  /nix/store/s52vdyj97g3adv6qb431v8m2kccs0bzz-linux-headers-6.18.7
+  /nix/store/ldcshpa3cspn8jfr4k1m05j4d4vz36wb-llvm-21.1.8-lib
+  /nix/store/sn4y9m3yg3qgxi14h9cl51l333zi40xq-lndir-1.0.5
+  /nix/store/qshffsmymp4gvgjx6g9kblcr5k4ly95r-lz4-1.10.0-lib
+  /nix/store/8wrmi2fp3wvn2w6ikdfgzspyr8nwn934-mailcap-2.1.54
+  /nix/store/qw8rpqmndqzyc3fzzla754v5hlpm10i4-make-shell-wrapper-hook
+  /nix/store/mjphc47znw5ak7yj7f8zzrfkdbn7y7mh-memchr-2.8.0
+  /nix/store/mirf7c51qwb4d454smz1725gx9r2m5bj-mirrors-list
+  /nix/store/v9sym7lkcp6nj2llsqhajvp2zmimv5v1-mpdecimal-4.0.1
+  /nix/store/drmzcl1j9wwwgz4q87dvz2p2zfwnp4w3-mpfr-4.2.2
+  /nix/store/wl2nw5l4x4dg6kclbgpq7v9212i1s6cy-ncurses-6.6
+  /nix/store/g8p5by5d4k7k8a5wgm6j0kjb0g9samrm-nghttp2-1.69.0
+  /nix/store/85cmwsng4zj6gnhilxva0kg70ak6mbm4-nghttp2-1.69.0-dev
+  /nix/store/il3n0xcwqkwpdr7ybc2gxy4myr11mwq4-nghttp2-1.69.0-lib
+  /nix/store/zshxcsjv43migvylmfn1dh4wsl5wi09v-nghttp2-1.69.0-lib
+  /nix/store/k7ph83pqw7wk69zl9jdniwkg681nzavw-nghttp3-1.15.0
+  /nix/store/7kxphmk7sm9k343hs323z8gd6l1c4xsy-ngtcp2-1.22.1
+  /nix/store/mh9f88s66k9i27yfwwng7x04mnykgfyg-oniguruma-6.9.10-lib
+  /nix/store/qpahvrlaagqphfyrfzmp0b5a8xprchkf-openssl-3.6.2
+  /nix/store/y18pnbvfarnilsmgayswvi1khaw9wbsc-openssl-3.6.2
+  /nix/store/fafisxpi9z2dgyd0hwdzn9h2q6f5lq57-openssl-3.6.2-bin
+  /nix/store/zyrxhd7nwmkcs11m144jagxcmddw2i41-openssl-3.6.2-bin
+  /nix/store/7kqv745n5yd97qn4p6cf3dl46im0wckf-openssl-3.6.2-dev
+  /nix/store/wxws7pwyzk8mbmjc1rwwwx9v184hh67v-openssl-3.6.2-dev
+  /nix/store/wgvplwp0faqhqr92w0ma8bxaxk202ama-patch-2.8
+  /nix/store/ilblcn1dkvzghcr2yk3av6jxn5rk1iqw-patchelf-0.15.2
+  /nix/store/9qf6m6csaabfx2adfdk5771w8fjsqccs-pcre2-10.46
+  /nix/store/6plwsm6pkq79yjv4xvy8csk2pd4hzr67-perl-5.42.0
+  /nix/store/pqdb97mmxd2cfhj5dxm3q37k7kfwn305-perl5.42.0-Authen-SASL-2.1900
+  /nix/store/0pvx2hhmfz1w368psk1lr90c1dcmij93-perl5.42.0-CGI-4.59
+  /nix/store/59q1f7jk6k738dmvcfbay680qfapghap-perl5.42.0-CGI-Fast-2.16
+  /nix/store/6p3v4gxn5100vn65i4j52xy64m58i96f-perl5.42.0-Clone-0.46
+  /nix/store/5w500dl8zvxw2f9s7m2q92izf7i8vjvj-perl5.42.0-Crypt-URandom-0.55
+  /nix/store/bkgncqrvvfb553d5axwsc1bij0pdfmax-perl5.42.0-Digest-HMAC-1.05
+  /nix/store/2nhkgvr2w2zsi00w27i3877ww7rxghbp-perl5.42.0-Encode-Locale-1.05
+  /nix/store/2qg169y1js09wigfivl28hyg9l5ign7h-perl5.42.0-FCGI-0.82
+  /nix/store/vcnp1q832an2j3w8391v5gplvnf30nj1-perl5.42.0-FCGI-ProcManager-0.28
+  /nix/store/hxcx4xmwi5z59dzwsnmanlk8qvr8p077-perl5.42.0-File-Listing-6.16
+  /nix/store/yha0cfppqsfxgl645cjgvkl1h5w24ci1-perl5.42.0-HTML-Parser-3.81
+  /nix/store/wj2d70mlc5d2a4w2529mvsmaqiz546w8-perl5.42.0-HTML-TagCloud-0.38
+  /nix/store/vkh1q0n1pnb83jhza0zwjwglp2946s90-perl5.42.0-HTML-Tagset-3.20
+  /nix/store/29g0p0qv43cck3n6dnh21wxhn8qp8wjd-perl5.42.0-HTTP-CookieJar-0.014
+  /nix/store/8wpdc06qixgfhvk1zlgr0n4nqarihis4-perl5.42.0-HTTP-Cookies-6.10
+  /nix/store/kjqy9p376zi82d99bxaaslbrq2nvqybv-perl5.42.0-HTTP-Daemon-6.16
+  /nix/store/v868wcpgd0jqhnqnrmq732d45ks2z4yz-perl5.42.0-HTTP-Date-6.06
+  /nix/store/y9qkzdjbkzlnhi439bl5p228x24l4q10-perl5.42.0-HTTP-Message-6.45
+  /nix/store/q7wrzjvyrcb8594wsfpgmwqzbw1k97v6-perl5.42.0-HTTP-Negotiate-6.01
+  /nix/store/5d07y69biafvzissvdcav66qwm9hafli-perl5.42.0-IO-HTML-1.004
+  /nix/store/s1ibhw5fbdyxr2726npfz4m1kqxihbg5-perl5.42.0-IO-Socket-SSL-2.083
+  /nix/store/avhzp1grg7h9b8hwggd3ia63ga35b0jy-perl5.42.0-LWP-MediaTypes-6.04
+  /nix/store/6nq78lq53r68mxrd9gi4pnmi00adzvci-perl5.42.0-Mozilla-CA-20230821
+  /nix/store/ga6f5fh80il4ll7ll88qr92h0s68754y-perl5.42.0-Net-HTTP-6.23
+  /nix/store/0kvhdd63rp3a5rzapcx3ad47cpmpn1a2-perl5.42.0-Net-SMTP-SSL-1.04
+  /nix/store/5ryil8mvc1if3hwqw4hl1c0rmrip997r-perl5.42.0-Net-SSLeay-1.92
+  /nix/store/ph06d5w2pgbxjp6mflxa684vmfy0p487-perl5.42.0-TermReadKey-2.38
+  /nix/store/6xw0hrgrslhwid5wn59dghgjq0jrldga-perl5.42.0-Test-Fatal-0.017
+  /nix/store/pxbn9yncffjw3aymmknzhsa97vq0n2y4-perl5.42.0-Test-Needs-0.002010
+  /nix/store/ks6i83ccbdnnqa8m43r9qd3zwls24ca7-perl5.42.0-Test-RequiresInternet-0.05
+  /nix/store/w0qcmr49qsgmns957fpr68h0rmhj3pgc-perl5.42.0-TimeDate-2.33
+  /nix/store/kgw9gj0bdv8xq8va7l80r75phwv1p1gp-perl5.42.0-Try-Tiny-0.31
+  /nix/store/cn9q1n4iasgzv4bynf8s15zrq9vvxrbc-perl5.42.0-URI-5.21
+  /nix/store/xw05cz5ljj9p1n3iq4lhc3p0943fj064-perl5.42.0-WWW-RobotRules-6.02
+  /nix/store/jm9arh44kl531pxn7lx677w8qh5n1869-perl5.42.0-libnet-3.15
+  /nix/store/b2ryqfq2iqyqqlgbhijmsy1wh3h633jy-perl5.42.0-libwww-perl-6.72
+  /nix/store/8i2h8b6nykwi6rj3ya5x4sysljg8zmg4-pkg-config-0.29.2
+  /nix/store/1m05k7xgfnw6jc21xxk5681ni3ar97wf-pkg-config-wrapper-0.29.2
+  /nix/store/fsvdnhb6s367dlr3j4dip2hyr4my4zdg-popt-1.19
+  /nix/store/117vn2v34g891mki7bmdhg9r2fd5q58d-pretty_assertions-1.4.1
+  /nix/store/601k4lw9gdmirnwdlw2rjw5izm521yal-proc-macro2-1.0.106
+  /nix/store/093bbkmklv9vznvdpg1dmdmirdf3acjg-publicsuffix-list-0-unstable-2026-03-26
+  /nix/store/60m4rxhg2fldqaak400c0lry96ijrzqn-python3-3.13.13
+  /nix/store/r7grgparimgdb6ryi4xnif9ipgmrzzy5-python3-3.13.13-env
+  /nix/store/2xzvmy8836bgvdi3qgihrxc23p8iyarw-python3.13-pyelftools-0.32
+  /nix/store/6jnzh0ghanbqqq0ca7wsjs1xjqrvpx8m-quote-1.0.45
+  /nix/store/ylf24iiwy5xphy8wfz6jgahncsfgsy2r-readline-8.3p3
+  /nix/store/qy5fwvfkys6bs30y9xczrms0xvk3a04w-rsync-3.4.1
+  /nix/store/yhmi70ln28n1j6wn82h61b8r8q4g562i-rustc-1.95.0
+  /nix/store/ig3dxi9sbg0jnkid4s673mnz4kkbfwa4-rustc-bootstrap-1.95.0
+  /nix/store/aal0xbgd8lv1iij5jbvia44si07w0vh8-rustc-bootstrap-wrapper-1.95.0
+  /nix/store/wnhmqix7bippbbzasj29qiyb422g9asg-rustc-wrapper-1.95.0
+  /nix/store/ld3p4mqipa2ff2d4n6p9rq6im7zzjvxs-serde-1.0.228
+  /nix/store/kyrlqhm4apg4kr5ppmjbdm1cpqslp4cj-serde_core-1.0.228
+  /nix/store/a83j2xpngxfxq4j2hsj7cy1r79j8gn3s-serde_derive-1.0.228
+  /nix/store/zm6b3aqfg0hwplsqxhq9vz72jycp74ay-serde_json-1.0.150
+  /nix/store/5rh9f8szjl5n76agflv1v8wzpivcc4y5-serde_spanned-1.1.1
+  /nix/store/yg1gv8db04ldrnmdhykq8zjqqg6pg5kd-sqlite-3.51.2
+  /nix/store/81ff57hcs8gjlnaqqhbilzxsvb5pfzaa-stdenv-linux
+  /nix/store/jci7gw90lh2vdjaxkb6pzf9xp4v08wzs-stdenv-linux
+  /nix/store/2ldzf66d7g4px9ax4p4gf9z7w24hs4fp-syn-2.0.117
+  /nix/store/68xd6ryvmjgg25pl687v6w5s39fgi2gp-toml-1.1.2+spec-1.1.0
+  /nix/store/9pn8l11cs7yz2sbya3q8sd6al5323iav-toml_datetime-1.1.1+spec-1.1.0
+  /nix/store/lw11jhrp3ki6vrc4w89pdav5c659jwya-toml_parser-1.1.2+spec-1.1.0
+  /nix/store/vlqq6cxvi9ii6byq7jhpn0fimf633dd7-toml_writer-1.1.1+spec-1.1.0
+  /nix/store/v2hsfkf03b3l79rhcxw4nq7w79kr3qkw-tzdata-2026b
+  /nix/store/b4x0rdhmllrscgzlpd9nbd0ixzqj7zz3-unicode-ident-1.0.24
+  /nix/store/xknj6c33cc197s60ry0i69vdkmaizrs1-update-autotools-gnu-config-scripts-hook
+  /nix/store/1scb6xccxlqy8rj9hfgf7ppqv99pfwq9-util-linux-minimal-2.42-lib
+  /nix/store/0hlz1myxj7gfhdrjs3hx6lc32v4qq2w3-winnow-1.0.1
+  /nix/store/140w8frkcxgs5n4h5pss9l94cxwmhig9-writable-tmpdir-as-home-hook
+  /nix/store/il5x27q5bx54vw1k0s97v0y1ardhf0r0-xxhash-0.8.3
+  /nix/store/waz72vmxc8zk90qqvgg9ikhzdk1kzjy4-xz-5.8.3
+  /nix/store/csra6zhdjw7rjzv98fycz7qjalyv55k2-xz-5.8.3-bin
+  /nix/store/sd0ql11qc4x0v5ak1j5g974ar4pnw5iv-yansi-1.0.1
+  /nix/store/61a1nwx3w6rqyaisj5rn1sal1981apm7-zlib-1.3.2
+  /nix/store/h7ik0g1xxayy0z8h27zbvrgmac63irgs-zlib-1.3.2-dev
+  /nix/store/xn70pn0qd5jhdvp5rikgn1yl9bbmyxiq-zlib-1.3.2-static
+  /nix/store/i65qj7vqxxc7j8905azybvgriyvnqzm7-zlib-ng-2.3.3
+  /nix/store/x3azr6n5m7fg6db17hcf17wb57ild705-zmij-1.0.21
+  /nix/store/gd74vdpqzq0qmmikvmrf3r3kghhhnf50-zstd-1.5.7
+  /nix/store/cwj48a5jfy5srxgq45p4dg37zqdlhzba-zstd-1.5.7-bin
+  /nix/store/cbzpsvdi282yhw702d7s42lirqnr0i0g-zstd-1.5.7-dev

@@ -1,0 +1,132 @@
+== 2026-09-25T17:43:07+10:00 setup
+Cloning into '${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain'...
+From https://github.com/logos-blockchain/logos-blockchain
+ * branch            35a4a666e22a51eb98fe8a050854e57fe3420899 -> FETCH_HEAD
+HEAD is now at 35a4a66 chore(dependdencies): Update overwatch (#3622)
+HEAD 35a4a666e22a51eb98fe8a050854e57fe3420899 2026-09-22 16:07:54 +0000 chore(dependdencies): Update overwatch (#3622)
+-- c-bindings diff pinned..fresh HEAD (c4c86be):
+ Cargo.lock                          |   5 +-
+ Cargo.toml                          |   1 +
+ c-bindings/Cargo.toml               |   1 +
+ c-bindings/src/api/pow.rs           | 181 +++++++++++++++++++++++++++++++++++-
+ c-bindings/src/api/storage.rs       |   5 +-
+ c-bindings/src/api/subscriptions.rs |  17 ++--
+ c-bindings/src/lib.rs               |   1 +
+ c-bindings/src/option.rs            |  27 ++++++
+ c-bindings/src/result.rs            |   4 +-
+ 9 files changed, 224 insertions(+), 18 deletions(-)
+-- lbc / rapidsnark pins at REV:
+172:# When bumping any lbc-* tag, also update the logos-blockchain-circuits flake input tag in flake.nix
+174:lbc-poc-sys                      = { default-features = false, git = "https://github.com/logos-blockchain/logos-blockchain-circuits.git", package = "logos-blockchain-circuits-poc-sys", tag = "v0.5.7" }
+175:lbc-pol-sys                      = { default-features = false, git = "https://github.com/logos-blockchain/logos-blockchain-circuits.git", package = "logos-blockchain-circuits-pol-sys", tag = "v0.5.7" }
+176:lbc-poq-sys                      = { default-features = false, git = "https://github.com/logos-blockchain/logos-blockchain-circuits.git", package = "logos-blockchain-circuits-poq-sys", tag = "v0.5.7" }
+177:lbc-signature-sys                = { default-features = false, git = "https://github.com/logos-blockchain/logos-blockchain-circuits.git", package = "logos-blockchain-circuits-signature-sys", tag = "v0.5.7" }
+178:lbc-types                        = { default-features = false, git = "https://github.com/logos-blockchain/logos-blockchain-circuits.git", package = "logos-blockchain-circuits-types", tag = "v0.5.7" }
+268:rust-rapidsnark       = { default-features = false, git = "https://github.com/logos-blockchain/logos-blockchain-rust-rapidsnark.git", rev = "e91187f8ccb5bbfc7bb00dac88169112428da78f" } # feat/nixify
+16:      url = "github:logos-blockchain/logos-blockchain-circuits/v0.5.7";
+21:      url = "github:logos-blockchain/logos-blockchain-rust-rapidsnark/e91187f8ccb5bbfc7bb00dac88169112428da78f";
+channel = "1.98.1"
+== toolchain
+info: syncing channel updates for 1.98.1-x86_64-unknown-linux-gnu
+info: latest update on 2026-09-03 for version 1.98.1 (48a229cea 2026-09-01)
+info: downloading 6 components
+warn: the missing active toolchain `1.98.1-x86_64-unknown-linux-gnu` has been auto-installed
+warn: auto-installation is deprecated for most `rustup` commands
+warn: scripts relying on this behavior in `rustup` may stop working in the future
+warn: to install the active toolchain, use `rustup install` instead
+warn: see <https://github.com/rust-lang/rustup/issues/4836> for more info
+1.98.1-x86_64-unknown-linux-gnu (overridden by '${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain/rust-toolchain.toml')
+info: downloading 2 components
+aarch64-linux-android
+x86_64-linux-android
+x86_64-unknown-linux-gnu
+cargo 1.98.1 (797e8a9bc 2026-08-05)
+rustc 1.98.1 (48a229cea 2026-09-01)
+== cargo tree (android x86_64)
+tree-exit=0 lines=2417
+ Downloading crates ...
+  Downloaded educe v0.7.6
+  Downloaded arbitrary-int v2.2.0
+  Downloaded proc-macro-error-attr3 v3.1.1
+  Downloaded proc-macro-error3 v3.1.1
+548
+metadata-exit=0
+== downloads
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 30 28.6M   30 9038k    0     0  13.1M      0  0:00:02 --:--:--  0:00:02 13.1M100 28.6M  100 28.6M    0     0  28.7M      0 --:--:-- --:--:-- --:--:-- 61.3M
+circuits sri: sha256-kqDGrYENSGYxUYt7myR6K2b2avb4+N3OOBrLvf7cD38=  (expected sha256-kqDGrYENSGYxUYt7myR6K2b2avb4+N3OOBrLvf7cD38=)
+logos-blockchain-circuits-v0.5.7-linux-x86_64
+logos-blockchain-circuits-v0.5.7-linux-x86_64/lib
+logos-blockchain-circuits-v0.5.7-linux-x86_64/lib/libgmp.a
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poc
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poc/include
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poc/libpoc.a
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poc/proving_key.zkey
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poc/verification_key.json
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poc/witness_generator.dat
+logos-blockchain-circuits-v0.5.7-linux-x86_64/pol
+logos-blockchain-circuits-v0.5.7-linux-x86_64/pol/include
+logos-blockchain-circuits-v0.5.7-linux-x86_64/pol/libpol.a
+logos-blockchain-circuits-v0.5.7-linux-x86_64/pol/proving_key.zkey
+logos-blockchain-circuits-v0.5.7-linux-x86_64/pol/verification_key.json
+logos-blockchain-circuits-v0.5.7-linux-x86_64/pol/witness_generator.dat
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poq
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poq/include
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poq/libpoq.a
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poq/proving_key.zkey
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poq/verification_key.json
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poq/witness_generator.dat
+logos-blockchain-circuits-v0.5.7-linux-x86_64/prover
+logos-blockchain-circuits-v0.5.7-linux-x86_64/signature
+logos-blockchain-circuits-v0.5.7-linux-x86_64/signature/include
+logos-blockchain-circuits-v0.5.7-linux-x86_64/signature/libsignature.a
+logos-blockchain-circuits-v0.5.7-linux-x86_64/signature/proving_key.zkey
+logos-blockchain-circuits-v0.5.7-linux-x86_64/signature/verification_key.json
+logos-blockchain-circuits-v0.5.7-linux-x86_64/signature/witness_generator.dat
+logos-blockchain-circuits-v0.5.7-linux-x86_64/verifier
+logos-blockchain-circuits-v0.5.7-linux-x86_64/VERSION
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 22 2831k   22  637k    0     0  1411k      0  0:00:02 --:--:--  0:00:02 1411k100 2831k  100 2831k    0     0  5695k      0 --:--:-- --:--:-- --:--:-- 47.6M
+966d0e572963af1ff35faa56a5a16754a67000308d0cd89ed6c4d60a3080a2e0  rapidsnark-android-x86_64-v0.0.8.zip
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 2903k  100 2903k    0     0  5209k      0 --:--:-- --:--:-- --:--:-- 5209k
+2e306704fe1b900261006ec41a7bef92bb3f94839c9989eff5058b133f5dc642  rapidsnark-android-arm64-v0.0.8.zip
+./rapidsnark-android-arm64-v0.0.8
+./rapidsnark-android-arm64-v0.0.8/bin
+./rapidsnark-android-arm64-v0.0.8/bin/prover
+./rapidsnark-android-arm64-v0.0.8/bin/test_prover
+./rapidsnark-android-arm64-v0.0.8/bin/verifier
+./rapidsnark-android-arm64-v0.0.8/include
+./rapidsnark-android-arm64-v0.0.8/include/prover.h
+./rapidsnark-android-arm64-v0.0.8/include/verifier.h
+./rapidsnark-android-arm64-v0.0.8/lib
+./rapidsnark-android-arm64-v0.0.8/lib/libfq.a
+./rapidsnark-android-arm64-v0.0.8/lib/libfr.a
+./rapidsnark-android-arm64-v0.0.8/lib/libgmp.a
+./rapidsnark-android-arm64-v0.0.8/lib/librapidsnark.a
+./rapidsnark-android-arm64-v0.0.8/lib/librapidsnark-fr-fq.a
+./rapidsnark-android-arm64-v0.0.8/lib/librapidsnark.so
+./rapidsnark-android-arm64-v0.0.8.zip
+./rapidsnark-android-x86_64-v0.0.8
+./rapidsnark-android-x86_64-v0.0.8/bin
+./rapidsnark-android-x86_64-v0.0.8/bin/prover
+./rapidsnark-android-x86_64-v0.0.8/bin/test_prover
+./rapidsnark-android-x86_64-v0.0.8/bin/verifier
+./rapidsnark-android-x86_64-v0.0.8/include
+./rapidsnark-android-x86_64-v0.0.8/include/prover.h
+./rapidsnark-android-x86_64-v0.0.8/include/verifier.h
+./rapidsnark-android-x86_64-v0.0.8/lib
+./rapidsnark-android-x86_64-v0.0.8/lib/libfq.a
+./rapidsnark-android-x86_64-v0.0.8/lib/libfr.a
+./rapidsnark-android-x86_64-v0.0.8/lib/libgmp.a
+./rapidsnark-android-x86_64-v0.0.8/lib/librapidsnark.a
+./rapidsnark-android-x86_64-v0.0.8/lib/librapidsnark-fr-fq.a
+./rapidsnark-android-x86_64-v0.0.8/lib/librapidsnark.so
+./rapidsnark-android-x86_64-v0.0.8.zip
+DONE

@@ -1,0 +1,34 @@
+=== aarch64-linux-android
+-- binding of undefined rocksdb TLS wrappers
+   177: 0000000000000000     0 NOTYPE  WEAK   DEFAULT   UND _ZTHN7rocksdb10perf_levelE
+   253: 0000000000000000     0 NOTYPE  WEAK   DEFAULT   UND _ZTHN7rocksdb15ConcurrentArena9tls_cpuidE
+-- undefined WEAK count / GLOBAL count
+4
+377
+-- C++ runtime symbols imported (sample) and which NEEDED lib provides them
+23
+undefined symbols that the minimal system libstdc++.so also defines: __cxa_guard_abort __cxa_guard_acquire __cxa_guard_release __cxa_pure_virtual _ZdaPv _ZdlPv _Znam _Znwm 
+-- embedded circuit data (first 256 bytes of each file searched in the .so)
+poc/proving_key.zkey       size=  5317965 head-in-so=True full-copy-in-so=True
+poc/verification_key.json  size=     3293 head-in-so=True full-copy-in-so=True
+poc/witness_generator.dat  size=    80728 head-in-so=True full-copy-in-so=True
+pol/proving_key.zkey       size= 12719421 head-in-so=True full-copy-in-so=True
+pol/verification_key.json  size=     4389 head-in-so=True full-copy-in-so=True
+pol/witness_generator.dat  size=   179032 head-in-so=True full-copy-in-so=True
+poq/proving_key.zkey       size= 12578709 head-in-so=True full-copy-in-so=True
+poq/verification_key.json  size=     4936 head-in-so=True full-copy-in-so=True
+poq/witness_generator.dat  size=   176248 head-in-so=True full-copy-in-so=True
+signature/proving_key.zkey       size=  4491237 head-in-so=True full-copy-in-so=True
+signature/verification_key.json  size=     8782 head-in-so=True full-copy-in-so=True
+signature/witness_generator.dat  size=    76064 head-in-so=True full-copy-in-so=True
+-- witness generator + rapidsnark code present (strings)
+1
+1
+63
+-- build-path leakage
+   1673 ${HOME}/.cargo/registry/src
+     58 ${HOME}/.cargo/git/checkouts
+      2 ${REPO_ROOT}
+-- /etc paths referenced
+      1 /etc/hosts
+      1 /etc/resolv.conf

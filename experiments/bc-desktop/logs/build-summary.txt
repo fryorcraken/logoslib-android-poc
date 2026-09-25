@@ -1,0 +1,116 @@
+== start 2026-09-25T17:45:00+10:00 ==
+/dev/mapper/luks-df10eb8e-9965-49fd-8679-90d126b9675d  930G  858G   64G  94% /
+lgx build exit=0 wall=1184 s
+/dev/mapper/luks-df10eb8e-9965-49fd-8679-90d126b9675d  930G  863G   60G  94% /
+logos-blockchain_module-module-lib> Running phase: installPhase
+logos-blockchain_module-module-lib> Checking /build/q1g84g6bkg7fyfsz4vy1p25g9d0v6wwa-source/lib for external libraries...
+logos-blockchain_module-module-lib> Copying external library: liblogos_blockchain.so
+logos-blockchain_module-module-lib> Installed module LIDL contract: /nix/store/5qkgj4wc46nm2f0mk6giijfh0x7wxm6a-logos-blockchain_module-module-lib-0.0.999/share/logos/blockchain_module.lidl
+logos-blockchain_module-module-lib> Staging declared runtime files (metadata 'include')...
+logos-blockchain_module-module-lib>   staged liblogos_blockchain.so
+logos-blockchain_module-module-lib>   staged libfyaml.so.0
+logos-blockchain_module-module-lib> Running phase: qtOwnPathsHook
+logos-blockchain_module-module-lib> Running phase: fixupPhase
+logos-blockchain_module-module-lib> shrinking RPATHs of ELF executables and libraries in /nix/store/5qkgj4wc46nm2f0mk6giijfh0x7wxm6a-logos-blockchain_module-module-lib-0.0.999
+logos-blockchain_module-module-lib> shrinking /nix/store/5qkgj4wc46nm2f0mk6giijfh0x7wxm6a-logos-blockchain_module-module-lib-0.0.999/lib/blockchain_module_plugin.so
+logos-blockchain_module-module-lib> shrinking /nix/store/5qkgj4wc46nm2f0mk6giijfh0x7wxm6a-logos-blockchain_module-module-lib-0.0.999/lib/liblogos_blockchain.so
+logos-blockchain_module-module-lib> shrinking /nix/store/5qkgj4wc46nm2f0mk6giijfh0x7wxm6a-logos-blockchain_module-module-lib-0.0.999/lib/libfyaml.so.0
+logos-blockchain_module-module-lib> checking for references to /build/ in /nix/store/5qkgj4wc46nm2f0mk6giijfh0x7wxm6a-logos-blockchain_module-module-lib-0.0.999...
+logos-blockchain_module-module-lib> patching script interpreter paths in /nix/store/5qkgj4wc46nm2f0mk6giijfh0x7wxm6a-logos-blockchain_module-module-lib-0.0.999
+logos-blockchain_module-module-lib> Running phase: postPatchMkspecs
+building '/nix/store/vsd13s9q2ksbydrxkg7w1y0d13gkbpqv-logos-blockchain_module-module-lib-lgx-0.0.999.drv'...
+logos-blockchain_module-module-lib-lgx> Running phase: patchPhase
+logos-blockchain_module-module-lib-lgx> Running phase: updateAutotoolsGnuConfigScriptsPhase
+logos-blockchain_module-module-lib-lgx> Running phase: configurePhase
+logos-blockchain_module-module-lib-lgx> no configure script, doing nothing
+logos-blockchain_module-module-lib-lgx> Running phase: buildPhase
+logos-blockchain_module-module-lib-lgx> Created package: logos-blockchain_module-module-lib.lgx
+logos-blockchain_module-module-lib-lgx> Patching manifest from metadata...
+logos-blockchain_module-module-lib-lgx> Staged 3 entries from /nix/store/5qkgj4wc46nm2f0mk6giijfh0x7wxm6a-logos-blockchain_module-module-lib-0.0.999/lib
+logos-blockchain_module-module-lib-lgx> Bundled root asset directory: share/logos -> assets/lidl
+logos-blockchain_module-module-lib-lgx> Adding variant linux-amd64-dev to logos-blockchain_module-module-lib.lgx (main: blockchain_module_plugin.so)...
+logos-blockchain_module-module-lib-lgx> Added variant 'linux-amd64-dev' to logos-blockchain_module-module-lib.lgx
+logos-blockchain_module-module-lib-lgx> Done: logos-blockchain_module-module-lib.lgx
+logos-blockchain_module-module-lib-lgx> Running phase: installPhase
+== build the plain module lib output too (should be cached now) ==
+  /nix/store/z43sgxch9mc9si25qi37m62b2r6hw5jr-logos-blockchain_module-module-headers-qt-0.0.999.drv
+  /nix/store/3kd265005gs4hknngjfphgv22hv4dpzy-logos-blockchain_module-module.drv
+building '/nix/store/alyr4cyzp57jsjggx1m0bg4srr2bhpw9-logos-blockchain_module-lidl.drv'...
+building '/nix/store/z43sgxch9mc9si25qi37m62b2r6hw5jr-logos-blockchain_module-module-headers-qt-0.0.999.drv'...
+building '/nix/store/3kd265005gs4hknngjfphgv22hv4dpzy-logos-blockchain_module-module.drv'...
+== outputs ==
+${REPO_ROOT}/.work/experiments/bc-desktop/blockchain-lgx:
+total 47524
+dr-xr-xr-x. 1 fryorcraken fryorcraken       98 Jan  1  1970 .
+drwxr-xr-x. 1 fryorcraken fryorcraken  4090638 Sep 25 18:04 ..
+-r--r--r--. 1 fryorcraken fryorcraken 48664128 Jan  1  1970 logos-blockchain_module-module-lib.lgx
+dr-xr-xr-x. 1 fryorcraken fryorcraken       38 Jan  1  1970 nix-support
+
+${REPO_ROOT}/.work/experiments/bc-desktop/blockchain-lib:
+total 0
+dr-xr-xr-x. 1 fryorcraken fryorcraken      20 Jan  1  1970 .
+drwxr-xr-x. 1 fryorcraken fryorcraken 4090638 Sep 25 18:04 ..
+dr-xr-xr-x. 1 fryorcraken fryorcraken      96 Jan  1  1970 include
+dr-xr-xr-x. 1 fryorcraken fryorcraken     124 Jan  1  1970 lib
+== closure sizes ==
+/nix/store/62a1k21mspk7xgicqkp7pkwqq1sngbay-logos-blockchain_module-module-lib-lgx-0.0.999	 811.4 MiB
+/nix/store/aipynlpj1cmyby1x4a421mga01ch1nnh-logos-blockchain_module-module                	 855.0 MiB
+== lgx closure paths ==
+/nix/store/g5fkbz2i5azsgl5w6az4l6fvi5b9iv2a-libproxy-0.5.10                               	  82.8 MiB
+/nix/store/s9nqr7mipmbi2vgkwkqiriq8ggrrw915-avahi-0.8                                     	  94.1 MiB
+/nix/store/x0cccj6ww4hkl1hlirx60f32r13dvfmf-boost-1.87.0                                  	  95.9 MiB
+/nix/store/c96wgx1q0v8j90isavvxm3qah55r45lw-at-spi2-core-2.56.2                           	 101.6 MiB
+/nix/store/zkpfddh7v4svk76afsc1bbbvqapzjpir-cups-2.4.12-lib                               	 109.7 MiB
+/nix/store/acjdidq41qig9khxcm7gx1d7brzjs249-systemd-257.8                                 	 153.4 MiB
+/nix/store/rk9kj6nnabvam68pdw7vjj2jxsc0flc8-tinysparql-3.9.2                              	 154.8 MiB
+/nix/store/g54b6ghpnn98hfdz4yqw87w10c3hx8bv-xgcc-15.2.0-libgcc                            	 193.0 KiB
+/nix/store/xyikkpwkyxx6syba3kfrr0h67ig5hwmn-gcc-15.2.0-libgcc                             	 193.1 KiB
+/nix/store/0ja5daq2yay3svg6f48spyfby7pgy5bm-xgcc-14.3.0-libgcc                            	 197.1 KiB
+/nix/store/8zm936ys1dkqv2710j0w09r2mk0kj5n9-gcc-14.3.0-libgcc                             	 197.1 KiB
+/nix/store/lw4v9xvxyqrabifarmvj36prncj0c947-gtk+3-3.24.49                                 	 273.8 MiB
+/nix/store/v3z4bn1pxsg6699y61x86pvzif41m666-publicsuffix-list-0-unstable-2025-07-22       	 319.9 KiB
+/nix/store/dkfr32yi7p8cdxsnll05q1kax19fl7ay-qtbase-6.9.2                                  	 468.0 MiB
+/nix/store/36ndhs8khvj8960qbhvw8h3bld1kc06g-qtsvg-6.9.2                                   	 469.2 MiB
+/nix/store/agvpq5n8vcqwnkmn8bp8rlczy3fdxm6n-qtdeclarative-6.9.2                           	 612.1 MiB
+/nix/store/r2cq6la02msp6kfcl9a17d2l2n96qpvs-qtremoteobjects-6.9.2                         	 614.7 MiB
+/nix/store/k9q0wrnif5m9fxvk1rxbz777blpxkqg5-dejavu-fonts-minimal-2.37                     	 742.6 KiB
+/nix/store/5qkgj4wc46nm2f0mk6giijfh0x7wxm6a-logos-blockchain_module-module-lib-0.0.999    	 765.0 MiB
+/nix/store/62a1k21mspk7xgicqkp7pkwqq1sngbay-logos-blockchain_module-module-lib-lgx-0.0.999	 811.4 MiB
+== lib closure: largest 25 paths ==
+/nix/store/h5k131fmpybsz4c5ip83z58m5iafqv0w-libdrm-2.4.125                            	 557.6 KiB
+/nix/store/n9aigl6w7igkdyd6kdwal3n9ys4byp64-libapparmor-4.1.1                         	 588.8 KiB
+/nix/store/51wrmhqzrzs4dyli3zadpi58p0a9c9b9-libthai-0.1.29                            	 631.1 KiB
+/nix/store/wzngf2vhv7bhy3zqmq1716lgr7p1cwiq-vulkan-loader-1.4.321.0                   	 652.7 KiB
+/nix/store/7jlq3dh1n2a5fjakic3rzh353qy8hry1-json-glib-1.10.6                          	 656.4 KiB
+/nix/store/4my6a75b8p1w734w7crqfw69jw7xarla-pkg-config-0.29.2                         	 673.6 KiB
+/nix/store/abd6znwgd3dhma7bnzdzhdwp22wnj8sw-libselinux-3.8.1                          	 686.7 KiB
+/nix/store/mszd3cfmlqdz864qgc85h24h5r73xg0z-nettle-3.10.2                             	 711.2 KiB
+/nix/store/88fdfl1xvwfnx9sqhxkkfgpwbhn80xfb-libtiff-4.7.0                             	 726.9 KiB
+/nix/store/k9q0wrnif5m9fxvk1rxbz777blpxkqg5-dejavu-fonts-minimal-2.37                 	 742.6 KiB
+/nix/store/12m0v9p2c5pshd8m201z8la0ijd95ri9-gmp-with-cxx-6.3.0                        	 769.1 KiB
+/nix/store/b7pkrm3rv0sydsppr9abs4qsmcm7a4rv-gmp-with-cxx-6.3.0                        	 769.1 KiB
+/nix/store/flx3ldz80vm7ir7rnm9fk48d5bdr56ch-cracklib-2.10.3                           	 803.0 KiB
+/nix/store/mjszfnqrfid0c9b4dnaydkz43cmg23k7-xz-5.8.1                                  	 837.8 KiB
+/nix/store/12xvprmf0k03p7lzpcb4rrbdky1gsjj3-lerc-4.0.0                                	 850.7 KiB
+/nix/store/ssshfj3zgwnx3j77spypa7c5v5ixc5sc-pixman-0.46.2                             	 853.7 KiB
+/nix/store/10ahhmqpbmy6rpznpjjadwz8c722a256-libgpg-error-1.55                         	 860.0 KiB
+/nix/store/i3dqwabnv7mrzi5xi8x14990n6hg4jb1-libevent-2.1.12                           	 861.7 KiB
+/nix/store/vc37li5p9cmqx5zfhlm6sxmli6qbc346-pango-1.56.3                              	 898.8 KiB
+/nix/store/j32hl8idyin6cl5050j6lazvcwqpplxy-audit-4.1.1-unstable-2025-08-01-lib       	 912.1 KiB
+/nix/store/scirrfdcp47bhxaaw6n5q9gwlzxd8hcr-brotli-1.1.0-lib                          	 933.5 KiB
+/nix/store/flqs48a2h0jbls6k3las4qgq7yhbickc-libarchive-3.8.1-lib                      	 945.8 KiB
+/nix/store/q90008wvsnvg7jyg9n2gyq2nq2il1q5c-libxkbcommon-1.11.0                       	 978.8 KiB
+/nix/store/lql1za1wl82nq874j0n9lapdx5jfkawl-libfido2-1.16.0                           	 991.2 KiB
+/nix/store/g3vj4z918zal30klpdd9papkavis01sh-curl-8.14.1                               	1006.6 KiB
+== logos_blockchain derivation(s) built in this run (from log) ==
+building '/nix/store/1yqp322cc2rc9wsprb8cnqfds6g72r08-logos-blockchain_module-module-lib-metadata.json.drv'...
+building '/nix/store/jrwd7spb5x5w0g9cvw6ip2kc3rnrq1wq-logos-blockchain-circuits-v0.5.7-linux-x86_64.tar.gz.drv'...
+building '/nix/store/w4314plbmw8n9bbx37bgdfss51c4brnq-logos-blockchain-circuits-0.5.7.drv'...
+building '/nix/store/aljb8w27a2rn4har68x5zxd6d6lhv0db-cargo-git-https-github.com-logos-blockchain-logos-blockchain-circuits.git-ebf7ddf5b5b625ef4ea7c803171c670beebd05ef.drv'...
+building '/nix/store/qyrv4mfgg8rk8lzply8qaxqavwbgsnjf-cargo-git-https-github.com-logos-blockchain-logos-blockchain-rust-rapidsnark.git-e91187f8ccb5bbfc7bb00dac88169112428da78f.drv'...
+building '/nix/store/i1sl9927xkx5bcxvdf7zj68qrbf0cx7i-cargo-git-https-github.com-logos-blockchain-logos-blockchain-testing.git-db880d61155db3a4f32177ef16b0f1e4bf22b1f6.drv'...
+building '/nix/store/1vww38rixxyjij472i6jrfmmb06lyrb0-logos-blockchain-c-deps-0.0.0.drv'...
+building '/nix/store/7pzi542f1aw8k3gpzd8a1wlvvh4v6hf4-logos-blockchain-c-0.0.0.drv'...
+building '/nix/store/ni0hqhfmgh45plijhygh7l26d3vvkbxc-logos-blockchain_module-module-lib-0.0.999.drv'...
+building '/nix/store/vsd13s9q2ksbydrxkg7w1y0d13gkbpqv-logos-blockchain_module-module-lib-lgx-0.0.999.drv'...
+== end 2026-09-25T18:04:59+10:00 ==

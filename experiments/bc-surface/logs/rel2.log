@@ -1,0 +1,16 @@
+== 2026-09-25T17:52:27+10:00 bc-surface-rel2
+-- 0.3.0-rc.4 merge-base(pin,0.3.0-rc.4)=35a4a666e22a51eb98fe8a050854e57fe3420899
+   mb: 35a4a66 2026-09-22 16:07:54 +0000 chore(dependdencies): Update overwatch (#3622)
+   pin IS an ancestor of 0.3.0-rc.4
+   commits on 0.3.0-rc.4 not on pin: 3
+39916dc Update cargo files
+3fd48e1 chore: genesis ceremony for devnet version 0.3.0-rc.4
+1a7768c Update inscribe
+   commits on pin not on 0.3.0-rc.4: 0
+   c-bindings diff pin..0.3.0-rc.4:
+   node/services/core/zk diffstat pin..0.3.0-rc.4:
+ 1 file changed, 358 insertions(+), 57 deletions(-)
+-- 0.2.4 merge-base(pin,0.2.4)=none
+-- master tip:
+c4c86be 2026-09-24 16:13:46 +0000 feat(zone-sdk): channel update enum (#3638)
+== DONE 2026-09-25T17:52:30+10:00

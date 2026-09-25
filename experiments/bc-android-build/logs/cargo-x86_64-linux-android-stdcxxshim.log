@@ -1,0 +1,79 @@
+== 2026-09-25T18:41:15+10:00 target=x86_64-linux-android api=34 rev=35a4a666e22a51eb98fe8a050854e57fe3420899
+AR_x86_64_linux_android=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar
+BINDGEN_EXTRA_CLANG_ARGS_x86_64_linux_android=--sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot
+CARGO_TARGET_DIR=${REPO_ROOT}/.work/experiments/bc-android-build/target
+CARGO_TARGET_X86_64_LINUX_ANDROID_AR=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar
+CARGO_TARGET_X86_64_LINUX_ANDROID_LINKER=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang
+CARGO_TARGET_X86_64_LINUX_ANDROID_RUSTFLAGS=-C link-arg=-Wl,-z,max-page-size=16384 -L native=${REPO_ROOT}/.work/experiments/bc-android-build/android-stdcxx-shim
+CC_x86_64_linux_android=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang
+CXX_x86_64_linux_android=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang++
+LBC_ROOT_DIR=${REPO_ROOT}/.work/experiments/bc-android-build/lbc-android/x86_64
+LIBCLANG_PATH=/usr/lib64
+RANLIB_x86_64_linux_android=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib
+RAPIDSNARK_LIB_DIR=${REPO_ROOT}/.work/experiments/bc-android-build/inputs/rapidsnark-android-x86_64-v0.0.8/lib
+ M Cargo.lock
+ M Cargo.toml
+== cargo build
+    Finished `release` profile [optimized] target(s) in 8m 38s
+cargo-exit=0 build-seconds=518
+compiled crates: 441
+ M Cargo.lock
+ M Cargo.toml
+ Cargo.lock | 1 -
+ Cargo.toml | 5 +++++
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+== artifact
+${REPO_ROOT}/.work/experiments/bc-android-build/out/x86_64-linux-android-stdcxxshim/liblogos_blockchain.so 87165864
+${REPO_ROOT}/.work/experiments/bc-android-build/out/x86_64-linux-android-stdcxxshim/liblogos_blockchain.stripped.so 87165352
+b57936bee08b9b4856bc6732e61fb8aaf47fbddaca8a4f2a74b670a2824da79b  ${REPO_ROOT}/.work/experiments/bc-android-build/out/x86_64-linux-android-stdcxxshim/liblogos_blockchain.so
+b76d781aa9fe18b7aae5077a02f8b6e18c02f7c80f75fcefd6238fb66eca461e  ${REPO_ROOT}/.work/experiments/bc-android-build/out/x86_64-linux-android-stdcxxshim/logos_blockchain.h
+== header
+  Class:                             ELF64
+  Type:                              DYN (Shared object file)
+  Machine:                           Advanced Micro Devices X86-64
+== dynamic section
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x000000000000001e (FLAGS)        BIND_NOW 
+  0x000000006ffffffb (FLAGS_1)      NOW 
+== program headers
+  Type           Offset   VirtAddr           PhysAddr           FileSiz  MemSiz   Flg Align
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x340bf44 0x340bf44 R   0x4000
+  LOAD           0x340bf80 0x000000000340ff80 0x000000000340ff80 0x1e25400 0x1e25400 R E 0x4000
+  LOAD           0x5231380 0x0000000005239380 0x0000000005239380 0x0d6ff0 0x0d7c80 RW  0x4000
+  LOAD           0x5308380 0x0000000005314380 0x0000000005314380 0x017e60 0x042d64 RW  0x4000
+  TLS            0x5231380 0x0000000005239380 0x0000000005239380 0x000001 0x000458 R   0x8
+  GNU_RELRO      0x5231380 0x0000000005239380 0x0000000005239380 0x0d6ff0 0x0d7c80 R   0x1
+  GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x0
+== sections
+.dynsym                    10464        832
+.rodata                 48845696    1449984
+.gcc_except_table        1587176   50295680
+.eh_frame_hdr             312532   51882856
+.eh_frame                2379524   52195392
+.text                   31605977   54591360
+.data.rel.ro              873096   86217616
+.data                      97888   87114624
+.bss                      175844   87212544
+Total                   87339900
+== exported symbols vs header
+header functions: 55; exported T/W symbols: 54
+header functions exported: 54
+header functions NOT exported: ['void']
+exported but not in header: 0 (first 40): []
+== undefined dynamic symbols vs NDK API 34 stub libs
+381
+undefined not provided by libc/libm/libdl/liblog/libc++_shared/libstdc++ (API 34):
+_ZTHN7rocksdb10perf_levelE
+_ZTHN7rocksdb15ConcurrentArena9tls_cpuidE
+== native-lib provenance (strings)
+rocksdb dyn syms: 2
+zkey magic 'zkey' count: 0
+strings mentioning /nix/store: 0
+strings mentioning ${REPO_ROOT}/.work/experiments/bc-android-build: 2
+strings mentioning /home/: 854
+strings mentioning resolv.conf: 4
+4.3G	${REPO_ROOT}/.work/experiments/bc-android-build/target
+DONE

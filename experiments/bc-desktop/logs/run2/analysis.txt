@@ -1,0 +1,60 @@
+== daemon.log size / lines ==
+1150904
+2226
+== distinct WARN/ERROR messages from the node (ANSI stripped, timestamps/ids collapsed) ==
+    688 logos_blockchain::network_service::backends::libpNp::gossipsub: failed to broadcast message to topic: /logos-blockchain-standalone-local/cryptarchia/N.N.N NoPeersSubscribedToTopic
+     19 logos_blockchain_node: Error while awaiting ServiceRunner's JoinHandle: task N was cancelled
+      5 logos_blockchain::ledger::cryptarchia: skipped epochs old_epoch=Epoch(N) new_epoch=Epoch(N) epochs_skipped=N old_total_stake=N new_total_stake=N slot=Slot(N)
+      3 libpNp_kad::behaviour: Failed to trigger bootstrap: No known peers.
+      1 [subscribe_to_new_blocks_sync] Block stream closed, subscription to new blocks ended.
+      1 logos_blockchain::chain::network::bootstrap::ibd: Skipping IBD as no peers are configured
+== INFO lines mentioning leader / proposal / proof (collapsed) ==
+    719 [N-N-N N:N:N.N] [info] [logos] [blockchain_module] Received new block: {"header":{"version":"Bedrock","parent_block":"<hex>","slot":N,"body_root":"<hex>","proof_of_leadership":{"proof":"<hex>","entropy_contribution":"<hex>","leader_key":"<hex>","voucher_cm":"<hex>"}},"signature":"<hex>","uncle_headers":[],"transactions":[]}
+    719 logos_blockchain::chain::leader: proposed block HeaderId(<hex>) with N transactions (N removed)
+      1 logos_blockchain::chain::leader: Waiting for chain to become online
+      1 logos_blockchain::chain::leader: Service 'CryptarchiaLeader' is ready.
+      1 logos_blockchain::chain::leader: Chain is online. Starting block proposals.
+== stderr lines from the module plugin itself (non-[out]) ==
+      1 Shutting down logosctl daemon...
+      1 Logosctl daemon stopped.
+      1 Logosctl daemon started (pid 3639931, instance f143b59f32f5)
+      1 Local client config: ${REPO_ROOT}/.work/experiments/bc-desktop/cfg/client/config.json
+      1 Daemon state: ${REPO_ROOT}/.work/experiments/bc-desktop/cfg/daemon/state.json
+      1 [2026-09-25 18:18:49.419] [info] [logos] [blockchain_module] WARN  [subscribe_to_new_blocks_sync] Block stream closed, subscription to new blocks ended.
+      1 [2026-09-25 18:18:49.191] [info] [logos] [blockchain_module] wallet_get_balance: address_hex=<hex>
+      1 [2026-09-25 18:18:49.175] [info] [logos] [blockchain_module] wallet_get_balance: address_hex=<hex>
+      1 [2026-09-25 18:18:49.157] [info] [logos] [blockchain_module] wallet_get_balance: address_hex=<hex>
+      1 [2026-09-25 18:18:49.144] [info] [logos] [blockchain_module] Received new block: {"header":{"version":"Bedrock","parent_block":"<hex>","slot":12043480,"body_root":"<hex>","proof_of_leadership":{"proof
+      1 [2026-09-25 18:18:49.139] [info] [logos] [blockchain_module] wallet_get_balance: address_hex=<hex>
+      1 [2026-09-25 18:18:49.114] [info] [logos] [blockchain_module] wallet_get_balance: address_hex=<hex>
+      1 [2026-09-25 18:18:49.094] [info] [logos] [blockchain_module] blockchain lib: known addresses, count=5 sample:<hex>
+      1 [2026-09-25 18:18:49.072] [info] [logos] [blockchain_module] blockchain lib: known addresses, count=5 sample:<hex>
+      1 [2026-09-25 18:18:48.534] [info] [logos] [bc_probe] [bc_probe] <- blockchain_module.get_network_info {"error":"","ms":1,"success":true,"value":"{\"n_connections\":0,\"n_discovered_peers\":0,\"n_peers\
+== per-poll resources: cores used between samples (100 ticks/s), RSS MB, data MB, blocks ==
+18:08:01 poll=5 cores=1.27 rss_mb=104
+18:09:01 poll=9 cores=1.28 rss_mb=127
+18:10:01 poll=13 cores=1.27 rss_mb=165
+18:11:01 poll=17 cores=1.25 rss_mb=186
+18:12:02 poll=21 cores=1.29 rss_mb=212
+18:13:02 poll=25 cores=1.25 rss_mb=241
+18:14:02 poll=29 cores=1.22 rss_mb=260
+18:15:02 poll=33 cores=1.15 rss_mb=269
+18:16:02 poll=37 cores=1.15 rss_mb=288
+18:17:03 poll=41 cores=1.20 rss_mb=301
+18:18:03 poll=45 cores=1.14 rss_mb=320
+== average cores over the whole run ==
+from 65221 to 65928 s: 1.23 cores avg
+== events ==
+total: 2127
+newBlock: count=719 avg_bytes=1175
+processedBlock: count=719 avg_bytes=1195
+libBlock: count=689 avg_bytes=201
+one libBlock event:
+{"data":{"arg0":"{\"height\":1,\"header_id\":\"759ec14db4869f8585bc36107b254f4b633396c0f540d03491fd26ec12c12571\"}"},"event":"libBlock","module":"blockchain_module","timestamp":"2026-09-25T08:07:21Z"}
+== node file log ==
+total 336
+drwxr-xr-x. 1 fryorcraken fryorcraken     20 Sep 25 18:06 .
+drwxr-xr-x. 1 fryorcraken fryorcraken    302 Sep 25 18:19 ..
+-rw-r--r--. 1 fryorcraken fryorcraken 341688 Sep 25 18:18 1780937654
+== rapidsnark MyLogFile.log (moved) ==
+-rw-r--r--. 1 fryorcraken fryorcraken 1031765 Sep 25 18:18 ${REPO_ROOT}/.work/experiments/bc-desktop/logs/run2/MyLogFile.log

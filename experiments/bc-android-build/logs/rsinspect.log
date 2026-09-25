@@ -1,0 +1,51 @@
+=== x86_64
+-- librapidsnark.a members=11
+  Machine:                           Advanced Micro Devices X86-64
+   non-PIC abs relocs (R_X86_64_32/32S/64 in text, R_AARCH64_ABS32/ADR_PREL_PG_HI21_NC): 0
+   __ndk1 undefined: 103  __cxx11: 0
+-- libfr.a members=2
+  Machine:                           Advanced Micro Devices X86-64
+   non-PIC abs relocs (R_X86_64_32/32S/64 in text, R_AARCH64_ABS32/ADR_PREL_PG_HI21_NC): 0
+   __ndk1 undefined: 0  __cxx11: 0
+-- libfq.a members=2
+  Machine:                           Advanced Micro Devices X86-64
+   non-PIC abs relocs (R_X86_64_32/32S/64 in text, R_AARCH64_ABS32/ADR_PREL_PG_HI21_NC): 0
+   __ndk1 undefined: 0  __cxx11: 0
+-- libgmp.a members=530
+  Machine:                           Advanced Micro Devices X86-64
+   non-PIC abs relocs (R_X86_64_32/32S/64 in text, R_AARCH64_ABS32/ADR_PREL_PG_HI21_NC): 0
+   __ndk1 undefined: 0  __cxx11: 0
+-- global Fr_/Fq_ defined in libfr.a: 47
+-- librapidsnark.so NEEDED:
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+-- build-id/comment:
+[    b9] Linker: LLD 18.0.4
+=== arm64
+-- librapidsnark.a members=11
+  Machine:                           AArch64
+   non-PIC abs relocs (R_X86_64_32/32S/64 in text, R_AARCH64_ABS32/ADR_PREL_PG_HI21_NC): 0
+   __ndk1 undefined: 103  __cxx11: 0
+-- libfr.a members=3
+  Machine:                           AArch64
+   non-PIC abs relocs (R_X86_64_32/32S/64 in text, R_AARCH64_ABS32/ADR_PREL_PG_HI21_NC): 0
+   __ndk1 undefined: 0  __cxx11: 0
+-- libfq.a members=3
+  Machine:                           AArch64
+   non-PIC abs relocs (R_X86_64_32/32S/64 in text, R_AARCH64_ABS32/ADR_PREL_PG_HI21_NC): 0
+   __ndk1 undefined: 0  __cxx11: 0
+-- libgmp.a members=525
+  Machine:                           AArch64
+   non-PIC abs relocs (R_X86_64_32/32S/64 in text, R_AARCH64_ABS32/ADR_PREL_PG_HI21_NC): 0
+   __ndk1 undefined: 0  __cxx11: 0
+-- global Fr_/Fq_ defined in libfr.a: 26
+-- librapidsnark.so NEEDED:
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+-- build-id/comment:
+[    b9] Linker: LLD 18.0.4
+=== libgmp.a comparison (iden3 vs ours) member counts
+iden3 x86_64 530  ours x86_64 529
+iden3 arm64 525  ours aarch64 525

@@ -1,0 +1,288 @@
+node source (35a4a666): /nix/store/774q3zqa7pm44p8fjjqybnhsycq3mhss-source
+== /nix/store/774q3zqa7pm44p8fjjqybnhsycq3mhss-source/nodes/node/binary/src/config/deployment/settings.yaml (non-numeric-list lines) ==
+1:blend:
+2:  common:
+3:    num_blend_layers: 1
+4:    minimum_network_size: 2
+5:    network_absorption_in_rounds: 2
+6:    protocol_name: /logos-blockchain/blend/X.Y.Z
+7:    data_replication_factor: 0
+8:  core:
+9:    scheduler:
+10:      cover:
+11:        message_frequency_per_round: 1.0
+12:      delayer:
+13:        maximum_release_delay_in_rounds: 1
+14:    target_peering_degree: 4
+15:    verification_rate_per_second: 156
+16:    edge_node_send_deadline_in_rounds: 1
+17:    core_handshake_deadline_in_rounds: 2
+18:    activity_threshold_sensitivity: 1
+19:network:
+20:  kademlia_protocol_name: /logos-blockchain/kad/X.Y.Z
+21:  identify_protocol_name: /logos-blockchain/identify/X.Y.Z
+22:  chain_sync_protocol_name: /logos-blockchain/chainsync/X.Y.Z
+23:cryptarchia:
+24:  epoch_config:
+25:    epoch_stake_distribution_stabilization: 3
+26:    epoch_period_nonce_buffer: 3
+27:    epoch_period_nonce_stabilization: 4
+28:  security_param: 30
+29:  slot_activation_coeff:
+30:    numerator: 1
+31:    denominator: 20
+32:  learning_rate: 0.5
+33:  uncle_reference_window_in_block: 12
+34:  pow_config:
+35:    blend:
+36:      # BLEND_DIFFICULTY_BASE, as the exponent n in p / 2^n: the Blend PoW
+37:      # threshold at the reference load. Fixed by the EmPoWering
+38:      # specification from a measurement on the target hardware itself
+39:      # (Raspberry Pi 5, one core), at which one solution is around fifty
+40:      # seconds of work.
+41:      base_difficulty: 19
+42:      # The reference load the threshold is calibrated at, so it has to be the
+43:      # load the network actually carries: two transactions per block. A
+44:      # theoretical capacity here would pin the threshold off its calibrated
+45:      # point.
+46:      target_transactions_per_block: 2
+47:      max_step: 2
+48:      damping_num: 1
+49:      damping_den_offset: 1
+50:    reward:
+51:      # Token-reward PoW parameters, sized for the target network of ~200
+52:      # mining nodes over the two-week epoch schedule.
+53:      #
+54:      # Pool sized to put 200 nodes over the minimum stake, with margin for
+55:      # mining being spread unevenly across them.
+56:      reward_pool_genesis: 300000000000
+57:      # Forced by the pool and the payout rate:
+58:      # W0 * rate_num / (rate_den * target_claim_per_block *
+59:      # expected_blocks_per_epoch) = 3e11 / (10 * 1 * 300).
+60:      # `expected_blocks_per_epoch` is not a config value: the ledger derives
+61:      # it from the consensus schedule as `10k`, which is 300 at
+62:      # `security_param: 30`.
+63:      epoch_reward_genesis: 100000000
+64:      # Genesis `d_reward`, as the exponent n in p / 2^n — the same form as
+65:      # the Blend `base_difficulty` above. Fixed by the specification.
+66:      initial_difficulty: 26
+67:      ema_smoothing_factor: 9
+68:      ema_smoothing_precision: 10
+69:      # One claim per block: claims are transactions, and the per-block
+70:      # transaction budget is 2. Must track `target_claim_per_block` below.
+71:      target_claims_per_block: 1
+72:      # rho = rate_num / rate_den = 1/10 of the pool per epoch, which
+73:      # distributes 97% of it across the two weeks.
+74:      rate_num: 1
+75:      rate_den: 10
+76:      target_claim_per_block: 1
+77:      # `pow_share / share_den` of the fees each block collects is
+78:      # diverted to the pow reward pool at the epoch boundary.
+79:      pow_share: 10
+80:      share_den: 100
+81:      # Acceptance window in slots; must match the mining service. Ten
+82:      # block-intervals of tolerance for a claim to reach a block.
+83:      slot_window: 300
+84:  sdp_config:
+85:    service_params:
+86:      BN:
+87:        inactivity_period: 2
+88:        epoch: 0
+89:    min_stake:
+90:      threshold: 1
+91:      timestamp: 0
+92:  gossipsub_protocol: /logos-blockchain/cryptarchia/X.Y.Z
+93:  genesis_block:
+94:    header:
+95:      version: Bedrock
+96:      parent_block: '0000000000000000000000000000000000000000000000000000000000000000'
+97:      slot: 0
+98:      body_root: '7c1ff6ffdb0a1baffdf50aab3f15043cfd4d9f522ba909d1dfde0105789358d9'
+99:      proof_of_leadership:
+100:        proof: '0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+101:        entropy_contribution: '0000000000000000000000000000000000000000000000000000000000000000'
+102:        leader_key: '0000000000000000000000000000000000000000000000000000000000000000'
+103:        voucher_cm: '0000000000000000000000000000000000000000000000000000000000000000'
+104:    signature: '00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+105:    uncle_headers: []
+106:    transactions:
+107:    - mantle_tx:
+108:        ops:
+109:          - opcode: 0
+110:            payload:
+111:              inputs: []
+112:              outputs: []
+113:          - opcode: 17
+114:            payload:
+115:              channel_id: '0000000000000000000000000000000000000000000000000000000000000000'
+116:              inscription: '107374616e64616c6f6e652d6c6f63616c9169fe692d2ddf918544bca603c5a291c7dd1b902d6769ff4b00021506780e075c06051a'
+117:              parent: '0000000000000000000000000000000000000000000000000000000000000000'
+118:              signer: '0000000000000000000000000000000000000000000000000000000000000000'
+119:      ops_proofs:
+120:        - !ZkSig
+121:          pi_a: '0000000000000000000000000000000000000000000000000000000000000000'
+122:          pi_b: '00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+123:          pi_c: '0000000000000000000000000000000000000000000000000000000000000000'
+124:        - !Ed25519Sig '00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+125:  faucet_pk: '0000000000000000000000000000000000000000000000000000000000000000'
+126:time:
+127:  slot_duration: '1.000000000'
+128:mempool:
+129:  pubsub_topic: /logos-blockchain/mempool/X.Y.Z
+130:  tx_ttl: '86400.000000000'
+== inscription decoded ==
+standalone-local
+i--
+-gi
+== Cargo workspace version ==
+9:version     = "0.0.0"
+== c-bindings Cargo.toml ==
+[package]
+categories  = { workspace = true }
+description = { workspace = true }
+edition     = { workspace = true }
+keywords    = { workspace = true }
+license     = { workspace = true }
+name        = "logos-blockchain-c"
+readme      = { workspace = true }
+repository  = { workspace = true }
+version     = { workspace = true }
+
+[dependencies]
+futures                       = { workspace = true }
+lb-api-service                = { workspace = true }
+lb-blend-service              = { workspace = true }
+lb-chain-leader-service       = { workspace = true }
+lb-chain-service              = { workspace = true }
+lb-core                       = { workspace = true }
+lb-groth16                    = { workspace = true }
+lb-http-api-common            = { workspace = true }
+lb-key-management-system-keys = { workspace = true }
+lb-network-service            = { workspace = true }
+lb-node                       = { workspace = true }
+lb-pow-service                = { workspace = true }
+lb-time-service               = { workspace = true }
+lb-utils                      = { workspace = true }
+lb-version                    = { workspace = true }
+lb-wallet-service             = { workspace = true }
+multiaddr                     = { workspace = true }
+overwatch                     = { workspace = true }
+serde                         = { features = ["derive"], workspace = true }
+serde_json                    = { workspace = true }
+serde_yaml                    = { workspace = true }
+tempfile                      = { workspace = true }
+tokio                         = { features = ["rt-multi-thread"], workspace = true }
+
+[dev-dependencies]
+serde_yaml  = { workspace = true }
+serial_test = { workspace = true }
+
+[build-dependencies]
+cbindgen = { workspace = true }
+
+[lib]
+crate-type = ["cdylib"]
+name       = "logos_blockchain"
+
+[lints]
+workspace = true
+
+[package.metadata.cargo-machete]
+ignored = ["cbindgen"] # machete does not recognize this for build dep and complains.
+== deployment ceremony inscribe files ==
+--- /nix/store/774q3zqa7pm44p8fjjqybnhsycq3mhss-source/deployment/ceremony/genesis/devnet/inscribe.yaml
+# === TEMPLATE: shared default, do not edit per release ===
+entropy_sources:
+  - "0000000000000000000000000000000000000000000000000000000000000001"
+
+# === PER-RELEASE: edit on every release ===
+chain_id: "X.Y.Z-rc.N"
+genesis_time: "YYYY-MM-DDTHH:MM:SSZ"--- /nix/store/774q3zqa7pm44p8fjjqybnhsycq3mhss-source/deployment/ceremony/genesis/standalone/inscribe.yaml
+# === TEMPLATE: shared default, do not edit per release ===
+entropy_sources:
+  - "0000000000000000000000000000000000000000000000000000000000000001"
+
+# === PER-RELEASE: edit on every release ===
+chain_id: "standalone/X.Y.Z"
+genesis_time: "YYYY-MM-DDTHH:MM:SSZ"
+--- /nix/store/774q3zqa7pm44p8fjjqybnhsycq3mhss-source/deployment/ceremony/genesis/testnet/inscribe.yaml
+# === TEMPLATE: shared default, do not edit per release ===
+entropy_sources:
+  - "0000000000000000000000000000000000000000000000000000000000000001"
+
+# === PER-RELEASE: edit on every release ===
+chain_id: "X.Y.Z"
+genesis_time: "YYYY-MM-DDTHH:MM:SSZ"
+== providers (bootstrap locators) ==
+--- /nix/store/774q3zqa7pm44p8fjjqybnhsycq3mhss-source/deployment/ceremony/genesis/devnet/providers.yaml
+3:  locators:
+4:    - /ip4/65.108.203.235/udp/3400/quic-v1
+8:  locators:
+9:    - /ip4/65.108.203.235/udp/3401/quic-v1
+13:  locators:
+14:    - /ip4/65.108.203.235/udp/3402/quic-v1
+18:  locators:
+19:    - /ip4/65.108.203.235/udp/50002/quic-v1
+--- /nix/store/774q3zqa7pm44p8fjjqybnhsycq3mhss-source/deployment/ceremony/genesis/standalone/providers.yaml
+3:  locators:
+4:    - /ip4/127.0.0.1/udp/3400/quic-v1
+--- /nix/store/774q3zqa7pm44p8fjjqybnhsycq3mhss-source/deployment/ceremony/genesis/testnet/providers.yaml
+3:  locators:
+4:    - /ip4/65.109.51.37/udp/3400/quic-v1
+8:  locators:
+9:    - /ip4/65.109.51.37/udp/3401/quic-v1
+13:  locators:
+14:    - /ip4/65.109.51.37/udp/3402/quic-v1
+18:  locators:
+19:    - /ip4/65.109.51.37/udp/50002/quic-v1
+== .env files ==
+-r--r--r--. 1 fryorcraken fryorcraken  594 Jan  1  1970 .env.devnet
+-r--r--r--. 1 fryorcraken fryorcraken  135 Jan  1  1970 .env.example
+-r--r--r--. 1 fryorcraken fryorcraken  590 Jan  1  1970 .env.testnet
+--- /nix/store/774q3zqa7pm44p8fjjqybnhsycq3mhss-source/deployment/.env.devnet
+DOCKER_COMPOSE_LIBP2P_REPLICAS=3
+TOOLS_IMAGE_LABEL=devnet
+EXPLORER_IMAGE_LABEL=devnet
+ENV_TITLE_STRING=devnet
+PUBLIC_IP_ADDR=65.108.203.235
+NODE0_NET_PORT=3000
+NODE0_BLEND_PORT=3400
+NODE0_API_PORT=18080
+NODE1_NET_PORT=3001
+NODE1_BLEND_PORT=3401
+NODE1_API_PORT=18081
+NODE2_NET_PORT=3002
+NODE2_BLEND_PORT=3402
+NODE2_API_PORT=18082
+NODE3_NET_PORT=50001
+NODE3_BLEND_PORT=50002
+NODE3_API_PORT=18083
+NODE_IMAGE_LABEL=X.Y.Z-rc.N
+--- /nix/store/774q3zqa7pm44p8fjjqybnhsycq3mhss-source/deployment/.env.example
+DOCKER_COMPOSE_LIBP2P_REPLICAS=1
+TOOLS_IMAGE_LABEL=example
+NODE_IMAGE_LABEL=0.1.2
+--- /nix/store/774q3zqa7pm44p8fjjqybnhsycq3mhss-source/deployment/.env.testnet
+DOCKER_COMPOSE_LIBP2P_REPLICAS=3
+TOOLS_IMAGE_LABEL=testnet
+EXPLORER_IMAGE_LABEL=testnet
+ENV_TITLE_STRING=testnet
+PUBLIC_IP_ADDR=65.109.51.37
+NODE0_NET_PORT=3000
+NODE0_BLEND_PORT=3400
+NODE0_API_PORT=18080
+NODE1_NET_PORT=3001
+NODE1_BLEND_PORT=3401
+NODE1_API_PORT=18081
+NODE2_NET_PORT=3002
+NODE2_BLEND_PORT=3402
+NODE2_API_PORT=18082
+NODE3_NET_PORT=50001
+NODE3_BLEND_PORT=50002
+NODE3_API_PORT=18083
+NODE_IMAGE_LABEL=X.Y.Z
+== any testnet/devnet bootstrap multiaddrs in source ==
+/nix/store/774q3zqa7pm44p8fjjqybnhsycq3mhss-source/core/src/sdp/mod.rs:658:        assert!("/ip4/65.109.51.37/udp/3000/quic-v1/p2p/12D3KooWL7a8LBbLRYnabptHPFBCmAs49Y7cVMqvzuSdd43tAJk8".parse::<Locator>().unwrap_err().contains("must not contain a peer ID"));
+== standalone configs ==
+-r--r--r--. 1 fryorcraken fryorcraken 7324 Jan  1  1970 standalone-deployment-config.yaml
+-r--r--r--. 1 fryorcraken fryorcraken 7516 Jan  1  1970 standalone-node-config.yaml

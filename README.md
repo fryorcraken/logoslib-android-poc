@@ -28,8 +28,9 @@ JNI shim per library and has no shared inter-module transport.
 | Qt + QtRemoteObjects in a JVM-less module process, exec'd from an APK on the emulator | Works with a ~60-line fix: [`experiments/qt-jvmless`](experiments/qt-jvmless) |
 | Qt-free liblogos runtime (Boost, container, loader) cross-built and run on the emulator | Done: [`experiments/ndk-runtime`](experiments/ndk-runtime) |
 | Kotlin wrapper for liblogos + a trivial module on the emulator | Next: [`docs/plan.md`](docs/plan.md) M2-M4 |
-| Blockchain module on Android | Research in progress, then M5 |
-| Inter-module call on Android | M6 |
+| Blockchain module under liblogos on desktop: joins devnet, syncs, follows the head; `bc_probe` calls it | Done: [`experiments/bc-desktop`](experiments/bc-desktop), [`modules/bc_probe`](modules/bc_probe) |
+| Node library `liblogos_blockchain.so` for Android (x86_64 + arm64), with L1 circuits built for Android | Cross-built, not yet run on the emulator: [`experiments/bc-android-build`](experiments/bc-android-build) |
+| Blockchain module running on Android, and the inter-module call on Android | M5 / M6 |
 
 ## Findings in brief
 

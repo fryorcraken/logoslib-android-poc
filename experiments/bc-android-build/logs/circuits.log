@@ -1,0 +1,217 @@
+== 2026-09-25T18:20:31+10:00 circuits
+circom compiler 2.2.2
+circuits ebf7ddf5b5b625ef4ea7c803171c670beebd05ef  (HEAD, tag: v0.5.7, origin/main, origin/HEAD, main)
+diff --git a/.github/resources/witness-generator/Makefile b/.github/resources/witness-generator/Makefile
+index e06a552..f0d91bc 100644
+--- a/.github/resources/witness-generator/Makefile
++++ b/.github/resources/witness-generator/Makefile
+@@ -1,4 +1,4 @@
+-.PHONY: linux macos windows linux-lib macos-lib windows-lib build clean
++.PHONY: linux macos windows linux-lib macos-lib windows-lib android-lib build clean
+ 
+ # ---- Arguments ----
+ ifndef PROJECT
+@@ -59,6 +59,12 @@ windows: $(BIN)
+ windows-lib: CXXFLAGS=$(PRIORITY_FLAGS) $(CXXFLAGS_COMMON) -fPIC -I/include -Duint="unsigned int"
+ windows-lib: $(LIB)
+ 
++# ---- Android (NDK clang++ / libc++) ----
++# Pass CXX=<ndk>/bin/<triple><api>-clang++, LD=<ndk>/bin/ld.lld, AR=<ndk>/bin/llvm-ar,
++# OBJCOPY=<ndk>/bin/llvm-objcopy and PRIORITY_FLAGS=-I<android gmp include> -I<nlohmann include>.
++android-lib: CXXFLAGS=$(PRIORITY_FLAGS) $(CXXFLAGS_COMMON) -fPIC
++android-lib: $(LIB)
++
+ # Localizes witness-generator implementation symbols to prevent conflicts when multiple circuit libraries are linked
+ # into the same binary.
+ # See CONTRIBUTING.md § "Symbol Isolation".
+@@ -72,10 +78,10 @@ $(BIN): $(COMMON_OBJS)
+ 	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
+ 
+ $(LIB): $(LIB_OBJS)
+-	ld -r -o $(LOCAL_OBJ) $^
++	$(LD) -r -o $(LOCAL_OBJ) $^
+ 	$(OBJCOPY) $(foreach sym,$(PUBLIC_SYMS),--keep-global-symbol=$(SYM_PREFIX)$(sym)) $(LOCAL_OBJ)
+ 	rm -f $@
+-	ar rcs $@ $(LOCAL_OBJ)
++	$(AR) rcs $@ $(LOCAL_OBJ)
+ 	rm $(LOCAL_OBJ)
+ 
+ %.o: %.cpp $(DEPS_HPP)
+== GMP 6.2.1 for Android (rapidsnark/build_gmp.sh android_x86_64 + android)
+fd4829912cddd12f84181c3451cc752be224643e87fac497b69edddadc49b4f2  gmp-6.2.1.tar.xz
+== circom C++ generation (host, arch independent)
+circom poc exit=0 (non-linear constraints: 8257 linear constraints: 0 wires: 8293 )
+fix_calcwit_leak: patched ${REPO_ROOT}/.work/experiments/bc-android-build/build/circuits-gen/poc/poc_cpp/calcwit.cpp
+dat poc: gen=24c151c3f20b161b release=24c151c3f20b161b
+    4191 calcwit.cpp
+    7004 circom_adapter.cpp
+    59629 fr.cpp
+    10913 main.cpp
+    1023836 poc.cpp
+    80728 poc.dat
+circom pol exit=0 (non-linear constraints: 20460 linear constraints: 0 wires: 20531 )
+fix_calcwit_leak: patched ${REPO_ROOT}/.work/experiments/bc-android-build/build/circuits-gen/pol/pol_cpp/calcwit.cpp
+dat pol: gen=0058bcb6e2d4f16e release=0058bcb6e2d4f16e
+    4191 calcwit.cpp
+    7004 circom_adapter.cpp
+    59629 fr.cpp
+    10913 main.cpp
+    1123838 pol.cpp
+    179032 pol.dat
+circom poq exit=0 (non-linear constraints: 20110 linear constraints: 0 wires: 20168 )
+fix_calcwit_leak: patched ${REPO_ROOT}/.work/experiments/bc-android-build/build/circuits-gen/poq/poq_cpp/calcwit.cpp
+dat poq: gen=4b3a19486f5e8a4f release=4b3a19486f5e8a4f
+    4191 calcwit.cpp
+    7004 circom_adapter.cpp
+    59629 fr.cpp
+    10913 main.cpp
+    1173627 poq.cpp
+    176248 poq.dat
+circom signature exit=0 (non-linear constraints: 7681 linear constraints: 0 wires: 7715 )
+fix_calcwit_leak: patched ${REPO_ROOT}/.work/experiments/bc-android-build/build/circuits-gen/signature/signature_cpp/calcwit.cpp
+dat signature: gen=b6b93ab0c2f14247 release=b6b93ab0c2f14247
+    4191 calcwit.cpp
+    7004 circom_adapter.cpp
+    59629 fr.cpp
+    10913 main.cpp
+    997745 signature.cpp
+    76064 signature.dat
+gmp android_x86_64 exit=0
+gmp android(arm64) exit=0
+gmp seconds=25
+-rw-r--r--. 1 fryorcraken fryorcraken   84077 Sep 25 18:20 ${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/gmp/package_android_x86_64/include/gmp.h
+-rw-r--r--. 1 fryorcraken fryorcraken 1192574 Sep 25 18:20 ${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/gmp/package_android_x86_64/lib/libgmp.a
+#define GMP_LIMB_BITS                      64
+#define __GMP_CC "${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android21-clang"
+#define __GMP_CFLAGS "-O2 -pedantic -fomit-frame-pointer -m64 -mtune=k8 -march=k8"
+-rw-r--r--. 1 fryorcraken fryorcraken   84047 Sep 25 18:21 ${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/gmp/package_android_arm64/include/gmp.h
+-rw-r--r--. 1 fryorcraken fryorcraken 1217064 Sep 25 18:21 ${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/gmp/package_android_arm64/lib/libgmp.a
+#define GMP_LIMB_BITS                      64
+#define __GMP_CC "${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android21-clang"
+#define __GMP_CFLAGS "-O2 -pedantic -march=armv8-a"
+tail: option used in invalid context -- 3
+== witness libs (NDK clang++ 34, libc++)
+make x86_64 poc exit=0
+make x86_64 signature exit=0
+make aarch64 poc exit=0
+make aarch64 signature exit=0
+make aarch64 pol exit=0
+make x86_64 pol exit=0
+make x86_64 poq exit=0
+make aarch64 poq exit=0
+witness seconds=12
+    387    26 |     ((cond) ? void(0) : throw std::runtime_error( \
+      1 ? void(0) : throw std::runtime_error( \
+== assemble Android LBC_ROOT_DIR (data files from release v0.5.7)
+-- ${REPO_ROOT}/.work/experiments/bc-android-build/lbc-android/x86_64
+lib/libgmp.a 1192574
+poc/include/calcwit.hpp 1498
+poc/include/circom.hpp 1873
+poc/include/ffi.hpp 1428
+poc/include/fr.hpp 2377
+poc/include/types.hpp 2262
+poc/libpoc.a 1301570
+poc/proving_key.zkey 5317965
+poc/verification_key.json 3293
+poc/witness_generator.dat 80728
+pol/include/calcwit.hpp 1498
+pol/include/circom.hpp 1873
+pol/include/ffi.hpp 1428
+pol/include/fr.hpp 2377
+pol/include/types.hpp 2262
+pol/libpol.a 1448578
+pol/proving_key.zkey 12719421
+pol/verification_key.json 4389
+pol/witness_generator.dat 179032
+poq/include/calcwit.hpp 1498
+poq/include/circom.hpp 1873
+poq/include/ffi.hpp 1428
+poq/include/fr.hpp 2377
+poq/include/types.hpp 2262
+poq/libpoq.a 1525330
+poq/proving_key.zkey 12578709
+poq/verification_key.json 4936
+poq/witness_generator.dat 176248
+signature/include/calcwit.hpp 1498
+signature/include/circom.hpp 1873
+signature/include/ffi.hpp 1452
+signature/include/fr.hpp 2377
+signature/include/types.hpp 2262
+signature/libsignature.a 1263710
+signature/proving_key.zkey 4491237
+signature/verification_key.json 8782
+signature/witness_generator.dat 76064
+VERSION 7
+-- file / symbols (x86_64)
+  Machine:                           Advanced Micro Devices X86-64
+global defined in libpoc.a:  poc_generate_witness poc_generate_witness_from_files 
+undefined __ndk1 refs: 52  __cxx11 refs: 0  __gmp refs: 30
+  Machine:                           Advanced Micro Devices X86-64
+global defined in libpol.a:  pol_generate_witness pol_generate_witness_from_files 
+undefined __ndk1 refs: 52  __cxx11 refs: 0  __gmp refs: 30
+  Machine:                           Advanced Micro Devices X86-64
+global defined in libpoq.a:  poq_generate_witness poq_generate_witness_from_files 
+undefined __ndk1 refs: 52  __cxx11 refs: 0  __gmp refs: 30
+  Machine:                           Advanced Micro Devices X86-64
+global defined in libsignature.a:  signature_generate_witness signature_generate_witness_from_files 
+undefined __ndk1 refs: 52  __cxx11 refs: 0  __gmp refs: 30
+  Machine:                           Advanced Micro Devices X86-64
+-- ${REPO_ROOT}/.work/experiments/bc-android-build/lbc-android/aarch64
+lib/libgmp.a 1217064
+poc/include/calcwit.hpp 1498
+poc/include/circom.hpp 1873
+poc/include/ffi.hpp 1428
+poc/include/fr.hpp 2377
+poc/include/types.hpp 2262
+poc/libpoc.a 1264370
+poc/proving_key.zkey 5317965
+poc/verification_key.json 3293
+poc/witness_generator.dat 80728
+pol/include/calcwit.hpp 1498
+pol/include/circom.hpp 1873
+pol/include/ffi.hpp 1428
+pol/include/fr.hpp 2377
+pol/include/types.hpp 2262
+pol/libpol.a 1420522
+pol/proving_key.zkey 12719421
+pol/verification_key.json 4389
+pol/witness_generator.dat 179032
+poq/include/calcwit.hpp 1498
+poq/include/circom.hpp 1873
+poq/include/ffi.hpp 1428
+poq/include/fr.hpp 2377
+poq/include/types.hpp 2262
+poq/libpoq.a 1501818
+poq/proving_key.zkey 12578709
+poq/verification_key.json 4936
+poq/witness_generator.dat 176248
+signature/include/calcwit.hpp 1498
+signature/include/circom.hpp 1873
+signature/include/ffi.hpp 1452
+signature/include/fr.hpp 2377
+signature/include/types.hpp 2262
+signature/libsignature.a 1224710
+signature/proving_key.zkey 4491237
+signature/verification_key.json 8782
+signature/witness_generator.dat 76064
+VERSION 7
+-- file / symbols (aarch64)
+  Machine:                           AArch64
+global defined in libpoc.a:  poc_generate_witness poc_generate_witness_from_files 
+undefined __ndk1 refs: 52  __cxx11 refs: 0  __gmp refs: 30
+  Machine:                           AArch64
+global defined in libpol.a:  pol_generate_witness pol_generate_witness_from_files 
+undefined __ndk1 refs: 52  __cxx11 refs: 0  __gmp refs: 30
+  Machine:                           AArch64
+global defined in libpoq.a:  poq_generate_witness poq_generate_witness_from_files 
+undefined __ndk1 refs: 52  __cxx11 refs: 0  __gmp refs: 30
+  Machine:                           AArch64
+global defined in libsignature.a:  signature_generate_witness signature_generate_witness_from_files 
+undefined __ndk1 refs: 52  __cxx11 refs: 0  __gmp refs: 30
+  Machine:                           AArch64
+-- data files identical to release: yes
+total seconds=41
+63M	${REPO_ROOT}/.work/experiments/bc-android-build/build
+81M	${REPO_ROOT}/.work/experiments/bc-android-build/lbc-android
+50M	${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/gmp
+DONE

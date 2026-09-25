@@ -16,4 +16,8 @@ after the maintainer confirms. Each patch was produced by one of the experiments
 | logos-module-loader-qt | `*-C-loader-android-host-discovery.diff` | Find the host next to the loaded library; `program_location()` is `app_process64` on Android | Runtime-verified on the emulator (stand-in host) |
 | logos-package (liblgx) | `0001`, `0002` | Use the NDK's ICU C API (API 31 and above) instead of the ICU C++ API, so no ICU ships in the APK | 436/436 upstream tests pass; Android build |
 | logos-package (liblgx) | `0003` | Proposed `__ANDROID__` branch for `lgx_host_variant()` (`android-x86_64` / `android-arm64`) | Proposal only |
+| logos-blockchain-circuits | `circuits-01-witness-makefile-android-lib.diff` | Adds an `android-lib` target to the CI witness-generator Makefile and makes `ld -r`/`ar` overridable | NDK build of all 4 witness libs; `.dat` output byte-identical to v0.5.7 |
+| logos-blockchain-circuits | `circuits-02-lbc-build-libcxx-on-android.diff` | lbc-build hard-codes `-lstdc++` on non-macOS; on Android it must link libc++ | Android cargo build |
+| logos-blockchain | `logos-blockchain-01*.diff` | Experiment wiring: `[patch]` points lbc-build at the patched copy | Android cargo build (x86_64 + arm64) |
+| logos-blockchain-module | `module-quiet-newblock-log.diff` | Stops the plugin printing every full block JSON to stderr (12 MB in 6.5 min on devnet), which would flood logcat | Proposal |
 | logos-execution-zone | `01`/`01b`, `02` | Drop the Bedrock HTTP-client edge from `lez/common`, and add an opt-in `webpki-roots` TLS feature. Together they let `wallet-ffi` build and run on Android with no JVM. | Emulator: wallet + testnet read over HTTPS (LEZ is no longer the target) |

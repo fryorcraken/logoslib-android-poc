@@ -1,0 +1,14 @@
+# rationale: point the workspace at the patched lbc-build copy via [patch] (experiment wiring; upstream would instead bump the lbc tag). Applies to logos-blockchain 35a4a666.
+diff --git a/Cargo.toml b/Cargo.toml
+index b948634..1d948fd 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -459,3 +459,8 @@ trivial_casts                          = { level = "allow" }
+ unreachable_pub                        = { level = "allow" }
+ unsafe_code                            = { level = "allow" }
+ variant_size_differences               = { level = "allow" }
++
++# Android experiment: lbc-build hard-codes -lstdc++ on every non-macOS target; the patched copy
++# (v0.5.7 + one-line change) emits -lc++ (NDK linker script -> libc++_shared) for target_os=android.
++[patch."https://github.com/logos-blockchain/logos-blockchain-circuits.git"]
++logos-blockchain-circuits-build = { path = "../logos-blockchain-circuits/rust/logos-blockchain-circuits-build" }

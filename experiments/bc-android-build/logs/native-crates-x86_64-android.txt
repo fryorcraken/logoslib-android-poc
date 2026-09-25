@@ -1,0 +1,92 @@
+target-side crates: 551  host-side (build-dep) crates: 103
+
+## target-side crates with build.rs (compiled for android)
+ahash                                         0.8.12       links=-                      src=registry
+anyhow                                        1.0.103      links=-                      src=registry
+async-io                                      2.6.0        links=-                      src=registry
+bzip2-sys                                     0.1.13+1.0.8 links=bzip2                  src=registry
+crc32fast                                     1.5.0        links=-                      src=registry
+crossbeam-epoch                               0.9.20       links=-                      src=registry
+crossbeam-utils                               0.8.21       links=-                      src=registry
+crunchy                                       0.2.4        links=-                      src=registry
+curve25519-dalek                              4.1.3        links=-                      src=registry
+eyre                                          0.6.12       links=-                      src=registry
+generic-array                                 0.14.7       links=-                      src=registry
+getrandom                                     0.3.4        links=-                      src=registry
+getrandom                                     0.4.3        links=-                      src=registry
+httparse                                      1.10.1       links=-                      src=registry
+icu_normalizer_data                           2.2.0        links=-                      src=registry
+icu_properties_data                           2.2.0        links=-                      src=registry
+libc                                          0.2.186      links=-                      src=registry
+libm                                          0.2.16       links=-                      src=registry
+librocksdb-sys                                0.17.3+10.4.2 links=rocksdb                src=registry
+libz-sys                                      1.1.29       links=z                      src=registry
+logos-blockchain-c                            0.0.0        links=-                      src=path
+logos-blockchain-circuits-poc-sys             0.5.7        links=-                      src=git
+logos-blockchain-circuits-pol-sys             0.5.7        links=-                      src=git
+logos-blockchain-circuits-poq-sys             0.5.7        links=-                      src=git
+logos-blockchain-circuits-signature-sys       0.5.7        links=-                      src=git
+logos-blockchain-version                      0.0.0        links=-                      src=path
+mime_guess                                    2.0.5        links=-                      src=registry
+native-tls                                    0.2.18       links=-                      src=registry
+nix                                           0.31.3       links=-                      src=registry
+num-traits                                    0.2.19       links=-                      src=registry
+nutype_macros                                 0.6.2        links=-                      src=registry
+object                                        0.37.3       links=-                      src=registry
+oid-registry                                  0.8.1        links=-                      src=registry
+openssl                                       0.10.81      links=-                      src=registry
+openssl-sys                                   0.9.117      links=openssl                src=registry
+owo-colors                                    4.3.0        links=-                      src=registry
+parking_lot_core                              0.9.12       links=-                      src=registry
+paste                                         1.0.15       links=-                      src=registry
+portable-atomic                               1.13.1       links=-                      src=registry
+proc-macro2                                   1.0.106      links=-                      src=registry
+prometheus-client                             0.23.1       links=-                      src=registry
+quinn                                         0.11.11      links=-                      src=registry
+quinn-udp                                     0.5.14       links=-                      src=registry
+quote                                         1.0.46       links=-                      src=registry
+rayon-core                                    1.13.0       links=rayon-core             src=registry
+ring                                          0.17.14      links=ring_core_0_17_14_     src=registry
+rust-rapidsnark                               0.1.3        links=-                      src=git
+rustix                                        1.1.4        links=-                      src=registry
+rustls                                        0.23.45      links=-                      src=registry
+rustversion                                   1.0.22       links=-                      src=registry
+serde                                         1.0.228      links=-                      src=registry
+serde_core                                    1.0.228      links=-                      src=registry
+serde_json                                    1.0.150      links=-                      src=registry
+snap                                          1.1.1        links=-                      src=registry
+syn                                           1.0.109      links=-                      src=registry
+thiserror                                     1.0.69       links=-                      src=registry
+thiserror                                     2.0.18       links=-                      src=registry
+tiny-keccak                                   2.0.2        links=-                      src=registry
+utoipa-swagger-ui                             8.0.3        links=-                      src=registry
+zerocopy                                      0.8.52       links=-                      src=registry
+zmij                                          1.0.21       links=-                      src=registry
+
+## crates with links= key (target side)
+bzip2-sys 0.1.13+1.0.8 bzip2
+librocksdb-sys 0.17.3+10.4.2 rocksdb
+libz-sys 1.1.29 z
+openssl-sys 0.9.117 openssl
+rayon-core 1.13.0 rayon-core
+ring 0.17.14 ring_core_0_17_14_
+
+## features enabled on selected crates
+bzip2-sys 0.1.13+1.0.8: ['static']
+hickory-resolver 0.25.2: ['system-config', 'tokio']
+if-watch 3.2.2: ['tokio']
+libc 0.2.186: ['default', 'extra_traits', 'std']
+libp2p 0.56.0: ['autonat', 'dns', 'gossipsub', 'identify', 'kad', 'macros', 'plaintext', 'quic', 'secp256k1', 'serde', 'tcp', 'tokio', 'yamux']
+librocksdb-sys 0.17.3+10.4.2: ['bindgen-runtime', 'static']
+libz-sys 1.1.29: ['static']
+logos-blockchain-circuits-poc-sys 0.5.7: ['prebuilt']
+native-tls 0.2.18: ['default']
+netlink-sys 0.8.8: ['default', 'futures-util', 'tokio', 'tokio_socket']
+openssl 0.10.81: ['default']
+openssl-sys 0.9.117: []
+reqwest 0.12.28: ['__rustls', '__rustls-ring', '__tls', 'default-tls', 'h2', 'http2', 'json', 'rustls-tls', 'rustls-tls-webpki-roots', 'rustls-tls-webpki-roots-no-provider', 'stream']
+reqwest 0.13.4: ['blocking']
+ring 0.17.14: ['alloc', 'default', 'dev_urandom_fallback', 'std', 'wasm32_unknown_unknown_js']
+rocksdb 0.24.0: ['bindgen-runtime']
+rust-rapidsnark 0.1.3: ['static-rapidsnark']
+rustls 0.23.45: ['log', 'logging', 'ring', 'std', 'tls12']

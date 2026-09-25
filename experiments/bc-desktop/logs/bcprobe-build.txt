@@ -1,0 +1,170 @@
+these 3 derivations will be built:
+  /nix/store/3grf7il8bwwga6yzjfhba6ncxx74kmsp-logos-bc_probe-module-lib-metadata.json.drv
+  /nix/store/j3h51kp52mnlc4c5479v71r4lcnbb729-logos-bc_probe-module-lib-0.0.1.drv
+  /nix/store/8m5l1bf1nihl8rmrbwxsdha2k0xcfqfx-logos-bc_probe-module-lib-lgx-0.0.1.drv
+building '/nix/store/3grf7il8bwwga6yzjfhba6ncxx74kmsp-logos-bc_probe-module-lib-metadata.json.drv'...
+building '/nix/store/j3h51kp52mnlc4c5479v71r4lcnbb729-logos-bc_probe-module-lib-0.0.1.drv'...
+logos-bc_probe-module-lib> Running phase: qtPreHook
+logos-bc_probe-module-lib> Running phase: unpackPhase
+logos-bc_probe-module-lib> unpacking source archive /nix/store/irinwl6l9kpcy00zipj5kd3s2pjbjb2s-lxjbpk47ljf0chhfhahh3qb9xq0dj8g8-source
+logos-bc_probe-module-lib> source root is lxjbpk47ljf0chhfhahh3qb9xq0dj8g8-source
+logos-bc_probe-module-lib> Running phase: patchPhase
+logos-bc_probe-module-lib> Running phase: updateAutotoolsGnuConfigScriptsPhase
+logos-bc_probe-module-lib> Running phase: configurePhase
+logos-bc_probe-module-lib> Running logos-cpp-generator (api-style=lp)...
+logos-bc_probe-module-lib> Generating deps from LIDL: blockchain_module
+logos-bc_probe-module-lib> Detected locale "C" with character encoding "ANSI_X3.4-1968", which is not UTF-8.
+logos-bc_probe-module-lib> Qt depends on a UTF-8 locale, and has switched to "C.UTF-8" instead.
+logos-bc_probe-module-lib> If this causes problems, reconfigure your locale. See the locale(1) manual
+logos-bc_probe-module-lib> for more information.
+logos-bc_probe-module-lib> Generated dependency wrapper: blockchain_module_api.h (class BlockchainModule, 51 methods, 3 events)
+logos-bc_probe-module-lib> Generated logos_sdk.h and logos_sdk.cpp
+logos-bc_probe-module-lib> Checking generated files in generated_code:
+logos-bc_probe-module-lib> total 116
+logos-bc_probe-module-lib> drwxr-xr-x 1 nixbld nixbld   144 Sep 25 08:05 .
+logos-bc_probe-module-lib> drwxr-xr-x 1 nixbld nixbld   126 Sep 25 08:05 ..
+logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld 84319 Sep 25 08:05 blockchain_module_api.cpp
+logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld 23175 Sep 25 08:05 blockchain_module_api.h
+logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld    62 Sep 25 08:05 logos_sdk.cpp
+logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld   518 Sep 25 08:05 logos_sdk.h
+logos-bc_probe-module-lib> Creating include directory and moving generated files...
+logos-bc_probe-module-lib> Generated include directory:
+logos-bc_probe-module-lib> total 116
+logos-bc_probe-module-lib> drwxr-xr-x 1 nixbld nixbld   144 Sep 25 08:05 .
+logos-bc_probe-module-lib> drwxr-xr-x 1 nixbld nixbld    90 Sep 25 08:05 ..
+logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld 84319 Sep 25 08:05 blockchain_module_api.cpp
+logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld 23175 Sep 25 08:05 blockchain_module_api.h
+logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld    62 Sep 25 08:05 logos_sdk.cpp
+logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld   518 Sep 25 08:05 logos_sdk.h
+logos-bc_probe-module-lib> Stamped logos_protocol_version=0.9.0 into metadata.json
+logos-bc_probe-module-lib> logos-module-builder: generating universal module glue (bc_probe)...
+logos-bc_probe-module-lib> Detected locale "C" with character encoding "ANSI_X3.4-1968", which is not UTF-8.
+logos-bc_probe-module-lib> Qt depends on a UTF-8 locale, and has switched to "C.UTF-8" instead.
+logos-bc_probe-module-lib> If this causes problems, reconfigure your locale. See the locale(1) manual
+logos-bc_probe-module-lib> for more information.
+logos-bc_probe-module-lib> Generated LIDL: ./generated_code/bc_probe.lidl (5 methods, 0 events)
+logos-bc_probe-module-lib> Detected locale "C" with character encoding "ANSI_X3.4-1968", which is not UTF-8.
+logos-bc_probe-module-lib> Qt depends on a UTF-8 locale, and has switched to "C.UTF-8" instead.
+logos-bc_probe-module-lib> If this causes problems, reconfigure your locale. See the locale(1) manual
+logos-bc_probe-module-lib> for more information.
+logos-bc_probe-module-lib> Generated: ./generated_code/bc_probe_cdylib_glue.h
+logos-bc_probe-module-lib> Generated: ./generated_code/bc_probe_cdylib_glue.cpp
+logos-bc_probe-module-lib> Detected locale "C" with character encoding "ANSI_X3.4-1968", which is not UTF-8.
+logos-bc_probe-module-lib> Qt depends on a UTF-8 locale, and has switched to "C.UTF-8" instead.
+logos-bc_probe-module-lib> If this causes problems, reconfigure your locale. See the locale(1) manual
+logos-bc_probe-module-lib> for more information.
+logos-bc_probe-module-lib> Generated: ./generated_code/bc_probe_types.h
+logos-bc_probe-module-lib> Generated: ./generated_code/bc_probe_module_impl.cpp
+logos-bc_probe-module-lib> fixing cmake files...
+logos-bc_probe-module-lib> cmake flags: -GNinja -DCMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY=OFF -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DCMAKE_INSTALL_LOCALEDIR=/nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1/share/locale -DCMAKE_INSTALL_LIBEXECDIR=/nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1/libexec -DCMAKE_INSTALL_LIBDIR=/nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1/lib -DCMAKE_INSTALL_DOCDIR=/nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1/share/doc/BcProbe -DCMAKE_INSTALL_INFODIR=/nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1/share/info -DCMAKE_INSTALL_MANDIR=/nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1/share/man -DCMAKE_INSTALL_INCLUDEDIR=/nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1/include -DCMAKE_INSTALL_SBINDIR=/nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1/sbin -DCMAKE_INSTALL_BINDIR=/nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1/bin -DCMAKE_INSTALL_NAME_DIR=/nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1/lib -DCMAKE_POLICY_DEFAULT_CMP0025=NEW -DCMAKE_FIND_FRAMEWORK=LAST -DCMAKE_STRIP=/nix/store/95k9rsn1zsw1yvir8mj824ldhf90i4qw-gcc-wrapper-14.3.0/bin/strip -DCMAKE_RANLIB=/nix/store/95k9rsn1zsw1yvir8mj824ldhf90i4qw-gcc-wrapper-14.3.0/bin/ranlib -DCMAKE_AR=/nix/store/95k9rsn1zsw1yvir8mj824ldhf90i4qw-gcc-wrapper-14.3.0/bin/ar -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_INSTALL_PREFIX=/nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1 -GNinja -DLOGOS_MODULE_ROOT=/nix/store/6cl69lbr7z8in6x368zflrw1iyh8ljqk-logos-module-0.1.0 -DLOGOS_CPP_SDK_ROOT=/nix/store/sy84s7y5fbsb08vk4waf2kg9zkj9j0nk-logos-cpp-sdk -DLOGOS_QT_SDK_ROOT=/nix/store/a57bik0smbrq3khm7ldi0ps8mz2y1wlv-logos-qt-sdk -DLOGOS_QT_HOST_ROOT=/nix/store/pngwa9291ijvyzbkrysjpz928ysma7fb-logos-qt-host-0.1.0 -DLOGOS_PROTOCOL_ROOT=/nix/store/8ahi705rfkdgrrip1pcfcavs3f9yri5n-logos-protocol -DLOGOS_VIEW_TEMPLATE_DIR=/nix/store/lyra3zrdkd9j7rjra9n8r63zxqgpfvg0-logos-view-templates -DLOGOS_VIEW_INCLUDE_DIR=/nix/store/h8p3w2ghsj6m4vqk58fd9r42pj8av3gd-logos-view-module-include -DLOGOS_API_STYLE=lp
+logos-bc_probe-module-lib> -- The CXX compiler identification is GNU 14.3.0
+logos-bc_probe-module-lib> -- Detecting CXX compiler ABI info
+logos-bc_probe-module-lib> -- Detecting CXX compiler ABI info - done
+logos-bc_probe-module-lib> -- Check for working CXX compiler: /nix/store/95k9rsn1zsw1yvir8mj824ldhf90i4qw-gcc-wrapper-14.3.0/bin/g++ - skipped
+logos-bc_probe-module-lib> -- Detecting CXX compile features
+logos-bc_probe-module-lib> -- Detecting CXX compile features - done
+logos-bc_probe-module-lib> -- LogosModule.cmake: /nix/store/k0qvs3pswfqringy5hq215jyb7qqi9gc-42jk6dzjs3mma1080zc8c7h1m3cbx3z4-source/cmake/LogosModule.cmake
+logos-bc_probe-module-lib> -- Found logos-module at: /nix/store/6cl69lbr7z8in6x368zflrw1iyh8ljqk-logos-module-0.1.0
+logos-bc_probe-module-lib> -- Found logos-cpp-sdk at: /nix/store/sy84s7y5fbsb08vk4waf2kg9zkj9j0nk-logos-cpp-sdk
+logos-bc_probe-module-lib> -- Found logos-qt-sdk at: /nix/store/a57bik0smbrq3khm7ldi0ps8mz2y1wlv-logos-qt-sdk
+logos-bc_probe-module-lib> -- Found logos-protocol at: /nix/store/8ahi705rfkdgrrip1pcfcavs3f9yri5n-logos-protocol
+logos-bc_probe-module-lib> -- Qt host runtime: logos-qt-host::logos_qt_host at /nix/store/pngwa9291ijvyzbkrysjpz928ysma7fb-logos-qt-host-0.1.0
+logos-bc_probe-module-lib> -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+logos-bc_probe-module-lib> -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+logos-bc_probe-module-lib> -- Found Threads: TRUE
+logos-bc_probe-module-lib> -- Performing Test HAVE_STDATOMIC
+logos-bc_probe-module-lib> -- Performing Test HAVE_STDATOMIC - Success
+logos-bc_probe-module-lib> -- Found WrapAtomic: TRUE
+logos-bc_probe-module-lib> CMake Warning (dev) at /nix/store/a94d5zmalqava26y3hqsnj5l11l5kl5y-cmake-3.31.7/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake:76 (find_package):
+logos-bc_probe-module-lib>   Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+logos-bc_probe-module-lib>   --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+logos-bc_probe-module-lib>   set the policy and suppress this warning.
+logos-bc_probe-module-lib> 
+logos-bc_probe-module-lib> Call Stack (most recent call first):
+logos-bc_probe-module-lib>   /nix/store/8ahi705rfkdgrrip1pcfcavs3f9yri5n-logos-protocol/lib/cmake/logos-protocol/logos-protocolConfig.cmake:48 (find_dependency)
+logos-bc_probe-module-lib>   /nix/store/k0qvs3pswfqringy5hq215jyb7qqi9gc-42jk6dzjs3mma1080zc8c7h1m3cbx3z4-source/cmake/LogosModule.cmake:622 (find_package)
+logos-bc_probe-module-lib>   CMakeLists.txt:13 (logos_module)
+logos-bc_probe-module-lib> This warning is for project developers.  Use -Wno-dev to suppress it.
+logos-bc_probe-module-lib> 
+logos-bc_probe-module-lib> -- Found Boost: /nix/store/20cck0r5dvh21c4w7wy8j3f7cc6wb5k2-boost-1.87.0-dev/lib/cmake/Boost-1.87.0/BoostConfig.cmake (found version "1.87.0")
+logos-bc_probe-module-lib> CMake Warning (dev) at /nix/store/8ahi705rfkdgrrip1pcfcavs3f9yri5n-logos-protocol/lib/cmake/logos-protocol/logos-protocolConfig.cmake:49 (find_package):
+logos-bc_probe-module-lib>   Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+logos-bc_probe-module-lib>   --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+logos-bc_probe-module-lib>   set the policy and suppress this warning.
+logos-bc_probe-module-lib> 
+logos-bc_probe-module-lib> Call Stack (most recent call first):
+logos-bc_probe-module-lib>   /nix/store/k0qvs3pswfqringy5hq215jyb7qqi9gc-42jk6dzjs3mma1080zc8c7h1m3cbx3z4-source/cmake/LogosModule.cmake:622 (find_package)
+logos-bc_probe-module-lib>   CMakeLists.txt:13 (logos_module)
+logos-bc_probe-module-lib> This warning is for project developers.  Use -Wno-dev to suppress it.
+logos-bc_probe-module-lib> 
+logos-bc_probe-module-lib> -- Found OpenSSL: /nix/store/gi615r79j260ihhzdkhrg6qva9wfrbyy-openssl-3.5.1/lib/libcrypto.so (found version "3.5.1")
+logos-bc_probe-module-lib> -- Found nlohmann_json: /nix/store/r82wggrhgs0v2kkp0f2g9jplc4mfh2gq-nlohmann_json-3.11.3/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake (found version "3.11.3")
+logos-bc_probe-module-lib> CMake Warning (dev) at /nix/store/8ahi705rfkdgrrip1pcfcavs3f9yri5n-logos-protocol/lib/cmake/logos-protocol/logos-protocolConfig.cmake:49 (find_package):
+logos-bc_probe-module-lib>   Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+logos-bc_probe-module-lib>   --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+logos-bc_probe-module-lib>   set the policy and suppress this warning.
+logos-bc_probe-module-lib> 
+logos-bc_probe-module-lib> Call Stack (most recent call first):
+logos-bc_probe-module-lib>   /nix/store/a94d5zmalqava26y3hqsnj5l11l5kl5y-cmake-3.31.7/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)
+logos-bc_probe-module-lib>   /nix/store/pngwa9291ijvyzbkrysjpz928ysma7fb-logos-qt-host-0.1.0/lib/cmake/logos-qt-host/logos-qt-hostConfig.cmake:34 (find_dependency)
+logos-bc_probe-module-lib>   /nix/store/k0qvs3pswfqringy5hq215jyb7qqi9gc-42jk6dzjs3mma1080zc8c7h1m3cbx3z4-source/cmake/LogosModule.cmake:625 (find_package)
+logos-bc_probe-module-lib>   CMakeLists.txt:13 (logos_module)
+logos-bc_probe-module-lib> This warning is for project developers.  Use -Wno-dev to suppress it.
+logos-bc_probe-module-lib> 
+logos-bc_probe-module-lib> -- Logos module bc_probe configured successfully
+logos-bc_probe-module-lib> -- Configuring done (1.5s)
+logos-bc_probe-module-lib> -- Generating done (0.0s)
+logos-bc_probe-module-lib> CMake Warning:
+logos-bc_probe-module-lib>   Manually-specified variables were not used by the project:
+logos-bc_probe-module-lib> 
+logos-bc_probe-module-lib>     BUILD_TESTING
+logos-bc_probe-module-lib>     CMAKE_C_COMPILER
+logos-bc_probe-module-lib>     CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+logos-bc_probe-module-lib>     CMAKE_POLICY_DEFAULT_CMP0025
+logos-bc_probe-module-lib>     LOGOS_API_STYLE
+logos-bc_probe-module-lib>     LOGOS_VIEW_TEMPLATE_DIR
+logos-bc_probe-module-lib> 
+logos-bc_probe-module-lib> 
+logos-bc_probe-module-lib> -- Build files have been written to: /build/lxjbpk47ljf0chhfhahh3qb9xq0dj8g8-source/build
+logos-bc_probe-module-lib> cmake: enabled parallel building
+logos-bc_probe-module-lib> cmake: enabled parallel installing
+logos-bc_probe-module-lib> Running phase: buildPhase
+logos-bc_probe-module-lib> build flags: -j8
+logos-bc_probe-module-lib> [0/2] Re-checking globbed directories...
+logos-bc_probe-module-lib> [1/8] Automatic MOC for target bc_probe_module_plugin
+logos-bc_probe-module-lib> [2/8] Building CXX object CMakeFiles/bc_probe_module_plugin.dir/bc_probe_module_plugin_autogen/mocs_compilation.cpp.o
+logos-bc_probe-module-lib> [3/8] Building CXX object CMakeFiles/bc_probe_module_plugin.dir/src/bc_probe_impl.cpp.o
+logos-bc_probe-module-lib> [4/8] Building CXX object CMakeFiles/bc_probe_module_plugin.dir/generated_code/bc_probe_cdylib_glue.cpp.o
+logos-bc_probe-module-lib> [5/8] Building CXX object CMakeFiles/bc_probe_module_plugin.dir/generated_code/bc_probe_module_impl.cpp.o
+logos-bc_probe-module-lib> [6/8] Building CXX object CMakeFiles/bc_probe_module_plugin.dir/generated_code/logos_sdk.cpp.o
+logos-bc_probe-module-lib> [7/8] Linking CXX shared library modules/bc_probe_plugin.so
+logos-bc_probe-module-lib> Running phase: glibPreInstallPhase
+logos-bc_probe-module-lib> Running phase: installPhase
+logos-bc_probe-module-lib> Installed module LIDL contract: /nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1/share/logos/bc_probe.lidl
+logos-bc_probe-module-lib> Detected locale "C" with character encoding "ANSI_X3.4-1968", which is not UTF-8.
+logos-bc_probe-module-lib> Qt depends on a UTF-8 locale, and has switched to "C.UTF-8" instead.
+logos-bc_probe-module-lib> If this causes problems, reconfigure your locale. See the locale(1) manual
+logos-bc_probe-module-lib> for more information.
+logos-bc_probe-module-lib> Normalized LIDL: /build/tmp.9gtCIQQutm
+logos-bc_probe-module-lib> Installed canonical LIDL contract: blockchain_module
+logos-bc_probe-module-lib> Running phase: qtOwnPathsHook
+logos-bc_probe-module-lib> Running phase: fixupPhase
+logos-bc_probe-module-lib> shrinking RPATHs of ELF executables and libraries in /nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1
+logos-bc_probe-module-lib> shrinking /nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1/lib/bc_probe_plugin.so
+logos-bc_probe-module-lib> checking for references to /build/ in /nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1...
+logos-bc_probe-module-lib> patching script interpreter paths in /nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1
+logos-bc_probe-module-lib> Running phase: postPatchMkspecs
+building '/nix/store/8m5l1bf1nihl8rmrbwxsdha2k0xcfqfx-logos-bc_probe-module-lib-lgx-0.0.1.drv'...
+logos-bc_probe-module-lib-lgx> Running phase: patchPhase
+logos-bc_probe-module-lib-lgx> Running phase: updateAutotoolsGnuConfigScriptsPhase
+logos-bc_probe-module-lib-lgx> Running phase: configurePhase
+logos-bc_probe-module-lib-lgx> no configure script, doing nothing
+logos-bc_probe-module-lib-lgx> Running phase: buildPhase
+logos-bc_probe-module-lib-lgx> Created package: logos-bc_probe-module-lib.lgx
+logos-bc_probe-module-lib-lgx> Patching manifest from metadata...
+logos-bc_probe-module-lib-lgx> Staged 1 entries from /nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1/lib
+logos-bc_probe-module-lib-lgx> Bundled root asset directory: share/logos -> assets/lidl
+logos-bc_probe-module-lib-lgx> Adding variant linux-amd64-dev to logos-bc_probe-module-lib.lgx (main: bc_probe_plugin.so)...
+logos-bc_probe-module-lib-lgx> Added variant 'linux-amd64-dev' to logos-bc_probe-module-lib.lgx
+logos-bc_probe-module-lib-lgx> Done: logos-bc_probe-module-lib.lgx
+logos-bc_probe-module-lib-lgx> Running phase: installPhase

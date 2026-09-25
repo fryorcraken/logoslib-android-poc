@@ -1,0 +1,12 @@
+[32mtemplate instances[0m: 94
+non-linear constraints: 20460
+linear constraints: 0
+public inputs: 8
+private inputs: 132
+public outputs: 1
+wires: 20531
+labels: 78905
+[32mWritten successfully:[0m ${REPO_ROOT}/.work/experiments/bc-android-build/build/circuits-gen/pol/pol.r1cs
+[32mWritten successfully:[0m ${REPO_ROOT}/.work/experiments/bc-android-build/build/circuits-gen/pol/pol_cpp/pol.cpp and ${REPO_ROOT}/.work/experiments/bc-android-build/build/circuits-gen/pol/pol_cpp/pol.dat
+[32mWritten successfully:[0m ${REPO_ROOT}/.work/experiments/bc-android-build/build/circuits-gen/pol/pol_cpp/main.cpp, circom.hpp, calcwit.hpp, calcwit.cpp, fr.hpp, fr.cpp and Makefile
+[32mEverything went okay[0m

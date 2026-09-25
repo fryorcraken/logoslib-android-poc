@@ -1,0 +1,14 @@
+# rationale: lbc-build emits cargo:rustc-link-lib=stdc++ for every non-macOS target; on Android emit c++ (NDK linker script -> libc++_shared) because the NDK-built circuit libs reference std::__ndk1. Applies to logos-blockchain-circuits v0.5.7 (ebf7ddf5).
+diff --git a/rust/logos-blockchain-circuits-build/src/lib.rs b/rust/logos-blockchain-circuits-build/src/lib.rs
+index ed7a6d7..2603061 100644
+--- a/rust/logos-blockchain-circuits-build/src/lib.rs
++++ b/rust/logos-blockchain-circuits-build/src/lib.rs
+@@ -186,7 +186,7 @@ pub fn build_circuit(circuit_name: &str) {
+     println!("cargo:rustc-link-lib=static={circuit_name}");
+     let cpp_lib = std::env::var("CARGO_CFG_TARGET_OS").map_or_else(
+         |_| "stdc++",
+-        |os| if os == "macos" { "c++" } else { "stdc++" },
++        |os| if os == "macos" || os == "android" { "c++" } else { "stdc++" },
+     );
+     println!("cargo:rustc-link-lib={cpp_lib}");
+     println!("cargo:rustc-link-lib=static=gmp");

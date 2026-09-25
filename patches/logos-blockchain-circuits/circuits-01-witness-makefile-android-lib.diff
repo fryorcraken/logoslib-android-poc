@@ -1,0 +1,37 @@
+# rationale: add an android-lib target and make the ld -r / ar steps overridable (LD/AR) so the CI witness-generator Makefile can drive NDK clang++/ld.lld/llvm-ar; default linux/macos/windows behaviour unchanged. Applies to logos-blockchain-circuits v0.5.7 (ebf7ddf5).
+diff --git a/.github/resources/witness-generator/Makefile b/.github/resources/witness-generator/Makefile
+index e06a552..f0d91bc 100644
+--- a/.github/resources/witness-generator/Makefile
++++ b/.github/resources/witness-generator/Makefile
+@@ -1,4 +1,4 @@
+-.PHONY: linux macos windows linux-lib macos-lib windows-lib build clean
++.PHONY: linux macos windows linux-lib macos-lib windows-lib android-lib build clean
+ 
+ # ---- Arguments ----
+ ifndef PROJECT
+@@ -59,6 +59,12 @@ windows: $(BIN)
+ windows-lib: CXXFLAGS=$(PRIORITY_FLAGS) $(CXXFLAGS_COMMON) -fPIC -I/include -Duint="unsigned int"
+ windows-lib: $(LIB)
+ 
++# ---- Android (NDK clang++ / libc++) ----
++# Pass CXX=<ndk>/bin/<triple><api>-clang++, LD=<ndk>/bin/ld.lld, AR=<ndk>/bin/llvm-ar,
++# OBJCOPY=<ndk>/bin/llvm-objcopy and PRIORITY_FLAGS=-I<android gmp include> -I<nlohmann include>.
++android-lib: CXXFLAGS=$(PRIORITY_FLAGS) $(CXXFLAGS_COMMON) -fPIC
++android-lib: $(LIB)
++
+ # Localizes witness-generator implementation symbols to prevent conflicts when multiple circuit libraries are linked
+ # into the same binary.
+ # See CONTRIBUTING.md § "Symbol Isolation".
+@@ -72,10 +78,10 @@ $(BIN): $(COMMON_OBJS)
+ 	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
+ 
+ $(LIB): $(LIB_OBJS)
+-	ld -r -o $(LOCAL_OBJ) $^
++	$(LD) -r -o $(LOCAL_OBJ) $^
+ 	$(OBJCOPY) $(foreach sym,$(PUBLIC_SYMS),--keep-global-symbol=$(SYM_PREFIX)$(sym)) $(LOCAL_OBJ)
+ 	rm -f $@
+-	ar rcs $@ $(LOCAL_OBJ)
++	$(AR) rcs $@ $(LOCAL_OBJ)
+ 	rm $(LOCAL_OBJ)
+ 
+ %.o: %.cpp $(DEPS_HPP)

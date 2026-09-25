@@ -18,6 +18,9 @@ Android gating experiments (X1-X9 in `docs/investigation.md` §8). Their full wr
 | [`ndk-runtime/`](ndk-runtime) | Boost 1.87, spdlog/fmt, the logos container, loaders and process-stats cross-build for Android. The real `SubprocessContainer` spawns a host from inside an APK. | Emulator |
 | [`lgx-icu/`](lgx-icu) | liblgx ported to the NDK's ICU C API: identical output and upstream tests pass, so no ICU ships in the APK | Desktop + NDK build |
 | [`desktop-harness/`](desktop-harness) | `getPluginMethods` introspection, the first-call race, `lp_invoke` blocking vs `lp_invoke_async`, and event delivery | Desktop |
+| [`bc-surface/`](bc-surface) | Blockchain module and node C-bindings: API, runtime needs, when it proves, follower mode, devnet peers | Source |
+| [`bc-android-build/`](bc-android-build) | `liblogos_blockchain.so` cross-built for x86_64 and arm64, with circom circuits, GMP and witness libs built for Android and release zkeys reused | NDK build |
+| [`bc-desktop/`](bc-desktop) | blockchain_module under logoscore: offline doctest; a standalone block producer (719 blocks, on-host PoL proofs); a devnet join (~5k blocks synced in ~40 s, then following at ~0.1% CPU); `bc_probe` inter-module calls | Desktop |
 | [`wallet-android/`](wallet-android) | lez_core's `wallet-ffi` builds for Android (14-15 MB) and reads the LEZ testnet over HTTPS with no JVM | Emulator (LEZ no longer the target) |
 
 The Android emulator on this host boots only with its window hidden (`-qt-hide-window`);

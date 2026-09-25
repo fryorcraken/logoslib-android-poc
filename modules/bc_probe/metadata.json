@@ -1,0 +1,28 @@
+{
+  "name": "bc_probe",
+  "display_name": "Blockchain Probe",
+  "version": "0.0.1",
+  "description": "Calls blockchain_module over liblogos transport to demonstrate inter-module communication",
+  "author": "logoslib-android-poc",
+  "type": "core",
+  "category": "test",
+  "interface": "universal",
+  "codegen": {
+    "impl_header": "src/bc_probe_impl.h",
+    "impl_class": "BcProbeImpl"
+  },
+  "main": "bc_probe_plugin",
+  "dependencies": ["blockchain_module"],
+  "capabilities": [],
+  "include": [],
+  "nix": {
+    "packages": { "build": [], "runtime": [] },
+    "external_libraries": [],
+    "cmake": {
+      "find_packages": [],
+      "extra_sources": [],
+      "extra_include_dirs": [],
+      "extra_link_libraries": []
+    }
+  }
+}

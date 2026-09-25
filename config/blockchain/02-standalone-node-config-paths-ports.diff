@@ -1,0 +1,36 @@
+# rationale: run the node repo's standalone single-node chain inside logoscore without port clashes and with state/logs under the experiment dir (ports 3000->3210, API 8080->18481, absolute state/log dirs).
+--- a/nodes/node/standalone-node-config.yaml
++++ b/standalone/node.yaml
+@@ -2,7 +2,7 @@
+   backend:
+     swarm:
+       host: 0.0.0.0
+-      port: 3000
++      port: 3210
+       node_key: e01039077e592ce1c454c5e8ffe2f571f6fad6106ff0e1895c9a403c126ba80f
+       gossipsub:
+         history_length: 5
+@@ -162,7 +162,7 @@
+     status_check_interval_in_tip_changes: 3
+ api:
+   backend:
+-    listen_address: 127.0.0.1:8080
++    listen_address: 127.0.0.1:18481
+     cors_origins: []
+     timeout: 30
+     max_body_size: 10485760
+@@ -207,7 +207,7 @@
+ tracing:
+   logger:
+     file:
+-      directory: .
++      directory: /home/fryorcraken/src/fryorcraken/logoslib-android-poc/.work/experiments/bc-desktop/logs/run2/nodelog
+       prefix: '1780937654'
+       appender_type: Simple
+     loki: null
+@@ -234,4 +234,4 @@
+   console: None
+   level: "INFO"
+ state:
+-  base_folder: ./state
++  base_folder: /home/fryorcraken/src/fryorcraken/logoslib-android-poc/.work/experiments/bc-desktop/standalone-data/state

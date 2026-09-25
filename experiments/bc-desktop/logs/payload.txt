@@ -1,0 +1,161 @@
+maps file: ${REPO_ROOT}/.work/experiments/bc-desktop/logs/run2/host.maps
+   89783760  ${REPO_ROOT}/.work/experiments/bc-desktop/modules/blockchain_module/liblogos_blockchain.so
+   31859656  /nix/store/w24hkb1b9v50r3sgpvmk8kwyi04x7imq-icu4c-76.1/lib/libicudata.so.76.1
+    8727216  /nix/store/dkfr32yi7p8cdxsnll05q1kax19fl7ay-qtbase-6.9.2/lib/libQt6Core.so.6.9.2
+    7486752  /nix/store/gi615r79j260ihhzdkhrg6qva9wfrbyy-openssl-3.5.1/lib/libcrypto.so.3
+    4992048  /nix/store/w24hkb1b9v50r3sgpvmk8kwyi04x7imq-icu4c-76.1/lib/libicui18n.so.76.1
+    3553248  ${REPO_ROOT}/.work/experiments/bc-desktop/modules/blockchain_module/blockchain_module_plugin.so
+    3164136  /nix/store/41ym1jm1b7j3rhglk82gwg9jml26z1km-gcc-14.3.0-lib/lib/libstdc++.so.6.0.33
+    2885728  /nix/store/dkfr32yi7p8cdxsnll05q1kax19fl7ay-qtbase-6.9.2/lib/libQt6Network.so.6.9.2
+    2692528  /nix/store/w24hkb1b9v50r3sgpvmk8kwyi04x7imq-icu4c-76.1/lib/libicuuc.so.76.1
+    2565896  /nix/store/qfm3kqdbpd289nnmdhd4dis4svd2nzwv-glib-2.84.4/lib/libgio-2.0.so.0.8400.4
+    2400760  /nix/store/776irwlgfb65a782cxmyk61pck460fs9-glibc-2.40-66/lib/libc.so.6
+    2068080  /nix/store/7ndy5820h69n1pgd13viph1qjq6zhhkj-libunistring-1.3/lib/libunistring.so.5.2.0
+    1694672  /nix/store/r2cq6la02msp6kfcl9a17d2l2n96qpvs-qtremoteobjects-6.9.2/lib/libQt6RemoteObjects.so.6.9.2
+    1612704  /nix/store/qfm3kqdbpd289nnmdhd4dis4svd2nzwv-glib-2.84.4/lib/libglib-2.0.so.0.8400.4
+    1574352  /nix/store/acjdidq41qig9khxcm7gx1d7brzjs249-systemd-257.8/lib/libsystemd.so.0.40.0
+    1302424  /nix/store/gi615r79j260ihhzdkhrg6qva9wfrbyy-openssl-3.5.1/lib/libssl.so.3
+    1066968  /nix/store/jlf1dhlhcn8xk3swlxc9y3a0yrina46w-krb5-1.22.1-lib/lib/libkrb5.so.3.3
+    1029504  /nix/store/776irwlgfb65a782cxmyk61pck460fs9-glibc-2.40-66/lib/libm.so.6
+    1028616  /nix/store/g3vj4z918zal30klpdd9papkavis01sh-curl-8.14.1/lib/libcurl.so.4.8.0
+     917960  /nix/store/bxn7mqdrckhjkmvy5ynhybmj0lmdlgb4-zstd-1.5.7/lib/libzstd.so.1.5.7
+     804584  ${REPO_ROOT}/.work/experiments/bc-desktop/modules/blockchain_module/libfyaml.so.0
+     675664  /nix/store/y667mbdld0s8rmb2i493ldyfh3lsgk1y-pcre2-10.44/lib/libpcre2-8.so.0.13.0
+     655352  /nix/store/83b84cmi3ax86h4x4r7wssmcwmvrllyp-spdlog-1.15.2/lib/libspdlog.so.1.15.2
+     625856  /nix/store/y667mbdld0s8rmb2i493ldyfh3lsgk1y-pcre2-10.44/lib/libpcre2-16.so.0.13.0
+     563832  /nix/store/qcxrf6hi3afinicfhfi73n3c8y3zlyk0-util-linux-minimal-2.41.1-lib/lib/libmount.so.1.1.0
+     485112  /nix/store/qfm3kqdbpd289nnmdhd4dis4svd2nzwv-glib-2.84.4/lib/libgobject-2.0.so.0.8400.4
+     451992  /nix/store/qcxrf6hi3afinicfhfi73n3c8y3zlyk0-util-linux-minimal-2.41.1-lib/lib/libblkid.so.1.1.0
+     396376  /nix/store/jlf1dhlhcn8xk3swlxc9y3a0yrina46w-krb5-1.22.1-lib/lib/libgssapi_krb5.so.2.2
+     376072  /nix/store/41ym1jm1b7j3rhglk82gwg9jml26z1km-gcc-14.3.0-lib/lib/libgomp.so.1.0.0
+     361392  /nix/store/8x1h50iwn4f8s997fyvgw68lbbk41iyn-duktape-2.7.0/lib/libduktape.so.207.20700
+     331784  /nix/store/va3w14p49xm87pnmxavk4j3imnqzb03m-libssh2-1.11.1/lib/libssh2.so.1.0.1
+     253696  /nix/store/776irwlgfb65a782cxmyk61pck460fs9-glibc-2.40-66/lib/ld-linux-x86-64.so.2
+     239392  /nix/store/abd6znwgd3dhma7bnzdzhdwp22wnj8sw-libselinux-3.8.1/lib/libselinux.so.1
+     216488  /nix/store/did4qx8g0fx4kyiyk9imhbbyhdg8mjba-nghttp2-1.66.0-lib/lib/libnghttp2.so.14.28.5
+     205744  /nix/store/jlf1dhlhcn8xk3swlxc9y3a0yrina46w-krb5-1.22.1-lib/lib/libk5crypto.so.3.1
+     202360  /nix/store/wwqyxsvmg41q5ckfvvv6wa50nwvz9dv4-libidn2-2.3.8/lib/libidn2.so.0.4.0
+     201064  /nix/store/8zm936ys1dkqv2710j0w09r2mk0kj5n9-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
+     186120  /nix/store/888by822ph2lxf11wqdgs39cpj02jcr6-fmt-10.2.1/lib/libfmt.so.10.2.1
+     143184  /nix/store/scirrfdcp47bhxaaw6n5q9gwlzxd8hcr-brotli-1.1.0-lib/lib/libbrotlicommon.so.1.1.0
+     128680  /nix/store/ppj73b9r7vld4q5ma044j2wzzhgqvj19-libb2-0.98.1/lib/libb2.so.1.0.4
+     128576  /nix/store/09sifcahf0j1xnw80k9l33jzcs1p2qbw-zlib-1.3.1/lib/libz.so.1.3.1
+      85272  /nix/store/8c5qlxhjcjbqmib5gy0ajn0cpn3pz96l-double-conversion-3.3.1/lib/libdouble-conversion.so.3.3.0
+      79392  /nix/store/bywdzqksdpfd0kx50k5zvicvkir05s18-libpsl-0.21.5/lib/libpsl.so.5.3.5
+      77200  /nix/store/776irwlgfb65a782cxmyk61pck460fs9-glibc-2.40-66/lib/libresolv.so.2
+      71536  /nix/store/i6a553gjc2i4r4p54qk5mdy3ybsiydwk-libffi-3.5.1/lib/libffi.so.8.2.0
+      71472  /nix/store/g5fkbz2i5azsgl5w6az4l6fvi5b9iv2a-libproxy-0.5.10/lib/libproxy/libpxbackend-1.0.so
+      65688  /nix/store/jlf1dhlhcn8xk3swlxc9y3a0yrina46w-krb5-1.22.1-lib/lib/libkrb5support.so.0.1
+      59584  /nix/store/scirrfdcp47bhxaaw6n5q9gwlzxd8hcr-brotli-1.1.0-lib/lib/libbrotlidec.so.1.1.0
+      52704  /nix/store/cwl3ixd56h52b4hjv5qydxk1izigxcjz-libcap-2.76-lib/lib/libcap.so.2.76
+      26616  /nix/store/1vw3n1caad61rdg020qgsil21db98x7j-keyutils-1.6.3-lib/lib/libkeyutils.so.1.10
+      26032  /nix/store/qfm3kqdbpd289nnmdhd4dis4svd2nzwv-glib-2.84.4/lib/libgmodule-2.0.so.0.8400.4
+      21856  /nix/store/jlf1dhlhcn8xk3swlxc9y3a0yrina46w-krb5-1.22.1-lib/lib/libcom_err.so.3.0
+      16536  /nix/store/776irwlgfb65a782cxmyk61pck460fs9-glibc-2.40-66/lib/libpthread.so.0
+      16352  /nix/store/776irwlgfb65a782cxmyk61pck460fs9-glibc-2.40-66/lib/librt.so.1
+      16128  /nix/store/g5fkbz2i5azsgl5w6az4l6fvi5b9iv2a-libproxy-0.5.10/lib/libproxy.so.0.5.10
+      15688  /nix/store/776irwlgfb65a782cxmyk61pck460fs9-glibc-2.40-66/lib/libdl.so.2
+      15288  /nix/store/qfm3kqdbpd289nnmdhd4dis4svd2nzwv-glib-2.84.4/lib/libgthread-2.0.so.0.8400.4
+      15088  /nix/store/x0cccj6ww4hkl1hlirx60f32r13dvfmf-boost-1.87.0/lib/libboost_system.so.1.87.0
+blockchain_module host: 58 mapped .so, 180772760 bytes (172.4 MiB)
+== grouped ==
+Qt6 libs                             3 files   13307616 bytes (12.7 MiB)
+blockchain_module plugin             1 files    3553248 bytes (3.4 MiB)
+other                               36 files   17424048 bytes (16.6 MiB)
+openssl                              2 files    8789176 bytes (8.4 MiB)
+libstdc++/libgcc                     3 files    3741272 bytes (3.6 MiB)
+liblogos_blockchain (Rust node)      1 files   89783760 bytes (85.6 MiB)
+libfyaml                             1 files     804584 bytes (0.8 MiB)
+icu                                  3 files   39544232 bytes (37.7 MiB)
+glibc                                7 files    3809736 bytes (3.6 MiB)
+boost                                1 files      15088 bytes (0.0 MiB)
+== installed module files ==
+total 91948
+drwxr-xr-x. 1 fryorcraken fryorcraken      176 Sep 25 18:05 .
+drwxr-xr-x. 1 fryorcraken fryorcraken      110 Sep 25 18:05 ..
+drwxr-xr-x. 1 fryorcraken fryorcraken        8 Sep 25 18:05 assets
+-rwxr-xr-x. 1 fryorcraken fryorcraken  3553248 Sep 25 18:05 blockchain_module_plugin.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken   804584 Sep 25 18:05 libfyaml.so.0
+-rwxr-xr-x. 1 fryorcraken fryorcraken 89783760 Sep 25 18:05 liblogos_blockchain.so
+-rw-r--r--. 1 fryorcraken fryorcraken      736 Sep 25 18:05 manifest.json
+-rw-r--r--. 1 fryorcraken fryorcraken       15 Sep 25 18:05 variant
+liblogos_blockchain.so             raw=   89783760 stripped=   89783760 gzip9(stripped)=   46998283 xz(stripped)=   33617740
+blockchain_module_plugin.so        raw=    3553248 stripped=    2917520 gzip9(stripped)=    1053007 xz(stripped)=     783488
+libfyaml.so.0                      raw=     804584 stripped=     733496 gzip9(stripped)=     307884 xz(stripped)=     246836
+== liblogos_blockchain.so: file / NEEDED / RUNPATH / SONAME ==
+${REPO_ROOT}/.work/experiments/bc-desktop/modules/blockchain_module/liblogos_blockchain.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped
+ 0x000000000000001d (RUNPATH)            Library runpath: [/nix/store/57iz36553175g3178pvxjij8z5rcsd4n-glibc-2.42-61/lib:/nix/store/chqq8mpmpyfi9kgsngya71akv5xicn03-gcc-15.2.0-lib/lib]
+ 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-x86-64.so.2]
+== liblogos_blockchain.so: sections (largest) ==
+Total               89999846
+.rodata             48989192    2838528
+.text               34358880   54451776
+.eh_frame            2296120   52151496
+.gcc_except_table    1429056    1406872
+.rela.dyn            1368432      31456
+.data.rel.ro          860928   88821216
+.eh_frame_hdr         323772   51827720
+.bss                  218900   89793664
+.data                  96184   89697376
+.dynstr                12932      18524
+.dynsym                11736        624
+== exported C API ==
+54
+add_key blend_info blend_join_as_core_node channel_deposit channel_deposit_with_notes free_claimable_vouchers free_cryptarchia_info free_cstring free_known_addresses free_leader_aged_notes free_pow_claimable_rewards free_time_info free_wallet_notes generate_key generate_user_config get_balance get_block get_block_events get_blocks get_build_version_info get_chain_id get_channel_state get_claimable_vouchers get_cryptarchia_info get_known_addresses get_leader_aged_notes get_network_info get_peer_id get_time_info get_transaction get_wallet_notes is_error is_ok leader_claim merge_user_config migrate_user_config migrate_user_config_0_1_2 participate pow_claim pow_claimable_rewards pow_start_auto_claim pow_start_mining pow_stop_auto_claim pow_stop_mining remove_key shutdown_node start_lb_node submit_signed_transaction subscribe_to_lib_blocks subscribe_to_new_blocks subscribe_to_processed_blocks transfer_funds update_user_config wallet_fund_tx 
+== undefined (imported) symbols count and libc++/libstdc++ ABI hints ==
+434
+171
+CXXABI_1.3 CXXABI_1.3.1 CXXABI_1.3.11 CXXABI_1.3.15 CXXABI_1.3.5 CXXABI_1.3.7 CXXABI_1.3.8 CXXABI_1.3.9 GLIBC_2.10 GLIBC_2.12 GLIBC_2.14 GLIBC_2.17 GLIBC_2.18 GLIBC_2.2.5 GLIBC_2.25 GLIBC_2.28 GLIBC_2.29 GLIBC_2.3 GLIBC_2.30 GLIBC_2.3.2 GLIBC_2.32 GLIBC_2.33 GLIBC_2.3.4 GLIBC_2.34 GLIBC_2.38 GLIBC_2.4 GLIBC_2.6 GLIBC_2.7 GLIBC_2.9 GLIBCXX_3.4 GLIBCXX_3.4.11 GLIBCXX_3.4.14 GLIBCXX_3.4.15 GLIBCXX_3.4.17 GLIBCXX_3.4.18 GLIBCXX_3.4.19 GLIBCXX_3.4.20 GLIBCXX_3.4.21 GLIBCXX_3.4.22 GLIBCXX_3.4.26 GLIBCXX_3.4.29 GLIBCXX_3.4.30 GLIBCXX_3.4.9 
+== circuit / prover content probes (strings) ==
+pol_generate_witness         0
+poq_generate_witness         0
+poc_generate_witness         0
+signature_generate_witness   0
+groth16_prover               0
+rapidsnark                   0
+__gmpz                       0
+proving_key                  0
+.zkey                        0
+witness_generator            0
+verification_key             4
+rocksdb                      1234
+RocksDB                      20
+sqlite                       0
+libp2p                       100
+quic                         25
+== embedded circuit artefacts (byte probes against the v0.5.7 circuits bundle the build used) ==
+so: ${REPO_ROOT}/.work/experiments/bc-desktop/modules/blockchain_module/liblogos_blockchain.so (89783760 bytes)  circuits: /nix/store/wzi7bxa2nvlcnsy7q6cm2m0yk0nnqhig-logos-blockchain-circuits-0.5.7
+pol        proving_key.zkey         size=  12719421 probes_found=5/5 approx_start_in_so=9177261
+pol        witness_generator.dat    size=    179032 probes_found=5/5 approx_start_in_so=39170795
+pol        verification_key.json    size=      4389 probes_found=5/5 approx_start_in_so=9173968
+poq        proving_key.zkey         size=  12578709 probes_found=5/5 approx_start_in_so=21901071
+poq        witness_generator.dat    size=    176248 probes_found=5/5 approx_start_in_so=39350144
+poq        verification_key.json    size=      4936 probes_found=5/5 approx_start_in_so=9173967
+poc        proving_key.zkey         size=   5317965 probes_found=5/5 approx_start_in_so=3856003
+poc        witness_generator.dat    size=     80728 probes_found=5/5 approx_start_in_so=39089705
+poc        verification_key.json    size=      3293 probes_found=5/5 approx_start_in_so=9173968
+signature  proving_key.zkey         size=   4491237 probes_found=5/5 approx_start_in_so=34484716
+signature  witness_generator.dat    size=     76064 probes_found=5/5 approx_start_in_so=39539527
+signature  verification_key.json    size=      8782 probes_found=5/5 approx_start_in_so=9173967
+total bytes of artefacts found embedded (>=4/5 probes): 35640804 (34.0 MiB)
+== symbol-table probes (static/local symbols survive only if not stripped) ==
+nm: ${REPO_ROOT}/.work/experiments/bc-desktop/modules/blockchain_module/liblogos_blockchain.so: no symbols
+== plugin NEEDED ==
+ 0x0000000000000001 (NEEDED)             Shared library: [liblogos_blockchain.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libfyaml.so.0]
+ 0x0000000000000001 (NEEDED)             Shared library: [libQt6RemoteObjects.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libQt6Network.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libQt6Core.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libboost_system.so.1.87.0]
+ 0x0000000000000001 (NEEDED)             Shared library: [libssl.so.3]
+ 0x0000000000000001 (NEEDED)             Shared library: [libcrypto.so.3]
+ 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-x86-64.so.2]
+ 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN:/nix/store/5qkgj4wc46nm2f0mk6giijfh0x7wxm6a-logos-blockchain_module-module-lib-0.0.999/lib:/nix/store/gi615r79j260ihhzdkhrg6qva9wfrbyy-openssl-3.5.1/lib:/nix/store/dkfr32yi7p8cdxsnll05q1kax19fl7ay-qtbase-6.9.2/lib:/nix/store/r2cq6la02msp6kfcl9a17d2l2n96qpvs-qtremoteobjects-6.9.2/lib:/nix/store/x0cccj6ww4hkl1hlirx60f32r13dvfmf-boost-1.87.0/lib:/nix/store/776irwlgfb65a782cxmyk61pck460fs9-glibc-2.40-66/lib:/nix/store/41ym1jm1b7j3rhglk82gwg9jml26z1km-gcc-14.3.0-lib/lib]

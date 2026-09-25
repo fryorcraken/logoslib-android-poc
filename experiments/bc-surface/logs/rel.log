@@ -1,0 +1,95 @@
+== 2026-09-25T17:52:05+10:00 bc-surface-rel
+== 1. node history since 2026-08-20 (master + release tags)
+pin present in history
+-- 0.3.0-rc.3: 5b6f0ee 2026-09-17 20:13:35 +0200  merge-base(pin,0.3.0-rc.3)=d4be59653086d7a692cab01b909a2424ac69e937
+   mb: d4be596 2026-09-16 06:50:26 +0000 feat(pow): refill PoW pool from the fee share instead of block reward (#3563)
+   commits on 0.3.0-rc.3 not on pin: 4
+5b6f0ee Update dockerfile and logos core instalers
+173d81b Update cargo
+a258b2a chore: genesis ceremony for devnet version 0.3.0-rc.3
+c6b7d70 Update inscribe.yaml with chain_id and genesis_time
+   commits on pin not on 0.3.0-rc.3: 24
+35a4a66 chore(dependdencies): Update overwatch (#3622)
+13ab0f4 test(mantle): Deferred ZKP tests for every op  (#3557)
+6d9f845 test(mantle): Signed operation lifecycle, cursor and opcode serde tests  (#3556)
+e9c8a52 test(mantle): Fill in missing codec fixtures  (#3555)
+9812138 test(mantle): TxList serde and gas tests  (#3554)
+43937a3 test(mantle): Execute tests for every op  (#3553)
+f8a1cc5 test(mantle): Preverify and verify tests for every op  (#3552)
+db2c267 test(mantle): Op-level proof pairing and gas tests (#3551)
+f1b9f0f refactor(mantle): Single-source operation and proof samples (#3550)
+4e10397 feat(blend): new connection monitoring implementation (#3510)
+f20e746 chore(docker): Update dockerfile and logos core instalers (#3616)
+9a50cba fix(tracing): Flush log appenders in the panic hook before exit (#3639)
+3861c85 fix(chain): skip uncle validation for chain recovery, and panic if chain recovery fails (#3627)
+85a1620 feat(c-bindings): signal end of new-blocks stream (#3631)
+a6a98bd fix(deployment): re-encode standalone genesis inscription (#3629)
+f1bfda4 chore: expose canonical bytes without allocation (#3612)
+dce23e3 chore: implement per-message wire-size bounds (#3610)
+d2a1346 chore: add sealed trait and bounded bytes support for fixed-size byte arrays (#3609)
+ecbb5d4 chore: repository-wide serialization refactor (#3608)
+f6533aa fix(zone-sdk): report inscriptions adopted when a fork branch becomes canonical (#3574)
+3b7730a fix(zone-sdk): emit turn notification events based on time (#3605)
+70a0a22 fix(zone-sdk): emit turn changed event through events loop (#3604)
+9ffddb3 feat(config): Merge tool (#3600)
+57c7a8f refactor(api): talk to the chain service through CryptarchiaServiceApi (#3566)
+   diffstat pin..0.3.0-rc.3 (c-bindings, nodes/node, services, Cargo.lock):
+ services/network/src/backends/libp2p/config.rs     |   6 -
+ .../network/src/backends/libp2p/swarm/gossipsub.rs | 114 +---
+ services/network/src/backends/libp2p/swarm/mod.rs  | 252 +-------
+ services/pow/Cargo.toml                            |   1 -
+ services/pow/src/api.rs                            |  32 +-
+ services/pow/src/service.rs                        |  75 ++-
+ services/pow/src/tickets.rs                        |  14 +-
+ services/sdp/src/api.rs                            |   9 +-
+ services/sdp/src/lib.rs                            |  51 +-
+ services/sdp/src/mempool.rs                        |   2 -
+ services/storage/Cargo.toml                        |   1 -
+ services/storage/src/backends/mod.rs               |   2 +-
+ services/storage/src/lib.rs                        |   2 +-
+ services/storage/src/recovery.rs                   |   4 +-
+ services/tracing/Cargo.toml                        |   1 +
+ services/tracing/src/lib.rs                        |  31 +-
+ services/tx-service/Cargo.toml                     |   1 -
+ services/tx-service/src/network/adapters/libp2p.rs |  68 +-
+ services/tx-service/src/network/adapters/mock.rs   |  19 +-
+ .../tx-service/src/storage/adapters/rocksdb.rs     |   6 +-
+ services/tx-service/tests/mock.rs                  |   2 +-
+ services/utils/src/overwatch/status/macros.rs      |  23 +-
+ services/wallet/src/api.rs                         |  16 +-
+ services/wallet/src/lib.rs                         |  37 +-
+ 112 files changed, 2059 insertions(+), 3170 deletions(-)
+-- 0.3.0-rc.4: 39916dc 2026-09-23 10:45:36 +0200  merge-base(pin,0.3.0-rc.4)=none
+-- 0.2.4: adc72a4 2026-09-04 13:50:05 +0300  merge-base(pin,0.2.4)=none
+== 2. module release tags
+---- module 0.3.0-rc.4: fcc93e486f8102fa295c9e4b3af3605991478e78 2026-09-23 10:49:45 +0200 Update version to 0.3.0-rc.4
+11:    logos-module-builder.url = "github:logos-co/logos-module-builder/0.2.6";
+12:    logos-blockchain.url = "github:logos-blockchain/logos-blockchain?ref=0.3.0-rc.4";
+284-        "lastModified": 1790153136,
+288-        "rev": "39916dc8c76c09afc5ea36bfcda138544cbf1553",
+  "name": "blockchain_module",
+  "version": "0.3.0-rc.4",
+      { "name": "logos_blockchain" }
+   src diff tag..HEAD(4b07e58) stat:
+ metadata.json                   |   9 +-
+ src/logos_blockchain_module.cpp | 457 ++++++++++++++++++++++++++++++++++++++++
+ src/logos_blockchain_module.h   |  27 +++
+ src/user_config_reader.cpp      |  70 ++++++
+ src/user_config_reader.h        |  34 +++
+ 6 files changed, 598 insertions(+), 3 deletions(-)
+---- module 0.2.4: 4f1c75eff623c20ea46e182758f351d8771cb448 2026-09-04 13:59:31 +0300 Bump blockchain version to 0.2.4
+5:    logos-module-builder.url = "github:logos-co/logos-module-builder/0.2.6";
+6:    logos-blockchain.url = "github:logos-blockchain/logos-blockchain?ref=0.2.4";
+284-        "lastModified": 1788519005,
+288-        "rev": "adc72a456011795710b8bced1a21d05715f96c1d",
+  "name": "blockchain_module",
+  "version": "0.2.4",
+      { "name": "logos_blockchain" }
+   src diff tag..HEAD(4b07e58) stat:
+ metadata.json                   |   9 +-
+ src/logos_blockchain_module.cpp | 802 +++++++++++++++++++++++++++++++++++++++-
+ src/logos_blockchain_module.h   | 137 ++++++-
+ src/user_config_reader.cpp      |  70 ++++
+ src/user_config_reader.h        |  34 ++
+ 6 files changed, 1033 insertions(+), 23 deletions(-)
+== DONE 2026-09-25T17:52:08+10:00

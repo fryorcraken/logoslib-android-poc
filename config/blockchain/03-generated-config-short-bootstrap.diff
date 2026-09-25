@@ -1,0 +1,5 @@
+# rationale: the module's runtime doctest step 'Shorten the bootstrap period' (prolonged_bootstrap_period 3600s -> 5s) as applied to the generated config in run1.
+--- a/user_config.yaml (generated)
++++ b/user_config.yaml
+-      prolonged_bootstrap_period: '3600.000000000'
++      prolonged_bootstrap_period: '5.000000000'

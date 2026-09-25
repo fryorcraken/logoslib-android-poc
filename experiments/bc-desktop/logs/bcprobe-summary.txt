@@ -1,0 +1,95 @@
+dry-run exit=0
+4654:these 3 derivations will be built:
+logos-bc_probe-module-lib-metadata.json.drv
+logos-bc_probe-module-lib-0.0.1.drv
+logos-bc_probe-module-lib-lgx-0.0.1.drv
+== build ==
+build exit=0 in 19 s
+15:logos-bc_probe-module-lib> Generating deps from LIDL: blockchain_module
+20:logos-bc_probe-module-lib> Generated dependency wrapper: blockchain_module_api.h (class BlockchainModule, 51 methods, 3 events)
+21:logos-bc_probe-module-lib> Generated logos_sdk.h and logos_sdk.cpp
+26:logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld 84319 Sep 25 08:05 blockchain_module_api.cpp
+27:logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld 23175 Sep 25 08:05 blockchain_module_api.h
+28:logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld    62 Sep 25 08:05 logos_sdk.cpp
+29:logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld   518 Sep 25 08:05 logos_sdk.h
+35:logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld 84319 Sep 25 08:05 blockchain_module_api.cpp
+36:logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld 23175 Sep 25 08:05 blockchain_module_api.h
+37:logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld    62 Sep 25 08:05 logos_sdk.cpp
+38:logos-bc_probe-module-lib> -rw-r--r-- 1 nixbld nixbld   518 Sep 25 08:05 logos_sdk.h
+139:logos-bc_probe-module-lib> [6/8] Building CXX object CMakeFiles/bc_probe_module_plugin.dir/generated_code/logos_sdk.cpp.o
+149:logos-bc_probe-module-lib> Installed canonical LIDL contract: blockchain_module
+logos-bc_probe-module-lib> If this causes problems, reconfigure your locale. See the locale(1) manual
+logos-bc_probe-module-lib> for more information.
+logos-bc_probe-module-lib> Normalized LIDL: /build/tmp.9gtCIQQutm
+logos-bc_probe-module-lib> Installed canonical LIDL contract: blockchain_module
+logos-bc_probe-module-lib> Running phase: qtOwnPathsHook
+logos-bc_probe-module-lib> Running phase: fixupPhase
+logos-bc_probe-module-lib> shrinking RPATHs of ELF executables and libraries in /nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1
+logos-bc_probe-module-lib> shrinking /nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1/lib/bc_probe_plugin.so
+logos-bc_probe-module-lib> checking for references to /build/ in /nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1...
+logos-bc_probe-module-lib> patching script interpreter paths in /nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1
+logos-bc_probe-module-lib> Running phase: postPatchMkspecs
+building '/nix/store/8m5l1bf1nihl8rmrbwxsdha2k0xcfqfx-logos-bc_probe-module-lib-lgx-0.0.1.drv'...
+logos-bc_probe-module-lib-lgx> Running phase: patchPhase
+logos-bc_probe-module-lib-lgx> Running phase: updateAutotoolsGnuConfigScriptsPhase
+logos-bc_probe-module-lib-lgx> Running phase: configurePhase
+logos-bc_probe-module-lib-lgx> no configure script, doing nothing
+logos-bc_probe-module-lib-lgx> Running phase: buildPhase
+logos-bc_probe-module-lib-lgx> Created package: logos-bc_probe-module-lib.lgx
+logos-bc_probe-module-lib-lgx> Patching manifest from metadata...
+logos-bc_probe-module-lib-lgx> Staged 1 entries from /nix/store/z43i2xx432q8w3jigz3r7clvsix7y0nq-logos-bc_probe-module-lib-0.0.1/lib
+logos-bc_probe-module-lib-lgx> Bundled root asset directory: share/logos -> assets/lidl
+logos-bc_probe-module-lib-lgx> Adding variant linux-amd64-dev to logos-bc_probe-module-lib.lgx (main: bc_probe_plugin.so)...
+logos-bc_probe-module-lib-lgx> Added variant 'linux-amd64-dev' to logos-bc_probe-module-lib.lgx
+logos-bc_probe-module-lib-lgx> Done: logos-bc_probe-module-lib.lgx
+logos-bc_probe-module-lib-lgx> Running phase: installPhase
+total 1072
+dr-xr-xr-x. 1 fryorcraken fryorcraken      80 Jan  1  1970 .
+drwxr-xr-x. 1 fryorcraken fryorcraken 4092202 Sep 25 18:05 ..
+-r--r--r--. 1 fryorcraken fryorcraken 1096856 Jan  1  1970 logos-bc_probe-module-lib.lgx
+dr-xr-xr-x. 1 fryorcraken fryorcraken      38 Jan  1  1970 nix-support
+Installing from file: ${REPO_ROOT}/.work/experiments/bc-desktop/bcprobe-lgx/logos-bc_probe-module-lib.lgx... done
+Installed to: ${REPO_ROOT}/.work/experiments/bc-desktop/modules
+lgpm exit=0
+total 3584
+drwxr-xr-x. 1 fryorcraken fryorcraken      88 Sep 25 18:05 .
+drwxr-xr-x. 1 fryorcraken fryorcraken     110 Sep 25 18:05 ..
+drwxr-xr-x. 1 fryorcraken fryorcraken       8 Sep 25 18:05 assets
+-rwxr-xr-x. 1 fryorcraken fryorcraken 3660064 Sep 25 18:05 bc_probe_plugin.so
+-rw-r--r--. 1 fryorcraken fryorcraken     788 Sep 25 18:05 manifest.json
+-rw-r--r--. 1 fryorcraken fryorcraken      15 Sep 25 18:05 variant
+{
+  "author": "logoslib-android-poc",
+  "category": "test",
+  "dependencies": [
+    "blockchain_module"
+  ],
+  "description": "Calls blockchain_module over liblogos transport to demonstrate inter-module communication",
+  "display_name": "Blockchain Probe",
+  "hashes": {
+    "assets": "33a220c1b371569e8bdb94466cab890f49d78eeb03b277a14ea5bb53606b25f9",
+    "root": "fad7837bf314f52bdd6d32ebb2574aa6e75044d74046310ac549dd3ff32bb5c0",
+    "variants": "c5a142cef0a7d9bc260889daef2af40f2039cb0f1e69eeb0a044a171fd13af34",
+    "variants/linux-amd64-dev": "8176cf0021d5b106e5542651aa0c9f01d175c6835b4f704e2dd9ffba1397a708"
+  },
+  "icon": "",
+  "main": {
+    "linux-amd64-dev": "bc_probe_plugin.so"
+  },
+  "manifestVersion": "0.6.0",
+  "name": "bc_probe",
+  "type": "core",
+  "version": "0.0.1"
+}
+ 0x0000000000000001 (NEEDED)             Shared library: [libQt6RemoteObjects.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libQt6Network.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libQt6Core.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libboost_system.so.1.87.0]
+ 0x0000000000000001 (NEEDED)             Shared library: [libssl.so.3]
+ 0x0000000000000001 (NEEDED)             Shared library: [libcrypto.so.3]
+ 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-x86-64.so.2]
+ 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN:/nix/store/gi615r79j260ihhzdkhrg6qva9wfrbyy-openssl-3.5.1/lib:/nix/store/dkfr32yi7p8cdxsnll05q1kax19fl7ay-qtbase-6.9.2/lib:/nix/store/r2cq6la02msp6kfcl9a17d2l2n96qpvs-qtremoteobjects-6.9.2/lib:/nix/store/x0cccj6ww4hkl1hlirx60f32r13dvfmf-boost-1.87.0/lib:/nix/store/776irwlgfb65a782cxmyk61pck460fs9-glibc-2.40-66/lib:/nix/store/41ym1jm1b7j3rhglk82gwg9jml26z1km-gcc-14.3.0-lib/lib]

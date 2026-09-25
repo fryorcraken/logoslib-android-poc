@@ -1,0 +1,287 @@
+== run1 start 2026-09-25T18:05:44+10:00 ==
+sun_path check: 64 + 37 = 101 (must be < 108)
+daemon up after 265 ms (strace pid 3636256)
+$ logoscore list-modules -> rc=0 (14 ms)
+  [{"name":"modules_state","status":"loaded","uptime_seconds":0,"version":"0.1.0"},{"name":"capability_module","status":"loaded","uptime_seconds":0,"version":"1.0.0"},{"name":"blockchain_module","status":"not_loaded","version":"0.0.999"},{"name":"bc_probe","status":"not_loaded","version":"0.0.1"}]
+
+$ logoscore load-module blockchain_module -> rc=0 (41 ms)
+  {"dependencies_loaded":[],"module":"blockchain_module","status":"ok","version":"0.0.999"}
+
+load-module wall: 44 ms
+$ logoscore status -> rc=0 (17 ms)
+  {"daemon":{"pid":3636262,"status":"running","version":"1.0.0"},"modules":[{"name":"modules_state","status":"loaded","uptime_seconds":0,"version":"0.1.0"},{"name":"capability_module","status":"loaded","uptime_seconds":0,"version":"1.0.0"},{"name":"blockchain_module","status":"loaded","uptime_seconds":0,"version":"0.0.999"},{"name":"bc_probe","status":"not_loaded","version":"0.0.1"}],"modules_summary":{"crashed":0,"loaded":3,"not_loaded":1}}
+
+module-info: 9312 bytes json
+{"dependencies":[],"dependents":["bc_probe"],"events":[{"name":"newBlock","parameters":[{"name":"blockJson","type":"tstr"}],"signature":"newBlock(tstr)","type":"event"},{"name":"processedBlock","parameters":[{"name":"eventJson","type":"tstr"}],"signature":"processedBlock(tstr)","type":"event"},{"name":"libBlock","parameters":[{"name":"blockInfoJson","type":"tstr"}],"signature":"libBlock(tstr)","type":"event"}],"methods":[{"isInvokable":true,"name":"start","parameters":[{"name":"config_path","type":"tstr"},{"name":"deployment","type":"tstr"}],"returnType":"result","signature":"start(tstr,tstr)"},{"isInvokable":true,"name":"stop","returnType":"result","signature":"stop()"},{"isInvokable":true,"name":"subscribe_to_new_blocks","returnType":"result","signature":"subscribe_to_new_blocks()"},{"isInvokable":true,"name":"subscribe_to_processed_blocks","returnType":"result","signature":"subscribe_to_processed_blocks()"},{"isInvokable":true,"name":"subscribe_to_lib_blocks","returnType":"result","signature":"subscribe_to_lib_blocks()"},{"isInvokable":true,"name":"does_state_exist","returnType":"result","signature":"does_state_exist()"},{"isInvokable":true,"name":"purge_state","returnType":"result","signature":"purge_state()"},{"isInvokable":true,"name":"generate_user_config","parameters":[{"name":"json_args","type":"tstr"}],"returnType":"result","signature":"generate_user_config(tstr)"},{"isInvokable":true,"name":"update_user_config","parameters":[{"name":"user_config_path","type":"tstr"},{"name":"keystore_path","type":"tstr"}],"returnType":"result","signature":"update_user_config(tstr,tstr)"},{"isInvokable":true,"name":"migrate_user_config","parameters":[{"name":"output_path","type":"tstr"},{"name":"keystore_path","type":"tstr"}],"returnType":"result","signature":"migrate_user_config(tstr,tstr)"},{"isInvokable":true,"name":"migrate_user_config_0_1_2","parameters":[{"name":"new_config_path","type":"tstr"},{"name":"old_config_path","type":"tstr"},{"name":"keystore_path","type":"tstr"}],"returnType":"result","signature":"migrate_user_config_0_1_2(tstr,tstr,tstr)"},{"isInvokable":true,"name":"merge_user_config","parameters":[{"name":"source_path","type":"tstr"},{"name":"destination_path","type":"tstr"},{"name":"extra_yaml","type":"tstr"},{"name":"source_insert_missing","type":"bool"},{"name":"extra_insert_missing","type":"bool"}],"returnType":"result","signature":"merge_user_config(tstr,tstr,tstr,bool,bool)"},{"isInvokable":true,"name":"participate","parameters":[{"name":"config_path","type":"tstr"},{"name":"keystore_path","type":"tstr"},{"name":"output_dir","type":"tstr"},{"name":"external_address","type":"tstr"}],"returnType":"result","signature":"participate(tstr,tstr,tstr,tstr)"},{"isInvokable":true,"name":"generate_key","parameters":[{"name":"user_config_path","type":"tstr"},{"name":"keystore_path","type":"tstr"},{"name":"key_type","type":"tstr"},{"name":"key_title","type":"tstr"}],"returnType":"result","signature":"generate_key(tstr,tstr,tstr,tstr)"},{"isInvokable":true,"name":"add_key","parameters":[{"name":"user_config_path","type":"tstr"},{"name":"keystore_path","type":"tstr"},{"name":"key_type","type":"tstr"},{"name":"key_hex","type":"tstr"},{"name":"key_title","type":"tstr"}],"returnType":"result","signature":"add_key(tstr,tstr,tstr,tstr,tstr)"},{"isInvokable":true,"name":"remove_key","parameters":[{"name":"user_config_path","type":"tstr"},{"name":"keystore_path","type":"tstr"},{"name":"key_title","type":"tstr"}],"returnType":"result","signature":"remove_key(tstr,tstr,tstr)"},{"isInvokable":true,"name":"get_peer_id","parameters":[{"name":"config_path","type":"tstr"}],"returnType":"result","signature":"get_peer_id(tstr)"},{"isInvokable":true,"name":"wallet_get_balance","parameters":[{"name":"address_hex","type":"tstr"}],"returnType":"result","signature":"wallet_get_balance(tstr)"},{"isInvokable":true,"name":"wallet_transfer_funds","parameters":[{"name":"change_public_key","type":"tstr"},{"name":"sender_addresses","type":"[tstr]"},{"name":"recipient_address","type":"tstr"},{"name":"amount","type":"tstr"},{"name":"optional_tip_hex","type":"tstr"}],"returnType":"result","signature":"wallet_transfer_funds(tstr,[tstr],tstr,tstr,tstr)"},{"isInvokable":true,"name":"wallet_get_known_addresses","returnType":"result","signature":"wallet_get_known_addresses()"},{"isInvokable":true,"name":"wallet_get_notes","parameters":[{"name":"wallet_address_hex","type":"tstr"},{"name":"optional_tip_hex","type":"tstr"}],"returnType":"result","signature":"wallet_get_notes(tstr,tstr)"},{"isInvokable":true,"name":"wallet_get_leader_aged_notes","parameters":[{"name":"optional_tip_hex","type":"tstr"}],"returnType":"result","signature":"wallet_get_leader_aged_notes(tstr)"},{"isInvokable":true,"name":"leader_claim","returnType":"result","signature":"leader_claim()"},{"isInvokable":true,"name":"wallet_get_claimable_vouchers","returnType":"result","signature":"wallet_get_claimable_vouchers()"},{"isInvokable":true,"name":"wallet_fund_tx","parameters":[{"name":"request_json","type":"tstr"}],"returnType":"result","signature":"wallet_fund_tx(tstr)"},{"isInvokable":true,"name":"submit_signed_transaction","parameters":[{"name":"signed_tx_json","type":"tstr"}],"returnType":"result","signature":"submit_signed_transaction(tstr)"},{"isInvokable":true,"name":"channel_deposit","parameters":[{"name":"channel_id_hex","type":"tstr"},{"name":"funding_public_key_hex","type":"tstr"},{"name":"amount","type":"tstr"},{"name":"metadata_hex","type":"tstr"},{"name":"optional_tip_hex","type":"tstr"}],"returnType":"result","signature":"channel_deposit(tstr,tstr,tstr,tstr,tstr)"},{"isInvokable":true,"name":"channel_deposit_with_notes","parameters":[{"name":"channel_id_hex","type":"tstr"},{"name":"input_note_id_hexes","type":"[tstr]"},{"name":"metadata_hex","type":"tstr"},{"name":"change_public_key_hex","type":"tstr"},{"name":"funding_public_key_hexes","type":"[tstr]"},{"name":"max_tx_fee","type":"tstr"},{"name":"optional_tip_hex","type":"tstr"}],"returnType":"result","signature":"channel_deposit_with_notes(tstr,[tstr],tstr,tstr,[tstr],tstr,tstr)"},{"isInvokable":true,"name":"get_channel_state","parameters":[{"name":"channel_id_hex","type":"tstr"}],"returnType":"result","signature":"get_channel_state(tstr)"},{"isInvokable":true,"name":"blend_join_as_core_node","parameters":[{"name":"locator","type":"tstr"},{"name":"locked_note_id_hex","type":"tstr"}],"returnType":"result","signature":"blend_join_as_core_node(tstr,tstr)"},{"isInvokable":true,"name":"blend_info","returnType":"result","signature":"blend_info()"},{"isInvokable":true,"name":"get_chain_id","returnType":"result","signature":"get_chain_id()"},{"isInvokable":true,"name":"get_network_info","returnType":"result","signature":"get_network_info()"},{"isInvokable":true,"name":"get_block","parameters":[{"name":"header_id_hex","type":"tstr"}],"returnType":"result","signature":"get_block(tstr)"},{"isInvokable":true,"name":"get_blocks","parameters":[{"name":"from_slot","type":"uint"},{"name":"to_slot","type":"uint"}],"returnType":"result","signature":"get_blocks(uint,uint)"},{"isInvokable":true,"name":"get_transaction","parameters":[{"name":"tx_hash_hex","type":"tstr"}],"returnType":"result","signature":"get_transaction(tstr)"},{"isInvokable":true,"name":"get_cryptarchia_info","returnType":"result","signature":"get_cryptarchia_info()"},{"isInvokable":true,"name":"get_block_events","parameters":[{"name":"header_id_hex","type":"tstr"}],"returnType":"result","signature":"get_block_events(tstr)"},{"isInvokable":true,"name":"get_time_info","returnType":"result","signature":"get_time_info()"},{"isInvokable":true,"name":"pow_start_mining","returnType":"result","signature":"pow_start_mining()"},{"isInvokable":true,"name":"pow_stop_mining","returnType":"result","signature":"pow_stop_mining()"},{"isInvokable":true,"name":"pow_start_auto_claim","returnType":"result","signature":"pow_start_auto_claim()"},{"isInvokable":true,"name":"pow_stop_auto_claim","returnType":"result","signature":"pow_stop_auto_claim()"},{"isInvokable":true,"name":"pow_claim","parameters":[{"name":"claim_address_hex","type":"tstr"}],"returnType":"result","signature":"pow_claim(tstr)"},{"isInvokable":true,"name":"pow_claimable_rewards","returnType":"result","signature":"pow_claimable_rewards()"},{"isInvokable":true,"name":"pow_configure","parameters":[{"name":"config_path","type":"tstr"},{"name":"config_json","type":"tstr"}],"returnType":"result","signature":"pow_configure(tstr,tstr)"},{"isInvokable":true,"name":"read_accounts","parameters":[{"name":"config_path","type":"tstr"}],"returnType":"result","signature":"read_accounts(tstr)"},{"isInvokable":true,"name":"read_pow_config","parameters":[{"name":"config_path","type":"tstr"}],"returnType":"result","signature":"read_pow_config(tstr)"},{"description":"The module's name, as declared in its metadata.","isInvokable":true,"name":"name","returnType":"tstr","signature":"name()"},{"description":"The module's version, as declared in its metadata.","isInvokable":true,"name":"version","returnType":"tstr","signature":"version()"},{"description":"The module's canonical LIDL interface document.","isInvokable":true,"name":"lidl","returnType":"tstr","signature":"lidl()"}],"name":"blockchain_module","status":"loaded","uptime_seconds":0,"version":"0.0.999"}
+blockchain_module host pid: 3636283
+/nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/bin/logos_host --name blockchain_module --path ${REPO_ROOT}/.work/experiments/bc-desktop/modules/blockchain_module/blockchain_module_plugin.so --instance-persistence-path ${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19 --tok
+
+18:05:44 loaded pid=3636283 rss_kb=34436 hwm_kb=34436 threads=2 cpu_ticks=0 fds=9
+== node not running yet ==
+$ logoscore call blockchain_module get_cryptarchia_info -> rc=0 (16 ms)
+  {"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":"The node is not running.","success":false,"value":null},"status":"ok"}
+
+== generate_user_config ==
+$ logoscore call blockchain_module generate_user_config @${REPO_ROOT}/.work/experiments/bc-desktop/logs/run1/runtime-args.json -> rc=0 (20 ms)
+  {"method":"generate_user_config","module":"blockchain_module","result":{"error":null,"success":true,"value":"${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/user_config.yaml"},"status":"ok"}
+
+generated: ${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/user_config.yaml
+total 12
+drwxr-xr-x. 1 fryorcraken fryorcraken   58 Sep 25 18:05 .
+drwxr-xr-x. 1 fryorcraken fryorcraken   24 Sep 25 18:05 ..
+-rw-r--r--. 1 fryorcraken fryorcraken 1371 Sep 25 18:05 keystore.yaml
+-rw-r--r--. 1 fryorcraken fryorcraken 8154 Sep 25 18:05 user_config.yaml
+125:      ibd:
+126-        peers: []
+115:      prolonged_bootstrap_period: '5.000000000'
+persist before start: 9522 B
+== start ==
+$ logoscore call blockchain_module start ${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/user_config.yaml  -> rc=0 (48 ms)
+  {"method":"start","module":"blockchain_module","result":{"error":null,"success":true,"value":null},"status":"ok"}
+
+start wall: 51 ms
+18:05:45 started pid=3636283 rss_kb=67216 hwm_kb=67216 threads=26 cpu_ticks=5 fds=26
+$ logoscore call blockchain_module get_cryptarchia_info -> rc=0 (15 ms)
+  {"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":0,\"lib\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\",\"lib_slot\":0,\"mode\":\"Bootstrapping\",\"slot\":0,\"tip\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\"}"},"status":"ok"}
+
+18:05:50 t+5s pid=3636283 rss_kb=67544 hwm_kb=67544 threads=26 cpu_ticks=5 fds=26
+$ logoscore call blockchain_module get_cryptarchia_info -> rc=0 (19 ms)
+  {"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":0,\"lib\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\",\"lib_slot\":0,\"mode\":\"Online\",\"slot\":0,\"tip\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\"}"},"status":"ok"}
+
+18:05:55 t+10s pid=3636283 rss_kb=68148 hwm_kb=68148 threads=41 cpu_ticks=6 fds=26
+$ logoscore call blockchain_module get_cryptarchia_info -> rc=0 (39 ms)
+  {"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":0,\"lib\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\",\"lib_slot\":0,\"mode\":\"Online\",\"slot\":0,\"tip\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\"}"},"status":"ok"}
+
+18:06:00 t+15s pid=3636283 rss_kb=61732 hwm_kb=67096 threads=42 cpu_ticks=8 fds=26
+$ logoscore call blockchain_module get_cryptarchia_info -> rc=0 (23 ms)
+  {"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":0,\"lib\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\",\"lib_slot\":0,\"mode\":\"Online\",\"slot\":0,\"tip\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\"}"},"status":"ok"}
+
+18:06:05 t+20s pid=3636283 rss_kb=55772 hwm_kb=67096 threads=42 cpu_ticks=10 fds=26
+$ logoscore call blockchain_module get_cryptarchia_info -> rc=0 (20 ms)
+  {"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":0,\"lib\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\",\"lib_slot\":0,\"mode\":\"Online\",\"slot\":0,\"tip\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\"}"},"status":"ok"}
+
+18:06:10 t+25s pid=3636283 rss_kb=55892 hwm_kb=67096 threads=41 cpu_ticks=10 fds=26
+$ logoscore call blockchain_module get_cryptarchia_info -> rc=0 (19 ms)
+  {"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":0,\"lib\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\",\"lib_slot\":0,\"mode\":\"Online\",\"slot\":0,\"tip\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\"}"},"status":"ok"}
+
+18:06:16 t+30s pid=3636283 rss_kb=56076 hwm_kb=67096 threads=42 cpu_ticks=10 fds=26
+$ logoscore call blockchain_module get_cryptarchia_info -> rc=0 (19 ms)
+  {"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":0,\"lib\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\",\"lib_slot\":0,\"mode\":\"Online\",\"slot\":0,\"tip\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\"}"},"status":"ok"}
+
+18:06:21 t+35s pid=3636283 rss_kb=56084 hwm_kb=67096 threads=42 cpu_ticks=10 fds=26
+$ logoscore call blockchain_module get_cryptarchia_info -> rc=0 (20 ms)
+  {"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"height\":0,\"lib\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\",\"lib_slot\":0,\"mode\":\"Online\",\"slot\":0,\"tip\":\"10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4\"}"},"status":"ok"}
+
+18:06:26 t+40s pid=3636283 rss_kb=56156 hwm_kb=67096 threads=41 cpu_ticks=12 fds=26
+== read-only calls ==
+$ logoscore call blockchain_module get_chain_id -> rc=0 (19 ms)
+  {"method":"get_chain_id","module":"blockchain_module","result":{"error":null,"success":true,"value":"standalone-local"},"status":"ok"}
+
+$ logoscore call blockchain_module get_time_info -> rc=0 (19 ms)
+  {"method":"get_time_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"current_epoch\":2007,\"current_slot\":12042737,\"genesis_time_unix_ms\":1778280849000,\"slot_duration_ms\":1000}"},"status":"ok"}
+
+$ logoscore call blockchain_module get_network_info -> rc=0 (18 ms)
+  {"method":"get_network_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"n_connections\":0,\"n_discovered_peers\":0,\"n_peers\":0,\"n_pending_connections\":0}"},"status":"ok"}
+
+$ logoscore call blockchain_module blend_info -> rc=0 (20 ms)
+  {"method":"blend_info","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"node_id\":\"12D3KooWEUoQgYakNFkMf4KHSf8vbV2scSRBMTR3RQMQE8YURQS2\",\"core_info\":null}"},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_known_addresses -> rc=0 (22 ms)
+  {"method":"wallet_get_known_addresses","module":"blockchain_module","result":{"error":null,"success":true,"value":["5907d9b15ff4a43891a62e30bebf01a41a1f6c415989a4a916ceb33f6e0f1e0d","a11a36fe3a3f945aa4512fa805815a5c5175afeacb7adbad940abe38cef1da2f","b6b095d9c0797d872348b0b878aa9392b5cc4f89b60a9f6dd0ad66fa78ba7221","4155bd021d07995b283ba2c2463889bd704927981958cd2f4f5aebb8a45fbe13","50de6b6c5209c17a618e7d0f35b58e59a95451737f4c759aa6611d3ad23b020b","9f48163f66c49656bc1288c1045c88d809940dc463eeed8ef9c1f96f5fda351a"]},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_balance 5907d9b15ff4a43891a62e30bebf01a41a1f6c415989a4a916ceb33f6e0f1e0d -> rc=0 (33 ms)
+  {"method":"wallet_get_balance","module":"blockchain_module","result":{"error":"Unknown wallet address.","success":false,"value":null},"status":"ok"}
+
+$ logoscore call blockchain_module wallet_get_notes 5907d9b15ff4a43891a62e30bebf01a41a1f6c415989a4a916ceb33f6e0f1e0d  -> rc=0 (30 ms)
+  {"method":"wallet_get_notes","module":"blockchain_module","result":{"error":"Unknown wallet address.","success":false,"value":null},"status":"ok"}
+
+$ logoscore call blockchain_module pow_claimable_rewards -> rc=0 (34 ms)
+  {"method":"pow_claimable_rewards","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"claimable_tickets\":0,\"slots_until_expiry\":[]}"},"status":"ok"}
+
+$ logoscore call blockchain_module get_peer_id ${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/user_config.yaml -> rc=0 (33 ms)
+  {"method":"get_peer_id","module":"blockchain_module","result":{"error":null,"success":true,"value":"12D3KooWLRCkoStkfHbYEQdqDrH9eWwQJ1gyzZt3qd2NJg22WSd6"},"status":"ok"}
+
+$ logoscore call blockchain_module read_accounts ${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/user_config.yaml -> rc=0 (33 ms)
+  {"method":"read_accounts","module":"blockchain_module","result":{"error":null,"success":true,"value":"{\"accounts\":[{\"public_key\":\"50de6b6c5209c17a618e7d0f35b58e59a95451737f4c759aa6611d3ad23b020b\",\"roles\":[],\"title\":\"PoWClaim\"},{\"public_key\":\"9f48163f66c49656bc1288c1045c88d809940dc463eeed8ef9c1f96f5fda351a\",\"roles\":[\"leader_funding\"],\"title\":\"LeaderFunding\"},{\"public_key\":\"b6b095d9c0797d872348b0b878aa9392b5cc4f89b60a9f6dd0ad66fa78ba7221\",\"roles\":[],\"title\":\"BlendZk\"},{\"public_key\":\"5907d9b15ff4a43891a62e30bebf01a41a1f6c415989a4a916ceb33f6e0f1e0d\",\"roles\":[\"sdp_funding\"],\"title\":\"SdpFunding\"},{\"public_key\":\"4155bd021d07995b283ba2c2463889bd704927981958cd2f4f5aebb8a45fbe13\",\"roles\":[\"voucher_master\"],\"title\":\"VaucherMaster\"},{\"public_key\":\"a11a36fe3a3f945aa4512fa805815a5c5175afeacb7adbad940abe38cef1da2f\",\"roles\":[],\"title\":\"Stake\"}],\"keystore_keys\":[{\"key_id\":\"50de6b6c5209c17a618e7d0f35b58e59a95451737f4c759aa6611d3ad23b020b\",\"title\":\"PoWClaim\"},{\"key_id\":\"a11a36fe3a3f945aa4512fa805815a5c5175afeacb7adbad940abe38cef1da2f\",\"title\":\"Stake\"},{\"key_id\":\"4155bd021d07995b283ba2c2463889bd704927981958cd2f4f5aebb8a45fbe13\",\"title\":\"VaucherMaster\"},{\"key_id\":\"45475b9662a59280fb571f3960450f416746fe42ab25e576019e9232e5db35f7\",\"title\":\"BlendSigning\"},{\"key_id\":\"9f48163f66c49656bc1288c1045c88d809940dc463eeed8ef9c1f96f5fda351a\",\"title\":\"LeaderFunding\"},{\"key_id\":\"9d818df2c8775ee4979b
+$ logoscore call blockchain_module get_blocks 0 10 -> rc=0 (35 ms)
+  {"method":"get_blocks","module":"blockchain_module","result":{"error":null,"success":true,"value":"[]"},"status":"ok"}
+
+== sockets / ports of the host ==
+udp   UNCONN 0      0                                     0.0.0.0:3200       0.0.0.0:*    users:(("logos_host",pid=3636283,fd=24),("logos_host",pid=3636283,fd=22))
+tcp   LISTEN 0      128                                 127.0.0.1:18480      0.0.0.0:*    users:(("logos_host",pid=3636283,fd=25))                                 
+== unix listeners ==
+${REPO_ROOT}/.work/bcs/logos_blockchain_module_7443b4a5e26d users:(("logos_host",pid=3636283,fd=6))
+${REPO_ROOT}/.work/bcs/logos_capability_module_7443b4a5e26d users:(("logos_host",pid=3636266,fd=6))
+${REPO_ROOT}/.work/bcs/logos_modules_state_7443b4a5e26d users:(("logos_host",pid=3636268,fd=6))
+${REPO_ROOT}/.work/bcs/logos_core_service_7443b4a5e26d users:((".logoscore-wrap",pid=3636262,fd=15))
+== open files of the host (non socket/pipe) ==
+      2 ${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db
+      1 ${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/logs/1790323545.2026-09-25-08
+      1 ${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db/MANIFEST-000009
+      1 ${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db/LOG
+      1 ${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db/LOCK
+      1 ${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db/000008.log
+      1 0
+== persist tree ==
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/keystore.yaml
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/user_config.yaml
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db/LOCK
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db/IDENTITY
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db/OPTIONS-000007
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db/LOG.old.1790323545754234
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db/LOG
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db/000008.log
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db/MANIFEST-000009
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db/CURRENT
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db/OPTIONS-000011
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/logs
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/logs/1790323545.2026-09-25-08
+${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/logs/1790323545.latest
+118921	${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/db
+1371	${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/keystore.yaml
+19603	${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/logs
+8151	${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19/user_config.yaml
+== stop node ==
+$ logoscore call blockchain_module stop -> rc=0 (30 ms)
+  {"method":"stop","module":"blockchain_module","result":{"error":null,"success":true,"value":null},"status":"ok"}
+
+$ logoscore call blockchain_module get_cryptarchia_info -> rc=0 (21 ms)
+  {"method":"get_cryptarchia_info","module":"blockchain_module","result":{"error":"The node is not running.","success":false,"value":null},"status":"ok"}
+
+$ logoscore call blockchain_module does_state_exist -> rc=0 (30 ms)
+  {"method":"does_state_exist","module":"blockchain_module","result":{"error":null,"success":true,"value":false},"status":"ok"}
+
+18:06:26 stopped pid=3636283 rss_kb=63324 hwm_kb=67096 threads=8 cpu_ticks=14 fds=16
+== events captured ==
+0 ${REPO_ROOT}/.work/experiments/bc-desktop/logs/run1/events.jsonl
+
+== stop daemon ==
+$ logoscore stop -> rc=0 (22 ms)
+  {"message":"Daemon shutting down.","status":"ok"}
+
+daemon (strace 3636256) exited
+leftover logos processes:
+leftover sockets in ${REPO_ROOT}/.work/bcs:
+total 0
+drwxr-xr-x. 1 fryorcraken fryorcraken   0 Sep 25 18:06 .
+drwxr-xr-x. 1 fryorcraken fryorcraken 368 Sep 25 18:05 ..
+== daemon log (tail 120) ==
+[2026-09-25 18:05:44.258] [info] Inter-module access enforcement is OFF (no access policy set): any loaded module may call any other
+[2026-09-25 18:05:44.264] [info] [logos] Granting host services to 'capability_module': token_registry,token_delivery
+[2026-09-25 18:05:44.288] [out] [capability_module] [2026-09-25 18:05:44.287] [info] Granting host services to capability_module: ["token_registry","token_delivery"]
+[2026-09-25 18:05:44.289] [info] [logos] Module loaded: capability_module
+[2026-09-25 18:05:44.310] [info] [logos] Module loaded: modules_state
+Logosctl daemon started (pid 3636262, instance 7443b4a5e26d)
+Daemon state: ${REPO_ROOT}/.work/experiments/bc-desktop/cfg/daemon/state.json
+Local client config: ${REPO_ROOT}/.work/experiments/bc-desktop/cfg/client/config.json
+[2026-09-25 18:05:44.314] [info] [logos] Pushed module snapshot to modules_state
+[2026-09-25 18:05:44.532] [info] [logos] Module loaded: blockchain_module
+[2026-09-25 18:05:45.686] [info] [logos] [blockchain_module] generate_user_config: routing output/state/storage/logs under instance persistence path: ${REPO_ROOT}/.work/experiments/bc-desktop/persist/blockchain_module/1cbd82025b19
+[2026-09-25 18:05:45.754] [info] [logos] [blockchain_module] Error reading the log directory/files: No such file or directory (os error 2)
+[2026-09-25 18:05:45.759] [out] [blockchain_module] [2m2026-09-25T08:05:45.758829Z[0m [32m INFO[0m [2mlogos_blockchain::tracing::service[0m[2m:[0m Service 'Tracing' is ready.
+[2026-09-25 18:05:45.761] [out] [blockchain_module] [2m2026-09-25T08:05:45.761686Z[0m [32m INFO[0m [2mlogos_blockchain::libp2p::behaviour::nat::gateway-monitor[0m[2m:[0m Initial gateway detected: 192.168.1.1
+[2026-09-25 18:05:45.762] [out] [blockchain_module] [2m2026-09-25T08:05:45.761995Z[0m [32m INFO[0m [2mlogos_blockchain::network_service[0m[2m:[0m Service 'Network' is ready.
+[2026-09-25 18:05:45.765] [out] [blockchain_module] [2m2026-09-25T08:05:45.765813Z[0m [32m INFO[0m [2mlogos_blockchain::storage[0m[2m:[0m Service 'Storage' is ready.
+[2026-09-25 18:05:45.766] [out] [blockchain_module] [2m2026-09-25T08:05:45.765974Z[0m [32m INFO[0m [2mlogos_blockchain::mempool::service[0m[2m:[0m Service 'Mempool' is ready.
+[2026-09-25 18:05:45.766] [out] [blockchain_module] [2m2026-09-25T08:05:45.766140Z[0m [32m INFO[0m [2mlogos_blockchain::chain::service[0m[2m:[0m recovering Cryptarchia [3mtip[0m[2m=[0mHeaderId(10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4) [3mlib[0m[2m=[0mHeaderId(10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4) [3mlib_height[0m[2m=[0m0 [3mgenesis[0m[2m=[0mHeaderId(10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4)
+[2026-09-25 18:05:45.766] [out] [blockchain_module] [2m2026-09-25T08:05:45.766183Z[0m [32m INFO[0m [2mlogos_blockchain::chain::service[0m[2m:[0m loading stored blocks for chain recovery [3mlib[0m[2m=[0mHeaderId(10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4) [3mtip[0m[2m=[0mHeaderId(10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4)
+[2026-09-25 18:05:45.766] [out] [blockchain_module] [2m2026-09-25T08:05:45.766186Z[0m [32m INFO[0m [2mlogos_blockchain::chain::service[0m[2m:[0m found 0 stored blocks to replay during chain recovery
+[2026-09-25 18:05:45.766] [out] [blockchain_module] [2m2026-09-25T08:05:45.766188Z[0m [32m INFO[0m [2mlogos_blockchain::chain::service[0m[2m:[0m 0 blocks replayed. Chain recovery finished [3mtip_height[0m[2m=[0m0 [3mlib_height[0m[2m=[0m0
+[2026-09-25 18:05:45.766] [out] [blockchain_module] [2m2026-09-25T08:05:45.766216Z[0m [32m INFO[0m [2mlogos_blockchain::chain::service[0m[2m:[0m Service 'Cryptarchia' is ready.
+[2026-09-25 18:05:45.766] [out] [blockchain_module] [2m2026-09-25T08:05:45.766225Z[0m [32m INFO[0m [2mlogos_blockchain::chain::service[0m[2m:[0m entering AwaitingGenesisTime phase
+[2026-09-25 18:05:45.766] [out] [blockchain_module] [2m2026-09-25T08:05:45.766232Z[0m [32m INFO[0m [2mlogos_blockchain::chain::service[0m[2m:[0m genesis time is already in the past: finishing AwaitingGenesisTime phase with no-op
+[2026-09-25 18:05:45.766] [out] [blockchain_module] [2m2026-09-25T08:05:45.766234Z[0m [32m INFO[0m [2mlogos_blockchain::chain::service[0m[2m:[0m entering InitialBlockDownload phase
+[2026-09-25 18:05:45.766] [out] [blockchain_module] [2m2026-09-25T08:05:45.766376Z[0m [32m INFO[0m [2mlogos_blockchain::wallet::service[0m[2m:[0m Wallet connecting to chain [3mtip[0m[2m=[0mHeaderId(10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4) [3mlib[0m[2m=[0mHeaderId(10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4) [3mslot[0m[2m=[0mSlot(0)
+[2026-09-25 18:05:45.766] [out] [blockchain_module] [2m2026-09-25T08:05:45.766382Z[0m [32m INFO[0m [2mlogos_blockchain::sdp[0m[2m:[0m Service 'Sdp' is ready.
+[2026-09-25 18:05:45.766] [out] [blockchain_module] [2m2026-09-25T08:05:45.766405Z[0m [32m INFO[0m [2mlogos_blockchain::wallet::core[0m[2m:[0m initializing wallet with LIB ledger state [3mlib[0m[2m=[0mHeaderId(10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4) [3mn_known_keys[0m[2m=[0m6 [3mn_known_vouchers[0m[2m=[0m0 [3mn_all_vouchers[0m[2m=[0m0
+[2026-09-25 18:05:45.766] [out] [blockchain_module] [2m2026-09-25T08:05:45.766417Z[0m [32m INFO[0m [2mlogos_blockchain::wallet::service[0m[2m:[0m Wallet service is ready and subscribed to blocks
+[2026-09-25 18:05:45.766] [out] [blockchain_module] [2m2026-09-25T08:05:45.766493Z[0m [32m INFO[0m [2mlogos_blockchain::blend::service[0m[2m:[0m Waiting for chain to become Online mode
+[2026-09-25 18:05:46.262] [out] [blockchain_module] [2m2026-09-25T08:05:46.262509Z[0m [33m WARN[0m [2mlibp2p_kad::behaviour[0m[2m:[0m Failed to trigger bootstrap: No known peers.
+[2026-09-25 18:05:46.767] [out] [blockchain_module] [2m2026-09-25T08:05:46.767005Z[0m [33m WARN[0m [2mlogos_blockchain::chain::network::bootstrap::ibd[0m[2m:[0m Skipping IBD as no peers are configured
+[2026-09-25 18:05:46.767] [out] [blockchain_module] [2m2026-09-25T08:05:46.767025Z[0m [32m INFO[0m [2mlogos_blockchain::chain::network[0m[2m:[0m Initial Block Download completed successfully
+[2026-09-25 18:05:46.767] [out] [blockchain_module] [2m2026-09-25T08:05:46.767045Z[0m [32m INFO[0m [2mlogos_blockchain::chain::service[0m[2m:[0m IBD completed: finishing InitialBlockDownload phase
+[2026-09-25 18:05:46.767] [out] [blockchain_module] [2m2026-09-25T08:05:46.767053Z[0m [32m INFO[0m [2mlogos_blockchain::chain::service[0m[2m:[0m entering ProlongedBootstrapPeriod phase
+[2026-09-25 18:05:46.767] [out] [blockchain_module] [2m2026-09-25T08:05:46.767095Z[0m [32m INFO[0m [2mlogos_blockchain::chain::network[0m[2m:[0m Tip-poll lag watchdog enabled [3mcadence_slots[0m[2m=[0m20 [3mlag_threshold_slots[0m[2m=[0m60 [3mmax_peers[0m[2m=[0m5
+[2026-09-25 18:05:46.767] [out] [blockchain_module] [2m2026-09-25T08:05:46.767108Z[0m [32m INFO[0m [2mlogos_blockchain::chain::network[0m[2m:[0m Service 'ChainNetwork' is ready.
+[2026-09-25 18:05:51.768] [out] [blockchain_module] [2m2026-09-25T08:05:51.768583Z[0m [32m INFO[0m [2mlogos_blockchain::chain::service[0m[2m:[0m Prolonged Bootstrap Period completed: switching chain to online
+[2026-09-25 18:05:51.768] [out] [blockchain_module] [2m2026-09-25T08:05:51.768590Z[0m [32m INFO[0m [2mlogos_blockchain::chain::service[0m[2m:[0m chain switched to online
+[2026-09-25 18:05:51.768] [out] [blockchain_module] [2m2026-09-25T08:05:51.768691Z[0m [32m INFO[0m [2mlogos_blockchain::chain::service[0m[2m:[0m entering Following phase
+[2026-09-25 18:05:51.768] [out] [blockchain_module] [2m2026-09-25T08:05:51.768691Z[0m [32m INFO[0m [2mlogos_blockchain::blend::service[0m[2m:[0m Chain is now Online.
+[2026-09-25 18:05:51.769] [out] [blockchain_module] [2m2026-09-25T08:05:51.768820Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042702)
+[2026-09-25 18:05:51.769] [out] [blockchain_module] [2m2026-09-25T08:05:51.768855Z[0m [32m INFO[0m [2mlogos_blockchain::blend::service[0m[2m:[0m current membership is ready [3mmembers[0m[2m=[0m0
+[2026-09-25 18:05:51.769] [out] [blockchain_module] [2m2026-09-25T08:05:51.768860Z[0m [32m INFO[0m [2mlogos_blockchain::blend::service::orchestrator[0m[2m:[0m Starting service BlendBroadcast
+[2026-09-25 18:05:51.769] [out] [blockchain_module] [2m2026-09-25T08:05:51.768885Z[0m [32m INFO[0m [2mlogos_blockchain::blend::service::orchestrator[0m[2m:[0m Waiting until service BlendBroadcast is ready
+[2026-09-25 18:05:51.769] [out] [blockchain_module] [2m2026-09-25T08:05:51.769154Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042702)
+[2026-09-25 18:05:51.769] [out] [blockchain_module] [2m2026-09-25T08:05:51.769206Z[0m [32m INFO[0m [2mlogos_blockchain::blend::service::broadcast[0m[2m:[0m Service 'BlendBroadcast' is ready.
+[2026-09-25 18:05:51.769] [out] [blockchain_module] [2m2026-09-25T08:05:51.769213Z[0m [32m INFO[0m [2mlogos_blockchain::blend::service[0m[2m:[0m Service 'Blend' is ready.
+[2026-09-25 18:05:51.769] [out] [blockchain_module] [2m2026-09-25T08:05:51.769221Z[0m [32m INFO[0m [2mlogos_blockchain::chain::leader[0m[2m:[0m Waiting for chain to become online
+[2026-09-25 18:05:51.769] [out] [blockchain_module] [2m2026-09-25T08:05:51.769227Z[0m [32m INFO[0m [2mlogos_blockchain::chain::leader[0m[2m:[0m Chain is online. Starting block proposals.
+[2026-09-25 18:05:51.769] [out] [blockchain_module] [2m2026-09-25T08:05:51.769230Z[0m [32m INFO[0m [2mlogos_blockchain::chain::leader[0m[2m:[0m Service 'CryptarchiaLeader' is ready.
+[2026-09-25 18:05:51.769] [out] [blockchain_module] [2m2026-09-25T08:05:51.769245Z[0m [32m INFO[0m [2mlogos_blockchain::pow[0m[2m:[0m Waiting for the chain to become online
+[2026-09-25 18:05:51.769] [out] [blockchain_module] [2m2026-09-25T08:05:51.769315Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042702)
+[2026-09-25 18:05:51.769] [out] [blockchain_module] [2m2026-09-25T08:05:51.769371Z[0m [32m INFO[0m [2mlogos_blockchain::pow[0m[2m:[0m Chain is online; starting the PoW service
+[2026-09-25 18:05:52.000] [out] [blockchain_module] [2m2026-09-25T08:05:52.000830Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042703)
+[2026-09-25 18:05:53.001] [out] [blockchain_module] [2m2026-09-25T08:05:53.000965Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042704)
+[2026-09-25 18:05:54.000] [out] [blockchain_module] [2m2026-09-25T08:05:54.000847Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042705)
+[2026-09-25 18:05:55.000] [out] [blockchain_module] [2m2026-09-25T08:05:55.000163Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042706)
+[2026-09-25 18:05:56.000] [out] [blockchain_module] [2m2026-09-25T08:05:56.000098Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042707)
+[2026-09-25 18:05:57.000] [out] [blockchain_module] [2m2026-09-25T08:05:57.000173Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042708)
+[2026-09-25 18:05:58.000] [out] [blockchain_module] [2m2026-09-25T08:05:58.000133Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042709)
+[2026-09-25 18:05:59.000] [out] [blockchain_module] [2m2026-09-25T08:05:59.000203Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042710)
+[2026-09-25 18:06:00.000] [out] [blockchain_module] [2m2026-09-25T08:06:00.000228Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042711)
+[2026-09-25 18:06:00.999] [out] [blockchain_module] [2m2026-09-25T08:06:00.998973Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042712)
+[2026-09-25 18:06:02.001] [out] [blockchain_module] [2m2026-09-25T08:06:02.000979Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042713)
+[2026-09-25 18:06:02.998] [out] [blockchain_module] [2m2026-09-25T08:06:02.997877Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042714)
+[2026-09-25 18:06:04.009] [out] [blockchain_module] [2m2026-09-25T08:06:04.009228Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042715)
+[2026-09-25 18:06:04.997] [out] [blockchain_module] [2m2026-09-25T08:06:04.997214Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042716)
+[2026-09-25 18:06:05.998] [out] [blockchain_module] [2m2026-09-25T08:06:05.998036Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042717)
+[2026-09-25 18:06:06.997] [out] [blockchain_module] [2m2026-09-25T08:06:06.997601Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042718)
+[2026-09-25 18:06:07.997] [out] [blockchain_module] [2m2026-09-25T08:06:07.997380Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042719)
+[2026-09-25 18:06:08.997] [out] [blockchain_module] [2m2026-09-25T08:06:08.997372Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042720)
+[2026-09-25 18:06:09.997] [out] [blockchain_module] [2m2026-09-25T08:06:09.997454Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042721)
+[2026-09-25 18:06:10.997] [out] [blockchain_module] [2m2026-09-25T08:06:10.997074Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042722)
+[2026-09-25 18:06:11.997] [out] [blockchain_module] [2m2026-09-25T08:06:11.997190Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042723)
+[2026-09-25 18:06:12.997] [out] [blockchain_module] [2m2026-09-25T08:06:12.997234Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042724)
+[2026-09-25 18:06:13.997] [out] [blockchain_module] [2m2026-09-25T08:06:13.997532Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042725)
+[2026-09-25 18:06:14.997] [out] [blockchain_module] [2m2026-09-25T08:06:14.997772Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042726)
+[2026-09-25 18:06:15.999] [out] [blockchain_module] [2m2026-09-25T08:06:15.999108Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042727)
+[2026-09-25 18:06:16.999] [out] [blockchain_module] [2m2026-09-25T08:06:16.999747Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042728)
+[2026-09-25 18:06:17.999] [out] [blockchain_module] [2m2026-09-25T08:06:17.999631Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042729)
+[2026-09-25 18:06:18.999] [out] [blockchain_module] [2m2026-09-25T08:06:18.999654Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042730)
+[2026-09-25 18:06:19.999] [out] [blockchain_module] [2m2026-09-25T08:06:19.999157Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042731)
+[2026-09-25 18:06:20.999] [out] [blockchain_module] [2m2026-09-25T08:06:20.999199Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042732)
+[2026-09-25 18:06:21.999] [out] [blockchain_module] [2m2026-09-25T08:06:21.999181Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042733)
+[2026-09-25 18:06:22.999] [out] [blockchain_module] [2m2026-09-25T08:06:22.999193Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042734)
+[2026-09-25 18:06:23.999] [out] [blockchain_module] [2m2026-09-25T08:06:23.999232Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042735)
+[2026-09-25 18:06:24.999] [out] [blockchain_module] [2m2026-09-25T08:06:24.999436Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042736)
+[2026-09-25 18:06:25.999] [out] [blockchain_module] [2m2026-09-25T08:06:25.999237Z[0m [33m WARN[0m [2mlogos_blockchain::ledger::cryptarchia[0m[2m:[0m skipped epochs [3mold_epoch[0m[2m=[0mEpoch(0) [3mnew_epoch[0m[2m=[0mEpoch(2007) [3mepochs_skipped[0m[2m=[0m2006 [3mold_total_stake[0m[2m=[0m1 [3mnew_total_stake[0m[2m=[0m1 [3mslot[0m[2m=[0mSlot(12042737)
+[2026-09-25 18:06:26.191] [info] [logos] [blockchain_module] blockchain lib: known addresses, count=6 sample:5907d9b15ff4a43891a62e30bebf01a41a1f6c415989a4a916ceb33f6e0f1e0d
+[2026-09-25 18:06:26.215] [info] [logos] [blockchain_module] blockchain lib: known addresses, count=6 sample:5907d9b15ff4a43891a62e30bebf01a41a1f6c415989a4a916ceb33f6e0f1e0d
+[2026-09-25 18:06:26.246] [info] [logos] [blockchain_module] wallet_get_balance: address_hex=5907d9b15ff4a43891a62e30bebf01a41a1f6c415989a4a916ceb33f6e0f1e0d
+[2026-09-25 18:06:26.439] [out] [blockchain_module] [2m2026-09-25T08:06:26.436274Z[0m [33m WARN[0m [2mlogos_blockchain::api::http::mantle[0m[2m:[0m missing block body for indexed header 0x10ba89359533484e47e4be6b47207c5a3dbb1775cb4e7c5cae0049900a954ad4, skipping
+[2026-09-25 18:06:26.784] [info] [logos] [blockchain_module] WARN  [subscribe_to_new_blocks_sync] Block stream closed, subscription to new blocks ended.
+[2026-09-25 18:06:26.785] [out] [blockchain_module] [2m2026-09-25T08:06:26.785796Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 33 was cancelled
+[2026-09-25 18:06:26.786] [out] [blockchain_module] [2m2026-09-25T08:06:26.785888Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 34 was cancelled
+[2026-09-25 18:06:26.786] [out] [blockchain_module] [2m2026-09-25T08:06:26.785895Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 35 was cancelled
+[2026-09-25 18:06:26.786] [out] [blockchain_module] [2m2026-09-25T08:06:26.785900Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 36 was cancelled
+[2026-09-25 18:06:26.786] [out] [blockchain_module] [2m2026-09-25T08:06:26.785904Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 37 was cancelled
+[2026-09-25 18:06:26.786] [out] [blockchain_module] [2m2026-09-25T08:06:26.785914Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 38 was cancelled
+[2026-09-25 18:06:26.786] [out] [blockchain_module] [2m2026-09-25T08:06:26.785941Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 39 was cancelled
+[2026-09-25 18:06:26.786] [out] [blockchain_module] [2m2026-09-25T08:06:26.785946Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 40 was cancelled
+[2026-09-25 18:06:26.787] [out] [blockchain_module] [2m2026-09-25T08:06:26.785951Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 41 was cancelled
+[2026-09-25 18:06:26.787] [out] [blockchain_module] [2m2026-09-25T08:06:26.785956Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 42 was cancelled
+[2026-09-25 18:06:26.787] [out] [blockchain_module] [2m2026-09-25T08:06:26.785967Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 43 was cancelled
+[2026-09-25 18:06:26.787] [out] [blockchain_module] [2m2026-09-25T08:06:26.785972Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 44 was cancelled
+[2026-09-25 18:06:26.787] [out] [blockchain_module] [2m2026-09-25T08:06:26.785978Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 45 was cancelled
+[2026-09-25 18:06:26.787] [out] [blockchain_module] [2m2026-09-25T08:06:26.785982Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 46 was cancelled
+[2026-09-25 18:06:26.787] [out] [blockchain_module] [2m2026-09-25T08:06:26.785988Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 47 was cancelled
+[2026-09-25 18:06:26.787] [out] [blockchain_module] [2m2026-09-25T08:06:26.785993Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 48 was cancelled
+[2026-09-25 18:06:26.787] [out] [blockchain_module] [2m2026-09-25T08:06:26.786000Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 49 was cancelled
+[2026-09-25 18:06:26.787] [out] [blockchain_module] [2m2026-09-25T08:06:26.786007Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 50 was cancelled
+[2026-09-25 18:06:26.787] [out] [blockchain_module] [2m2026-09-25T08:06:26.786019Z[0m [31mERROR[0m [2mlogos_blockchain_node[0m[2m:[0m Error while awaiting ServiceRunner's JoinHandle: task 51 was cancelled
+Shutting down logosctl daemon...
+Logosctl daemon stopped.
+== run1 end 2026-09-25T18:06:27+10:00 ==

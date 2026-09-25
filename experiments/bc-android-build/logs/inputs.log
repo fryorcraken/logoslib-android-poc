@@ -1,0 +1,146 @@
+== 2026-09-25T17:55:01+10:00 inputs
+metadata-exit=0 bytes=3919017
+== downloads
+circuits sri: sha256-kqDGrYENSGYxUYt7myR6K2b2avb4+N3OOBrLvf7cD38=  (expected sha256-kqDGrYENSGYxUYt7myR6K2b2avb4+N3OOBrLvf7cD38= from circuits-nix-hashes.json 0.5.7 x86_64-linux)
+logos-blockchain-circuits-v0.5.7-linux-x86_64 84
+logos-blockchain-circuits-v0.5.7-linux-x86_64/lib 16
+logos-blockchain-circuits-v0.5.7-linux-x86_64/lib/libgmp.a 1343714
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poc 146
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poc/include 86
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poc/libpoc.a 1359570
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poc/proving_key.zkey 5317965
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poc/verification_key.json 3293
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poc/witness_generator.dat 80728
+logos-blockchain-circuits-v0.5.7-linux-x86_64/pol 146
+logos-blockchain-circuits-v0.5.7-linux-x86_64/pol/include 86
+logos-blockchain-circuits-v0.5.7-linux-x86_64/pol/libpol.a 1528578
+logos-blockchain-circuits-v0.5.7-linux-x86_64/pol/proving_key.zkey 12719421
+logos-blockchain-circuits-v0.5.7-linux-x86_64/pol/verification_key.json 4389
+logos-blockchain-circuits-v0.5.7-linux-x86_64/pol/witness_generator.dat 179032
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poq 146
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poq/include 86
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poq/libpoq.a 1619250
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poq/proving_key.zkey 12578709
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poq/verification_key.json 4936
+logos-blockchain-circuits-v0.5.7-linux-x86_64/poq/witness_generator.dat 176248
+logos-blockchain-circuits-v0.5.7-linux-x86_64/prover 3064240
+logos-blockchain-circuits-v0.5.7-linux-x86_64/signature 158
+logos-blockchain-circuits-v0.5.7-linux-x86_64/signature/include 86
+logos-blockchain-circuits-v0.5.7-linux-x86_64/signature/libsignature.a 1313238
+logos-blockchain-circuits-v0.5.7-linux-x86_64/signature/proving_key.zkey 4491237
+logos-blockchain-circuits-v0.5.7-linux-x86_64/signature/verification_key.json 8782
+logos-blockchain-circuits-v0.5.7-linux-x86_64/signature/witness_generator.dat 76064
+logos-blockchain-circuits-v0.5.7-linux-x86_64/verifier 2878312
+logos-blockchain-circuits-v0.5.7-linux-x86_64/VERSION 7
+966d0e572963af1ff35faa56a5a16754a67000308d0cd89ed6c4d60a3080a2e0  rapidsnark-android-x86_64-v0.0.8.zip
+2e306704fe1b900261006ec41a7bef92bb3f94839c9989eff5058b133f5dc642  rapidsnark-android-arm64-v0.0.8.zip
+./rapidsnark-android-arm64-v0.0.8 26
+./rapidsnark-android-arm64-v0.0.8/bin 50
+./rapidsnark-android-arm64-v0.0.8/bin/prover 1808552
+./rapidsnark-android-arm64-v0.0.8/bin/test_prover 1926528
+./rapidsnark-android-arm64-v0.0.8/bin/verifier 1646880
+./rapidsnark-android-arm64-v0.0.8/include 36
+./rapidsnark-android-arm64-v0.0.8/include/prover.h 5295
+./rapidsnark-android-arm64-v0.0.8/include/verifier.h 812
+./rapidsnark-android-arm64-v0.0.8/lib 148
+./rapidsnark-android-arm64-v0.0.8/lib/libfq.a 78438
+./rapidsnark-android-arm64-v0.0.8/lib/libfr.a 78438
+./rapidsnark-android-arm64-v0.0.8/lib/libgmp.a 1224016
+./rapidsnark-android-arm64-v0.0.8/lib/librapidsnark.a 1014800
+./rapidsnark-android-arm64-v0.0.8/lib/librapidsnark-fr-fq.a 1169816
+./rapidsnark-android-arm64-v0.0.8/lib/librapidsnark.so 2258816
+./rapidsnark-android-arm64-v0.0.8.zip 2973106
+./rapidsnark-android-x86_64-v0.0.8 26
+./rapidsnark-android-x86_64-v0.0.8/bin 50
+./rapidsnark-android-x86_64-v0.0.8/bin/prover 1651568
+./rapidsnark-android-x86_64-v0.0.8/bin/test_prover 1971672
+./rapidsnark-android-x86_64-v0.0.8/bin/verifier 1510264
+./rapidsnark-android-x86_64-v0.0.8/include 36
+./rapidsnark-android-x86_64-v0.0.8/include/prover.h 5295
+./rapidsnark-android-x86_64-v0.0.8/include/verifier.h 812
+./rapidsnark-android-x86_64-v0.0.8/lib 148
+./rapidsnark-android-x86_64-v0.0.8/lib/libfq.a 78380
+./rapidsnark-android-x86_64-v0.0.8/lib/libfr.a 78380
+./rapidsnark-android-x86_64-v0.0.8/lib/libgmp.a 1203074
+./rapidsnark-android-x86_64-v0.0.8/lib/librapidsnark.a 1010804
+./rapidsnark-android-x86_64-v0.0.8/lib/librapidsnark-fr-fq.a 1166250
+./rapidsnark-android-x86_64-v0.0.8/lib/librapidsnark.so 2101912
+./rapidsnark-android-x86_64-v0.0.8.zip 2899842
+== circuits repo v0.5.7 + submodules
+Cloning into '${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits'...
+HEAD is now at ebf7ddf chore(ci): auto-update Nix hashes for v0.5.7 [skip ci]
+ebf7ddf5b5b625ef4ea7c803171c670beebd05ef  (HEAD, tag: v0.5.7, origin/main, origin/HEAD, main) chore(ci): auto-update Nix hashes for v0.5.7 [skip ci]
+Submodule 'depends/ffiasm' (https://github.com/iden3/ffiasm) registered for path 'rapidsnark/depends/ffiasm'
+Submodule 'depends/json' (https://github.com/nlohmann/json.git) registered for path 'rapidsnark/depends/json'
+Submodule 'depends/pistache' (https://github.com/pistacheio/pistache) registered for path 'rapidsnark/depends/pistache'
+Cloning into '${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/circom_runtime'...
+Cloning into '${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/ffiasm'...
+Cloning into '${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/json'...
+Cloning into '${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/pistache'...
+Submodule path 'rapidsnark/depends/circom_runtime': checked out '839785075f90a060a5ee5697c6c6e27f85aa35ee'
+Submodule path 'rapidsnark/depends/ffiasm': checked out 'fe3772e8e62f2235d308d445d09379a0fca8f5a9'
+Submodule path 'rapidsnark/depends/json': checked out '350ff4f7ced7c4117eae2fb93df02823c8021fcb'
+Submodule path 'rapidsnark/depends/pistache': checked out 'ae0da38cf1c26c3321b19a512e2faffb80ae9867'
+Submodule 'third-party/googletest' (https://github.com/google/googletest.git) registered for path 'rapidsnark/depends/pistache/third-party/googletest'
+Submodule 'third-party/rapidjson' (https://github.com/Tencent/rapidjson) registered for path 'rapidsnark/depends/pistache/third-party/rapidjson'
+Cloning into '${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/pistache/third-party/googletest'...
+Cloning into '${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/pistache/third-party/rapidjson'...
+Submodule path 'rapidsnark/depends/pistache/third-party/googletest': checked out 'c99458533a9b4c743ed51537e25989ea55944908'
+Submodule path 'rapidsnark/depends/pistache/third-party/rapidjson': checked out 'f54b0e47a08782a6131cc3d60f94d038fa6e0a51'
+Submodule 'thirdparty/gtest' (https://github.com/google/googletest.git) registered for path 'rapidsnark/depends/pistache/third-party/rapidjson/thirdparty/gtest'
+Cloning into '${REPO_ROOT}/.work/experiments/bc-android-build/src/logos-blockchain-circuits/rapidsnark/depends/pistache/third-party/rapidjson/thirdparty/gtest'...
+Submodule path 'rapidsnark/depends/pistache/third-party/rapidjson/thirdparty/gtest': checked out '0a439623f75c029912728d80cb7f1b8b48739ca4'
+ 35e54ea21da3e8762557234298dbb553c175ea8d circomlib (v2.0.5-9-g35e54ea)
+ 998383787ee86bcb6bfb8741e9a638d203c08eae rapidsnark (v0.0.7-12-g9983837)
+ 839785075f90a060a5ee5697c6c6e27f85aa35ee rapidsnark/depends/circom_runtime (v0.1.13-2-g8397850)
+ fe3772e8e62f2235d308d445d09379a0fca8f5a9 rapidsnark/depends/ffiasm (remotes/origin/fix-msm1-6-gfe3772e)
+ 350ff4f7ced7c4117eae2fb93df02823c8021fcb rapidsnark/depends/json (3.6.1-855-g350ff4f7c)
+ ae0da38cf1c26c3321b19a512e2faffb80ae9867 rapidsnark/depends/pistache (0.0.5~163)
+ c99458533a9b4c743ed51537e25989ea55944908 rapidsnark/depends/pistache/third-party/googletest (release-1.7.0)
+ f54b0e47a08782a6131cc3d60f94d038fa6e0a51 rapidsnark/depends/pistache/third-party/rapidjson (v1.1.0)
+ 0a439623f75c029912728d80cb7f1b8b48739ca4 rapidsnark/depends/pistache/third-party/rapidjson/thirdparty/gtest (release-1.8.0~5)
+build
+build_gmp.sh
+cmake
+CMakeLists.txt
+COPYING
+depends
+Makefile
+package.json
+package-lock.json
+README.md
+service
+src
+tasksfile.js
+testdata
+tools
+== circom
+unpacking 'https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst' into the Git cache...
+2.2.3
+Cloning into '${REPO_ROOT}/.work/experiments/bc-android-build/src/circom'...
+Note: switching to 'e410b0d5cd2948a15931df0bc50d79ce56fa8c32'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+e410b0d5cd2948a15931df0bc50d79ce56fa8c32  (grafted, HEAD, tag: v2.2.2)
+warning: the following packages contain code that will be rejected by a future version of Rust: num-bigint-dig v0.8.4
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+  Installing ${REPO_ROOT}/.work/experiments/bc-android-build/tools/circom/bin/circom
+   Installed package `circom v2.2.2 (${REPO_ROOT}/.work/experiments/bc-android-build/src/circom/circom)` (executable `circom`)
+warning: be sure to add `${REPO_ROOT}/.work/experiments/bc-android-build/tools/circom/bin` to your PATH to be able to run the installed binaries
+circom build seconds=45
+circom compiler 2.2.2
+DONE
