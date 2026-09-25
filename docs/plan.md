@@ -66,7 +66,7 @@ X1-X9 in `investigation.md` §8. They established that subprocess hosting works 
 with the no-JVM fix, the Qt-free runtime cross-builds, ICU can be dropped, and the host call
 policy above holds.
 
-### M2: native prefix for `x86_64-linux-android34`
+### M2: native prefix for `x86_64-linux-android34` (done)
 
 Script: `scripts/android/build-deps.sh`, output in `build/android/x86_64/prefix`.
 
@@ -83,7 +83,7 @@ Every artefact is linked with `-Wl,-z,max-page-size=16384`.
 **Accept when** every `.so` has an unversioned `lib*.so` SONAME, only NDK/`libc++_shared` and
 in-prefix NEEDED entries, and `LOAD p_align` 0x4000. A checker script enforces this.
 
-### M3: the Logos runtime for Android
+### M3: the Logos runtime for Android (done)
 
 Script: `scripts/android/build-runtime.sh`. Revisions are pinned to the working desktop
 closure (liblogos `db45024` and its flake.lock pins).
@@ -104,7 +104,7 @@ patches in `patches/` are applied by the script.
 `capability_module` comes up in a `liblogos_host_qt.so` child, checked with logcat and
 `ps -A`.
 
-### M4: Kotlin wrapper for liblogos
+### M4: Kotlin wrapper for liblogos (done, see `android-build.md`)
 
 This is the user's first step.
 

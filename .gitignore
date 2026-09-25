@@ -7,14 +7,20 @@ result-*
 
 # Gradle / Android
 android/.gradle/
+android/.kotlin/
+android/**/.kotlin/
 android/local.properties
+android/build/
 android/**/build/
 android/**/.cxx/
+android/.idea/
 *.hprof
 
-# Native libraries and .lgx modules staged from Nix build output -- build
-# artifacts, not source; regenerate with the scripts under scripts/.
+# Native libraries and module directories staged by scripts/android/stage.sh
+# from build/android/<abi>/ -- build artifacts, not source; regenerate with
+# scripts/android/build-jni.sh + scripts/android/stage.sh.
 android/**/src/main/jniLibs/
+android/**/src/main/modules-staged/
 android/**/src/main/assets/modules/
 
 # Scratch build output

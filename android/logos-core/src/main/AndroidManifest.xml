@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+      No permissions: liblogos talks to its module host processes over unix
+      sockets in the app's cacheDir. Modules that use the network (e.g. the
+      blockchain node, a later milestone) need the app to declare INTERNET.
+    -->
+</manifest>

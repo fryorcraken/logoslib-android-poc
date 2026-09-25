@@ -1,0 +1,25 @@
+Rationale: tests/ and the googletest FetchContent fallback are added unconditionally, so an
+NDK cross build (no GTest, FetchContent disconnected) fails to configure. Adds an off switch
+with the same shape as logos-container's / process-stats' (default ON = unchanged).
+Applies to logos-module-loader-qt 888da92.
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -90,6 +90,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+ add_subdirectory(src)
+
++option(LOGOS_MODULE_LOADER_QT_BUILD_TESTS "Build the test suite (needs GoogleTest)" ON)
++if(LOGOS_MODULE_LOADER_QT_BUILD_TESTS)
+ # GoogleTest setup
+ find_package(GTest QUIET)
+ if(NOT GTest_FOUND)
+@@ -107,6 +109,7 @@ enable_testing()
+ include(GoogleTest)
+
+ add_subdirectory(tests)
++endif()  # LOGOS_MODULE_LOADER_QT_BUILD_TESTS
+
+ # Install rules: the parent-side loader lib + its header, and the host binary.
+ install(TARGETS logos_module_loader_qt

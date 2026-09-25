@@ -18,7 +18,15 @@ JNI shim per library and has no shared inter-module transport.
 
 ## Status
 
-**Investigation and gating experiments done; building the Kotlin wrapper for liblogos next.**
+**The Kotlin wrapper for liblogos works on the emulator. Loading the blockchain module on
+Android is next.**
+
+<img src="docs/img/m4-demo.png" alt="Demo app: start, load hello_module, ping -> pong, event tag-1" width="300" align="right">
+
+`LogosCore` (Kotlin) starts `liblogos_core` inside the app process. `capability_module` and
+`hello_module` each run in their own `liblogos_host_qt.so` child process, exec'd from the
+APK's native library directory. `ping` returns `"pong"` in 3-5 ms, and events reach Kotlin in
+2-5 ms. See [`docs/android-build.md`](docs/android-build.md) to build and run it.
 
 | Bar | State |
 | --- | --- |
@@ -27,9 +35,9 @@ JNI shim per library and has no shared inter-module transport.
 | Pure-C, in-process module calls through the `lp_*` C ABI (the route the JNI shim will use) | Done on desktop: [`experiments/lp-inprocess`](experiments/lp-inprocess) |
 | Qt + QtRemoteObjects in a JVM-less module process, exec'd from an APK on the emulator | Works with a ~60-line fix: [`experiments/qt-jvmless`](experiments/qt-jvmless) |
 | Qt-free liblogos runtime (Boost, container, loader) cross-built and run on the emulator | Done: [`experiments/ndk-runtime`](experiments/ndk-runtime) |
-| Kotlin wrapper for liblogos + a trivial module on the emulator | Next: [`docs/plan.md`](docs/plan.md) M2-M4 |
+| Kotlin wrapper for liblogos + a trivial module on the emulator (load, call, event, clean stop) | **Done**, 18/18 checks on the x86_64 API 34 emulator: [`android/`](android), [`scripts/android/`](scripts/android), [`docs/android-build.md`](docs/android-build.md) |
 | Blockchain module under liblogos on desktop: joins devnet, syncs, follows the head; `bc_probe` calls it | Done: [`experiments/bc-desktop`](experiments/bc-desktop), [`modules/bc_probe`](modules/bc_probe) |
-| Node library `liblogos_blockchain.so` for Android (x86_64 + arm64), with L1 circuits built for Android | Cross-built, not yet run on the emulator: [`experiments/bc-android-build`](experiments/bc-android-build) |
+| Node library `liblogos_blockchain.so` for Android (x86_64 + arm64), with L1 circuits built for Android | Cross-built by a repo script, not yet run on the emulator: [`scripts/android/build-blockchain.sh`](scripts/android/build-blockchain.sh), [`docs/blockchain-android.md`](docs/blockchain-android.md) |
 | Blockchain module running on Android, and the inter-module call on Android | M5 / M6 |
 
 ## Findings in brief
@@ -76,11 +84,17 @@ JNI shim per library and has no shared inter-module transport.
 ## Layout
 
 ```
+android/                 Gradle project: :logos-core (Kotlin API + JNI shim) and :demo-app
+scripts/android/         NDK builds of dependencies, runtime, node library; staging, APK, emulator
+docs/android-build.md    build and run from scratch; M4 acceptance evidence
+docs/blockchain-android.md  node library build for Android, pins, runtime caveats
 docs/investigation.md    findings, each marked verified-from-source / by-experiment / inferred
 docs/plan.md             milestones M0-M8 with acceptance checks
 docs/research/           per-track research notes with claims, evidence and verifier verdicts
 experiments/             desktop probe, in-process lp_* harness, Android gating experiments
 patches/                 narrow patches to upstream repos, grouped by repo (none upstreamed yet)
+modules/hello_module/    trivial test module (ping, echo, event), runs on the emulator
+modules/bc_probe/        tiny module that calls blockchain_module (inter-module demo, desktop-proven)
 modules/lez_probe/       tiny module that calls lez_core (inter-module pattern, desktop-proven)
 ```
 
