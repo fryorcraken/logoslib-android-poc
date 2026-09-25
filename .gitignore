@@ -22,3 +22,6 @@ build/
 
 # Local research/build scratch (scripts, probe output)
 .work/
+
+# aqtinstall writes its log to the working directory
+aqtinstall.log

@@ -1,0 +1,27 @@
+[main] main thread 140028705939136
+[qt] QCoreApplication created on thread 140028664612544
+[2026-09-25 12:57:13.155] [info] [logos] Granting host services to 'capability_module': token_registry,token_delivery
+[2026-09-25 12:57:13.166] [out] [capability_module] [2026-09-25 12:57:13.166] [info] Granting host services to capability_module: ["token_registry","token_delivery"]
+[2026-09-25 12:57:13.168] [info] [logos] Module loaded: capability_module
+[qt] logos_core_start() returned on thread 140028664612544
+[main] runtime up; lp_protocol_version=0.9.0 mode=remote
+[2026-09-25 12:57:13.191] [info] [logos] Module loaded: lez_core
+[main] logos_core_load_module(lez_core) from NON-Qt thread -> 1 in 23 ms
+[main] sockets under TMPDIR while running:
+total 0
+drwxr-xr-x. 1 fryorcraken fryorcraken 126 Sep 25 12:57 .
+drwxr-xr-x. 1 fryorcraken fryorcraken  74 Sep 25 12:56 ..
+srwxr-xr-x. 1 fryorcraken fryorcraken   0 Sep 25 12:57 logos_capability_module_feb241afd8ec
+srwxr-xr-x. 1 fryorcraken fryorcraken   0 Sep 25 12:57 logos_lez_core_feb241afd8ec
+[main] host TokenManager holds a token for lez_core: yes
+[main] lp_client_create -> 0x402b6f40 in 0 ms
+[main] lp_get_methods: 2 bytes: []
+[main] lp_invoke(version, []) rc=0 in 0 ms result="0.3.0" error=(null)
+[main] lp_invoke(name, []) rc=0 in 0 ms result="lez_core" error=(null)
+[main] lp_invoke(account_id_to_base58, ["0000000000000000000000000000000000000000000000000000000000000001"]) rc=0 in 3 ms result="11111111111111111111111111111112" error=(null)
+[main] lp_invoke(no_such_method_xyz, []) rc=0 in 0 ms result=null error=(null)
+[main] lp_invoke_async dispatched rc=0
+[async-cb] on thread 140028664612544 ok=1 json="0.3.0"
+[main] lp_invoke(anything, []) rc=-4 in 3085 ms result=(null) error={"code":"object_unavailable","message":"failed to acquire remote object 'not_loaded_module' (module not loaded, not published, or transport failure)","origin":"not_loaded_module"}
+[qt] exec() returned 0; cleaning up
+[main] done

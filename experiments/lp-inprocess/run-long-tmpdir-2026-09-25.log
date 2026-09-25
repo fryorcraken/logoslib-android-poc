@@ -1,0 +1,159 @@
+[main] main thread 139639610502848
+[qt] QCoreApplication created on thread 139639604868800
+[2026-09-25 13:06:29.571] [info] [logos] Granting host services to 'capability_module': token_registry,token_delivery
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module] {
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]     "IID": "org.logos.LogosProviderPlugin",
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]     "MetaData": {
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         "author": "Logos Core Team",
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         "capabilities": [
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]             "module_coordination",
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]             "permission_management"
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         ],
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         "category": "security",
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         "codegen": {
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]             "impl_class": "CapabilityModuleImpl",
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]             "impl_header": "src/capability_module_impl.h"
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         },
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         "dependencies": [
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         ],
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         "description": "Coordinates permissions between modules",
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         "display_name": "Capabilities",
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         "host_services": [
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]             "token_registry",
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]             "token_delivery"
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         ],
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         "interface": "universal",
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         "logos_protocol_version": "0.9.0",
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         "main": "capability_module_plugin",
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         "name": "capability_module",
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         "nix": {
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]             "cmake": {
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]                 "extra_sources": [
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]                 ],
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]                 "find_packages": [
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]                     "Boost"
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]                 ]
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]             },
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]             "external_libraries": [
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]             ],
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]             "packages": {
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]                 "build": [
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]                     "boost"
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]                 ],
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]                 "runtime": [
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]                     "boost"
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]                 ]
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]             }
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         },
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         "type": "core",
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]         "version": "1.0.0"
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]     },
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]     "archlevel": 1,
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]     "className": "CapabilityModuleCdylibPlugin",
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]     "debug": false,
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module]     "version": 395520
+[2026-09-25 13:06:29.581] [info] [logos] [capability_module] }
+[2026-09-25 13:06:29.583] [out] [capability_module] [2026-09-25 13:06:29.582] [info] Granting host services to capability_module: ["token_registry","token_delivery"]
+[2026-09-25 13:06:29.583] [critical] [logos] [capability_module] Critical:  Listen failed for URL: QUrl("local:logos_capability_module_6465a4331ffd") (:0)
+[2026-09-25 13:06:29.583] [critical] [logos] [capability_module] Critical:  QAbstractSocket::HostNotFoundError (:0)
+[2026-09-25 13:06:29.583] [critical] [logos] [capability_module] Critical: RemoteTransportHost: failed to listen on "local:logos_capability_module_6465a4331ffd" - error QRemoteObjectNode::ListenFailed - socket path "/home/fryorcraken/src/fryorcraken/logoslib-android-poc/.work/verify-call-routes/t/logos_capability_module_6465a4331ffd" (:0)
+[2026-09-25 13:06:29.583] [critical] [logos] [capability_module] Critical:  Listen failed for URL: QUrl("local:logos_capability_module_6465a4331ffd") (:0)
+[2026-09-25 13:06:29.583] [critical] [logos] [capability_module] Critical:  QAbstractSocket::HostNotFoundError (:0)
+[2026-09-25 13:06:29.583] [critical] [logos] [capability_module] Critical: RemoteTransportHost: failed to listen on "local:logos_capability_module_6465a4331ffd" - error QRemoteObjectNode::ListenFailed - socket path "/home/fryorcraken/src/fryorcraken/logoslib-android-poc/.work/verify-call-routes/t/logos_capability_module_6465a4331ffd" (:0)
+[2026-09-25 13:06:29.583] [critical] [logos] [capability_module] Critical: LogosAPIProvider: Failed to publish "capability_module" (:0)
+[2026-09-25 13:06:29.583] [out] [capability_module] [2026-09-25 13:06:29.583] [critical] Failed to register module for remote access: capability_module
+[2026-09-25 13:06:29.583] [critical] [logos] [capability_module] FATAL: module 'capability_module' crashed (signal 11). Backtrace (raw addresses; decode with atos/addr2line):
+[2026-09-25 13:06:29.583] [info] [logos] [capability_module]   0x432c34
+[2026-09-25 13:06:29.583] [info] [logos] [capability_module]   0x7fdf8f4419c0
+[2026-09-25 13:06:29.583] [critical] [logos] [capability_module] FATAL: end backtrace
+[2026-09-25 13:06:29.687] [critical] [logos] Module process crashed: capability_module
+[2026-09-25 13:06:29.687] [error] [logos] Failed to load module capability_module: the module process died on signal 11 before it reported that it had loaded
+[2026-09-25 13:06:29.687] [warning] [logos] Failed to load capability module
+[qt] logos_core_start() returned on thread 139639604868800
+[main] protocol=0.9.0 mode=remote
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core] {
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]     "IID": "org.logos.LogosProviderPlugin",
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]     "MetaData": {
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         "author": "Logos Blockchain Team",
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         "capabilities": [
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         ],
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         "category": "blockchain",
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         "codegen": {
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]             "impl_class": "LEZCoreModule",
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]             "impl_header": "src/lez_core_module.h"
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         },
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         "dependencies": [
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         ],
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         "description": "Logos Execution Zone Core Module for Logos Core",
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         "display_name": "LEZ Core Module",
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         "include": [
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         ],
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         "interface": "universal",
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         "logos_protocol_version": "0.2.0",
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         "main": "lez_core_plugin",
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         "name": "lez_core",
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]         "nix": {
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]             "cmake": {
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]                 "extra_include_dirs": [
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]                 ],
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]                 "extra_link_libraries": [
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]                 ],
+[2026-09-25 13:06:29.697] [info] [logos] [lez_core]                 "extra_sources": [
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]                 ],
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]                 "find_packages": [
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]                 ]
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]             },
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]             "external_libraries": [
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]                 {
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]                     "name": "wallet_ffi"
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]                 }
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]             ],
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]             "packages": {
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]                 "build": [
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]                 ],
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]                 "runtime": [
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]                     "nlohmann_json"
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]                 ]
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]             }
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]         },
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]         "type": "core",
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]         "version": "0.4.1"
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]     },
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]     "archlevel": 1,
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]     "className": "LezCoreCdylibPlugin",
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]     "debug": false,
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core]     "version": 395520
+[2026-09-25 13:06:29.698] [info] [logos] [lez_core] }
+[2026-09-25 13:06:29.712] [critical] [logos] [lez_core] Critical:  Listen failed for URL: QUrl("local:logos_lez_core_6465a4331ffd") (:0)
+[2026-09-25 13:06:29.712] [critical] [logos] [lez_core] Critical:  QAbstractSocket::HostNotFoundError (:0)
+[2026-09-25 13:06:29.712] [critical] [logos] [lez_core] Critical: RemoteTransportHost: failed to listen on "local:logos_lez_core_6465a4331ffd" - error QRemoteObjectNode::ListenFailed - socket path "/home/fryorcraken/src/fryorcraken/logoslib-android-poc/.work/verify-call-routes/t/logos_lez_core_6465a4331ffd" (:0)
+[2026-09-25 13:06:29.712] [critical] [logos] [lez_core] Critical:  Listen failed for URL: QUrl("local:logos_lez_core_6465a4331ffd") (:0)
+[2026-09-25 13:06:29.712] [critical] [logos] [lez_core] Critical:  QAbstractSocket::HostNotFoundError (:0)
+[2026-09-25 13:06:29.712] [critical] [logos] [lez_core] Critical: RemoteTransportHost: failed to listen on "local:logos_lez_core_6465a4331ffd" - error QRemoteObjectNode::ListenFailed - socket path "/home/fryorcraken/src/fryorcraken/logoslib-android-poc/.work/verify-call-routes/t/logos_lez_core_6465a4331ffd" (:0)
+[2026-09-25 13:06:29.712] [critical] [logos] [lez_core] Critical: LogosAPIProvider: Failed to publish "lez_core" (:0)
+[2026-09-25 13:06:29.712] [out] [lez_core] [2026-09-25 13:06:29.712] [critical] Failed to register module for remote access: lez_core
+[2026-09-25 13:06:29.712] [critical] [logos] [lez_core] FATAL: module 'lez_core' crashed (signal 11). Backtrace (raw addresses; decode with atos/addr2line):
+[2026-09-25 13:06:29.712] [info] [logos] [lez_core]   0x432c34
+[2026-09-25 13:06:29.712] [info] [logos] [lez_core]   0x7fbf6ec419c0
+[2026-09-25 13:06:29.712] [info] [logos] [lez_core]   0x474558
+[2026-09-25 13:06:29.712] [info] [logos] [lez_core]   0x431249
+[2026-09-25 13:06:29.712] [info] [logos] [lez_core]   0x7fbf6ec2a4d8
+[2026-09-25 13:06:29.712] [info] [logos] [lez_core]   0x7fbf6ec2a59b
+[2026-09-25 13:06:29.712] [info] [logos] [lez_core]   0x432535
+[2026-09-25 13:06:29.712] [critical] [logos] [lez_core] FATAL: end backtrace
+[2026-09-25 13:06:29.821] [critical] [logos] Module process crashed: lez_core
+[2026-09-25 13:06:29.821] [error] [logos] Failed to load module lez_core: the module process died on signal 11 before it reported that it had loaded
+[2026-09-25 13:06:29.821] [warning] [logos] Failed to load module: lez_core
+[main] load(lez_core) off-Qt-thread -> 0 in 134 ms
+[main] core token for lez_core present: no
+[main] baseline lp_invoke(version, timeout=5000) rc=-4 in 5251 ms result=(null) error={"code":"object_unavailable","message":"failed to acquire remote object 'lez_core' (module not loaded, not published, or transport failure)","origin":"lez_core"}
+[main] lez_core lp_get_methods NULL in 0 ms
+[qt] blocking Qt thread for 4000 ms
+[qt] unblocked
+[main] qt-blocked lp_invoke(version, timeout=500) rc=-4 in 4326 ms result=(null) error={"code":"object_unavailable","message":"failed to acquire remote object 'lez_core' (module not loaded, not published, or transport failure)","origin":"lez_core"}
+[main] other-origin lp_invoke(name, timeout=5000) rc=-4 in 4750 ms result=(null) error={"code":"object_unavailable","message":"failed to acquire remote object 'lez_core' (module not loaded, not published, or transport failure)","origin":"lez_core"}
+[main] capability_module lp_get_methods NULL in 0 ms
+[main] lp_invoke_async rc=0
+[async-cb] on thread 139639604868800 ok=0 json={"code":"object_unavailable","message":"failed to acquire remote object 'lez_core' (module not loaded, not published, or transport failure)","origin":"lez_core"}
+[qt] exec() returned 0; cleaning up
+[main] done

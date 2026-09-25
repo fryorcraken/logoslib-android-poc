@@ -1,0 +1,28 @@
+{
+  "name": "lez_probe",
+  "display_name": "LEZ Probe",
+  "version": "0.0.1",
+  "description": "Calls lez_core over liblogos transport to demonstrate inter-module communication",
+  "author": "logoslib-android-poc",
+  "type": "core",
+  "category": "test",
+  "interface": "universal",
+  "codegen": {
+    "impl_header": "src/lez_probe_impl.h",
+    "impl_class": "LezProbeImpl"
+  },
+  "main": "lez_probe_plugin",
+  "dependencies": ["lez_core"],
+  "capabilities": [],
+  "include": [],
+  "nix": {
+    "packages": { "build": [], "runtime": [] },
+    "external_libraries": [],
+    "cmake": {
+      "find_packages": [],
+      "extra_sources": [],
+      "extra_include_dirs": [],
+      "extra_link_libraries": []
+    }
+  }
+}
