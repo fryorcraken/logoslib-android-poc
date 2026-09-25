@@ -136,6 +136,13 @@ An instrumented test (`connectedAndroidTest`) asserts all of it.
 
 ### M5: blockchain_module on Android
 
+**Done (2026-09-25, x86_64 emulator):** the demo app runs the node as a devnet 0.3.0-rc.4
+follower, which syncs to the tip in 32-38 s with newBlock events reaching Kotlin; the
+stretch (the standalone chain, proving on the device) also works. It took one upstream patch
+(DNS, `patches/logos-blockchain/logos-blockchain-02-*`). `scripts/android/run-m5.sh`, 17/17;
+results and measurements in [`android-build.md`](android-build.md), "M5/M6"; caveats in
+[`blockchain-android.md`](blockchain-android.md). The plan below is kept as written.
+
 Research is done ([`research/exp-bc-*.md`](research)). Every native piece is proven for
 Android; the Android package itself has not yet been built or run.
 
@@ -151,11 +158,14 @@ Android; the Android package itself has not yet been built or run.
     one-line linker shim redirects librocksdb-sys's `-lstdc++` to `libc++_shared`.
   - Result: 87 MB (x86_64) / 82 MB (arm64), of which 35.6 MB is embedded circuit data. It
     needs only `libc++_shared`, libc, libdl and libm, and is 16 KB-aligned.
-  - To do: turn the experiment into `scripts/android/build-blockchain.sh`.
+  - Built by `scripts/android/build-blockchain.sh` (tag `0.3.0-rc.4`, see below).
 - **Module plugin, `blockchain_module_plugin`:** built with logos-module-builder's CMake path
   from M3, plus an NDK build of libfyaml (and the boost/nlohmann headers).
   `patches/logos-blockchain-module/` silences the full-block-JSON-on-stderr log, which would
-  flood logcat.
+  flood logcat. Done: `scripts/android/build-blockchain-module.sh` builds it and `bc_probe`.
+  The node library and libfyaml ship inside the module directory, and the plugin has
+  DT_RUNPATH `$ORIGIN`. The real module host loads it on the emulator
+  ([`blockchain-android.md`](blockchain-android.md), "The module plugin").
 - **Node revision:** build the node at tag `0.3.0-rc.4`. It is the pin plus the devnet
   genesis, with identical C bindings, so `start(cfg, "")` joins devnet. The alternative is
   the pin plus `config/blockchain/deployment-devnet-0.3.0-rc.4.yaml` (with `tx_ttl`), which
@@ -197,6 +207,11 @@ transport carries the hop, with no glue code.
 **Accept when** the UI shows `bc_probe`'s live height and the logs show `capability_module`
 issuing a token and the `bc_probe` → `blockchain_module` invocation.
 
+**Done (2026-09-25):** the demo's "via bc_probe" row tracks the live height (0-1 ms per hop).
+With `LOGOS_LOG_LEVEL=debug` the logs show bc_probe's `requestModule` for
+`blockchain_module` reaching capability_module, then the calls
+([`android-build.md`](android-build.md), "M5/M6").
+
 ### M7: size and packaging report, arm64-v8a, CI
 
 - Per-ABI APK size table.
@@ -207,7 +222,8 @@ issuing a token and the `bc_probe` → `blockchain_module` invocation.
 
 1. The node's runtime behaviour on Android: DNS without `/etc/resolv.conf`, netlink, a
    writable cwd for rapidsnark, on-device proving time and memory. Its native build is
-   proven.
+   proven. Update (M5): DNS was a real blocker (patched); netlink only warns; the cwd is
+   handled; proving works on the x86_64 emulator. Phones (arm64) remain untested.
 2. The volume of native dependencies to cross-build (Boost, OpenSSL, libsodium, Qt glue):
    proven piece by piece, not yet end to end.
 3. The Android 12+ phantom-process limit on long-lived module children. Untested.

@@ -24,6 +24,14 @@ import kotlin.time.Duration.Companion.seconds
  * @property redirectStdioToLogcat pipe the process' stdout/stderr (spdlog, liblogos and the
  *   module host children, which inherit them) into logcat under tag `logos-stdio`.
  * @property readOnlyModules make the extracted module directories read-only.
+ * @property moduleWatchInterval how often [LogosCore] compares the modules it loaded with
+ *   liblogos' loaded list to notice a module host that died ([LogosCore.moduleExits]); it is
+ *   also the worst-case delay before a call in flight to a dead module fails.
+ * @property chdirToWorkDir chdir() the process to `filesDir/work` before liblogos starts, so
+ *   the module hosts it spawns inherit a writable working directory instead of "/".
+ * @property logLevel exported as `LOGOS_LOG_LEVEL` (liblogos' spdlog level, e.g. `debug` or
+ *   `info,subprocess=warn`); `debug` also lets the module hosts' Qt debug lines through to
+ *   `logos-stdio`. Null leaves liblogos' default (info).
  */
 public data class LogosConfig(
     val callTimeout: Duration = 20.seconds,
@@ -36,4 +44,7 @@ public data class LogosConfig(
     val originModule: String = "android_host",
     val redirectStdioToLogcat: Boolean = true,
     val readOnlyModules: Boolean = true,
+    val moduleWatchInterval: Duration = 1.seconds,
+    val chdirToWorkDir: Boolean = true,
+    val logLevel: String? = null,
 )

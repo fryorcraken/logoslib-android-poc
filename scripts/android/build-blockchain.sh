@@ -233,8 +233,10 @@ step_bundle() {
 
 step_gen() {
   local key="gen circom=$CIRCOM_VERSION lbc=$LBC_REV patches=[$(patch_key "${LBC_PATCHES[@]}")] bundle=$LBC_BUNDLE_SHA256"
-  host_should_skip gen "$key" "$GEN_DIR/signature/signature_cpp/Makefile" && return 0
-  step_begin gen
+  # Stamp "bc-gen", not "gen": build/host/stamps/gen belongs to build-runtime.sh's host
+  # code-generator step, and sharing the file made each script redo the other's step.
+  host_should_skip bc-gen "$key" "$GEN_DIR/signature/signature_cpp/Makefile" && return 0
+  step_begin bc-gen
   [ -x "$CIRCOM" ] || die "no circom at $CIRCOM (run the circom step)"
   local res="$LBC_SRC/.github/resources/witness-generator" spec name path file stem out cpp
   for spec in "${CIRCUITS[@]}"; do
@@ -255,7 +257,7 @@ step_gen() {
       || die "$name: generated $stem.dat differs from the v$LBC_VERSION release witness_generator.dat"
     say "-- $name: C++ generated; $stem.dat byte-identical to the release"
   done
-  host_done gen "$key"
+  host_done bc-gen "$key"
 }
 
 step_gmp() {
@@ -279,7 +281,7 @@ step_gmp() {
 
 step_witness() {
   local json_inc="$LBC_SRC/rapidsnark/depends/json/single_include"
-  local key="witness gen=[$(stamp_of "$HOST_STAMPS/gen")] gmp=[$(stamp_of "$STAMP_DIR/bc-gmp")] api=$ANDROID_API"
+  local key="witness gen=[$(stamp_of "$HOST_STAMPS/bc-gen")] gmp=[$(stamp_of "$STAMP_DIR/bc-gmp")] api=$ANDROID_API"
   step_should_skip bc-witness "$key" "$WIT_DIR/signature/libsignature.a" && return 0
   step_begin bc-witness
   [ -f "$GMP_DIR/include/gmp.h" ] || die "no Android GMP at $GMP_DIR (run the gmp step)"
@@ -370,6 +372,13 @@ step_cargo() {
   export RAPIDSNARK_LIB_DIR="$RS_DIR/lib"
   env | grep -E '^(CC_|CXX_|AR_|RANLIB_|CARGO_TARGET_|BINDGEN|LIBCLANG|LBC_|RAPIDSNARK)' | sort | sed 's/^/   /'
   git -C "$BC_SRC" status --short | sed 's/^/   git: /'
+  # The c-bindings build script writes the cbindgen header into the source tree and reruns
+  # only when c-bindings/src changes. When the source was re-prepared (a new patch set:
+  # fetch_git's `git clean -fdx` deletes the header), make it run again.
+  if [ ! -f "$BC_SRC/c-bindings/logos_blockchain.h" ]; then
+    say "-- c-bindings/logos_blockchain.h is missing (source re-prepared): touching c-bindings/build.rs so cbindgen reruns"
+    touch "$BC_SRC/c-bindings/build.rs"
+  fi
 
   say "-- cargo build -p logos-blockchain-c --release --locked --target $TRIPLE -j $JOBS (fat LTO: ~8-9 min)"
   local t0; t0=$(date +%s)

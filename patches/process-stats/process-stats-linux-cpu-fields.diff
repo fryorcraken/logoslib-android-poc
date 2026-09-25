@@ -1,0 +1,15 @@
+# rationale: proposal, not applied by the build scripts. getProcessStats() skips 14 whitespace tokens of /proc/<pid>/stat and then reads "utime" and "stime", which are therefore fields 15 and 16 (stime and cutime, proc(5)): cpu_time_seconds and cpu_percent report kernel time only. On the x86_64 emulator logos_core_get_module_stats() gave 4-9 % for a syncing blockchain_module host that top showed at 105-121 %. The token count also shifts when the command name contains spaces. Parse after the last ')' and skip fields 3..13. :logos-core's LogosCore.moduleStats() corrects the figures in Kotlin meanwhile (internal/ProcStat.kt).
+diff --git a/src/process_stats.cpp b/src/process_stats.cpp
+--- a/src/process_stats.cpp
++++ b/src/process_stats.cpp
+@@ -84,5 +84,8 @@
+         std::getline(statFile, line);
+-        std::istringstream iss(line);
++        // proc(5): utime and stime are fields 14 and 15. Start after "(comm)" (comm may
++        // contain spaces), where the next token is field 3, and skip fields 3..13.
++        const std::string::size_type rparen = line.rfind(')');
++        std::istringstream iss(rparen == std::string::npos ? line : line.substr(rparen + 1));
+         std::string token;
+-        for (int i = 0; i < 14 && iss >> token; ++i) {
++        for (int i = 0; i < 11 && iss >> token; ++i) {
+         }

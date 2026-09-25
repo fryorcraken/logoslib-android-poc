@@ -69,6 +69,7 @@ class RuntimeEnvTest {
             homeDir = File("/data/user/0/pkg/files"),
             modulesDir = File("/data/user/0/pkg/files/modules"),
             persistDir = File("/data/user/0/pkg/files/persist"),
+            workDir = File("/data/user/0/pkg/files/work"),
         )
         val env = RuntimeEnv.variables(layout)
         assertEquals(appCache, env["TMPDIR"])

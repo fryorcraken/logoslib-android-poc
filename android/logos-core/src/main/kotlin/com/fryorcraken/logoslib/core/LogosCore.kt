@@ -5,6 +5,7 @@ import com.fryorcraken.logoslib.core.internal.LogosNative
 import com.fryorcraken.logoslib.core.internal.LogosRuntime
 import com.fryorcraken.logoslib.core.internal.SocketPathBudget
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.emitAll
@@ -25,6 +26,8 @@ public data class StartInfo(
     val tmpDir: String,
     val modulesDir: String,
     val persistDir: String,
+    /** Working directory of the process, inherited by every module host (see [LogosConfig.chdirToWorkDir]). */
+    val workDir: String,
     /** Module directories extracted from assets (what liblogos can discover). */
     val packagedModules: List<String>,
     /** False when the extracted tree was already current. */
@@ -114,6 +117,33 @@ public class LogosCore(context: Context, public val config: LogosConfig = LogosC
     }
 
     /**
+     * pid, CPU and resident memory of every loaded module's host process
+     * (`logos_core_get_module_stats()`); cheap, reads /proc.
+     */
+    public fun moduleStats(): List<ModuleStats> {
+        runtime.requireRunning()
+        return runtime.moduleStats()
+    }
+
+    /**
+     * Loaded modules as last seen by the module watchdog (refreshed every
+     * [LogosConfig.moduleWatchInterval] and after every load/unload through this class).
+     */
+    public val loadedModulesFlow: StateFlow<List<String>> get() = runtime.loaded
+
+    /**
+     * Module host deaths: a module that left liblogos' loaded list without [unloadModule] --
+     * its host process crashed, called `exit()` (the blockchain node's panic hook does) or was
+     * killed. Hot flow, no replay: collect it before the event you care about, or ask
+     * [moduleExit]. Calls in flight to that module fail with [LogosModuleDiedException], and
+     * so does every later call until the module is loaded again.
+     */
+    public val moduleExits: SharedFlow<ModuleExit> get() = runtime.moduleExits
+
+    /** The recorded death of [module] if its host died and it was not loaded again since, else null. */
+    public fun moduleExit(module: String): ModuleExit? = runtime.moduleExit(module)
+
+    /**
      * Loads [name] (and, per [deps], its dependencies), each into its own host process.
      * "Ensure loaded" semantics: true also when it was already loaded.
      *
@@ -131,9 +161,12 @@ public class LogosCore(context: Context, public val config: LogosConfig = LogosC
     ): Boolean {
         runtime.requireRunning()
         SocketPathBudget.require(runtime.tmpDir(), listOf(name))
-        return deadline(timeout, "loadModule($name)") {
+        val ok = deadline(timeout, "loadModule($name)") {
             runtime.detached { LogosNative.nativeLoadModule(name, deps.native) == 1 }
         }
+        // Start watching the new host(s) now rather than at the next watchdog tick.
+        runCatching { runtime.checkModules() }
+        return ok
     }
 
     /** Unloads [name] (and, if [withDependents], everything depending on it first). */
@@ -143,8 +176,10 @@ public class LogosCore(context: Context, public val config: LogosConfig = LogosC
         timeout: Duration = config.loadTimeout,
     ): Boolean {
         runtime.requireRunning()
-        return deadline(timeout, "unloadModule($name)") {
-            runtime.detached { LogosNative.nativeUnloadModule(name, withDependents) == 1 }
+        return runtime.unloading(name) {
+            deadline(timeout, "unloadModule($name)") {
+                runtime.detached { LogosNative.nativeUnloadModule(name, withDependents) == 1 }
+            }
         }
     }
 

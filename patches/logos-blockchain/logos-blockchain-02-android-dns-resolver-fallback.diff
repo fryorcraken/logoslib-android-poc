@@ -1,0 +1,23 @@
+# rationale: Android has no /etc/resolv.conf. libp2p's SwarmBuilder::with_dns() reads it through hickory's system config and fails with ENOENT, and the network service unwraps Swarm::build (services/network/src/backends/libp2p/swarm/mod.rs:86), so the node panics during start_lb_node and the panic hook exit(1)s the module host. libp2p-dns documents this ("This is the case on all versions of Android"). On Android only, build the DNS transport from hickory's default upstream config (Google 8.8.8.8/8.8.4.4) instead; /ip4 and /ip6 multiaddrs (all devnet peers) never reach the resolver. Upstream would rather read the resolvers from Android's system properties or expose the resolver in the network config.
+diff --git a/libp2p/src/swarm.rs b/libp2p/src/swarm.rs
+--- a/libp2p/src/swarm.rs
++++ b/libp2p/src/swarm.rs
+@@ -69,5 +69,15 @@
+-        let swarm = libp2p::SwarmBuilder::with_existing_identity(keypair)
++        let builder = libp2p::SwarmBuilder::with_existing_identity(keypair)
+             .with_tokio()
+-            .with_quic()
+-            .with_dns()?
++            .with_quic();
++        // Android has no /etc/resolv.conf, so `with_dns()` (hickory's system config) fails
++        // there and Swarm::build's caller unwraps the error. Use hickory's default upstream
++        // resolvers instead; /ip4 and /ip6 multiaddrs never reach the resolver.
++        #[cfg(target_os = "android")]
++        let builder = builder.with_dns_config(
++            libp2p::dns::ResolverConfig::default(),
++            libp2p::dns::ResolverOpts::default(),
++        );
++        #[cfg(not(target_os = "android"))]
++        let builder = builder.with_dns()?;
++        let swarm = builder
+             .with_behaviour(move |keypair| {

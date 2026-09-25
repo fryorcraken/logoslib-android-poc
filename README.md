@@ -18,15 +18,26 @@ JNI shim per library and has no shared inter-module transport.
 
 ## Status
 
-**The Kotlin wrapper for liblogos works on the emulator. Loading the blockchain module on
-Android is next.**
+**The Logos blockchain node runs as a liblogos module inside an Android app and syncs the
+public devnet. A second module calls it over liblogos's own transport.** Tested on the x86_64
+API 34 emulator.
 
-<img src="docs/img/m4-demo.png" alt="Demo app: start, load hello_module, ping -> pong, event tag-1" width="300" align="right">
+<img src="docs/img/m5-blockchain.png" alt="Demo app: blockchain node synced to devnet 0.3.0-rc.4, 4 peers, 5273 newBlock events, bc_probe returning the live height" width="300" align="right">
 
-`LogosCore` (Kotlin) starts `liblogos_core` inside the app process. `capability_module` and
-`hello_module` each run in their own `liblogos_host_qt.so` child process, exec'd from the
-APK's native library directory. `ping` returns `"pong"` in 3-5 ms, and events reach Kotlin in
-2-5 ms. See [`docs/android-build.md`](docs/android-build.md) to build and run it.
+- `LogosCore` (Kotlin) starts `liblogos_core` inside the app process. Every module runs in its
+  own `liblogos_host_qt.so` child process, exec'd from the APK's native library directory.
+- **Blockchain module:** it joins devnet `0.3.0-rc.4` as a follower and syncs ~5.3k blocks to
+  the tip in 32-38 s. It then follows the head at under 1% CPU and ~160 MB RSS. `newBlock`
+  events reach Kotlin.
+- **Inter-module:** `bc_probe` calls `blockchain_module` over liblogos's QtRO transport and
+  returns the live height in 0-1 ms. Nothing was hand-written for the hop.
+- **On-device proving:** an offline single-node chain produces a block per second, each with
+  a PoL Groth16 proof generated on the device. It uses the Bedrock circuits built for
+  Android.
+- **Test module:** `hello_module` answers `ping` in 3-5 ms and delivers an event in 2-5 ms.
+
+See [`docs/android-build.md`](docs/android-build.md) to build and run it, and
+[`docs/blockchain-android.md`](docs/blockchain-android.md) for the node on Android.
 
 | Bar | State |
 | --- | --- |
@@ -37,8 +48,10 @@ APK's native library directory. `ping` returns `"pong"` in 3-5 ms, and events re
 | Qt-free liblogos runtime (Boost, container, loader) cross-built and run on the emulator | Done: [`experiments/ndk-runtime`](experiments/ndk-runtime) |
 | Kotlin wrapper for liblogos + a trivial module on the emulator (load, call, event, clean stop) | **Done**, 18/18 checks on the x86_64 API 34 emulator: [`android/`](android), [`scripts/android/`](scripts/android), [`docs/android-build.md`](docs/android-build.md) |
 | Blockchain module under liblogos on desktop: joins devnet, syncs, follows the head; `bc_probe` calls it | Done: [`experiments/bc-desktop`](experiments/bc-desktop), [`modules/bc_probe`](modules/bc_probe) |
-| Node library `liblogos_blockchain.so` for Android (x86_64 + arm64), with L1 circuits built for Android | Cross-built by a repo script, not yet run on the emulator: [`scripts/android/build-blockchain.sh`](scripts/android/build-blockchain.sh), [`docs/blockchain-android.md`](docs/blockchain-android.md) |
-| Blockchain module running on Android, and the inter-module call on Android | M5 / M6 |
+| Node library `liblogos_blockchain.so` for Android, with L1 circuits built for Android | **Done** by a repo script (x86_64 run; arm64 built by the experiment): [`scripts/android/build-blockchain.sh`](scripts/android/build-blockchain.sh) |
+| Blockchain module on Android: devnet follower synced to the tip, `newBlock` events in Kotlin | **Done**, 17/17 checks on the emulator (M5) |
+| Inter-module call on Android: `bc_probe` → `blockchain_module` | **Done** (M6) |
+| arm64 phone, 16 KB-page device, phantom-process limit for a long-running node | Not tested: no arm64 emulator on this host |
 
 ## Findings in brief
 

@@ -8,8 +8,11 @@ import com.fryorcraken.logoslib.core.LogosConfig
 import com.fryorcraken.logoslib.core.LogosCore
 import com.fryorcraken.logoslib.core.LogosEvent
 import com.fryorcraken.logoslib.core.LogosException
+import com.fryorcraken.logoslib.core.LogosModuleDiedException
 import com.fryorcraken.logoslib.core.LogosSubscription
 import com.fryorcraken.logoslib.core.LogosTimeoutException
+import com.fryorcraken.logoslib.core.ModuleExit
+import com.fryorcraken.logoslib.core.ModuleStats
 import com.fryorcraken.logoslib.core.RuntimeState
 import com.fryorcraken.logoslib.core.StartInfo
 import com.fryorcraken.logoslib.core.SubscriptionStatus
@@ -22,8 +25,12 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.async
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
@@ -74,11 +81,24 @@ internal object LogosRuntime : LogosNative.NativeSink {
 
     private class RawResult(val ok: Boolean, val json: String)
     private class Listener(val module: String, val event: String, val channel: Channel<LogosEvent>)
+    private class PendingCall(val module: String, val method: String, val result: CompletableDeferred<RawResult>)
 
-    private val pendingCalls = ConcurrentHashMap<Long, CompletableDeferred<RawResult>>()
+    private val pendingCalls = ConcurrentHashMap<Long, PendingCall>()
     private val listeners = ConcurrentHashMap<Long, Listener>()
     private val statuses = ConcurrentHashMap<String, MutableStateFlow<SubscriptionStatus>>()
     private val moduleMutexes = ConcurrentHashMap<String, Mutex>()
+
+    // ---- module host watchdog (see ModuleExit) ----
+    /** Modules this runtime saw loaded, with the time they were first seen loaded. */
+    private val watched = ConcurrentHashMap<String, Long>()
+    /** Modules whose host died, until they are loaded again. */
+    private val exited = ConcurrentHashMap<String, ModuleExit>()
+    private val lastPids = ConcurrentHashMap<String, Long>()
+    private val _loaded = MutableStateFlow<List<String>>(emptyList())
+    val loaded: StateFlow<List<String>> = _loaded.asStateFlow()
+    private val _moduleExits = MutableSharedFlow<ModuleExit>(extraBufferCapacity = 64)
+    val moduleExits: SharedFlow<ModuleExit> = _moduleExits.asSharedFlow()
+    private val watchMutex = Mutex()
 
     // ---------------------------------------------------------------- lifecycle
 
@@ -94,6 +114,7 @@ internal object LogosRuntime : LogosNative.NativeSink {
                 val started = withContext(Dispatchers.IO) { doStart(context.applicationContext, config, modules) }
                 info = started
                 _state.value = RuntimeState.RUNNING
+                startWatchdog(config)
                 started
             } catch (t: Throwable) {
                 // Before the loop thread exists nothing native is running: allow another try.
@@ -107,13 +128,19 @@ internal object LogosRuntime : LogosNative.NativeSink {
         val layout = Layout.from(ctx)
         SocketPathBudget.require(layout.tmpDir.path, listOf("capability_module"))
 
-        val env = RuntimeEnv.apply(layout)
+        val env = RuntimeEnv.apply(layout, config.logLevel?.let { mapOf("LOGOS_LOG_LEVEL" to it) } ?: emptyMap())
         layout.persistDir.mkdirs()
         val assets = ModuleAssets.extract(ctx, layout.abi, layout.modulesDir, modules, config.readOnlyModules)
         SocketPathBudget.require(layout.tmpDir.path, assets.modules)
 
         NativeLibs.load(layout)
         if (config.redirectStdioToLogcat) LogosNative.nativeRedirectStdio("logos-stdio")
+        // Before logos_core_start(): every module host liblogos spawns inherits this cwd.
+        if (config.chdirToWorkDir) {
+            layout.workDir.mkdirs()
+            val rc = LogosNative.nativeChdir(layout.workDir.path)
+            if (rc != 0) Log.w(TAG, "chdir(${layout.workDir}) failed with errno $rc; module hosts keep cwd ${LogosNative.nativeGetCwd()}")
+        }
         val primeRc = LogosNative.nativeQtCorePrimeResult()
         Log.i(
             TAG,
@@ -137,6 +164,7 @@ internal object LogosRuntime : LogosNative.NativeSink {
             tmpDir = layout.tmpDir.path,
             modulesDir = layout.modulesDir.path,
             persistDir = layout.persistDir.path,
+            workDir = LogosNative.nativeGetCwd() ?: "?",
             packagedModules = assets.modules,
             modulesExtracted = assets.extracted,
             environment = env,
@@ -164,7 +192,8 @@ internal object LogosRuntime : LogosNative.NativeSink {
         _state.value = if (wasUp) RuntimeState.STOPPED else RuntimeState.FAILED
         ready?.completeExceptionally(LogosException("Qt loop exited (rc=$rc) before it was ready"))
         val stoppedEx = LogosException("liblogos runtime stopped")
-        pendingCalls.keys.toList().forEach { id -> pendingCalls.remove(id)?.completeExceptionally(stoppedEx) }
+        pendingCalls.keys.toList().forEach { id -> pendingCalls.remove(id)?.result?.completeExceptionally(stoppedEx) }
+        _loaded.value = emptyList()
         listeners.keys.toList().forEach { id -> listeners.remove(id)?.channel?.close() }
         stopped.complete(rc)
     }
@@ -196,7 +225,7 @@ internal object LogosRuntime : LogosNative.NativeSink {
             Log.d(TAG, "late result for call $callId dropped")
             return
         }
-        d.complete(RawResult(ok, json))
+        d.result.complete(RawResult(ok, json))
     }
 
     override fun event(listenerId: Long, event: String, dataJson: String) {
@@ -223,6 +252,86 @@ internal object LogosRuntime : LogosNative.NativeSink {
 
     fun loadedModules(): List<String> = LogosNative.nativeLoadedModules().toList()
 
+    /** liblogos' pids and RSS, with the CPU figures re-read from /proc (see [ProcStat]). */
+    fun moduleStats(): List<ModuleStats> = ModuleStats.parseList(LogosNative.nativeModuleStats()).map(ProcStat::corrected)
+
+    fun moduleExit(module: String): ModuleExit? = exited[module]
+
+    // ---------------------------------------------------------------- module host watchdog
+
+    /**
+     * liblogos marks a module unloaded when its host process terminates (module_manager.cpp,
+     * onTerminated), but the C ABI has no callback for it. Poll the loaded list instead and
+     * report every module that disappeared outside [unloading] (an unload we asked for).
+     */
+    private fun startWatchdog(config: LogosConfig) {
+        scope.launch(CoroutineName("logos-module-watchdog")) {
+            while (_state.value == RuntimeState.RUNNING) {
+                runCatching { checkModules() }.onFailure { Log.w(TAG, "module watchdog: ${it.message}") }
+                delay(config.moduleWatchInterval)
+            }
+        }
+    }
+
+    /** Compares liblogos' loaded list with what this runtime saw loaded; see [ModuleExit]. */
+    suspend fun checkModules() = watchMutex.withLock {
+        if (_state.value != RuntimeState.RUNNING) return@withLock
+        val now = SystemClock.elapsedRealtime()
+        val loadedNow = LogosNative.nativeLoadedModules().toList()
+        // Record the pid of every newly loaded module's host. Only then: moduleStats() keeps
+        // ONE previous CPU sample per pid for all callers (ProcStat, and process-stats), so
+        // sampling here every tick would shrink the interval an app's own polling measures
+        // cpu_percent over.
+        if (loadedNow.any { !lastPids.containsKey(it) }) {
+            runCatching { moduleStats() }.getOrNull()?.forEach { lastPids[it.name] = it.pid }
+        }
+        for (m in loadedNow) {
+            if (watched.putIfAbsent(m, now) == null && exited.remove(m) != null) {
+                Log.i(TAG, "module $m is loaded again")
+            }
+        }
+        for ((m, since) in watched.entries.toList()) {
+            if (m in loadedNow) continue
+            watched.remove(m)
+            val exit = ModuleExit(
+                module = m,
+                lastPid = lastPids.remove(m),
+                detectedAtMillis = now,
+                uptimeMillis = now - since,
+                reason = "host process exited without an unload (not in logos_core_get_loaded_modules)",
+            )
+            exited[m] = exit
+            val died = pendingCalls.entries.filter { it.value.module == m }
+            for ((id, p) in died) {
+                if (pendingCalls.remove(id) != null) {
+                    runCatching { LogosNative.nativeCancelCall(id) }
+                    p.result.completeExceptionally(LogosModuleDiedException(m, p.method, exit))
+                }
+            }
+            Log.e(TAG, "module $m died: pid ${exit.lastPid}, up ${exit.uptimeMillis} ms; ${died.size} call(s) in flight failed")
+            _moduleExits.tryEmit(exit)
+        }
+        _loaded.value = loadedNow
+    }
+
+    /**
+     * Runs an unload we asked for under the watchdog's lock: the named module and whatever
+     * went down with it (dependents) are forgotten, not reported as deaths.
+     */
+    suspend fun <T> unloading(module: String, block: suspend () -> T): T = watchMutex.withLock {
+        watched.remove(module)
+        lastPids.remove(module)
+        try {
+            block()
+        } finally {
+            val loadedNow = runCatching { LogosNative.nativeLoadedModules().toList() }.getOrNull()
+            if (loadedNow != null) {
+                watched.keys.filter { it !in loadedNow }.forEach { watched.remove(it); lastPids.remove(it) }
+                _loaded.value = loadedNow
+            }
+        }
+    }
+
     fun tmpDir(): String = info?.tmpDir ?: ""
 
     /**
@@ -232,9 +341,16 @@ internal object LogosRuntime : LogosNative.NativeSink {
      */
     suspend fun invoke(module: String, method: String, argsJson: String, lpTimeoutMs: Int): String {
         requireRunning()
+        exited[module]?.let { throw LogosModuleDiedException(module, method, it) }
         val id = nextId.incrementAndGet()
         val result = CompletableDeferred<RawResult>()
-        pendingCalls[id] = result
+        pendingCalls[id] = PendingCall(module, method, result)
+        // The watchdog marks `exited` before it fails the pending calls, so re-checking after
+        // registering cannot miss a death that was swept in between.
+        exited[module]?.let {
+            pendingCalls.remove(id)
+            throw LogosModuleDiedException(module, method, it)
+        }
         try {
             val rc = detached { LogosNative.nativeInvokeAsync(module, method, argsJson, lpTimeoutMs, id) }
             if (rc != 0) throw LogosException("lp_invoke_async($module.$method) was not dispatched: ${dispatchError(rc)}")

@@ -35,6 +35,15 @@ internal object LogosNative {
     /** Pipes stdout/stderr into logcat (idempotent). */
     @JvmStatic external fun nativeRedirectStdio(tag: String): Boolean
 
+    /**
+     * chdir() of the whole process (module hosts inherit the working directory when liblogos
+     * spawns them). 0 on success, else errno.
+     */
+    @JvmStatic external fun nativeChdir(path: String): Int
+
+    /** getcwd() of this process, or null. */
+    @JvmStatic external fun nativeGetCwd(): String?
+
     /** Return code of QtCore's JNI_OnLoad(realVM) as called from our JNI_OnLoad (-1 = JNI_ERR, expected). */
     @JvmStatic external fun nativeQtCorePrimeResult(): Int
 
@@ -50,6 +59,9 @@ internal object LogosNative {
 
     /** logos_core_get_modules_info(): JSON array, or null. */
     @JvmStatic external fun nativeModulesInfo(): String?
+
+    /** logos_core_get_module_stats(): JSON array of {name, pid, cpu_percent, cpu_time_seconds, memory_mb}, or null. */
+    @JvmStatic external fun nativeModuleStats(): String?
 
     /** logos_core_load_module(name, deps): 1 on success. BLOCKS for the whole host bring-up. */
     @JvmStatic external fun nativeLoadModule(name: String, deps: Int): Int

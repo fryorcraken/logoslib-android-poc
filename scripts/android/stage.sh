@@ -20,21 +20,29 @@
 #     an extra asset root per ABI (logos-core/build.gradle.kts adds only the roots of the
 #     ABIs in `logos.abis`: abiFilters does not filter assets), packaged as
 #     assets/modules/<abi>/<module>/ and dlopen()ed by the module host after extraction:
-#     manifest.json, <module>_plugin.so, variant, ... copied from build/android/<abi>/modules
+#     manifest.json, <module>_plugin.so, variant, ... copied from build/android/<abi>/modules.
+#     A module's private libraries stay in its directory, not in jniLibs: a NEEDED of a
+#     module .so that is a file of the same module directory is not staged again (e.g.
+#     blockchain_module/{liblogos_blockchain.so,libfyaml.so}, which its plugin finds through
+#     DT_RUNPATH $ORIGIN; scripts/android/build-blockchain-module.sh).
 #   .../modules/<abi>/modules.stamp
 #     content hash of the staged modules: LogosCore re-extracts them to filesDir/modules on
 #     the device whenever it changes. (Not a dot-file: aapt drops those from assets. For the
 #     same reason a module directory must not start with "_" or ".".)
 #
-# Checks (non-zero exit on failure): every NEEDED resolves (NDK system library or staged
-# file), then scripts/android/check-prefix.sh on the staged set (jniLibs as the prefix,
-# assets as --modules): lib*.so names and SONAMEs, NEEDED, undefined symbols, RUNPATH,
-# 16 KB LOAD alignment, ELF machine, no glibc / /nix/store, module manifests.
+# Checks (non-zero exit on failure): every NEEDED resolves (NDK system library, staged
+# file or module sibling), every module a staged manifest lists in `dependencies` is staged
+# too, then scripts/android/check-prefix.sh on the staged set (jniLibs as the prefix, assets
+# as --modules): lib*.so names and SONAMEs, NEEDED, undefined symbols, RUNPATH (and
+# $ORIGIN for module siblings), 16 KB LOAD alignment, ELF machine, no glibc / /nix/store,
+# module manifests.
 #
 # Inputs
 #   build/android/<abi>/jni/liblogos_jni.so        (scripts/android/build-jni.sh)
 #   build/android/<abi>/prefix/{lib,bin}           (build-deps.sh + build-runtime.sh)
-#   build/android/<abi>/modules/<module>/          (build-runtime.sh)
+#   build/android/<abi>/modules/<module>/          (build-runtime.sh: capability_module,
+#                                                   hello_module; build-blockchain-module.sh:
+#                                                   blockchain_module, bc_probe)
 #   $QT_ROOT/android_<abi>/lib, NDK libc++_shared.so (env.sh)
 # Outputs
 #   the two directories above (replaced on every run: staging is cheap, stale libraries
@@ -44,6 +52,9 @@
 # Usage
 #   bash scripts/android/stage.sh [x86_64|arm64-v8a] [module ...]
 #     module ...   stage only these module directories (default: all under build/.../modules)
+#   e.g. M4:     stage.sh x86_64 capability_module hello_module
+#        M5/M6:  stage.sh x86_64 capability_module hello_module blockchain_module bc_probe
+#                (blockchain_module adds ~87 MB to assets/modules: liblogos_blockchain.so)
 #   Environment: ABI, STAGE_STRIP=0 to keep symbols (default 1: llvm-strip --strip-unneeded
 #   on the staged copies; the build outputs are never modified), plus everything env.sh reads.
 set -euo pipefail
@@ -111,6 +122,14 @@ done
 if ! grep -qx capability_module <<< "$(printf '%s\n' "${MODS[@]}")"; then
   say "WARNING: capability_module is not staged; logos_core_start() needs it"
 fi
+# A module whose dependency is not packaged would be known but never loadable.
+for m in "${MODS[@]}"; do
+  [ -f "$MODULES_SRC/$m/manifest.json" ] || continue
+  for dep in $(python3 -c 'import json,sys; print(" ".join(d if isinstance(d, str) else d.get("name", "") for d in json.load(open(sys.argv[1])).get("dependencies", [])))' "$MODULES_SRC/$m/manifest.json"); do
+    grep -qx -- "$dep" <<< "$(printf '%s\n' "${MODS[@]}")" \
+      || die "module $m depends on $dep, which is not staged (add it to the module list)"
+  done
+done
 
 # ---- DT_NEEDED closure from the roots
 declare -A STAGE=()        # file name -> source path (goes to jniLibs)

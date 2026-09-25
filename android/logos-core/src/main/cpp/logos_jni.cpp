@@ -25,7 +25,10 @@
 
 #include <android/log.h>
 
+#include <unistd.h>
+
 #include <atomic>
+#include <cerrno>
 #include <cstdint>
 #include <cstring>
 #include <map>
@@ -473,6 +476,30 @@ extern "C" JNIEXPORT jboolean JNICALL JNI_FN(nativeRedirectStdio)(JNIEnv* env, j
     return stdio_logcat_start(tag.c_str()) ? JNI_TRUE : JNI_FALSE;
 }
 
+// chdir() of the whole app process. Module hosts are spawned by liblogos with no working
+// directory of their own (the host never chdir()s), so they inherit this one; an Android
+// app process starts in "/", which is read-only, and the blockchain node's prover
+// (rapidsnark) writes MyLogFile.log to the working directory. Returns 0 or errno.
+extern "C" JNIEXPORT jint JNICALL JNI_FN(nativeChdir)(JNIEnv* env, jclass, jstring jPath)
+{
+    const std::string path = toUtf8(env, jPath);
+    if (path.empty()) return EINVAL;
+    if (::chdir(path.c_str()) != 0) {
+        const int e = errno;
+        LOGW("chdir(%s) failed: %s", path.c_str(), std::strerror(e));
+        return e;
+    }
+    LOGI("working directory is now %s (inherited by the module hosts)", path.c_str());
+    return 0;
+}
+
+extern "C" JNIEXPORT jstring JNICALL JNI_FN(nativeGetCwd)(JNIEnv* env, jclass)
+{
+    char buf[4096];
+    if (!::getcwd(buf, sizeof(buf))) return nullptr;
+    return toJString(env, buf);
+}
+
 extern "C" JNIEXPORT jint JNICALL JNI_FN(nativeQtCorePrimeResult)(JNIEnv*, jclass)
 {
     return g_qtcorePrimeRc;
@@ -503,6 +530,17 @@ extern "C" JNIEXPORT jobjectArray JNICALL JNI_FN(nativeLoadedModules)(JNIEnv* en
 extern "C" JNIEXPORT jstring JNICALL JNI_FN(nativeModulesInfo)(JNIEnv* env, jclass)
 {
     char* s = logos_core_get_modules_info();
+    jstring out = s ? toJString(env, s) : nullptr;
+    delete[] s;
+    return out;
+}
+
+// logos_core_get_module_stats(): [{name, pid, cpu_percent, cpu_time_seconds, memory_mb}] for
+// every loaded module's host process (process-stats reads /proc; cpu_percent is relative to
+// the previous call). new[]-allocated like every logos_core_* string.
+extern "C" JNIEXPORT jstring JNICALL JNI_FN(nativeModuleStats)(JNIEnv* env, jclass)
+{
+    char* s = logos_core_get_module_stats();
     jstring out = s ? toJString(env, s) : nullptr;
     delete[] s;
     return out;

@@ -58,17 +58,10 @@
 # ships. OpenSSL, spdlog/fmt, liblgx and package_manager_lib are the M2 shared libraries.
 #
 # Modules are built the way logos-module-builder's Nix path builds an
-# `interface: "universal"` module, with the steps spelled out here (the builder's flake is
-# desktop-only): copy the source to build/android/<abi>/modsrc/<name>, run
-#   logos-cpp-generator --general-only --api-style lp          (umbrella; no dependencies)
-#   stamp logos_protocol_version into metadata.json            (modulePreConfigure.nix)
-#   logos-cpp-generator --header-to-lidl <impl header>          -> generated_code/<name>.lidl
-#   logos-qt-host-generator --lidl ... --backend cdylib         (Qt plugin glue)
-#   logos-cpp-generator --lidl ... --backend cdylib             (C-ABI export wrapper)
-# then configure logos-module-builder's cmake/LogosModule.cmake with the Qt/NDK toolchain
-# against the prefix. The staged manifest.json is the one logos-liblogos nix/modules.nix
-# writes (name, version, type core, main keyed by variant), with the keys liblgx reports
-# under bionic ($LGX_VARIANT, env.sh), plus a `variant` file as lgpm installs write.
+# `interface: "universal"` module (code generators on the host, then LogosModule.cmake with
+# the Qt/NDK toolchain against the prefix); the steps and the staged layout are
+# build_universal_module in scripts/android/module-build.sh, which
+# scripts/android/build-blockchain-module.sh (blockchain_module, bc_probe) shares.
 #
 # Usage:
 #   bash scripts/android/build-runtime.sh [x86_64|arm64-v8a] [STEP...]
@@ -111,12 +104,11 @@ for t in c++ python3; do command -v "$t" >/dev/null 2>&1 || die "missing host to
 [ -f "$PREFIX/lib/liblgx.so" ] && [ -f "$PREFIX/lib/libpackage_manager_lib.so" ] \
   || die "the M2 prefix is incomplete: run scripts/android/build-deps.sh $ABI first"
 
-MODULES_OUT="$ANDROID_BUILD/modules"
-MODSRC_DIR="$ANDROID_BUILD/modsrc"
+# shellcheck source=module-build.sh
+source "$SCRIPTS_DIR/module-build.sh"   # MODULES_OUT, MODSRC_DIR, ROOTS, build_universal_module
 EXTRA_MODULE_PREFIX="$ANDROID_BUILD/extra/logos-module-${LOGOS_MODULE_REV_LOADER_QT:0:7}"
 HOST_STAMP_DIR="$HOST_BUILD/stamps"
-mkdir -p "$MODULES_OUT" "$MODSRC_DIR" "$HOST_PREFIX" "$HOST_OBJ_DIR" "$HOST_STAMP_DIR"
-export LOGOS_MODULE_BUILDER_ROOT="$SRC_ROOT/logos-module-builder"
+mkdir -p "$HOST_PREFIX" "$HOST_OBJ_DIR" "$HOST_STAMP_DIR"
 
 say "prefix: $PREFIX"
 say "steps: ${STEPS[*]}   jobs: $JOBS   force: $FORCE"
@@ -147,18 +139,6 @@ loader-qt=$LOGOS_MODULE_LOADER_QT_REV liblogos=$LOGOS_LIBLOGOS_REV
 patches=$(patch_key "${P_CONTAINER[@]}" "${P_SUBPROCESS[@]}" "${P_LOADER[@]}" "${P_LOADERQT[@]}")"
 RT_KEY="rt=$(printf '%s' "$RT_KEY_TEXT" | sha256sum | cut -c1-16)"
 echo "runtime key $RT_KEY:"; printf '%s\n' "$RT_KEY_TEXT"
-
-# Qt-consumer CMake arguments shared by every runtime step: all roots are the prefix.
-ROOTS=(
-  -DBoost_USE_STATIC_LIBS=ON
-  -DOPENSSL_ROOT_DIR="$PREFIX"
-  -DLOGOS_PROTOCOL_ROOT="$PREFIX"
-  -DLOGOS_QT_HOST_ROOT="$PREFIX"
-  -DLOGOS_QT_SDK_ROOT="$PREFIX"
-  -DLOGOS_CPP_SDK_ROOT="$PREFIX"
-  -DLOGOS_CONTAINER_ROOT="$PREFIX"
-  -DLOGOS_MODULE_LOADER_ROOT="$PREFIX"
-)
 
 # host_step: step bookkeeping for the ABI-independent host tools (own stamp dir, a key
 # without the target ABI, so building the other ABI reuses them).
@@ -364,69 +344,6 @@ step_liblogos() {
   step_done liblogos "$key"
 }
 
-# build_universal_module NAME SRCDIR: generate + build one `interface: "universal"` module
-# (see the header) and stage it as $MODULES_OUT/NAME.
-build_universal_module() {
-  local name=$1 src=$2
-  local work="$MODSRC_DIR/$name" b="$OBJ_DIR/module-$name" dst="$MODULES_OUT/$name"
-  rm -rf "$work" "$b"
-  mkdir -p "$work"
-  ( cd "$src" && tar --exclude=.git --exclude=./generated_code --exclude=./build --exclude=./result -cf - . ) \
-    | ( cd "$work" && tar -xf - )
-  local impl_class impl_header version protocol_version
-  impl_class=$(python3 -c 'import json,sys; m=json.load(open(sys.argv[1])); print(m.get("codegen",{}).get("impl_class") or "".join(p.capitalize() for p in m["name"].split("_") if p)+"Impl")' "$work/metadata.json")
-  impl_header=$(python3 -c 'import json,sys; m=json.load(open(sys.argv[1])); print(m.get("codegen",{}).get("impl_header") or m["name"]+"_impl.h")' "$work/metadata.json")
-  version=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["version"])' "$work/metadata.json")
-  case "$impl_header" in */*) ;; *) impl_header="src/$impl_header" ;; esac
-  protocol_version=$(sed -n 's/.*LOGOS_PROTOCOL_VERSION_STRING "\([^"]*\)".*/\1/p' "$PREFIX/include/logos_protocol.h" | head -1)
-  [ -n "$protocol_version" ] || die "cannot read LOGOS_PROTOCOL_VERSION_STRING from $PREFIX/include/logos_protocol.h"
-  echo "-- $name: impl $impl_class ($impl_header), version $version, protocol $protocol_version"
-  (
-    cd "$work"
-    export PATH="$HOST_PREFIX/bin:$PATH"
-    mkdir -p generated_code
-    # logos-plugin-qt lib/buildPlugin.nix generationScript (api-style lp: a core universal
-    # module): the consumer umbrella, then headers moved into generated_code/include.
-    logos-cpp-generator --metadata metadata.json --general-only --api-style lp --output-dir ./generated_code
-    if [ -f generated_code/logos_sdk.h ]; then
-      mkdir -p generated_code/include
-      mv generated_code/*.h generated_code/include/
-      cp generated_code/*.cpp generated_code/include/
-    fi
-    # logos-module-builder lib/modulePreConfigure.nix: stamp the protocol version, then
-    # universalCodegen.
-    python3 -c 'import json,sys; p=sys.argv[1]; m=json.load(open(p)); m["logos_protocol_version"]=sys.argv[2]; open(p,"w").write(json.dumps(m, indent=2)+"\n")' \
-      metadata.json "$protocol_version"
-    logos-cpp-generator --header-to-lidl "$impl_header" --impl-class "$impl_class" \
-      --metadata metadata.json -o "./generated_code/$name.lidl"
-    logos-qt-host-generator --lidl "./generated_code/$name.lidl" --backend cdylib --output-dir ./generated_code
-    logos-cpp-generator --lidl "./generated_code/$name.lidl" --backend cdylib \
-      --impl-class "$impl_class" --impl-header "$(basename "$impl_header")" --output-dir ./generated_code
-    echo "-- generated for $name:"; find generated_code -type f | sort
-    cat "generated_code/$name.lidl"
-  )
-  echo "-- cmake configure module $name"
-  cmake -S "$work" -B "$b" "${QT_CMAKE_ARGS[@]}" "${ROOTS[@]}" -DLOGOS_MODULE_ROOT="$PREFIX"
-  cmake --build "$b" -j "$JOBS"
-  local plugin="$b/modules/${name}_plugin.so"
-  [ -f "$plugin" ] || die "$name: no plugin at $plugin"
-  rm -rf "$dst"; mkdir -p "$dst"
-  cp "$plugin" "$dst/"
-  local keys=() a
-  for a in $LGX_ARCH_NAMES; do keys+=("$LGX_OS-$a$LGX_DEV_SUFFIX" "$LGX_OS-$a"); done
-  python3 - "$dst/manifest.json" "$name" "$version" "${name}_plugin.so" "${keys[@]}" <<'PY'
-import json, sys
-path, name, version, plugin, keys = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5:]
-main = {}
-for k in keys:
-    main.setdefault(k, plugin)
-doc = {"name": name, "version": version, "type": "core", "main": main}
-open(path, "w").write(json.dumps(doc, indent=2) + "\n")
-PY
-  printf '%s\n' "$LGX_VARIANT" > "$dst/variant"
-  echo "-- staged $dst:"; ls -la "$dst"; cat "$dst/manifest.json"
-}
-
 step_capability() {
   local key="logos-capability-module $LOGOS_CAPABILITY_MODULE_REV builder=$LOGOS_MODULE_BUILDER_REV variant=$LGX_VARIANT $RT_KEY"
   step_should_skip capability "$key" "$MODULES_OUT/capability_module/capability_module_plugin.so" && return 0
@@ -463,7 +380,9 @@ mkdir -p "$MANIFEST_DIR"
 } > "$MANIFEST_DIR/runtime-manifest.txt"
 
 # The .so files an app ships: the NEEDED closure of liblogos_core, the host and every
-# module plugin, over the prefix, Qt and libc++_shared (NDK system libraries excluded).
+# module .so, over the prefix, Qt and libc++_shared (NDK system libraries excluded). A
+# module's NEEDED that is a file of the same module directory (a module-private library,
+# e.g. blockchain_module's liblogos_blockchain.so) ships there, not in jniLibs, as stage.sh does.
 declare -A SHIP=() SHIPPATH=()
 ship_lookup() { # NEEDED name -> path of the file an APK would carry, or empty (NDK lib)
   local n=$1
@@ -476,6 +395,7 @@ ship_walk() {
   local f=$1 n p
   while IFS= read -r n; do
     [ -n "${SHIP[$n]:-}" ] && continue
+    [[ "$f" == "$MODULES_OUT"/* ]] && [ -f "$(dirname "$f")/$n" ] && continue
     p=$(ship_lookup "$n")
     [ -n "$p" ] || continue
     SHIP[$n]=1; SHIPPATH[$n]=$p

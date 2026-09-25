@@ -1,11 +1,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+      INTERNET: the blockchain node (blockchain_module's host, a child process with this
+      app's uid) opens a QUIC socket to the devnet peers, its HTTP API on 127.0.0.1 and NTP.
+      Without it the kernel refuses AF_INET sockets to the app's uid (no inet group).
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="false"
         android:label="Logos Core Demo"
         android:theme="@android:style/Theme.Material.Light.NoActionBar">
+        <!-- singleTop: an am start with the bc_action extra reaches the running instance (onNewIntent). -->
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:launchMode="singleTop"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

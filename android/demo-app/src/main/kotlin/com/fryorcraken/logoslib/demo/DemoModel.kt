@@ -3,6 +3,7 @@ package com.fryorcraken.logoslib.demo
 import android.content.Context
 import android.os.SystemClock
 import android.util.Log
+import com.fryorcraken.logoslib.core.LogosConfig
 import com.fryorcraken.logoslib.core.LogosCore
 import com.fryorcraken.logoslib.core.LogosJson
 import com.fryorcraken.logoslib.core.LogosSubscription
@@ -42,8 +43,14 @@ object DemoModel {
     val lastEvent = MutableStateFlow("-")
     val busy = MutableStateFlow(false)
 
+    /** LOGOS_LOG_LEVEL for the runtime (`--es log_level debug`); only read before the core exists. */
+    @Volatile
+    var logLevel: String? = null
+
     fun core(context: Context): LogosCore =
-        core ?: synchronized(this) { core ?: LogosCore(context.applicationContext).also { core = it } }
+        core ?: synchronized(this) {
+            core ?: LogosCore(context.applicationContext, LogosConfig(logLevel = logLevel)).also { core = it }
+        }
 
     fun log(msg: String) {
         val line = "%6d ms  %s".format(SystemClock.elapsedRealtime() - t0, msg)
@@ -75,6 +82,15 @@ object DemoModel {
         known.value = c.knownModules()
         loaded.value = c.loadedModules()
     }
+
+    /** Re-reads known/loaded modules (after a load elsewhere, or a module host death). */
+    fun refreshModules(context: Context) {
+        val c = core(context)
+        if (c.isRunning) refresh(c)
+    }
+
+    /** Starts the runtime from another flow (the Blockchain autorun). */
+    suspend fun startBlocking(context: Context) = doStart(context)
 
     fun start(context: Context) = op("start") { doStart(context) }
 
@@ -112,7 +128,7 @@ object DemoModel {
         val c = core(context)
         val info = c.start()
         log("started: abi=${info.abi} qt=${info.qtVersion} protocol=${info.protocolVersion} in ${info.startMillis} ms")
-        log("modules dir ${info.modulesDir} (extracted now: ${info.modulesExtracted}); TMPDIR ${info.tmpDir}")
+        log("modules dir ${info.modulesDir} (extracted now: ${info.modulesExtracted}); TMPDIR ${info.tmpDir}; cwd ${info.workDir}")
         refresh(c)
         log("known modules: ${known.value}")
     }
@@ -161,6 +177,9 @@ object DemoModel {
 
     fun stop(context: Context) = op("stop") {
         val c = core(context)
+        // A running node gets its own orderly stop() first; logos_core_cleanup() would
+        // otherwise just terminate its host.
+        BlockchainModel.stopNodeIfRunning(context)
         subscription?.close()
         subscription = null
         c.stop()

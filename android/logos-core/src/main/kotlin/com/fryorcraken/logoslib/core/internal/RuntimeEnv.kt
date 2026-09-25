@@ -68,6 +68,13 @@ internal data class Layout(
     val homeDir: File,
     val modulesDir: File,
     val persistDir: File,
+    /**
+     * Working directory of the process, and so of every module host it spawns (liblogos
+     * gives the hosts no working directory of their own). An app process starts in "/",
+     * which is read-only; modules that write relative paths (the blockchain node's prover
+     * writes MyLogFile.log) need a writable one.
+     */
+    val workDir: File,
 ) {
     /** liblogos' module host executable, shipped as a "library" so it gets extracted. */
     val hostExecutable: File get() = File(nativeLibDir, HOST_LIB)
@@ -87,6 +94,7 @@ internal data class Layout(
                 homeDir = files,
                 modulesDir = File(files, "modules"),
                 persistDir = File(files, "persist"),
+                workDir = File(files, "work"),
             )
         }
     }
@@ -105,9 +113,13 @@ internal object RuntimeEnv {
         "LOGOS_HOST_PATH" to layout.hostExecutable.path,
     )
 
-    /** Applies [variables] with Os.setenv; must run before liblogos_jni.so is loaded. */
-    fun apply(layout: Layout): Map<String, String> {
-        val vars = variables(layout)
+    /**
+     * Applies [variables] plus [extra] (e.g. `LOGOS_LOG_LEVEL`) with Os.setenv; must run
+     * before liblogos_jni.so is loaded. The module hosts inherit all of them.
+     */
+    fun apply(layout: Layout, extra: Map<String, String> = emptyMap()): Map<String, String> {
+        val vars = LinkedHashMap(variables(layout))
+        vars.putAll(extra)
         for ((k, v) in vars) Os.setenv(k, v, true)
         return vars
     }

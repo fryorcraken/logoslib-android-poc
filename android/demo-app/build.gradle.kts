@@ -50,6 +50,14 @@ android {
     buildFeatures {
         compose = true
     }
+
+    sourceSets {
+        getByName("main") {
+            // M5: the node config fixtures (devnet-rc4-gen-args.json, follower-mode.extra.yaml)
+            // are read by BlockchainNode from the APK, so the repo's copies stay the only source.
+            assets.directories += "../../config/blockchain"
+        }
+    }
 }
 
 dependencies {

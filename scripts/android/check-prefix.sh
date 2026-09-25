@@ -32,6 +32,10 @@
 #            (.note.qt.metadata) carries the same name
 #   files    every *.so gets the checks above, except the lib*.so name rule; a SONAME, if
 #            any, must equal the file name; a NEEDED may also be a sibling file of the module
+#            (a module-private library, e.g. blockchain_module's liblogos_blockchain.so),
+#            and then the file must have DT_RUNPATH $ORIGIN: bionic searches
+#            LD_LIBRARY_PATH (nativeLibraryDir), the requesting library's DT_RUNPATH and
+#            the system paths, never the directory a library was dlopen()ed from
 #
 # Prints one table row per file and exits non-zero if any check fails.
 #
@@ -223,6 +227,7 @@ for f in "${FILES[@]}"; do
   soname=$(printf '%s\n' "$hdr" | sed -n 's/.*(SONAME).*\[\(.*\)\]/\1/p')
   mapfile -t needed < <(printf '%s\n' "$hdr" | sed -n 's/.*(NEEDED).*\[\(.*\)\]/\1/p')
   runpath=$(printf '%s\n' "$hdr" | sed -n 's/.*(\(RUNPATH\|RPATH\)).*\[\(.*\)\]/\2/p' | tr '\n' ':')
+  dt_runpath=$(printf '%s\n' "$hdr" | sed -n 's/.*(RUNPATH).*\[\(.*\)\]/\1/p' | tr '\n' ':')
   has_interp=0; printf '%s\n' "$hdr" | grep -q 'INTERP ' && has_interp=1
   kind=lib; [ "$has_interp" = 1 ] && kind=exe; [ -n "$moddir" ] && kind=plugin
   [ "$etype" = DYN ] || fail "ELF type '$etype' is not DYN"
@@ -250,7 +255,10 @@ for f in "${FILES[@]}"; do
     elif [ "$n" = libc++_shared.so ]; then nd+=("c++")
     elif [ -n "${NDK_LIBS[$n]:-}" ]; then nd+=("ndk:${n%.so}")
     elif [ -n "${QT_LIBS[$n]:-}" ]; then nd+=("qt:${n%.so}")
-    elif [ -n "$moddir" ] && [ -n "${MODSIB[$moddir/$n]:-}" ]; then nd+=("mod:${n%.so}")
+    elif [ -n "$moddir" ] && [ -n "${MODSIB[$moddir/$n]:-}" ]; then
+      nd+=("mod:${n%.so}")
+      [[ ":$dt_runpath" == *':$ORIGIN:'* ]] \
+        || fail "NEEDED $n is a module-private sibling but there is no DT_RUNPATH \$ORIGIN (bionic would not search the module directory)"
     elif [ -n "${PREFIX_LIBS[$n]:-}" ]; then nd+=("pfx:${n%.so}")
     else fail "NEEDED $n is not an NDK, libc++_shared, Qt or prefix library"; nd+=("!$n")
     fi

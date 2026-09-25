@@ -18,9 +18,12 @@ app process (com.fryorcraken.logoslib.demo, untrusted_app)
                                |- liblogos_core.so, liblogos_protocol.so (lp_* calls, events)
                                '- Qt6Core/Network/RemoteObjects, OpenSSL, liblgx, ...
   |  posix_spawn(nativeLibraryDir/liblogos_host_qt.so), one child per module,
-  |  QtRO over unix sockets in cacheDir
+  |  QtRO over unix sockets in cacheDir, working directory filesDir/work
   |- liblogos_host_qt.so --name capability_module ...   (started by logos_core_start)
-  '- liblogos_host_qt.so --name hello_module ...        (started by loadModule)
+  |- liblogos_host_qt.so --name hello_module ...        (started by loadModule)
+  |- liblogos_host_qt.so --name blockchain_module ...   (M5: the Logos blockchain node, a Rust
+  |                                                       library, runs inside this child)
+  '- liblogos_host_qt.so --name bc_probe ...            (M6: calls blockchain_module through liblogos)
 ```
 
 ## Prerequisites
@@ -66,6 +69,18 @@ bash scripts/android/run-m4.sh x86_64            # 8. M4 acceptance  ~30 s
 bash scripts/android/emulator.sh stop            # 9.
 ```
 
+For M5/M6, the blockchain node and its modules come between steps 3 and 4, and step 5 stages
+them too (details in [`blockchain-android.md`](blockchain-android.md)):
+
+```sh
+bash scripts/android/build-blockchain.sh x86_64         # liblogos_blockchain.so  ~11 min cold
+bash scripts/android/build-libfyaml.sh x86_64           # libfyaml.so  seconds
+bash scripts/android/build-blockchain-module.sh x86_64  # blockchain_module + bc_probe  ~25 s
+bash scripts/android/stage.sh x86_64 capability_module hello_module blockchain_module bc_probe
+```
+
+and `run-m5.sh` runs after (or instead of) `run-m4.sh`; see "M5/M6" below.
+
 ### What each step prints when it works
 
 1. **`install-qt.sh`** creates `.work/probe/qt-venv` with aqtinstall 3.3.0. It then runs
@@ -94,17 +109,19 @@ bash scripts/android/emulator.sh stop            # 9.
    ```
 4. **`build-jni.sh`**:
    ```
-   -- .../build/android/x86_64/jni/liblogos_jni.so: 1096104 bytes, SONAME liblogos_jni.so, LOAD align 0x4000
+   -- .../build/android/x86_64/jni/liblogos_jni.so: 1102368 bytes, SONAME liblogos_jni.so, LOAD align 0x4000
    -- NEEDED: liblogos_core.so liblogos_protocol.so libQt6Core_x86_64.so liblog.so libdl.so libm.so libc++_shared.so libc.so
-   -- exports: JNI_OnLoad + 17 LogosNative entry points
+   -- exports: JNI_OnLoad + 20 LogosNative entry points
    build-jni: OK (...)
    ```
 5. **`stage.sh`** copies and strips the DT_NEEDED closure into
    `android/logos-core/src/main/jniLibs/x86_64/`, and the module directories into
    `android/logos-core/src/main/modules-staged/x86_64/`. Both are gitignored. It then runs
    `check-prefix.sh` on exactly that set. Name the modules: without arguments it stages every
-   module under `build/android/x86_64/modules/`, which would include `blockchain_module` once
-   M5 puts it there.
+   module under `build/android/x86_64/modules/`, which includes `blockchain_module` (about
+   87 MB more in the APK's assets) once `build-blockchain-module.sh` has run. A module's
+   private libraries stay in its directory, and a module whose `dependencies` are not staged
+   is refused.
    ```
    -- staged 15 libraries into android/logos-core/src/main/jniLibs/x86_64 (24416512 bytes, strip=1)
    -- staged modules capability_module hello_module into ... (stamp d1b29f001d22c5aa)
@@ -240,6 +257,171 @@ On the device the runtime is extracted to `nativeLibraryDir` (24.4 MB) and the m
 `filesDir/modules` (4.8 MB). The Logos part of the APK is 11.5 MB compressed. Most of the
 41 MB is the debug build's uncompressed dex.
 
+## M5/M6: the blockchain node from the app (2026-09-25, x86_64 API 34 emulator)
+
+The demo app loads `blockchain_module` (logos-blockchain-module 4b07e58 around the Logos
+blockchain node, built at tag 0.3.0-rc.4) and `bc_probe`, each in its own
+`liblogos_host_qt.so` child. It generates a node config, starts the node as a devnet
+0.3.0-rc.4 follower and shows it syncing, and reads the live height through bc_probe, whose
+host calls blockchain_module over liblogos' own QtRO transport. Build details and runtime
+caveats: [`blockchain-android.md`](blockchain-android.md).
+
+### How to run
+
+```sh
+# after steps 1-3 above, and the four M5/M6 build lines
+bash scripts/android/build-jni.sh x86_64
+bash scripts/android/stage.sh x86_64 capability_module hello_module blockchain_module bc_probe
+FORCE=1 bash scripts/android/build-apk.sh x86_64 --unit-tests   # clean build: see "APK size" below
+bash scripts/android/emulator.sh start
+bash scripts/android/run-m5.sh x86_64        # ~3.5 min; needs UDP to 65.108.203.235:3000-3002
+bash scripts/android/run-m4.sh x86_64        # still passes with the 4-module APK
+bash scripts/android/emulator.sh stop
+```
+
+`run-m5.sh` has four phases (`install demo kill test`; name some to run only those):
+
+- **demo**: `am start ... --ez bc_autorun true --ez bc_fresh true --es log_level debug`, which
+  loads both modules, wipes `files/blockchain`, generates the config and starts the node. It
+  samples the blockchain host with `top` and `/proc/<pid>/status` every few seconds, taps
+  "Load hello" while the node syncs, and waits for `BC AUTORUN OK`. Then it takes a UI dump
+  and screenshots, and records meminfo and disk use. Last, it stops the node through
+  `--es bc_action stop` and the runtime through the Stop button.
+- **kill**: autorun again on the synced directory (so `start()` replays the chain), then
+  `am force-stop`.
+- **test**: `am instrument -e blockchain 1 -e class ...BlockchainAcceptanceTest`, ten ordered
+  tests with their own node directory (`files/blockchain-test`, synced from genesis each run).
+  The last one SIGKILLs the blockchain host and checks that `LogosCore` reports it.
+
+Evidence goes to `build/android/x86_64/m5/` (`summary.txt`, logcat per phase,
+`top-bc.txt`, `status-lines.txt`, `token-evidence.txt`, `du.txt`, `user_config.yaml`,
+`instrument.txt`), screenshots to `build/screenshots/m5-*.png`. Expected end:
+
+```
+   [PASS] 4 height reaches the devnet tip -- BC SYNCED height=5271 tip_slot=174998 current_slot=175037 lag=39 slots after 34291 ms since start(); peers=4 newBlock=5271
+   ...
+   [PASS] instrumented test -- BlockchainAcceptanceTest: OK (10 tests)
+run-m5: OK (17 checks passed)
+```
+
+By hand, or on a phone:
+
+```sh
+adb shell am start -n com.fryorcraken.logoslib.demo/.MainActivity --ez bc_autorun true   # + --ez bc_fresh true
+adb logcat -s LogosDemo       # BC load ..., BC config: ..., BC start() returned ..., BC first peer ...,
+                              # BC SYNCED ..., BC STATUS ... every 10 s, BC AUTORUN OK (...)
+adb shell am start -n com.fryorcraken.logoslib.demo/.MainActivity --es bc_action stop
+```
+
+The same steps are buttons in the Blockchain section: Load BC, Config, Start node and Stop
+node. Below them are the chain id and mode, height and tip slot against the wall-clock slot,
+peers and connections, the newBlock event count, the bc_probe row, and the host's pid, CPU
+and RSS. What the demo does, in `demo-app/.../BlockchainNode.kt`:
+
+1. `loadModule("blockchain_module")`, then `loadModule("bc_probe")`, then subscribe to
+   `newBlock` (after the load, before `start`).
+2. `generate_user_config` with `initial_peers`, `net_port` and `blend_port` from
+   `config/blockchain/devnet-rc4-gen-args.json`, which the APK carries as an asset.
+   `output`, `state_path`, `storage_path` and `logs_path` are absolute paths under
+   `filesDir/blockchain`, and `http_addr` is `127.0.0.1:18080`. `use_persistence_paths` is
+   false, because it would move `output` under liblogos' per-instance directory. The
+   config is kept across runs: a second `generate_user_config` refuses an existing keystore.
+3. `merge_user_config(cfg, cfg, <follower-mode.extra.yaml>, false, false)`. This sets
+   `prolonged_bootstrap_period` to 1 year, so the node stays in Bootstrapping and never
+   proves.
+4. `start(cfg, "")` with a 10 min timeout. The empty deployment is the devnet one compiled
+   into the node.
+5. Every 2 s: `get_cryptarchia_info`, `get_network_info`, `get_time_info`,
+   `bc_probe.chain_info_via_bc` and `moduleStats()`. "At the tip" means the tip's slot is
+   within 180 slots (3 min) of `get_time_info`'s current slot.
+6. `stop()`, no earlier than 2 s after `start()` returned.
+
+### Result
+
+`run-m5.sh`: 17/17 checks passed in the last two full runs (the final one with the APK
+described here). The first full run passed 16 of 17: JUnit's name order put `t10_...`
+before `t1_...`, so the host-kill test ran first, and the tests were renamed `t01`-`t10`.
+
+| # | Acceptance item | Evidence (final run unless noted) |
+| --- | --- | --- |
+| 1 | blockchain_module and bc_probe load, each in its own `liblogos_host_qt.so` child | `BC load blockchain_module + bc_probe -> true in 104 ms; hosts: bc_probe=pid 7157, blockchain_module=pid 7153, capability_module=pid 7149`; `ps`: all three (and hello_module, loaded during the sync) with PPID = the app, `untrusted_app` |
+| 2 | The node starts from the app | `generate_user_config -> .../files/blockchain/user_config.yaml; merge_user_config(follower) -> no conflicts; ... prolonged_bootstrap_period: '31536000.000000000' ...`; `BC start() returned after 56 ms`; `chain id 0.3.0-rc.4` |
+| 3 | `n_peers` > 0 | `BC first peer after 2119 ms since start(): NetworkInfo(nPeers=4, nConnections=5, nPending=1, nDiscovered=5)` (test: 3 peers after 1.06 s) |
+| 4 | The height reaches the devnet tip | `BC SYNCED height=5271 tip_slot=174998 current_slot=175037 lag=39 slots after 34291 ms since start()`; a few seconds later the UI shows `height 5273  tip slot 175042 / now 175047  (lag 5)` (test: synced after 34.2 s) |
+| 5 | newBlock events reach Kotlin | first event 5.7 s after `start()`; 5,271 events for 5,271 blocks, none dropped; payload `["{\"block\":\"{\\\"header\\\":{\\\"version\\\":\\\"Bedrock\\\",\\\"parent_block\\\":...,\\\"slot\\\":7571,...` |
+| 6 | bc_probe → blockchain_module returns the live height | `AUTORUN OK (... height=5271 ... probe_height=5271)`; UI `via bc_probe: height 5273 (bc_probe->blockchain_module 0 ms, round trip 0 ms)`; `[bc_probe] <- blockchain_module.get_cryptarchia_info {"success":true,"value":"{\"height\":5274,...`. Token: `[bc_probe] Debug: LogosAPIClient: calling requestModule for "blockchain_module"`, `LogosAPIConsumer: requestModule for origin: "bc_probe" target: "blockchain_module"`, then `[capability_module] Debug: ModuleProxy: callRemoteMethod "requestModule"` (`token-evidence.txt`) |
+| 7 | The UI stays responsive during the sync | a "Load hello" tap during the sync loaded hello_module (logged about 2 s later, with 2 s logcat polling); no ANR; 1,124 frames, 7.0 % janky, no Choreographer skip |
+| 8 | `stop()` and force-stop leave no child | node `stop()` 66 ms (host stays loaded); runtime Stop: `stopped: true`, 0 children; `am force-stop` of a running node: app and 3 hosts gone in 86 ms; the test's runtime stop: 0 children |
+
+![The demo with the node synced to the devnet tip](img/m5-blockchain.png)
+
+The instrumented test (`BlockchainAcceptanceTest`, 10 tests, 34 s) checks the same things
+from inside the app process. It also checks that the blockchain host's `/proc/<pid>/cwd` is
+`files/work`, and that a SIGKILLed host is reported: `ModuleExit(blockchain_module,
+lastPid=...)` 219-553 ms after the kill (the watchdog polls every second), and the next
+call fails in 0 ms with `LogosModuleDiedException`.
+
+Before the DNS patch (`patches/logos-blockchain/logos-blockchain-02-*`), the node panicked
+14 ms into `start()` (no `/etc/resolv.conf`) and its host exited. LogosCore failed the
+`start()` call 0.8 s later with `LogosModuleDiedException`, and the app, capability_module
+and bc_probe kept running (`.work/logs/m5-run/probe1-unpatched-*`).
+
+**Stretch: the offline standalone chain.** The node repo's standalone config pair (Android
+paths) was started from the demo (`--es bc_config ... --es bc_deployment ...`). It went
+Online and proposed a block every 1 s slot, each with a PoL Groth16 proof made on the
+device: height 11 after 22 s, at 84-89 % of one core
+(`.work/scripts/m5-run-standalone.sh`, `build/screenshots/m5-standalone.png`). Devnet
+worked, so this fallback was not needed for acceptance.
+
+### Measurements
+
+| What | Measured |
+| --- | --- |
+| Devnet sync from genesis (5.25k-5.28k blocks) | first peer 1.1-2.2 s after `start()`, first `newBlock` 5.7 s, at the tip after 32.2-37.9 s (7 runs: demo and test); about 150 blocks/s |
+| `start()` | 46-93 ms on an empty node directory; 20.7-20.8 s on the synced one (replays the chain, since LIB stays at genesis in follower mode) |
+| `stop()` (node) | 53-76 ms |
+| Blockchain host CPU (`top`, 4 vCPUs) | about 100-120 % of one core for most of the sync (samples 51-121 %), 29.3 s CPU for the whole sync; 0-1 % following the head |
+| Blockchain host memory (`/proc/<pid>/status`) | 53-58 MB RSS at `start()`, 105-165 MB while syncing, 157-160 MB following; VmHWM 178-179 MB; 14-15 threads |
+| Other processes | app 167-176 MB RSS; capability_module and bc_probe hosts 15-17 MB each, hello_module 13 MB |
+| Disk under `filesDir` | `blockchain/` 46.8 MB (RocksDB `db/` 46.7 MB, `logs/` 56 KB) after 5.27k blocks; `modules/` 96,176 KB; `work/` empty |
+| bc_probe hop | `bc_probe -> blockchain_module` 0-1 ms (up to 10 ms mid-sync); Kotlin round trip 0-3 ms idle, up to 32 ms mid-sync |
+| First launch after install (asset extraction) | runtime `start()` 587-683 ms with extraction, 57 ms without; about 0.55-0.63 s of extraction (969 ms against 101 ms at M5-build) |
+| Install | `adb install -r -t` of both APKs 0.6-0.7 s |
+
+APK size (x86_64 debug, clean build: 91,960,288 bytes), the blockchain part:
+
+| Entry | Uncompressed | Stored in APK |
+| --- | ---: | ---: |
+| `assets/.../blockchain_module/liblogos_blockchain.so` | 87,148,912 | 48,491,506 |
+| `assets/.../blockchain_module/blockchain_module_plugin.so` | 2,837,736 | 1,033,862 |
+| `assets/.../bc_probe/bc_probe_plugin.so` | 2,885,232 | 969,949 |
+| `assets/.../blockchain_module/libfyaml.so` | 627,528 | 290,049 |
+| `lib/x86_64/` (unchanged runtime, 16 files) | 24,428,632 | 9,788,131 |
+| all module assets (4 modules) | 98,330,922 | 52,536,288 |
+
+The jniLibs set is the M4 one (`liblogos_jni.so` is now 71,128 / 34,525), and the config
+fixtures add a few KB. An incremental Gradle build that replaces the 48 MB entry left the
+old copy as dead space once (a 140.5 MB APK); `FORCE=1 build-apk.sh` builds clean.
+
+### Caveats seen
+
+- **DNS:** the node needs `patches/logos-blockchain/logos-blockchain-02-*` to start at all
+  on Android (see the table above). NTP works unpatched, and so does the gateway monitor,
+  which only warns. The app needs the `INTERNET` permission.
+- **Working directory:** `LogosCore` `chdir()`s the app to `filesDir/work`, which the hosts
+  inherit. The node never wrote `MyLogFile.log` there, not even while proving.
+- **Restart cost:** in follower mode LIB stays at genesis, so every restart replays the whole
+  chain (21 s for 5.27k blocks here, and growing).
+- **Logs:** the node's own lines reach `logos-stdio` with ANSI colour codes, about 150 lines
+  per sync. `--es log_level debug` (`LOGOS_LOG_LEVEL`) adds several lines per call from every
+  host.
+- **CPU figures:** `logos_core_get_module_stats()` reports kernel time only (process-stats
+  bug, `patches/process-stats/`, a proposal); `LogosCore.moduleStats()` re-reads
+  `/proc/<pid>/stat`, and matches `top` (92-118 % against 84-117 % mid-sync).
+- **Emulator network:** the udp/50001 bootstrap peer never answers the QUIC handshake, and
+  UDP segmentation offload fails once (`quinn_udp: sendmsg error ... code: 5`). Neither
+  stops the sync.
+
 ## Troubleshooting
 
 **The emulator crashes at boot with `-no-window`.** On this host
@@ -299,6 +481,26 @@ real JavaVM.
 - `check-prefix.sh` checks all three.
 - The extracted copy is refreshed when `modules.stamp`, the APK version or the module set
   changes. `adb shell pm clear com.fryorcraken.logoslib.demo` forces it.
+
+**The blockchain host dies right after `start()`, with `A panic occurred: ... ResolveError ...
+NotFound ... swarm/mod.rs:86`.** The node library was built without
+`patches/logos-blockchain/logos-blockchain-02-android-dns-resolver-fallback.diff` (Android
+has no `/etc/resolv.conf`). Re-run `build-blockchain.sh`, `build-blockchain-module.sh` and
+`stage.sh`. In the app this shows as `LogosModuleDiedException ... blockchain_module.start
+abandoned`.
+
+**The node never gets peers.** The app needs `<uses-permission android:name="android.permission.INTERNET"/>`
+(the demo declares it; `:logos-core` does not), and the emulator needs outbound UDP to
+65.108.203.235 ports 3000-3002.
+
+**The APK is 48 MB bigger than its entries.** An incremental Gradle build that replaces
+the 48 MB `liblogos_blockchain.so` entry can leave the old copy as dead space in the zip.
+`FORCE=1 bash scripts/android/build-apk.sh x86_64` builds clean.
+
+**`BlockchainAcceptanceTest` is skipped.** It runs only with the instrumentation argument
+`-e blockchain 1` (`run-m5.sh` passes it), and only in an instrumentation process of its
+own, because the runtime cannot be restarted once another class stopped it.
+`connectedDebugAndroidTest` (and so `run-m4.sh`) skips it.
 
 **`stop()` then `start()` fails with "cannot be restarted in the same process".** This is
 expected. Qt allows one QCoreApplication per process, and liblogos keeps global state. Restart

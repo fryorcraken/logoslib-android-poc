@@ -39,3 +39,17 @@ public class LogosCallException(
  * and a late result is dropped.
  */
 public class LogosTimeoutException(message: String) : LogosException(message)
+
+/**
+ * [module]'s host process went away without [LogosCore.unloadModule] (it crashed, called
+ * `exit()`, or was killed), see [ModuleExit]. Thrown by a call that was in flight when the
+ * death was noticed and by every later call to that module until it is loaded again: without
+ * this, a call to a dead module would only end at its deadline (minutes, for a slow method).
+ */
+public class LogosModuleDiedException(
+    public val module: String,
+    public val method: String?,
+    public val exit: ModuleExit,
+) : LogosException(
+    "$module host process is gone (${exit.reason})" + (method?.let { "; $module.$it abandoned" } ?: ""),
+)
