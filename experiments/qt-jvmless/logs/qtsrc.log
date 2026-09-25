@@ -1,0 +1,59 @@
+Cloning into 'qtbase'...
+warning: refs/tags/v6.11.1 20cb2b725f7a7192c7491e395bfb54c22df46688 is not a commit!
+Note: switching to '59c81a3c2247b821b9b84b4eb8d939b77e07e276'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Cloning into 'qtremoteobjects'...
+warning: refs/tags/v6.11.1 c8030b1d5e761347200a2746333dd46a5956763d is not a commit!
+Note: switching to 'e5acd828cb0c8dfe833d66ffb952de088213b6c6'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+59c81a3 QDockWidgetPrivate: Implement boolean closed member
+e5acd82 Update dependencies on '6.11.1' in qt/qtremoteobjects
+== appVersion / applicationVersionSet in qcoreapplication.cpp ==
+75:#if defined(Q_OS_ANDROID)
+196:QString QCoreApplicationPrivate::appVersion() const
+201:#elif defined(Q_OS_ANDROID) && !defined(QT_BOOTSTRAPPED)
+202:    QJniObject context(QNativeInterface::QAndroidApplication::context());
+204:        QJniObject pm = context.callObjectMethod(
+206:        QJniObject pn = context.callObjectMethod<jstring>("getPackageName");
+208:            QJniObject packageInfo = pm.callObjectMethod(
+212:                QJniObject versionName = packageInfo.getObjectField(
+394:        applicationVersionSet = false;
+401:    bool applicationVersionSet; // true if setApplicationVersion was called
+583:#  elif defined(Q_OS_ANDROID) && __ANDROID_API__ < __ANDROID_API_O__
+819:    if (!coreappdata()->applicationVersionSet)
+820:        coreappdata()->applicationVersion = appVersion();
+822:#if defined(Q_OS_ANDROID) && !defined(QT_BOOTSTRAPPED)
+2420:#  if defined(Q_OS_ANDROID)
+2784:    coreappdata()->applicationVersionSet = !version.isEmpty();
+2787:        newVersion = QCoreApplication::self->d_func()->appVersion();
+3388:#if defined(Q_OS_ANDROID)

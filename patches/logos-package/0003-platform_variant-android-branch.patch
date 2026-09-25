@@ -1,0 +1,52 @@
+--- a/src/core/platform_variant.cpp
++++ b/src/core/platform_variant.cpp
+@@ -56,6 +56,21 @@
+     #else
+         return "darwin-x86_64";
+     #endif
++#elif defined(__ANDROID__)
++    // Must precede __linux__: bionic defines __linux__ too, and without this
++    // branch an Android build answers linux-arm64 / linux-x86_64 and would
++    // select glibc payloads it cannot load. The architecture half keeps the
++    // spellings the linux-* branch uses, so the alias rows above apply as-is
++    // (android-arm64 also accepts android-aarch64, android-x86_64 accepts
++    // android-amd64). Other Android ABIs (armeabi-v7a, x86, riscv64) have no
++    // rule yet and fail closed.
++    #if defined(__aarch64__)
++        return "android-arm64";
++    #elif defined(__x86_64__)
++        return "android-x86_64";
++    #else
++        return "unknown";
++    #endif
+ #elif defined(__linux__)
+     #if defined(__x86_64__)
+         return "linux-x86_64";
+--- a/tests/test_platform_variant.cpp
++++ b/tests/test_platform_variant.cpp
+@@ -69,6 +69,8 @@
+     { "windows-amd64",  "windows-x86_64"  },
+     { "windows-arm64",  "windows-aarch64" },
+     { "windows-aarch64","windows-arm64"   },
++    { "android-x86_64", "android-amd64"   },
++    { "android-arm64",  "android-aarch64" },
+ };
+ } // namespace
+ 
+@@ -107,11 +109,14 @@
+ 
+ TEST(PlatformVariantTest, NeverAcceptsAnotherOperatingSystem) {
+     const char* const hosts[] = { "darwin-x86_64", "darwin-arm64", "linux-x86_64",
+-                                  "linux-arm64", "windows-x86_64" };
++                                  "linux-arm64", "windows-x86_64", "android-x86_64",
++                                  "android-arm64" };
+     const char* const foreign[] = { "darwin-x86_64", "darwin-amd64", "darwin-arm64",
+                                     "darwin-aarch64", "linux-x86_64", "linux-amd64",
+                                     "linux-arm64", "linux-aarch64", "windows-x86_64",
+-                                    "windows-amd64", "windows-arm64", "windows-aarch64" };
++                                    "windows-amd64", "windows-arm64", "windows-aarch64",
++                                    "android-x86_64", "android-amd64", "android-arm64",
++                                    "android-aarch64" };
+     for (const char* host : hosts) {
+         auto variants = variantSpellings(host);
+         for (const char* f : foreign) {

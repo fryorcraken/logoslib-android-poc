@@ -1,0 +1,249 @@
+clang: Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+Pkg.Revision = 27.2.12479018
+
+== 0. what the NDK libicu.so stub exports for the six functions the port uses
+-- x86_64-linux-android/31/libicu.so (52040 bytes, 270 defined dynsyms)
+00000000000064a0 T u_strFromUTF8WithSub
+00000000000064c0 T u_strToLower
+0000000000006510 T u_strToUTF8WithSub
+0000000000006e50 T unorm2_getNFCInstance
+0000000000006ee0 T unorm2_isNormalized
+0000000000006ef0 T unorm2_normalize
+-- aarch64-linux-android/31/libicu.so (56776 bytes, 270 defined dynsyms)
+0000000000006250 T u_strFromUTF8WithSub
+0000000000006260 T u_strToLower
+0000000000006288 T u_strToUTF8WithSub
+0000000000006728 T unorm2_getNFCInstance
+0000000000006770 T unorm2_isNormalized
+0000000000006778 T unorm2_normalize
+-- x86_64-linux-android/34/libicu.so (54336 bytes, 306 defined dynsyms)
+00000000000064a0 T u_strFromUTF8WithSub
+00000000000064c0 T u_strToLower
+0000000000006510 T u_strToUTF8WithSub
+0000000000006e50 T unorm2_getNFCInstance
+0000000000006ee0 T unorm2_isNormalized
+0000000000006ef0 T unorm2_normalize
+-- aarch64-linux-android/34/libicu.so (60176 bytes, 306 defined dynsyms)
+0000000000006250 T u_strFromUTF8WithSub
+0000000000006260 T u_strToLower
+0000000000006288 T u_strToUTF8WithSub
+0000000000006728 T unorm2_getNFCInstance
+0000000000006770 T unorm2_isNormalized
+0000000000006778 T unorm2_normalize
+-- does any NDK libicu.so export C++ (icu::) symbols?
+0
+
+== port + vector test, exe (x86_64-linux-android34)
++ ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-linux-android34 -stdlib=libc++ -std=c++17 -O2 -Wall -Wextra -I${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core ${REPO_ROOT}/.work/experiments/lgx-icu/test/pathnorm_vectors.cpp ${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp -licu -o ${REPO_ROOT}/.work/experiments/lgx-icu/bin/android/vectors-port-x86_64-34
++ local rc=0
+exit=0
+-- file: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, for Andro
+-- NEEDED:
+  0x0000000000000001 (NEEDED)     Shared library: [libicu.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libc.so]
+-- undefined ICU imports:
+                 U u_strFromUTF8WithSub
+                 U u_strToLower
+                 U u_strToUTF8WithSub
+                 U unorm2_getNFCInstance
+                 U unorm2_isNormalized
+                 U unorm2_normalize
+-- LOAD alignment:
+0x1000 
+
+== port as shared lib (x86_64-linux-android34)
++ ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-linux-android34 -stdlib=libc++ -std=c++17 -O2 -Wall -Wextra -shared -fPIC -I${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core ${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp -licu -o ${REPO_ROOT}/.work/experiments/lgx-icu/bin/android/libpathnorm-port-x86_64-34.so
++ local rc=0
+exit=0
+-- file: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, for Android 34, built by NDK r27c (12479018)
+-- NEEDED:
+  0x0000000000000001 (NEEDED)       Shared library: [libicu.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+-- undefined ICU imports:
+                 U u_strFromUTF8WithSub
+                 U u_strToLower
+                 U u_strToUTF8WithSub
+                 U unorm2_getNFCInstance
+                 U unorm2_isNormalized
+                 U unorm2_normalize
+-- LOAD alignment:
+0x1000 
+
+== port + vector test, exe, static libc++ (x86_64-linux-android34)
++ ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-linux-android34 -stdlib=libc++ -std=c++17 -O2 -Wall -Wextra -static-libstdc++ -I${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core ${REPO_ROOT}/.work/experiments/lgx-icu/test/pathnorm_vectors.cpp ${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp -licu -o ${REPO_ROOT}/.work/experiments/lgx-icu/bin/android/vectors-port-x86_64-34-staticcxx
++ local rc=0
+exit=0
+-- file: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, for Andro
+-- NEEDED:
+  0x0000000000000001 (NEEDED)     Shared library: [libicu.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libc.so]
+-- undefined ICU imports:
+                 U u_strFromUTF8WithSub
+                 U u_strToLower
+                 U u_strToUTF8WithSub
+                 U unorm2_getNFCInstance
+                 U unorm2_isNormalized
+                 U unorm2_normalize
+-- LOAD alignment:
+0x1000 
+
+== port as shared lib (aarch64-linux-android34)
++ ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-linux-android34 -stdlib=libc++ -std=c++17 -O2 -Wall -Wextra -shared -fPIC -Wl,-z,max-page-size=16384 -I${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core ${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp -licu -o ${REPO_ROOT}/.work/experiments/lgx-icu/bin/android/libpathnorm-port-arm64-34.so
++ local rc=0
+exit=0
+-- file: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, for Android 34, built by NDK r27c (1247
+-- NEEDED:
+  0x0000000000000001 (NEEDED)       Shared library: [libicu.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+-- undefined ICU imports:
+                 U u_strFromUTF8WithSub
+                 U u_strToLower
+                 U u_strToUTF8WithSub
+                 U unorm2_getNFCInstance
+                 U unorm2_isNormalized
+                 U unorm2_normalize
+-- LOAD alignment:
+0x4000 
+
+== port + vector test, exe (aarch64-linux-android34)
++ ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-linux-android34 -stdlib=libc++ -std=c++17 -O2 -Wall -Wextra -Wl,-z,max-page-size=16384 -I${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core ${REPO_ROOT}/.work/experiments/lgx-icu/test/pathnorm_vectors.cpp ${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp -licu -o ${REPO_ROOT}/.work/experiments/lgx-icu/bin/android/vectors-port-arm64-34
++ local rc=0
+exit=0
+-- file: ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, for 
+-- NEEDED:
+  0x0000000000000001 (NEEDED)     Shared library: [libicu.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libc.so]
+-- undefined ICU imports:
+                 U u_strFromUTF8WithSub
+                 U u_strToLower
+                 U u_strToUTF8WithSub
+                 U unorm2_getNFCInstance
+                 U unorm2_isNormalized
+                 U unorm2_normalize
+-- LOAD alignment:
+0x4000 
+
+== port, API 31 (floor) (x86_64-linux-android31)
++ ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-linux-android31 -stdlib=libc++ -std=c++17 -O2 -Wall -Wextra -I${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core ${REPO_ROOT}/.work/experiments/lgx-icu/test/pathnorm_vectors.cpp ${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp -licu -o ${REPO_ROOT}/.work/experiments/lgx-icu/bin/android/vectors-port-x86_64-31
++ local rc=0
+exit=0
+-- file: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, for Andro
+-- NEEDED:
+  0x0000000000000001 (NEEDED)     Shared library: [libicu.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libc.so]
+-- undefined ICU imports:
+                 U u_strFromUTF8WithSub
+                 U u_strToLower
+                 U u_strToUTF8WithSub
+                 U unorm2_getNFCInstance
+                 U unorm2_isNormalized
+                 U unorm2_normalize
+-- LOAD alignment:
+0x1000 
+
+== port, API 28 (expected failure) (x86_64-linux-android28)
++ ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-linux-android28 -stdlib=libc++ -std=c++17 -O2 -Wall -Wextra -I${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core ${REPO_ROOT}/.work/experiments/lgx-icu/test/pathnorm_vectors.cpp ${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp -licu -o ${REPO_ROOT}/.work/experiments/lgx-icu/bin/android/vectors-port-x86_64-28
+${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp:38:5: error: 'u_strFromUTF8WithSub' is unavailable: introduced in Android 31
+   38 |     u_strFromUTF8WithSub(out.data(), static_cast<int32_t>(out.size()), &length16,
+      |     ^
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/unicode/ustring.h:1253:1: note: 'u_strFromUTF8WithSub' has been explicitly marked unavailable here
+ 1253 | u_strFromUTF8WithSub(UChar *dest,
+      | ^
+${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp:61:5: error: 'u_strToUTF8WithSub' is unavailable: introduced in Android 31
+   61 |     u_strToUTF8WithSub(buf.data(), static_cast<int32_t>(buf.size()), &length8,
+      |     ^
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/unicode/ustring.h:1206:1: note: 'u_strToUTF8WithSub' has been explicitly marked unavailable here
+ 1206 | u_strToUTF8WithSub(char *dest,
+      | ^
+${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp:89:38: error: 'unorm2_getNFCInstance' is unavailable: introduced in Android 31
+   89 |     const UNormalizer2* normalizer = unorm2_getNFCInstance(&status);
+      |                                      ^
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/unicode/unorm2.h:140:1: note: 'unorm2_getNFCInstance' has been explicitly marked unavailable here
+  140 | unorm2_getNFCInstance(UErrorCode *pErrorCode) __INTRODUCED_IN(31);
+      | ^
+${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp:109:24: error: 'unorm2_normalize' is unavailable: introduced in Android 31
+  109 |                 return unorm2_normalize(normalizer, srcData, srcLength,
+      |                        ^
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/unicode/unorm2.h:266:1: note: 'unorm2_normalize' has been explicitly marked unavailable here
+  266 | unorm2_normalize(const UNormalizer2 *norm2,
+      | ^
+${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp:126:38: error: 'unorm2_getNFCInstance' is unavailable: introduced in Android 31
+  126 |     const UNormalizer2* normalizer = unorm2_getNFCInstance(&status);
+      |                                      ^
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/unicode/unorm2.h:140:1: note: 'unorm2_getNFCInstance' has been explicitly marked unavailable here
+  140 | unorm2_getNFCInstance(UErrorCode *pErrorCode) __INTRODUCED_IN(31);
+      | ^
+${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp:136:24: error: 'unorm2_isNormalized' is unavailable: introduced in Android 31
+  136 |     UBool normalized = unorm2_isNormalized(normalizer, ustr.data(),
+      |                        ^
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/unicode/unorm2.h:436:1: note: 'unorm2_isNormalized' has been explicitly marked unavailable here
+  436 | unorm2_isNormalized(const UNormalizer2 *norm2,
+      | ^
+${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp:215:24: error: 'u_strToLower' is unavailable: introduced in Android 31
+  215 |                 return u_strToLower(dest, capacity, srcData, srcLength,
+      |                        ^
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/unicode/ustring.h:1011:1: note: 'u_strToLower' has been explicitly marked unavailable here
+ 1011 | u_strToLower(UChar *dest, int32_t destCapacity,
+      | ^
+7 errors generated.
++ local rc=1
+exit=1
+
+== port, API 28 + weak unavailable symbols + API-31 stub (x86_64-linux-android28)
++ ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-linux-android28 -stdlib=libc++ -std=c++17 -O2 -Wall -Wextra -D__ANDROID_UNAVAILABLE_SYMBOLS_ARE_WEAK__ -I${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core ${REPO_ROOT}/.work/experiments/lgx-icu/test/pathnorm_vectors.cpp ${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/31/libicu.so -o ${REPO_ROOT}/.work/experiments/lgx-icu/bin/android/vectors-port-x86_64-28-weak
++ local rc=0
+exit=0
+-- file: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, for Andro
+-- NEEDED:
+  0x0000000000000001 (NEEDED)     Shared library: [libicu.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libc.so]
+-- undefined ICU imports:
+                 w u_strFromUTF8WithSub
+                 w u_strToLower
+                 w u_strToUTF8WithSub
+                 w unorm2_getNFCInstance
+                 w unorm2_isNormalized
+                 w unorm2_normalize
+-- LOAD alignment:
+0x1000 
+
+== ORIGINAL path_normalizer.cpp (expected failure) (x86_64-linux-android34)
++ ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-linux-android34 -stdlib=libc++ -std=c++17 -O2 -Wall -Wextra -c -I/nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core/path_normalizer.cpp -o ${REPO_ROOT}/.work/experiments/lgx-icu/bin/android/orig-x86_64-34.o
+/nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core/path_normalizer.cpp:3:10: fatal error: 'unicode/normalizer2.h' file not found
+    3 | #include <unicode/normalizer2.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
++ local rc=1
+exit=1
+-- and with U_SHOW_CPLUSPLUS_API forced on (still no unistr.h/normalizer2.h in the sysroot):
+0
+
+== platform_variant.cpp patch: compile-time hostVariant() per target
+  x86_64-linux-android34 [orig]: string literals in hostVariant/variantSpellings object: "linux-x86_64" "-" 
+  x86_64-linux-android34 [patched]: string literals in hostVariant/variantSpellings object: "android-x86_64" "-" 
+  aarch64-linux-android34 [orig]: string literals in hostVariant/variantSpellings object: "linux-arm64" "-" 
+  aarch64-linux-android34 [patched]: string literals in hostVariant/variantSpellings object: "android-arm64" "-" 
+  armv7a-linux-androideabi34 [orig]: string literals in hostVariant/variantSpellings object: "linux-x86" "-" 
+  armv7a-linux-androideabi34 [patched]: string literals in hostVariant/variantSpellings object: "unknown" "-" 
+  i686-linux-android34 [orig]: string literals in hostVariant/variantSpellings object: "linux-x86" "-" 
+  i686-linux-android34 [patched]: string literals in hostVariant/variantSpellings object: "unknown" "-" 

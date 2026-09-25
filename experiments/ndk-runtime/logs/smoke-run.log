@@ -1,0 +1,311 @@
+2026-09-25T18:09:06+10:00
+starting emulator on 5584
+DEVICE sdk=34 abi=x86_64 kernel=6.1.23-android14-4-00257-g7e35917775b8-ab9964412 page=4096
+${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/ndk_smoke: 1 file pushed, 0 skipped. 406.1 MB/s (4707224 bytes in 0.011s)
+${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/ndk_smoke_fdenum: 1 file pushed, 0 skipped. 335.6 MB/s (4708808 bytes in 0.013s)
+${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/liblogos_host_probe.so: 1 file pushed, 0 skipped. 333.6 MB/s (5564200 bytes in 0.016s)
+${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/liblogos_host_qt.so: 1 file pushed, 0 skipped. 367.1 MB/s (5564200 bytes in 0.014s)
+${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/libspdlog.so: 1 file pushed, 0 skipped. 400.9 MB/s (4716776 bytes in 0.011s)
+${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/libfmt.so: 1 file pushed, 0 skipped. 289.9 MB/s (1153784 bytes in 0.004s)
+${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/libc++_shared.so: 1 file pushed, 0 skipped. 282.7 MB/s (1617608 bytes in 0.005s)
+${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/libndkrt_activity.so: 1 file pushed, 0 skipped. 371.8 MB/s (4930328 bytes in 0.013s)
+total 32276
+drwxrwxrwx 4 shell shell    4096 2026-09-25 18:09 .
+drwxrwx--x 4 shell shell    4096 2026-09-25 18:09 ..
+-rw-rw-rw- 1 shell shell      12 2026-09-25 18:09 fake_plugin.so
+-rwxrwxrwx 1 shell shell 1617608 2026-09-25 18:09 libc++_shared.so
+-rwxrwxrwx 1 shell shell 1153784 2026-09-25 18:09 libfmt.so
+-rwxr-xr-x 1 shell shell 5564200 2026-09-25 18:09 liblogos_host_probe.so
+-rwxr-xr-x 1 shell shell 5564200 2026-09-25 18:09 liblogos_host_qt.so
+-rwxrwxrwx 1 shell shell 4930328 2026-09-25 18:09 libndkrt_activity.so
+-rwxrwxrwx 1 shell shell 4716776 2026-09-25 18:09 libspdlog.so
+drwxrwxrwx 2 shell shell    4096 2026-09-25 18:09 modules
+-rwxr-xr-x 1 shell shell 4707224 2026-09-25 18:09 ndk_smoke
+-rwxr-xr-x 1 shell shell 4708808 2026-09-25 18:09 ndk_smoke_fdenum
+drwxrwxrwx 2 shell shell    4096 2026-09-25 18:09 persist
+================ RUN fdenum (container with POSIX_SPAWN_CLOEXEC_DEFAULT hidden -> /proc/self/fd fallback)
+FDENUM INFO parent pid=2060 canary fd=3 (non-CLOEXEC /dev/null)
+FDENUM INFO resolveHostBinary without LOGOS_HOST_PATH -> '/data/local/tmp/ndk-runtime/liblogos_host_qt.so'
+FDENUM PASS patched loader discovers liblogos_host_qt.so without LOGOS_HOST_PATH
+FDENUM PASS QtPluginFormatLoader resolves host via LOGOS_HOST_PATH
+FDENUM PASS QtPluginFormatLoader canHandle(qt-plugin)
+FDENUM INFO buildArguments: --name smoke_mod --path /data/local/tmp/ndk-runtime/fake_plugin.so --instance-persistence-path /data/local/tmp/ndk-runtime/persist/smoke_mod/inst1 --transport-set eyJ0cmFuc3BvcnRzIjpbeyJ0eXBlIjoibG9jYWwifV19 
+FDENUM INFO container id=subprocess
+FDENUM PASS launch host (posix_spawn from spawn thread)
+FDENUM PASS handle carries child pid
+FDENUM PASS hasModule after launch
+FDENUM INFO parent fds after launch: 3->/dev/null 6->pipe:[37152] 8->pipe:[37153] 11->pipe:[37154] 13->anon_inode:[pidfd]
+FDENUM PASS sendToken over child stdin pipe
+FDENUM [2026-09-25 18:09:26.149] [out] [smoke_mod] PROBE sigaltstack rc=0 errno=0
+FDENUM [2026-09-25 18:09:26.149] [out] [smoke_mod] PROBE pid=2083 ppid=2060 setsid_rc=2083 errno=0 sid=2083 pgid=2083 pdeathsig=9 api=34
+FDENUM [2026-09-25 18:09:26.149] [out] [smoke_mod] PROBE args name=smoke_mod path=/data/local/tmp/ndk-runtime/fake_plugin.so persist=/data/local/tmp/ndk-runtime/persist/smoke_mod/inst1 transport=eyJ0cmFuc3BvcnRzIjpbeyJ0eXBlIjoibG9jYWwifV19 token-source=stdin
+FDENUM [2026-09-25 18:09:26.149] [out] [smoke_mod] PROBE fds: 0->pipe:[37154] 1->pipe:[37152] 2->pipe:[37153]
+FDENUM [2026-09-25 18:09:26.149] [out] [smoke_mod] PROBE LD_LIBRARY_PATH=(unset) TMPDIR=/data/local/tmp
+FDENUM [2026-09-25 18:09:26.149] [out] [smoke_mod] PROBE token received len=13
+FDENUM [2026-09-25 18:09:26.149] [out] [smoke_mod] PROBE ModulePath::fileProblem -> ''
+FDENUM [2026-09-25 18:09:26.149] [out] [smoke_mod] PROBE ModuleDllSearch::configure -> ''
+FDENUM INFO awaitLoad verdict=Loaded reason=''
+FDENUM PASS awaitLoad == Loaded (status line parsed)
+FDENUM INFO process-stats child: mem=3.67MB cpu_time=0.010s
+FDENUM PASS process-stats reads /proc/<child>/status VmRSS
+FDENUM INFO getModuleStats: [{"cpu_percent":0.0,"cpu_time_seconds":0.01,"memory_mb":3.671875,"name":"smoke_mod","pid":2083}]
+FDENUM INFO terminate took 50 ms
+FDENUM PASS terminate removes module
+FDENUM PASS child quit on SIGTERM (self-pipe) inside the 5s grace, no SIGKILL
+FDENUM PASS launch crashing host
+FDENUM [2026-09-25 18:09:26.656] [out] [crash_mod] PROBE sigaltstack rc=0 errno=0
+FDENUM [2026-09-25 18:09:26.656] [out] [crash_mod] PROBE pid=2191 ppid=2060 setsid_rc=2191 errno=0 sid=2191 pgid=2191 pdeathsig=9 api=34
+FDENUM [2026-09-25 18:09:26.656] [out] [crash_mod] PROBE args name=crash_mod path=/data/local/tmp/ndk-runtime/fake_plugin.so persist=/data/local/tmp/ndk-runtime/persist/smoke_mod/inst1 transport=eyJ0cmFuc3BvcnRzIjpbeyJ0eXBlIjoibG9jYWwifV19 token-source=stdin
+FDENUM [2026-09-25 18:09:26.656] [out] [crash_mod] PROBE fds: 0->pipe:[35671] 1->pipe:[35669] 2->pipe:[35670]
+FDENUM [2026-09-25 18:09:26.656] [out] [crash_mod] PROBE LD_LIBRARY_PATH=(unset) TMPDIR=/data/local/tmp
+FDENUM [2026-09-25 18:09:26.656] [out] [crash_mod] PROBE token received len=9
+FDENUM [2026-09-25 18:09:26.656] [out] [crash_mod] PROBE ModulePath::fileProblem -> ''
+FDENUM [2026-09-25 18:09:26.656] [out] [crash_mod] PROBE ModuleDllSearch::configure -> ''
+FDENUM INFO crash awaitLoad verdict=Loaded
+FDENUM [2026-09-25 18:09:26.864] [critical] [crash_mod] FATAL: module 'crash_mod' crashed (signal 11). Backtrace (raw addresses; decode with atos/addr2line):
+FDENUM [2026-09-25 18:09:26.868] [info] [crash_mod]   0x7bd92e50dba4
+FDENUM [2026-09-25 18:09:26.868] [info] [crash_mod]   0x5cfd3c071521
+FDENUM [2026-09-25 18:09:26.868] [info] [crash_mod]   0x7bd92e5069cf
+FDENUM [2026-09-25 18:09:26.868] [info] [crash_mod]   0x5cfd3c072458
+FDENUM [2026-09-25 18:09:26.868] [info] [crash_mod]   0x7bd92e4fb9ef
+FDENUM [2026-09-25 18:09:26.868] [critical] [crash_mod] FATAL: end backtrace
+FDENUM [2026-09-25 18:09:26.868] [critical] Module process crashed: crash_mod
+FDENUM INFO onTerminated(crash_mod)
+FDENUM PASS SIGSEGV in child detected; onTerminated fired; parent alive
+FDENUM PASS launch failing host
+FDENUM [2026-09-25 18:09:26.898] [out] [fail_mod] PROBE sigaltstack rc=0 errno=0
+FDENUM [2026-09-25 18:09:26.898] [out] [fail_mod] PROBE pid=2224 ppid=2060 setsid_rc=2224 errno=0 sid=2224 pgid=2224 pdeathsig=9 api=34
+FDENUM [2026-09-25 18:09:26.898] [out] [fail_mod] PROBE args name=fail_mod path=/data/local/tmp/ndk-runtime/fake_plugin.so persist=/data/local/tmp/ndk-runtime/persist/smoke_mod/inst1 transport=eyJ0cmFuc3BvcnRzIjpbeyJ0eXBlIjoibG9jYWwifV19 token-source=stdin
+FDENUM [2026-09-25 18:09:26.898] [out] [fail_mod] PROBE fds: 0->pipe:[35693] 1->pipe:[35691] 2->pipe:[35692]
+FDENUM [2026-09-25 18:09:26.898] [out] [fail_mod] PROBE LD_LIBRARY_PATH=(unset) TMPDIR=/data/local/tmp
+FDENUM [2026-09-25 18:09:26.902] [out] [fail_mod] PROBE token received len=8
+FDENUM [2026-09-25 18:09:26.902] [out] [fail_mod] PROBE ModulePath::fileProblem -> ''
+FDENUM [2026-09-25 18:09:26.902] [out] [fail_mod] PROBE ModuleDllSearch::configure -> ''
+FDENUM INFO fail awaitLoad verdict=Failed reason='probe asked to fail: '
+FDENUM PASS awaitLoad == Failed with child's reason
+FDENUM INFO launch(missing binary) returned true
+FDENUM INFO missing awaitLoad verdict=Failed reason='the module process exited with code 127 before it reported that it had loaded'
+FDENUM PASS missing binary surfaces as awaitLoad Failed (exit 127) instead of launch()==false
+FDENUM INFO pthread_atfork prepare handler ran 4 time(s) across 4 launches
+FDENUM INFO => posix_spawn used fork() (atfork handlers run)
+FDENUM SUMMARY fails=0
+FDENUM EXIT=0
+================ RUN main
+INFO parent pid=2272 canary fd=3 (non-CLOEXEC /dev/null)
+INFO resolveHostBinary without LOGOS_HOST_PATH -> '/data/local/tmp/ndk-runtime/liblogos_host_qt.so'
+PASS patched loader discovers liblogos_host_qt.so without LOGOS_HOST_PATH
+PASS QtPluginFormatLoader resolves host via LOGOS_HOST_PATH
+PASS QtPluginFormatLoader canHandle(qt-plugin)
+INFO buildArguments: --name smoke_mod --path /data/local/tmp/ndk-runtime/fake_plugin.so --instance-persistence-path /data/local/tmp/ndk-runtime/persist/smoke_mod/inst1 --transport-set eyJ0cmFuc3BvcnRzIjpbeyJ0eXBlIjoibG9jYWwifV19 
+INFO container id=subprocess
+PASS launch host (posix_spawn from spawn thread)
+PASS handle carries child pid
+PASS hasModule after launch
+INFO parent fds after launch: 3->/dev/null 6->pipe:[46303] 8->pipe:[46304] 11->pipe:[46305] 13->anon_inode:[pidfd]
+PASS sendToken over child stdin pipe
+[2026-09-25 18:09:27.198] [out] [smoke_mod] PROBE sigaltstack rc=0 errno=0
+[2026-09-25 18:09:27.198] [out] [smoke_mod] PROBE pid=2307 ppid=2272 setsid_rc=2307 errno=0 sid=2307 pgid=2307 pdeathsig=9 api=34
+[2026-09-25 18:09:27.198] [out] [smoke_mod] PROBE args name=smoke_mod path=/data/local/tmp/ndk-runtime/fake_plugin.so persist=/data/local/tmp/ndk-runtime/persist/smoke_mod/inst1 transport=eyJ0cmFuc3BvcnRzIjpbeyJ0eXBlIjoibG9jYWwifV19 token-source=stdin
+[2026-09-25 18:09:27.198] [out] [smoke_mod] PROBE fds: 0->pipe:[46305] 1->pipe:[46303] 2->pipe:[46304]
+[2026-09-25 18:09:27.198] [out] [smoke_mod] PROBE LD_LIBRARY_PATH=(unset) TMPDIR=/data/local/tmp/ndk-runtime
+[2026-09-25 18:09:27.198] [out] [smoke_mod] PROBE token received len=13
+[2026-09-25 18:09:27.198] [out] [smoke_mod] PROBE ModulePath::fileProblem -> ''
+[2026-09-25 18:09:27.198] [out] [smoke_mod] PROBE ModuleDllSearch::configure -> ''
+INFO awaitLoad verdict=Loaded reason=''
+PASS awaitLoad == Loaded (status line parsed)
+INFO process-stats child: mem=3.69MB cpu_time=0.000s
+PASS process-stats reads /proc/<child>/status VmRSS
+INFO getModuleStats: [{"cpu_percent":0.0,"cpu_time_seconds":0.0,"memory_mb":3.6875,"name":"smoke_mod","pid":2307}]
+INFO terminate took 54 ms
+PASS terminate removes module
+PASS child quit on SIGTERM (self-pipe) inside the 5s grace, no SIGKILL
+PASS launch crashing host
+[2026-09-25 18:09:27.682] [out] [crash_mod] PROBE sigaltstack rc=0 errno=0
+[2026-09-25 18:09:27.682] [out] [crash_mod] PROBE pid=2500 ppid=2272 setsid_rc=2500 errno=0 sid=2500 pgid=2500 pdeathsig=9 api=34
+[2026-09-25 18:09:27.682] [out] [crash_mod] PROBE args name=crash_mod path=/data/local/tmp/ndk-runtime/fake_plugin.so persist=/data/local/tmp/ndk-runtime/persist/smoke_mod/inst1 transport=eyJ0cmFuc3BvcnRzIjpbeyJ0eXBlIjoibG9jYWwifV19 token-source=stdin
+[2026-09-25 18:09:27.682] [out] [crash_mod] PROBE fds: 0->pipe:[46415] 1->pipe:[46413] 2->pipe:[46414]
+[2026-09-25 18:09:27.682] [out] [crash_mod] PROBE LD_LIBRARY_PATH=(unset) TMPDIR=/data/local/tmp/ndk-runtime
+[2026-09-25 18:09:27.682] [out] [crash_mod] PROBE token received len=9
+[2026-09-25 18:09:27.682] [out] [crash_mod] PROBE ModulePath::fileProblem -> ''
+[2026-09-25 18:09:27.682] [out] [crash_mod] PROBE ModuleDllSearch::configure -> ''
+INFO crash awaitLoad verdict=Loaded
+[2026-09-25 18:09:27.890] [critical] [crash_mod] FATAL: module 'crash_mod' crashed (signal 11). Backtrace (raw addresses; decode with atos/addr2line):
+[2026-09-25 18:09:27.891] [info] [crash_mod]   0x7f96dc0f1ba4
+[2026-09-25 18:09:27.891] [info] [crash_mod]   0x62aa52ae9521
+[2026-09-25 18:09:27.891] [info] [crash_mod]   0x7f96dc0ea9cf
+[2026-09-25 18:09:27.891] [info] [crash_mod]   0x62aa52aea458
+[2026-09-25 18:09:27.891] [info] [crash_mod]   0x7f96dc0df9ef
+[2026-09-25 18:09:27.891] [critical] [crash_mod] FATAL: end backtrace
+[2026-09-25 18:09:27.892] [critical] Module process crashed: crash_mod
+INFO onTerminated(crash_mod)
+PASS SIGSEGV in child detected; onTerminated fired; parent alive
+PASS launch failing host
+[2026-09-25 18:09:28.023] [out] [fail_mod] PROBE sigaltstack rc=0 errno=0
+[2026-09-25 18:09:28.023] [out] [fail_mod] PROBE pid=2604 ppid=2272 setsid_rc=2604 errno=0 sid=2604 pgid=2604 pdeathsig=9 api=34
+[2026-09-25 18:09:28.023] [out] [fail_mod] PROBE args name=fail_mod path=/data/local/tmp/ndk-runtime/fake_plugin.so persist=/data/local/tmp/ndk-runtime/persist/smoke_mod/inst1 transport=eyJ0cmFuc3BvcnRzIjpbeyJ0eXBlIjoibG9jYWwifV19 token-source=stdin
+[2026-09-25 18:09:28.023] [out] [fail_mod] PROBE fds: 0->pipe:[47233] 1->pipe:[47231] 2->pipe:[47232]
+[2026-09-25 18:09:28.023] [out] [fail_mod] PROBE LD_LIBRARY_PATH=(unset) TMPDIR=/data/local/tmp/ndk-runtime
+[2026-09-25 18:09:28.023] [out] [fail_mod] PROBE token received len=8
+[2026-09-25 18:09:28.023] [out] [fail_mod] PROBE ModulePath::fileProblem -> ''
+[2026-09-25 18:09:28.023] [out] [fail_mod] PROBE ModuleDllSearch::configure -> ''
+INFO fail awaitLoad verdict=Failed reason='probe asked to fail: '
+PASS awaitLoad == Failed with child's reason
+INFO onTerminated(fail_mod)
+INFO launch(missing binary) returned true
+INFO missing awaitLoad verdict=Failed reason='the module process exited with code 127 before it reported that it had loaded'
+PASS missing binary surfaces as awaitLoad Failed (exit 127) instead of launch()==false
+INFO pthread_atfork prepare handler ran 4 time(s) across 4 launches
+INFO => posix_spawn used fork() (atfork handlers run)
+SUMMARY fails=0
+EXIT=0
+RUN main done
+================ RUN orphan (parent dies without terminate)
+INFO parent pid=2617 canary fd=3 (non-CLOEXEC /dev/null)
+INFO resolveHostBinary without LOGOS_HOST_PATH -> '/data/local/tmp/ndk-runtime/liblogos_host_qt.so'
+PASS patched loader discovers liblogos_host_qt.so without LOGOS_HOST_PATH
+PASS QtPluginFormatLoader resolves host via LOGOS_HOST_PATH
+PASS QtPluginFormatLoader canHandle(qt-plugin)
+INFO buildArguments: --name smoke_mod --path /data/local/tmp/ndk-runtime/fake_plugin.so --instance-persistence-path /data/local/tmp/ndk-runtime/persist/smoke_mod/inst1 --transport-set eyJ0cmFuc3BvcnRzIjpbeyJ0eXBlIjoibG9jYWwifV19 
+INFO container id=subprocess
+PASS orphan: launch
+[2026-09-25 18:09:28.074] [out] [smoke_mod] PROBE sigaltstack rc=0 errno=0
+[2026-09-25 18:09:28.075] [out] [smoke_mod] PROBE pid=2620 ppid=2617 setsid_rc=2620 errno=0 sid=2620 pgid=2620 pdeathsig=9 api=34
+[2026-09-25 18:09:28.075] [out] [smoke_mod] PROBE args name=smoke_mod path=/data/local/tmp/ndk-runtime/fake_plugin.so persist=/data/local/tmp/ndk-runtime/persist/smoke_mod/inst1 transport=eyJ0cmFuc3BvcnRzIjpbeyJ0eXBlIjoibG9jYWwifV19 token-source=stdin
+[2026-09-25 18:09:28.075] [out] [smoke_mod] PROBE fds: 0->pipe:[34618] 1->pipe:[34616] 2->pipe:[34617]
+[2026-09-25 18:09:28.075] [out] [smoke_mod] PROBE LD_LIBRARY_PATH=(unset) TMPDIR=/data/local/tmp
+[2026-09-25 18:09:28.075] [out] [smoke_mod] PROBE token received len=10
+[2026-09-25 18:09:28.075] [out] [smoke_mod] PROBE ModulePath::fileProblem -> ''
+[2026-09-25 18:09:28.075] [out] [smoke_mod] PROBE ModuleDllSearch::configure -> ''
+ORPHAN_CHILD_PID=2620 verdict=Loaded
+EXIT=0
+ORPHAN child 2620 gone after parent death (PR_SET_PDEATHSIG/watchdog) -> PASS
+================ RUN app context (NativeActivity APK, untrusted_app)
+Serving...
+All files should be loaded. Notifying the device.
+Performing Incremental Install
+Success
+Install command complete in 821 ms
+RUN app installed
+    legacyNativeLibraryDir=/data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib
+    primaryCpuAbi=x86_64
+    versionCode=1 minSdk=34 targetSdk=34
+    flags=[ DEBUGGABLE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+total 48
+drwxr-xr-x 2 system system       0 2026-09-25 18:09 .
+drwxr-xr-x 2 system system       0 2026-09-25 18:09 ..
+-r-xr-xr-x 1 system system 1617608 2026-09-25 18:09 libc++_shared.so
+-r-xr-xr-x 1 system system 1153784 2026-09-25 18:09 libfmt.so
+-r-xr-xr-x 1 system system 5564200 2026-09-25 18:09 liblogos_host_probe.so
+-r-xr-xr-x 1 system system 5564200 2026-09-25 18:09 liblogos_host_qt.so
+-r-xr-xr-x 1 system system 4930328 2026-09-25 18:09 libndkrt_activity.so
+-r-xr-xr-x 1 system system 4716776 2026-09-25 18:09 libspdlog.so
+Starting: Intent { cmp=dev.ndkruntime.smoke/android.app.NativeActivity }
+Status: ok
+LaunchState: COLD
+Activity: dev.ndkruntime.smoke/android.app.NativeActivity
+TotalTime: 521
+WaitTime: 530
+Complete
+--- app smoke.log
+APPLOG APP pid=3302 uid=10193 nativeLibraryDir=/data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64 dataDir=/data/user/0/dev.ndkruntime.smoke/files
+APPLOG INFO parent pid=3302 canary fd=80 (non-CLOEXEC /dev/null)
+APPLOG INFO resolveHostBinary without LOGOS_HOST_PATH -> '/data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/liblogos_host_qt.so'
+APPLOG PASS patched loader discovers liblogos_host_qt.so without LOGOS_HOST_PATH
+APPLOG PASS QtPluginFormatLoader resolves host via LOGOS_HOST_PATH
+APPLOG PASS QtPluginFormatLoader canHandle(qt-plugin)
+APPLOG INFO buildArguments: --name smoke_mod --path /data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/fake_plugin.so --instance-persistence-path /data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/persist/smoke_mod/inst1 --transport-set eyJ0cmFuc3BvcnRzIjpbeyJ0eXBlIjoibG9jYWwifV19 
+APPLOG INFO container id=subprocess
+APPLOG PASS launch host (posix_spawn from spawn thread)
+APPLOG PASS handle carries child pid
+APPLOG PASS hasModule after launch
+APPLOG INFO parent fds after launch: 0->/dev/null 6->/dev/null 23->/dev/null 24->/dev/null 44->/dev/null 53->/dev/null 54->/dev/null 55->/dev/null 56->/dev/null 57->pipe:[48378] 58->pipe:[48378] 78->pipe:[50329] 79->pipe:[50329] 80->/dev/null 83->pipe:[50335] 85->pipe:[50336] 88->pipe:[50337] 89->anon_inode:[pidfd]
+APPLOG PASS sendToken over child stdin pipe
+APPLOG [2026-09-25 18:09:31.705] [out] [smoke_mod] PROBE sigaltstack rc=0 errno=0
+APPLOG [2026-09-25 18:09:31.706] [out] [smoke_mod] PROBE pid=3394 ppid=3302 setsid_rc=3394 errno=0 sid=3394 pgid=3394 pdeathsig=9 api=34
+APPLOG [2026-09-25 18:09:31.706] [out] [smoke_mod] PROBE args name=smoke_mod path=/data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/fake_plugin.so persist=/data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/persist/smoke_mod/inst1 transport=eyJ0cmFuc3BvcnRzIjpbeyJ0eXBlIjoibG9jYWwifV19 token-source=stdin
+APPLOG [2026-09-25 18:09:31.706] [out] [smoke_mod] PROBE fds: 0->pipe:[50337] 1->pipe:[50335] 2->pipe:[50336]
+APPLOG [2026-09-25 18:09:31.706] [out] [smoke_mod] PROBE LD_LIBRARY_PATH=(unset) TMPDIR=/data/user/0/dev.ndkruntime.smoke/cache
+APPLOG [2026-09-25 18:09:31.706] [out] [smoke_mod] PROBE token received len=13
+APPLOG [2026-09-25 18:09:31.706] [out] [smoke_mod] PROBE ModulePath::fileProblem -> 'no plugin file at /data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/fake_plugin.so'
+APPLOG [2026-09-25 18:09:31.706] [out] [smoke_mod] PROBE ModuleDllSearch::configure -> ''
+APPLOG INFO awaitLoad verdict=Loaded reason=''
+APPLOG PASS awaitLoad == Loaded (status line parsed)
+APPLOG INFO process-stats child: mem=3.82MB cpu_time=0.010s
+APPLOG PASS process-stats reads /proc/<child>/status VmRSS
+APPLOG INFO getModuleStats: [{"cpu_percent":0.0,"cpu_time_seconds":0.01,"memory_mb":3.82421875,"name":"smoke_mod","pid":3394}]
+APPLOG INFO terminate took 50 ms
+APPLOG PASS terminate removes module
+APPLOG PASS child quit on SIGTERM (self-pipe) inside the 5s grace, no SIGKILL
+APPLOG PASS launch crashing host
+APPLOG [2026-09-25 18:09:32.204] [out] [crash_mod] PROBE sigaltstack rc=0 errno=0
+APPLOG [2026-09-25 18:09:32.204] [out] [crash_mod] PROBE pid=3485 ppid=3302 setsid_rc=3485 errno=0 sid=3485 pgid=3485 pdeathsig=9 api=34
+APPLOG [2026-09-25 18:09:32.204] [out] [crash_mod] PROBE args name=crash_mod path=/data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/fake_plugin.so persist=/data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/persist/smoke_mod/inst1 transport=eyJ0cmFuc3BvcnRzIjpbeyJ0eXBlIjoibG9jYWwifV19 token-source=stdin
+APPLOG [2026-09-25 18:09:32.204] [out] [crash_mod] PROBE fds: 0->pipe:[50564] 1->pipe:[50562] 2->pipe:[50563]
+APPLOG [2026-09-25 18:09:32.204] [out] [crash_mod] PROBE LD_LIBRARY_PATH=(unset) TMPDIR=/data/user/0/dev.ndkruntime.smoke/cache
+APPLOG [2026-09-25 18:09:32.204] [out] [crash_mod] PROBE token received len=9
+APPLOG [2026-09-25 18:09:32.204] [out] [crash_mod] PROBE ModulePath::fileProblem -> 'no plugin file at /data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/fake_plugin.so'
+APPLOG [2026-09-25 18:09:32.204] [out] [crash_mod] PROBE ModuleDllSearch::configure -> ''
+APPLOG INFO crash awaitLoad verdict=Loaded
+APPLOG [2026-09-25 18:09:32.405] [critical] [crash_mod] FATAL: module 'crash_mod' crashed (signal 11). Backtrace (raw addresses; decode with atos/addr2line):
+APPLOG [2026-09-25 18:09:32.405] [info] [crash_mod]   0x76b7a6a91ba4
+APPLOG [2026-09-25 18:09:32.405] [info] [crash_mod]   0x627287321521
+APPLOG [2026-09-25 18:09:32.405] [info] [crash_mod]   0x76b7a6a8a9cf
+APPLOG [2026-09-25 18:09:32.405] [info] [crash_mod]   0x627287322458
+APPLOG [2026-09-25 18:09:32.405] [info] [crash_mod]   0x76b7a6a7f9ef
+APPLOG [2026-09-25 18:09:32.405] [critical] [crash_mod] FATAL: end backtrace
+APPLOG [2026-09-25 18:09:32.412] [critical] Module process crashed: crash_mod
+APPLOG INFO onTerminated(crash_mod)
+APPLOG PASS SIGSEGV in child detected; onTerminated fired; parent alive
+APPLOG PASS launch failing host
+APPLOG [2026-09-25 18:09:32.515] [out] [fail_mod] PROBE sigaltstack rc=0 errno=0
+APPLOG [2026-09-25 18:09:32.515] [out] [fail_mod] PROBE pid=3586 ppid=3302 setsid_rc=3586 errno=0 sid=3586 pgid=3586 pdeathsig=9 api=34
+APPLOG [2026-09-25 18:09:32.515] [out] [fail_mod] PROBE args name=fail_mod path=/data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/fake_plugin.so persist=/data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/persist/smoke_mod/inst1 transport=eyJ0cmFuc3BvcnRzIjpbeyJ0eXBlIjoibG9jYWwifV19 token-source=stdin
+APPLOG [2026-09-25 18:09:32.515] [out] [fail_mod] PROBE fds: 0->pipe:[52491] 1->pipe:[52489] 2->pipe:[52490]
+APPLOG [2026-09-25 18:09:32.515] [out] [fail_mod] PROBE LD_LIBRARY_PATH=(unset) TMPDIR=/data/user/0/dev.ndkruntime.smoke/cache
+APPLOG [2026-09-25 18:09:32.515] [out] [fail_mod] PROBE token received len=8
+APPLOG [2026-09-25 18:09:32.515] [out] [fail_mod] PROBE ModulePath::fileProblem -> 'no plugin file at /data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/fake_plugin.so'
+APPLOG [2026-09-25 18:09:32.515] [out] [fail_mod] PROBE ModuleDllSearch::configure -> ''
+APPLOG INFO onTerminated(fail_mod)
+APPLOG INFO fail awaitLoad verdict=Failed reason='probe asked to fail: no plugin file at /data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/fake_plugin.so'
+APPLOG PASS awaitLoad == Failed with child's reason
+APPLOG INFO launch(missing binary) returned true
+APPLOG INFO missing awaitLoad verdict=Failed reason='the module process exited with code 127 before it reported that it had loaded'
+APPLOG PASS missing binary surfaces as awaitLoad Failed (exit 127) instead of launch()==false
+APPLOG INFO pthread_atfork prepare handler ran 4 time(s) across 4 launches
+APPLOG INFO => posix_spawn used fork() (atfork handlers run)
+APPLOG SUMMARY fails=0
+APPLOG [2026-09-25 18:09:32.537] [out] [linger_mod] PROBE sigaltstack rc=0 errno=0
+APPLOG [2026-09-25 18:09:32.537] [out] [linger_mod] PROBE pid=3598 ppid=3302 setsid_rc=3598 errno=0 sid=3598 pgid=3598 pdeathsig=9 api=34
+APPLOG [2026-09-25 18:09:32.537] [out] [linger_mod] PROBE args name=linger_mod path=/data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/fake_plugin.so persist=/data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/persist/smoke_mod/inst1 transport=eyJ0cmFuc3BvcnRzIjpbeyJ0eXBlIjoibG9jYWwifV19 token-source=stdin
+APPLOG [2026-09-25 18:09:32.537] [out] [linger_mod] PROBE fds: 0->pipe:[52502] 1->pipe:[52500] 2->pipe:[52501]
+APPLOG [2026-09-25 18:09:32.537] [out] [linger_mod] PROBE LD_LIBRARY_PATH=(unset) TMPDIR=/data/user/0/dev.ndkruntime.smoke/cache
+APPLOG [2026-09-25 18:09:32.537] [out] [linger_mod] PROBE token received len=10
+APPLOG [2026-09-25 18:09:32.537] [out] [linger_mod] PROBE ModulePath::fileProblem -> 'no plugin file at /data/app/~~Ved98mpjG0hROCdwofyBgw==/dev.ndkruntime.smoke-2fRxSw490dd8cBX_lxtguQ==/lib/x86_64/fake_plugin.so'
+APPLOG [2026-09-25 18:09:32.537] [out] [linger_mod] PROBE ModuleDllSearch::configure -> ''
+APPLOG LINGER_CHILD_PID=3598 verdict=Loaded
+APPLOG APP smoke_main rc=0
+RUN app pid=3302 linger host pid=3598
+ps: bad -o 'LABEL,USER,PID,PPID,PGID,SID,NAME'
+                                     ^
+RUN ps:   IO      Data I/O                       LABEL   Security label
+RUN app ORPHAN: host 3598 gone after app process SIGKILL -> PASS
+--- logcat (avc / ndkrt / crash)
+09-25 18:09:30.292   544   544 W binder:544_F: type=1400 audit(0.0:8): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+09-25 18:09:30.292   544   544 W binder:544_F: type=1400 audit(0.0:9): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+09-25 18:09:30.296   544   544 W binder:544_F: type=1400 audit(0.0:10): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+09-25 18:09:31.116   544   544 W binder:544_3: type=1400 audit(0.0:11): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+09-25 18:09:31.124   544   544 W binder:544_3: type=1400 audit(0.0:12): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+09-25 18:09:31.124   544   544 W binder:544_3: type=1400 audit(0.0:13): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+09-25 18:09:31.256   756   756 W ll.splashscreen: type=1400 audit(0.0:14): avc:  denied  { read } for  name="u:object_r:incremental_prop:s0" dev="tmpfs" ino=204 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:incremental_prop:s0 tclass=file permissive=0 app=com.android.systemui
+09-25 18:09:31.256   756   756 W ll.splashscreen: type=1400 audit(0.0:15): avc:  denied  { read } for  name="filesystems" dev="proc" ino=4026532076 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:proc_filesystems:s0 tclass=file permissive=0 app=com.android.systemui
+09-25 18:09:31.688  3394  3394 W liblogos_host_p: type=1400 audit(0.0:16): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=dev.ndkruntime.smoke
+09-25 18:09:32.188  3485  3485 W liblogos_host_p: type=1400 audit(0.0:20): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=dev.ndkruntime.smoke
+09-25 18:09:32.188  3485  3485 W liblogos_host_p: type=1400 audit(0.0:21): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=dev.ndkruntime.smoke
+09-25 18:09:32.188  3485  3485 W liblogos_host_p: type=1400 audit(0.0:22): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=dev.ndkruntime.smoke
+09-25 18:09:32.188  3485  3485 W liblogos_host_p: type=1400 audit(0.0:23): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=dev.ndkruntime.smoke
+09-25 18:09:32.512  3586  3586 W liblogos_host_p: type=1400 audit(0.0:24): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=dev.ndkruntime.smoke
+09-25 18:09:32.537  3302  3378 I ndkrt   : smoke_main rc=0 log=/data/user/0/dev.ndkruntime.smoke/files/smoke.log
+OK: killing emulator, bye bye
+OK
+emulator emulator-5584 stopped
+2026-09-25T18:09:35+10:00

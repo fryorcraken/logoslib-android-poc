@@ -1,0 +1,22 @@
+== T0a jvm-mode=none ==
+#00 0x530c7e: symbolizer=QJniEnvironment::getJniEnv() | nearest-dynsym=_ZN15QJniEnvironment9getJniEnvEv@@Qt_6 +0x2e
+#01 0x5364ff: symbolizer=?? | nearest-dynsym=_ZN10QJniObject6assignEP8_jobject@@Qt_6 +0x2b5f
+#02 0x5364e6: symbolizer=?? | nearest-dynsym=_ZN10QJniObject6assignEP8_jobject@@Qt_6 +0x2b46
+#03 0x4fb042: symbolizer=?? | nearest-dynsym=_ZNK15QJalaliCalendar15localeMonthDataEv@@Qt_6_PRIVATE_API +0x91d4
+#04 0x393294: symbolizer=QCoreApplicationPrivate::appVersion() const | nearest-dynsym=_ZNK23QCoreApplicationPrivate10appVersionEv@@Qt_6_PRIVATE_API +0x1d6
+#05 0x394496: symbolizer=QCoreApplicationPrivate::init() | nearest-dynsym=_ZN23QCoreApplicationPrivate4initEv@@Qt_6_PRIVATE_API +0xa2
+#06 0x3943ab: symbolizer=QCoreApplication::QCoreApplication(int&, char**, int) | nearest-dynsym=_ZN16QCoreApplicationC2ERiPPci@@Qt_6 +0x57
+== T0b jvm-mode=appversion ==
+#00 0x530c7e: symbolizer=QJniEnvironment::getJniEnv() | nearest-dynsym=_ZN15QJniEnvironment9getJniEnvEv@@Qt_6 +0x2e
+#01 0x5364ff: symbolizer=?? | nearest-dynsym=_ZN10QJniObject6assignEP8_jobject@@Qt_6 +0x2b5f
+#02 0x5364e6: symbolizer=?? | nearest-dynsym=_ZN10QJniObject6assignEP8_jobject@@Qt_6 +0x2b46
+#03 0x4fb042: symbolizer=?? | nearest-dynsym=_ZNK15QJalaliCalendar15localeMonthDataEv@@Qt_6_PRIVATE_API +0x91d4
+#04 0x52ada9: symbolizer=?? | nearest-dynsym=_ZN14QStandardPaths16writableLocationENS_16StandardLocationE@@Qt_6 +0x99f
+#05 0x52a4dc: symbolizer=QStandardPaths::writableLocation(QStandardPaths::StandardLocation) | nearest-dynsym=_ZN14QStandardPaths16writableLocationENS_16StandardLocationE@@Qt_6 +0xd2
+#06 0x52b4b6: symbolizer=QStandardPaths::standardLocations(QStandardPaths::StandardLocation) | nearest-dynsym=_ZN14QStandardPaths17standardLocationsENS_16StandardLocationE@@Qt_6 +0x30c
+#07 0x379f1c: symbolizer=QStandardPaths::locateAll(QStandardPaths::StandardLocation, QString const&, QFlags<QStandardPaths::LocateOption>) | nearest-dynsym=_ZN14QStandardPaths9locateAllENS_16StandardLocationERK7QString6QFlagsINS_12LocateOptionEE@@Qt_6 +0x34
+#08 0x36ffc4: symbolizer=?? | nearest-dynsym=_ZN16QLoggingCategory14setFilterRulesERK7QString@@Qt_6 +0x13b2
+#09 0x36f7a4: symbolizer=?? | nearest-dynsym=_ZN16QLoggingCategory14setFilterRulesERK7QString@@Qt_6 +0xb92
+#10 0x370bf2: symbolizer=QLoggingRegistry::instance() | nearest-dynsym=_ZN16QLoggingRegistry8instanceEv@@Qt_6_PRIVATE_API +0x70
+#11 0x3944c8: symbolizer=QCoreApplicationPrivate::init() | nearest-dynsym=_ZN23QCoreApplicationPrivate4initEv@@Qt_6_PRIVATE_API +0xd4
+#12 0x3943ab: symbolizer=QCoreApplication::QCoreApplication(int&, char**, int) | nearest-dynsym=_ZN16QCoreApplicationC2ERiPPci@@Qt_6 +0x57

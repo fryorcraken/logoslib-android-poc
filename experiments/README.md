@@ -8,8 +8,20 @@ self-contained run with its scripts and captured logs.
 | [`desktop-probe/`](desktop-probe) | lez_core 0.4.2 loads under liblogos (logoscore) from published flakes, does real wallet work, reads the live LEZ testnet, and is called by another module (`lez_probe`) over liblogos's own transport | Linux x86_64 |
 | [`lp-inprocess/`](lp-inprocess) | A pure-C caller (no Qt headers) loads lez_core and calls it through the `lp_*` C ABI in-process. The only Qt C++ is a ~60-line QCoreApplication loop. This is the route the Android JNI shim will take. | Linux x86_64 |
 
-Gating experiments for Android (X1-X9 in the investigation) will be added here as they
-complete.
+Android gating experiments (X1-X9 in `docs/investigation.md` §8). Their full write-ups are in
+`docs/research/exp-*.md`. Scripts were run from the repo root with scratch output under
+`.work/` (gitignored), and paths are written as `${REPO_ROOT}` / `${HOME}`.
+
+| Directory | What it shows | Where |
+| --- | --- | --- |
+| [`qt-jvmless/`](qt-jvmless) | Stock Qt 6.11.1 crashes in a JVM-less process. A fake-JavaVM prime of QtCore's `JNI_OnLoad` fixes it. `QCoreApplication`, `QPluginLoader` and QtRO work, including a helper exec'd from an APK's `nativeLibraryDir`. `Qt6Android.jar` is not needed. | x86_64 API 34 emulator |
+| [`ndk-runtime/`](ndk-runtime) | Boost 1.87, spdlog/fmt, the logos container, loaders and process-stats cross-build for Android. The real `SubprocessContainer` spawns a host from inside an APK. | Emulator |
+| [`lgx-icu/`](lgx-icu) | liblgx ported to the NDK's ICU C API: identical output and upstream tests pass, so no ICU ships in the APK | Desktop + NDK build |
+| [`desktop-harness/`](desktop-harness) | `getPluginMethods` introspection, the first-call race, `lp_invoke` blocking vs `lp_invoke_async`, and event delivery | Desktop |
+| [`wallet-android/`](wallet-android) | lez_core's `wallet-ffi` builds for Android (14-15 MB) and reads the LEZ testnet over HTTPS with no JVM | Emulator (LEZ no longer the target) |
+
+The Android emulator on this host boots only with its window hidden (`-qt-hide-window`);
+`-no-window` segfaults at cold boot.
 
 ## desktop-probe
 

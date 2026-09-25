@@ -1,0 +1,602 @@
+/usr/bin/make
+/usr/bin/cmake
+cmake version 3.31.11
++ cmake -S ${REPO_ROOT}/.work/experiments/qt-jvmless/src -B ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/cmake/Qt6/qt.toolchain.cmake -DQT_HOST_PATH=${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64 -DANDROID_NDK_ROOT=${HOME}/android-ndk/android-ndk-r27c -DANDROID_SDK_ROOT=${HOME}/android-sdk -DANDROID_ABI=x86_64 -DANDROID_PLATFORM=android-34 -DANDROID_STL=c++_shared
+-- Android toolchain file within NDK detected: ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/cmake/Qt6/qt.toolchain.cmake:135 (include)
+  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt:2 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/cmake/Qt6/qt.toolchain.cmake:135 (include)
+  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt:2 (project)
+
+
+-- Android toolchain file within NDK detected: ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/cmake/Qt6/qt.toolchain.cmake:135 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  CMakeLists.txt:2 (project)
+
+
+-- The CXX compiler identification is Clang 18.0.3
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  CMakeLists.txt:2 (project)
+
+
+-- Detecting CXX compiler ABI info
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/cmake/Qt6/qt.toolchain.cmake:135 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/CMakeScratch/TryCompile-jdlWtw/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/cmake/Qt6/qt.toolchain.cmake:135 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/CMakeScratch/TryCompile-jdlWtw/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/CMakeScratch/TryCompile-jdlWtw/CMakeLists.txt:4 (project)
+
+
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/cmake/Qt6/qt.toolchain.cmake:135 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/CMakeScratch/TryCompile-0bKVRI/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/cmake/Qt6/qt.toolchain.cmake:135 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/CMakeScratch/TryCompile-0bKVRI/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/CMakeScratch/TryCompile-0bKVRI/CMakeLists.txt:4 (project)
+
+
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Check if compiler accepts -pthread
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/cmake/Qt6/qt.toolchain.cmake:135 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/CMakeScratch/TryCompile-XDR55f/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/cmake/Qt6/qt.toolchain.cmake:135 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/CMakeScratch/TryCompile-XDR55f/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/CMakeScratch/TryCompile-XDR55f/CMakeLists.txt:4 (project)
+
+
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE
+-- Performing Test HAVE_STDATOMIC
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/cmake/Qt6/qt.toolchain.cmake:135 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/CMakeScratch/TryCompile-jtO7Pf/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/cmake/Qt6/qt.toolchain.cmake:135 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/CMakeScratch/TryCompile-jtO7Pf/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/CMakeScratch/TryCompile-jtO7Pf/CMakeLists.txt:4 (project)
+
+
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found WrapAtomic: TRUE
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64
++ rc=0
++ set +x
+/usr/bin/cmake -S${REPO_ROOT}/.work/experiments/qt-jvmless/src -B${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64//CMakeFiles/progress.marks
+/usr/bin/gmake  -f CMakeFiles/Makefile2 all
+gmake[1]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+/usr/bin/gmake  -f CMakeFiles/echoplugin_autogen_timestamp_deps.dir/build.make CMakeFiles/echoplugin_autogen_timestamp_deps.dir/depend
+/usr/bin/gmake  -f CMakeFiles/qro_server_autogen_timestamp_deps.dir/build.make CMakeFiles/qro_server_autogen_timestamp_deps.dir/depend
+/usr/bin/gmake  -f CMakeFiles/qro_client_autogen_timestamp_deps.dir/build.make CMakeFiles/qro_client_autogen_timestamp_deps.dir/depend
+/usr/bin/gmake  -f CMakeFiles/qrotest_jni_autogen_timestamp_deps.dir/build.make CMakeFiles/qrotest_jni_autogen_timestamp_deps.dir/depend
+/usr/bin/gmake  -f CMakeFiles/qrotest_jni_noonload_autogen_timestamp_deps.dir/build.make CMakeFiles/qrotest_jni_noonload_autogen_timestamp_deps.dir/depend
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+cd ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/echoplugin_autogen_timestamp_deps.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+cd ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qro_server_autogen_timestamp_deps.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+cd ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qro_client_autogen_timestamp_deps.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+cd ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qrotest_jni_autogen_timestamp_deps.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+cd ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qrotest_jni_noonload_autogen_timestamp_deps.dir/DependInfo.cmake "--color="
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+/usr/bin/gmake  -f CMakeFiles/qrotest_jni_noonload_autogen_timestamp_deps.dir/build.make CMakeFiles/qrotest_jni_noonload_autogen_timestamp_deps.dir/build
+/usr/bin/gmake  -f CMakeFiles/echoplugin_autogen_timestamp_deps.dir/build.make CMakeFiles/echoplugin_autogen_timestamp_deps.dir/build
+/usr/bin/gmake  -f CMakeFiles/qro_server_autogen_timestamp_deps.dir/build.make CMakeFiles/qro_server_autogen_timestamp_deps.dir/build
+/usr/bin/gmake  -f CMakeFiles/qro_client_autogen_timestamp_deps.dir/build.make CMakeFiles/qro_client_autogen_timestamp_deps.dir/build
+/usr/bin/gmake  -f CMakeFiles/qrotest_jni_autogen_timestamp_deps.dir/build.make CMakeFiles/qrotest_jni_autogen_timestamp_deps.dir/build
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Nothing to be done for 'CMakeFiles/qrotest_jni_noonload_autogen_timestamp_deps.dir/build'.
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Nothing to be done for 'CMakeFiles/echoplugin_autogen_timestamp_deps.dir/build'.
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Nothing to be done for 'CMakeFiles/qro_client_autogen_timestamp_deps.dir/build'.
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Nothing to be done for 'CMakeFiles/qro_server_autogen_timestamp_deps.dir/build'.
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Nothing to be done for 'CMakeFiles/qrotest_jni_autogen_timestamp_deps.dir/build'.
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+[  0%] Built target qrotest_jni_autogen_timestamp_deps
+[  0%] Built target echoplugin_autogen_timestamp_deps
+[  0%] Built target qrotest_jni_noonload_autogen_timestamp_deps
+[  0%] Built target qro_client_autogen_timestamp_deps
+[  0%] Built target qro_server_autogen_timestamp_deps
+/usr/bin/gmake  -f CMakeFiles/echoplugin_autogen.dir/build.make CMakeFiles/echoplugin_autogen.dir/depend
+/usr/bin/gmake  -f CMakeFiles/qro_server_autogen.dir/build.make CMakeFiles/qro_server_autogen.dir/depend
+/usr/bin/gmake  -f CMakeFiles/qro_client_autogen.dir/build.make CMakeFiles/qro_client_autogen.dir/depend
+/usr/bin/gmake  -f CMakeFiles/qrotest_jni_autogen.dir/build.make CMakeFiles/qrotest_jni_autogen.dir/depend
+/usr/bin/gmake  -f CMakeFiles/qrotest_jni_noonload_autogen.dir/build.make CMakeFiles/qrotest_jni_noonload_autogen.dir/depend
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+cd ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/echoplugin_autogen.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+cd ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qro_server_autogen.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+cd ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qro_client_autogen.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+cd ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qrotest_jni_autogen.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+cd ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qrotest_jni_noonload_autogen.dir/DependInfo.cmake "--color="
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+/usr/bin/gmake  -f CMakeFiles/echoplugin_autogen.dir/build.make CMakeFiles/echoplugin_autogen.dir/build
+/usr/bin/gmake  -f CMakeFiles/qro_server_autogen.dir/build.make CMakeFiles/qro_server_autogen.dir/build
+/usr/bin/gmake  -f CMakeFiles/qro_client_autogen.dir/build.make CMakeFiles/qro_client_autogen.dir/build
+/usr/bin/gmake  -f CMakeFiles/qrotest_jni_autogen.dir/build.make CMakeFiles/qrotest_jni_autogen.dir/build
+/usr/bin/gmake  -f CMakeFiles/qrotest_jni_noonload_autogen.dir/build.make CMakeFiles/qrotest_jni_noonload_autogen.dir/build
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+[ 25%] Automatic MOC for target qrotest_jni_noonload
+[ 25%] Automatic MOC for target qrotest_jni
+[ 25%] Automatic MOC for target echoplugin
+[ 25%] Automatic MOC for target qro_server
+[ 25%] Automatic MOC for target qro_client
+/usr/bin/cmake -E cmake_autogen ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qrotest_jni_noonload_autogen.dir/AutogenInfo.json Release
+/usr/bin/cmake -E cmake_autogen ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qro_server_autogen.dir/AutogenInfo.json Release
+/usr/bin/cmake -E cmake_autogen ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qrotest_jni_autogen.dir/AutogenInfo.json Release
+/usr/bin/cmake -E cmake_autogen ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/echoplugin_autogen.dir/AutogenInfo.json Release
+/usr/bin/cmake -E cmake_autogen ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qro_client_autogen.dir/AutogenInfo.json Release
+AutoGen: Refreshing parse cache because it doesn't exist.
+AutoGen: Refreshing parse cache because it doesn't exist.
+AutoGen: Refreshing parse cache because it doesn't exist.
+AutoGen: Refreshing parse cache because it doesn't exist.
+AutoGen: Refreshing parse cache because it doesn't exist.
+AutoMoc: Generating "BIN:/qro_server_autogen/moc_predefs.h", because it doesn't exist.
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ -std=gnu++17 -w -dM -E /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp --target=x86_64-none-linux-android34 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_REMOTEOBJECTS_LIB -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtNetwork -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtRemoteObjects -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1 -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/x86_64-linux-android -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include
+AutoMoc: Generating "BIN:/qrotest_jni_autogen/moc_predefs.h", because it doesn't exist.
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ -std=gnu++17 -w -dM -E /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp --target=x86_64-none-linux-android34 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_REMOTEOBJECTS_LIB -Dqrotest_jni_EXPORTS -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtRemoteObjects -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtNetwork -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1 -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/x86_64-linux-android -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include
+AutoMoc: Generating "BIN:/qro_client_autogen/moc_predefs.h", because it doesn't exist.
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ -std=gnu++17 -w -dM -E /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp --target=x86_64-none-linux-android34 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_REMOTEOBJECTS_LIB -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtRemoteObjects -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtNetwork -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1 -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/x86_64-linux-android -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include
+AutoMoc: Generating "BIN:/echoplugin_autogen/moc_predefs.h", because it doesn't exist.
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ -std=gnu++17 -w -dM -E /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp --target=x86_64-none-linux-android34 -DQT_CORE_LIB -DQT_NO_DEBUG -Dechoplugin_EXPORTS -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1 -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/x86_64-linux-android -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include
+AutoMoc: Generating "BIN:/qrotest_jni_noonload_autogen/moc_predefs.h", because it doesn't exist.
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ -std=gnu++17 -w -dM -E /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp --target=x86_64-none-linux-android34 -DQROTEST_NO_ONLOAD -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_REMOTEOBJECTS_LIB -Dqrotest_jni_noonload_EXPORTS -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtRemoteObjects -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtNetwork -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1 -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/x86_64-linux-android -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include
+AutoGen: Parsing "SRC:/client_core.h"
+AutoGen: Parsing "SRC:/common.h"
+AutoGen: Parsing "SRC:/client_core.h"
+AutoGen: Parsing "SRC:/echo_iface.h"
+AutoGen: Parsing "SRC:/common.h"
+AutoGen: Parsing "SRC:/common.h"
+AutoGen: Parsing "SRC:/echo_iface.h"
+AutoGen: Parsing "SRC:/echo_plugin.cpp"
+AutoGen: Parsing "SRC:/qro_client.cpp"
+AutoGen: Parsing "SRC:/qrotest_jni.cpp"
+AutoGen: Parsing "SRC:/qro_server.cpp"
+AutoGen: Parsing "SRC:/echo_object.h"
+AutoMoc: Generating MOC compilation "BIN:/qro_client_autogen/mocs_compilation.cpp"
+AutoGen: Parsing "SRC:/echo_plugin.h"
+AutoGen: Parsing "SRC:/client_core.h"
+AutoMoc: Generating MOC compilation "BIN:/qrotest_jni_noonload_autogen/mocs_compilation.cpp"
+AutoGen: Parsing "SRC:/qrotest_jni.cpp"
+AutoMoc: Merging MOC dependencies into "BIN:/qro_client_autogen/deps"
+AutoGen: Parsing "SRC:/common.h"
+AutoMoc: Merging MOC dependencies into "BIN:/qrotest_jni_noonload_autogen/deps"
+AutoMoc: Generating MOC compilation "BIN:/qrotest_jni_autogen/mocs_compilation.cpp"
+AutoMoc: Generating "BIN:/echoplugin_autogen/EWIEGA46WW/moc_echo_plugin.cpp", because it doesn't exist, from "SRC:/echo_plugin.h"
+${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/libexec/moc -DQT_CORE_LIB -DQT_NO_DEBUG -Dechoplugin_EXPORTS -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1 -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/x86_64-linux-android -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include --include ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/echoplugin_autogen/moc_predefs.h --output-dep-file -o ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/echoplugin_autogen/EWIEGA46WW/moc_echo_plugin.cpp ${REPO_ROOT}/.work/experiments/qt-jvmless/src/echo_plugin.h
+AutoMoc: Generating "BIN:/qro_server_autogen/EWIEGA46WW/moc_echo_object.cpp", because it doesn't exist, from "SRC:/echo_object.h"
+${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/libexec/moc -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_REMOTEOBJECTS_LIB -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtNetwork -I${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtRemoteObjects -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1 -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/x86_64-linux-android -I${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include --include ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qro_server_autogen/moc_predefs.h --output-dep-file -o ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qro_server_autogen/EWIEGA46WW/moc_echo_object.cpp ${REPO_ROOT}/.work/experiments/qt-jvmless/src/echo_object.h
+AutoMoc: Merging MOC dependencies into "BIN:/qrotest_jni_autogen/deps"
+AutoGen: Writing the parse cache file "BIN:/CMakeFiles/qrotest_jni_noonload_autogen.dir/ParseCache.txt"
+AutoGen: Writing the parse cache file "BIN:/CMakeFiles/qro_client_autogen.dir/ParseCache.txt"
+AutoGen: Writing the settings file "BIN:/CMakeFiles/qrotest_jni_noonload_autogen.dir/AutogenUsed.txt"
+AutoGen: Writing the settings file "BIN:/CMakeFiles/qro_client_autogen.dir/AutogenUsed.txt"
+AutoGen: Writing the parse cache file "BIN:/CMakeFiles/qrotest_jni_autogen.dir/ParseCache.txt"
+AutoGen: Writing the settings file "BIN:/CMakeFiles/qrotest_jni_autogen.dir/AutogenUsed.txt"
+/usr/bin/cmake -E touch ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qro_client_autogen/timestamp
+/usr/bin/cmake -E touch ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qrotest_jni_noonload_autogen/timestamp
+/usr/bin/cmake -E touch ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qrotest_jni_autogen/timestamp
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+[ 25%] Built target qrotest_jni_autogen
+[ 25%] Built target qrotest_jni_noonload_autogen
+[ 25%] Built target qro_client_autogen
+/usr/bin/gmake  -f CMakeFiles/qro_client.dir/build.make CMakeFiles/qro_client.dir/depend
+/usr/bin/gmake  -f CMakeFiles/qrotest_jni.dir/build.make CMakeFiles/qrotest_jni.dir/depend
+/usr/bin/gmake  -f CMakeFiles/qrotest_jni_noonload.dir/build.make CMakeFiles/qrotest_jni_noonload.dir/depend
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+cd ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qro_client.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+cd ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qrotest_jni.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+cd ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qrotest_jni_noonload.dir/DependInfo.cmake "--color="
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+/usr/bin/gmake  -f CMakeFiles/qro_client.dir/build.make CMakeFiles/qro_client.dir/build
+/usr/bin/gmake  -f CMakeFiles/qrotest_jni.dir/build.make CMakeFiles/qrotest_jni.dir/build
+/usr/bin/gmake  -f CMakeFiles/qrotest_jni_noonload.dir/build.make CMakeFiles/qrotest_jni_noonload.dir/build
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+[ 35%] Building CXX object CMakeFiles/qro_client.dir/qro_client_autogen/mocs_compilation.cpp.o
+[ 35%] Building CXX object CMakeFiles/qro_client.dir/qro_client.cpp.o
+[ 50%] Building CXX object CMakeFiles/qrotest_jni.dir/qrotest_jni.cpp.o
+[ 50%] Building CXX object CMakeFiles/qrotest_jni.dir/qrotest_jni_autogen/mocs_compilation.cpp.o
+[ 50%] Building CXX object CMakeFiles/qrotest_jni_noonload.dir/qrotest_jni_noonload_autogen/mocs_compilation.cpp.o
+[ 55%] Building CXX object CMakeFiles/qrotest_jni_noonload.dir/qrotest_jni.cpp.o
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_REMOTEOBJECTS_LIB -I${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qro_client_autogen/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtRemoteObjects -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtNetwork -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIE -fPIC -pthread -MD -MT CMakeFiles/qro_client.dir/qro_client_autogen/mocs_compilation.cpp.o -MF CMakeFiles/qro_client.dir/qro_client_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/qro_client.dir/qro_client_autogen/mocs_compilation.cpp.o -c ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qro_client_autogen/mocs_compilation.cpp
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_REMOTEOBJECTS_LIB -I${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qro_client_autogen/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtRemoteObjects -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtNetwork -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIE -fPIC -pthread -MD -MT CMakeFiles/qro_client.dir/qro_client.cpp.o -MF CMakeFiles/qro_client.dir/qro_client.cpp.o.d -o CMakeFiles/qro_client.dir/qro_client.cpp.o -c ${REPO_ROOT}/.work/experiments/qt-jvmless/src/qro_client.cpp
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_REMOTEOBJECTS_LIB -Dqrotest_jni_EXPORTS -I${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qrotest_jni_autogen/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtRemoteObjects -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtNetwork -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIC -fPIC -pthread -MD -MT CMakeFiles/qrotest_jni.dir/qrotest_jni.cpp.o -MF CMakeFiles/qrotest_jni.dir/qrotest_jni.cpp.o.d -o CMakeFiles/qrotest_jni.dir/qrotest_jni.cpp.o -c ${REPO_ROOT}/.work/experiments/qt-jvmless/src/qrotest_jni.cpp
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_REMOTEOBJECTS_LIB -Dqrotest_jni_EXPORTS -I${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qrotest_jni_autogen/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtRemoteObjects -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtNetwork -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIC -fPIC -pthread -MD -MT CMakeFiles/qrotest_jni.dir/qrotest_jni_autogen/mocs_compilation.cpp.o -MF CMakeFiles/qrotest_jni.dir/qrotest_jni_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/qrotest_jni.dir/qrotest_jni_autogen/mocs_compilation.cpp.o -c ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qrotest_jni_autogen/mocs_compilation.cpp
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DQROTEST_NO_ONLOAD -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_REMOTEOBJECTS_LIB -Dqrotest_jni_noonload_EXPORTS -I${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qrotest_jni_noonload_autogen/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtRemoteObjects -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtNetwork -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIC -fPIC -pthread -MD -MT CMakeFiles/qrotest_jni_noonload.dir/qrotest_jni_noonload_autogen/mocs_compilation.cpp.o -MF CMakeFiles/qrotest_jni_noonload.dir/qrotest_jni_noonload_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/qrotest_jni_noonload.dir/qrotest_jni_noonload_autogen/mocs_compilation.cpp.o -c ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qrotest_jni_noonload_autogen/mocs_compilation.cpp
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DQROTEST_NO_ONLOAD -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_REMOTEOBJECTS_LIB -Dqrotest_jni_noonload_EXPORTS -I${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qrotest_jni_noonload_autogen/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtRemoteObjects -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtNetwork -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIC -fPIC -pthread -MD -MT CMakeFiles/qrotest_jni_noonload.dir/qrotest_jni.cpp.o -MF CMakeFiles/qrotest_jni_noonload.dir/qrotest_jni.cpp.o.d -o CMakeFiles/qrotest_jni_noonload.dir/qrotest_jni.cpp.o -c ${REPO_ROOT}/.work/experiments/qt-jvmless/src/qrotest_jni.cpp
+AutoMoc: Reading dependencies from "BIN:/qro_server_autogen/EWIEGA46WW/moc_echo_object.cpp.d"
+AutoMoc: Generating MOC compilation "BIN:/qro_server_autogen/mocs_compilation.cpp"
+AutoMoc: Reading dependencies from "BIN:/echoplugin_autogen/EWIEGA46WW/moc_echo_plugin.cpp.d"
+AutoMoc: Merging MOC dependencies into "BIN:/qro_server_autogen/deps"
+AutoGen: Writing the parse cache file "BIN:/CMakeFiles/qro_server_autogen.dir/ParseCache.txt"
+AutoGen: Writing the settings file "BIN:/CMakeFiles/qro_server_autogen.dir/AutogenUsed.txt"
+AutoMoc: Generating MOC compilation "BIN:/echoplugin_autogen/mocs_compilation.cpp"
+AutoMoc: Merging MOC dependencies into "BIN:/echoplugin_autogen/deps"
+/usr/bin/cmake -E touch ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qro_server_autogen/timestamp
+AutoGen: Writing the parse cache file "BIN:/CMakeFiles/echoplugin_autogen.dir/ParseCache.txt"
+AutoGen: Writing the settings file "BIN:/CMakeFiles/echoplugin_autogen.dir/AutogenUsed.txt"
+/usr/bin/cmake -E touch ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/echoplugin_autogen/timestamp
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+[ 55%] Built target qro_server_autogen
+[ 55%] Built target echoplugin_autogen
+/usr/bin/gmake  -f CMakeFiles/echoplugin.dir/build.make CMakeFiles/echoplugin.dir/depend
+/usr/bin/gmake  -f CMakeFiles/qro_server.dir/build.make CMakeFiles/qro_server.dir/depend
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+cd ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/echoplugin.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+cd ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/src ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64 ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles/qro_server.dir/DependInfo.cmake "--color="
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+/usr/bin/gmake  -f CMakeFiles/echoplugin.dir/build.make CMakeFiles/echoplugin.dir/build
+/usr/bin/gmake  -f CMakeFiles/qro_server.dir/build.make CMakeFiles/qro_server.dir/build
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+gmake[2]: Entering directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+[ 70%] Building CXX object CMakeFiles/qro_server.dir/qro_server_autogen/mocs_compilation.cpp.o
+[ 70%] Building CXX object CMakeFiles/echoplugin.dir/echo_plugin.cpp.o
+[ 70%] Building CXX object CMakeFiles/echoplugin.dir/echoplugin_autogen/mocs_compilation.cpp.o
+[ 75%] Building CXX object CMakeFiles/qro_server.dir/qro_server.cpp.o
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DQT_CORE_LIB -DQT_NO_DEBUG -Dechoplugin_EXPORTS -I${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/echoplugin_autogen/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIC -fPIC -pthread -MD -MT CMakeFiles/echoplugin.dir/echo_plugin.cpp.o -MF CMakeFiles/echoplugin.dir/echo_plugin.cpp.o.d -o CMakeFiles/echoplugin.dir/echo_plugin.cpp.o -c ${REPO_ROOT}/.work/experiments/qt-jvmless/src/echo_plugin.cpp
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_REMOTEOBJECTS_LIB -I${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qro_server_autogen/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtNetwork -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtRemoteObjects -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIE -fPIC -pthread -MD -MT CMakeFiles/qro_server.dir/qro_server_autogen/mocs_compilation.cpp.o -MF CMakeFiles/qro_server.dir/qro_server_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/qro_server.dir/qro_server_autogen/mocs_compilation.cpp.o -c ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qro_server_autogen/mocs_compilation.cpp
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DQT_CORE_LIB -DQT_NO_DEBUG -Dechoplugin_EXPORTS -I${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/echoplugin_autogen/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIC -fPIC -pthread -MD -MT CMakeFiles/echoplugin.dir/echoplugin_autogen/mocs_compilation.cpp.o -MF CMakeFiles/echoplugin.dir/echoplugin_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/echoplugin.dir/echoplugin_autogen/mocs_compilation.cpp.o -c ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/echoplugin_autogen/mocs_compilation.cpp
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_REMOTEOBJECTS_LIB -I${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qro_server_autogen/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtCore -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/mkspecs/android-clang -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtNetwork -isystem ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/include/QtRemoteObjects -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIE -fPIC -pthread -MD -MT CMakeFiles/qro_server.dir/qro_server.cpp.o -MF CMakeFiles/qro_server.dir/qro_server.cpp.o.d -o CMakeFiles/qro_server.dir/qro_server.cpp.o -c ${REPO_ROOT}/.work/experiments/qt-jvmless/src/qro_server.cpp
+[ 80%] Linking CXX shared module libechoplugin.so
+/usr/bin/cmake -E cmake_link_script CMakeFiles/echoplugin.dir/link.txt --verbose=1
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -Wl,-z,max-page-size=16384 -Xlinker --dependency-file=CMakeFiles/echoplugin.dir/link.d -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  -Wl,--gc-sections  -shared  -o libechoplugin.so CMakeFiles/echoplugin.dir/echoplugin_autogen/mocs_compilation.cpp.o CMakeFiles/echoplugin.dir/echo_plugin.cpp.o  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6Core_x86_64.so -llog -pthread -latomic -lm
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+[ 80%] Built target echoplugin
+[ 85%] Linking CXX executable qro_client
+/usr/bin/cmake -E cmake_link_script CMakeFiles/qro_client.dir/link.txt --verbose=1
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments   -Wl,--gc-sections  -Wl,-z,max-page-size=16384 -Xlinker --dependency-file=CMakeFiles/qro_client.dir/link.d CMakeFiles/qro_client.dir/qro_client_autogen/mocs_compilation.cpp.o CMakeFiles/qro_client.dir/qro_client.cpp.o -o qro_client  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6RemoteObjects_x86_64.so -llog -ldl ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6Network_x86_64.so ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6Core_x86_64.so -llog -pthread -latomic -lm
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+[ 85%] Built target qro_client
+[ 90%] Linking CXX shared library libqrotest_jni.so
+/usr/bin/cmake -E cmake_link_script CMakeFiles/qrotest_jni.dir/link.txt --verbose=1
+[ 95%] Linking CXX shared library libqrotest_jni_noonload.so
+/usr/bin/cmake -E cmake_link_script CMakeFiles/qrotest_jni_noonload.dir/link.txt --verbose=1
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -Wl,-z,max-page-size=16384 -Xlinker --dependency-file=CMakeFiles/qrotest_jni.dir/link.d -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  -Wl,--gc-sections  -shared -Wl,-soname,libqrotest_jni.so -o libqrotest_jni.so CMakeFiles/qrotest_jni.dir/qrotest_jni_autogen/mocs_compilation.cpp.o CMakeFiles/qrotest_jni.dir/qrotest_jni.cpp.o  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6RemoteObjects_x86_64.so -llog -ldl ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6Network_x86_64.so ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6Core_x86_64.so -llog -pthread -latomic -lm
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+[ 95%] Built target qrotest_jni
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -Wl,-z,max-page-size=16384 -Xlinker --dependency-file=CMakeFiles/qrotest_jni_noonload.dir/link.d -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  -Wl,--gc-sections  -shared -Wl,-soname,libqrotest_jni_noonload.so -o libqrotest_jni_noonload.so CMakeFiles/qrotest_jni_noonload.dir/qrotest_jni_noonload_autogen/mocs_compilation.cpp.o CMakeFiles/qrotest_jni_noonload.dir/qrotest_jni.cpp.o  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6RemoteObjects_x86_64.so -llog -ldl ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6Network_x86_64.so ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6Core_x86_64.so -llog -pthread -latomic -lm
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+[ 95%] Built target qrotest_jni_noonload
+[100%] Linking CXX executable qro_server
+/usr/bin/cmake -E cmake_link_script CMakeFiles/qro_server.dir/link.txt --verbose=1
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments   -Wl,--gc-sections  -Wl,-z,max-page-size=16384 -Xlinker --dependency-file=CMakeFiles/qro_server.dir/link.d CMakeFiles/qro_server.dir/qro_server_autogen/mocs_compilation.cpp.o CMakeFiles/qro_server.dir/qro_server.cpp.o -o qro_server  ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6RemoteObjects_x86_64.so -llog -ldl ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6Network_x86_64.so ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6Core_x86_64.so -llog -pthread -latomic -lm
+gmake[2]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+[100%] Built target qro_server
+gmake[1]: Leaving directory '${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64'
+/usr/bin/cmake -E cmake_progress_start ${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/CMakeFiles 0
+== outputs ==
+total 2836
+drwxr-xr-x. 1 fryorcraken fryorcraken    468 Sep 25 18:08 .
+drwxr-xr-x. 1 fryorcraken fryorcraken     12 Sep 25 18:08 ..
+-rw-r--r--. 1 fryorcraken fryorcraken  41063 Sep 25 18:08 CMakeCache.txt
+drwxr-xr-x. 1 fryorcraken fryorcraken   1194 Sep 25 18:08 CMakeFiles
+-rw-r--r--. 1 fryorcraken fryorcraken   2372 Sep 25 18:08 cmake_install.cmake
+drwxr-xr-x. 1 fryorcraken fryorcraken    126 Sep 25 18:08 echoplugin_autogen
+-rwxr-xr-x. 1 fryorcraken fryorcraken 287536 Sep 25 18:08 libechoplugin.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken 679064 Sep 25 18:08 libqrotest_jni_noonload.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken 685384 Sep 25 18:08 libqrotest_jni.so
+-rw-r--r--. 1 fryorcraken fryorcraken  24658 Sep 25 18:08 Makefile
+-rwxr-xr-x. 1 fryorcraken fryorcraken 484784 Sep 25 18:08 qro_client
+drwxr-xr-x. 1 fryorcraken fryorcraken    106 Sep 25 18:08 qro_client_autogen
+-rwxr-xr-x. 1 fryorcraken fryorcraken 675912 Sep 25 18:08 qro_server
+drwxr-xr-x. 1 fryorcraken fryorcraken    126 Sep 25 18:08 qro_server_autogen
+drwxr-xr-x. 1 fryorcraken fryorcraken    106 Sep 25 18:08 qrotest_jni_autogen
+drwxr-xr-x. 1 fryorcraken fryorcraken    106 Sep 25 18:08 qrotest_jni_noonload_autogen
+drwxr-xr-x. 1 fryorcraken fryorcraken     84 Sep 25 18:08 .qt
+== qro_server ==
+${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qro_server: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, for Android 34, built by NDK r27c (12479018), BuildID[sha1]=f4f80e4fdbeb0b43c8bc895833ad83e4fa31618f, with debug_info, not stripped
+  Type:                              DYN (Shared object file)
+  Machine:                           Advanced Micro Devices X86-64
+  INTERP         0x0002a8 0x00000000000002a8 0x00000000000002a8 0x000015 0x000015 R   0x1
+      [Requesting program interpreter: /system/bin/linker64]
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x0074e4 0x0074e4 R   0x4000
+  LOAD           0x0074f0 0x000000000000b4f0 0x000000000000b4f0 0x009f80 0x009f80 R E 0x4000
+  LOAD           0x011470 0x0000000000019470 0x0000000000019470 0x0007d0 0x000b90 RW  0x4000
+  LOAD           0x011c40 0x000000000001dc40 0x000000000001dc40 0x000128 0x0010d0 RW  0x4000
+  0x0000000000000001 (NEEDED)     Shared library: [libQt6RemoteObjects_x86_64.so]
+  0x0000000000000001 (NEEDED)     Shared library: [liblog.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libQt6Network_x86_64.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libQt6Core_x86_64.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libc.so]
+  0x000000000000001e (FLAGS)      BIND_NOW 
+  0x000000006ffffffb (FLAGS_1)    NOW PIE 
+(no JNI_OnLoad export)
+== qro_client ==
+${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qro_client: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, for Android 34, built by NDK r27c (12479018), BuildID[sha1]=67d61fd303427549b5eed93a153fe74a4ae9ee8d, with debug_info, not stripped
+  Type:                              DYN (Shared object file)
+  Machine:                           Advanced Micro Devices X86-64
+  INTERP         0x0002a8 0x00000000000002a8 0x00000000000002a8 0x000015 0x000015 R   0x1
+      [Requesting program interpreter: /system/bin/linker64]
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x004ed8 0x004ed8 R   0x4000
+  LOAD           0x004ee0 0x0000000000008ee0 0x0000000000008ee0 0x007880 0x007880 R E 0x4000
+  LOAD           0x00c760 0x0000000000014760 0x0000000000014760 0x0004f8 0x0008a0 RW  0x4000
+  LOAD           0x00cc60 0x0000000000018c60 0x0000000000018c60 0x000120 0x0010d0 RW  0x4000
+  0x0000000000000001 (NEEDED)     Shared library: [libQt6RemoteObjects_x86_64.so]
+  0x0000000000000001 (NEEDED)     Shared library: [liblog.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libQt6Network_x86_64.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libQt6Core_x86_64.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libc.so]
+  0x000000000000001e (FLAGS)      BIND_NOW 
+  0x000000006ffffffb (FLAGS_1)    NOW PIE 
+(no JNI_OnLoad export)
+== libechoplugin.so ==
+${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/libechoplugin.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, for Android 34, built by NDK r27c (12479018), BuildID[sha1]=8d0d7ffef972d9291b1fa8c66221c446523ff1ee, with debug_info, not stripped
+  Type:                              DYN (Shared object file)
+  Machine:                           Advanced Micro Devices X86-64
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x003718 0x003718 R   0x4000
+  LOAD           0x003720 0x0000000000007720 0x0000000000007720 0x003f90 0x003f90 R E 0x4000
+  LOAD           0x0076b0 0x000000000000f6b0 0x000000000000f6b0 0x000480 0x000950 RW  0x4000
+  LOAD           0x007b30 0x0000000000013b30 0x0000000000013b30 0x000090 0x0008f0 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libQt6Core_x86_64.so]
+  0x0000000000000001 (NEEDED)       Shared library: [liblog.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+  0x000000000000001e (FLAGS)        BIND_NOW 
+  0x000000006ffffffb (FLAGS_1)      NOW 
+(no JNI_OnLoad export)
+== libqrotest_jni.so ==
+${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/libqrotest_jni.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, for Android 34, built by NDK r27c (12479018), BuildID[sha1]=d5313e58551ca708c6a518c521e63dcbff9a6e11, with debug_info, not stripped
+  Type:                              DYN (Shared object file)
+  Machine:                           Advanced Micro Devices X86-64
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x0069f0 0x0069f0 R   0x4000
+  LOAD           0x0069f0 0x000000000000a9f0 0x000000000000a9f0 0x0098b0 0x0098b0 R E 0x4000
+  LOAD           0x0102a0 0x00000000000182a0 0x00000000000182a0 0x0006c0 0x000d60 RW  0x4000
+  LOAD           0x010960 0x000000000001c960 0x000000000001c960 0x000130 0x0010e0 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libQt6RemoteObjects_x86_64.so]
+  0x0000000000000001 (NEEDED)       Shared library: [liblog.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libQt6Network_x86_64.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libQt6Core_x86_64.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+  0x000000000000001e (FLAGS)        BIND_NOW 
+  0x000000006ffffffb (FLAGS_1)      NOW 
+   132: 000000000000aa60   785 FUNC    GLOBAL DEFAULT    14 JNI_OnLoad
+== libqrotest_jni_noonload.so ==
+${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/libqrotest_jni_noonload.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, for Android 34, built by NDK r27c (12479018), BuildID[sha1]=47df6a572f9f513e6a28b3a413446ca66f3f9c99, with debug_info, not stripped
+  Type:                              DYN (Shared object file)
+  Machine:                           Advanced Micro Devices X86-64
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x0068e0 0x0068e0 R   0x4000
+  LOAD           0x0068e0 0x000000000000a8e0 0x000000000000a8e0 0x009590 0x009590 R E 0x4000
+  LOAD           0x00fe70 0x0000000000017e70 0x0000000000017e70 0x0006c0 0x001190 RW  0x4000
+  LOAD           0x010530 0x000000000001c530 0x000000000001c530 0x000130 0x0010e0 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libQt6RemoteObjects_x86_64.so]
+  0x0000000000000001 (NEEDED)       Shared library: [liblog.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libQt6Network_x86_64.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libQt6Core_x86_64.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+  0x000000000000001e (FLAGS)        BIND_NOW 
+  0x000000006ffffffb (FLAGS_1)      NOW 
+(no JNI_OnLoad export)
+== JNI_OnLoad in Qt libs ==
+  2002: 000000000053832e   187 FUNC    GLOBAL DEFAULT    16 JNI_OnLoad@@Qt_6
+libQt6Network: none
+libQt6RemoteObjects: none
+BUILD_OK

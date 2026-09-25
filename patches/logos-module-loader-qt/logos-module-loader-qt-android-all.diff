@@ -1,0 +1,80 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 5cfd405..1f1759b 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -121,7 +121,14 @@ else()
+ endif()
+ 
+ # RPATH so the wrapped binary finds Qt / SDK libs at runtime
+-if(APPLE)
++if(ANDROID)
++    # An APK installs only lib*.so into nativeLibraryDir, and CMake's Android
++    # platform emits no rpath for INSTALL_RPATH: name the host accordingly and
++    # let it find its sibling libraries next to itself.
++    set_target_properties(logos_host_qt PROPERTIES
++        OUTPUT_NAME "liblogos_host_qt" SUFFIX ".so")
++    target_link_options(logos_host_qt PRIVATE "LINKER:-rpath,$ORIGIN")
++elseif(APPLE)
+     set(_qt_exec_runtime_paths "@loader_path/../lib")
+     if(DEFINED Qt${QT_VERSION_MAJOR}_DIR)
+         get_filename_component(_qt_exec_lib_dir "${Qt${QT_VERSION_MAJOR}_DIR}/../.." REALPATH)
+diff --git a/src/host/logos_host.cpp b/src/host/logos_host.cpp
+index 75ec7d6..c917799 100644
+--- a/src/host/logos_host.cpp
++++ b/src/host/logos_host.cpp
+@@ -26,8 +26,9 @@
+ #include <thread>
+ 
+ #include <unistd.h>
+-#ifndef _WIN32
++#if !defined(_WIN32) && (!defined(__ANDROID__) || __ANDROID_API__ >= 33)
+ #include <execinfo.h>
++#define LOGOS_HAVE_BACKTRACE 1
+ #endif
+ #ifdef __linux__
+ #include <sys/prctl.h>
+@@ -145,7 +146,11 @@ extern "C" void fatalSignalHandler(int sig)
+     safeWrite("). Backtrace (raw addresses; decode with atos/addr2line):\n");
+ 
+     void* frames[64];
++#ifdef LOGOS_HAVE_BACKTRACE
+     const int n = ::backtrace(frames, 64);
++#else
++    const int n = 0;  // bionic: backtrace(3) only from API 33
++#endif
+     for (int i = 0; i < n; ++i) {
+         safeWrite("  ");
+         safeWriteHex(frames[i]);
+diff --git a/src/qt_plugin_format_loader.cpp b/src/qt_plugin_format_loader.cpp
+index 40ce2a8..60ef54d 100644
+--- a/src/qt_plugin_format_loader.cpp
++++ b/src/qt_plugin_format_loader.cpp
+@@ -112,6 +112,11 @@ fs::path findInDir(const fs::path& dir) {
+         if (fs::exists(candidate))
+             return candidate;
+     }
++#ifdef __ANDROID__
++    // APKs install only lib*.so files, so the host ships as liblogos_host_qt.so.
++    if (auto candidate = (dir / "liblogos_host_qt.so").lexically_normal(); fs::exists(candidate))
++        return candidate;
++#endif
+     return {};
+ }
+ 
+@@ -128,6 +133,16 @@ std::string resolveLogosHostPath(const std::vector<std::string>& modulesDirs) {
+             logosHostPath = found.string();
+     }
+ 
++#ifdef __ANDROID__
++    // Inside an app, program_location() is /system/bin/app_process64; the host
++    // sits next to the library this code is linked into (nativeLibraryDir).
++    if (logosHostPath.empty()) {
++        auto found = findInDir(fs::path(boost::dll::this_line_location().parent_path().string()));
++        if (!found.empty())
++            logosHostPath = found.string();
++    }
++#endif
++
+     if (logosHostPath.empty() || !fs::exists(logosHostPath)) {
+         if (!modulesDirs.empty()) {
+             auto binDir = fs::absolute(

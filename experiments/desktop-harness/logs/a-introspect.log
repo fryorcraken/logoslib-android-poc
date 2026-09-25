@@ -1,0 +1,114 @@
+TMPDIR=${REPO_ROOT}/.work/dh/a1 (66 chars)
+exit=0
+[     0 ms][main] desktop-harness mode=introspect TMPDIR=${REPO_ROOT}/.work/dh/a1 LOGOS_HOST_PATH=/nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/bin/logos_host
+[     0 ms][qt] QCoreApplication created on thread 139992703657664
+[    15 ms][qt] logos_core_start() returned
+[    15 ms][main] runtime up in 15 ms; protocol=0.9.0 mode=remote; qt thread=139992703657664
+[    37 ms][main] load(lez_probe) from this (non-Qt) thread -> 1 in 22 ms
+[    49 ms][main] load(ev_probe) from this (non-Qt) thread -> 1 in 12 ms
+[    50 ms][main] lp_client_create(lez_core) -> 0xc861500 in 1 ms
+[    51 ms][main] INTROSPECT lez_core.getPluginMethods rc=0 in 1 ms, 7609 bytes: [{"isInvokable":true,"name":"name","returnType":"QString","signature":"name()"},{"isInvokable":true,"name":"version","returnType":"QString","signature":"version()"},{"isInvokable":true,"name":"wallet_ ... err=(null)
+[    52 ms][main] INTROSPECT lez_core.getPluginEvents rc=0 in 1 ms, 2 bytes: [] err=(null)
+[    52 ms][main] INTROSPECT lez_core.getPluginInterface rc=0 in 0 ms, 7609 bytes: [{"isInvokable":true,"name":"name","returnType":"QString","signature":"name()"},{"isInvokable":true,"name":"version","returnType":"QString","signature":"version()"},{"isInvokable":true,"name":"wallet_ ... err=(null)
+[    53 ms][main] INTROSPECT lez_core lp_get_methods -> []
+[    53 ms][main] lp_client_create(lez_probe) -> 0xc87c4f0 in 0 ms
+[    53 ms][main] INTROSPECT lez_probe.getPluginMethods rc=0 in 0 ms, 840 bytes: [{"isInvokable":true,"name":"ping","returnType":"QString","signature":"ping()"},{"isInvokable":true,"name":"to_base58_via_lez","parameters":[{"name":"account_id_hex","type":"QString"}],"returnType":"Q ... err=(null)
+[    53 ms][main] INTROSPECT lez_probe.getPluginEvents rc=0 in 0 ms, 2 bytes: [] err=(null)
+[    54 ms][main] INTROSPECT lez_probe.getPluginInterface rc=0 in 1 ms, 840 bytes: [{"isInvokable":true,"name":"ping","returnType":"QString","signature":"ping()"},{"isInvokable":true,"name":"to_base58_via_lez","parameters":[{"name":"account_id_hex","type":"QString"}],"returnType":"Q ... err=(null)
+[    54 ms][main] INTROSPECT lez_probe lp_get_methods -> []
+[    54 ms][main] lp_client_create(ev_probe) -> 0xc8647d0 in 0 ms
+[    54 ms][main] INTROSPECT ev_probe.getPluginMethods rc=0 in 0 ms, 799 bytes: [{"isInvokable":true,"name":"ping","returnType":"QString","signature":"ping()"},{"isInvokable":true,"name":"fire","parameters":[{"name":"data","type":"QString"}],"returnType":"bool","signature":"fire( ... err=(null)
+[    55 ms][main] INTROSPECT ev_probe.getPluginEvents rc=0 in 1 ms, 112 bytes: [{"name":"pinged","parameters":[{"name":"data","type":"QString"}],"signature":"pinged(QString)","type":"event"}] err=(null)
+[    55 ms][main] INTROSPECT ev_probe.getPluginInterface rc=0 in 0 ms, 910 bytes: [{"isInvokable":true,"name":"ping","returnType":"QString","signature":"ping()"},{"isInvokable":true,"name":"fire","parameters":[{"name":"data","type":"QString"}],"returnType":"bool","signature":"fire( ... err=(null)
+[    56 ms][main] INTROSPECT ev_probe lp_get_methods -> []
+[    56 ms][main] lp_client_create(capability_module) -> 0xc8615c0 in 0 ms
+[    56 ms][main] INTROSPECT capability_module.getPluginMethods rc=0 in 0 ms, 876 bytes: [{"isInvokable":true,"name":"requestModule","parameters":[{"name":"fromModuleName","type":"tstr"},{"name":"moduleName","type":"tstr"}],"returnType":"tstr","signature":"requestModule(tstr,tstr)"},{"isI ... err=(null)
+[    56 ms][main] INTROSPECT capability_module.getPluginEvents rc=0 in 0 ms, 2 bytes: [] err=(null)
+[    57 ms][main] INTROSPECT capability_module.getPluginInterface rc=0 in 1 ms, 876 bytes: [{"isInvokable":true,"name":"requestModule","parameters":[{"name":"fromModuleName","type":"tstr"},{"name":"moduleName","type":"tstr"}],"returnType":"tstr","signature":"requestModule(tstr,tstr)"},{"isI ... err=(null)
+[    57 ms][main] INTROSPECT capability_module lp_get_methods -> []
+[    57 ms][qt] exec() returned 0; logos_core_cleanup()
+[   257 ms][qt] cleanup done
+[   257 ms][main] done (rc=0); shutdown took 200 ms
+== summary per file ==
+capability_module.getPluginEvents.json: 0 entries; with signature=0; with parameters=0; keys=[]; types=[]
+   names=[]
+capability_module.getPluginInterface.json: 5 entries; with signature=5; with parameters=2; keys=['description', 'isInvokable', 'name', 'parameters', 'returnType', 'signature']; types=['None']
+   names=['requestModule', 'registerRestriction', 'name', 'version', 'lidl']
+   first={"isInvokable": true, "name": "requestModule", "parameters": [{"name": "fromModuleName", "type": "tstr"}, {"name": "moduleName", "type": "tstr"}], "returnType": "tstr", "signature": "requestModule(tstr,tstr)"}
+capability_module.getPluginMethods.json: 5 entries; with signature=5; with parameters=2; keys=['description', 'isInvokable', 'name', 'parameters', 'returnType', 'signature']; types=['None']
+   names=['requestModule', 'registerRestriction', 'name', 'version', 'lidl']
+   first={"isInvokable": true, "name": "requestModule", "parameters": [{"name": "fromModuleName", "type": "tstr"}, {"name": "moduleName", "type": "tstr"}], "returnType": "tstr", "signature": "requestModule(tstr,tstr)"}
+capability_module.lp_get_methods.json: 0 entries; with signature=0; with parameters=0; keys=[]; types=[]
+   names=[]
+ev_probe.getPluginEvents.json: 1 entries; with signature=1; with parameters=1; keys=['name', 'parameters', 'signature', 'type']; types=['event']
+   names=['pinged']
+   first={"name": "pinged", "parameters": [{"name": "data", "type": "QString"}], "signature": "pinged(QString)", "type": "event"}
+ev_probe.getPluginInterface.json: 7 entries; with signature=7; with parameters=4; keys=['description', 'isInvokable', 'name', 'parameters', 'returnType', 'signature', 'type']; types=['None', 'event', 'method']
+   names=['ping', 'fire', 'fire_many', 'sleep_ms', 'pinged', 'name', 'version']
+   first={"isInvokable": true, "name": "ping", "returnType": "QString", "signature": "ping()"}
+ev_probe.getPluginMethods.json: 6 entries; with signature=6; with parameters=3; keys=['description', 'isInvokable', 'name', 'parameters', 'returnType', 'signature', 'type']; types=['None', 'method']
+   names=['ping', 'fire', 'fire_many', 'sleep_ms', 'name', 'version']
+   first={"isInvokable": true, "name": "ping", "returnType": "QString", "signature": "ping()"}
+ev_probe.lp_get_methods.json: 0 entries; with signature=0; with parameters=0; keys=[]; types=[]
+   names=[]
+lez_core.getPluginEvents.json: 0 entries; with signature=0; with parameters=0; keys=[]; types=[]
+   names=[]
+lez_core.getPluginInterface.json: 40 entries; with signature=40; with parameters=26; keys=['isInvokable', 'name', 'parameters', 'returnType', 'signature']; types=['None']
+   names=['name', 'version', 'wallet_dir', 'create_new', 'open', 'save', 'restore_storage', 'create_account_public', 'create_account_private', 'list_accounts', 'get_balance', 'get_account_public', 'get_account_private', 'get_public_account_key', 'get_private_account_keys', 'account_id_to_base58', 'account_id_from_base58', 'sync_to_block', 'get_last_synced_block', 'get_current_block_height', 'transfer_public', 'transfer_shielded', 'transfer_deshielded', 'transfer_private', 'transfer_shielded_owned', 'transfer_private_owned', 'authenticated_transfer_elf', 'token_elf', 'amm_elf', 'ata_elf', 'send_generic_public_transaction', 'send_generic_private_transaction', 'send_program_deployment_transaction', 'poll_transaction_status', 'bridge_withdraw', 'get_sequencer_addr', 'check_label_available', 'add_label', 'resolve_label', 'get_all_labels_for_account']
+   first={"isInvokable": true, "name": "name", "returnType": "QString", "signature": "name()"}
+lez_core.getPluginMethods.json: 40 entries; with signature=40; with parameters=26; keys=['isInvokable', 'name', 'parameters', 'returnType', 'signature']; types=['None']
+   names=['name', 'version', 'wallet_dir', 'create_new', 'open', 'save', 'restore_storage', 'create_account_public', 'create_account_private', 'list_accounts', 'get_balance', 'get_account_public', 'get_account_private', 'get_public_account_key', 'get_private_account_keys', 'account_id_to_base58', 'account_id_from_base58', 'sync_to_block', 'get_last_synced_block', 'get_current_block_height', 'transfer_public', 'transfer_shielded', 'transfer_deshielded', 'transfer_private', 'transfer_shielded_owned', 'transfer_private_owned', 'authenticated_transfer_elf', 'token_elf', 'amm_elf', 'ata_elf', 'send_generic_public_transaction', 'send_generic_private_transaction', 'send_program_deployment_transaction', 'poll_transaction_status', 'bridge_withdraw', 'get_sequencer_addr', 'check_label_available', 'add_label', 'resolve_label', 'get_all_labels_for_account']
+   QString name()  params=[]
+   QString version()  params=[]
+   QString wallet_dir()  params=[]
+   QString create_new(QString,QString,QString,QString)  params=['config_path', 'storage_path', 'statistics_path', 'password']
+   int open(QString,QString,QString)  params=['config_path', 'storage_path', 'statistics_path']
+   int save()  params=[]
+   int restore_storage(QString,QString,QVariant)  params=['mnemonic', 'password', 'depth']
+   QString create_account_public()  params=[]
+   QString create_account_private()  params=[]
+   QVariantList list_accounts()  params=[]
+   QString get_balance(QString,bool)  params=['account_id_hex', 'is_public']
+   QString get_account_public(QString)  params=['account_id_hex']
+   QString get_account_private(QString)  params=['account_id_hex']
+   QString get_public_account_key(QString)  params=['account_id_hex']
+   QString get_private_account_keys(QString)  params=['account_id_hex']
+   QString account_id_to_base58(QString)  params=['account_id_hex']
+   QString account_id_from_base58(QString)  params=['base58_str']
+   int sync_to_block(int)  params=['block_id']
+   int get_last_synced_block()  params=[]
+   int get_current_block_height()  params=[]
+   QString transfer_public(QString,QString,QString)  params=['from_hex', 'to_hex', 'amount_le16_hex']
+   QString transfer_shielded(QString,QString,QString)  params=['from_hex', 'to_keys_json', 'amount_le16_hex']
+   QString transfer_deshielded(QString,QString,QString)  params=['from_hex', 'to_hex', 'amount_le16_hex']
+   QString transfer_private(QString,QString,QString)  params=['from_hex', 'to_keys_json', 'amount_le16_hex']
+   QString transfer_shielded_owned(QString,QString,QString)  params=['from_hex', 'to_hex', 'amount_le16_hex']
+   QString transfer_private_owned(QString,QString,QString)  params=['from_hex', 'to_hex', 'amount_le16_hex']
+   QByteArray authenticated_transfer_elf()  params=[]
+   QByteArray token_elf()  params=[]
+   QByteArray amm_elf()  params=[]
+   QByteArray ata_elf()  params=[]
+   QString send_generic_public_transaction(QStringList,QVariantList,QByteArray,QString,QString)  params=['account_ids', 'signing_requirements', 'instruction', 'program_id_hex', 'payer_account_id_hex']
+   QString send_generic_private_transaction(QStringList,QByteArray,QByteArray,QVariant)  params=['account_ids', 'instruction', 'program_elf', 'program_dependencies']
+   QString send_program_deployment_transaction(QString,QStringList,QByteArray,bool,QString)  params=['header_account_id_hex', 'segment_account_ids_hex', 'program_elf', 'immutable', 'payer_account_id_hex']
+   bool poll_transaction_status(QString)  params=['tx_hash_hex']
+   QString bridge_withdraw(QString,QString,int)  params=['from_hex', 'bedrock_account_pk_hex', 'amount']
+   QString get_sequencer_addr()  params=[]
+   bool check_label_available(QString)  params=['label']
+   int add_label(QString,QString,bool)  params=['label', 'account_id_hex', 'is_private']
+   QString resolve_label(QString)  params=['label']
+   QStringList get_all_labels_for_account(QString,bool)  params=['account_id_hex', 'is_private']
+   first={"isInvokable": true, "name": "name", "returnType": "QString", "signature": "name()"}
+lez_core.lp_get_methods.json: 0 entries; with signature=0; with parameters=0; keys=[]; types=[]
+   names=[]
+lez_probe.getPluginEvents.json: 0 entries; with signature=0; with parameters=0; keys=[]; types=[]
+   names=[]
+lez_probe.getPluginInterface.json: 6 entries; with signature=6; with parameters=2; keys=['description', 'isInvokable', 'name', 'parameters', 'returnType', 'signature', 'type']; types=['None', 'method']
+   names=['ping', 'to_base58_via_lez', 'roundtrip_via_lez', 'lez_version', 'name', 'version']
+   first={"isInvokable": true, "name": "ping", "returnType": "QString", "signature": "ping()"}
+lez_probe.getPluginMethods.json: 6 entries; with signature=6; with parameters=2; keys=['description', 'isInvokable', 'name', 'parameters', 'returnType', 'signature', 'type']; types=['None', 'method']
+   names=['ping', 'to_base58_via_lez', 'roundtrip_via_lez', 'lez_version', 'name', 'version']
+   first={"isInvokable": true, "name": "ping", "returnType": "QString", "signature": "ping()"}
+lez_probe.lp_get_methods.json: 0 entries; with signature=0; with parameters=0; keys=[]; types=[]
+   names=[]
+== leftover logos_host processes for this modules dir ==

@@ -1,0 +1,59 @@
+== modules dir ==
+total 0
+drwxr-xr-x. 1 fryorcraken fryorcraken  84 Sep 25 16:09 .
+drwxr-xr-x. 1 fryorcraken fryorcraken  80 Sep 25 16:09 ..
+drwxr-xr-x. 1 fryorcraken fryorcraken  94 Sep 25 16:09 capability_module
+drwxr-xr-x. 1 fryorcraken fryorcraken  76 Sep 25 14:43 ev_probe
+drwxr-xr-x. 1 fryorcraken fryorcraken 108 Sep 25 16:09 lez_core
+drwxr-xr-x. 1 fryorcraken fryorcraken  78 Sep 25 16:09 lez_probe
+--- capability_module: "version": "1.0.0"
+--- lez_core: "version": "0.4.2"
+--- lez_probe: "version": "0.0.1"
+--- ev_probe: "version": "0.0.1"
+== which Qt / liblogos do the runtime pieces use? ==
+ 0x0000000000000001 (NEEDED) Shared library: [libpackage_manager_lib.so]
+ 0x0000000000000001 (NEEDED) Shared library: [liblgx.so]
+ 0x0000000000000001 (NEEDED) Shared library: [libboost_process.so.1.87.0]
+ 0x0000000000000001 (NEEDED) Shared library: [libspdlog.so.1.15]
+ 0x0000000000000001 (NEEDED) Shared library: [liblogos_qt_host.so]
+ 0x0000000000000001 (NEEDED) Shared library: [liblogos_protocol.so]
+ 0x0000000000000001 (NEEDED) Shared library: [libQt6RemoteObjects.so.6]
+ 0x0000000000000001 (NEEDED) Shared library: [libQt6Network.so.6]
+ 0x0000000000000001 (NEEDED) Shared library: [libQt6Core.so.6]
+ 0x0000000000000001 (NEEDED) Shared library: [libssl.so.3]
+ 0x0000000000000001 (NEEDED) Shared library: [libcrypto.so.3]
+ 0x0000000000000001 (NEEDED) Shared library: [libboost_context.so.1.87.0]
+ 0x0000000000000001 (NEEDED) Shared library: [libboost_date_time.so.1.87.0]
+ 0x0000000000000001 (NEEDED) Shared library: [libfmt.so.10]
+ 0x0000000000000001 (NEEDED) Shared library: [libboost_filesystem.so.1.87.0]
+ 0x0000000000000001 (NEEDED) Shared library: [libboost_atomic.so.1.87.0]
+ 0x0000000000000001 (NEEDED) Shared library: [libboost_system.so.1.87.0]
+ 0x0000000000000001 (NEEDED) Shared library: [libstdc++.so.6]
+ 0x0000000000000001 (NEEDED) Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED) Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED) Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED) Shared library: [ld-linux-x86-64.so.2]
+ 0x000000000000001d (RUNPATH) Library runpath: [$ORIGIN:/nix/store/gi615r79j260ihhzdkhrg6qva9wfrbyy-openssl-3.5.1/lib:/nix/store/dkfr32yi7p8cdxsnll05q1kax19fl7ay-qtbase-6.9.2/lib:/nix/store/r2cq6la02msp6kfcl9a17d2l2n96qpvs-qtremoteobjects-6.9.2/lib:/nix/store/8ahi705rfkdgrrip1pcfcavs3f9yri5n-logos-protocol/lib:/nix/store/x0cccj6ww4hkl1hlirx60f32r13dvfmf-boost-1.87.0/lib:/nix/store/pngwa9291ijvyzbk
+/nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/bin/logos_host:    ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), dynamically linked, interpreter /nix/store/776irwlgfb65a782cxmyk61pck460fs9-glibc-2.40-66/lib/ld-linux-x86-64.so.2, for GNU/Linux 3.10.0, not stripped
+/nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/bin/logos_host_qt: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), dynamically linked, interpreter /nix/store/776irwlgfb65a782cxmyk61pck460fs9-glibc-2.40-66/lib/ld-linux-x86-64.so.2, for GNU/Linux 3.10.0, not stripped
+ 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN:/nix/store/1kalh7g6v47w0llgm8c1d4raxgc34g3z-logos-lez_core-module-lib-0.4.2/lib:/nix/store/gi615r79j260ihhzdkhrg6qva9wfrbyy-openssl-3.5.1/lib:/nix/store/dkfr32yi7p8cdxsnll05q1kax19fl7ay-qtbase-6.9.2/lib:/nix/store/r2cq6la02msp6kfcl9a17d2l2n96qpvs-qtremoteobjects-6.9.2/lib:/nix/store/x0cccj6ww4hkl1hlirx60f32r13dvfmf-boost-1.87.0/lib
+ 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN:/nix/store/gi615r79j260ihhzdkhrg6qva9wfrbyy-openssl-3.5.1/lib:/nix/store/dkfr32yi7p8cdxsnll05q1kax19fl7ay-qtbase-6.9.2/lib:/nix/store/r2cq6la02msp6kfcl9a17d2l2n96qpvs-qtremoteobjects-6.9.2/lib:/nix/store/x0cccj6ww4hkl1hlirx60f32r13dvfmf-boost-1.87.0/lib:/nix/store/776irwlgfb65a782cxmyk61pck460fs9-glibc-2.40-66/lib:/nix/store/41ym1j
+== slow-host wrapper (delays the child's exec for lez_probe / ev_probe only) ==
+#!/usr/bin/env bash
+case " $* " in
+  *" --name lez_probe "*|*" --name ev_probe "*) sleep "${DH_SLOW_HOST_S:-3}" ;;
+esac
+exec /nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/bin/logos_host "$@"
+== build ==
+g++ (GCC) 14.3.0
+BUILD_OK
+== ldd dh (Qt/logos lines) ==
+	liblogos_core.so => /nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/lib/liblogos_core.so (0x00007f7142ffa000)
+	liblogos_protocol.so => /nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/lib/liblogos_protocol.so (0x00007f7142dfb000)
+	libQt6Core.so.6 => /nix/store/dkfr32yi7p8cdxsnll05q1kax19fl7ay-qtbase-6.9.2/lib/libQt6Core.so.6 (0x00007f7142600000)
+	libstdc++.so.6 => /nix/store/41ym1jm1b7j3rhglk82gwg9jml26z1km-gcc-14.3.0-lib/lib/libstdc++.so.6 (0x00007f7142200000)
+	libpackage_manager_lib.so => /nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/lib/libpackage_manager_lib.so (0x00007f7142572000)
+	liblgx.so => /nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/lib/liblgx.so (0x00007f71424a1000)
+	liblogos_qt_host.so => /nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/lib/liblogos_qt_host.so (0x00007f714213d000)
+	libQt6RemoteObjects.so.6 => /nix/store/r2cq6la02msp6kfcl9a17d2l2n96qpvs-qtremoteobjects-6.9.2/lib/libQt6RemoteObjects.so.6 (0x00007f7141cbe000)
+	libQt6Network.so.6 => /nix/store/dkfr32yi7p8cdxsnll05q1kax19fl7ay-qtbase-6.9.2/lib/libQt6Network.so.6 (0x00007f7141a00000)

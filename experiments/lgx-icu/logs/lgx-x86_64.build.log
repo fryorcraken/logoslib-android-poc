@@ -1,0 +1,46 @@
+[ 16%] Building CXX object CMakeFiles/lgx_core.dir/src/core/package.cpp.o
+[ 16%] Building CXX object CMakeFiles/lgx_shared.dir/src/core/tar_writer.cpp.o
+[ 25%] Building CXX object CMakeFiles/lgx_core.dir/src/core/installed_package.cpp.o
+[ 20%] Building CXX object CMakeFiles/lgx_shared.dir/src/core/gzip_handler.cpp.o
+[  2%] Building CXX object CMakeFiles/lgx_core.dir/src/core/gzip_handler.cpp.o
+[  9%] Building CXX object CMakeFiles/lgx_core.dir/src/core/tar_writer.cpp.o
+[ 13%] Building CXX object CMakeFiles/lgx_shared.dir/src/core/path_normalizer.cpp.o
+[ 13%] Building CXX object CMakeFiles/lgx_core.dir/src/core/path_normalizer.cpp.o
+[ 25%] Building CXX object CMakeFiles/lgx_shared.dir/src/lib.cpp.o
+[ 16%] Building CXX object CMakeFiles/lgx_core.dir/src/core/tar_reader.cpp.o
+[ 23%] Building CXX object CMakeFiles/lgx_core.dir/src/core/platform_variant.cpp.o
+[ 30%] Building CXX object CMakeFiles/lgx_core.dir/src/core/manifest.cpp.o
+[ 30%] Building CXX object CMakeFiles/lgx_shared.dir/src/core/tar_reader.cpp.o
+[ 32%] Building CXX object CMakeFiles/lgx_shared.dir/src/core/manifest.cpp.o
+[ 34%] Building CXX object CMakeFiles/lgx_shared.dir/src/core/package.cpp.o
+[ 37%] Building CXX object CMakeFiles/lgx_core.dir/src/core/main_resolution.cpp.o
+[ 39%] Building CXX object CMakeFiles/lgx_core.dir/src/crypto/signing.cpp.o
+[ 41%] Building CXX object CMakeFiles/lgx_core.dir/src/crypto/manifest_sig.cpp.o
+[ 44%] Building CXX object CMakeFiles/lgx_shared.dir/src/core/installed_package.cpp.o
+[ 46%] Building CXX object CMakeFiles/lgx_core.dir/src/crypto/keyring.cpp.o
+[ 48%] Building CXX object CMakeFiles/lgx_shared.dir/src/core/platform_variant.cpp.o
+[ 51%] Building CXX object CMakeFiles/lgx_shared.dir/src/core/main_resolution.cpp.o
+[ 55%] Building CXX object CMakeFiles/lgx_shared.dir/src/crypto/signing.cpp.o
+[ 55%] Building CXX object CMakeFiles/lgx_shared.dir/src/crypto/manifest_sig.cpp.o
+[ 58%] Building CXX object CMakeFiles/lgx_shared.dir/src/crypto/keyring.cpp.o
+[ 60%] Linking CXX static library liblgx_core.a
+[ 60%] Built target lgx_core
+[ 67%] Building CXX object CMakeFiles/lgx.dir/src/commands/command.cpp.o
+[ 67%] Building CXX object CMakeFiles/lgx.dir/src/commands/remove_command.cpp.o
+[ 67%] Building CXX object CMakeFiles/lgx.dir/src/commands/add_command.cpp.o
+[ 72%] Building CXX object CMakeFiles/lgx.dir/src/main.cpp.o
+[ 72%] Building CXX object CMakeFiles/lgx.dir/src/commands/create_command.cpp.o
+[ 74%] Building CXX object CMakeFiles/lgx.dir/src/commands/extract_command.cpp.o
+[ 76%] Building CXX object CMakeFiles/lgx.dir/src/commands/keyring_command.cpp.o
+[ 79%] Building CXX object CMakeFiles/lgx.dir/src/commands/publish_command.cpp.o
+[ 83%] Building CXX object CMakeFiles/lgx.dir/src/commands/merge_command.cpp.o
+[ 83%] Building CXX object CMakeFiles/lgx.dir/src/commands/keygen_command.cpp.o
+[ 86%] Building CXX object CMakeFiles/lgx.dir/src/commands/verify_command.cpp.o
+[ 88%] Building CXX object CMakeFiles/lgx.dir/src/commands/semver_command.cpp.o
+[ 93%] Building CXX object CMakeFiles/lgx.dir/src/commands/manifest_command.cpp.o
+[ 93%] Building CXX object CMakeFiles/lgx.dir/src/commands/sign_command.cpp.o
+[ 95%] Building CXX object CMakeFiles/lgx.dir/src/commands/signature_command.cpp.o
+[ 97%] Linking CXX shared library liblgx.so
+[ 97%] Built target lgx_shared
+[100%] Linking CXX executable lgx
+[100%] Built target lgx

@@ -1,0 +1,25 @@
+2026-09-25T17:48:23+10:00
+List of devices attached
+
+DISPLAY=:0 WAYLAND_DISPLAY=wayland-0
+CMD: ${HOME}/android-sdk/emulator/emulator -avd delivery-demo -read-only -port 5570 -no-audio -no-boot-anim -no-snapshot-save -qt-hide-window
+emulator pid 3584371
+3584371 ${HOME}/android-sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64 -avd delivery-demo -read-only -port 5570 -no-audio -no-boot-anim -no-snapshot-save -qt-hide-window
+wait-for-device rc=0
+boot_completed=1 after 32s
+List of devices attached
+emulator-5570          device product:sdk_gphone64_x86_64 model:sdk_gphone64_x86_64 device:emu64xa transport_id:14
+
+34
+x86_64,arm64-v8a
+google/sdk_gphone64_x86_64/emu64xa:14/UE1A.230829.050/12077443:userdebug/dev-keys
+Enforcing
+Linux localhost 6.1.23-android14-4-00257-g7e35917775b8-ab9964412 #1 SMP PREEMPT Mon Apr 17 20:50:58 UTC 2023 x86_64 Toybox
+4096
+uid=2000(shell) gid=2000(shell) groups=2000(shell),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),1078(ext_data_rw),1079(ext_obb_rw),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),3012(readtracefs) context=u:r:shell:s0
+shell TMPDIR=/data/local/tmp
+INFO         | AVD supportsNativeGLES=1, supportsGuestAngle=0
+INFO         | Platform does not support Guest Angle
+INFO         | Created extended window in 290.227ms
+INFO         | Boot completed in 31216 ms
+INFO         | Increasing screen off timeout, logcat buffer size to 2M.

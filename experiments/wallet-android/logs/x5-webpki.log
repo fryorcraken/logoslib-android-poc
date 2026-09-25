@@ -1,0 +1,80 @@
+================ x86_64-linux-android  2026-09-25T14:41:26+10:00
+== static pcsc stub
+     Removed 20 files, 1.7MiB total
+== cargo build (no-prove + webpki-roots + static pcsc)
+warning: lee@0.1.0: Generated module at ${REPO_ROOT}/.work/experiments/wallet-android/target/x86_64-linux-android/release/build/lee-bd626e5113693801/out/lee/privacy_preserving_circuit/mod.rs
+warning: programs@0.1.0: Generated module at ${REPO_ROOT}/.work/experiments/wallet-android/target/x86_64-linux-android/release/build/programs-ab4c31ede0aad253/out/lez/programs/mod.rs
+    Finished `release` profile [optimized] target(s) in 13.22s
+cargo-exit=0 build-seconds=14
+${REPO_ROOT}/.work/experiments/wallet-android/out/x86_64-linux-android-webpki/libwallet_ffi.so 18340976
+${REPO_ROOT}/.work/experiments/wallet-android/out/x86_64-linux-android-webpki/libwallet_ffi.stripped.so 15169576
+5766612
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+exported wallet_ffi_*: 58
+dynamic SCard* (defined or undefined): 0
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x7066e4 0x7066e4 R   0x4000
+  LOAD           0x706700 0x000000000070a700 0x000000000070a700 0x6e4f60 0x6e4f60 R E 0x4000
+  LOAD           0xdeb660 0x0000000000df3660 0x0000000000df3660 0x080f40 0x0819a0 RW  0x4000
+  LOAD           0xe6c5a0 0x0000000000e785a0 0x0000000000e785a0 0x00ab98 0x00b570 RW  0x4000
+webpki root CA names present (ISRG Root X1): 1
+================ aarch64-linux-android  2026-09-25T14:41:42+10:00
+== static pcsc stub
+     Removed 20 files, 1.7MiB total
+== cargo build (no-prove + webpki-roots + static pcsc)
+warning: lee@0.1.0: Generated module at ${REPO_ROOT}/.work/experiments/wallet-android/target/aarch64-linux-android/release/build/lee-241f3a88fbc1d722/out/lee/privacy_preserving_circuit/mod.rs
+warning: programs@0.1.0: Generated module at ${REPO_ROOT}/.work/experiments/wallet-android/target/aarch64-linux-android/release/build/programs-d928691f96416696/out/lez/programs/mod.rs
+    Finished `release` profile [optimized] target(s) in 14.05s
+cargo-exit=0 build-seconds=14
+${REPO_ROOT}/.work/experiments/wallet-android/out/aarch64-linux-android-webpki/libwallet_ffi.so 18371576
+${REPO_ROOT}/.work/experiments/wallet-android/out/aarch64-linux-android-webpki/libwallet_ffi.stripped.so 13945544
+5499977
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+exported wallet_ffi_*: 58
+dynamic SCard* (defined or undefined): 0
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x6ec8d0 0x6ec8d0 R   0x4000
+  LOAD           0x6ec900 0x00000000006f0900 0x00000000006f0900 0x5d99b0 0x5d99b0 R E 0x4000
+  LOAD           0xcc62b0 0x0000000000cce2b0 0x0000000000cce2b0 0x07b598 0x07bd50 RW  0x4000
+  LOAD           0xd41848 0x0000000000d4d848 0x0000000000d4d848 0x00ab90 0x00b558 RW  0x4000
+webpki root CA names present (ISRG Root X1): 1
+== patch 02 diff (wallet + wallet-ffi + lock)
+ M Cargo.lock
+ M lez/common/Cargo.toml
+ M lez/common/src/config.rs
+ M lez/wallet-ffi/Cargo.toml
+ M lez/wallet/Cargo.toml
+ M lez/wallet/src/multi_client.rs
+diff --git a/Cargo.lock b/Cargo.lock
+index bc454464b..33b9d5a2f 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -1815,7 +1815,6 @@ dependencies = [
+  "lee",
+  "lee_core",
+  "log",
+- "logos-blockchain-common-http-client",
+  "ping_core",
+  "programs",
+  "serde",
+@@ -13688,6 +13687,7 @@ dependencies = [
+  "programs",
+  "rand 0.8.6",
+  "rpassword",
++ "rustls",
+  "sequencer_service_rpc",
+  "serde",
+  "serde_json",
+@@ -13698,6 +13698,7 @@ dependencies = [
+  "token_core",
+  "tokio",
+  "url",
++ "webpki-roots",
+  "zeroize",
+ ]
+ 
+68 ${REPO_ROOT}/.work/experiments/wallet-android/patches/02-wallet-webpki-roots-feature.diff
+133 ${REPO_ROOT}/.work/experiments/wallet-android/patches/all-combined.diff
+DONE

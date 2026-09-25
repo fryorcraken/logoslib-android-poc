@@ -1,0 +1,104 @@
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt:2 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt:2 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/lgx-icu/build/lgx-x86_64-28/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  CMakeLists.txt:2 (project)
+
+
+-- The CXX compiler identification is Clang 18.0.3
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  CMakeLists.txt:2 (project)
+
+
+-- Detecting CXX compiler ABI info
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/lgx-icu/build/lgx-x86_64-28/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/lgx-icu/build/lgx-x86_64-28/CMakeFiles/CMakeScratch/TryCompile-ulmOiC/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/experiments/lgx-icu/build/lgx-x86_64-28/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/lgx-icu/build/lgx-x86_64-28/CMakeFiles/CMakeScratch/TryCompile-ulmOiC/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/lgx-icu/build/lgx-x86_64-28/CMakeFiles/CMakeScratch/TryCompile-ulmOiC/CMakeLists.txt:4 (project)
+
+
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ZLIB: ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/28/libz.so (found version "1.3.0.1")
+CMake Error at CMakeLists.txt:52 (message):
+  liblgx: the NDK's libicu.so was not found.  The ICU4C C API is available to
+  apps from Android API 31; build with ANDROID_PLATFORM >= 31 (current:
+  android-28).
+
+
+-- Configuring incomplete, errors occurred!

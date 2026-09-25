@@ -1,8 +1,12 @@
 # logoslib-android-poc
 
 A **proof of concept**: embed `liblogos_core` (the Logos Core host and module loader) in an
-Android/Kotlin app, load **LEZ** (Logos Execution Zone) modules into it at runtime, and call
-them.
+Android/Kotlin app, load the **Logos blockchain module** (an L1 node) into it at runtime, drive
+it, and show a second module calling it over liblogos's own transport.
+
+The first target was LEZ (`lez_core`). It was investigated in depth: see
+[`docs/investigation.md`](docs/investigation.md) §1-3. The target then switched to the
+blockchain module. The findings on liblogos, Qt and Android carry over unchanged.
 
 This is the Android counterpart to
 [`liblogos-electron-poc`](https://github.com/fryorcraken/liblogos-electron-poc), which did the
@@ -14,16 +18,18 @@ JNI shim per library and has no shared inter-module transport.
 
 ## Status
 
-**Investigation done; desktop reference working; Android build not started.**
+**Investigation and gating experiments done; building the Kotlin wrapper for liblogos next.**
 
 | Bar | State |
 | --- | --- |
 | Source-grounded investigation of the module graph, circuits, Qt/Android, call routes and packaging | Done: [`docs/investigation.md`](docs/investigation.md) |
-| lez_core loaded and driven under liblogos, plus the live LEZ testnet read | Done on desktop (Linux x86_64): [`experiments/desktop-probe`](experiments/desktop-probe) |
-| Inter-module call (`lez_probe` → `lez_core`) over liblogos's own transport | Done on desktop: [`modules/lez_probe`](modules/lez_probe) |
+| Module loaded and driven under liblogos, plus an inter-module call over liblogos's transport | Done on desktop with lez_core / [`lez_probe`](modules/lez_probe): [`experiments/desktop-probe`](experiments/desktop-probe) |
 | Pure-C, in-process module calls through the `lp_*` C ABI (the route the JNI shim will use) | Done on desktop: [`experiments/lp-inprocess`](experiments/lp-inprocess) |
-| Android gating experiments: JVM-less Qt on the emulator, `wallet_ffi` for Android, NDK runtime build | In progress |
-| Kotlin app on the emulator: load, call, inter-module | Not started. See [`docs/plan.md`](docs/plan.md) (M1-M8) |
+| Qt + QtRemoteObjects in a JVM-less module process, exec'd from an APK on the emulator | Works with a ~60-line fix: [`experiments/qt-jvmless`](experiments/qt-jvmless) |
+| Qt-free liblogos runtime (Boost, container, loader) cross-built and run on the emulator | Done: [`experiments/ndk-runtime`](experiments/ndk-runtime) |
+| Kotlin wrapper for liblogos + a trivial module on the emulator | Next: [`docs/plan.md`](docs/plan.md) M2-M4 |
+| Blockchain module on Android | Research in progress, then M5 |
+| Inter-module call on Android | M6 |
 
 ## Findings in brief
 
@@ -58,11 +64,13 @@ JNI shim per library and has no shared inter-module transport.
   `liblogos_protocol` does the same job from inside the host process, with no daemon, no
   gateway and no token plumbing. It was verified with a pure-C caller. The only Qt C++ left is
   about 60 lines that own a `QCoreApplication` on a dedicated thread.
-- **The open Android question is where modules run.** liblogos spawns one `logos_host_qt`
-  process per module. On Android that process would be an executable in `nativeLibraryDir`
-  running with no JavaVM (minSdk 33 or higher), and it breaks `wallet_ffi`'s TLS verifier.
-  The alternative is a new in-process container. The gating experiments decide between the
-  two.
+- **liblogos's one-process-per-module model works on Android.** Each module's
+  `logos_host_qt` ships in the APK as `liblogos_host_qt.so` and is exec'd from
+  `nativeLibraryDir`. Stock Qt crashes in a process with no JavaVM, but priming QtCore's own
+  `JNI_OnLoad` with a fake VM (~60 lines, no Qt rebuild) fixes it. On the emulator this was
+  verified from inside an APK: exec from the APK's library dir, the SELinux rules for the
+  socket between app and child, and QtRO, all with minSdk 34. The app itself does not need
+  `Qt6Android.jar`.
 
 ## Layout
 
@@ -70,8 +78,9 @@ JNI shim per library and has no shared inter-module transport.
 docs/investigation.md    findings, each marked verified-from-source / by-experiment / inferred
 docs/plan.md             milestones M0-M8 with acceptance checks
 docs/research/           per-track research notes with claims, evidence and verifier verdicts
-experiments/             desktop probe and in-process lp_* harness (scripts + logs)
-modules/lez_probe/       tiny module that calls lez_core, for the inter-module demo
+experiments/             desktop probe, in-process lp_* harness, Android gating experiments
+patches/                 narrow patches to upstream repos, grouped by repo (none upstreamed yet)
+modules/lez_probe/       tiny module that calls lez_core (inter-module pattern, desktop-proven)
 ```
 
 ## Licence

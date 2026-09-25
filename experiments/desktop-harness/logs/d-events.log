@@ -1,0 +1,50 @@
+exit=0
+[     0 ms][main] desktop-harness mode=events TMPDIR=${REPO_ROOT}/.work/dh/d1 LOGOS_HOST_PATH=/nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/bin/logos_host
+[     0 ms][qt] QCoreApplication created on thread 139875508233920
+[    18 ms][qt] logos_core_start() returned
+[    18 ms][main] runtime up in 18 ms; protocol=0.9.0 mode=remote; qt thread=139875508233920
+[    18 ms][main] thread ids: main=139875512811200 qt=139875508233920
+[    18 ms][main] lp_client_create(ev_probe) -> 0x13624ad0 in 0 ms
+[    18 ms][main] lp_subscribe(pinged) before load -> 0x1363b780; pending=["ev_probe::pinged"] generation=0
+[    34 ms][main] load(ev_probe) from this (non-Qt) thread -> 1 in 16 ms
+[   257 ms][qt-thread] STATUS ARMED generation=1 reason=(null)
+[   266 ms][main] wait_armed: armed=1 after 232 ms (generation 1)
+[   266 ms][main] armed 248 ms after the load started
+[   266 ms][main] pending after arm=[]
+[   267 ms][qt-thread] EVENT[sub1] #1 pinged ["e0@266"] latency=1 ms
+[   267 ms][main] fire: lp_invoke(fire, timeout=5000) start=266 took=1 ms rc=0 result=true error=(null)
+[   318 ms][qt-thread] EVENT[sub1] #2 pinged ["e1@317"] latency=1 ms
+[   318 ms][main] fire: lp_invoke(fire, timeout=5000) start=317 took=1 ms rc=0 result=true error=(null)
+[   369 ms][qt-thread] EVENT[sub1] #3 pinged ["e2@368"] latency=1 ms
+[   369 ms][main] fire: lp_invoke(fire, timeout=5000) start=368 took=1 ms rc=0 result=true error=(null)
+[   420 ms][qt-thread] EVENT[sub1] #4 pinged ["e3@419"] latency=1 ms
+[   420 ms][main] fire: lp_invoke(fire, timeout=5000) start=419 took=1 ms rc=0 result=true error=(null)
+[   470 ms][qt-thread] EVENT[sub1] #5 pinged ["e4@470"] latency=0 ms
+[   470 ms][main] fire: lp_invoke(fire, timeout=5000) start=470 took=0 ms rc=0 result=true error=(null)
+[  1021 ms][main] after 5 fires: sub1 got 5 events, avg latency 0.8 ms, max 1 ms, on qt-thread 5, elsewhere 0
+[  1022 ms][qt-thread] EVENT[sub1] #6 pinged ["many-0"] latency=-1 ms
+[  1022 ms][qt-thread] EVENT[sub1] #7 pinged ["many-1"] latency=-1 ms
+[  1022 ms][qt-thread] EVENT[sub1] #8 pinged ["many-2"] latency=-1 ms
+[  1024 ms][main] burst: lp_invoke(fire_many, timeout=10000) start=1021 took=3 ms rc=0 result=200 error=(null)
+[  1024 ms][main] burst: fire_many(200) delivered 200 events (last=["many-199"]) within 0 ms of the call returning
+[  1024 ms][sub2-thread] lp_subscribe(pinged) from a worker thread -> 0x7f3730000b70
+[  1325 ms][qt-thread] EVENT[sub2] #1 pinged ["two-subs@1324"] latency=1 ms
+[  1325 ms][main] fire: lp_invoke(fire, timeout=5000) start=1324 took=1 ms rc=0 result=true error=(null)
+[  1825 ms][main] after two-subs fire: sub1 total 206, sub2 total 1 (sub2 on qt-thread 1, elsewhere 0)
+[  1825 ms][main] lp_subscribe(no_such_event) -> 0x1363df10; pending=[]
+[  1826 ms][qt-thread] STATUS LOST generation=1 reason=provider_unavailable
+[  1876 ms][main] unload(ev_probe) -> 1 in 51 ms
+[  3391 ms][main] load(ev_probe) from this (non-Qt) thread -> 1 in 15 ms
+[  3399 ms][qt-thread] STATUS ARMED generation=2 reason=(null)
+[  3401 ms][main] wait_armed: armed=1 after 10 ms (generation 2)
+[  3702 ms][qt-thread] EVENT[sub2] #2 pinged ["after-reload@3701"] latency=1 ms
+[  3702 ms][main] fire: lp_invoke(fire, timeout=5000) start=3701 took=1 ms rc=0 result=true error=(null)
+[  4502 ms][main] after reload: sub1 got 1 new events (generation now 2)
+[  4502 ms][main] fire: lp_invoke(fire, timeout=5000) start=4502 took=0 ms rc=0 result=true error=(null)
+[  5002 ms][main] after unsubscribe: sub1 got 0 further events (expect 0)
+[  5003 ms][qt] exec() returned 0; logos_core_cleanup()
+[  5103 ms][qt] cleanup done
+[  5103 ms][main] done (rc=0); shutdown took 101 ms
+== liblogos/protocol warnings mentioning subscriptions/events ==
+[2026-09-25 16:12:59.194] [info] [logos] [ev_probe] [ev_probe] emitting pinged(after-unsubscribe@4502)
+leftover logos_host processes: 0

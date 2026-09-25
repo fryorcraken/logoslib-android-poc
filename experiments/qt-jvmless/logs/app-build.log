@@ -1,0 +1,161 @@
+2026-09-25T18:08:34+10:00
+JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+openjdk version "21.0.12.1" 2026-08-18
+OpenJDK Runtime Environment (Red_Hat-21.0.12.1.1-1) (build 21.0.12.1+1)
+OpenJDK 64-Bit Server VM (Red_Hat-21.0.12.1.1-1) (build 21.0.12.1+1, mixed mode, sharing)
+== copy gradle wrapper from wrap-poc ==
+'${HOME}/src/fryorcraken/logos-android-wrap-poc/android/gradlew' -> '${REPO_ROOT}/.work/experiments/qt-jvmless/app/gradlew'
+'${HOME}/src/fryorcraken/logos-android-wrap-poc/android/gradle/wrapper/gradle-wrapper.jar' -> '${REPO_ROOT}/.work/experiments/qt-jvmless/app/gradle/wrapper/gradle-wrapper.jar'
+'${HOME}/src/fryorcraken/logos-android-wrap-poc/android/gradle/wrapper/gradle-wrapper.properties' -> '${REPO_ROOT}/.work/experiments/qt-jvmless/app/gradle/wrapper/gradle-wrapper.properties'
+== stage jniLibs ==
+'${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qro_server' -> '${REPO_ROOT}/.work/experiments/qt-jvmless/app/app/src/main/jniLibs/x86_64/libqro_server.so'
+'${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/libechoplugin.so' -> '${REPO_ROOT}/.work/experiments/qt-jvmless/app/app/src/main/jniLibs/x86_64/libechoplugin.so'
+'${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/libqrotest_jni.so' -> '${REPO_ROOT}/.work/experiments/qt-jvmless/app/app/src/main/jniLibs/x86_64/libqrotest_jni.so'
+'${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/libqrotest_jni_noonload.so' -> '${REPO_ROOT}/.work/experiments/qt-jvmless/app/app/src/main/jniLibs/x86_64/libqrotest_jni_noonload.so'
+'${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6Core_x86_64.so' -> '${REPO_ROOT}/.work/experiments/qt-jvmless/app/app/src/main/jniLibs/x86_64/libQt6Core_x86_64.so'
+'${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6Network_x86_64.so' -> '${REPO_ROOT}/.work/experiments/qt-jvmless/app/app/src/main/jniLibs/x86_64/libQt6Network_x86_64.so'
+'${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6RemoteObjects_x86_64.so' -> '${REPO_ROOT}/.work/experiments/qt-jvmless/app/app/src/main/jniLibs/x86_64/libQt6RemoteObjects_x86_64.so'
+'${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/libc++_shared.so' -> '${REPO_ROOT}/.work/experiments/qt-jvmless/app/app/src/main/jniLibs/x86_64/libc++_shared.so'
+total 12860
+drwxr-xr-x. 1 fryorcraken fryorcraken     326 Sep 25 18:08 .
+drwxr-xr-x. 1 fryorcraken fryorcraken      12 Sep 25 18:08 ..
+-rwxr-xr-x. 1 fryorcraken fryorcraken 1617608 Sep 25 18:08 libc++_shared.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken  287536 Sep 25 18:08 libechoplugin.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken  675912 Sep 25 18:08 libqro_server.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken  679064 Sep 25 18:08 libqrotest_jni_noonload.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken  685384 Sep 25 18:08 libqrotest_jni.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken 6420704 Sep 25 18:08 libQt6Core_x86_64.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken 1820568 Sep 25 18:08 libQt6Network_x86_64.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken  963888 Sep 25 18:08 libQt6RemoteObjects_x86_64.so
+== gradle build ==
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preWithjarDebugBuild UP-TO-DATE
+> Task :app:mergeWithjarDebugNativeDebugMetadata NO-SOURCE
+> Task :app:generateWithjarDebugBuildConfig UP-TO-DATE
+> Task :app:generateWithjarDebugResources UP-TO-DATE
+> Task :app:packageWithjarDebugResources UP-TO-DATE
+> Task :app:processWithjarDebugNavigationResources UP-TO-DATE
+> Task :app:parseWithjarDebugLocalResources UP-TO-DATE
+> Task :app:generateWithjarDebugRFile UP-TO-DATE
+> Task :app:compileWithjarDebugKotlin UP-TO-DATE
+> Task :app:javaPreCompileWithjarDebug UP-TO-DATE
+> Task :app:compileWithjarDebugJavaWithJavac UP-TO-DATE
+> Task :app:generateWithjarDebugAssets UP-TO-DATE
+> Task :app:mergeWithjarDebugAssets UP-TO-DATE
+> Task :app:compressWithjarDebugAssets UP-TO-DATE
+> Task :app:generateWithjarDebugGlobalSynthetics UP-TO-DATE
+> Task :app:checkWithjarDebugDuplicateClasses UP-TO-DATE
+> Task :app:desugarWithjarDebugFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexWithjarDebug UP-TO-DATE
+> Task :app:mergeLibDexWithjarDebug UP-TO-DATE
+> Task :app:checkWithjarDebugAarMetadata UP-TO-DATE
+> Task :app:mapWithjarDebugSourceSetPaths UP-TO-DATE
+> Task :app:compileWithjarDebugNavigationResources UP-TO-DATE
+> Task :app:mergeWithjarDebugResources UP-TO-DATE
+> Task :app:createWithjarDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksWithjarDebug UP-TO-DATE
+> Task :app:processWithjarDebugMainManifest UP-TO-DATE
+> Task :app:processWithjarDebugManifest UP-TO-DATE
+> Task :app:processWithjarDebugManifestForPackage UP-TO-DATE
+> Task :app:processWithjarDebugResources UP-TO-DATE
+> Task :app:dexBuilderWithjarDebug UP-TO-DATE
+> Task :app:mergeProjectDexWithjarDebug UP-TO-DATE
+> Task :app:processWithjarDebugJavaRes UP-TO-DATE
+> Task :app:mergeWithjarDebugJavaResource UP-TO-DATE
+> Task :app:mergeWithjarDebugJniLibFolders
+> Task :app:validateSigningWithjarDebug UP-TO-DATE
+> Task :app:writeWithjarDebugAppMetadata UP-TO-DATE
+> Task :app:writeWithjarDebugSigningConfigVersions UP-TO-DATE
+> Task :app:preNojarDebugBuild UP-TO-DATE
+> Task :app:mergeNojarDebugNativeDebugMetadata NO-SOURCE
+> Task :app:generateNojarDebugBuildConfig UP-TO-DATE
+> Task :app:generateNojarDebugResources UP-TO-DATE
+> Task :app:packageNojarDebugResources UP-TO-DATE
+> Task :app:processNojarDebugNavigationResources UP-TO-DATE
+> Task :app:parseNojarDebugLocalResources UP-TO-DATE
+> Task :app:generateNojarDebugRFile UP-TO-DATE
+> Task :app:mergeWithjarDebugNativeLibs
+> Task :app:compileNojarDebugKotlin UP-TO-DATE
+> Task :app:javaPreCompileNojarDebug UP-TO-DATE
+> Task :app:compileNojarDebugJavaWithJavac UP-TO-DATE
+> Task :app:generateNojarDebugAssets UP-TO-DATE
+> Task :app:mergeNojarDebugAssets UP-TO-DATE
+> Task :app:compressNojarDebugAssets UP-TO-DATE
+> Task :app:generateNojarDebugGlobalSynthetics UP-TO-DATE
+> Task :app:stripWithjarDebugDebugSymbols
+> Task :app:checkNojarDebugDuplicateClasses UP-TO-DATE
+> Task :app:desugarNojarDebugFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexNojarDebug UP-TO-DATE
+> Task :app:mergeLibDexNojarDebug UP-TO-DATE
+> Task :app:processNojarDebugJavaRes UP-TO-DATE
+> Task :app:mergeNojarDebugJavaResource UP-TO-DATE
+> Task :app:checkNojarDebugAarMetadata UP-TO-DATE
+> Task :app:mapNojarDebugSourceSetPaths UP-TO-DATE
+> Task :app:compileNojarDebugNavigationResources UP-TO-DATE
+> Task :app:mergeNojarDebugResources UP-TO-DATE
+> Task :app:createNojarDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksNojarDebug UP-TO-DATE
+> Task :app:processNojarDebugMainManifest UP-TO-DATE
+> Task :app:processNojarDebugManifest UP-TO-DATE
+> Task :app:processNojarDebugManifestForPackage UP-TO-DATE
+> Task :app:processNojarDebugResources UP-TO-DATE
+> Task :app:dexBuilderNojarDebug UP-TO-DATE
+> Task :app:mergeProjectDexNojarDebug UP-TO-DATE
+> Task :app:mergeNojarDebugJniLibFolders
+> Task :app:validateSigningNojarDebug UP-TO-DATE
+> Task :app:writeNojarDebugAppMetadata UP-TO-DATE
+> Task :app:writeNojarDebugSigningConfigVersions UP-TO-DATE
+> Task :app:mergeNojarDebugNativeLibs
+> Task :app:stripNojarDebugDebugSymbols
+> Task :app:packageWithjarDebug
+> Task :app:createWithjarDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleWithjarDebug
+> Task :app:packageNojarDebug
+> Task :app:createNojarDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleNojarDebug
+
+BUILD SUCCESSFUL in 6s
+76 actionable tasks: 8 executed, 68 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.7.1/userguide/configuration_cache_enabling.html
+gradle rc=0
+== withjar: ${REPO_ROOT}/.work/experiments/qt-jvmless/app/app/build/outputs/apk/withjar/debug/app-withjar-debug.apk ==
+-rw-r--r--. 1 fryorcraken fryorcraken 11893465 Sep 25 18:08 ${REPO_ROOT}/.work/experiments/qt-jvmless/app/app/build/outputs/apk/withjar/debug/app-withjar-debug.apk
+  6544764  01-01-1981 01:01   classes.dex
+    14196  01-01-1981 01:01   classes2.dex
+    31004  01-01-1981 01:01   classes4.dex
+  6420704  01-01-1981 01:01   lib/x86_64/libQt6Core_x86_64.so
+  1820568  01-01-1981 01:01   lib/x86_64/libQt6Network_x86_64.so
+   963888  01-01-1981 01:01   lib/x86_64/libQt6RemoteObjects_x86_64.so
+  1617608  01-01-1981 01:01   lib/x86_64/libc++_shared.so
+   287536  01-01-1981 01:01   lib/x86_64/libechoplugin.so
+    15924  01-01-1981 01:01   classes3.dex
+   675912  01-01-1981 01:01   lib/x86_64/libqro_server.so
+   685384  01-01-1981 01:01   lib/x86_64/libqrotest_jni.so
+   679064  01-01-1981 01:01   lib/x86_64/libqrotest_jni_noonload.so
+    A: package="org.logos.qrotest.a" (Raw: "org.logos.qrotest.a")
+        A: http://schemas.android.com/apk/res/android:minSdkVersion(0x0101020c)=34
+        A: http://schemas.android.com/apk/res/android:targetSdkVersion(0x01010270)=36
+        A: http://schemas.android.com/apk/res/android:extractNativeLibs(0x010104ea)=true
+QtNative refs in dex: 12
+== nojar: ${REPO_ROOT}/.work/experiments/qt-jvmless/app/app/build/outputs/apk/nojar/debug/app-nojar-debug.apk ==
+-rw-r--r--. 1 fryorcraken fryorcraken 7903677 Sep 25 18:08 ${REPO_ROOT}/.work/experiments/qt-jvmless/app/app/build/outputs/apk/nojar/debug/app-nojar-debug.apk
+  2642972  01-01-1981 01:01   classes.dex
+      564  01-01-1981 01:01   classes2.dex
+    31004  01-01-1981 01:01   classes4.dex
+  6420704  01-01-1981 01:01   lib/x86_64/libQt6Core_x86_64.so
+  1820568  01-01-1981 01:01   lib/x86_64/libQt6Network_x86_64.so
+   963888  01-01-1981 01:01   lib/x86_64/libQt6RemoteObjects_x86_64.so
+  1617608  01-01-1981 01:01   lib/x86_64/libc++_shared.so
+   287536  01-01-1981 01:01   lib/x86_64/libechoplugin.so
+    15924  01-01-1981 01:01   classes3.dex
+   675912  01-01-1981 01:01   lib/x86_64/libqro_server.so
+   685384  01-01-1981 01:01   lib/x86_64/libqrotest_jni.so
+   679064  01-01-1981 01:01   lib/x86_64/libqrotest_jni_noonload.so
+    A: package="org.logos.qrotest.b" (Raw: "org.logos.qrotest.b")
+        A: http://schemas.android.com/apk/res/android:minSdkVersion(0x0101020c)=34
+        A: http://schemas.android.com/apk/res/android:targetSdkVersion(0x01010270)=36
+        A: http://schemas.android.com/apk/res/android:extractNativeLibs(0x010104ea)=true
+QtNative refs in dex: 0
+APK_OK

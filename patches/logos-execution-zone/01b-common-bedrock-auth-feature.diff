@@ -1,0 +1,66 @@
+Rationale: non-breaking replacement for 01 - make logos-blockchain-common-http-client optional in lez/common behind feature bedrock-auth, enabled only by sequencer_core and indexer_core, so wallet-ffi's graph has no Bedrock crates.
+
+diff --git a/lez/common/Cargo.toml b/lez/common/Cargo.toml
+index 449ad59c2..b22ed324f 100644
+--- a/lez/common/Cargo.toml
++++ b/lez/common/Cargo.toml
+@@ -29,7 +29,12 @@ sha2.workspace = true
+ log.workspace = true
+ hex.workspace = true
+ borsh.workspace = true
+-logos-blockchain-common-http-client.workspace = true
++logos-blockchain-common-http-client = { workspace = true, optional = true }
++
++[features]
++# `From<BasicAuth> for BasicAuthCredentials`; pulls the Bedrock stack
++# (circuits, rapidsnark, GMP). Needed by sequencer/indexer, not by the wallet.
++bedrock-auth = ["dep:logos-blockchain-common-http-client"]
+ 
+ [dev-dependencies]
+ lee = { workspace = true, features = ["test-utils"] }
+diff --git a/lez/common/src/config.rs b/lez/common/src/config.rs
+index ec7ed6b38..1c246dd7e 100644
+--- a/lez/common/src/config.rs
++++ b/lez/common/src/config.rs
+@@ -2,6 +2,7 @@
+ 
+ use std::str::FromStr;
+ 
++#[cfg(feature = "bedrock-auth")]
+ use logos_blockchain_common_http_client::BasicAuthCredentials;
+ use serde::{Deserialize, Serialize};
+ 
+@@ -48,6 +49,7 @@ impl FromStr for BasicAuth {
+     }
+ }
+ 
++#[cfg(feature = "bedrock-auth")]
+ impl From<BasicAuth> for BasicAuthCredentials {
+     fn from(value: BasicAuth) -> Self {
+         Self::new(value.username, value.password)
+diff --git a/lez/indexer/core/Cargo.toml b/lez/indexer/core/Cargo.toml
+index a3ee7fe9d..d769c1eed 100644
+--- a/lez/indexer/core/Cargo.toml
++++ b/lez/indexer/core/Cargo.toml
+@@ -12,7 +12,7 @@ default = []
+ 
+ [dependencies]
+ chain_state.workspace = true
+-common.workspace = true
++common = { workspace = true, features = ["bedrock-auth"] }
+ logos-blockchain-zone-sdk.workspace = true
+ lee.workspace = true
+ lee_core = { workspace = true, features = ["host"] }
+diff --git a/lez/sequencer/core/Cargo.toml b/lez/sequencer/core/Cargo.toml
+index b53640cf4..494ccf8a6 100644
+--- a/lez/sequencer/core/Cargo.toml
++++ b/lez/sequencer/core/Cargo.toml
+@@ -12,7 +12,7 @@ trait-variant.workspace = true
+ lee.workspace = true
+ lee_core.workspace = true
+ chain_state.workspace = true
+-common.workspace = true
++common = { workspace = true, features = ["bedrock-auth"] }
+ sequencer_core_metrics = { workspace = true, features = ["record"] }
+ sequencer_storage_actor.workspace = true
+ mempool.workspace = true

@@ -1,0 +1,36 @@
+g++ (GCC) 14.3.0
+BUILD_OK
+exit=0
+[     0 ms][main] desktop-harness mode=timeouts TMPDIR=${REPO_ROOT}/.work/dh/c09 LOGOS_HOST_PATH=/nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/bin/logos_host
+[     0 ms][qt] QCoreApplication created on thread 140161902950080
+[    16 ms][qt] logos_core_start() returned
+[    16 ms][main] runtime up in 16 ms; protocol=0.9.0 mode=remote; qt thread=140161902950080
+[    29 ms][main] load(lez_core) from this (non-Qt) thread -> 1 in 13 ms
+[    40 ms][main] load(ev_probe) from this (non-Qt) thread -> 1 in 11 ms
+[    41 ms][main] lp_client_create(lez_core) -> 0x1bd6d410 in 1 ms
+[    41 ms][main] lp_client_create(ev_probe) -> 0x1bd6d990 in 0 ms
+[    42 ms][main] warmup: lp_invoke(version, timeout=5000) start=41 took=1 ms rc=0 result="0.3.0" error=(null)
+[    42 ms][main] warmup: lp_invoke(ping, timeout=5000) start=42 took=0 ms rc=0 result="pong" error=(null)
+[    42 ms][main] --- (1) ev_probe busy 5 s (async sleep_ms); sync lp_invoke(ev_probe.ping, timeout=1000)
+[    42 ms][main] L1: lp_invoke_async(sleep_ms, timeout=60000) rc=0; the dispatch call itself took 0 ms
+[  1194 ms][main] busy-module-sync: lp_invoke(ping, timeout=1000) start=242 took=952 ms rc=-4 result=(null) error={"code":"timeout","message":"call to 'ev_probe.ping' timed out after 1000ms","origin":"ev_probe"}
+[  1194 ms][main] --- (2) same, lp_invoke_async(ev_probe.ping, timeout=1000)
+[  1194 ms][main] busy-module-async: lp_invoke_async(ping, timeout=1000) rc=0; the dispatch call itself took 0 ms
+[  2150 ms][main] busy-module-async: async callback ok=0 after 951 ms (dispatched at 1194) on thread qt-thread json={"code":"timeout","message":"call to 'ev_probe.ping' timed out after 1000ms","origin":"ev_probe"}
+[  5045 ms][main] L1: async callback ok=1 after 5001 ms (dispatched at 42) on thread qt-thread json=5000
+[  5045 ms][main] --- (3) after the module is free again: does the client still work?
+[  5046 ms][main] after-timeouts: lp_invoke(ping, timeout=5000) start=5045 took=1 ms rc=0 result="pong" error=(null)
+[  5046 ms][main] --- (4) nested-loop inversion with SHORT timeouts: pinger lp_invoke(lez_core.version, timeout 60000) while another thread runs a sync ev_probe.sleep_ms(3000); then a sync lp_invoke(lez_core.version, timeout=500) issued while the Qt thread is inside that call
+[  5547 ms][main] short-timeout-during-nested: lp_invoke(version, timeout=500) start=5546 took=1 ms rc=0 result="0.3.0" error=(null)
+[  8251 ms][S] S: lp_invoke(sleep_ms, timeout=60000) start=5246 took=3005 ms rc=0 result=3000 error=(null)
+[  8256 ms][pinger] slow ping: version started at 5246 took 3010 ms rc=0 result="0.3.0"
+[  8453 ms][main] PINGER during-sync-sleep: version x2640, avg 1.29 ms, max 3010 ms (started at 5246), >100ms: 1, >1000ms: 1, bad results: 0
+[  8453 ms][main] --- (5) default timeout: sync lp_invoke(ev_probe.sleep_ms(23000), timeout_ms=0)
+[ 28047 ms][main] default-timeout: lp_invoke(sleep_ms, timeout=0) start=8453 took=19594 ms rc=-4 result=(null) error={"code":"timeout","message":"call to 'ev_probe.sleep_ms' timed out after 20000ms","origin":"ev_probe"}
+[ 28047 ms][main] --- (6) the module finishes the timed-out call in the background; next call waits for it
+[ 31454 ms][main] after-default-timeout: lp_invoke(ping, timeout=10000) start=28047 took=3407 ms rc=0 result="pong" error=(null)
+[ 31454 ms][qt] exec() returned 0; logos_core_cleanup()
+[ 31605 ms][qt] cleanup done
+[ 31605 ms][main] done (rc=0); shutdown took 151 ms
+== protocol warnings ==
+leftover logos_host processes: 0

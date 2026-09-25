@@ -1,0 +1,7 @@
+[qro_client pid=4705] client: RESULT OK echo:hello-from-client-pid-4705 (server pid 4703, plugin says 'hello from echoplugin') | sum=42 | 1 ms
+CLIENT_RC=0
+4703
+after-kill pidof=
+[qro_server pid=4703] server: READY
+[qro_server pid=4703] server: SIGTERM/SIGINT -> quit
+[qro_server pid=4703] server: exec() returned 0; socket exists after=0

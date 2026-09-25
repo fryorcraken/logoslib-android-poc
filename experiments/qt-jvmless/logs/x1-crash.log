@@ -1,0 +1,77 @@
+--------- beginning of crash
+09-25 18:08:42.276  7253  7253 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0 in tid 7253 (qro_server), pid 7253 (qro_server)
+09-25 18:08:42.298  7256  7256 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+09-25 18:08:42.298  7256  7256 F DEBUG   : Build fingerprint: 'google/sdk_gphone64_x86_64/emu64xa:14/UE1A.230829.050/12077443:userdebug/dev-keys'
+09-25 18:08:42.298  7256  7256 F DEBUG   : Revision: '0'
+09-25 18:08:42.298  7256  7256 F DEBUG   : ABI: 'x86_64'
+09-25 18:08:42.298  7256  7256 F DEBUG   : Timestamp: 2026-09-25 18:08:42.291094669+1000
+09-25 18:08:42.298  7256  7256 F DEBUG   : Process uptime: 1s
+09-25 18:08:42.298  7256  7256 F DEBUG   : Cmdline: ./qro_server --jvm-mode=none --exit-after-ms=500
+09-25 18:08:42.298  7256  7256 F DEBUG   : pid: 7253, tid: 7253, name: qro_server  >>> ./qro_server <<<
+09-25 18:08:42.298  7256  7256 F DEBUG   : uid: 2000
+09-25 18:08:42.298  7256  7256 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000000000000000
+09-25 18:08:42.298  7256  7256 F DEBUG   : Cause: null pointer dereference
+09-25 18:08:42.298  7256  7256 F DEBUG   :     rax 0000000000000000  rbx 0000000000000000  rcx b2e86f1c3914da3d  rdx 0000000000000000
+09-25 18:08:42.298  7256  7256 F DEBUG   :     r8  00007d778578f3b0  r9  0000000000000000  r10 b0f9000000028003  r11 0000000000000206
+09-25 18:08:42.298  7256  7256 F DEBUG   :     r12 00007ffd461176dc  r13 00007d75734b76d0  r14 00007ffd461173e8  r15 00007ffd46117540
+09-25 18:08:42.298  7256  7256 F DEBUG   :     rdi 00007d75e34bf150  rsi 00007ffd461173e0
+09-25 18:08:42.298  7256  7256 F DEBUG   :     rbp 00007ffd46117698  rsp 00007ffd461173b0  rip 00007d7785bd2c7e
+09-25 18:08:42.298  7256  7256 F DEBUG   : 9 total frames
+09-25 18:08:42.298  7256  7256 F DEBUG   : backtrace:
+09-25 18:08:42.298  7256  7256 F DEBUG   :   NOTE: Function names and BuildId information is missing for some frames due
+09-25 18:08:42.298  7256  7256 F DEBUG   :   NOTE: to unreadable libraries. For unwinds of apps, only shared libraries
+09-25 18:08:42.298  7256  7256 F DEBUG   :   NOTE: found under the lib/ directory are readable.
+09-25 18:08:42.298  7256  7256 F DEBUG   :   NOTE: On this device, run setenforce 0 to make the libraries readable.
+09-25 18:08:42.298  7256  7256 F DEBUG   :   NOTE: Unreadable libraries:
+09-25 18:08:42.298  7256  7256 F DEBUG   :   NOTE:   /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.298  7256  7256 F DEBUG   :   NOTE:   /data/local/tmp/q/qro_server
+09-25 18:08:42.298  7256  7256 F DEBUG   :       #00 pc 0000000000530c7e  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.298  7256  7256 F DEBUG   :       #01 pc 00000000005364ff  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.298  7256  7256 F DEBUG   :       #02 pc 00000000005364e6  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.298  7256  7256 F DEBUG   :       #03 pc 00000000004fb042  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.298  7256  7256 F DEBUG   :       #04 pc 0000000000393294  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.298  7256  7256 F DEBUG   :       #05 pc 0000000000394496  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.298  7256  7256 F DEBUG   :       #06 pc 00000000003943ab  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.298  7256  7256 F DEBUG   :       #07 pc 000000000000c520  /data/local/tmp/q/qro_server
+09-25 18:08:42.298  7256  7256 F DEBUG   :       #08 pc 00000000000529ef  /apex/com.android.runtime/lib64/bionic/libc.so (__libc_init+95) (BuildId: fa337969c798946280caa45e2d71a2e7)
+09-25 18:08:42.314  7263  7263 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0 in tid 7263 (qro_server), pid 7263 (qro_server)
+09-25 18:08:42.327  7266  7266 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+09-25 18:08:42.327  7266  7266 F DEBUG   : Build fingerprint: 'google/sdk_gphone64_x86_64/emu64xa:14/UE1A.230829.050/12077443:userdebug/dev-keys'
+09-25 18:08:42.327  7266  7266 F DEBUG   : Revision: '0'
+09-25 18:08:42.327  7266  7266 F DEBUG   : ABI: 'x86_64'
+09-25 18:08:42.327  7266  7266 F DEBUG   : Timestamp: 2026-09-25 18:08:42.319181340+1000
+09-25 18:08:42.327  7266  7266 F DEBUG   : Process uptime: 1s
+09-25 18:08:42.327  7266  7266 F DEBUG   : Cmdline: ./qro_server --jvm-mode=appversion --exit-after-ms=500
+09-25 18:08:42.327  7266  7266 F DEBUG   : pid: 7263, tid: 7263, name: qro_server  >>> ./qro_server <<<
+09-25 18:08:42.327  7266  7266 F DEBUG   : uid: 2000
+09-25 18:08:42.327  7266  7266 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000000000000000
+09-25 18:08:42.327  7266  7266 F DEBUG   : Cause: null pointer dereference
+09-25 18:08:42.327  7266  7266 F DEBUG   :     rax 0000000000000000  rbx 0000000000000000  rcx 0e7f77ac1b679761  rdx 0000000000000000
+09-25 18:08:42.327  7266  7266 F DEBUG   :     r8  000078be8ae6b3b0  r9  0000000000000000  r10 000078be88782480  r11 0000000000000206
+09-25 18:08:42.327  7266  7266 F DEBUG   :     r12 aaaaaaaaaaaaaaaa  r13 000078bcc86a8190  r14 00007ffd04257ae8  r15 00007ffd04257b90
+09-25 18:08:42.327  7266  7266 F DEBUG   :     rdi 000078be586a3690  rsi 00007ffd04257ae0
+09-25 18:08:42.327  7266  7266 F DEBUG   :     rbp 0000000000000000  rsp 00007ffd04257ab0  rip 000078be8b2aec7e
+09-25 18:08:42.327  7266  7266 F DEBUG   : 15 total frames
+09-25 18:08:42.327  7266  7266 F DEBUG   : backtrace:
+09-25 18:08:42.327  7266  7266 F DEBUG   :   NOTE: Function names and BuildId information is missing for some frames due
+09-25 18:08:42.327  7266  7266 F DEBUG   :   NOTE: to unreadable libraries. For unwinds of apps, only shared libraries
+09-25 18:08:42.327  7266  7266 F DEBUG   :   NOTE: found under the lib/ directory are readable.
+09-25 18:08:42.327  7266  7266 F DEBUG   :   NOTE: On this device, run setenforce 0 to make the libraries readable.
+09-25 18:08:42.327  7266  7266 F DEBUG   :   NOTE: Unreadable libraries:
+09-25 18:08:42.327  7266  7266 F DEBUG   :   NOTE:   /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.327  7266  7266 F DEBUG   :   NOTE:   /data/local/tmp/q/qro_server
+09-25 18:08:42.327  7266  7266 F DEBUG   :       #00 pc 0000000000530c7e  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.327  7266  7266 F DEBUG   :       #01 pc 00000000005364ff  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.327  7266  7266 F DEBUG   :       #02 pc 00000000005364e6  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.327  7266  7266 F DEBUG   :       #03 pc 00000000004fb042  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.328  7266  7266 F DEBUG   :       #04 pc 000000000052ada9  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.328  7266  7266 F DEBUG   :       #05 pc 000000000052a4dc  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.328  7266  7266 F DEBUG   :       #06 pc 000000000052b4b6  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.328  7266  7266 F DEBUG   :       #07 pc 0000000000379f1c  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.328  7266  7266 F DEBUG   :       #08 pc 000000000036ffc4  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.328  7266  7266 F DEBUG   :       #09 pc 000000000036f7a4  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.328  7266  7266 F DEBUG   :       #10 pc 0000000000370bf2  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.328  7266  7266 F DEBUG   :       #11 pc 00000000003944c8  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.328  7266  7266 F DEBUG   :       #12 pc 00000000003943ab  /data/local/tmp/q/libQt6Core_x86_64.so
+09-25 18:08:42.328  7266  7266 F DEBUG   :       #13 pc 000000000000c520  /data/local/tmp/q/qro_server
+09-25 18:08:42.328  7266  7266 F DEBUG   :       #14 pc 00000000000529ef  /apex/com.android.runtime/lib64/bionic/libc.so (__libc_init+95) (BuildId: fa337969c798946280caa45e2d71a2e7)

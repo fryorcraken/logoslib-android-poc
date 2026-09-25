@@ -1,0 +1,20 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 5cfd405..1f1759b 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -121,7 +121,14 @@ else()
+ endif()
+ 
+ # RPATH so the wrapped binary finds Qt / SDK libs at runtime
+-if(APPLE)
++if(ANDROID)
++    # An APK installs only lib*.so into nativeLibraryDir, and CMake's Android
++    # platform emits no rpath for INSTALL_RPATH: name the host accordingly and
++    # let it find its sibling libraries next to itself.
++    set_target_properties(logos_host_qt PROPERTIES
++        OUTPUT_NAME "liblogos_host_qt" SUFFIX ".so")
++    target_link_options(logos_host_qt PRIVATE "LINKER:-rpath,$ORIGIN")
++elseif(APPLE)
+     set(_qt_exec_runtime_paths "@loader_path/../lib")
+     if(DEFINED Qt${QT_VERSION_MAJOR}_DIR)
+         get_filename_component(_qt_exec_lib_dir "${Qt${QT_VERSION_MAJOR}_DIR}/../.." REALPATH)

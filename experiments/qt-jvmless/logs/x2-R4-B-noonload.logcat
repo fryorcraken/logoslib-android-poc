@@ -1,0 +1,192 @@
+--------- beginning of system
+09-25 18:09:18.925   554   570 D CompatibilityChangeReporter: Compat change id reported: 161252188; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 W ActivityTaskManager: callingPackage for (uid=2000, pid=7668) has no WPC
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 265464455; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 265452344; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 266124927; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 265451093; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 265456536; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 255940284; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 236283604; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 263959004; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 264304459; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 264301586; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 254631730; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 273509367; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 263259275; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 174042980; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 174042936; UID 10194; state: DISABLED
+09-25 18:09:18.926   554   570 D CompatibilityChangeReporter: Compat change id reported: 181136395; UID 10194; state: DISABLED
+09-25 18:09:18.927   554   570 D CompatibilityChangeReporter: Compat change id reported: 194480991; UID 10194; state: ENABLED
+09-25 18:09:18.934   554   570 D CompatibilityChangeReporter: Compat change id reported: 184838306; UID 10194; state: DISABLED
+09-25 18:09:18.934   554   570 D CompatibilityChangeReporter: Compat change id reported: 185004937; UID 10194; state: DISABLED
+09-25 18:09:18.937   554   570 D CompatibilityChangeReporter: Compat change id reported: 197654537; UID 10194; state: ENABLED
+09-25 18:09:18.937   554   570 D CompatibilityChangeReporter: Compat change id reported: 205907456; UID 10194; state: ENABLED
+09-25 18:09:18.939   768   812 V WindowManagerShell: Transition requested: android.os.BinderProxy@ee9606d TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=38 displayId=0 isRunning=true baseIntent=Intent { flg=0x10000000 cmp=org.logos.qrotest.b/org.logos.qrotest.MainActivity } baseActivity=ComponentInfo{org.logos.qrotest.b/org.logos.qrotest.MainActivity} topActivity=ComponentInfo{org.logos.qrotest.b/org.logos.qrotest.MainActivity} origActivity=null realActivity=ComponentInfo{org.logos.qrotest.b/org.logos.qrotest.MainActivity} numActivities=1 lastActiveTime=1249425 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@60d74a2} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{4903533 org.logos.qrotest.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+09-25 18:09:18.940   554   570 I ActivityTaskManager: START u0 {flg=0x10000000 cmp=org.logos.qrotest.b/org.logos.qrotest.MainActivity (has extras)} with LAUNCH_MULTIPLE from uid 2000 (BAL_ALLOW_PERMISSION) result code=0
+09-25 18:09:18.941   554   583 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10194; state: DISABLED
+09-25 18:09:18.942   554   593 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10194; state: ENABLED
+--------- beginning of main
+09-25 18:09:18.960   363   363 D Zygote  : Forked child process 7671
+09-25 18:09:18.960   554   593 I ActivityManager: Start proc 7671:org.logos.qrotest.b/u0a194 for next-top-activity {org.logos.qrotest.b/org.logos.qrotest.MainActivity}
+09-25 18:09:18.961   554   634 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10194; state: ENABLED
+09-25 18:09:18.962   768   841 D SplashScreenView: Build android.window.SplashScreenView{5fb59b2 V.E...... ......ID 0,0-0,0}
+09-25 18:09:18.962   768   841 D SplashScreenView: Icon: view: android.widget.ImageView{3059d03 V.ED..... ......I. 0,0-0,0 #10204f0 android:id/splashscreen_icon_view} drawable: com.android.wm.shell.startingsurface.SplashscreenIconDrawableFactory$ImmobileIconDrawable@28cf480 size: 420
+09-25 18:09:18.962   768   841 D SplashScreenView: Branding: view: android.view.View{3834ab9 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+09-25 18:09:18.964   404   404 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+09-25 18:09:18.967   554  1190 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10194; state: DISABLED
+09-25 18:09:18.968   554  1190 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10194; state: DISABLED
+09-25 18:09:18.982   554  1190 D CoreBackPreview: Window{f4e519e u0 Splash Screen org.logos.qrotest.b}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@a109c4c, mPriority=0, mIsAnimationCallback=false}
+09-25 18:09:18.996  7671  7671 I logos.qrotest.b: Late-enabling -Xcheck:jni
+09-25 18:09:19.001   768   885 E OpenGLRenderer: Unable to match the desired swap behavior.
+09-25 18:09:19.017  7671  7671 I logos.qrotest.b: Using CollectorTypeCC GC.
+09-25 18:09:19.018  1080  1745 D EGL_emulation: app_time_stats: avg=111.21ms min=2.65ms max=3600.31ms count=38
+09-25 18:09:19.018  7671  7671 W logos.qrotest.b: Unexpected CPU variant for x86: x86_64.
+09-25 18:09:19.018  7671  7671 W logos.qrotest.b: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+09-25 18:09:19.020   554   580 V WindowManager: Sent Transition #57 createdAt=09-25 18:09:18.927 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=38 displayId=0 isRunning=true baseIntent=Intent { flg=0x10000000 cmp=org.logos.qrotest.b/org.logos.qrotest.MainActivity } baseActivity=ComponentInfo{org.logos.qrotest.b/org.logos.qrotest.MainActivity} topActivity=ComponentInfo{org.logos.qrotest.b/org.logos.qrotest.MainActivity} origActivity=null realActivity=ComponentInfo{org.logos.qrotest.b/org.logos.qrotest.MainActivity} numActivities=1 lastActiveTime=1249425 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{8a6799b Task{a11b6dd #38 type=standard A=10194:org.logos.qrotest.b}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{d13138 org.logos.qrotest.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+09-25 18:09:19.020   554   580 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+09-25 18:09:19.020   554   580 V WindowManager:     info={id=57 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{8a6799b Task{a11b6dd #38 type=standard A=10194:org.logos.qrotest.b}}} m=OPEN f=NONE leash=Surface(name=Task=38)/@0x779e495 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{RemoteToken{755a950 Task{7420e28 #1 type=home}}} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0xd8b4388 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+09-25 18:09:19.020   768   812 V WindowManagerShell: onTransitionReady android.os.BinderProxy@ee9606d: {id=57 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@d09f556} m=OPEN f=NONE leash=Surface(name=Task=38)/@0x2aba8fb sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@c81d9d7} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0xdb59d18 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+09-25 18:09:19.020   768   812 V WindowManagerShell: Playing animation for (#57)android.os.BinderProxy@ee9606d@0
+09-25 18:09:19.020   768   812 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@1b23577
+09-25 18:09:19.020   768   812 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@63535e4
+09-25 18:09:19.020   768   812 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@d6b9a4d
+09-25 18:09:19.020   768   812 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@4625902
+09-25 18:09:19.020   768   812 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
+09-25 18:09:19.020   768   812 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@e8ab213
+09-25 18:09:19.020   768   812 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@101cc50
+09-25 18:09:19.020   768   812 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@fe48e49
+09-25 18:09:19.020   768   812 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=57 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@d09f556} m=OPEN f=NONE leash=Surface(name=Task=38)/@0x2aba8fb sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@c81d9d7} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0xdb59d18 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+09-25 18:09:19.020   768   812 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=dream independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=ANY topActivity=null},{atype=home independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@5307846, appThread = android.app.IApplicationThread$Stub$Proxy@66cba07, debugName = LauncherToDream }}
+09-25 18:09:19.020   768   812 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@5638734, appThread = android.app.IApplicationThread$Stub$Proxy@4ca995d, debugName = QuickstepLaunchHome }}
+09-25 18:09:19.020   768   812 V WindowManagerShell:  Delegate animation for #57 to null
+09-25 18:09:19.020   768   812 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultTransitionHandler@e0e065a
+09-25 18:09:19.020   768   812 V WindowManagerShell: start default transition animation, info = {id=57 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@d09f556} m=OPEN f=NONE leash=Surface(name=Task=38)/@0x2aba8fb sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@c81d9d7} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0xdb59d18 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+09-25 18:09:19.020   768   812 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@a37c5ad animAttr=0x13 type=OPEN isEntrance=false
+09-25 18:09:19.021   768   812 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@7380fa9 animAttr=0x12 type=OPEN isEntrance=true
+09-25 18:09:19.021   768   812 V WindowManagerShell:  animated by com.android.wm.shell.transition.DefaultTransitionHandler@e0e065a
+09-25 18:09:19.037  4547  4554 I adbd    : jdwp connection from 7671
+09-25 18:09:19.053  7671  7671 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10194; state: ENABLED
+09-25 18:09:19.053   768   885 D EGL_emulation: app_time_stats: avg=242.48ms min=4.93ms max=4236.99ms count=19
+09-25 18:09:19.053  7671  7671 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10194; state: ENABLED
+09-25 18:09:19.057   554  1190 D CompatibilityChangeReporter: Compat change id reported: 170503758; UID 10194; state: ENABLED
+09-25 18:09:19.060  7671  7671 W ziparchive: Unable to open '/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/base.dm': No such file or directory
+09-25 18:09:19.060  7671  7671 W ziparchive: Unable to open '/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/base.dm': No such file or directory
+09-25 18:09:19.060   554   569 W ActivityTaskManager: takeTaskSnapshot: taskId=10 not found or not visible
+09-25 18:09:19.071  7671  7671 D nativeloader: Configuring clns-6 for other apk /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64:/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/org.logos.qrotest.b
+09-25 18:09:19.076  7671  7671 V GraphicsEnvironment: Currently set values for:
+09-25 18:09:19.076  7671  7671 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+09-25 18:09:19.076  7671  7671 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+09-25 18:09:19.076  7671  7671 V GraphicsEnvironment: ANGLE GameManagerService for org.logos.qrotest.b: false
+09-25 18:09:19.076  7671  7671 V GraphicsEnvironment: org.logos.qrotest.b is not listed in per-application setting
+09-25 18:09:19.077  7671  7671 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+09-25 18:09:19.079   554   569 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10194. pid: 7671
+09-25 18:09:19.086  7671  7692 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+09-25 18:09:19.087  7671  7692 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+09-25 18:09:19.088  7671  7692 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+09-25 18:09:19.093  7671  7671 D CompatibilityChangeReporter: Compat change id reported: 210923482; UID 10194; state: ENABLED
+09-25 18:09:19.094  7671  7671 D CompatibilityChangeReporter: Compat change id reported: 171228096; UID 10194; state: ENABLED
+09-25 18:09:19.100  7671  7693 I qrotest : CONFIG flavor=nojar qtJar=false jvmMode=none serverJvmMode=shim url=local:qro_t jniLib=qrotest_jni_noonload loadQtCore=false spawn=java
+09-25 18:09:19.100  7671  7693 I qrotest : pid=7671 uid=10194 TMPDIR=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:19.100  7671  7693 I qrotest : nativeLibraryDir=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:19.104  7671  7671 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10194; state: DISABLED
+09-25 18:09:19.106  7671  7671 W OpenGLRenderer: Unknown dataspace 0
+09-25 18:09:19.114  7671  7693 I qrotest : nativeLibraryDir contents: [libQt6Core_x86_64.so, libQt6Network_x86_64.so, libQt6RemoteObjects_x86_64.so, libc++_shared.so, libechoplugin.so, libqro_server.so, libqrotest_jni.so, libqrotest_jni_noonload.so]
+09-25 18:09:19.114  7671  7693 I qrotest : libqro_server.so exists=true canExecute=true size=675912
+09-25 18:09:19.114  7671  7693 I qrotest : libqro_server.so mode=100755
+09-25 18:09:19.118  7671  7693 I qrotest : HELPER started: Process[pid=7694, hasExited=false]
+09-25 18:09:19.119   554  1190 D CoreBackPreview: Window{a8f5868 u0 org.logos.qrotest.b/org.logos.qrotest.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@e120967, mPriority=0, mIsAnimationCallback=false}
+09-25 18:09:19.117  7694  7694 W libqro_server.s: type=1400 audit(0.0:180): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:19.117  7694  7694 W libqro_server.s: type=1400 audit(0.0:181): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:19.123  7694  7694 I qro_server: [pid=7694] server: start ppid=7671 uid=10194 exe-arg0=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:19.123  7671  7696 I qrotest-child: [qro_server pid=7694] server: start ppid=7671 uid=10194 exe-arg0=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:19.123  7694  7694 I qro_server: [pid=7694] server: env TMPDIR=/data/user/0/org.logos.qrotest.b/cache LD_LIBRARY_PATH=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64 HOME=<unset>
+09-25 18:09:19.123  7694  7694 I qro_server: [pid=7694] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:19.124  7694  7694 I QtCore  : Start
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+09-25 18:09:19.124  7694  7694 F QtCore  : initJNI failed
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] server: QCoreApplication constructed, Qt 6.11.1
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] server: applicationFilePath=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] server: applicationDirPath=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] server: QDir::tempPath=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] server: libraryPaths=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] server: QTime::currentTime=18:09:19.125
+09-25 18:09:19.125  7694  7694 I qro_server: [pid=7694] server: QPluginLoader file=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libechoplugin.so IID=org.logos.test.EchoInterface/1.0 MetaData={"name":"echoplugin","type":"core","version":"0.0.1"}
+09-25 18:09:19.125  7694  7694 I qro_server: [pid=7694] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:19.125  7694  7694 I qro_server: [pid=7694] qt-warning: It is recommended to use 'localabstract' over 'local' on Android.
+09-25 18:09:19.117  7694  7694 W libqro_server.s: type=1400 audit(0.0:182): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:19.126  7671  7696 I qrotest : child> [qro_server pid=7694] server: start ppid=7671 uid=10194 exe-arg0=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:19.126  7671  7696 I qrotest-child: [qro_server pid=7694] server: env TMPDIR=/data/user/0/org.logos.qrotest.b/cache LD_LIBRARY_PATH=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64 HOME=<unset>
+09-25 18:09:19.126  7671  7696 I qrotest-child: [qro_server pid=7694] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:19.126  7694  7694 I qro_server: [pid=7694] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.b/cache/qro_t exists=1
+09-25 18:09:19.126  7671  7696 I qrotest : child> [qro_server pid=7694] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:19.127  7671  7696 I qrotest-child: [qro_server pid=7694] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+09-25 18:09:19.127  7694  7694 I qro_server: [pid=7694] server: enableRemoting(Echo)=1
+09-25 18:09:19.127  7694  7694 I qro_server: [pid=7694] server: READY
+09-25 18:09:19.127  7671  7696 I qrotest-child: [qro_server pid=7694] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:19.127  7671  7696 I qrotest : child> [qro_server pid=7694] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:19.127  7671  7696 I qrotest-child: [qro_server pid=7694] server: QCoreApplication constructed, Qt 6.11.1
+09-25 18:09:19.127  7671  7696 I qrotest-child: [qro_server pid=7694] server: applicationFilePath=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:19.127  7671  7696 I qrotest-child: [qro_server pid=7694] server: applicationDirPath=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:19.128  7671  7696 I qrotest-child: [qro_server pid=7694] server: QDir::tempPath=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:19.128  7671  7696 I qrotest : child> [qro_server pid=7694] server: QDir::tempPath=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:19.128  7671  7696 I qrotest-child: [qro_server pid=7694] server: libraryPaths=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:19.117  7694  7694 W libqro_server.s: type=1400 audit(0.0:183): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:19.128  7671  7696 I qrotest-child: [qro_server pid=7694] server: QTime::currentTime=18:09:19.125
+09-25 18:09:19.128  7671  7696 I qrotest-child: [qro_server pid=7694] server: QPluginLoader file=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libechoplugin.so IID=org.logos.test.EchoInterface/1.0 MetaData={"name":"echoplugin","type":"core","version":"0.0.1"}
+09-25 18:09:19.129  7671  7696 I qrotest-child: [qro_server pid=7694] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:19.129  7671  7696 I qrotest : child> [qro_server pid=7694] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:19.129  7671  7696 I qrotest-child: [qro_server pid=7694] qt-warning: It is recommended to use 'localabstract' over 'local' on Android.
+09-25 18:09:19.129  7671  7696 I qrotest-child: [qro_server pid=7694] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.b/cache/qro_t exists=1
+09-25 18:09:19.129  7671  7696 I qrotest : child> [qro_server pid=7694] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.b/cache/qro_t exists=1
+09-25 18:09:19.130  7671  7696 I qrotest-child: [qro_server pid=7694] server: enableRemoting(Echo)=1
+09-25 18:09:19.130  7671  7696 I qrotest-child: [qro_server pid=7694] server: READY
+09-25 18:09:19.130  7671  7696 I qrotest : child> [qro_server pid=7694] server: READY
+09-25 18:09:19.130  7671  7693 I qrotest : helper READY seen=true
+09-25 18:09:19.135  7671  7690 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+09-25 18:09:19.135  7671  7690 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+09-25 18:09:19.137  7671  7693 I QtCore  : Start
+09-25 18:09:19.139  7671  7693 W default : java.lang.ClassNotFoundException: Didn't find class "org.qtproject.qt.android.QtNative" on path: DexPathList[[zip file "/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/base.apk"],nativeLibraryDirectories=[/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64, /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/base.apk!/lib/x86_64, /system/lib64, /system_ext/lib64]]
+09-25 18:09:19.139  7671  7693 W default : 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java:259)
+09-25 18:09:19.139  7671  7693 W default : 	at java.lang.ClassLoader.loadClass(ClassLoader.java:379)
+09-25 18:09:19.139  7671  7693 W default : 	at java.lang.ClassLoader.loadClass(ClassLoader.java:312)
+09-25 18:09:19.139  7671  7693 W default : 	at java.lang.Runtime.nativeLoad(Native Method)
+09-25 18:09:19.139  7671  7693 W default : 	at java.lang.Runtime.nativeLoad(Runtime.java:1126)
+09-25 18:09:19.139  7671  7693 W default : 	at java.lang.Runtime.loadLibrary0(Runtime.java:1080)
+09-25 18:09:19.139  7671  7693 W default : 	at java.lang.Runtime.loadLibrary0(Runtime.java:1003)
+09-25 18:09:19.139  7671  7693 W default : 	at java.lang.System.loadLibrary(System.java:1661)
+09-25 18:09:19.139  7671  7693 W default : 	at org.logos.qrotest.MainActivity.loadLibs(MainActivity.kt:110)
+09-25 18:09:19.139  7671  7693 W default : 	at org.logos.qrotest.MainActivity.
+09-25 18:09:19.139  7671  7693 F QtCore  : initJNI failed
+09-25 18:09:19.139  7671  7693 I qrotest : LOADLIBRARY FAILED: java.lang.UnsatisfiedLinkError: JNI_ERR returned from JNI_OnLoad in "/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqrotest_jni_noonload.so"
+09-25 18:09:19.139  7671  7693 I qrotest : RESULT: FAIL loadLibrary
+09-25 18:09:19.145   160   160 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+09-25 18:09:19.145  7671  7690 I Gralloc4: mapper 4.x is not supported
+--------- beginning of kernel
+09-25 18:09:19.277     0     0 I servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+09-25 18:09:19.175  7671  7690 E OpenGLRenderer: Unable to match the desired swap behavior.
+09-25 18:09:19.212   554   580 W ziparchive: Unable to open '/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/base.dm': No such file or directory
+09-25 18:09:19.216   554   580 I ActivityTaskManager: Displayed org.logos.qrotest.b/org.logos.qrotest.MainActivity for user 0: +286ms
+09-25 18:09:19.378     0     0 I logd    : logdr: UID=2000 GID=2000 PID=7701 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+09-25 18:09:19.262   554   570 D CompatibilityChangeReporter: Compat change id reported: 214016041; UID 10194; state: ENABLED
+09-25 18:09:19.262   554   570 I ImeTracker: org.logos.qrotest.b:2b6e4bba: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+09-25 18:09:19.263   554   570 I ImeTracker: org.logos.qrotest.b:2b6e4bba: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-25 18:09:19.267  1374  1374 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227 
+09-25 18:09:19.269  1374  1374 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+09-25 18:09:19.270  1374  1374 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=org.logos.qrotest.b fieldId=0 fieldName=null extras=null}, false)
+09-25 18:09:19.270  1374  1374 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+09-25 18:09:19.270  1374  1374 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+09-25 18:09:19.304   768   885 D EGL_emulation: app_time_stats: avg=323.10ms min=17.12ms max=2937.67ms count=11
+09-25 18:09:19.315   768   812 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#57)android.os.BinderProxy@ee9606d@0
+09-25 18:09:19.316   554   580 V WindowManager: Finish Transition #57: created at 09-25 18:09:18.927 collect-started=0.017ms request-sent=11.744ms started=14.234ms ready=91.041ms sent=92.258ms finished=388.797ms
+09-25 18:09:19.318   768   812 V WindowManagerShell: Track 0 became idle
+09-25 18:09:19.318   768   812 V WindowManagerShell: All active transition animations finished
+09-25 18:09:19.322   892  1123 D BtGatt.ScanManager: uid 10128 isForeground true scanMode -1
+09-25 18:09:19.340  1080  1136 I ImeTracker: com.google.android.apps.nexuslauncher:c505bedb: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+09-25 18:09:19.340  1080  1136 I ImeTracker: com.google.android.apps.nexuslauncher:c505bedb: onFailed at PHASE_CLIENT_VIEW_SERVED
+09-25 18:09:19.340  1080  1885 D OneSearchSuggestProvider: Shut down the binder channel
+09-25 18:09:19.341  1080  1113 I IPCThreadState: oneway function results for code 2 on binder at 0x787029100fe0 will be dropped but finished with status UNKNOWN_TRANSACTION
+09-25 18:09:19.567   768   840 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@a0cd8ac
+09-25 18:09:19.568   554   569 D CoreBackPreview: Window{f4e519e u0 Splash Screen org.logos.qrotest.b EXITING}: Setting back callback null
+09-25 18:09:19.568   554   569 W InputManager-JNI: Input channel object 'f4e519e Splash Screen org.logos.qrotest.b (client)' was disposed without first being removed with the input manager!

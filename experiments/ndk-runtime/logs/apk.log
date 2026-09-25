@@ -1,0 +1,40 @@
+2026-09-25T18:09:05+10:00
+  adding: lib/ (stored 0%)
+  adding: lib/x86_64/ (stored 0%)
+  adding: lib/x86_64/libndkrt_activity.so (stored 0%)
+  adding: lib/x86_64/liblogos_host_probe.so (stored 0%)
+  adding: lib/x86_64/liblogos_host_qt.so (stored 0%)
+  adding: lib/x86_64/libspdlog.so (stored 0%)
+  adding: lib/x86_64/libfmt.so (stored 0%)
+  adding: lib/x86_64/libc++_shared.so (stored 0%)
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::loadLibrary has been called by org.conscrypt.NativeLibraryUtil in an unnamed module (file:${HOME}/android-sdk/build-tools/36.0.0/lib/apksigner.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+10518528 lib/x86_64/liblogos_host_qt.so (OK)
+16089088 lib/x86_64/libspdlog.so (OK)
+20807680 lib/x86_64/libfmt.so (OK)
+21970944 lib/x86_64/libc++_shared.so (OK)
+23588599 META-INF/DEBUG.SF (OK - compressed)
+23589185 META-INF/DEBUG.RSA (OK - compressed)
+23590275 META-INF/MANIFEST.MF (OK - compressed)
+Verification successful
+Archive:  ${REPO_ROOT}/.work/experiments/ndk-runtime/apk/ndkrt-smoke.apk
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+    2224  Defl:N      796  64% 01-01-1980 00:00 04d1afae  AndroidManifest.xml
+      40  Stored       40   0% 01-01-1980 00:00 1336500b  resources.arsc
+ 4930328  Stored  4930328   0% 09-25-2026 18:09 dadacc03  lib/x86_64/libndkrt_activity.so
+ 5564200  Stored  5564200   0% 09-25-2026 18:09 af701cc0  lib/x86_64/liblogos_host_probe.so
+ 5564200  Stored  5564200   0% 09-25-2026 18:09 af701cc0  lib/x86_64/liblogos_host_qt.so
+ 4716776  Stored  4716776   0% 09-25-2026 18:09 ff01eb67  lib/x86_64/libspdlog.so
+ 1153784  Stored  1153784   0% 09-25-2026 18:09 addf3267  lib/x86_64/libfmt.so
+ 1617608  Stored  1617608   0% 09-25-2026 18:09 256f0095  lib/x86_64/libc++_shared.so
+     925  Defl:N      538  42% 09-25-2026 18:09 c4889d03  META-INF/DEBUG.SF
+    1122  Defl:N     1040   7% 09-25-2026 18:09 fea22e00  META-INF/DEBUG.RSA
+     798  Defl:N      422  47% 09-25-2026 18:09 a9f1c8d0  META-INF/MANIFEST.MF
+--------          -------  ---                            -------
+23552005         23549732   0%                            11 files
+APK built ${REPO_ROOT}/.work/experiments/ndk-runtime/apk/ndkrt-smoke.apk 23597980 bytes
+2026-09-25T18:09:06+10:00

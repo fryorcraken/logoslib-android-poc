@@ -1,0 +1,73 @@
+2026-09-25T17:31:24+10:00
+logos-container 641d21108781a353eed9f0567f15776fee06af40
+logos-container-subprocess 697c1805eae689fc5945d2afe7038a4b608df07f
+logos-module-loader 3628b97a32cb2edb30e7d26c0c5113a487e3e993
+logos-module-loader-qt 888da92cfed51f8039efb11c8a1cbdcb38d04e37
+process-stats 6e0aade77db1b03cc08559c5700c687fa6f00269
+--- patch logos-container
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 94a39ee..c79816e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -14,6 +14,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+ # Build src first
+ add_subdirectory(src)
+ 
++option(LOGOS_CONTAINER_BUILD_TESTS "Build the test suite (needs GoogleTest)" ON)
++if(LOGOS_CONTAINER_BUILD_TESTS)
+ # GoogleTest setup
+ # Try to find GoogleTest via find_package first (for Nix and system installations)
+ find_package(GTest QUIET)
+@@ -35,6 +37,7 @@ include(GoogleTest)
+ 
+ # Add tests subdirectory
+ add_subdirectory(tests)
++endif()  # LOGOS_CONTAINER_BUILD_TESTS
+ 
+ # Header-only contract: nothing to install but the headers (mirrors
+ # process-stats so consumers use <logos_container/module_container.h>).
+--- patch logos-container-subprocess
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 43e5cf8..39d9a40 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -18,6 +18,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+ # Build src first
+ add_subdirectory(src)
+ 
++option(LOGOS_CONTAINER_SUBPROCESS_BUILD_TESTS "Build the test suite (needs GoogleTest)" ON)
++if(LOGOS_CONTAINER_SUBPROCESS_BUILD_TESTS)
+ # GoogleTest setup
+ find_package(GTest QUIET)
+ 
+@@ -37,6 +39,7 @@ include(GoogleTest)
+ 
+ # Add tests subdirectory
+ add_subdirectory(tests)
++endif()  # LOGOS_CONTAINER_SUBPROCESS_BUILD_TESTS
+ 
+ # Install rules
+ install(TARGETS logos_container_subprocess
+--- patch logos-module-loader
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index cb77f11..c2445ae 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -14,6 +14,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+ # Build src first
+ add_subdirectory(src)
+ 
++option(LOGOS_MODULE_LOADER_BUILD_TESTS "Build the test suite (needs GoogleTest)" ON)
++if(LOGOS_MODULE_LOADER_BUILD_TESTS)
+ # GoogleTest setup
+ find_package(GTest QUIET)
+ 
+@@ -33,6 +35,7 @@ include(GoogleTest)
+ 
+ # Add tests subdirectory
+ add_subdirectory(tests)
++endif()  # LOGOS_MODULE_LOADER_BUILD_TESTS
+ 
+ # Header-only contract: nothing to install but the headers.
+ install(DIRECTORY src/logos_module_loader/ DESTINATION include/logos_module_loader
+2026-09-25T17:31:24+10:00

@@ -1,0 +1,923 @@
+this derivation will be built:
+  /nix/store/183s2m20cx9h8qx11rqy6hdsm1107sq1-lgx-all-0.1.0.drv
+building '/nix/store/183s2m20cx9h8qx11rqy6hdsm1107sq1-lgx-all-0.1.0.drv'...
+lgx-all> Running phase: unpackPhase
+lgx-all> unpacking source archive /nix/store/hgs0k7vgcc3flnafk6fh8ac9sr5sgi4g-7f6d5ba9jv4hkn2r923kxjxac271i5hn-source
+lgx-all> source root is 7f6d5ba9jv4hkn2r923kxjxac271i5hn-source
+lgx-all> Running phase: patchPhase
+lgx-all> Running phase: updateAutotoolsGnuConfigScriptsPhase
+lgx-all> Running phase: configurePhase
+lgx-all> -- The CXX compiler identification is GNU 14.3.0
+lgx-all> -- Detecting CXX compiler ABI info
+lgx-all> -- Detecting CXX compiler ABI info - done
+lgx-all> -- Check for working CXX compiler: /nix/store/95k9rsn1zsw1yvir8mj824ldhf90i4qw-gcc-wrapper-14.3.0/bin/g++ - skipped
+lgx-all> -- Detecting CXX compile features
+lgx-all> -- Detecting CXX compile features - done
+lgx-all> -- Found ZLIB: /nix/store/09sifcahf0j1xnw80k9l33jzcs1p2qbw-zlib-1.3.1/lib/libz.so (found version "1.3.1")
+lgx-all> -- Found ICU: /nix/store/083x1zrd8rnrkq1plphxvc2vdzgk8dvj-icu4c-76.1-dev/include (found version "76.1") found components: uc i18n
+lgx-all> -- Configuring done (0.5s)
+lgx-all> -- Generating done (0.0s)
+lgx-all> -- Build files have been written to: /build/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/build
+lgx-all> Running phase: buildPhase
+lgx-all> [46/58] Building CXX object tests/CMakeFiles/lgx_tests.dir/test_cli.cpp.op.oK[KK
+lgx-all> /build/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/tests/test_cli.cpp: In function 'void createSingleVariantPackage(const std::string&, const std::filesystem::__cxx11::path&, const std::string&, const std::string&, const std::string&)':
+lgx-all> /build/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/tests/test_cli.cpp:435:11: warning: ignoring return value of 'int system(const char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+lgx-all>   435 |     system(cmd.c_str());
+lgx-all>       |     ~~~~~~^~~~~~~~~~~~~
+lgx-all> /build/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/tests/test_cli.cpp:444:11: warning: ignoring return value of 'int system(const char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+lgx-all>   444 |     system(cmd.c_str());
+lgx-all>       |     ~~~~~~^~~~~~~~~~~~~
+lgx-all> [58/58] Linking CXX executable tests/lgx_teststests.dir/test_semver.cpp.oKK
+lgx-all> Running phase: checkPhase
+lgx-all> Test project /build/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/build
+lgx-all>         Start   1: PathNormalizerTest.NFCNormalization_ASCII
+lgx-all>   1/436 Test   #1: PathNormalizerTest.NFCNormalization_ASCII ...................................   Passed    0.00 sec
+lgx-all>         Start   2: PathNormalizerTest.NFCNormalization_Unicode
+lgx-all>   2/436 Test   #2: PathNormalizerTest.NFCNormalization_Unicode .................................   Passed    0.00 sec
+lgx-all>         Start   3: PathNormalizerTest.NFCNormalization_NFDtoNFC
+lgx-all>   3/436 Test   #3: PathNormalizerTest.NFCNormalization_NFDtoNFC ................................   Passed    0.00 sec
+lgx-all>         Start   4: PathNormalizerTest.IsNFC_True
+lgx-all>   4/436 Test   #4: PathNormalizerTest.IsNFC_True ...............................................   Passed    0.00 sec
+lgx-all>         Start   5: PathNormalizerTest.IsNFC_False
+lgx-all>   5/436 Test   #5: PathNormalizerTest.IsNFC_False ..............................................   Passed    0.00 sec
+lgx-all>         Start   6: PathNormalizerTest.ValidatePath_Valid
+lgx-all>   6/436 Test   #6: PathNormalizerTest.ValidatePath_Valid .......................................   Passed    0.00 sec
+lgx-all>         Start   7: PathNormalizerTest.ValidatePath_RejectEmpty
+lgx-all>   7/436 Test   #7: PathNormalizerTest.ValidatePath_RejectEmpty .................................   Passed    0.00 sec
+lgx-all>         Start   8: PathNormalizerTest.ValidatePath_RejectAbsolute
+lgx-all>   8/436 Test   #8: PathNormalizerTest.ValidatePath_RejectAbsolute ..............................   Passed    0.00 sec
+lgx-all>         Start   9: PathNormalizerTest.ValidatePath_RejectDotDot
+lgx-all>   9/436 Test   #9: PathNormalizerTest.ValidatePath_RejectDotDot ................................   Passed    0.00 sec
+lgx-all>         Start  10: PathNormalizerTest.ValidatePath_RejectBackslash
+lgx-all>  10/436 Test  #10: PathNormalizerTest.ValidatePath_RejectBackslash .............................   Passed    0.00 sec
+lgx-all>         Start  11: PathNormalizerTest.ValidatePath_RejectNonNFC
+lgx-all>  11/436 Test  #11: PathNormalizerTest.ValidatePath_RejectNonNFC ................................   Passed    0.00 sec
+lgx-all>         Start  12: PathNormalizerTest.NormalizeSeparators
+lgx-all>  12/436 Test  #12: PathNormalizerTest.NormalizeSeparators ......................................   Passed    0.00 sec
+lgx-all>         Start  13: PathNormalizerTest.ToLowercase_ASCII
+lgx-all>  13/436 Test  #13: PathNormalizerTest.ToLowercase_ASCII ........................................   Passed    0.00 sec
+lgx-all>         Start  14: PathNormalizerTest.ToLowercase_Unicode
+lgx-all>  14/436 Test  #14: PathNormalizerTest.ToLowercase_Unicode ......................................   Passed    0.00 sec
+lgx-all>         Start  15: PathNormalizerTest.JoinPath_Vector
+lgx-all>  15/436 Test  #15: PathNormalizerTest.JoinPath_Vector ..........................................   Passed    0.00 sec
+lgx-all>         Start  16: PathNormalizerTest.JoinPath_TwoStrings
+lgx-all>  16/436 Test  #16: PathNormalizerTest.JoinPath_TwoStrings ......................................   Passed    0.01 sec
+lgx-all>         Start  17: PathNormalizerTest.Basename
+lgx-all>  17/436 Test  #17: PathNormalizerTest.Basename .................................................   Passed    0.00 sec
+lgx-all>         Start  18: PathNormalizerTest.Dirname
+lgx-all>  18/436 Test  #18: PathNormalizerTest.Dirname ..................................................   Passed    0.00 sec
+lgx-all>         Start  19: PathNormalizerTest.IsAbsolute
+lgx-all>  19/436 Test  #19: PathNormalizerTest.IsAbsolute ...............................................   Passed    0.00 sec
+lgx-all>         Start  20: PathNormalizerTest.SplitPath
+lgx-all>  20/436 Test  #20: PathNormalizerTest.SplitPath ................................................   Passed    0.00 sec
+lgx-all>         Start  21: PathNormalizerTest.GetRootComponent
+lgx-all>  21/436 Test  #21: PathNormalizerTest.GetRootComponent .........................................   Passed    0.00 sec
+lgx-all>         Start  22: GzipHandlerTest.Roundtrip_SimpleData
+lgx-all>  22/436 Test  #22: GzipHandlerTest.Roundtrip_SimpleData ........................................   Passed    0.00 sec
+lgx-all>         Start  23: GzipHandlerTest.Roundtrip_LargeData
+lgx-all>  23/436 Test  #23: GzipHandlerTest.Roundtrip_LargeData .........................................   Passed    0.01 sec
+lgx-all>         Start  24: GzipHandlerTest.Roundtrip_BinaryData
+lgx-all>  24/436 Test  #24: GzipHandlerTest.Roundtrip_BinaryData ........................................   Passed    0.00 sec
+lgx-all>         Start  25: GzipHandlerTest.EmptyData_Compress
+lgx-all>  25/436 Test  #25: GzipHandlerTest.EmptyData_Compress ..........................................   Passed    0.00 sec
+lgx-all>         Start  26: GzipHandlerTest.EmptyData_Roundtrip
+lgx-all>  26/436 Test  #26: GzipHandlerTest.EmptyData_Roundtrip .........................................   Passed    0.00 sec
+lgx-all>         Start  27: GzipHandlerTest.Determinism_SameInput
+lgx-all>  27/436 Test  #27: GzipHandlerTest.Determinism_SameInput .......................................   Passed    0.00 sec
+lgx-all>         Start  28: GzipHandlerTest.Determinism_MultipleRuns
+lgx-all>  28/436 Test  #28: GzipHandlerTest.Determinism_MultipleRuns ....................................   Passed    0.00 sec
+lgx-all>         Start  29: GzipHandlerTest.Determinism_HeaderFormat
+lgx-all>  29/436 Test  #29: GzipHandlerTest.Determinism_HeaderFormat ....................................   Passed    0.00 sec
+lgx-all>         Start  30: GzipHandlerTest.IsGzipData_ValidMagic
+lgx-all>  30/436 Test  #30: GzipHandlerTest.IsGzipData_ValidMagic .......................................   Passed    0.00 sec
+lgx-all>         Start  31: GzipHandlerTest.IsGzipData_InvalidMagic
+lgx-all>  31/436 Test  #31: GzipHandlerTest.IsGzipData_InvalidMagic .....................................   Passed    0.00 sec
+lgx-all>         Start  32: GzipHandlerTest.IsGzipData_TooShort
+lgx-all>  32/436 Test  #32: GzipHandlerTest.IsGzipData_TooShort .........................................   Passed    0.00 sec
+lgx-all>         Start  33: GzipHandlerTest.Decompress_InvalidData
+lgx-all>  33/436 Test  #33: GzipHandlerTest.Decompress_InvalidData ......................................   Passed    0.00 sec
+lgx-all>         Start  34: GzipHandlerTest.Decompress_TruncatedData
+lgx-all>  34/436 Test  #34: GzipHandlerTest.Decompress_TruncatedData ....................................   Passed    0.00 sec
+lgx-all>         Start  35: GzipHandlerTest.DecompressStream
+lgx-all>  35/436 Test  #35: GzipHandlerTest.DecompressStream ............................................   Passed    0.00 sec
+lgx-all>         Start  36: GzipHandlerTest.Decompress_RejectsBombExceedingCap
+lgx-all>  36/436 Test  #36: GzipHandlerTest.Decompress_RejectsBombExceedingCap ..........................   Passed    0.19 sec
+lgx-all>         Start  37: GzipHandlerTest.Decompress_AllowsOutputUpToCap
+lgx-all>  37/436 Test  #37: GzipHandlerTest.Decompress_AllowsOutputUpToCap ..............................   Passed    0.00 sec
+lgx-all>         Start  38: GzipHandlerTest.Decompress_DefaultCapAllowsNormalData
+lgx-all>  38/436 Test  #38: GzipHandlerTest.Decompress_DefaultCapAllowsNormalData .......................   Passed    0.01 sec
+lgx-all>         Start  39: GzipHandlerTest.DecompressStream_RejectsBombExceedingCap
+lgx-all>  39/436 Test  #39: GzipHandlerTest.DecompressStream_RejectsBombExceedingCap ....................   Passed    0.19 sec
+lgx-all>         Start  40: GzipHandlerTest.DecompressStream_AllowsOutputUpToCap
+lgx-all>  40/436 Test  #40: GzipHandlerTest.DecompressStream_AllowsOutputUpToCap ........................   Passed    0.00 sec
+lgx-all>         Start  41: GzipDefaultCapTest.FactoryDefaultIsOneGiB
+lgx-all>  41/436 Test  #41: GzipDefaultCapTest.FactoryDefaultIsOneGiB ...................................   Passed    0.00 sec
+lgx-all>         Start  42: GzipDefaultCapTest.SetAndGetRoundtrip
+lgx-all>  42/436 Test  #42: GzipDefaultCapTest.SetAndGetRoundtrip .......................................   Passed    0.00 sec
+lgx-all>         Start  43: GzipDefaultCapTest.ConfiguredDefaultIsEnforced
+lgx-all>  43/436 Test  #43: GzipDefaultCapTest.ConfiguredDefaultIsEnforced ..............................   Passed    0.19 sec
+lgx-all>         Start  44: GzipDefaultCapTest.RaisedDefaultAllowsLargerData
+lgx-all>  44/436 Test  #44: GzipDefaultCapTest.RaisedDefaultAllowsLargerData ............................   Passed    0.02 sec
+lgx-all>         Start  45: GzipDefaultCapTest.ExplicitArgOverridesConfiguredDefault
+lgx-all>  45/436 Test  #45: GzipDefaultCapTest.ExplicitArgOverridesConfiguredDefault ....................   Passed    0.00 sec
+lgx-all>         Start  46: GzipDefaultCapTest.ZeroIsRejectedAndLeavesProtectionIntact
+lgx-all>  46/436 Test  #46: GzipDefaultCapTest.ZeroIsRejectedAndLeavesProtectionIntact ..................   Passed    0.19 sec
+lgx-all>         Start  47: TarWriterTest.AddFile_Simple
+lgx-all>  47/436 Test  #47: TarWriterTest.AddFile_Simple ................................................   Passed    0.00 sec
+lgx-all>         Start  48: TarWriterTest.AddFile_FromString
+lgx-all>  48/436 Test  #48: TarWriterTest.AddFile_FromString ............................................   Passed    0.00 sec
+lgx-all>         Start  49: TarWriterTest.AddDirectory
+lgx-all>  49/436 Test  #49: TarWriterTest.AddDirectory ..................................................   Passed    0.00 sec
+lgx-all>         Start  50: TarWriterTest.AddEntry
+lgx-all>  50/436 Test  #50: TarWriterTest.AddEntry ......................................................   Passed    0.00 sec
+lgx-all>         Start  51: TarWriterTest.Determinism_SameEntries
+lgx-all>  51/436 Test  #51: TarWriterTest.Determinism_SameEntries .......................................   Passed    0.00 sec
+lgx-all>         Start  52: TarWriterTest.Determinism_DifferentOrder
+lgx-all>  52/436 Test  #52: TarWriterTest.Determinism_DifferentOrder ....................................   Passed    0.00 sec
+lgx-all>         Start  53: TarWriterTest.Determinism_SortedEntries
+lgx-all>  53/436 Test  #53: TarWriterTest.Determinism_SortedEntries .....................................   Passed    0.00 sec
+lgx-all>         Start  54: TarWriterTest.FixedMetadata
+lgx-all>  54/436 Test  #54: TarWriterTest.FixedMetadata .................................................   Passed    0.00 sec
+lgx-all>         Start  55: TarWriterTest.CustomMode
+lgx-all>  55/436 Test  #55: TarWriterTest.CustomMode ....................................................   Passed    0.00 sec
+lgx-all>         Start  56: TarWriterTest.Roundtrip_MultipleFiles
+lgx-all>  56/436 Test  #56: TarWriterTest.Roundtrip_MultipleFiles .......................................   Passed    0.00 sec
+lgx-all>         Start  57: TarWriterTest.Roundtrip_LargeFile
+lgx-all>  57/436 Test  #57: TarWriterTest.Roundtrip_LargeFile ...........................................   Passed    0.00 sec
+lgx-all>         Start  58: TarWriterTest.Clear
+lgx-all>  58/436 Test  #58: TarWriterTest.Clear .........................................................   Passed    0.00 sec
+lgx-all>         Start  59: TarWriterTest.EmptyFile
+lgx-all>  59/436 Test  #59: TarWriterTest.EmptyFile .....................................................   Passed    0.00 sec
+lgx-all>         Start  60: TarWriterTest.DeepDirectory
+lgx-all>  60/436 Test  #60: TarWriterTest.DeepDirectory .................................................   Passed    0.00 sec
+lgx-all>         Start  61: TarReaderTest.Read_ValidTar
+lgx-all>  61/436 Test  #61: TarReaderTest.Read_ValidTar .................................................   Passed    0.00 sec
+lgx-all>         Start  62: TarReaderTest.Read_EntriesContent
+lgx-all>  62/436 Test  #62: TarReaderTest.Read_EntriesContent ...........................................   Passed    0.00 sec
+lgx-all>         Start  63: TarReaderTest.Read_DirectoryEntries
+lgx-all>  63/436 Test  #63: TarReaderTest.Read_DirectoryEntries .........................................   Passed    0.00 sec
+lgx-all>         Start  64: TarReaderTest.ReadInfo_MetadataOnly
+lgx-all>  64/436 Test  #64: TarReaderTest.ReadInfo_MetadataOnly .........................................   Passed    0.00 sec
+lgx-all>         Start  65: TarReaderTest.ReadInfo_TypeFlags
+lgx-all>  65/436 Test  #65: TarReaderTest.ReadInfo_TypeFlags ............................................   Passed    0.00 sec
+lgx-all>         Start  66: TarReaderTest.ReadFile_ExistingFile
+lgx-all>  66/436 Test  #66: TarReaderTest.ReadFile_ExistingFile .........................................   Passed    0.00 sec
+lgx-all>         Start  67: TarReaderTest.ReadFile_NestedFile
+lgx-all>  67/436 Test  #67: TarReaderTest.ReadFile_NestedFile ...........................................   Passed    0.00 sec
+lgx-all>         Start  68: TarReaderTest.ReadFile_NonExistent
+lgx-all>  68/436 Test  #68: TarReaderTest.ReadFile_NonExistent ..........................................   Passed    0.00 sec
+lgx-all>         Start  69: TarReaderTest.ReadFile_NormalizedPath
+lgx-all>  69/436 Test  #69: TarReaderTest.ReadFile_NormalizedPath .......................................   Passed    0.00 sec
+lgx-all>         Start  70: TarReaderTest.Iterate_AllEntries
+lgx-all>  70/436 Test  #70: TarReaderTest.Iterate_AllEntries ............................................   Passed    0.00 sec
+lgx-all>         Start  71: TarReaderTest.Iterate_StopEarly
+lgx-all>  71/436 Test  #71: TarReaderTest.Iterate_StopEarly .............................................   Passed    0.00 sec
+lgx-all>         Start  72: TarReaderTest.IsValidTar_Valid
+lgx-all>  72/436 Test  #72: TarReaderTest.IsValidTar_Valid ..............................................   Passed    0.00 sec
+lgx-all>         Start  73: TarReaderTest.IsValidTar_Empty
+lgx-all>  73/436 Test  #73: TarReaderTest.IsValidTar_Empty ..............................................   Passed    0.00 sec
+lgx-all>         Start  74: TarReaderTest.IsValidTar_TooSmall
+lgx-all>  74/436 Test  #74: TarReaderTest.IsValidTar_TooSmall ...........................................   Passed    0.00 sec
+lgx-all>         Start  75: TarReaderTest.IsValidTar_InvalidChecksum
+lgx-all>  75/436 Test  #75: TarReaderTest.IsValidTar_InvalidChecksum ....................................   Passed    0.00 sec
+lgx-all>         Start  76: TarReaderTest.Read_EmptyData
+lgx-all>  76/436 Test  #76: TarReaderTest.Read_EmptyData ................................................   Passed    0.00 sec
+lgx-all>         Start  77: TarReaderTest.Read_GarbageData
+lgx-all>  77/436 Test  #77: TarReaderTest.Read_GarbageData ..............................................   Passed    0.00 sec
+lgx-all>         Start  78: TarReaderTest.EmptyFileEntry
+lgx-all>  78/436 Test  #78: TarReaderTest.EmptyFileEntry ................................................   Passed    0.00 sec
+lgx-all>         Start  79: TarReaderTest.MultipleFilesWithSamePrefix
+lgx-all>  79/436 Test  #79: TarReaderTest.MultipleFilesWithSamePrefix ...................................   Passed    0.00 sec
+lgx-all>         Start  80: ManifestTest.FromJson_ValidManifest
+lgx-all>  80/436 Test  #80: ManifestTest.FromJson_ValidManifest .........................................   Passed    0.00 sec
+lgx-all>         Start  81: ManifestTest.FromJson_MissingManifestVersion
+lgx-all>  81/436 Test  #81: ManifestTest.FromJson_MissingManifestVersion ................................   Passed    0.00 sec
+lgx-all>         Start  82: ManifestTest.FromJson_MissingName
+lgx-all>  82/436 Test  #82: ManifestTest.FromJson_MissingName ...........................................   Passed    0.00 sec
+lgx-all>         Start  83: ManifestTest.FromJson_MissingMain
+lgx-all>  83/436 Test  #83: ManifestTest.FromJson_MissingMain ...........................................   Passed    0.00 sec
+lgx-all>         Start  84: ManifestTest.FromJson_ViewOnlyUiQmlManifest
+lgx-all>  84/436 Test  #84: ManifestTest.FromJson_ViewOnlyUiQmlManifest .................................   Passed    0.00 sec
+lgx-all>         Start  85: ManifestTest.FromJson_InvalidViewType
+lgx-all>  85/436 Test  #85: ManifestTest.FromJson_InvalidViewType .......................................   Passed    0.00 sec
+lgx-all>         Start  86: ManifestTest.FromJson_InvalidJson
+lgx-all>  86/436 Test  #86: ManifestTest.FromJson_InvalidJson ...........................................   Passed    0.00 sec
+lgx-all>         Start  87: ManifestTest.FromJson_MissingIcon
+lgx-all>  87/436 Test  #87: ManifestTest.FromJson_MissingIcon ...........................................   Passed    0.00 sec
+lgx-all>         Start  88: ManifestTest.FromJson_EmptyDependencies
+lgx-all>  88/436 Test  #88: ManifestTest.FromJson_EmptyDependencies .....................................   Passed    0.00 sec
+lgx-all>         Start  89: ManifestTest.ToJson_Roundtrip
+lgx-all>  89/436 Test  #89: ManifestTest.ToJson_Roundtrip ...............................................   Passed    0.00 sec
+lgx-all>         Start  90: ManifestTest.ToJson_RoundtripPreservesViewWithoutMain
+lgx-all>  90/436 Test  #90: ManifestTest.ToJson_RoundtripPreservesViewWithoutMain .......................   Passed    0.00 sec
+lgx-all>         Start  91: ManifestTest.ToJson_RoundtripPreservesDisplayName
+lgx-all>  91/436 Test  #91: ManifestTest.ToJson_RoundtripPreservesDisplayName ...........................   Passed    0.00 sec
+lgx-all>         Start  92: ManifestTest.Provides_AcceptsBothAuthorAndWireForms
+lgx-all>  92/436 Test  #92: ManifestTest.Provides_AcceptsBothAuthorAndWireForms .........................   Passed    0.00 sec
+lgx-all>         Start  93: ManifestTest.Provides_EmitsTheObjectFormOnWrite
+lgx-all>  93/436 Test  #93: ManifestTest.Provides_EmitsTheObjectFormOnWrite .............................   Passed    0.00 sec
+lgx-all>         Start  94: ManifestTest.Provides_SurvivesAFieldByFieldCopy
+lgx-all>  94/436 Test  #94: ManifestTest.Provides_SurvivesAFieldByFieldCopy .............................   Passed    0.00 sec
+lgx-all>         Start  95: ManifestTest.Provides_KeepsOnlyTheNameNotTheParamShape
+lgx-all>  95/436 Test  #95: ManifestTest.Provides_KeepsOnlyTheNameNotTheParamShape ......................   Passed    0.00 sec
+lgx-all>         Start  96: ManifestTest.ToJson_OmitsProvidesWhenUnset
+lgx-all>  96/436 Test  #96: ManifestTest.ToJson_OmitsProvidesWhenUnset ..................................   Passed    0.00 sec
+lgx-all>         Start  97: ManifestTest.ToJson_OmitsDisplayNameWhenUnset
+lgx-all>  97/436 Test  #97: ManifestTest.ToJson_OmitsDisplayNameWhenUnset ...............................   Passed    0.00 sec
+lgx-all>         Start  98: ManifestTest.ToJson_Deterministic
+lgx-all>  98/436 Test  #98: ManifestTest.ToJson_Deterministic ...........................................   Passed    0.00 sec
+lgx-all>         Start  99: ManifestTest.Validate_ValidManifest
+lgx-all>  99/436 Test  #99: ManifestTest.Validate_ValidManifest .........................................   Passed    0.00 sec
+lgx-all>         Start 100: ManifestTest.Validate_UnsupportedVersion
+lgx-all> 100/436 Test #100: ManifestTest.Validate_UnsupportedVersion ....................................   Passed    0.00 sec
+lgx-all>         Start 101: ManifestTest.Validate_EmptyName
+lgx-all> 101/436 Test #101: ManifestTest.Validate_EmptyName .............................................   Passed    0.00 sec
+lgx-all>         Start 102: ManifestTest.Validate_EmptyVersion
+lgx-all> 102/436 Test #102: ManifestTest.Validate_EmptyVersion ..........................................   Passed    0.00 sec
+lgx-all>         Start 103: ManifestTest.Validate_NonSemverVersionIsRejected
+lgx-all> 103/436 Test #103: ManifestTest.Validate_NonSemverVersionIsRejected ............................   Passed    0.00 sec
+lgx-all>         Start 104: ManifestTest.Validate_SemverVersionsAreAccepted
+lgx-all> 104/436 Test #104: ManifestTest.Validate_SemverVersionsAreAccepted .............................   Passed    0.01 sec
+lgx-all>         Start 105: ManifestTest.Validate_InvalidMainPath
+lgx-all> 105/436 Test #105: ManifestTest.Validate_InvalidMainPath .......................................   Passed    0.00 sec
+lgx-all>         Start 106: ManifestTest.Validate_InvalidViewPath
+lgx-all> 106/436 Test #106: ManifestTest.Validate_InvalidViewPath .......................................   Passed    0.00 sec
+lgx-all>         Start 107: ManifestTest.Validate_UiQmlMissingViewIsInvalid
+lgx-all> 107/436 Test #107: ManifestTest.Validate_UiQmlMissingViewIsInvalid .............................   Passed    0.00 sec
+lgx-all>         Start 108: ManifestTest.ValidateCompleteness_Valid
+lgx-all> 108/436 Test #108: ManifestTest.ValidateCompleteness_Valid .....................................   Passed    0.00 sec
+lgx-all>         Start 109: ManifestTest.ValidateCompleteness_MissingVariantDir
+lgx-all> 109/436 Test #109: ManifestTest.ValidateCompleteness_MissingVariantDir .........................   Passed    0.00 sec
+lgx-all>         Start 110: ManifestTest.ValidateCompleteness_MissingMainEntry
+lgx-all> 110/436 Test #110: ManifestTest.ValidateCompleteness_MissingMainEntry ..........................   Passed    0.00 sec
+lgx-all>         Start 111: ManifestTest.ValidateCompleteness_ViewOnlyUiQmlWithoutMainIsValid
+lgx-all> 111/436 Test #111: ManifestTest.ValidateCompleteness_ViewOnlyUiQmlWithoutMainIsValid ...........   Passed    0.00 sec
+lgx-all>         Start 112: ManifestTest.ValidateCompleteness_CaseInsensitive
+lgx-all> 112/436 Test #112: ManifestTest.ValidateCompleteness_CaseInsensitive ...........................   Passed    0.00 sec
+lgx-all>         Start 113: ManifestTest.SetMain_NormalizesKey
+lgx-all> 113/436 Test #113: ManifestTest.SetMain_NormalizesKey ..........................................   Passed    0.00 sec
+lgx-all>         Start 114: ManifestTest.GetMain_CaseInsensitive
+lgx-all> 114/436 Test #114: ManifestTest.GetMain_CaseInsensitive ........................................   Passed    0.00 sec
+lgx-all>         Start 115: ManifestTest.RemoveMain
+lgx-all> 115/436 Test #115: ManifestTest.RemoveMain .....................................................   Passed    0.00 sec
+lgx-all>         Start 116: ManifestTest.GetVariants
+lgx-all> 116/436 Test #116: ManifestTest.GetVariants ....................................................   Passed    0.00 sec
+lgx-all>         Start 117: ManifestTest.NormalizeName
+lgx-all> 117/436 Test #117: ManifestTest.NormalizeName ..................................................   Passed    0.00 sec
+lgx-all>         Start 118: ManifestTest.NormalizeVariantKeys
+lgx-all> 118/436 Test #118: ManifestTest.NormalizeVariantKeys ...........................................   Passed    0.00 sec
+lgx-all>         Start 119: ManifestTest.IsVersionSupported_Major0
+lgx-all> 119/436 Test #119: ManifestTest.IsVersionSupported_Major0 ......................................   Passed    0.00 sec
+lgx-all>         Start 120: ManifestTest.IsVersionSupported_Major1Plus
+lgx-all> 120/436 Test #120: ManifestTest.IsVersionSupported_Major1Plus ..................................   Passed    0.00 sec
+lgx-all>         Start 121: ManifestTest.IsVersionSupported_Invalid
+lgx-all> 121/436 Test #121: ManifestTest.IsVersionSupported_Invalid .....................................   Passed    0.00 sec
+lgx-all>         Start 122: ManifestTest.DefaultConstructor
+lgx-all> 122/436 Test #122: ManifestTest.DefaultConstructor .............................................   Passed    0.01 sec
+lgx-all>         Start 123: ManifestTest.CompareMetadata_IdenticalManifests
+lgx-all> 123/436 Test #123: ManifestTest.CompareMetadata_IdenticalManifests .............................   Passed    0.00 sec
+lgx-all>         Start 124: ManifestTest.CompareMetadata_DifferentMainOnly
+lgx-all> 124/436 Test #124: ManifestTest.CompareMetadata_DifferentMainOnly ..............................   Passed    0.00 sec
+lgx-all>         Start 125: ManifestTest.CompareMetadata_DifferentName
+lgx-all> 125/436 Test #125: ManifestTest.CompareMetadata_DifferentName ..................................   Passed    0.00 sec
+lgx-all>         Start 126: ManifestTest.CompareMetadata_DifferentVersion
+lgx-all> 126/436 Test #126: ManifestTest.CompareMetadata_DifferentVersion ...............................   Passed    0.00 sec
+lgx-all>         Start 127: ManifestTest.CompareMetadata_DifferentDisplayName
+lgx-all> 127/436 Test #127: ManifestTest.CompareMetadata_DifferentDisplayName ...........................   Passed    0.00 sec
+lgx-all>         Start 128: ManifestTest.CompareMetadata_DifferentDependencies
+lgx-all> 128/436 Test #128: ManifestTest.CompareMetadata_DifferentDependencies ..........................   Passed    0.00 sec
+lgx-all>         Start 129: ManifestTest.CompareMetadata_DifferentView
+lgx-all> 129/436 Test #129: ManifestTest.CompareMetadata_DifferentView ..................................   Passed    0.00 sec
+lgx-all>         Start 130: ManifestTest.CompareMetadata_MultipleDifferences
+lgx-all> 130/436 Test #130: ManifestTest.CompareMetadata_MultipleDifferences ............................   Passed    0.00 sec
+lgx-all>         Start 131: ManifestDependencyTest.FromJson_MixedStringAndObjectForms
+lgx-all> 131/436 Test #131: ManifestDependencyTest.FromJson_MixedStringAndObjectForms ...................   Passed    0.00 sec
+lgx-all>         Start 132: ManifestDependencyTest.FromJson_NameOnlyObjectEqualsPlainString
+lgx-all> 132/436 Test #132: ManifestDependencyTest.FromJson_NameOnlyObjectEqualsPlainString .............   Passed    0.00 sec
+lgx-all>         Start 133: ManifestDependencyTest.FromJson_SignerWithoutVersion
+lgx-all> 133/436 Test #133: ManifestDependencyTest.FromJson_SignerWithoutVersion ........................   Passed    0.01 sec
+lgx-all>         Start 134: ManifestDependencyTest.FromJson_RejectsNonStringNonObjectEntry
+lgx-all> 134/436 Test #134: ManifestDependencyTest.FromJson_RejectsNonStringNonObjectEntry ..............   Passed    0.00 sec
+lgx-all>         Start 135: ManifestDependencyTest.FromJson_RejectsObjectWithoutName
+lgx-all> 135/436 Test #135: ManifestDependencyTest.FromJson_RejectsObjectWithoutName ....................   Passed    0.01 sec
+lgx-all>         Start 136: ManifestDependencyTest.FromJson_RejectsNonStringVersion
+lgx-all> 136/436 Test #136: ManifestDependencyTest.FromJson_RejectsNonStringVersion .....................   Passed    0.00 sec
+lgx-all>         Start 137: ManifestDependencyTest.FromJson_RejectsNonStringSigner
+lgx-all> 137/436 Test #137: ManifestDependencyTest.FromJson_RejectsNonStringSigner ......................   Passed    0.00 sec
+lgx-all>         Start 138: ManifestDependencyTest.FromJson_IgnoresUnknownDependencyKeys
+lgx-all> 138/436 Test #138: ManifestDependencyTest.FromJson_IgnoresUnknownDependencyKeys ................   Passed    0.00 sec
+lgx-all>         Start 139: ManifestDependencyTest.ToJson_SimpleDependenciesEmitAsPlainStrings
+lgx-all> 139/436 Test #139: ManifestDependencyTest.ToJson_SimpleDependenciesEmitAsPlainStrings ..........   Passed    0.00 sec
+lgx-all>         Start 140: ManifestDependencyTest.ToJson_RoundtripPreservesVersionAndSigner
+lgx-all> 140/436 Test #140: ManifestDependencyTest.ToJson_RoundtripPreservesVersionAndSigner ............   Passed    0.00 sec
+lgx-all>         Start 141: ManifestDependencyTest.ToJson_ObjectFormIsIdempotent
+lgx-all> 141/436 Test #141: ManifestDependencyTest.ToJson_ObjectFormIsIdempotent ........................   Passed    0.00 sec
+lgx-all>         Start 142: ManifestDependencyTest.ToJson_NameOnlyObjectNarrowsToString
+lgx-all> 142/436 Test #142: ManifestDependencyTest.ToJson_NameOnlyObjectNarrowsToString .................   Passed    0.00 sec
+lgx-all>         Start 143: ManifestDependencyTest.ToJson_SignerOnlyDependencySurvives
+lgx-all> 143/436 Test #143: ManifestDependencyTest.ToJson_SignerOnlyDependencySurvives ..................   Passed    0.00 sec
+lgx-all>         Start 144: ManifestDependencyTest.Validate_AcceptsWellFormedRanges
+lgx-all> 144/436 Test #144: ManifestDependencyTest.Validate_AcceptsWellFormedRanges .....................   Passed    0.01 sec
+lgx-all>         Start 145: ManifestDependencyTest.Validate_RejectsMalformedRanges
+lgx-all> 145/436 Test #145: ManifestDependencyTest.Validate_RejectsMalformedRanges ......................   Passed    0.01 sec
+lgx-all>         Start 146: ManifestDependencyTest.Validate_AbsentVersionIsNotAnEmptyRange
+lgx-all> 146/436 Test #146: ManifestDependencyTest.Validate_AbsentVersionIsNotAnEmptyRange ..............   Passed    0.00 sec
+lgx-all>         Start 147: ManifestDependencyTest.Validate_AcceptsWellFormedDid
+lgx-all> 147/436 Test #147: ManifestDependencyTest.Validate_AcceptsWellFormedDid ........................   Passed    0.00 sec
+lgx-all>         Start 148: ManifestDependencyTest.Validate_RejectsMalformedDid
+lgx-all> 148/436 Test #148: ManifestDependencyTest.Validate_RejectsMalformedDid .........................   Passed    0.01 sec
+lgx-all>         Start 149: ManifestDependencyTest.Validate_RejectsEmptyDependencyName
+lgx-all> 149/436 Test #149: ManifestDependencyTest.Validate_RejectsEmptyDependencyName ..................   Passed    0.00 sec
+lgx-all>         Start 150: ManifestDependencyTest.Validate_EmptyNameSuppressesOtherErrorsOnSameEntry
+lgx-all> 150/436 Test #150: ManifestDependencyTest.Validate_EmptyNameSuppressesOtherErrorsOnSameEntry ...   Passed    0.00 sec
+lgx-all>         Start 151: ManifestDependencyTest.Validate_RejectsNonLowercaseDependencyName
+lgx-all> 151/436 Test #151: ManifestDependencyTest.Validate_RejectsNonLowercaseDependencyName ...........   Passed    0.00 sec
+lgx-all>         Start 152: ManifestDependencyTest.Validate_ReportsEveryBrokenDependency
+lgx-all> 152/436 Test #152: ManifestDependencyTest.Validate_ReportsEveryBrokenDependency ................   Passed    0.00 sec
+lgx-all>         Start 153: ManifestDependencyTest.Equality_DistinguishesVersionAndSigner
+lgx-all> 153/436 Test #153: ManifestDependencyTest.Equality_DistinguishesVersionAndSigner ...............   Passed    0.00 sec
+lgx-all>         Start 154: ManifestDependencyTest.ToString_RendersConstraints
+lgx-all> 154/436 Test #154: ManifestDependencyTest.ToString_RendersConstraints ..........................   Passed    0.00 sec
+lgx-all>         Start 155: ManifestDependencyTest.CompareMetadata_DetectsDifferingConstraints
+lgx-all> 155/436 Test #155: ManifestDependencyTest.CompareMetadata_DetectsDifferingConstraints ..........   Passed    0.00 sec
+lgx-all>         Start 156: ManifestDependencyTest.CompareMetadata_StringAndNameOnlyObjectMatch
+lgx-all> 156/436 Test #156: ManifestDependencyTest.CompareMetadata_StringAndNameOnlyObjectMatch .........   Passed    0.00 sec
+lgx-all>         Start 157: ManifestOptionalDepsTest.ParsesBothNewArrays
+lgx-all> 157/436 Test #157: ManifestOptionalDepsTest.ParsesBothNewArrays ................................   Passed    0.00 sec
+lgx-all>         Start 158: ManifestOptionalDepsTest.OlderManifestWithoutTheKeysStaysValid
+lgx-all> 158/436 Test #158: ManifestOptionalDepsTest.OlderManifestWithoutTheKeysStaysValid ..............   Passed    0.00 sec
+lgx-all>         Start 159: ManifestOptionalDepsTest.RoundTripsThroughJson
+lgx-all> 159/436 Test #159: ManifestOptionalDepsTest.RoundTripsThroughJson ..............................   Passed    0.00 sec
+lgx-all>         Start 160: ManifestOptionalDepsTest.AbsentKeysAreNotEmitted
+lgx-all> 160/436 Test #160: ManifestOptionalDepsTest.AbsentKeysAreNotEmitted ............................   Passed    0.00 sec
+lgx-all>         Start 161: ManifestOptionalDepsTest.NonArrayIsRejected
+lgx-all> 161/436 Test #161: ManifestOptionalDepsTest.NonArrayIsRejected .................................   Passed    0.00 sec
+lgx-all>         Start 162: ManifestOptionalDepsTest.InterfaceEntryMustBeAName
+lgx-all> 162/436 Test #162: ManifestOptionalDepsTest.InterfaceEntryMustBeAName ..........................   Passed    0.00 sec
+lgx-all>         Start 163: ManifestOptionalDepsTest.CompareMetadataCatchesAMismatch
+lgx-all> 163/436 Test #163: ManifestOptionalDepsTest.CompareMetadataCatchesAMismatch ....................   Passed    0.00 sec
+lgx-all>         Start 164: PackageTest.Create_SkeletonPackage
+lgx-all> 164/436 Test #164: PackageTest.Create_SkeletonPackage ..........................................   Passed    0.00 sec
+lgx-all>         Start 165: PackageTest.Create_NormalizesName
+lgx-all> 165/436 Test #165: PackageTest.Create_NormalizesName ...........................................   Passed    0.00 sec
+lgx-all>         Start 166: PackageTest.Create_ValidStructure
+lgx-all> 166/436 Test #166: PackageTest.Create_ValidStructure ...........................................   Passed    0.00 sec
+lgx-all>         Start 167: PackageTest.Load_ValidPackage
+lgx-all> 167/436 Test #167: PackageTest.Load_ValidPackage ...............................................   Passed    0.00 sec
+lgx-all>         Start 168: PackageTest.Load_NonExistent
+lgx-all> 168/436 Test #168: PackageTest.Load_NonExistent ................................................   Passed    0.00 sec
+lgx-all>         Start 169: PackageTest.Load_InvalidFile
+lgx-all> 169/436 Test #169: PackageTest.Load_InvalidFile ................................................   Passed    0.00 sec
+lgx-all>         Start 170: PackageTest.AddVariant_SingleFile
+lgx-all> 170/436 Test #170: PackageTest.AddVariant_SingleFile ...........................................   Passed    0.00 sec
+lgx-all>         Start 171: PackageTest.AddVariant_SingleFile_AutoMain
+lgx-all> 171/436 Test #171: PackageTest.AddVariant_SingleFile_AutoMain ..................................   Passed    0.00 sec
+lgx-all>         Start 172: PackageTest.AddVariant_Directory
+lgx-all> 172/436 Test #172: PackageTest.AddVariant_Directory ............................................   Passed    0.00 sec
+lgx-all>         Start 173: PackageTest.AddVariant_Directory_RequiresMain
+lgx-all> 173/436 Test #173: PackageTest.AddVariant_Directory_RequiresMain ...............................   Passed    0.00 sec
+lgx-all>         Start 174: PackageTest.AddVariant_UiQmlDirectory_AllowsMissingMain
+lgx-all> 174/436 Test #174: PackageTest.AddVariant_UiQmlDirectory_AllowsMissingMain .....................   Passed    0.01 sec
+lgx-all>         Start 175: PackageTest.AddVariant_UiQmlDirectory_ClearsStaleMain
+lgx-all> 175/436 Test #175: PackageTest.AddVariant_UiQmlDirectory_ClearsStaleMain .......................   Passed    0.01 sec
+lgx-all>         Start 176: PackageTest.AddVariant_ReplacesExisting
+lgx-all> 176/436 Test #176: PackageTest.AddVariant_ReplacesExisting .....................................   Passed    0.00 sec
+lgx-all>         Start 177: PackageTest.AddVariant_NoMerge
+lgx-all> 177/436 Test #177: PackageTest.AddVariant_NoMerge ..............................................   Passed    0.01 sec
+lgx-all>         Start 178: PackageTest.RemoveVariant
+lgx-all> 178/436 Test #178: PackageTest.RemoveVariant ...................................................   Passed    0.01 sec
+lgx-all>         Start 179: PackageTest.RemoveVariant_NonExistent
+lgx-all> 179/436 Test #179: PackageTest.RemoveVariant_NonExistent .......................................   Passed    0.00 sec
+lgx-all>         Start 180: PackageTest.HasVariant
+lgx-all> 180/436 Test #180: PackageTest.HasVariant ......................................................   Passed    0.00 sec
+lgx-all>         Start 181: PackageTest.GetVariants
+lgx-all> 181/436 Test #181: PackageTest.GetVariants .....................................................   Passed    0.00 sec
+lgx-all>         Start 182: PackageTest.Verify_ValidPackage
+lgx-all> 182/436 Test #182: PackageTest.Verify_ValidPackage .............................................   Passed    0.00 sec
+lgx-all>         Start 183: PackageTest.Verify_InvalidPackage_NonExistent
+lgx-all> 183/436 Test #183: PackageTest.Verify_InvalidPackage_NonExistent ...............................   Passed    0.00 sec
+lgx-all>         Start 184: PackageTest.WouldMainChange
+lgx-all> 184/436 Test #184: PackageTest.WouldMainChange .................................................   Passed    0.00 sec
+lgx-all>         Start 185: PackageTest.SaveLoad_Roundtrip
+lgx-all> 185/436 Test #185: PackageTest.SaveLoad_Roundtrip ..............................................   Passed    0.01 sec
+lgx-all>         Start 186: PackageTest.MultipleOperations
+lgx-all> 186/436 Test #186: PackageTest.MultipleOperations ..............................................   Passed    0.01 sec
+lgx-all>         Start 187: PackageTest.AddVariant_EmptyFile
+lgx-all> 187/436 Test #187: PackageTest.AddVariant_EmptyFile ............................................   Passed    0.00 sec
+lgx-all>         Start 188: PackageTest.VariantName_CaseNormalization
+lgx-all> 188/436 Test #188: PackageTest.VariantName_CaseNormalization ...................................   Passed    0.00 sec
+lgx-all>         Start 189: PackageTest.ExtractVariant_SingleFile
+lgx-all> 189/436 Test #189: PackageTest.ExtractVariant_SingleFile .......................................   Passed    0.00 sec
+lgx-all>         Start 190: PackageTest.ExtractVariant_Directory
+lgx-all> 190/436 Test #190: PackageTest.ExtractVariant_Directory ........................................   Passed    0.00 sec
+lgx-all>         Start 191: PackageTest.ExtractVariant_NonExistent
+lgx-all> 191/436 Test #191: PackageTest.ExtractVariant_NonExistent ......................................   Passed    0.00 sec
+lgx-all>         Start 192: PackageTest.ExtractAll_MultipleVariants
+lgx-all> 192/436 Test #192: PackageTest.ExtractAll_MultipleVariants .....................................   Passed    0.01 sec
+lgx-all>         Start 193: PackageTest.ExtractAll_EmptyPackage
+lgx-all> 193/436 Test #193: PackageTest.ExtractAll_EmptyPackage .........................................   Passed    0.00 sec
+lgx-all>         Start 194: PackageTest.ExtractVariant_RejectsPathTraversal
+lgx-all> 194/436 Test #194: PackageTest.ExtractVariant_RejectsPathTraversal .............................   Passed    0.00 sec
+lgx-all>         Start 195: PackageTest.ExtractAll_RejectsPathTraversal
+lgx-all> 195/436 Test #195: PackageTest.ExtractAll_RejectsPathTraversal .................................   Passed    0.00 sec
+lgx-all>         Start 196: PackageTest.ExtractVariant_RejectsAbsolutePath
+lgx-all> 196/436 Test #196: PackageTest.ExtractVariant_RejectsAbsolutePath ..............................   Passed    0.01 sec
+lgx-all>         Start 197: PackageTest.ExtractVariant_AllowsBenignNestedPaths
+lgx-all> 197/436 Test #197: PackageTest.ExtractVariant_AllowsBenignNestedPaths ..........................   Passed    0.01 sec
+lgx-all>         Start 198: PackageTest.ExtractVariant_AllowsBenignPaths_RelativeOutputDir
+lgx-all> 198/436 Test #198: PackageTest.ExtractVariant_AllowsBenignPaths_RelativeOutputDir ..............   Passed    0.01 sec
+lgx-all>         Start 199: PackageTest.ExtractVariant_RejectsPathTraversal_RelativeOutputDir
+lgx-all> 199/436 Test #199: PackageTest.ExtractVariant_RejectsPathTraversal_RelativeOutputDir ...........   Passed    0.00 sec
+lgx-all>         Start 200: PackageTest.ExtractVariant_CaseInsensitive
+lgx-all> 200/436 Test #200: PackageTest.ExtractVariant_CaseInsensitive ..................................   Passed    0.00 sec
+lgx-all>         Start 201: PackageTest.AddVariant_ComputesHashes
+lgx-all> 201/436 Test #201: PackageTest.AddVariant_ComputesHashes .......................................   Passed    0.01 sec
+lgx-all>         Start 202: PackageTest.AddVariant_HashesUpdateOnReplace
+lgx-all> 202/436 Test #202: PackageTest.AddVariant_HashesUpdateOnReplace ................................   Passed    0.01 sec
+lgx-all>         Start 203: PackageTest.RemoveVariant_UpdatesHashes
+lgx-all> 203/436 Test #203: PackageTest.RemoveVariant_UpdatesHashes .....................................   Passed    0.00 sec
+lgx-all>         Start 204: PackageTest.Hashes_PersistThroughSaveLoad
+lgx-all> 204/436 Test #204: PackageTest.Hashes_PersistThroughSaveLoad ...................................   Passed    0.00 sec
+lgx-all>         Start 205: PackageTest.Verify_UnsignedPackage_ChecksHashes
+lgx-all> 205/436 Test #205: PackageTest.Verify_UnsignedPackage_ChecksHashes .............................   Passed    0.00 sec
+lgx-all>         Start 206: PackageTest.ClearSignature_PreservesHashes
+lgx-all> 206/436 Test #206: PackageTest.ClearSignature_PreservesHashes ..................................   Passed    0.00 sec
+lgx-all>         Start 207: PackageTest.RecomputeHashes_EmptyPackage
+lgx-all> 207/436 Test #207: PackageTest.RecomputeHashes_EmptyPackage ....................................   Passed    0.00 sec
+lgx-all>         Start 208: PackageTest.RecomputeHashes_Idempotent
+lgx-all> 208/436 Test #208: PackageTest.RecomputeHashes_Idempotent ......................................   Passed    0.01 sec
+lgx-all>         Start 209: PackageTest.Hashes_MultipleVariants
+lgx-all> 209/436 Test #209: PackageTest.Hashes_MultipleVariants .........................................   Passed    0.00 sec
+lgx-all>         Start 210: PackageTest.SignPackage_Basic
+lgx-all> 210/436 Test #210: PackageTest.SignPackage_Basic ...............................................   Passed    0.01 sec
+lgx-all>         Start 211: PackageTest.SignPackage_WithMetadata
+lgx-all> 211/436 Test #211: PackageTest.SignPackage_WithMetadata ........................................   Passed    0.00 sec
+lgx-all>         Start 212: PackageTest.SignVerify_RoundTrip
+lgx-all> 212/436 Test #212: PackageTest.SignVerify_RoundTrip ............................................   Passed    0.00 sec
+lgx-all>         Start 213: PackageTest.VerifySignature_Unsigned
+lgx-all> 213/436 Test #213: PackageTest.VerifySignature_Unsigned ........................................   Passed    0.01 sec
+lgx-all>         Start 214: PackageTest.VerifySignature_Did
+lgx-all> 214/436 Test #214: PackageTest.VerifySignature_Did .............................................   Passed    0.01 sec
+lgx-all>         Start 215: PackageTest.AddVariant_ClearsSignature
+lgx-all> 215/436 Test #215: PackageTest.AddVariant_ClearsSignature ......................................   Passed    0.01 sec
+lgx-all>         Start 216: PackageTest.RemoveVariant_ClearsSignature
+lgx-all> 216/436 Test #216: PackageTest.RemoveVariant_ClearsSignature ...................................   Passed    0.01 sec
+lgx-all>         Start 217: PackageTest.SignPackage_EmptyPackage_Succeeds
+lgx-all> 217/436 Test #217: PackageTest.SignPackage_EmptyPackage_Succeeds ...............................   Passed    0.00 sec
+lgx-all>         Start 218: PackageTest.Verify_SignedPackage_ValidHashes
+lgx-all> 218/436 Test #218: PackageTest.Verify_SignedPackage_ValidHashes ................................   Passed    0.01 sec
+lgx-all>         Start 219: PackageTest.Icon_ConformingIconValidates
+lgx-all> 219/436 Test #219: PackageTest.Icon_ConformingIconValidates ....................................   Passed    0.01 sec
+lgx-all>         Start 220: PackageTest.Icon_StoredAtCanonicalRootPath
+lgx-all> 220/436 Test #220: PackageTest.Icon_StoredAtCanonicalRootPath ..................................   Passed    0.01 sec
+lgx-all>         Start 221: PackageTest.Icon_WrongDimensionsRejected
+lgx-all> 221/436 Test #221: PackageTest.Icon_WrongDimensionsRejected ....................................   Passed    0.01 sec
+lgx-all>         Start 222: PackageTest.Icon_NonPngRejected
+lgx-all> 222/436 Test #222: PackageTest.Icon_NonPngRejected .............................................   Passed    0.00 sec
+lgx-all>         Start 223: PackageTest.Icon_MissingOnUiQmlRejected
+lgx-all> 223/436 Test #223: PackageTest.Icon_MissingOnUiQmlRejected .....................................   Passed    0.00 sec
+lgx-all>         Start 224: PackageTest.Icon_OptionalForCoreType
+lgx-all> 224/436 Test #224: PackageTest.Icon_OptionalForCoreType ........................................   Passed    0.00 sec
+lgx-all>         Start 225: PackageTest.Icon_LegacyManifestExemptFromContract
+lgx-all> 225/436 Test #225: PackageTest.Icon_LegacyManifestExemptFromContract ...........................   Passed    0.01 sec
+lgx-all>         Start 226: PackageTest.Icon_ParticipatesInMerkleTree
+lgx-all> 226/436 Test #226: PackageTest.Icon_ParticipatesInMerkleTree ...................................   Passed    0.01 sec
+lgx-all>         Start 227: PackageTest.Icon_ExtractedToInstalledPackageRoot
+lgx-all> 227/436 Test #227: PackageTest.Icon_ExtractedToInstalledPackageRoot ............................   Passed    0.01 sec
+lgx-all>         Start 228: PackageTest.Icon_ExtractedForEveryVariant
+lgx-all> 228/436 Test #228: PackageTest.Icon_ExtractedForEveryVariant ...................................   Passed    0.01 sec
+lgx-all>         Start 229: PackageTest.Icon_NonCanonicalPathRejected
+lgx-all> 229/436 Test #229: PackageTest.Icon_NonCanonicalPathRejected ...................................   Passed    0.01 sec
+lgx-all>         Start 230: InstalledTest.AcceptsAnUntouchedInstall
+lgx-all> 230/436 Test #230: InstalledTest.AcceptsAnUntouchedInstall .....................................   Passed    0.01 sec
+lgx-all>         Start 231: InstalledTest.InstallerSidecarsAreNotHashed
+lgx-all> 231/436 Test #231: InstalledTest.InstallerSidecarsAreNotHashed .................................   Passed    0.01 sec
+lgx-all>         Start 232: InstalledTest.ANestedManifestJsonIsHashed
+lgx-all> 232/436 Test #232: InstalledTest.ANestedManifestJsonIsHashed ...................................   Passed    0.01 sec
+lgx-all>         Start 233: InstalledTest.AnAlteredPayloadFileIsRejected
+lgx-all> 233/436 Test #233: InstalledTest.AnAlteredPayloadFileIsRejected ................................   Passed    0.01 sec
+lgx-all>         Start 234: InstalledTest.AnExtraFileIsRejected
+lgx-all> 234/436 Test #234: InstalledTest.AnExtraFileIsRejected .........................................   Passed    0.01 sec
+lgx-all>         Start 235: InstalledTest.ADeletedFileIsRejected
+lgx-all> 235/436 Test #235: InstalledTest.ADeletedFileIsRejected ........................................   Passed    0.01 sec
+lgx-all>         Start 236: InstalledTest.ASymlinkedPayloadFileIsRejected
+lgx-all> 236/436 Test #236: InstalledTest.ASymlinkedPayloadFileIsRejected ...............................   Passed    0.01 sec
+lgx-all>         Start 237: InstalledTest.AnUndeclaredVariantIsNoHash
+lgx-all> 237/436 Test #237: InstalledTest.AnUndeclaredVariantIsNoHash ...................................   Passed    0.01 sec
+lgx-all>         Start 238: InstalledTest.ADeclaredButUninstalledVariantIsAMismatch
+lgx-all> 238/436 Test #238: InstalledTest.ADeclaredButUninstalledVariantIsAMismatch .....................   Passed    0.01 sec
+lgx-all>         Start 239: InstalledTest.NoVariantIsBadInput
+lgx-all> 239/436 Test #239: InstalledTest.NoVariantIsBadInput ...........................................   Passed    0.01 sec
+lgx-all>         Start 240: InstalledTest.AMissingDirectoryIsUnreadable
+lgx-all> 240/436 Test #240: InstalledTest.AMissingDirectoryIsUnreadable .................................   Passed    0.01 sec
+lgx-all>         Start 241: InstalledTest.TheVariantNameIsCaseInsensitive
+lgx-all> 241/436 Test #241: InstalledTest.TheVariantNameIsCaseInsensitive ...............................   Passed    0.01 sec
+lgx-all>         Start 242: InstalledTest.AnInstallWithRootAssetsIsAccepted
+lgx-all> 242/436 Test #242: InstalledTest.AnInstallWithRootAssetsIsAccepted .............................   Passed    0.01 sec
+lgx-all>         Start 243: InstalledTest.ATamperedRootAssetIsRejected
+lgx-all> 243/436 Test #243: InstalledTest.ATamperedRootAssetIsRejected ..................................   Passed    0.01 sec
+lgx-all>         Start 244: InstalledTest.RootAssetsDoNotExcuseAnAlteredPayload
+lgx-all> 244/436 Test #244: InstalledTest.RootAssetsDoNotExcuseAnAlteredPayload .........................   Passed    0.01 sec
+lgx-all>         Start 245: InstalledTest.AnInstallWithBothRootAndVariantAssetsIsAccepted
+lgx-all> 245/436 Test #245: InstalledTest.AnInstallWithBothRootAndVariantAssetsIsAccepted ...............   Passed    0.01 sec
+lgx-all>         Start 246: InstalledTest.ADeletedRootAssetIsRejected
+lgx-all> 246/436 Test #246: InstalledTest.ADeletedRootAssetIsRejected ...................................   Passed    0.01 sec
+lgx-all>         Start 247: InstalledTest.AVariantsOwnAssetsAreNotMistakenForRootAssets
+lgx-all> 247/436 Test #247: InstalledTest.AVariantsOwnAssetsAreNotMistakenForRootAssets .................   Passed    0.01 sec
+lgx-all>         Start 248: InstalledTest.RootAssetsBeyondTheIconAreStillAccounted
+lgx-all> 248/436 Test #248: InstalledTest.RootAssetsBeyondTheIconAreStillAccounted ......................   Passed    0.01 sec
+lgx-all>         Start 249: InstalledTest.ManifestRulesAreReportedFromTheInstalledDirectory
+lgx-all> 249/436 Test #249: InstalledTest.ManifestRulesAreReportedFromTheInstalledDirectory .............   Passed    0.01 sec
+lgx-all>         Start 250: InstalledTest.AMissingMainIsReported
+lgx-all> 250/436 Test #250: InstalledTest.AMissingMainIsReported ........................................   Passed    0.01 sec
+lgx-all>         Start 251: InstalledTest.AMissingViewIsReported
+lgx-all> 251/436 Test #251: InstalledTest.AMissingViewIsReported ........................................   Passed    0.01 sec
+lgx-all>         Start 252: InstalledTest.AViewOnlyUiQmlPluginNeedsNoMain
+lgx-all> 252/436 Test #252: InstalledTest.AViewOnlyUiQmlPluginNeedsNoMain ...............................   Passed    0.01 sec
+lgx-all>         Start 253: InstalledTest.AnInstalledVariantWithoutAMainEntryIsRejected
+lgx-all> 253/436 Test #253: InstalledTest.AnInstalledVariantWithoutAMainEntryIsRejected .................   Passed    0.01 sec
+lgx-all>         Start 254: InstalledTest.VariantsThatWereNotInstalledAreNotReportedMissing
+lgx-all> 254/436 Test #254: InstalledTest.VariantsThatWereNotInstalledAreNotReportedMissing .............   Passed    0.01 sec
+lgx-all>         Start 255: InstalledTest.TheIconContractIsEnforcedAgainstTheInstalledFile
+lgx-all> 255/436 Test #255: InstalledTest.TheIconContractIsEnforcedAgainstTheInstalledFile ..............   Passed    0.01 sec
+lgx-all>         Start 256: InstalledTest.AnIconMissingFromTheInstallIsReported
+lgx-all> 256/436 Test #256: InstalledTest.AnIconMissingFromTheInstallIsReported .........................   Passed    0.01 sec
+lgx-all>         Start 257: InstalledTest.AnIconPathOutsideThePackageIsNotRead
+lgx-all> 257/436 Test #257: InstalledTest.AnIconPathOutsideThePackageIsNotRead ..........................   Passed    0.01 sec
+lgx-all>         Start 258: PlatformVariantTest.EveryTargetAcceptsBothArchSpellings
+lgx-all> 258/436 Test #258: PlatformVariantTest.EveryTargetAcceptsBothArchSpellings .....................   Passed    0.00 sec
+lgx-all>         Start 259: PlatformVariantTest.TheCallersOwnSpellingLeads
+lgx-all> 259/436 Test #259: PlatformVariantTest.TheCallersOwnSpellingLeads ..............................   Passed    0.00 sec
+lgx-all>         Start 260: PlatformVariantTest.NoSpellingIsListedTwice
+lgx-all> 260/436 Test #260: PlatformVariantTest.NoSpellingIsListedTwice .................................   Passed    0.00 sec
+lgx-all>         Start 261: PlatformVariantTest.NeverAcceptsAnotherOperatingSystem
+lgx-all> 261/436 Test #261: PlatformVariantTest.NeverAcceptsAnotherOperatingSystem ......................   Passed    0.00 sec
+lgx-all>         Start 262: PlatformVariantTest.NeverAcceptsAnotherArchitecture
+lgx-all> 262/436 Test #262: PlatformVariantTest.NeverAcceptsAnotherArchitecture .........................   Passed    0.00 sec
+lgx-all>         Start 263: PlatformVariantTest.UnknownArchitectureGetsNoAliasesAndStillNamesItself
+lgx-all> 263/436 Test #263: PlatformVariantTest.UnknownArchitectureGetsNoAliasesAndStillNamesItself .....   Passed    0.00 sec
+lgx-all>         Start 264: PlatformVariantTest.ANameWithNoSeparatorHasNoArchitectureToAlias
+lgx-all> 264/436 Test #264: PlatformVariantTest.ANameWithNoSeparatorHasNoArchitectureToAlias ............   Passed    0.00 sec
+lgx-all>         Start 265: PlatformVariantTest.ASuffixedSpellingAliasesNothingAndStillNamesItself
+lgx-all> 265/436 Test #265: PlatformVariantTest.ASuffixedSpellingAliasesNothingAndStillNamesItself ......   Passed    0.00 sec
+lgx-all>         Start 266: PlatformVariantTest.EmptyInEmptyOut
+lgx-all> 266/436 Test #266: PlatformVariantTest.EmptyInEmptyOut .........................................   Passed    0.00 sec
+lgx-all>         Start 267: PlatformVariantTest.HostVariantIsAnOsDashArchName
+lgx-all> 267/436 Test #267: PlatformVariantTest.HostVariantIsAnOsDashArchName ...........................   Passed    0.00 sec
+lgx-all>         Start 268: PlatformVariantTest.TheHostAcceptsItsOwnSpelling
+lgx-all> 268/436 Test #268: PlatformVariantTest.TheHostAcceptsItsOwnSpelling ............................   Passed    0.00 sec
+lgx-all>         Start 269: MainResolutionTest.VariantMapResolvesAgainstCallerSuppliedVariants
+lgx-all> 269/436 Test #269: MainResolutionTest.VariantMapResolvesAgainstCallerSuppliedVariants ..........   Passed    0.00 sec
+lgx-all>         Start 270: MainResolutionTest.FirstMatchingVariantWinsAndDoesNotFallThrough
+lgx-all> 270/436 Test #270: MainResolutionTest.FirstMatchingVariantWinsAndDoesNotFallThrough ............   Passed    0.00 sec
+lgx-all>         Start 271: MainResolutionTest.NamedFileMissingIsFileMissingNotNoVariantMatch
+lgx-all> 271/436 Test #271: MainResolutionTest.NamedFileMissingIsFileMissingNotNoVariantMatch ...........   Passed    0.00 sec
+lgx-all>         Start 272: MainResolutionTest.NoCandidateVariantIsAKey
+lgx-all> 272/436 Test #272: MainResolutionTest.NoCandidateVariantIsAKey .................................   Passed    0.00 sec
+lgx-all>         Start 273: MainResolutionTest.AnEmptyCandidateListIsNoVariantMatch
+lgx-all> 273/436 Test #273: MainResolutionTest.AnEmptyCandidateListIsNoVariantMatch .....................   Passed    0.00 sec
+lgx-all>         Start 274: MainResolutionTest.VariantKeysAreMatchedVerbatim
+lgx-all> 274/436 Test #274: MainResolutionTest.VariantKeysAreMatchedVerbatim ............................   Passed    0.00 sec
+lgx-all>         Start 275: MainResolutionTest.AnEmptyMapValueFallsThroughAndIsMalformedEntry
+lgx-all> 275/436 Test #275: MainResolutionTest.AnEmptyMapValueFallsThroughAndIsMalformedEntry ...........   Passed    0.00 sec
+lgx-all>         Start 276: MainResolutionTest.ANonStringMapValueIsMalformedEntryAndDoesNotThrow
+lgx-all> 276/436 Test #276: MainResolutionTest.ANonStringMapValueIsMalformedEntryAndDoesNotThrow ........   Passed    0.01 sec
+lgx-all>         Start 277: MainResolutionTest.AnUnusableValueStillLetsALaterVariantWin
+lgx-all> 277/436 Test #277: MainResolutionTest.AnUnusableValueStillLetsALaterVariantWin .................   Passed    0.00 sec
+lgx-all>         Start 278: MainResolutionTest.PlainStringForm
+lgx-all> 278/436 Test #278: MainResolutionTest.PlainStringForm ..........................................   Passed    0.00 sec
+lgx-all>         Start 279: MainResolutionTest.AnEmptyStringIsMalformedEntry
+lgx-all> 279/436 Test #279: MainResolutionTest.AnEmptyStringIsMalformedEntry ............................   Passed    0.00 sec
+lgx-all>         Start 280: MainResolutionTest.NeitherMapNorStringIsMalformedEntry
+lgx-all> 280/436 Test #280: MainResolutionTest.NeitherMapNorStringIsMalformedEntry ......................   Passed    0.00 sec
+lgx-all>         Start 281: MainResolutionTest.NotDeclared
+lgx-all> 281/436 Test #281: MainResolutionTest.NotDeclared ..............................................   Passed    0.00 sec
+lgx-all>         Start 282: MainResolutionTest.EscapingTheDirectoryIsRefused
+lgx-all> 282/436 Test #282: MainResolutionTest.EscapingTheDirectoryIsRefused ............................   Passed    0.00 sec
+lgx-all>         Start 283: MainResolutionTest.AnAbsolutePathIsRefused
+lgx-all> 283/436 Test #283: MainResolutionTest.AnAbsolutePathIsRefused ..................................   Passed    0.00 sec
+lgx-all>         Start 284: MainResolutionTest.ADotSegmentThatStaysInsideStillResolves
+lgx-all> 284/436 Test #284: MainResolutionTest.ADotSegmentThatStaysInsideStillResolves ..................   Passed    0.00 sec
+lgx-all>         Start 285: MainResolutionTest.NonNormalComponentsResolveAfterNormalising
+lgx-all> 285/436 Test #285: MainResolutionTest.NonNormalComponentsResolveAfterNormalising ...............   Passed    0.00 sec
+lgx-all>         Start 286: MainResolutionTest.NonNormalComponentsCannotEscape
+lgx-all> 286/436 Test #286: MainResolutionTest.NonNormalComponentsCannotEscape ..........................   Passed    0.00 sec
+lgx-all>         Start 287: MainResolutionTest.NamingADirectoryIsNotResolved
+lgx-all> 287/436 Test #287: MainResolutionTest.NamingADirectoryIsNotResolved ............................   Passed    0.00 sec
+lgx-all>         Start 288: MainResolutionTest.ASymlinkToAFileStillResolves
+lgx-all> 288/436 Test #288: MainResolutionTest.ASymlinkToAFileStillResolves .............................   Passed    0.00 sec
+lgx-all>         Start 289: MainResolutionTest.AMissingDirectoryHasNoMain
+lgx-all> 289/436 Test #289: MainResolutionTest.AMissingDirectoryHasNoMain ...............................   Passed    0.00 sec
+lgx-all>         Start 290: MainResolutionTest.AnUnparseableManifestIsBadInput
+lgx-all> 290/436 Test #290: MainResolutionTest.AnUnparseableManifestIsBadInput ..........................   Passed    0.00 sec
+lgx-all>         Start 291: MainResolutionTest.AJsonArrayIsBadInputNotNotDeclared
+lgx-all> 291/436 Test #291: MainResolutionTest.AJsonArrayIsBadInputNotNotDeclared .......................   Passed    0.00 sec
+lgx-all>         Start 292: MainResolutionTest.NoDirectoryIsBadInput
+lgx-all> 292/436 Test #292: MainResolutionTest.NoDirectoryIsBadInput ....................................   Passed    0.00 sec
+lgx-all>         Start 293: CryptoTest.Base64UrlEncode_RoundTrip
+lgx-all> 293/436 Test #293: CryptoTest.Base64UrlEncode_RoundTrip ........................................   Passed    0.00 sec
+lgx-all>         Start 294: CryptoTest.Base64UrlEncode_EmptyInput
+lgx-all> 294/436 Test #294: CryptoTest.Base64UrlEncode_EmptyInput .......................................   Passed    0.00 sec
+lgx-all>         Start 295: CryptoTest.Base64UrlEncode_StringOverload
+lgx-all> 295/436 Test #295: CryptoTest.Base64UrlEncode_StringOverload ...................................   Passed    0.00 sec
+lgx-all>         Start 296: CryptoTest.Base64UrlDecode_InvalidInput
+lgx-all> 296/436 Test #296: CryptoTest.Base64UrlDecode_InvalidInput .....................................   Passed    0.00 sec
+lgx-all>         Start 297: CryptoTest.Base64UrlEncode_32ByteKey
+lgx-all> 297/436 Test #297: CryptoTest.Base64UrlEncode_32ByteKey ........................................   Passed    0.00 sec
+lgx-all>         Start 298: CryptoTest.PublicKeyToDid_Format
+lgx-all> 298/436 Test #298: CryptoTest.PublicKeyToDid_Format ............................................   Passed    0.00 sec
+lgx-all>         Start 299: CryptoTest.PublicKeyToDid_Deterministic
+lgx-all> 299/436 Test #299: CryptoTest.PublicKeyToDid_Deterministic .....................................   Passed    0.00 sec
+lgx-all>         Start 300: CryptoTest.PublicKeyToDid_DifferentKeysProduceDifferentDids
+lgx-all> 300/436 Test #300: CryptoTest.PublicKeyToDid_DifferentKeysProduceDifferentDids .................   Passed    0.00 sec
+lgx-all>         Start 301: CryptoTest.DidToPublicKey_RoundTrip
+lgx-all> 301/436 Test #301: CryptoTest.DidToPublicKey_RoundTrip .........................................   Passed    0.00 sec
+lgx-all>         Start 302: CryptoTest.DidToPublicKey_InvalidPrefix
+lgx-all> 302/436 Test #302: CryptoTest.DidToPublicKey_InvalidPrefix .....................................   Passed    0.00 sec
+lgx-all>         Start 303: CryptoTest.DidToPublicKey_EmptyString
+lgx-all> 303/436 Test #303: CryptoTest.DidToPublicKey_EmptyString .......................................   Passed    0.00 sec
+lgx-all>         Start 304: CryptoTest.DidToPublicKey_InvalidBase64
+lgx-all> 304/436 Test #304: CryptoTest.DidToPublicKey_InvalidBase64 .....................................   Passed    0.00 sec
+lgx-all>         Start 305: CryptoTest.DidToPublicKey_InvalidJwk
+lgx-all> 305/436 Test #305: CryptoTest.DidToPublicKey_InvalidJwk ........................................   Passed    0.00 sec
+lgx-all>         Start 306: CryptoTest.DidToPublicKey_WrongKeySize
+lgx-all> 306/436 Test #306: CryptoTest.DidToPublicKey_WrongKeySize ......................................   Passed    0.00 sec
+lgx-all>         Start 307: CryptoTest.PublicKeyToDid_JwkKeysAlphabeticallySorted
+lgx-all> 307/436 Test #307: CryptoTest.PublicKeyToDid_JwkKeysAlphabeticallySorted .......................   Passed    0.00 sec
+lgx-all>         Start 308: CryptoTest.SignVerify_WithDid
+lgx-all> 308/436 Test #308: CryptoTest.SignVerify_WithDid ...............................................   Passed    0.00 sec
+lgx-all>         Start 309: CryptoTest.SignVerify_WrongDid_Fails
+lgx-all> 309/436 Test #309: CryptoTest.SignVerify_WrongDid_Fails ........................................   Passed    0.01 sec
+lgx-all>         Start 310: CryptoTest.ExtractPublicKey_MatchesKeypair
+lgx-all> 310/436 Test #310: CryptoTest.ExtractPublicKey_MatchesKeypair ..................................   Passed    0.00 sec
+lgx-all>         Start 311: ManifestSigTest.ToJson_Roundtrip
+lgx-all> 311/436 Test #311: ManifestSigTest.ToJson_Roundtrip ............................................   Passed    0.01 sec
+lgx-all>         Start 312: ManifestSigTest.ToJson_WithLinkedDids
+lgx-all> 312/436 Test #312: ManifestSigTest.ToJson_WithLinkedDids .......................................   Passed    0.00 sec
+lgx-all>         Start 313: ManifestSigTest.ToJson_EmptySignerMetadata
+lgx-all> 313/436 Test #313: ManifestSigTest.ToJson_EmptySignerMetadata ..................................   Passed    0.00 sec
+lgx-all>         Start 314: ManifestSigTest.FromJson_MissingDid
+lgx-all> 314/436 Test #314: ManifestSigTest.FromJson_MissingDid .........................................   Passed    0.00 sec
+lgx-all>         Start 315: ManifestSigTest.FromJson_MissingSignature
+lgx-all> 315/436 Test #315: ManifestSigTest.FromJson_MissingSignature ...................................   Passed    0.00 sec
+lgx-all>         Start 316: ManifestSigTest.FromJson_UnsupportedVersion
+lgx-all> 316/436 Test #316: ManifestSigTest.FromJson_UnsupportedVersion .................................   Passed    0.00 sec
+lgx-all>         Start 317: ManifestSigTest.FromJson_UnsupportedAlgorithm
+lgx-all> 317/436 Test #317: ManifestSigTest.FromJson_UnsupportedAlgorithm ...............................   Passed    0.00 sec
+lgx-all>         Start 318: ManifestSigTest.FromJson_InvalidJson
+lgx-all> 318/436 Test #318: ManifestSigTest.FromJson_InvalidJson ........................................   Passed    0.00 sec
+lgx-all>         Start 319: ManifestSigTest.ToJson_Deterministic
+lgx-all> 319/436 Test #319: ManifestSigTest.ToJson_Deterministic ........................................   Passed    0.00 sec
+lgx-all>         Start 320: ManifestSigTest.ToJson_ContainsSignerObject
+lgx-all> 320/436 Test #320: ManifestSigTest.ToJson_ContainsSignerObject .................................   Passed    0.00 sec
+lgx-all>         Start 321: KeyringTest.AddKey_ValidDid
+lgx-all> 321/436 Test #321: KeyringTest.AddKey_ValidDid .................................................   Passed    0.00 sec
+lgx-all>         Start 322: KeyringTest.AddKey_InvalidDid
+lgx-all> 322/436 Test #322: KeyringTest.AddKey_InvalidDid ...............................................   Passed    0.00 sec
+lgx-all>         Start 323: KeyringTest.AddKey_EmptyName
+lgx-all> 323/436 Test #323: KeyringTest.AddKey_EmptyName ................................................   Passed    0.00 sec
+lgx-all>         Start 324: KeyringTest.FindByDid
+lgx-all> 324/436 Test #324: KeyringTest.FindByDid .......................................................   Passed    0.00 sec
+lgx-all>         Start 325: KeyringTest.FindByDid_NotFound
+lgx-all> 325/436 Test #325: KeyringTest.FindByDid_NotFound ..............................................   Passed    0.00 sec
+lgx-all>         Start 326: KeyringTest.FindByPublicKey
+lgx-all> 326/436 Test #326: KeyringTest.FindByPublicKey .................................................   Passed    0.01 sec
+lgx-all>         Start 327: KeyringTest.FindByName
+lgx-all> 327/436 Test #327: KeyringTest.FindByName ......................................................   Passed    0.00 sec
+lgx-all>         Start 328: KeyringTest.FindByName_NotFound
+lgx-all> 328/436 Test #328: KeyringTest.FindByName_NotFound .............................................   Passed    0.00 sec
+lgx-all>         Start 329: KeyringTest.RemoveKey
+lgx-all> 329/436 Test #329: KeyringTest.RemoveKey .......................................................   Passed    0.00 sec
+lgx-all>         Start 330: KeyringTest.RemoveKey_NonExistent
+lgx-all> 330/436 Test #330: KeyringTest.RemoveKey_NonExistent ...........................................   Passed    0.00 sec
+lgx-all>         Start 331: KeyringTest.ListKeys
+lgx-all> 331/436 Test #331: KeyringTest.ListKeys ........................................................   Passed    0.00 sec
+lgx-all>         Start 332: KeyringTest.ListKeys_EmptyKeyring
+lgx-all> 332/436 Test #332: KeyringTest.ListKeys_EmptyKeyring ...........................................   Passed    0.00 sec
+lgx-all>         Start 333: KeyringTest.AddKey_ReplaceExisting
+lgx-all> 333/436 Test #333: KeyringTest.AddKey_ReplaceExisting ..........................................   Passed    0.00 sec
+lgx-all>         Start 334: KeyringTest.SaveKeypair_CreatesFiles
+lgx-all> 334/436 Test #334: KeyringTest.SaveKeypair_CreatesFiles ........................................   Passed    0.00 sec
+lgx-all>         Start 335: KeyringTest.SaveKeypair_DidFileContainsCorrectDid
+lgx-all> 335/436 Test #335: KeyringTest.SaveKeypair_DidFileContainsCorrectDid ...........................   Passed    0.00 sec
+lgx-all>         Start 336: KeyringTest.SaveLoadSecretKey_RoundTrip
+lgx-all> 336/436 Test #336: KeyringTest.SaveLoadSecretKey_RoundTrip .....................................   Passed    0.00 sec
+lgx-all>         Start 337: KeyringTest.SaveLoadSecretKey_SignVerifyRoundTrip
+lgx-all> 337/436 Test #337: KeyringTest.SaveLoadSecretKey_SignVerifyRoundTrip ...........................   Passed    0.00 sec
+lgx-all>         Start 338: KeyringTest.LoadSecretKey_NonExistent
+lgx-all> 338/436 Test #338: KeyringTest.LoadSecretKey_NonExistent .......................................   Passed    0.00 sec
+lgx-all>         Start 339: KeyringTest.SaveKeypair_JwkFileFormat
+lgx-all> 339/436 Test #339: KeyringTest.SaveKeypair_JwkFileFormat .......................................   Passed    0.00 sec
+lgx-all>         Start 340: CLITest.CreateCommand
+lgx-all> 340/436 Test #340: CLITest.CreateCommand .......................................................   Passed    0.01 sec
+lgx-all>         Start 341: CLITest.VerifyCommand_ValidPackage
+lgx-all> 341/436 Test #341: CLITest.VerifyCommand_ValidPackage ..........................................   Passed    0.01 sec
+lgx-all>         Start 342: CLITest.VerifyCommand_InvalidPackage
+lgx-all> 342/436 Test #342: CLITest.VerifyCommand_InvalidPackage ........................................   Passed    0.01 sec
+lgx-all>         Start 343: CLITest.AddCommand_SingleFile
+lgx-all> 343/436 Test #343: CLITest.AddCommand_SingleFile ...............................................   Passed    0.01 sec
+lgx-all>         Start 344: CLITest.AddCommand_Directory
+lgx-all> 344/436 Test #344: CLITest.AddCommand_Directory ................................................   Passed    0.01 sec
+lgx-all>         Start 345: CLITest.AddCommand_ReplacesVariant
+lgx-all> 345/436 Test #345: CLITest.AddCommand_ReplacesVariant ..........................................   Passed    0.02 sec
+lgx-all>         Start 346: CLITest.RemoveCommand
+lgx-all> 346/436 Test #346: CLITest.RemoveCommand .......................................................   Passed    0.02 sec
+lgx-all>         Start 347: CLITest.RemoveCommand_NonExistent
+lgx-all> 347/436 Test #347: CLITest.RemoveCommand_NonExistent ...........................................   Passed    0.01 sec
+lgx-all>         Start 348: CLITest.HelpCommand
+lgx-all> 348/436 Test #348: CLITest.HelpCommand .........................................................   Passed    0.01 sec
+lgx-all>         Start 349: CLITest.VersionCommand
+lgx-all> 349/436 Test #349: CLITest.VersionCommand ......................................................   Passed    0.01 sec
+lgx-all>         Start 350: CLITest.CreateCommand_FileExists
+lgx-all> 350/436 Test #350: CLITest.CreateCommand_FileExists ............................................   Passed    0.01 sec
+lgx-all>         Start 351: CLITest.AddCommand_DirectoryWithoutMain
+lgx-all> 351/436 Test #351: CLITest.AddCommand_DirectoryWithoutMain .....................................   Passed    0.01 sec
+lgx-all>         Start 352: CLITest.AddCommand_UiQmlDirectoryWithoutMain
+lgx-all> 352/436 Test #352: CLITest.AddCommand_UiQmlDirectoryWithoutMain ................................   Passed    0.02 sec
+lgx-all>         Start 353: CLITest.AddCommand_UiQmlDirectoryWithViewFlag
+lgx-all> 353/436 Test #353: CLITest.AddCommand_UiQmlDirectoryWithViewFlag ...............................   Passed    0.02 sec
+lgx-all>         Start 354: CLITest.AddCommand_UiQmlDirectoryWithoutView
+lgx-all> 354/436 Test #354: CLITest.AddCommand_UiQmlDirectoryWithoutView ................................   Passed    0.01 sec
+lgx-all>         Start 355: CLITest.MergeCommand_BasicMerge
+lgx-all> 355/436 Test #355: CLITest.MergeCommand_BasicMerge .............................................   Passed    0.03 sec
+lgx-all>         Start 356: CLITest.MergeCommand_DuplicateVariantsFails
+lgx-all> 356/436 Test #356: CLITest.MergeCommand_DuplicateVariantsFails .................................   Passed    0.02 sec
+lgx-all>         Start 357: CLITest.MergeCommand_SkipDuplicates
+lgx-all> 357/436 Test #357: CLITest.MergeCommand_SkipDuplicates .........................................   Passed    0.02 sec
+lgx-all>         Start 358: CLITest.MergeCommand_ManifestMismatch
+lgx-all> 358/436 Test #358: CLITest.MergeCommand_ManifestMismatch .......................................   Passed    0.02 sec
+lgx-all>         Start 359: CLITest.MergeCommand_TooFewArgs
+lgx-all> 359/436 Test #359: CLITest.MergeCommand_TooFewArgs .............................................   Passed    0.01 sec
+lgx-all>         Start 360: CLITest.MergeCommand_ThreePackages
+lgx-all> 360/436 Test #360: CLITest.MergeCommand_ThreePackages ..........................................   Passed    0.03 sec
+lgx-all>         Start 361: CLITest.MultiVariantWorkflow
+lgx-all> 361/436 Test #361: CLITest.MultiVariantWorkflow ................................................   Passed    0.02 sec
+lgx-all>         Start 362: CLITest.SignatureCommand_UnsignedPackage
+lgx-all> 362/436 Test #362: CLITest.SignatureCommand_UnsignedPackage ....................................   Passed    0.01 sec
+lgx-all>         Start 363: CLITest.SignatureCommand_SignedPackage
+lgx-all> 363/436 Test #363: CLITest.SignatureCommand_SignedPackage ......................................   Passed    0.02 sec
+lgx-all>         Start 364: CLITest.SignatureCommand_MissingPackage
+lgx-all> 364/436 Test #364: CLITest.SignatureCommand_MissingPackage .....................................   Passed    0.01 sec
+lgx-all>         Start 365: Semver.SpecMainPrecedenceChain
+lgx-all> 365/436 Test #365: Semver.SpecMainPrecedenceChain ..............................................   Passed    0.01 sec
+lgx-all>         Start 366: Semver.PreReleasePrecedesItsRelease
+lgx-all> 366/436 Test #366: Semver.PreReleasePrecedesItsRelease .........................................   Passed    0.01 sec
+lgx-all>         Start 367: Semver.SpecPreReleasePrecedenceChain
+lgx-all> 367/436 Test #367: Semver.SpecPreReleasePrecedenceChain ........................................   Passed    0.01 sec
+lgx-all>         Start 368: Semver.NumericPreReleaseIdentifiersCompareNumerically
+lgx-all> 368/436 Test #368: Semver.NumericPreReleaseIdentifiersCompareNumerically .......................   Passed    0.01 sec
+lgx-all>         Start 369: Semver.NumericSortsBelowAlphanumeric
+lgx-all> 369/436 Test #369: Semver.NumericSortsBelowAlphanumeric ........................................   Passed    0.01 sec
+lgx-all>         Start 370: Semver.LargerPreReleaseFieldSetWins
+lgx-all> 370/436 Test #370: Semver.LargerPreReleaseFieldSetWins .........................................   Passed    0.01 sec
+lgx-all>         Start 371: Semver.BuildMetadataIgnoredForPrecedence
+lgx-all> 371/436 Test #371: Semver.BuildMetadataIgnoredForPrecedence ....................................   Passed    0.01 sec
+lgx-all>         Start 372: Semver.AcceptsValidVersions
+lgx-all> 372/436 Test #372: Semver.AcceptsValidVersions .................................................   Passed    0.00 sec
+lgx-all>         Start 373: Semver.RejectsInvalidVersions
+lgx-all> 373/436 Test #373: Semver.RejectsInvalidVersions ...............................................   Passed    0.01 sec
+lgx-all>         Start 374: Semver.InvalidVersionsSortBelowValidOnes
+lgx-all> 374/436 Test #374: Semver.InvalidVersionsSortBelowValidOnes ....................................   Passed    0.01 sec
+lgx-all>         Start 375: Semver.ComparisonIsLenientAboutPartialVersions
+lgx-all> 375/436 Test #375: Semver.ComparisonIsLenientAboutPartialVersions ..............................   Passed    0.01 sec
+lgx-all>         Start 376: Semver.SortDescendingPutsHighestFirst
+lgx-all> 376/436 Test #376: Semver.SortDescendingPutsHighestFirst .......................................   Passed    0.01 sec
+lgx-all>         Start 377: Semver.SortAscending
+lgx-all> 377/436 Test #377: Semver.SortAscending ........................................................   Passed    0.00 sec
+lgx-all>         Start 378: Semver.CaretRanges
+lgx-all> 378/436 Test #378: Semver.CaretRanges ..........................................................   Passed    0.01 sec
+lgx-all>         Start 379: Semver.TildeRanges
+lgx-all> 379/436 Test #379: Semver.TildeRanges ..........................................................   Passed    0.01 sec
+lgx-all>         Start 380: Semver.WildcardAndComparatorRanges
+lgx-all> 380/436 Test #380: Semver.WildcardAndComparatorRanges ..........................................   Passed    0.01 sec
+lgx-all>         Start 381: Semver.ConjunctionAndDisjunction
+lgx-all> 381/436 Test #381: Semver.ConjunctionAndDisjunction ............................................   Passed    0.01 sec
+lgx-all>         Start 382: Semver.RangesDoNotMatchUnrequestedPreReleases
+lgx-all> 382/436 Test #382: Semver.RangesDoNotMatchUnrequestedPreReleases ...............................   Passed    0.01 sec
+lgx-all>         Start 383: Semver.RangesMatchPreReleasesWhenExplicitlyRequested
+lgx-all> 383/436 Test #383: Semver.RangesMatchPreReleasesWhenExplicitlyRequested ........................   Passed    0.01 sec
+lgx-all>         Start 384: Semver.RangeSyntaxValidation
+lgx-all> 384/436 Test #384: Semver.RangeSyntaxValidation ................................................   Passed    0.01 sec
+lgx-all>         Start 385: Semver.EmptyRangeIsUnconstrained
+lgx-all> 385/436 Test #385: Semver.EmptyRangeIsUnconstrained ............................................   Passed    0.00 sec
+lgx-all>         Start 386: Semver.SatisfiesRejectsInvalidInput
+lgx-all> 386/436 Test #386: Semver.SatisfiesRejectsInvalidInput .........................................   Passed    0.01 sec
+lgx-all>         Start 387: LibraryTest.VersionTest
+lgx-all> 387/436 Test #387: LibraryTest.VersionTest .....................................................   Passed    0.00 sec
+lgx-all>         Start 388: LibraryTest.CreatePackage
+lgx-all> 388/436 Test #388: LibraryTest.CreatePackage ...................................................   Passed    0.00 sec
+lgx-all>         Start 389: LibraryTest.CreatePackageInvalidArgs
+lgx-all> 389/436 Test #389: LibraryTest.CreatePackageInvalidArgs ........................................   Passed    0.00 sec
+lgx-all>         Start 390: LibraryTest.LoadPackage
+lgx-all> 390/436 Test #390: LibraryTest.LoadPackage .....................................................   Passed    0.00 sec
+lgx-all>         Start 391: LibraryTest.LoadPackageInvalidPath
+lgx-all> 391/436 Test #391: LibraryTest.LoadPackageInvalidPath ..........................................   Passed    0.00 sec
+lgx-all>         Start 392: LibraryTest.LoadPackageNullArg
+lgx-all> 392/436 Test #392: LibraryTest.LoadPackageNullArg ..............................................   Passed    0.00 sec
+lgx-all>         Start 393: LibraryTest.GetPackageMetadata
+lgx-all> 393/436 Test #393: LibraryTest.GetPackageMetadata ..............................................   Passed    0.01 sec
+lgx-all>         Start 394: LibraryTest.SetPackageMetadata
+lgx-all> 394/436 Test #394: LibraryTest.SetPackageMetadata ..............................................   Passed    0.00 sec
+lgx-all>         Start 395: LibraryTest.SavePackage
+lgx-all> 395/436 Test #395: LibraryTest.SavePackage .....................................................   Passed    0.00 sec
+lgx-all>         Start 396: LibraryTest.VerifyPackage
+lgx-all> 396/436 Test #396: LibraryTest.VerifyPackage ...................................................   Passed    0.00 sec
+lgx-all>         Start 397: LibraryTest.VerifyInvalidPackage
+lgx-all> 397/436 Test #397: LibraryTest.VerifyInvalidPackage ............................................   Passed    0.00 sec
+lgx-all>         Start 398: LibraryTest.AddVariantSingleFile
+lgx-all> 398/436 Test #398: LibraryTest.AddVariantSingleFile ............................................   Passed    0.00 sec
+lgx-all>         Start 399: LibraryTest.HasVariant
+lgx-all> 399/436 Test #399: LibraryTest.HasVariant ......................................................   Passed    0.00 sec
+lgx-all>         Start 400: LibraryTest.GetVariants
+lgx-all> 400/436 Test #400: LibraryTest.GetVariants .....................................................   Passed    0.00 sec
+lgx-all>         Start 401: LibraryTest.RemoveVariant
+lgx-all> 401/436 Test #401: LibraryTest.RemoveVariant ...................................................   Passed    0.00 sec
+lgx-all>         Start 402: LibraryTest.RemoveNonexistentVariant
+lgx-all> 402/436 Test #402: LibraryTest.RemoveNonexistentVariant ........................................   Passed    0.00 sec
+lgx-all>         Start 403: LibraryTest.NullPackageHandles
+lgx-all> 403/436 Test #403: LibraryTest.NullPackageHandles ..............................................   Passed    0.00 sec
+lgx-all>         Start 404: LibraryTest.FreeStringArray
+lgx-all> 404/436 Test #404: LibraryTest.FreeStringArray .................................................   Passed    0.00 sec
+lgx-all>         Start 405: LibraryTest.FreeVerifyResult
+lgx-all> 405/436 Test #405: LibraryTest.FreeVerifyResult ................................................   Passed    0.00 sec
+lgx-all>         Start 406: LibraryTest.ExtractVariant
+lgx-all> 406/436 Test #406: LibraryTest.ExtractVariant ..................................................   Passed    0.01 sec
+lgx-all>         Start 407: LibraryTest.ExtractAllVariants
+lgx-all> 407/436 Test #407: LibraryTest.ExtractAllVariants ..............................................   Passed    0.00 sec
+lgx-all>         Start 408: LibraryTest.ExtractNonexistentVariant
+lgx-all> 408/436 Test #408: LibraryTest.ExtractNonexistentVariant .......................................   Passed    0.00 sec
+lgx-all>         Start 409: LibraryTest.ExtractNullArgs
+lgx-all> 409/436 Test #409: LibraryTest.ExtractNullArgs .................................................   Passed    0.00 sec
+lgx-all>         Start 410: ManifestSignatureTest.UnsignedPackageHasNoSignatureDocument
+lgx-all> 410/436 Test #410: ManifestSignatureTest.UnsignedPackageHasNoSignatureDocument .................   Passed    0.00 sec
+lgx-all>         Start 411: ManifestSignatureTest.NullPackageIsRejected
+lgx-all> 411/436 Test #411: ManifestSignatureTest.NullPackageIsRejected .................................   Passed    0.00 sec
+lgx-all>         Start 412: ManifestSignatureTest.TheCarriedManifestIsTheSignedMessage
+lgx-all> 412/436 Test #412: ManifestSignatureTest.TheCarriedManifestIsTheSignedMessage ..................   Passed    0.01 sec
+lgx-all>         Start 413: ManifestSignatureTest.AnotherKeysGenuineSignatureIsAMismatch
+lgx-all> 413/436 Test #413: ManifestSignatureTest.AnotherKeysGenuineSignatureIsAMismatch ................   Passed    0.01 sec
+lgx-all>         Start 414: ManifestSignatureTest.RelabellingTheDidDoesNotChangeTheAnswer
+lgx-all> 414/436 Test #414: ManifestSignatureTest.RelabellingTheDidDoesNotChangeTheAnswer ...............   Passed    0.01 sec
+lgx-all>         Start 415: ManifestSignatureTest.AGenuineSignatureOverOtherBytesIsAMismatch
+lgx-all> 415/436 Test #415: ManifestSignatureTest.AGenuineSignatureOverOtherBytesIsAMismatch ............   Passed    0.01 sec
+lgx-all>         Start 416: ManifestSignatureTest.ABadExpectedDidIsItsOwnAnswer
+lgx-all> 416/436 Test #416: ManifestSignatureTest.ABadExpectedDidIsItsOwnAnswer .........................   Passed    0.01 sec
+lgx-all>         Start 417: ManifestSignatureTest.UnusableEvidenceIsNotAMismatch
+lgx-all> 417/436 Test #417: ManifestSignatureTest.UnusableEvidenceIsNotAMismatch ........................   Passed    0.01 sec
+lgx-all>         Start 418: ManifestSignatureTest.AnEmptyMessageIsAMismatchNotAPass
+lgx-all> 418/436 Test #418: ManifestSignatureTest.AnEmptyMessageIsAMismatchNotAPass .....................   Passed    0.01 sec
+lgx-all>         Start 419: InstalledAbiTest.ManifestValidateAcceptsAWellFormedManifest
+lgx-all> 419/436 Test #419: InstalledAbiTest.ManifestValidateAcceptsAWellFormedManifest .................   Passed    0.00 sec
+lgx-all>         Start 420: InstalledAbiTest.ManifestValidateReportsEveryRule
+lgx-all> 420/436 Test #420: InstalledAbiTest.ManifestValidateReportsEveryRule ...........................   Passed    0.01 sec
+lgx-all>         Start 421: InstalledAbiTest.ManifestValidateReportsParseFailures
+lgx-all> 421/436 Test #421: InstalledAbiTest.ManifestValidateReportsParseFailures .......................   Passed    0.00 sec
+lgx-all>         Start 422: InstalledAbiTest.ManifestValidateHonoursTheLength
+lgx-all> 422/436 Test #422: InstalledAbiTest.ManifestValidateHonoursTheLength ...........................   Passed    0.00 sec
+lgx-all>         Start 423: InstalledAbiTest.VerifyInstalledAcceptsAnUntouchedInstall
+lgx-all> 423/436 Test #423: InstalledAbiTest.VerifyInstalledAcceptsAnUntouchedInstall ...................   Passed    0.01 sec
+lgx-all>         Start 424: InstalledAbiTest.VerifyInstalledDetectsTampering
+lgx-all> 424/436 Test #424: InstalledAbiTest.VerifyInstalledDetectsTampering ............................   Passed    0.01 sec
+lgx-all>         Start 425: InstalledAbiTest.TheIntegrityAnswersAreDistinct
+lgx-all> 425/436 Test #425: InstalledAbiTest.TheIntegrityAnswersAreDistinct .............................   Passed    0.01 sec
+lgx-all>         Start 426: InstalledAbiTest.VerifyInstalledReportsAMissingMain
+lgx-all> 426/436 Test #426: InstalledAbiTest.VerifyInstalledReportsAMissingMain .........................   Passed    0.01 sec
+lgx-all>         Start 427: InstalledAbiTest.VerifyInstalledRejectsUnusableInput
+lgx-all> 427/436 Test #427: InstalledAbiTest.VerifyInstalledRejectsUnusableInput ........................   Passed    0.00 sec
+lgx-all>         Start 428: VariantAbiTest.HostVariantIsStableStorage
+lgx-all> 428/436 Test #428: VariantAbiTest.HostVariantIsStableStorage ...................................   Passed    0.00 sec
+lgx-all>         Start 429: VariantAbiTest.SpellingsLeadWithTheInputAndCarryItsAliases
+lgx-all> 429/436 Test #429: VariantAbiTest.SpellingsLeadWithTheInputAndCarryItsAliases ..................   Passed    0.00 sec
+lgx-all>         Start 430: VariantAbiTest.SpellingsOfNothingIsAnEmptyArrayNotNull
+lgx-all> 430/436 Test #430: VariantAbiTest.SpellingsOfNothingIsAnEmptyArrayNotNull ......................   Passed    0.00 sec
+lgx-all>         Start 431: MainAbiTest.ResolvedCarriesEveryFieldAndFreesClean
+lgx-all> 431/436 Test #431: MainAbiTest.ResolvedCarriesEveryFieldAndFreesClean ..........................   Passed    0.00 sec
+lgx-all>         Start 432: MainAbiTest.AnUnresolvedMainCarriesNoPath
+lgx-all> 432/436 Test #432: MainAbiTest.AnUnresolvedMainCarriesNoPath ...................................   Passed    0.00 sec
+lgx-all>         Start 433: MainAbiTest.ANullVariantListIsNoVariantMatchNotACrash
+lgx-all> 433/436 Test #433: MainAbiTest.ANullVariantListIsNoVariantMatchNotACrash .......................   Passed    0.00 sec
+lgx-all>         Start 434: MainAbiTest.TheLengthIsHonouredNotTheNulByte
+lgx-all> 434/436 Test #434: MainAbiTest.TheLengthIsHonouredNotTheNulByte ................................   Passed    0.00 sec
+lgx-all>         Start 435: MainAbiTest.UnusableInputIsBadInputAndReachesTheLastError
+lgx-all> 435/436 Test #435: MainAbiTest.UnusableInputIsBadInputAndReachesTheLastError ...................   Passed    0.00 sec
+lgx-all>         Start 436: MainAbiTest.TheContainmentGuardHoldsAcrossTheAbi
+lgx-all> 436/436 Test #436: MainAbiTest.TheContainmentGuardHoldsAcrossTheAbi ............................   Passed    0.00 sec
+lgx-all> 
+lgx-all> 100% tests passed, 0 tests failed out of 436
+lgx-all> 
+lgx-all> Total Test time (real) =   3.14 sec
+lgx-all> Running phase: installPhase
+lgx-all> -- Install configuration: "Release"
+lgx-all> -- Installing: /nix/store/f5xkhsr2hpma3a6yd3mhzxqyavs83vvd-lgx-all-0.1.0/lib/liblgx.so
+lgx-all> -- Installing: /nix/store/f5xkhsr2hpma3a6yd3mhzxqyavs83vvd-lgx-all-0.1.0/include/lgx.h
+lgx-all> -- Installing: /nix/store/f5xkhsr2hpma3a6yd3mhzxqyavs83vvd-lgx-all-0.1.0/bin/lgx
+lgx-all> -- Installing: /nix/store/f5xkhsr2hpma3a6yd3mhzxqyavs83vvd-lgx-all-0.1.0/lib/liblgx_core.a
+lgx-all> -- Installing: /nix/store/f5xkhsr2hpma3a6yd3mhzxqyavs83vvd-lgx-all-0.1.0/include/logos
+lgx-all> -- Installing: /nix/store/f5xkhsr2hpma3a6yd3mhzxqyavs83vvd-lgx-all-0.1.0/include/logos/semver.hpp
+lgx-all> Running phase: fixupPhase
+lgx-all> shrinking RPATHs of ELF executables and libraries in /nix/store/f5xkhsr2hpma3a6yd3mhzxqyavs83vvd-lgx-all-0.1.0
+lgx-all> shrinking /nix/store/f5xkhsr2hpma3a6yd3mhzxqyavs83vvd-lgx-all-0.1.0/lib/liblgx.so
+lgx-all> shrinking /nix/store/f5xkhsr2hpma3a6yd3mhzxqyavs83vvd-lgx-all-0.1.0/bin/lgx
+lgx-all> checking for references to /build/ in /nix/store/f5xkhsr2hpma3a6yd3mhzxqyavs83vvd-lgx-all-0.1.0...
+lgx-all> patching script interpreter paths in /nix/store/f5xkhsr2hpma3a6yd3mhzxqyavs83vvd-lgx-all-0.1.0
+lgx-all> stripping (with command strip and flags -S -p) in  /nix/store/f5xkhsr2hpma3a6yd3mhzxqyavs83vvd-lgx-all-0.1.0/lib /nix/store/f5xkhsr2hpma3a6yd3mhzxqyavs83vvd-lgx-all-0.1.0/bin

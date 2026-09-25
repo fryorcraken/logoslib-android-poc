@@ -1,0 +1,28 @@
+{
+  "name": "ev_probe",
+  "display_name": "Event Probe",
+  "version": "0.0.1",
+  "description": "desktop-harness: emits a typed event on demand and can block its dispatch thread",
+  "author": "desktop-harness",
+  "type": "core",
+  "category": "test",
+  "interface": "universal",
+  "codegen": {
+    "impl_header": "src/ev_probe_impl.h",
+    "impl_class": "EvProbeImpl"
+  },
+  "main": "ev_probe_plugin",
+  "dependencies": [],
+  "capabilities": [],
+  "include": [],
+  "nix": {
+    "packages": { "build": [], "runtime": [] },
+    "external_libraries": [],
+    "cmake": {
+      "find_packages": [],
+      "extra_sources": [],
+      "extra_include_dirs": [],
+      "extra_link_libraries": []
+    }
+  }
+}

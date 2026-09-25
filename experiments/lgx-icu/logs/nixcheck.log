@@ -1,0 +1,51 @@
+== upstream: github:logos-co/logos-package/4cdb302051ebcd231eeaeeaa2011fcf857541ce4
+exit=0 after 35s; out=/nix/store/f5xkhsr2hpma3a6yd3mhzxqyavs83vvd-lgx-all-0.1.0
+lgx-all> 100% tests passed, 0 tests failed out of 436
+lgx-all> Total Test time (real) =   3.14 sec
+-- upstream liblgx.so NEEDED:
+ 0x0000000000000001 (NEEDED)             Shared library: [libz.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libicuuc.so.76]
+ 0x0000000000000001 (NEEDED)             Shared library: [libicui18n.so.76]
+ 0x0000000000000001 (NEEDED)             Shared library: [libsodium.so.26]
+ 0x0000000000000001 (NEEDED)             Shared library: [libdl.so.2]
+ 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-x86-64.so.2]
+-- upstream liblgx.so ICU imports (count, sample):
+11
+U _ZN6icu_7611Normalizer214getNFCInstanceER10UErrorCode
+U _ZN6icu_7613UnicodeString7toLowerEv
+U _ZN6icu_7613UnicodeString8fromUTF8ENS_11StringPieceE
+U _ZN6icu_7613UnicodeStringD1Ev
+U _ZN6icu_767UMemorydlEPv
+U _ZN6icu_768ByteSink15GetAppendBufferEiiPciPi
+U _ZN6icu_768ByteSink5FlushEv
+U _ZN6icu_768ByteSinkD2Ev
+U _ZNK6icu_7613UnicodeString6toUTF8ERNS_8ByteSinkE
+U _ZTIN6icu_768ByteSinkE
+U _ZTVN6icu_7613UnicodeStringE
+== patched: path:${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302
+exit=0 after 50s; out=/nix/store/0ymadabv3720qyxykkazwxa4bfbv0m65-lgx-all-0.1.0
+warning: error: unable to download 'https://cache.nixos.org/0ymadabv3720qyxykkazwxa4bfbv0m65.narinfo': Could not resolve hostname (6) Could not resolve host: cache.nixos.org; retrying in 294 ms
+lgx-all> 100% tests passed, 0 tests failed out of 436
+lgx-all> Total Test time (real) =   4.66 sec
+-- patched liblgx.so NEEDED:
+ 0x0000000000000001 (NEEDED)             Shared library: [libz.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libicuuc.so.76]
+ 0x0000000000000001 (NEEDED)             Shared library: [libsodium.so.26]
+ 0x0000000000000001 (NEEDED)             Shared library: [libdl.so.2]
+ 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-x86-64.so.2]
+-- patched liblgx.so ICU imports (count, sample):
+6
+U unorm2_getNFCInstance_76
+U unorm2_isNormalized_76
+U unorm2_normalize_76
+U u_strFromUTF8WithSub_76
+U u_strToLower_76
+U u_strToUTF8WithSub_76

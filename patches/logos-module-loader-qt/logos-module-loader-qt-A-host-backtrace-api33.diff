@@ -1,0 +1,27 @@
+diff --git a/src/host/logos_host.cpp b/src/host/logos_host.cpp
+index 75ec7d6..c917799 100644
+--- a/src/host/logos_host.cpp
++++ b/src/host/logos_host.cpp
+@@ -26,8 +26,9 @@
+ #include <thread>
+ 
+ #include <unistd.h>
+-#ifndef _WIN32
++#if !defined(_WIN32) && (!defined(__ANDROID__) || __ANDROID_API__ >= 33)
+ #include <execinfo.h>
++#define LOGOS_HAVE_BACKTRACE 1
+ #endif
+ #ifdef __linux__
+ #include <sys/prctl.h>
+@@ -145,7 +146,11 @@ extern "C" void fatalSignalHandler(int sig)
+     safeWrite("). Backtrace (raw addresses; decode with atos/addr2line):\n");
+ 
+     void* frames[64];
++#ifdef LOGOS_HAVE_BACKTRACE
+     const int n = ::backtrace(frames, 64);
++#else
++    const int n = 0;  // bionic: backtrace(3) only from API 33
++#endif
+     for (int i = 0; i < n; ++i) {
+         safeWrite("  ");
+         safeWriteHex(frames[i]);

@@ -1,183 +1,179 @@
 # Implementation plan
 
-The work is staged in rising order of ambition, the way liblogos-electron-poc was. Each
-milestone has an acceptance check that can run without a human watching. Background and
-evidence are in [`investigation.md`](investigation.md).
+Target: an Android/Kotlin app that embeds `liblogos_core`, loads the **Logos blockchain
+module** (`blockchain_module`, the L1 node) and drives it. A small core module then calls the
+blockchain module to show inter-module communication over liblogos's own transport. The work
+is staged in rising order of ambition, the way liblogos-electron-poc was, and each milestone
+has an acceptance check that runs without a human watching. The evidence is in
+[`investigation.md`](investigation.md).
 
-## Decisions taken
+An earlier revision of this plan targeted LEZ (`lez_core`). The user switched to the
+blockchain module on 2026-09-25. The Kotlin wrapper milestones (M2-M4) do not depend on
+which module is loaded.
 
-- **Build system for Android: plain NDK CMake, cargo, and scripts, not Nix (for now).**
-  - logos-nix's Android Qt set is arm64-only.
-  - It lacks QtRemoteObjects.
-  - It has never been built by CI.
+## Decisions (settled by experiment unless marked)
 
-  The official Qt 6.11.1 prebuilts cover x86_64 and arm64 with QtRO, and are 16 KB-aligned.
-  The plan is to converge on logos-nix once its Android set grows QtRO and x86_64.
-- **One Qt: 6.11.1 official Android prebuilts,** with the host `gcc_64` 6.11.1 for moc/repc.
-  - Every Logos component is compiled against it.
-  - No desktop/Nix binary goes into the APK.
-- **ABI order: x86_64 first** (the API 34 emulator on this host), **arm64-v8a second**. The
-  arm64 AVD does not boot on this x86_64 host.
-- **Calling route: `lp_*` C ABI in-process.** Verified on desktop. The JNI shim is C++ with
-  `extern "C"` entry points, so it can free liblogos' `new[]` strings. Qt headers are limited
-  to one small Qt-loop file.
-- **Threading.**
-  - One Kotlin-created thread (`logos-qt`) creates `QCoreApplication`, calls
-    `logos_core_start()`, and blocks in `exec()`.
-  - Every other JNI entry point is called from `Dispatchers.IO`, never from the Android main
-    thread.
-  - `lp_invoke_async` / event callbacks land on `logos-qt` and are handed straight to a
-    `CompletableDeferred` / `SharedFlow`.
-- **Module set on device:** `capability_module` (from the liblogos build), `lez_core`, and
-  `lez_probe` (this repo). No RLN or delivery modules.
-- **Where modules run:** decided by gating experiment X1/X2:
-  - **(A) subprocess container**, `logos_host_qt` shipped as `liblogos_host_qt.so`: minSdk 33
-    and `useLegacyPackaging`.
-  - **(B) a new in-process container.**
+- **One process per module, as upstream does it.** liblogos keeps its subprocess container.
+  - `logos_host_qt` ships as `jniLibs/<abi>/liblogos_host_qt.so` with
+    `useLegacyPackaging = true` and is exec'd from `nativeLibraryDir`.
+  - It carries the no-JVM fix: QtCore's `JNI_OnLoad` is primed with a fake JavaVM
+    (`patches/logos-module-loader-qt/*nojvm-shim.patch`).
+  - It is found through `LOGOS_HOST_PATH` or patch C.
+
+  All verified on the x86_64 API 34 emulator, from inside an APK.
+- **minSdk 34.** At API 34 the runtime needs no source changes beyond the patches above.
+  Lower API levels would need the whole prefix rebuilt, plus backtrace and
+  `POSIX_SPAWN_CLOEXEC_DEFAULT` guards. liblgx's platform-ICU port needs API 31 or higher.
+- **Build system for Android: plain NDK CMake, cargo and shell scripts, not Nix (for now).**
+  - Qt is the official 6.11.1 Android prebuilt (x86_64 and arm64, with QtRO, 16 KB-aligned),
+    installed with aqtinstall, plus the host `gcc_64` 6.11.1 for moc/repc.
+  - Nothing Nix-built for Linux goes into the APK.
+  - The plan is to converge with logos-nix's Android set once it has QtRO and x86_64.
+- **ABI order:** x86_64 first (the API 34 emulator), arm64-v8a second. The arm64 AVD does not
+  boot on this host.
+- **App bootstrap:**
+  - `Os.setenv` for `TMPDIR` (a short `cacheDir`, asserting the 108-byte `sun_path`
+    budget), `HOME`, `LD_LIBRARY_PATH=nativeLibraryDir` and `LOGOS_HOST_PATH`;
+  - `System.loadLibrary` in a fixed order;
+  - the JNI bridge defines its own `JNI_OnLoad`, which calls QtCore's
+    `JNI_OnLoad(realVM)` and ignores `JNI_ERR`, so `Qt6Android.jar` is not needed.
+- **Host threading** (desktop experiment X7):
+  - One Kotlin-created, JVM-attached `logos-qt` thread runs `QCoreApplication`,
+    `logos_core_start()` and `exec()`, and nothing else.
+  - Module calls use `lp_invoke_async`, with a `jlong` call id and a native id→pending map.
+    The Kotlin side enforces the deadline with a coroutine timeout, and late callbacks are
+    dropped.
+  - One call in flight per module. Loads run on `Dispatchers.IO`.
+  - The first call after a load retries until it gets a non-default answer, because of the
+    first-call race. Subscriptions are made after the load and wait for `ARMED`.
+- **Module plumbing:** modules are staged as directories (`manifest.json`, plugin, private
+  deps) in `assets/`, extracted read-only to `filesDir/modules`. Manifests are keyed
+  `linux-x86_64[-dev]`, which is what liblgx reports under bionic. The `android-*` variant
+  patch is optional.
+- **ICU:** use liblgx's platform-ICU port (`patches/logos-package/`), so no ICU ships in the
+  APK.
 
 ## Milestones
 
 ### M0: desktop reference (done)
 
-- logoscore + lgpm + lez_core 0.4.2 `.lgx` built from published flakes and run headless.
-- `lez_probe` → `lez_core` inter-module calls work.
-- A pure-C `lp_*` caller works in-process.
+lez_core and `lez_probe` under logoscore, plus the in-process `lp_*` harness. See
+[`experiments/`](../experiments).
 
-Reproduce with [`experiments/desktop-probe`](../experiments/desktop-probe) and
-[`experiments/lp-inprocess`](../experiments/lp-inprocess).
+### M1: gating experiments (done)
 
-### M1: Qt on the emulator (gate)
+X1-X9 in `investigation.md` §8. They established that subprocess hosting works on Android
+with the no-JVM fix, the Qt-free runtime cross-builds, ICU can be dropped, and the host call
+policy above holds.
 
-X1 and X2 from the investigation.
+### M2: native prefix for `x86_64-linux-android34`
 
-**Accept when:**
-- A no-JVM `qro_server`/`qro_client` pair round-trips over `local:` on the x86_64 AVD.
-- An APK runs an executable from `nativeLibraryDir` that talks QtRO to the app process.
-- We know whether `Qt6Android.jar` is required.
+Script: `scripts/android/build-deps.sh`, output in `build/android/x86_64/prefix`.
 
-**Outcome:** fix route (A) or (B) and the minSdk (33 for A).
-
-### M2: native dependency prefix for `x86_64-linux-android`
-
-A script that installs into `build/android/x86_64/prefix`:
-
-- Boost 1.87: process, filesystem, system, context, atomic, date_time
-- OpenSSL 3, built 16 KB-aligned; one copy for liblogos and QtNetwork's `dlopen`
-- spdlog 1.15.2, fmt, nlohmann_json, CLI11 if needed, libsodium
-- liblgx:
-  - zlib from the NDK;
-  - ICU through the NDK's ICU C API if X8 passes, else cross-built ICU.
+Contents:
+- Boost 1.87 (process, filesystem, system, context, atomic, date_time; patched)
+- fmt 10.2.1, spdlog 1.15.2, nlohmann_json 3.11.3
+- OpenSSL 3, 16 KB-aligned; one copy for liblogos and QtNetwork's `dlopen`
+- libsodium 1.0.20
+- liblgx, patched to the platform ICU
+- package_manager_lib
 
 Every artefact is linked with `-Wl,-z,max-page-size=16384`.
 
 **Accept when** every `.so` has an unversioned `lib*.so` SONAME, only NDK/`libc++_shared` and
-in-prefix NEEDED entries, and `LOAD p_align` 0x4000.
+in-prefix NEEDED entries, and `LOAD p_align` 0x4000. A checker script enforces this.
 
 ### M3: the Logos runtime for Android
 
-Cross-build, pinned to the revisions in the working desktop closure (liblogos `db45024`,
-logos-protocol 0.9.0, …):
+Script: `scripts/android/build-runtime.sh`. Revisions are pinned to the working desktop
+closure (liblogos `db45024` and its flake.lock pins).
 
+Components:
 - logos-protocol
 - logos-plugin-qt (qt_host), logos-cpp-sdk, logos-qt-sdk
 - logos-module, process-stats
-- logos-container and the container chosen in M1
-- logos-module-loader and logos-module-loader-qt (`logos_host_qt` for route A)
+- logos-container, logos-container-subprocess
+- logos-module-loader, logos-module-loader-qt (`liblogos_host_qt.so` with the no-JVM shim and
+  patches B/C)
 - liblogos_core, capability_module
 
-The code generators run on the host, or their desktop output is reused. Patches live in
-`patches/<repo>/`, one narrow diff per issue, applied by the build script. This follows the
-sibling repo's scripted leopard patch. Known candidates:
+The code generators run on the host against `gcc_64` Qt, or their Nix output is reused. The
+patches in `patches/` are applied by the script.
 
-- guard `backtrace()` and `POSIX_SPAWN_CLOEXEC_DEFAULT`;
-- a tests off-switch.
+**Accept when** a JNI harness APK on the emulator runs `logos_core_start()` and
+`capability_module` comes up in a `liblogos_host_qt.so` child, checked with logcat and
+`ps -A`.
 
-**Accept when** a small NDK-built test executable on the emulator runs
-`logos_core_start()` and loads `capability_module` plus a trivial module.
+### M4: Kotlin wrapper for liblogos
 
-### M4: Kotlin app, "load only" (the Electron 0.1.0 equivalent)
+This is the user's first step.
 
-`android/`, a single-Activity Gradle project, reusing the sibling repo's Gradle/AGP setup
-where it fits:
+- `android/logos-core`: an Android library (AAR) with the JNI shim `logos_jni.cpp` and a
+  Kotlin API:
 
-1. **Bootstrap:**
-   - `Os.setenv("TMPDIR", cacheDir)` (asserting the `sun_path` budget), `HOME`, and
-     `LOGOS_HOST_PATH` for route A;
-   - `System.loadLibrary` in a fixed order;
-   - start the `logos-qt` thread.
-2. **Modules:** `.lgx` files or plain module dirs in `assets/`, extracted read-only to
-   `filesDir/modules` on first run, with manifests keyed `linux-x86_64[-dev]`.
-3. **JNI shim** (`logos_jni.cpp`): `nativeRun`, `loadModule`, `knownModules`,
-   `loadedModules`, `invoke(module, method, argsJson, timeoutMs)`, `invokeAsync`, `stop`.
-4. **Staging script** (`scripts/android/stage-jnilibs.sh`): copies the prefix into
-   `jniLibs/<abi>`, renames and fixes SONAME/NEEDED, strips, and checks 16 KB alignment. It
-   fails if any `/nix/store` path, glibc NEEDED or 4 KB LOAD slips through.
+  ```kotlin
+  class LogosCore(context: Context) {
+      suspend fun start(modules: List<String>): Unit        // stage assets, start logos-qt thread
+      fun knownModules(): List<String>
+      suspend fun loadModule(name: String, deps: LoadDeps = LoadDeps.REQUIRED): Boolean
+      suspend fun call(module: String, method: String, argsJson: String = "[]",
+                       timeout: Duration = 20.seconds): String      // JSON result
+      fun events(module: String, event: String): Flow<List<String>>
+      suspend fun methods(module: String): String            // getPluginMethods
+      fun stop()
+  }
+  ```
+- `android/demo-app`: a single Activity that shows known and loaded modules and a call log.
+- `scripts/android/stage.sh`: copies the prefix, runtime and modules into `jniLibs/<abi>` and
+  `assets/`. It checks SONAME/NEEDED, 16 KB alignment, and that no `/nix/store` paths or
+  glibc remain.
+- The first module is a trivial core module built for Android (`hello_module`: `ping()`,
+  `echo(s)`, one event), so the wrapper is proven before the heavy node arrives.
 
-**Accept when** the app shows `known: capability_module, lez_probe, …` and
-`loadModule(capability_module) -> true` on the emulator. An instrumented test or an
-`adb logcat` grep asserts it.
+**Accept when**, on the emulator, `loadModule("hello_module")` returns `true`,
+`call("hello_module","ping")` returns `"pong"`, and an event arrives through `events(...)`.
+An instrumented test (`connectedAndroidTest`) asserts all of it.
 
-### M5: lez_core for Android
+### M5: blockchain_module on Android
 
-1. **`wallet_ffi`** for `x86_64-linux-android`:
-   - `--no-default-features` (no `prove`);
-   - the `lez/common` patch that drops the Bedrock edge;
-   - a pcsclite stub or feature gate;
-   - a TLS fix for the chosen hosting route, e.g. webpki roots under route A;
-   - linked against `libc++_shared` with 16 KB pages.
-2. **Revision:** pin the LEZ/lez_core revision chosen for the demo. `825d2a4` is known to work
-   on desktop for reads. A write-capable pairing needs the revision the sequencer runs.
-3. **Plugin:** `lez_core_plugin` built with logos-module-builder's CMake and the NDK toolchain.
+To be detailed once the blockchain-module research lands:
+- **Research questions:** its API, what a syncing node needs at runtime, and whether it
+  proves or only verifies.
+- **Build:** `liblogos_blockchain.so` for Android, which needs Android-built Bedrock circuit
+  libraries or stubs, rapidsnark, rocksdb and so on, plus `blockchain_module_plugin`.
+- **Driving it:** a node configuration that the emulator can use.
 
-**Accept when** `loadModule(lez_core) -> true` on the emulator.
+**Accept when** the app starts a node and shows it doing real work, e.g. peers connected and
+chain height advancing.
 
-### M6: call lez_core (the Electron 0.2.0/0.3.0 "real work" bar)
+### M6: inter-module call
 
-**Offline:** `name`, `version`, then an `account_id_to_base58` ↔ `from_base58` round trip.
+A tiny core module, `bc_probe`, declares `dependencies: ["blockchain_module"]` and calls a
+read-only method through the generated `modules().blockchain_module.*` wrappers. That is the
+`lez_probe` pattern, already proven on desktop. The app calls `bc_probe`, and liblogos's own
+QtRO transport carries the hop, with no glue code.
 
-**Network:**
-1. Pre-write `wallet_config.json` with `calibration_limit` 3.
-2. `create_new`, `create_account_public`, `list_accounts`, `save`.
-3. Poll `get_current_block_height` every 5 s.
-4. Read the pinata account with `get_account_public`.
+**Accept when** the UI shows `bc_probe`'s result and the logs show `capability_module`
+issuing a token and the `bc_probe` → `blockchain_module` invocation.
 
-**Timeouts:** 60 s for `create_new`/`open`, and a warm-up call before the first real one.
+### M7: size and packaging report, arm64-v8a, CI
 
-**Accept when:**
-- The app shows a live, increasing LEZ block height from `https://testnet.lez.logos.co`, or
-  from a local standalone sequencer at `http://10.0.2.2:<port>` if TLS or version skew blocks
-  the testnet.
-- The UI stays responsive, checked by an instrumented test that asserts a UI action completes
-  while a call is in flight.
-
-### M7: inter-module on device
-
-The app calls `lez_probe.roundtrip_via_lez(hex)`, and `lez_probe` calls `lez_core` through
-generated `modules().lez_core.*` wrappers over liblogos' own QtRO transport. No glue code is
-written for the hop.
-
-**Accept when:**
-- The UI shows the round-trip result.
-- The logs show `capability_module` issuing a token and `lez_probe` → `lez_core` invocations
-  (`adb logcat` / captured host stdout).
-
-### M8: size and packaging report, arm64-v8a
-
-- Per-ABI APK size table, like the sibling's.
-- An arm64-v8a build, checked on a real device if one is available.
-- A release workflow, if the build is reproducible in CI.
+- Per-ABI APK size table.
+- An arm64 build.
+- A release workflow if the build reproduces in CI.
 
 ## Risks, in order
 
-1. JVM-less Qt in module child processes (route A). X1 settles it.
-2. TLS inside `wallet_ffi` without a JavaVM. Fixed by webpki roots, plain HTTP, or route B.
-3. The size of the non-Qt native tree to cross-build: Boost, OpenSSL, ICU, libsodium.
-4. `wallet-ffi` compiling for Android (risc0 client crates, ring, pcsc). X4 settles it.
-5. Single-threaded `lez_core` plus `BlockingQueuedConnection` with no timeout, which can wedge
-   callers. Mitigate with the threading rules above and long explicit timeouts.
-6. Version skew between the `lez_core` build and the deployed testnet, for writes.
+1. The blockchain node's native build for Android (circuits, rocksdb, …) and its runtime
+   needs on a phone. Being researched now.
+2. The volume of native dependencies to cross-build (Boost, OpenSSL, libsodium, Qt glue):
+   proven piece by piece, not yet end to end.
+3. The Android 12+ phantom-process limit on long-lived module children. Untested.
+4. The first-call race and nested-event-loop blocking in `lp_*`. Mitigated by the threading
+   rules above.
+5. arm64 and 16 KB devices are untested (no arm64 emulator on this host).
 
 ## Out of scope for this PoC
 
-Private or shielded transactions (on-device RISC Zero proving), RLN, delivery, L1 or indexer
-modules, iOS, and Play-store signing.
+UI (QML) modules, which liblogos does not host (Basecamp's own plugin loader does); LEZ
+wallet use; iOS; Play-store signing.

@@ -1,0 +1,113 @@
+== libsodium 1.0.20 source
+ebb65ef6ca439333c2bb41a0c1990587288da07f6c7fd07cb3a18cc18d30ce19  ${REPO_ROOT}/.work/experiments/lgx-icu/deps/libsodium-1.0.20.tar.gz
+
+################ x86_64 (x86_64-linux-android34)
+== build libsodium (static, PIC)
+libsodium exit=0 after 12s
+-rw-r--r--. 1 fryorcraken fryorcraken 769650 Sep 25 16:27 ${REPO_ROOT}/.work/experiments/lgx-icu/deps/sodium-x86_64/lib/libsodium.a
+== configure liblgx
+configure exit=0
+-- Found ZLIB: ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/34/libz.so (found version "1.3.0.1")
+-- nlohmann_json not found, fetching from GitHub
+-- cpp-semver not found, fetching from GitHub
+-- PROJECT_NAME: semver
+LGX_ANDROID_ICU_LIBRARY:FILEPATH=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/34/libicu.so
+ZLIB_INCLUDE_DIR:PATH=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include
+ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
+ZLIB_LIBRARY_RELEASE:FILEPATH=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/34/libz.so
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+== build liblgx (lgx_core, lgx_shared, lgx CLI)
+build exit=0 after 81s (configure+build)
+[ 97%] Built target lgx_shared
+[100%] Linking CXX executable lgx
+[100%] Built target lgx
+-- liblgx.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, for Android 34, built by NDK r27c 
+   size 12147016 B; stripped:
+   962352 B
+   NEEDED:
+  0x0000000000000001 (NEEDED)       Shared library: [libz.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libicu.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+   ICU / zlib / sodium imports:
+     U crc32      U deflate      U deflateEnd      U deflateInit2_      U inflate      U inflateEnd      U inflateInit2_      U u_strFromUTF8WithSub      U u_strToLower      U u_strToUTF8WithSub      U unorm2_getNFCInstance      U unorm2_isNormalized      U unorm2_normalize 
+   LOAD align: 0x1000 
+-- lgx: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64,
+   size 13333688 B; stripped:
+   972032 B
+   NEEDED:
+  0x0000000000000001 (NEEDED)       Shared library: [libz.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libicu.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+   ICU / zlib / sodium imports:
+     U crc32      U deflate      U deflateEnd      U deflateInit2_      U inflate      U inflateEnd      U inflateInit2_      U u_strFromUTF8WithSub      U u_strToLower      U u_strToUTF8WithSub      U unorm2_getNFCInstance      U unorm2_isNormalized      U unorm2_normalize 
+   LOAD align: 0x1000 
+-- lgx_host_variant() in liblgx.so .rodata:
+-- exported lgx_* C API symbols: 43
+
+################ arm64-v8a (aarch64-linux-android34)
+== build libsodium (static, PIC)
+libsodium exit=0 after 11s
+-rw-r--r--. 1 fryorcraken fryorcraken 593728 Sep 25 16:29 ${REPO_ROOT}/.work/experiments/lgx-icu/deps/sodium-arm64-v8a/lib/libsodium.a
+== configure liblgx
+configure exit=0
+-- Found ZLIB: ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/34/libz.so (found version "1.3.0.1")
+-- nlohmann_json not found, fetching from GitHub
+-- cpp-semver not found, fetching from GitHub
+-- PROJECT_NAME: semver
+LGX_ANDROID_ICU_LIBRARY:FILEPATH=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/34/libicu.so
+ZLIB_INCLUDE_DIR:PATH=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include
+ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
+ZLIB_LIBRARY_RELEASE:FILEPATH=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/34/libz.so
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+== build liblgx (lgx_core, lgx_shared, lgx CLI)
+build exit=0 after 67s (configure+build)
+[ 97%] Built target lgx_shared
+[100%] Linking CXX executable lgx
+[100%] Built target lgx
+-- liblgx.so: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, for Android 34, built by NDK 
+   size 12586528 B; stripped:
+   798368 B
+   NEEDED:
+  0x0000000000000001 (NEEDED)       Shared library: [libz.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libicu.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+   ICU / zlib / sodium imports:
+     U crc32      U deflate      U deflateEnd      U deflateInit2_      U inflate      U inflateEnd      U inflateInit2_      U u_strFromUTF8WithSub      U u_strToLower      U u_strToUTF8WithSub      U unorm2_getNFCInstance      U unorm2_isNormalized      U unorm2_normalize 
+   LOAD align: 0x4000 
+-- lgx: ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /system/bin/link
+   size 13811656 B; stripped:
+   800528 B
+   NEEDED:
+  0x0000000000000001 (NEEDED)       Shared library: [libz.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libicu.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+   ICU / zlib / sodium imports:
+     U crc32      U deflate      U deflateEnd      U deflateInit2_      U inflate      U inflateEnd      U inflateInit2_      U u_strFromUTF8WithSub      U u_strToLower      U u_strToUTF8WithSub      U unorm2_getNFCInstance      U unorm2_isNormalized      U unorm2_normalize 
+   LOAD align: 0x4000 
+-- lgx_host_variant() in liblgx.so .rodata:
+android-arm64
+-- exported lgx_* C API symbols: 43
+
+################ negative check: ANDROID_PLATFORM=android-28
+configure exit=1 (expected non-zero)
+CMake Error at CMakeLists.txt:52 (message):
+  liblgx: the NDK's libicu.so was not found.  The ICU4C C API is available to
+  apps from Android API 31; build with ANDROID_PLATFORM >= 31 (current:
+  android-28).
+

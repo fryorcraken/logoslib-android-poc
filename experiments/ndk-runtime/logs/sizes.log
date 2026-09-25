@@ -1,0 +1,30 @@
+file                                            bytes     stripped max-LOAD-align
+libboost_atomic.a                               18346        17634 -
+libboost_context.a                              11146        10610 -
+libboost_date_time.a                             1338         1298 -
+libboost_filesystem.a                          356820       351436 -
+libboost_process.a                             201282       196722 -
+libboost_system.a                                1308         1276 -
+liblogos_container_subprocess.a               4506852       624812 -
+liblogos_module_loader_qt.a                    918384        96784 -
+libprocess_stats.a                            1733180       151628 -
+libboost_atomic.so                              14184        10448 0x4000,
+libboost_context.so                              9440         6608 0x4000,
+libboost_date_time.so                            5016         3992 0x4000,
+libboost_filesystem.so                         211224       166216 0x4000,
+libboost_process.so                             98184        72144 0x4000,
+libboost_system.so                               4992         3976 0x4000,
+libfmt.so                                     1153784       161208 0x4000,
+libspdlog.so                                  4716776       472272 0x4000,
+libc++_shared.so                              1617608      1252080 0x4000,
+libfmt.so                                     1153784       161208 0x4000,
+liblogos_host_probe.so                        5564200       407096 0x4000,
+liblogos_host_qt.so                           5564200       407096 0x4000,
+libndkrt_activity.so                          4930328       428184 0x4000,
+libspdlog.so                                  4716776       472272 0x4000,
+ndk_smoke                                     4707224       316160 0x4000,
+APK 23597980 bytes (unstripped libs, stored)
+195M	${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64
+62M	${REPO_ROOT}/.work/experiments/ndk-runtime/build
+967M	${REPO_ROOT}/.work/experiments/ndk-runtime/src
+135M	${REPO_ROOT}/.work/experiments/ndk-runtime/dl

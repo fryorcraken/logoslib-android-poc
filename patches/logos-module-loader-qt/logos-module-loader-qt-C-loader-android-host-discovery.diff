@@ -1,0 +1,33 @@
+diff --git a/src/qt_plugin_format_loader.cpp b/src/qt_plugin_format_loader.cpp
+index 40ce2a8..60ef54d 100644
+--- a/src/qt_plugin_format_loader.cpp
++++ b/src/qt_plugin_format_loader.cpp
+@@ -112,6 +112,11 @@ fs::path findInDir(const fs::path& dir) {
+         if (fs::exists(candidate))
+             return candidate;
+     }
++#ifdef __ANDROID__
++    // APKs install only lib*.so files, so the host ships as liblogos_host_qt.so.
++    if (auto candidate = (dir / "liblogos_host_qt.so").lexically_normal(); fs::exists(candidate))
++        return candidate;
++#endif
+     return {};
+ }
+ 
+@@ -128,6 +133,16 @@ std::string resolveLogosHostPath(const std::vector<std::string>& modulesDirs) {
+             logosHostPath = found.string();
+     }
+ 
++#ifdef __ANDROID__
++    // Inside an app, program_location() is /system/bin/app_process64; the host
++    // sits next to the library this code is linked into (nativeLibraryDir).
++    if (logosHostPath.empty()) {
++        auto found = findInDir(fs::path(boost::dll::this_line_location().parent_path().string()));
++        if (!found.empty())
++            logosHostPath = found.string();
++    }
++#endif
++
+     if (logosHostPath.empty() || !fs::exists(logosHostPath)) {
+         if (!modulesDirs.empty()) {
+             auto binDir = fs::absolute(

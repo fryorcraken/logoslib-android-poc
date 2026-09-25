@@ -1,0 +1,183 @@
+== clone --shared
+Cloning into '${REPO_ROOT}/.work/experiments/wallet-android/lez'...
+done.
+== fetching d8596eb734bf9c9ce801afb92df06098a2eb098a from github
+From https://github.com/logos-blockchain/logos-execution-zone
+ * branch                d8596eb734bf9c9ce801afb92df06098a2eb098a -> FETCH_HEAD
+rev present
+HEAD is now at d8596eb73 Merge pull request #837 from logos-blockchain/erhant/handle-nonzero-exit
+d8596eb734bf9c9ce801afb92df06098a2eb098a 2026-09-09 11:07:01 +0300 Merge pull request #837 from logos-blockchain/erhant/handle-nonzero-exit
+== tags containing / pointing
+ * [new tag]             v0.2.5-rc2 -> v0.2.5-rc2
+ * [new tag]             v0.2.5-rc1 -> v0.2.5-rc1
+d8596eb734bf9c9ce801afb92df06098a2eb098a
+== toolchain files
+-rw-r--r--. 1 fryorcraken fryorcraken     94 Sep 25 14:29 rust-toolchain.toml
+# Should be kept in sync with Dockerfiles
+
+[toolchain]
+channel = "1.94.0"
+profile = "default"
+== wallet-ffi Cargo.toml
+[package]
+name = "wallet-ffi"
+version = "0.1.0"
+edition = "2021"
+license = { workspace = true }
+
+[lints]
+workspace = true
+
+[lib]
+crate-type = ["rlib", "cdylib", "staticlib"]
+
+[dependencies]
+wallet.workspace = true
+lee.workspace = true
+lee_core.workspace = true
+common.workspace = true
+programs.workspace = true
+sequencer_service_rpc.workspace = true
+
+tokio.workspace = true
+key_protocol.workspace = true
+serde_json.workspace = true
+bip39.workspace = true
+
+[build-dependencies]
+cbindgen = "0.29"
+
+[features]
+default = ["prove"]
+prove = ["lee/prove"]
+== lez/common Cargo.toml
+[package]
+name = "common"
+version = "0.1.0"
+edition = "2024"
+license = { workspace = true }
+
+[lints]
+workspace = true
+
+[dependencies]
+lee.workspace = true
+lee_core = { workspace = true, features = ["host"] }
+authenticated_transfer_core.workspace = true
+clock_core.workspace = true
+fee_core.workspace = true
+bridge_core.workspace = true
+bridge_lock_core.workspace = true
+cross_zone_inbox_core.workspace = true
+ping_core.workspace = true
+programs.workspace = true
+system_accounts.workspace = true
+
+anyhow.workspace = true
+thiserror.workspace = true
+serde.workspace = true
+serde_with.workspace = true
+base64.workspace = true
+sha2.workspace = true
+log.workspace = true
+hex.workspace = true
+borsh.workspace = true
+logos-blockchain-common-http-client.workspace = true
+
+[dev-dependencies]
+lee = { workspace = true, features = ["test-utils"] }
+== workspace members
+4:[workspace]
+5-resolver = "3"
+6-members = [
+7-  "integration_tests",
+8-
+9-  "lez/storage",
+10-  "lee/key_protocol",
+11-  "lee/state_machine",
+12-  "lee/state_machine/core",
+13-  "lee/privacy_preserving_circuit",
+14-  "lee/state_machine/test_methods",
+15-  "lee/state_machine/test_methods/guest",
+16-
+17-  "lez",
+18-  "lez/system_accounts",
+19-  "lez/chain_state",
+20-  "lez/sequencer/core",
+21-  "lez/sequencer/core/metrics",
+22-  "lez/sequencer/service",
+23-  "lez/sequencer/service/protocol",
+24-  "lez/sequencer/service/rpc",
+25-  "lez/sequencer/actors/executor",
+26-  "lez/sequencer/actors/executor/metrics",
+27-  "lez/sequencer/actors/rpc_server",
+28-  "lez/sequencer/actors/rpc_server/metrics",
+29-  "lez/sequencer/actors/storage",
+30-  "lez/indexer/core",
+31-  "lez/indexer/service",
+32-  "lez/indexer/service/protocol",
+33-  "lez/indexer/service/rpc",
+34-  "lez/explorer_service",
+35-  "lez/testnet_initial_state",
+36-  "lez/indexer/ffi",
+37-  "lez/keycard_wallet",
+38-  "lez/mempool",
+39-  "lez/wallet",
+40-  "lez/wallet-ffi",
+41-  "lez/common",
+42-  "lez/programs",
+43-  "lez/programs/amm",
+44-  "lez/programs/associated_token_account",
+45-  "lez/programs/authenticated_transfer",
+46-  "lez/programs/bridge",
+47-  "lez/programs/clock",
+48-  "lez/programs/faucet",
+49-  "lez/programs/fee",
+50-  "lez/programs/fee/core",
+51-  "lez/programs/token",
+52-  "lez/programs/cross_zone_marker",
+53-  "lez/programs/cross_zone_inbox",
+54-  "lez/programs/cross_zone_outbox",
+55-  "lez/programs/bridge_lock",
+56-  "lez/programs/wrapped_token",
+57-  "lez/programs/ping_sender",
+58-  "lez/programs/ping_receiver",
+59-  "lez/programs/sequencer_stake",
+60-  "lez/programs/program_loader/core",
+61-  "lez/cross_zone",
+62-
+63-  "test_programs",
+64-  "test_programs/guest",
+65-
+66-  "examples/program_deployment",
+67-  "examples/program_deployment/methods",
+68-  "examples/program_deployment/methods/guest",
+69-
+70-  "build_utils",
+71-
+72-  "test_fixtures",
+73-
+74-  "tools/cycle_bench",
+75-  "tools/crypto_primitives_bench",
+76-  "tools/integration_bench",
+77-  "tools/cross_zone_chat",
+78-  "tools/dashboard_gen",
+79-  "tools/devnet_configs",
+80-]
+81-
+82-[workspace.dependencies]
+83-lee = { path = "lee/state_machine" }
+84-lee_core = { path = "lee/state_machine/core" }
+== rustup
+rustup 1.29.1 (d95a37b6a 2026-08-13)
+info: This is the version for the rustup toolchain manager, not the rustc compiler.
+info: the currently active `rustc` version is `rustc 1.94.0 (4a4ef493e 2026-03-02)`
+stable-x86_64-unknown-linux-gnu (default)
+nightly-x86_64-unknown-linux-gnu
+1.91.1-x86_64-unknown-linux-gnu
+1.92.0-x86_64-unknown-linux-gnu
+1.93.0-x86_64-unknown-linux-gnu
+1.94.0-x86_64-unknown-linux-gnu (active)
+1.98.0-x86_64-unknown-linux-gnu
+risc0
+DONE

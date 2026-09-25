@@ -1,0 +1,119 @@
+== 2026-09-25T14:36:43+10:00 target=x86_64-linux-android api=34
+AR_x86_64_linux_android=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar
+CARGO_TARGET_DIR=${REPO_ROOT}/.work/experiments/wallet-android/target
+CARGO_TARGET_X86_64_LINUX_ANDROID_AR=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar
+CARGO_TARGET_X86_64_LINUX_ANDROID_LINKER=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang
+CC_x86_64_linux_android=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang
+CXX_x86_64_linux_android=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang++
+RANLIB_x86_64_linux_android=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib
+RUSTFLAGS=-C link-arg=-Wl,-z,max-page-size=16384
+== pcsc stub
+stub-exit=0
+0000000000004bd0 T SCardBeginTransaction
+0000000000004b70 T SCardCancel
+0000000000004b80 T SCardConnect
+0000000000004c30 T SCardControl
+0000000000004ba0 T SCardDisconnect
+0000000000004be0 T SCardEndTransaction
+0000000000004b30 T SCardEstablishContext
+0000000000004c00 T SCardGetAttrib
+0000000000004bb0 T SCardGetStatusChange
+0000000000004b60 T SCardIsValidContext
+0000000000004bc0 T SCardListReaders
+0000000000004b90 T SCardReconnect
+0000000000004b50 T SCardReleaseContext
+0000000000004c10 T SCardSetAttrib
+0000000000004bf0 T SCardStatus
+0000000000004c20 T SCardTransmit
+0000000000000818 R g_rgSCardRawPci
+00000000000007f8 R g_rgSCardT0Pci
+0000000000000808 R g_rgSCardT1Pci
+== cargo build
+warning: lee@0.1.0: Generated module at ${REPO_ROOT}/.work/experiments/wallet-android/target/x86_64-linux-android/release/build/lee-bd626e5113693801/out/lee/privacy_preserving_circuit/mod.rs
+warning: programs@0.1.0: Generated module at ${REPO_ROOT}/.work/experiments/wallet-android/target/x86_64-linux-android/release/build/programs-ab4c31ede0aad253/out/lez/programs/mod.rs
+    Finished `release` profile [optimized] target(s) in 1m 13s
+cargo-exit=0 build-seconds=74
+428
+ M Cargo.lock
+ M lez/common/Cargo.toml
+ M lez/common/src/config.rs
+== artifact
+-rw-r--r--. 2 fryorcraken fryorcraken 95577486 Sep 25 14:37 libwallet_ffi.a
+-rw-r--r--. 1 fryorcraken fryorcraken    19905 Sep 25 14:37 libwallet_ffi.d
+-rw-r--r--. 2 fryorcraken fryorcraken  8079622 Sep 25 14:37 libwallet_ffi.rlib
+-rwxr-xr-x. 2 fryorcraken fryorcraken 18146144 Sep 25 14:37 libwallet_ffi.so
+${REPO_ROOT}/.work/experiments/wallet-android/out/x86_64-linux-android/libwallet_ffi.so 18146144
+${REPO_ROOT}/.work/experiments/wallet-android/out/x86_64-linux-android/libwallet_ffi.stripped.so 14999376
+== file / header
+${REPO_ROOT}/.work/experiments/wallet-android/out/x86_64-linux-android/libwallet_ffi.stripped.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, for Android 34, built by NDK r27c (12479018), stripped
+  Class:                             ELF64
+  Type:                              DYN (Shared object file)
+  Machine:                           Advanced Micro Devices X86-64
+== NEEDED / SONAME / RUNPATH
+  0x0000000000000001 (NEEDED)       Shared library: [libpcsclite.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+  0x000000000000001e (FLAGS)        BIND_NOW 
+  0x000000006ffffffb (FLAGS_1)      NOW 
+== exported wallet_ffi_* symbols
+58
+102
+-- undefined dynamic symbols (count, then non-libc-looking sample)
+124
+                 U SCardConnect
+                 U SCardDisconnect
+                 U SCardEstablishContext
+                 U SCardListReaders
+                 U SCardReleaseContext
+                 U SCardTransmit
+                 U g_rgSCardRawPci
+                 U g_rgSCardT0Pci
+                 U g_rgSCardT1Pci
+== program headers (LOAD p_align)
+  Type           Offset   VirtAddr           PhysAddr           FileSiz  MemSiz   Flg Align
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x6f0e94 0x6f0e94 R   0x4000
+  LOAD           0x6f0ec0 0x00000000006f4ec0 0x00000000006f4ec0 0x6d3db0 0x6d3db0 R E 0x4000
+  LOAD           0xdc4c70 0x0000000000dccc70 0x0000000000dccc70 0x07e058 0x07e390 RW  0x4000
+  LOAD           0xe42cc8 0x0000000000e4ecc8 0x0000000000e4ecc8 0x00ab98 0x00b568 RW  0x4000
+  GNU_RELRO      0xdc4c70 0x0000000000dccc70 0x0000000000dccc70 0x07e058 0x07e390 R   0x1
+== sections (sizes)
+  [ 2] .dynsym           DYNSYM          0000000000000308 000308 001548 18   A  6   1  8
+  [ 7] .rela.dyn         RELA            0000000000002bc8 002bc8 0a9428 18   A  2   0  8
+  [ 9] .rodata           PROGBITS        00000000000ad000 0ad000 4ecb44 00 AMS  0   0 4096
+  [10] .gcc_except_table PROGBITS        0000000000599b44 599b44 0759fc 00   A  0   0  4
+  [12] .eh_frame         PROGBITS        000000000062ca28 62ca28 0c446c 00   A  0   0  8
+  [13] .text             PROGBITS        00000000006f4ec0 6f0ec0 6d3caa 00  AX  0   0 64
+  [15] .data.rel.ro      PROGBITS        0000000000dccc70 dc4c70 077fe8 00  WA  0   0  8
+  [21] .data             PROGBITS        0000000000e4ecc8 e42cc8 00ab98 00  WA  0   0  8
+  [22] .bss              NOBITS          0000000000e59860 e4d860 0009d0 00  WA  0   0 16
+.rodata                 5163844     708608
+.text                   7158954    7294656
+Total                  14996501
+== recursion zkr presence
+strings with 'recursion': 26
+strings with 'zkr': 0
+raw grep -c recursion_zkr: 0
+zip local-file headers (PK\x03\x04): 0
+strings with 'pcsc'/'SCard': 18
+strings with 'rustls-platform-verifier': 5
+strings with 'circuit': 140
+strings with 'gmp': 0
+== guest ELFs embedded (risc0 program binaries)
+-rw-r--r--. 1 fryorcraken fryorcraken 594748 Sep 25 14:29 privacy_preserving_circuit.bin
+-rw-r--r--. 1 fryorcraken fryorcraken 461392 Sep 25 14:29 amm.bin
+-rw-r--r--. 1 fryorcraken fryorcraken 380344 Sep 25 14:29 associated_token_account.bin
+-rw-r--r--. 1 fryorcraken fryorcraken 352456 Sep 25 14:29 authenticated_transfer.bin
+-rw-r--r--. 1 fryorcraken fryorcraken 371660 Sep 25 14:29 bridge.bin
+-rw-r--r--. 1 fryorcraken fryorcraken 402452 Sep 25 14:29 bridge_lock.bin
+-rw-r--r--. 1 fryorcraken fryorcraken 342412 Sep 25 14:29 clock.bin
+-rw-r--r--. 1 fryorcraken fryorcraken 407160 Sep 25 14:29 cross_zone_inbox.bin
+-rw-r--r--. 1 fryorcraken fryorcraken 366912 Sep 25 14:29 cross_zone_outbox.bin
+-rw-r--r--. 1 fryorcraken fryorcraken 359184 Sep 25 14:29 faucet.bin
+-rw-r--r--. 1 fryorcraken fryorcraken 370500 Sep 25 14:29 fee.bin
+-rw-r--r--. 1 fryorcraken fryorcraken 389880 Sep 25 14:29 ping_receiver.bin
+-rw-r--r--. 1 fryorcraken fryorcraken 371348 Sep 25 14:29 ping_sender.bin
+-rw-r--r--. 1 fryorcraken fryorcraken 577928 Sep 25 14:29 sequencer_stake.bin
+-rw-r--r--. 1 fryorcraken fryorcraken 415320 Sep 25 14:29 token.bin
+-rw-r--r--. 1 fryorcraken fryorcraken 399692 Sep 25 14:29 wrapped_token.bin
+DONE

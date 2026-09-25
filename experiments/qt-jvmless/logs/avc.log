@@ -1,0 +1,31 @@
+== logcat avc denied ==
+09-25 17:54:43.197  4479  4479 W qro_server: type=1400 audit(0.0:16): avc:  denied  { create } for  name="qro_t" scontext=u:r:shell:s0 tcontext=u:object_r:shell_data_file:s0 tclass=sock_file permissive=0
+09-25 17:54:43.197  4479  4479 W qro_server: type=1400 audit(0.0:17): avc:  denied  { create } for  name="qro_t" scontext=u:r:shell:s0 tcontext=u:object_r:shell_data_file:s0 tclass=sock_file permissive=0
+09-25 17:55:12.645  4492  4492 W qro_server: type=1400 audit(0.0:18): avc:  denied  { create } for  name="qro_t" scontext=u:r:shell:s0 tcontext=u:object_r:shell_data_file:s0 tclass=sock_file permissive=0
+09-25 17:55:12.649  4492  4492 W qro_server: type=1400 audit(0.0:19): avc:  denied  { create } for  name="qro_t" scontext=u:r:shell:s0 tcontext=u:object_r:shell_data_file:s0 tclass=sock_file permissive=0
+== dmesg via root? ==
+restarting adbd as root
+[   39.336466] type=1400 audit(1790322548.709:8): avc:  denied  { read } for  comm="binder:3149_1" name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=292 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+[   39.340769] type=1400 audit(1790322548.709:9): avc:  denied  { read } for  comm="binder:3149_1" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=60 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+[   48.244277] type=1400 audit(1790322557.621:10): avc:  denied  { read } for  comm="binder:3149_1" name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=292 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+[   48.249131] type=1400 audit(1790322557.625:11): avc:  denied  { read } for  comm="binder:3149_1" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=60 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+[   49.851095] type=1400 audit(1790322559.229:12): avc:  denied  { read } for  comm="binder:3149_1" name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=292 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+[   49.861532] type=1400 audit(1790322559.237:13): avc:  denied  { read } for  comm="binder:3149_1" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=60 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+[   50.098113] type=1400 audit(1790322559.477:14): avc:  denied  { read } for  comm="IntentService[D" name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=292 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+[   50.102518] type=1400 audit(1790322559.477:15): avc:  denied  { read } for  comm="IntentService[D" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=60 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+[  373.819114] type=1400 audit(1790322883.197:16): avc:  denied  { create } for  comm="qro_server" name="qro_t" scontext=u:r:shell:s0 tcontext=u:object_r:shell_data_file:s0 tclass=sock_file permissive=0
+[  373.821810] type=1400 audit(1790322883.197:17): avc:  denied  { create } for  comm="qro_server" name="qro_t" scontext=u:r:shell:s0 tcontext=u:object_r:shell_data_file:s0 tclass=sock_file permissive=0
+[  403.269046] type=1400 audit(1790322912.645:18): avc:  denied  { create } for  comm="qro_server" name="qro_t" scontext=u:r:shell:s0 tcontext=u:object_r:shell_data_file:s0 tclass=sock_file permissive=0
+[  403.278475] type=1400 audit(1790322912.649:19): avc:  denied  { create } for  comm="qro_server" name="qro_t" scontext=u:r:shell:s0 tcontext=u:object_r:shell_data_file:s0 tclass=sock_file permissive=0
+== shell domain: toybox nc -L unix socket bind test in /data/local/tmp/q ==
+u:r:shell:s0
+total 12052
+drwxrwxrwx 2 shell shell u:object_r:shell_data_file:s0     4096 2026-09-25 17:55 .
+drwxrwx--x 4 shell shell u:object_r:shell_data_file:s0     4096 2026-09-25 17:54 ..
+nc: -s must be provided if using -U with -L/-l
+nc_rc=1
+ls: /data/local/tmp/q/nc_t: No such file or directory
+09-25 17:54:43.197  4479  4479 W qro_server: type=1400 audit(0.0:16): avc:  denied  { create } for  name="qro_t" scontext=u:r:shell:s0 tcontext=u:object_r:shell_data_file:s0 tclass=sock_file permissive=0
+09-25 17:54:43.197  4479  4479 W qro_server: type=1400 audit(0.0:17): avc:  denied  { create } for  name="qro_t" scontext=u:r:shell:s0 tcontext=u:object_r:shell_data_file:s0 tclass=sock_file permissive=0
+09-25 17:55:12.645  4492  4492 W qro_server: type=1400 audit(0.0:18): avc:  denied  { create } for  name="qro_t" scontext=u:r:shell:s0 tcontext=u:object_r:shell_data_file:s0 tclass=sock_file permissive=0
+09-25 17:55:12.649  4492  4492 W qro_server: type=1400 audit(0.0:19): avc:  denied  { create } for  name="qro_t" scontext=u:r:shell:s0 tcontext=u:object_r:shell_data_file:s0 tclass=sock_file permissive=0

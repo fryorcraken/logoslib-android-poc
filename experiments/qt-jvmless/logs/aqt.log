@@ -1,0 +1,167 @@
+== aqt version ==
+INFO    : aqtinstall(aqt) v3.3.0 on Python 3.14.7 [CPython GCC 15.3.1 20260722 (Red Hat 15.3.1-1)]
+== CMD: aqt install-qt all_os android 6.11.1 android_x86_64 --archives qtbase -m qtremoteobjects --outputdir ${REPO_ROOT}/.work/probe/qt ==
+INFO    : aqtinstall(aqt) v3.3.0 on Python 3.14.7 [CPython GCC 15.3.1 20260722 (Red Hat 15.3.1-1)]
+WARNING : You are installing the android version of Qt, which requires that the desktop version of Qt is also installed. You can install it with the following command:
+          `aqt install-qt linux desktop 6.11.1 linux_gcc_64`
+INFO    : Downloading qtbase...
+INFO    : Downloading qtremoteobjects...
+INFO    : Redirected: mirror.aarnet.edu.au
+INFO    : Redirected: mirror.aarnet.edu.au
+INFO    : Finished installation of qtremoteobjects-Linux-RHEL_9_6-Clang-Android-Android_ANY-X86_64.7z in 4.00665998
+INFO    : Finished installation of qtbase-Linux-RHEL_9_6-Clang-Android-Android_ANY-X86_64.7z in 6.25997018
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/bin/qmake
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/bin/qtpaths
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/bin/qmake6
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/bin/qtpaths6
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/bin/target_qt.conf
+INFO    : Finished installation
+INFO    : Time elapsed: 24.85275792 second
+rc=0
+== CMD: aqt install-qt linux desktop 6.11.1 linux_gcc_64 --archives qtbase icu -m qtremoteobjects --outputdir ${REPO_ROOT}/.work/probe/qt ==
+INFO    : aqtinstall(aqt) v3.3.0 on Python 3.14.7 [CPython GCC 15.3.1 20260722 (Red Hat 15.3.1-1)]
+INFO    : Found extension qtwebengine
+INFO    : Found extension qtpdf
+INFO    : Downloading icu...
+INFO    : Downloading qtbase...
+INFO    : Downloading qtremoteobjects...
+INFO    : Redirected: mirror.aarnet.edu.au
+INFO    : Redirected: mirror.aarnet.edu.au
+INFO    : Redirected: mirror.aarnet.edu.au
+INFO    : Finished installation of icu-linux-Rhel8.6-x86_64.7z in 4.46408813
+INFO    : Finished installation of qtremoteobjects-Linux-RHEL_9_6-GCC-Linux-RHEL_9_6-X86_64.7z in 5.11071542
+INFO    : Finished installation of qtbase-Linux-RHEL_9_6-GCC-Linux-RHEL_9_6-X86_64.7z in 5.85877651
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/bin/qmake
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6RemoteObjects.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6RemoteObjectsQml.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6RepParser.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6Concurrent.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6Core.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6DBus.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6Gui.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6Network.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6OpenGL.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6OpenGLWidgets.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6Platform.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6PrintSupport.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6Sql.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6Test.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6WaylandClient.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6Widgets.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/pkgconfig/Qt6Xml.pc
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6Concurrent.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6Core.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6DBus.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6DeviceDiscoverySupport.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6EglFSDeviceIntegration.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6EglFsKmsGbmSupport.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6EglFsKmsSupport.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6FbSupport.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6Gui.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6InputSupport.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6KmsSupport.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6Network.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6OpenGL.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6OpenGLWidgets.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6PrintSupport.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6Sql.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6Test.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6WaylandClient.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6Widgets.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6WlShellIntegration.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6XcbQpa.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6Xml.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6RemoteObjects.prl
+INFO    : Patching ${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/lib/libQt6RemoteObjectsQml.prl
+INFO    : Finished installation
+INFO    : Time elapsed: 14.49786275 second
+rc=0
+== tree ==
+total 0
+drwxr-xr-x. 1 fryorcraken fryorcraken  74 Sep 25 17:37 .
+drwxr-xr-x. 1 fryorcraken fryorcraken  40 Sep 25 12:54 ..
+drwxr-xr-x. 1 fryorcraken fryorcraken 330 Sep 25 12:54 android_arm64_v8a
+drwxr-xr-x. 1 fryorcraken fryorcraken 330 Sep 25 17:36 android_x86_64
+drwxr-xr-x. 1 fryorcraken fryorcraken 318 Sep 25 17:37 gcc_64
+96M	${REPO_ROOT}/.work/probe/qt/6.11.1/android_arm64_v8a
+96M	${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64
+176M	${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64
+libQt6Concurrent_x86_64.so
+libQt6Core_x86_64.so
+libQt6Gui_x86_64.so
+libQt6Network_x86_64.so
+libQt6OpenGLWidgets_x86_64.so
+libQt6OpenGL_x86_64.so
+libQt6PrintSupport_x86_64.so
+libQt6RemoteObjectsQml_x86_64.so
+libQt6RemoteObjects_x86_64.so
+libQt6Sql_x86_64.so
+libQt6Test_x86_64.so
+libQt6Widgets_x86_64.so
+libQt6Xml_x86_64.so
+${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/bin:
+androiddeployqt
+androiddeployqt6
+androidtestrunner
+qdbuscpp2xml
+qdbusxml2cpp
+qmake
+qmake6
+qt-cmake
+qt-cmake-create
+qt.conf
+qt-configure-module
+qtpaths
+qtpaths6
+wasmdeployqt
+wasmdeployqt6
+
+${REPO_ROOT}/.work/probe/qt/6.11.1/gcc_64/libexec:
+check_qt_module_json_schemas.py
+cmake_automoc_parser
+ensure_pro_file.cmake
+moc
+qlalr
+qt-android-runner.py
+qt-cmake-private
+qt-cmake-private-install.cmake
+qt-cmake-standalone-test
+qt_cyclonedx_generator.py
+qt-internal-configure-examples
+qt-internal-configure-tests
+qt-testrunner.py
+qtwaylandscanner
+qvkgen
+rcc
+repc
+sanitizer-testrunner.py
+syncqt
+tracegen
+tracepointgen
+uic
+[DevicePaths]
+Prefix=/usr/local/Qt-6.11.1
+[Paths]
+Prefix=../
+Documentation=doc
+Headers=include
+Libraries=lib
+LibraryExecutables=libexec
+Binaries=bin
+Plugins=plugins
+QmlImports=qml
+ArchData=.
+Data=.
+Translations=translations
+Examples=examples
+Tests=tests
+Settings=etc/xdg
+HostPrefix=../../gcc_64
+HostBinaries=bin
+HostLibraries=lib
+HostLibraryExecutables=./libexec
+HostData=../android_x86_64
+Sysroot=
+SysrootifyPrefix=false
+TargetSpec=android-clang
+HostSpec=linux-g++

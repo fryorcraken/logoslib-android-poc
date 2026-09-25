@@ -1,0 +1,167 @@
+2026-09-25T18:08:42+10:00
+${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qro_server: 1 file pushed, 0 skipped. 192.4 MB/s (675912 bytes in 0.003s)
+${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/qro_client: 1 file pushed, 0 skipped. 201.8 MB/s (484784 bytes in 0.002s)
+${REPO_ROOT}/.work/experiments/qt-jvmless/build/x86_64/libechoplugin.so: 1 file pushed, 0 skipped. 205.1 MB/s (287536 bytes in 0.001s)
+${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6Core_x86_64.so: 1 file pushed, 0 skipped. 327.4 MB/s (6420704 bytes in 0.019s)
+${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6Network_x86_64.so: 1 file pushed, 0 skipped. 293.2 MB/s (1820568 bytes in 0.006s)
+${REPO_ROOT}/.work/probe/qt/6.11.1/android_x86_64/lib/libQt6RemoteObjects_x86_64.so: 1 file pushed, 0 skipped. 235.4 MB/s (963888 bytes in 0.004s)
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/libc++_shared.so: 1 file pushed, 0 skipped. 286.5 MB/s (1617608 bytes in 0.005s)
+total 12044
+drwxrwxrwx 2 shell shell u:object_r:shell_data_file:s0     4096 2026-09-25 18:08 .
+drwxrwx--x 4 shell shell u:object_r:shell_data_file:s0     4096 2026-09-25 18:08 ..
+-rwxrwxrwx 1 shell shell u:object_r:shell_data_file:s0  6420704 2026-05-08 02:11 libQt6Core_x86_64.so
+-rwxrwxrwx 1 shell shell u:object_r:shell_data_file:s0  1820568 2026-05-08 02:11 libQt6Network_x86_64.so
+-rwxrwxrwx 1 shell shell u:object_r:shell_data_file:s0   963888 2026-05-08 11:53 libQt6RemoteObjects_x86_64.so
+-rwxrwxrwx 1 shell shell u:object_r:shell_data_file:s0  1617608 2024-10-10 10:12 libc++_shared.so
+-rwxrwxrwx 1 shell shell u:object_r:shell_data_file:s0   287536 2026-09-25 18:08 libechoplugin.so
+-rwxr-xr-x 1 shell shell u:object_r:shell_data_file:s0   484784 2026-09-25 18:08 qro_client
+-rwxr-xr-x 1 shell shell u:object_r:shell_data_file:s0   675912 2026-09-25 18:08 qro_server
+
+================ T0a: server --jvm-mode=none (stock QtCore, no JavaVM)
+[qro_server pid=7253] server: start ppid=7251 uid=2000 exe-arg0=./qro_server
+[qro_server pid=7253] server: env TMPDIR=/data/local/tmp/q LD_LIBRARY_PATH=/data/local/tmp/q HOME=/
+[qro_server pid=7253] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+[qro_server pid=7253] jvm-mode=none: no workaround
+SERVER_RC=139
+Segmentation fault 
+================ T0b: server --jvm-mode=appversion (setApplicationVersion before QCoreApplication)
+[qro_server pid=7263] server: start ppid=7261 uid=2000 exe-arg0=./qro_server
+[qro_server pid=7263] server: env TMPDIR=/data/local/tmp/q LD_LIBRARY_PATH=/data/local/tmp/q HOME=/
+[qro_server pid=7263] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+[qro_server pid=7263] jvm-mode=appversion: setApplicationVersion done
+Segmentation fault 
+SERVER_RC=139
+
+================ T1: shell domain, --jvm-mode=shim, url=localabstract:qro_t
+[qro_client pid=7284] client: start TMPDIR=/data/local/tmp/q libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+[qro_client pid=7284] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+[qro_client pid=7284] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+[qro_client pid=7284] client: connecting to localabstract:qro_t at 18:08:44.351
+[qro_client pid=7284] client: connectToNode accepted=1 lastError=0
+[qro_client pid=7284] client: waitForSource=1 state=2 after 0 ms
+[qro_client pid=7284] client: echo -> echo:hello-from-client-pid-7284 (server pid 7274, plugin says 'hello from echoplugin')
+[qro_client pid=7284] client: callRemoteMethod(sum,[1,2,39]) -> 42
+[qro_client pid=7284] client: RESULT OK echo:hello-from-client-pid-7284 (server pid 7274, plugin says 'hello from echoplugin') | sum=42 | 1 ms
+CLIENT_RC=0
+---- second client (new process, same server)
+[qro_client pid=7285] client: start TMPDIR=/data/local/tmp/q libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+[qro_client pid=7285] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+[qro_client pid=7285] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+[qro_client pid=7285] client: connecting to localabstract:qro_t at 18:08:44.359
+[qro_client pid=7285] client: connectToNode accepted=1 lastError=0
+[qro_client pid=7285] client: waitForSource=1 state=2 after 0 ms
+[qro_client pid=7285] client: echo -> echo:hello-from-client-pid-7285 (server pid 7274, plugin says 'hello from echoplugin')
+[qro_client pid=7285] client: callRemoteMethod(sum,[1,2,39]) -> 42
+[qro_client pid=7285] client: RESULT OK echo:hello-from-client-pid-7285 (server pid 7274, plugin says 'hello from echoplugin') | sum=42 | 0 ms
+CLIENT2_RC=0
+---- server output
+[qro_server pid=7274] server: start ppid=1 uid=2000 exe-arg0=./qro_server
+[qro_server pid=7274] server: env TMPDIR=/data/local/tmp/q LD_LIBRARY_PATH=/data/local/tmp/q HOME=/
+[qro_server pid=7274] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+[qro_server pid=7274] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+[qro_server pid=7274] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+[qro_server pid=7274] server: QCoreApplication constructed, Qt 6.11.1
+[qro_server pid=7274] server: applicationFilePath=/data/local/tmp/q/qro_server
+[qro_server pid=7274] server: applicationDirPath=/data/local/tmp/q
+[qro_server pid=7274] server: QDir::tempPath=/data/local/tmp/q
+[qro_server pid=7274] server: libraryPaths=/data/local/tmp/q
+[qro_server pid=7274] server: QTime::currentTime=18:08:42.345
+[qro_server pid=7274] server: QPluginLoader file=/data/local/tmp/q/libechoplugin.so IID=org.logos.test.EchoInterface/1.0 MetaData={"name":"echoplugin","type":"core","version":"0.0.1"}
+[qro_server pid=7274] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+[qro_server pid=7274] server: setRegistryUrl(localabstract:qro_t)=1 lastError=0 socket=/data/local/tmp/q/qro_t exists=0
+[qro_server pid=7274] server: enableRemoting(Echo)=1
+[qro_server pid=7274] server: READY
+[qro_server pid=7274] server: exit-after timer fired -> quit
+[qro_server pid=7274] server: exec() returned 0; socket exists after=0
+
+================ T1r: root (su), --jvm-mode=shim, url=local:qro_t (filesystem socket in TMPDIR=/data/local/tmp/q)
+uid=0(root) gid=0(root) groups=0(root),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),1078(ext_data_rw),1079(ext_obb_rw),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),3012(readtracefs) context=u:r:su:s0
+srwxrwxrwx 1 root root u:object_r:shell_data_file:s0  0 2026-09-25 18:08 /data/local/tmp/q/qro_t
+[qro_client pid=7297] client: start TMPDIR=/data/local/tmp/q libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+[qro_client pid=7297] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+[qro_client pid=7297] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+[qro_client pid=7297] client: connecting to local:qro_t at 18:08:55.424
+[qro_client pid=7297] qt-warning: It is recommended to use 'localabstract' over 'local' on Android.
+[qro_client pid=7297] client: connectToNode accepted=1 lastError=0
+[qro_client pid=7297] client: waitForSource=1 state=2 after 0 ms
+[qro_client pid=7297] client: echo -> echo:hello-from-client-pid-7297 (server pid 7294, plugin says 'hello from echoplugin')
+[qro_client pid=7297] client: callRemoteMethod(sum,[1,2,39]) -> 42
+[qro_client pid=7297] client: RESULT OK echo:hello-from-client-pid-7297 (server pid 7294, plugin says 'hello from echoplugin') | sum=42 | 1 ms
+CLIENT_RC=0
+---- server output
+[qro_server pid=7294] server: start ppid=1 uid=0 exe-arg0=./qro_server
+[qro_server pid=7294] server: env TMPDIR=/data/local/tmp/q LD_LIBRARY_PATH=/data/local/tmp/q HOME=/
+[qro_server pid=7294] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+[qro_server pid=7294] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+[qro_server pid=7294] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+[qro_server pid=7294] server: QCoreApplication constructed, Qt 6.11.1
+[qro_server pid=7294] server: applicationFilePath=/data/local/tmp/q/qro_server
+[qro_server pid=7294] server: applicationDirPath=/data/local/tmp/q
+[qro_server pid=7294] server: QDir::tempPath=/data/local/tmp/q
+[qro_server pid=7294] server: libraryPaths=/data/local/tmp/q
+[qro_server pid=7294] server: QTime::currentTime=18:08:53.414
+[qro_server pid=7294] server: QPluginLoader file=/data/local/tmp/q/libechoplugin.so IID=org.logos.test.EchoInterface/1.0 MetaData={"name":"echoplugin","type":"core","version":"0.0.1"}
+[qro_server pid=7294] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+[qro_server pid=7294] qt-warning: It is recommended to use 'localabstract' over 'local' on Android.
+[qro_server pid=7294] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/local/tmp/q/qro_t exists=1
+[qro_server pid=7294] server: enableRemoting(Echo)=1
+[qro_server pid=7294] server: READY
+[qro_server pid=7294] server: exit-after timer fired -> quit
+[qro_server pid=7294] server: exec() returned 0; socket exists after=1
+ls: /data/local/tmp/q/qro_t: No such file or directory
+
+================ T2: SIGTERM shutdown (self-pipe QSocketNotifier, as logos_host_qt)
+CLIENT_RC=0
+[qro_server pid=7306] server: READY
+[qro_server pid=7306] server: SIGTERM/SIGINT -> quit
+[qro_server pid=7306] server: exec() returned 0; socket exists after=0
+
+================ T3: root, TMPDIR unset, url=local:qro_t (QDir::tempPath fallback)
+[qro_server pid=7316] server: QDir::tempPath=/tmp
+[qro_server pid=7316] qt-critical:  Listen failed for URL: QUrl("local:qro_t")
+[qro_server pid=7316] server: setRegistryUrl(local:qro_t)=0 lastError=11 socket=/tmp/qro_t exists=0
+[qro_server pid=7316] server: QTRO FAIL could not listen
+
+================ T4: JNI-backed Qt Core APIs under the shim (each its own process)
+---- probe androidctx (shim)
+PROBE_RC=0
+[qro_server pid=7319] probe androidctx: start
+[qro_server pid=7319] probe androidctx: sdkVersion=0
+[qro_server pid=7319] probe androidctx: context valid=0
+[qro_server pid=7319] probe androidctx: applicationVersion=''
+[qro_server pid=7319] probe androidctx: DONE (no crash)
+---- probe stdpaths (shim)
+PROBE_RC=0
+[qro_server pid=7323] probe stdpaths: start
+[qro_server pid=7323] probe stdpaths: TempLocation=
+[qro_server pid=7323] probe stdpaths: CacheLocation=
+[qro_server pid=7323] probe stdpaths: AppDataLocation=
+[qro_server pid=7323] probe stdpaths: HomeLocation=
+[qro_server pid=7323] probe stdpaths: DONE (no crash)
+---- probe timezone (shim)
+PROBE_RC=0
+[qro_server pid=7327] probe timezone: start
+[qro_server pid=7327] probe timezone: currentDateTime=2026-09-25T18:09:05
+[qro_server pid=7327] probe timezone: systemTimeZoneId=
+[qro_server pid=7327] probe timezone: systemTimeZone valid=1
+[qro_server pid=7327] probe timezone: Europe/Paris valid=0
+[qro_server pid=7327] probe timezone: DONE (no crash)
+---- probe locale (shim)
+PROBE_RC=0
+[qro_server pid=7331] probe locale: start
+[qro_server pid=7331] probe locale: system=C
+[qro_server pid=7331] probe locale: toString(1234.5)=1234.5
+[qro_server pid=7331] probe locale: DONE (no crash)
+---- probe sysinfo (shim)
+PROBE_RC=0
+[qro_server pid=7335] probe sysinfo: start
+[qro_server pid=7335] probe sysinfo: productType=android version=-1.-1
+[qro_server pid=7335] probe sysinfo: pretty=Android  (-1.-1)
+[qro_server pid=7335] probe sysinfo: host=localhost
+[qro_server pid=7335] probe sysinfo: DONE (no crash)
+
+================ logcat: crash buffer (saved to x1-crash.log)
+09-25 18:08:42.298  7256  7256 F DEBUG   : Cmdline: ./qro_server --jvm-mode=none --exit-after-ms=500
+09-25 18:08:42.327  7266  7266 F DEBUG   : Cmdline: ./qro_server --jvm-mode=appversion --exit-after-ms=500
+================ logcat: avc denials
+2026-09-25T18:09:05+10:00

@@ -1,0 +1,657 @@
+2026-09-25T18:09:05+10:00
+==== install
+Performing Streamed Install
+Success
+Performing Streamed Install
+Success
+
+==== R1-A-default: org.logos.qrotest.a 
+Starting: Intent { cmp=org.logos.qrotest.a/org.logos.qrotest.MainActivity }
+Status: ok
+Activity: org.logos.qrotest.a/org.logos.qrotest.MainActivity
+---- app log (tag qrotest)
+09-25 18:09:07.472  7424  7447 I qrotest : CONFIG flavor=withjar qtJar=true jvmMode=none serverJvmMode=shim url=local:qro_t jniLib=qrotest_jni loadQtCore=true spawn=java
+09-25 18:09:07.473  7424  7447 I qrotest : pid=7424 uid=10193 TMPDIR=/data/user/0/org.logos.qrotest.a/cache
+09-25 18:09:07.473  7424  7447 I qrotest : nativeLibraryDir=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64
+09-25 18:09:07.485  7424  7447 I qrotest : nativeLibraryDir contents: [libQt6Core_x86_64.so, libQt6Network_x86_64.so, libQt6RemoteObjects_x86_64.so, libc++_shared.so, libechoplugin.so, libqro_server.so, libqrotest_jni.so, libqrotest_jni_noonload.so]
+09-25 18:09:07.485  7424  7447 I qrotest : libqro_server.so exists=true canExecute=true size=675912
+09-25 18:09:07.485  7424  7447 I qrotest : libqro_server.so mode=100755
+09-25 18:09:07.487  7424  7447 I qrotest : HELPER started: Process[pid=7448, hasExited=false]
+09-25 18:09:07.494  7424  7450 I qrotest : child> [qro_server pid=7448] server: start ppid=7424 uid=10193 exe-arg0=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so
+09-25 18:09:07.494  7424  7450 I qrotest : child> [qro_server pid=7448] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:07.495  7424  7450 I qrotest : child> [qro_server pid=7448] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:07.496  7424  7450 I qrotest : child> [qro_server pid=7448] server: QDir::tempPath=/data/user/0/org.logos.qrotest.a/cache
+09-25 18:09:07.498  7424  7450 I qrotest : child> [qro_server pid=7448] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:07.499  7424  7450 I qrotest : child> [qro_server pid=7448] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.a/cache/qro_t exists=1
+09-25 18:09:07.499  7424  7450 I qrotest : child> [qro_server pid=7448] server: READY
+09-25 18:09:07.500  7424  7447 I qrotest : helper READY seen=true
+09-25 18:09:07.505  7424  7447 I qrotest : System.loadLibrary(Qt6Core_x86_64) OK (QtCore JNI_OnLoad ran)
+09-25 18:09:07.507  7424  7447 I qrotest : System.loadLibrary(qrotest_jni) OK
+09-25 18:09:07.534  7424  7447 I qrotest : RESULT: OK echo:hello-from-client-pid-7424 (server pid 7448, plugin says 'hello from echoplugin') | sum=42 | 3 ms
+---- jni/child/QtCore/AndroidRuntime
+09-25 18:09:07.491  7448  7448 I qro_server: [pid=7448] server: start ppid=7424 uid=10193 exe-arg0=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so
+09-25 18:09:07.491  7448  7448 I qro_server: [pid=7448] server: env TMPDIR=/data/user/0/org.logos.qrotest.a/cache LD_LIBRARY_PATH=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64 HOME=<unset>
+09-25 18:09:07.491  7448  7448 I qro_server: [pid=7448] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:07.491  7448  7448 I QtCore  : Start
+09-25 18:09:07.491  7448  7448 I qro_server: [pid=7448] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+09-25 18:09:07.491  7448  7448 F QtCore  : initJNI failed
+09-25 18:09:07.491  7448  7448 I qro_server: [pid=7448] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:07.491  7448  7448 I qro_server: [pid=7448] server: QCoreApplication constructed, Qt 6.11.1
+09-25 18:09:07.491  7448  7448 I qro_server: [pid=7448] server: applicationFilePath=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so
+09-25 18:09:07.491  7448  7448 I qro_server: [pid=7448] server: applicationDirPath=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64
+09-25 18:09:07.491  7448  7448 I qro_server: [pid=7448] server: QDir::tempPath=/data/user/0/org.logos.qrotest.a/cache
+09-25 18:09:07.491  7448  7448 I qro_server: [pid=7448] server: libraryPaths=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64
+09-25 18:09:07.492  7448  7448 I qro_server: [pid=7448] server: QTime::currentTime=18:09:07.492
+09-25 18:09:07.492  7448  7448 I qro_server: [pid=7448] server: QPluginLoader file=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libechoplugin.so IID=org.logos.test.EchoInterface/1.0 MetaData={"name":"echoplugin","type":"core","version":"0.0.1"}
+09-25 18:09:07.492  7448  7448 I qro_server: [pid=7448] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:07.492  7448  7448 I qro_server: [pid=7448] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.a/cache/qro_t exists=1
+09-25 18:09:07.492  7448  7448 I qro_server: [pid=7448] server: enableRemoting(Echo)=1
+09-25 18:09:07.492  7448  7448 I qro_server: [pid=7448] server: READY
+09-25 18:09:07.495  7424  7450 I qrotest : child> [qro_server pid=7448] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:07.502  7424  7447 I QtCore  : Start
+09-25 18:09:07.507  7424  7447 I qrotest_jni: [pid=7424] jni: libqrotest_jni own JNI_OnLoad called (vm=0x7870390b8b50); QtCore g_javaVM=0x7870390b8b50
+09-25 18:09:07.511  7424  7447 I qrotest_jni: [pid=7424] jni: tid=7447 TMPDIR=/data/user/0/org.logos.qrotest.a/cache libart.so mappings in /proc/self/maps=4, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT) realVm=0x7870390b8b50 QtCore g_javaVM(before)=0x7870390b8b50 mode=none
+09-25 18:09:07.511  7424  7447 I qrotest_jni: [pid=7424] jvm-mode=none: no workaround
+09-25 18:09:07.511  7424  7447 I qrotest_jni: [pid=7424] jni: constructing QCoreApplication
+09-25 18:09:07.529  7424  7447 I qrotest_jni: [pid=7424] jni: QCoreApplication OK, Qt 6.11.1, isMainThread=1, applicationVersion=''
+09-25 18:09:07.530  7424  7447 I qrotest_jni: [pid=7424] client: connecting to local:qro_t at 18:09:07.530
+09-25 18:09:07.531  7424  7447 I qrotest_jni: [pid=7424] client: connectToNode accepted=1 lastError=0
+09-25 18:09:07.533  7424  7447 I qrotest_jni: [pid=7424] client: waitForSource=1 state=2 after 3 ms
+09-25 18:09:07.533  7424  7447 I qrotest_jni: [pid=7424] client: echo -> echo:hello-from-client-pid-7424 (server pid 7448, plugin says 'hello from echoplugin')
+09-25 18:09:07.533  7424  7447 I qrotest_jni: [pid=7424] client: callRemoteMethod(sum,[1,2,39]) -> 42
+09-25 18:09:07.533  7424  7447 I qrotest_jni: [pid=7424] jni: RESULT OK echo:hello-from-client-pid-7424 (server pid 7448, plugin says 'hello from echoplugin') | sum=42 | 3 ms
+---- avc
+09-25 18:09:07.485  7448  7448 W libqro_server.s: type=1400 audit(0.0:168): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+09-25 18:09:07.485  7448  7448 W libqro_server.s: type=1400 audit(0.0:169): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+09-25 18:09:07.485  7448  7448 W libqro_server.s: type=1400 audit(0.0:170): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+09-25 18:09:07.485  7448  7448 W libqro_server.s: type=1400 audit(0.0:171): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+AVC_SUMMARY app-domain denials: total=4 other-than-linker-tests-dir-search=0
+---- crash buffer
+---- processes (ps -A)
+  PID  PPID USER         LABEL                          NAME                       
+ 7424   363 u0_a193      u:r:untrusted_app:s0:c193,c256,c512,c768 org.logos.qrotest.a
+ 7448  7424 u0_a193      u:r:untrusted_app:s0:c193,c256,c512,c768 libqro_server.so
+---- cache dir
+total 16
+drwxrws--x 2 u0_a193 u0_a193_cache u:object_r:app_data_file:s0:c193,c256,c512,c768  4096 2026-09-25 18:09 .
+drwx------ 5 u0_a193 u0_a193       u:object_r:app_data_file:s0:c193,c256,c512,c768  4096 2026-09-25 18:02 ..
+srwx------ 1 u0_a193 u0_a193_cache u:object_r:app_data_file:s0:c193,c256,c512,c768     0 2026-09-25 18:09 qro_t
+---- after force-stop: LEFTOVER helper processes:
+(none)
+
+==== R2-B-realvm: org.logos.qrotest.b 
+Starting: Intent { cmp=org.logos.qrotest.b/org.logos.qrotest.MainActivity }
+Status: ok
+Activity: org.logos.qrotest.b/org.logos.qrotest.MainActivity
+---- app log (tag qrotest)
+09-25 18:09:11.008  7500  7522 I qrotest : CONFIG flavor=nojar qtJar=false jvmMode=realvm serverJvmMode=shim url=local:qro_t jniLib=qrotest_jni loadQtCore=false spawn=java
+09-25 18:09:11.008  7500  7522 I qrotest : pid=7500 uid=10194 TMPDIR=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:11.008  7500  7522 I qrotest : nativeLibraryDir=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:11.030  7500  7522 I qrotest : nativeLibraryDir contents: [libQt6Core_x86_64.so, libQt6Network_x86_64.so, libQt6RemoteObjects_x86_64.so, libc++_shared.so, libechoplugin.so, libqro_server.so, libqrotest_jni.so, libqrotest_jni_noonload.so]
+09-25 18:09:11.030  7500  7522 I qrotest : libqro_server.so exists=true canExecute=true size=675912
+09-25 18:09:11.030  7500  7522 I qrotest : libqro_server.so mode=100755
+09-25 18:09:11.032  7500  7522 I qrotest : HELPER started: Process[pid=7523, hasExited=false]
+09-25 18:09:11.043  7500  7525 I qrotest : child> [qro_server pid=7523] server: start ppid=7500 uid=10194 exe-arg0=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:11.044  7500  7525 I qrotest : child> [qro_server pid=7523] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:11.045  7500  7525 I qrotest : child> [qro_server pid=7523] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:11.046  7500  7525 I qrotest : child> [qro_server pid=7523] server: QDir::tempPath=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:11.050  7500  7525 I qrotest : child> [qro_server pid=7523] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:11.051  7500  7525 I qrotest : child> [qro_server pid=7523] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.b/cache/qro_t exists=1
+09-25 18:09:11.051  7500  7525 I qrotest : child> [qro_server pid=7523] server: READY
+09-25 18:09:11.052  7500  7522 I qrotest : helper READY seen=true
+09-25 18:09:11.055  7500  7522 I qrotest : System.loadLibrary(qrotest_jni) OK
+09-25 18:09:11.060  7500  7522 I qrotest : RESULT: OK echo:hello-from-client-pid-7500 (server pid 7523, plugin says 'hello from echoplugin') | sum=42 | 1 ms
+---- jni/child/QtCore/AndroidRuntime
+09-25 18:09:11.039  7523  7523 I qro_server: [pid=7523] server: start ppid=7500 uid=10194 exe-arg0=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:11.039  7523  7523 I qro_server: [pid=7523] server: env TMPDIR=/data/user/0/org.logos.qrotest.b/cache LD_LIBRARY_PATH=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64 HOME=<unset>
+09-25 18:09:11.039  7523  7523 I qro_server: [pid=7523] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:11.039  7523  7523 I QtCore  : Start
+09-25 18:09:11.039  7523  7523 I qro_server: [pid=7523] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+09-25 18:09:11.039  7523  7523 F QtCore  : initJNI failed
+09-25 18:09:11.039  7523  7523 I qro_server: [pid=7523] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:11.040  7523  7523 I qro_server: [pid=7523] server: QCoreApplication constructed, Qt 6.11.1
+09-25 18:09:11.040  7523  7523 I qro_server: [pid=7523] server: applicationFilePath=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:11.040  7523  7523 I qro_server: [pid=7523] server: applicationDirPath=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:11.040  7523  7523 I qro_server: [pid=7523] server: QDir::tempPath=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:11.040  7523  7523 I qro_server: [pid=7523] server: libraryPaths=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:11.040  7523  7523 I qro_server: [pid=7523] server: QTime::currentTime=18:09:11.040
+09-25 18:09:11.041  7523  7523 I qro_server: [pid=7523] server: QPluginLoader file=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libechoplugin.so IID=org.logos.test.EchoInterface/1.0 MetaData={"name":"echoplugin","type":"core","version":"0.0.1"}
+09-25 18:09:11.041  7523  7523 I qro_server: [pid=7523] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:11.042  7523  7523 I qro_server: [pid=7523] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.b/cache/qro_t exists=1
+09-25 18:09:11.042  7523  7523 I qro_server: [pid=7523] server: enableRemoting(Echo)=1
+09-25 18:09:11.042  7523  7523 I qro_server: [pid=7523] server: READY
+09-25 18:09:11.045  7500  7525 I qrotest : child> [qro_server pid=7523] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:11.055  7500  7522 I qrotest_jni: [pid=7500] jni: libqrotest_jni own JNI_OnLoad called (vm=0x7870390b8b50); QtCore g_javaVM=0x0
+09-25 18:09:11.056  7500  7522 I qrotest_jni: [pid=7500] jni: tid=7522 TMPDIR=/data/user/0/org.logos.qrotest.b/cache libart.so mappings in /proc/self/maps=4, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT) realVm=0x7870390b8b50 QtCore g_javaVM(before)=0x0 mode=realvm
+09-25 18:09:11.056  7500  7522 I QtCore  : Start
+09-25 18:09:11.057  7500  7522 I qrotest_jni: [pid=7500] qt-warning: java.lang.ClassNotFoundException: Didn't find class "org.qtproject.qt.android.QtNative" on path: DexPathList[[zip file "/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/base.apk"],nativeLibraryDirectories=[/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64, /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/base.apk!/lib/x86_64, /system/lib64, /system_ext/lib64]]
+09-25 18:09:11.057  7500  7522 I qrotest_jni: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java:259)
+09-25 18:09:11.057  7500  7522 I qrotest_jni: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:379)
+09-25 18:09:11.057  7500  7522 I qrotest_jni: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:312)
+09-25 18:09:11.057  7500  7522 I qrotest_jni: 	at org.logos.qrotest.NativeBridge.runClient(Native Method)
+09-25 18:09:11.057  7500  7522 I qrotest_jni: 	at org.logos.qrotest.MainActivity.runTest(MainActivity.kt:96)
+09-25 18:09:11.057  7500  7522 I qrotest_jni: 	at org.logos.qrotest.MainActivity.onCreate$lambda$2(MainActivity.kt:51)
+09-25 18:09:11.057  7500  7522 I qrotest_jni: 	at org.logos.qrotest.MainActivity$$ExternalSyntheticLambda3.run(D8$$SyntheticClass:0)
+09-25 18:09:11.057  7500  7522 I qrotest_jni: 	at java.lang.Thread.run(Thread.java:1012)
+09-25 18:09:11.058  7500  7522 F QtCore  : initJNI failed
+09-25 18:09:11.058  7500  7522 I qrotest_jni: [pid=7500] jni: QtCore JNI_OnLoad(realVm) returned -1; g_javaVM(after)=0x7870390b8b50
+09-25 18:09:11.058  7500  7522 I qrotest_jni: [pid=7500] jni: constructing QCoreApplication
+09-25 18:09:11.058  7500  7522 I qrotest_jni: [pid=7500] jni: QCoreApplication OK, Qt 6.11.1, isMainThread=1, applicationVersion=''
+09-25 18:09:11.058  7500  7522 I qrotest_jni: [pid=7500] client: connecting to local:qro_t at 18:09:11.059
+09-25 18:09:11.059  7500  7522 I qrotest_jni: [pid=7500] client: connectToNode accepted=1 lastError=0
+09-25 18:09:11.060  7500  7522 I qrotest_jni: [pid=7500] client: waitForSource=1 state=2 after 1 ms
+09-25 18:09:11.060  7500  7522 I qrotest_jni: [pid=7500] client: echo -> echo:hello-from-client-pid-7500 (server pid 7523, plugin says 'hello from echoplugin')
+09-25 18:09:11.060  7500  7522 I qrotest_jni: [pid=7500] client: callRemoteMethod(sum,[1,2,39]) -> 42
+---- avc
+09-25 18:09:11.033  7523  7523 W libqro_server.s: type=1400 audit(0.0:172): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:11.033  7523  7523 W libqro_server.s: type=1400 audit(0.0:173): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:11.033  7523  7523 W libqro_server.s: type=1400 audit(0.0:174): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:11.033  7523  7523 W libqro_server.s: type=1400 audit(0.0:175): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+AVC_SUMMARY app-domain denials: total=4 other-than-linker-tests-dir-search=0
+---- crash buffer
+---- processes (ps -A)
+  PID  PPID USER         LABEL                          NAME                       
+ 7500   363 u0_a194      u:r:untrusted_app:s0:c194,c256,c512,c768 org.logos.qrotest.b
+ 7523  7500 u0_a194      u:r:untrusted_app:s0:c194,c256,c512,c768 libqro_server.so
+---- cache dir
+total 16
+drwxrws--x 2 u0_a194 u0_a194_cache u:object_r:app_data_file:s0:c194,c256,c512,c768  4096 2026-09-25 18:09 .
+drwx------ 4 u0_a194 u0_a194       u:object_r:app_data_file:s0:c194,c256,c512,c768  4096 2026-09-25 18:01 ..
+srwx------ 1 u0_a194 u0_a194_cache u:object_r:app_data_file:s0:c194,c256,c512,c768     0 2026-09-25 18:09 qro_t
+---- after force-stop: LEFTOVER helper processes:
+(none)
+
+==== R3-B-none: org.logos.qrotest.b --es jvmMode none
+Starting: Intent { cmp=org.logos.qrotest.b/org.logos.qrotest.MainActivity (has extras) }
+Status: ok
+Activity: org.logos.qrotest.b/org.logos.qrotest.MainActivity
+---- app log (tag qrotest)
+09-25 18:09:14.513  7575  7597 I qrotest : CONFIG flavor=nojar qtJar=false jvmMode=none serverJvmMode=shim url=local:qro_t jniLib=qrotest_jni loadQtCore=false spawn=java
+09-25 18:09:14.513  7575  7597 I qrotest : pid=7575 uid=10194 TMPDIR=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:14.513  7575  7597 I qrotest : nativeLibraryDir=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:14.524  7575  7597 I qrotest : nativeLibraryDir contents: [libQt6Core_x86_64.so, libQt6Network_x86_64.so, libQt6RemoteObjects_x86_64.so, libc++_shared.so, libechoplugin.so, libqro_server.so, libqrotest_jni.so, libqrotest_jni_noonload.so]
+09-25 18:09:14.524  7575  7597 I qrotest : libqro_server.so exists=true canExecute=true size=675912
+09-25 18:09:14.524  7575  7597 I qrotest : libqro_server.so mode=100755
+09-25 18:09:14.525  7575  7597 I qrotest : HELPER started: Process[pid=7598, hasExited=false]
+09-25 18:09:14.536  7575  7600 I qrotest : child> [qro_server pid=7598] server: start ppid=7575 uid=10194 exe-arg0=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:14.537  7575  7600 I qrotest : child> [qro_server pid=7598] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:14.537  7575  7600 I qrotest : child> [qro_server pid=7598] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:14.538  7575  7600 I qrotest : child> [qro_server pid=7598] server: QDir::tempPath=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:14.539  7575  7600 I qrotest : child> [qro_server pid=7598] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:14.540  7575  7600 I qrotest : child> [qro_server pid=7598] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.b/cache/qro_t exists=1
+09-25 18:09:14.540  7575  7600 I qrotest : child> [qro_server pid=7598] server: READY
+09-25 18:09:14.540  7575  7597 I qrotest : helper READY seen=true
+09-25 18:09:14.542  7575  7597 I qrotest : System.loadLibrary(qrotest_jni) OK
+---- jni/child/QtCore/AndroidRuntime
+09-25 18:09:14.530  7598  7598 I qro_server: [pid=7598] server: start ppid=7575 uid=10194 exe-arg0=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:14.530  7598  7598 I qro_server: [pid=7598] server: env TMPDIR=/data/user/0/org.logos.qrotest.b/cache LD_LIBRARY_PATH=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64 HOME=<unset>
+09-25 18:09:14.530  7598  7598 I qro_server: [pid=7598] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:14.530  7598  7598 I QtCore  : Start
+09-25 18:09:14.531  7598  7598 I qro_server: [pid=7598] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+09-25 18:09:14.531  7598  7598 F QtCore  : initJNI failed
+09-25 18:09:14.531  7598  7598 I qro_server: [pid=7598] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:14.531  7598  7598 I qro_server: [pid=7598] server: QCoreApplication constructed, Qt 6.11.1
+09-25 18:09:14.531  7598  7598 I qro_server: [pid=7598] server: applicationFilePath=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:14.531  7598  7598 I qro_server: [pid=7598] server: applicationDirPath=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:14.531  7598  7598 I qro_server: [pid=7598] server: QDir::tempPath=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:14.531  7598  7598 I qro_server: [pid=7598] server: libraryPaths=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:14.532  7598  7598 I qro_server: [pid=7598] server: QTime::currentTime=18:09:14.532
+09-25 18:09:14.533  7598  7598 I qro_server: [pid=7598] server: QPluginLoader file=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libechoplugin.so IID=org.logos.test.EchoInterface/1.0 MetaData={"name":"echoplugin","type":"core","version":"0.0.1"}
+09-25 18:09:14.533  7598  7598 I qro_server: [pid=7598] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:14.534  7598  7598 I qro_server: [pid=7598] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.b/cache/qro_t exists=1
+09-25 18:09:14.534  7598  7598 I qro_server: [pid=7598] server: enableRemoting(Echo)=1
+09-25 18:09:14.534  7598  7598 I qro_server: [pid=7598] server: READY
+09-25 18:09:14.537  7575  7600 I qrotest : child> [qro_server pid=7598] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:14.542  7575  7597 I qrotest_jni: [pid=7575] jni: libqrotest_jni own JNI_OnLoad called (vm=0x7870390b8b50); QtCore g_javaVM=0x0
+09-25 18:09:14.544  7575  7597 I qrotest_jni: [pid=7575] jni: tid=7597 TMPDIR=/data/user/0/org.logos.qrotest.b/cache libart.so mappings in /proc/self/maps=4, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT) realVm=0x7870390b8b50 QtCore g_javaVM(before)=0x0 mode=none
+09-25 18:09:14.544  7575  7597 I qrotest_jni: [pid=7575] jvm-mode=none: no workaround
+09-25 18:09:14.544  7575  7597 I qrotest_jni: [pid=7575] jni: constructing QCoreApplication
+---- avc
+09-25 18:09:14.525  7598  7598 W libqro_server.s: type=1400 audit(0.0:176): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:14.525  7598  7598 W libqro_server.s: type=1400 audit(0.0:177): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:14.525  7598  7598 W libqro_server.s: type=1400 audit(0.0:178): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:14.525  7598  7598 W libqro_server.s: type=1400 audit(0.0:179): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+AVC_SUMMARY app-domain denials: total=4 other-than-linker-tests-dir-search=0
+---- crash buffer
+09-25 18:09:14.544  7575  7597 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0 in tid 7597 (logos-qt), pid 7575 (logos.qrotest.b)
+09-25 18:09:14.719  7604  7604 F DEBUG   : Cmdline: org.logos.qrotest.b
+09-25 18:09:14.719  7604  7604 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000000000000000
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #00 pc 0000000000530c7e  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libQt6Core_x86_64.so (QJniEnvironment::getJniEnv()+46) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #01 pc 00000000005364ff  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libQt6Core_x86_64.so (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #02 pc 00000000005364e6  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libQt6Core_x86_64.so (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #03 pc 00000000004fb042  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libQt6Core_x86_64.so (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #04 pc 0000000000393294  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libQt6Core_x86_64.so (QCoreApplicationPrivate::appVersion() const+470) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #05 pc 0000000000394496  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libQt6Core_x86_64.so (QCoreApplicationPrivate::init()+162) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #06 pc 00000000003943ab  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libQt6Core_x86_64.so (QCoreApplication::QCoreApplication(int&, char**, int)+87) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #07 pc 000000000000c4bf  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqrotest_jni.so (Java_org_logos_qrotest_NativeBridge_runClient+2127) (BuildId: d5313e58551ca708c6a518c521e63dcbff9a6e11)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #08 pc 0000000000391a4b  /apex/com.android.art/lib64/libart.so (art_quick_generic_jni_trampoline+219) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #09 pc 0000000000378826  /apex/com.android.art/lib64/libart.so (art_quick_invoke_static_stub+806) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+---- processes (ps -A)
+  PID  PPID USER         LABEL                          NAME                       
+---- cache dir
+total 16
+drwxrws--x 2 u0_a194 u0_a194_cache u:object_r:app_data_file:s0:c194,c256,c512,c768  4096 2026-09-25 18:09 .
+drwx------ 4 u0_a194 u0_a194       u:object_r:app_data_file:s0:c194,c256,c512,c768  4096 2026-09-25 18:01 ..
+srwx------ 1 u0_a194 u0_a194_cache u:object_r:app_data_file:s0:c194,c256,c512,c768     0 2026-09-25 18:09 qro_t
+---- after force-stop: LEFTOVER helper processes:
+(none)
+
+==== R4-B-noonload: org.logos.qrotest.b --es jvmMode none --es jniLib qrotest_jni_noonload
+Starting: Intent { cmp=org.logos.qrotest.b/org.logos.qrotest.MainActivity (has extras) }
+Status: ok
+Activity: org.logos.qrotest.b/org.logos.qrotest.MainActivity
+---- app log (tag qrotest)
+09-25 18:09:19.100  7671  7693 I qrotest : CONFIG flavor=nojar qtJar=false jvmMode=none serverJvmMode=shim url=local:qro_t jniLib=qrotest_jni_noonload loadQtCore=false spawn=java
+09-25 18:09:19.100  7671  7693 I qrotest : pid=7671 uid=10194 TMPDIR=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:19.100  7671  7693 I qrotest : nativeLibraryDir=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:19.114  7671  7693 I qrotest : nativeLibraryDir contents: [libQt6Core_x86_64.so, libQt6Network_x86_64.so, libQt6RemoteObjects_x86_64.so, libc++_shared.so, libechoplugin.so, libqro_server.so, libqrotest_jni.so, libqrotest_jni_noonload.so]
+09-25 18:09:19.114  7671  7693 I qrotest : libqro_server.so exists=true canExecute=true size=675912
+09-25 18:09:19.114  7671  7693 I qrotest : libqro_server.so mode=100755
+09-25 18:09:19.118  7671  7693 I qrotest : HELPER started: Process[pid=7694, hasExited=false]
+09-25 18:09:19.126  7671  7696 I qrotest : child> [qro_server pid=7694] server: start ppid=7671 uid=10194 exe-arg0=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:19.126  7671  7696 I qrotest : child> [qro_server pid=7694] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:19.127  7671  7696 I qrotest : child> [qro_server pid=7694] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:19.128  7671  7696 I qrotest : child> [qro_server pid=7694] server: QDir::tempPath=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:19.129  7671  7696 I qrotest : child> [qro_server pid=7694] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:19.129  7671  7696 I qrotest : child> [qro_server pid=7694] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.b/cache/qro_t exists=1
+09-25 18:09:19.130  7671  7696 I qrotest : child> [qro_server pid=7694] server: READY
+09-25 18:09:19.130  7671  7693 I qrotest : helper READY seen=true
+09-25 18:09:19.139  7671  7693 I qrotest : LOADLIBRARY FAILED: java.lang.UnsatisfiedLinkError: JNI_ERR returned from JNI_OnLoad in "/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqrotest_jni_noonload.so"
+09-25 18:09:19.139  7671  7693 I qrotest : RESULT: FAIL loadLibrary
+---- jni/child/QtCore/AndroidRuntime
+09-25 18:09:19.123  7694  7694 I qro_server: [pid=7694] server: start ppid=7671 uid=10194 exe-arg0=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:19.123  7694  7694 I qro_server: [pid=7694] server: env TMPDIR=/data/user/0/org.logos.qrotest.b/cache LD_LIBRARY_PATH=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64 HOME=<unset>
+09-25 18:09:19.123  7694  7694 I qro_server: [pid=7694] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:19.124  7694  7694 I QtCore  : Start
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+09-25 18:09:19.124  7694  7694 F QtCore  : initJNI failed
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] server: QCoreApplication constructed, Qt 6.11.1
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] server: applicationFilePath=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] server: applicationDirPath=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] server: QDir::tempPath=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] server: libraryPaths=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:19.124  7694  7694 I qro_server: [pid=7694] server: QTime::currentTime=18:09:19.125
+09-25 18:09:19.125  7694  7694 I qro_server: [pid=7694] server: QPluginLoader file=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libechoplugin.so IID=org.logos.test.EchoInterface/1.0 MetaData={"name":"echoplugin","type":"core","version":"0.0.1"}
+09-25 18:09:19.125  7694  7694 I qro_server: [pid=7694] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:19.126  7694  7694 I qro_server: [pid=7694] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.b/cache/qro_t exists=1
+09-25 18:09:19.127  7694  7694 I qro_server: [pid=7694] server: enableRemoting(Echo)=1
+09-25 18:09:19.127  7694  7694 I qro_server: [pid=7694] server: READY
+09-25 18:09:19.127  7671  7696 I qrotest : child> [qro_server pid=7694] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:19.137  7671  7693 I QtCore  : Start
+09-25 18:09:19.139  7671  7693 F QtCore  : initJNI failed
+---- avc
+09-25 18:09:19.117  7694  7694 W libqro_server.s: type=1400 audit(0.0:180): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:19.117  7694  7694 W libqro_server.s: type=1400 audit(0.0:181): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:19.117  7694  7694 W libqro_server.s: type=1400 audit(0.0:182): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:19.117  7694  7694 W libqro_server.s: type=1400 audit(0.0:183): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+AVC_SUMMARY app-domain denials: total=4 other-than-linker-tests-dir-search=0
+---- crash buffer
+---- processes (ps -A)
+  PID  PPID USER         LABEL                          NAME                       
+ 7671   363 u0_a194      u:r:untrusted_app:s0:c194,c256,c512,c768 org.logos.qrotest.b
+ 7694  7671 u0_a194      u:r:untrusted_app:s0:c194,c256,c512,c768 libqro_server.so
+---- cache dir
+total 16
+drwxrws--x 2 u0_a194 u0_a194_cache u:object_r:app_data_file:s0:c194,c256,c512,c768  4096 2026-09-25 18:09 .
+drwx------ 4 u0_a194 u0_a194       u:object_r:app_data_file:s0:c194,c256,c512,c768  4096 2026-09-25 18:01 ..
+srwx------ 1 u0_a194 u0_a194_cache u:object_r:app_data_file:s0:c194,c256,c512,c768     0 2026-09-25 18:09 qro_t
+---- after force-stop: LEFTOVER helper processes:
+(none)
+
+==== R5-A-abstract: org.logos.qrotest.a --es url localabstract:qro_t
+Starting: Intent { cmp=org.logos.qrotest.a/org.logos.qrotest.MainActivity (has extras) }
+Status: ok
+Activity: org.logos.qrotest.a/org.logos.qrotest.MainActivity
+---- app log (tag qrotest)
+09-25 18:09:22.671  7744  7767 I qrotest : CONFIG flavor=withjar qtJar=true jvmMode=none serverJvmMode=shim url=localabstract:qro_t jniLib=qrotest_jni loadQtCore=true spawn=java
+09-25 18:09:22.671  7744  7767 I qrotest : pid=7744 uid=10193 TMPDIR=/data/user/0/org.logos.qrotest.a/cache
+09-25 18:09:22.671  7744  7767 I qrotest : nativeLibraryDir=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64
+09-25 18:09:22.684  7744  7767 I qrotest : nativeLibraryDir contents: [libQt6Core_x86_64.so, libQt6Network_x86_64.so, libQt6RemoteObjects_x86_64.so, libc++_shared.so, libechoplugin.so, libqro_server.so, libqrotest_jni.so, libqrotest_jni_noonload.so]
+09-25 18:09:22.684  7744  7767 I qrotest : libqro_server.so exists=true canExecute=true size=675912
+09-25 18:09:22.684  7744  7767 I qrotest : libqro_server.so mode=100755
+09-25 18:09:22.686  7744  7767 I qrotest : HELPER started: Process[pid=7768, hasExited=false]
+09-25 18:09:22.697  7744  7770 I qrotest : child> [qro_server pid=7768] server: start ppid=7744 uid=10193 exe-arg0=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so
+09-25 18:09:22.698  7744  7770 I qrotest : child> [qro_server pid=7768] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:22.699  7744  7770 I qrotest : child> [qro_server pid=7768] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:22.701  7744  7770 I qrotest : child> [qro_server pid=7768] server: QDir::tempPath=/data/user/0/org.logos.qrotest.a/cache
+09-25 18:09:22.705  7744  7770 I qrotest : child> [qro_server pid=7768] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:22.705  7744  7770 I qrotest : child> [qro_server pid=7768] server: setRegistryUrl(localabstract:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.a/cache/qro_t exists=1
+09-25 18:09:22.705  7744  7770 I qrotest : child> [qro_server pid=7768] server: READY
+09-25 18:09:22.705  7744  7767 I qrotest : helper READY seen=true
+09-25 18:09:22.709  7744  7767 I qrotest : System.loadLibrary(Qt6Core_x86_64) OK (QtCore JNI_OnLoad ran)
+09-25 18:09:22.711  7744  7767 I qrotest : System.loadLibrary(qrotest_jni) OK
+09-25 18:09:22.716  7744  7767 I qrotest : RESULT: OK echo:hello-from-client-pid-7744 (server pid 7768, plugin says 'hello from echoplugin') | sum=42 | 1 ms
+---- jni/child/QtCore/AndroidRuntime
+09-25 18:09:22.691  7768  7768 I qro_server: [pid=7768] server: start ppid=7744 uid=10193 exe-arg0=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so
+09-25 18:09:22.691  7768  7768 I qro_server: [pid=7768] server: env TMPDIR=/data/user/0/org.logos.qrotest.a/cache LD_LIBRARY_PATH=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64 HOME=<unset>
+09-25 18:09:22.691  7768  7768 I qro_server: [pid=7768] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:22.692  7768  7768 I QtCore  : Start
+09-25 18:09:22.692  7768  7768 I qro_server: [pid=7768] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+09-25 18:09:22.692  7768  7768 F QtCore  : initJNI failed
+09-25 18:09:22.692  7768  7768 I qro_server: [pid=7768] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:22.693  7768  7768 I qro_server: [pid=7768] server: QCoreApplication constructed, Qt 6.11.1
+09-25 18:09:22.693  7768  7768 I qro_server: [pid=7768] server: applicationFilePath=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so
+09-25 18:09:22.693  7768  7768 I qro_server: [pid=7768] server: applicationDirPath=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64
+09-25 18:09:22.693  7768  7768 I qro_server: [pid=7768] server: QDir::tempPath=/data/user/0/org.logos.qrotest.a/cache
+09-25 18:09:22.693  7768  7768 I qro_server: [pid=7768] server: libraryPaths=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64
+09-25 18:09:22.693  7768  7768 I qro_server: [pid=7768] server: QTime::currentTime=18:09:22.694
+09-25 18:09:22.694  7768  7768 I qro_server: [pid=7768] server: QPluginLoader file=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libechoplugin.so IID=org.logos.test.EchoInterface/1.0 MetaData={"name":"echoplugin","type":"core","version":"0.0.1"}
+09-25 18:09:22.694  7768  7768 I qro_server: [pid=7768] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:22.695  7768  7768 I qro_server: [pid=7768] server: setRegistryUrl(localabstract:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.a/cache/qro_t exists=1
+09-25 18:09:22.695  7768  7768 I qro_server: [pid=7768] server: enableRemoting(Echo)=1
+09-25 18:09:22.695  7768  7768 I qro_server: [pid=7768] server: READY
+09-25 18:09:22.699  7744  7770 I qrotest : child> [qro_server pid=7768] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:22.707  7744  7767 I QtCore  : Start
+09-25 18:09:22.711  7744  7767 I qrotest_jni: [pid=7744] jni: libqrotest_jni own JNI_OnLoad called (vm=0x7870390b8b50); QtCore g_javaVM=0x7870390b8b50
+09-25 18:09:22.713  7744  7767 I qrotest_jni: [pid=7744] jni: tid=7767 TMPDIR=/data/user/0/org.logos.qrotest.a/cache libart.so mappings in /proc/self/maps=4, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT) realVm=0x7870390b8b50 QtCore g_javaVM(before)=0x7870390b8b50 mode=none
+09-25 18:09:22.714  7744  7767 I qrotest_jni: [pid=7744] jvm-mode=none: no workaround
+09-25 18:09:22.714  7744  7767 I qrotest_jni: [pid=7744] jni: constructing QCoreApplication
+09-25 18:09:22.714  7744  7767 I qrotest_jni: [pid=7744] jni: QCoreApplication OK, Qt 6.11.1, isMainThread=1, applicationVersion=''
+09-25 18:09:22.714  7744  7767 I qrotest_jni: [pid=7744] client: connecting to localabstract:qro_t at 18:09:22.714
+09-25 18:09:22.715  7744  7767 I qrotest_jni: [pid=7744] client: connectToNode accepted=1 lastError=0
+09-25 18:09:22.715  7744  7767 I qrotest_jni: [pid=7744] client: waitForSource=1 state=2 after 1 ms
+09-25 18:09:22.716  7744  7767 I qrotest_jni: [pid=7744] client: echo -> echo:hello-from-client-pid-7744 (server pid 7768, plugin says 'hello from echoplugin')
+09-25 18:09:22.716  7744  7767 I qrotest_jni: [pid=7744] client: callRemoteMethod(sum,[1,2,39]) -> 42
+09-25 18:09:22.716  7744  7767 I qrotest_jni: [pid=7744] jni: RESULT OK echo:hello-from-client-pid-7744 (server pid 7768, plugin says 'hello from echoplugin') | sum=42 | 1 ms
+---- avc
+09-25 18:09:22.685  7768  7768 W libqro_server.s: type=1400 audit(0.0:184): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+09-25 18:09:22.685  7768  7768 W libqro_server.s: type=1400 audit(0.0:185): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+09-25 18:09:22.685  7768  7768 W libqro_server.s: type=1400 audit(0.0:186): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+09-25 18:09:22.685  7768  7768 W libqro_server.s: type=1400 audit(0.0:187): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+AVC_SUMMARY app-domain denials: total=4 other-than-linker-tests-dir-search=0
+---- crash buffer
+---- processes (ps -A)
+  PID  PPID USER         LABEL                          NAME                       
+ 7744   363 u0_a193      u:r:untrusted_app:s0:c193,c256,c512,c768 org.logos.qrotest.a
+ 7768  7744 u0_a193      u:r:untrusted_app:s0:c193,c256,c512,c768 libqro_server.so
+---- cache dir
+total 16
+drwxrws--x 2 u0_a193 u0_a193_cache u:object_r:app_data_file:s0:c193,c256,c512,c768  4096 2026-09-25 18:09 .
+drwx------ 5 u0_a193 u0_a193       u:object_r:app_data_file:s0:c193,c256,c512,c768  4096 2026-09-25 18:02 ..
+srwx------ 1 u0_a193 u0_a193_cache u:object_r:app_data_file:s0:c193,c256,c512,c768     0 2026-09-25 18:09 qro_t
+---- after force-stop: LEFTOVER helper processes:
+(none)
+
+==== R6-A-childnoshim: org.logos.qrotest.a --es serverJvmMode none
+Starting: Intent { cmp=org.logos.qrotest.a/org.logos.qrotest.MainActivity (has extras) }
+Status: ok
+Activity: org.logos.qrotest.a/org.logos.qrotest.MainActivity
+---- app log (tag qrotest)
+09-25 18:09:26.461  7820  7842 I qrotest : CONFIG flavor=withjar qtJar=true jvmMode=none serverJvmMode=none url=local:qro_t jniLib=qrotest_jni loadQtCore=true spawn=java
+09-25 18:09:26.461  7820  7842 I qrotest : pid=7820 uid=10193 TMPDIR=/data/user/0/org.logos.qrotest.a/cache
+09-25 18:09:26.461  7820  7842 I qrotest : nativeLibraryDir=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64
+09-25 18:09:26.474  7820  7842 I qrotest : nativeLibraryDir contents: [libQt6Core_x86_64.so, libQt6Network_x86_64.so, libQt6RemoteObjects_x86_64.so, libc++_shared.so, libechoplugin.so, libqro_server.so, libqrotest_jni.so, libqrotest_jni_noonload.so]
+09-25 18:09:26.474  7820  7842 I qrotest : libqro_server.so exists=true canExecute=true size=675912
+09-25 18:09:26.474  7820  7842 I qrotest : libqro_server.so mode=100755
+09-25 18:09:26.476  7820  7842 I qrotest : HELPER started: Process[pid=7843, hasExited=false]
+09-25 18:09:26.487  7820  7845 I qrotest : child> [qro_server pid=7843] server: start ppid=7820 uid=10193 exe-arg0=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so
+09-25 18:09:26.488  7820  7845 I qrotest : child> [qro_server pid=7843] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:26.488  7820  7845 I qrotest : child> [qro_server pid=7843] jvm-mode=none: no workaround
+09-25 18:09:26.540  7820  7845 I qrotest : HELPER exited rc=139
+09-25 18:09:26.541  7820  7842 I qrotest : helper READY seen=true
+09-25 18:09:26.558  7820  7842 I qrotest : System.loadLibrary(Qt6Core_x86_64) OK (QtCore JNI_OnLoad ran)
+09-25 18:09:26.568  7820  7842 I qrotest : System.loadLibrary(qrotest_jni) OK
+09-25 18:09:36.514  7820  7842 I qrotest : RESULT: FAIL replica never became valid within 10000 ms (state=0)
+---- jni/child/QtCore/AndroidRuntime
+09-25 18:09:26.484  7843  7843 I qro_server: [pid=7843] server: start ppid=7820 uid=10193 exe-arg0=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so
+09-25 18:09:26.485  7843  7843 I qro_server: [pid=7843] server: env TMPDIR=/data/user/0/org.logos.qrotest.a/cache LD_LIBRARY_PATH=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64 HOME=<unset>
+09-25 18:09:26.485  7843  7843 I qro_server: [pid=7843] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:26.485  7843  7843 I qro_server: [pid=7843] jvm-mode=none: no workaround
+09-25 18:09:26.547  7820  7842 I QtCore  : Start
+09-25 18:09:26.567  7820  7842 I qrotest_jni: [pid=7820] jni: libqrotest_jni own JNI_OnLoad called (vm=0x7870390b8b50); QtCore g_javaVM=0x7870390b8b50
+09-25 18:09:26.572  7820  7842 I qrotest_jni: [pid=7820] jni: tid=7842 TMPDIR=/data/user/0/org.logos.qrotest.a/cache libart.so mappings in /proc/self/maps=4, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT) realVm=0x7870390b8b50 QtCore g_javaVM(before)=0x7870390b8b50 mode=none
+09-25 18:09:26.572  7820  7842 I qrotest_jni: [pid=7820] jvm-mode=none: no workaround
+09-25 18:09:26.572  7820  7842 I qrotest_jni: [pid=7820] jni: constructing QCoreApplication
+09-25 18:09:26.574  7820  7842 I qrotest_jni: [pid=7820] jni: QCoreApplication OK, Qt 6.11.1, isMainThread=1, applicationVersion=''
+09-25 18:09:26.575  7820  7842 I qrotest_jni: [pid=7820] client: connecting to local:qro_t at 18:09:26.575
+09-25 18:09:26.577  7820  7842 I qrotest_jni: [pid=7820] client: connectToNode accepted=1 lastError=0
+09-25 18:09:36.514  7820  7842 I qrotest_jni: [pid=7820] client: waitForSource=0 state=0 after 9940 ms
+09-25 18:09:36.514  7820  7842 I qrotest_jni: [pid=7820] jni: RESULT FAIL replica never became valid within 10000 ms (state=0)
+---- avc
+09-25 18:09:26.473  7843  7843 W libqro_server.s: type=1400 audit(0.0:188): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+09-25 18:09:26.473  7843  7843 W libqro_server.s: type=1400 audit(0.0:189): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+09-25 18:09:26.473  7843  7843 W libqro_server.s: type=1400 audit(0.0:190): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+09-25 18:09:26.473  7843  7843 W libqro_server.s: type=1400 audit(0.0:191): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+AVC_SUMMARY app-domain denials: total=4 other-than-linker-tests-dir-search=0
+---- crash buffer
+09-25 18:09:26.485  7843  7843 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0 in tid 7843 (libqro_server.s), pid 7843 (libqro_server.s)
+09-25 18:09:26.509  7849  7849 F DEBUG   : Cmdline: /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so --jvm-mode=none --url=local:qro_t --plugin=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libechoplugin.so --exit-after-ms=120000
+09-25 18:09:26.509  7849  7849 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000000000000000
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #00 pc 0000000000530c7e  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libQt6Core_x86_64.so (QJniEnvironment::getJniEnv()+46) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #01 pc 00000000005364ff  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libQt6Core_x86_64.so (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #02 pc 00000000005364e6  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libQt6Core_x86_64.so (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #03 pc 00000000004fb042  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libQt6Core_x86_64.so (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #04 pc 0000000000393294  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libQt6Core_x86_64.so (QCoreApplicationPrivate::appVersion() const+470) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #05 pc 0000000000394496  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libQt6Core_x86_64.so (QCoreApplicationPrivate::init()+162) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #06 pc 00000000003943ab  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libQt6Core_x86_64.so (QCoreApplication::QCoreApplication(int&, char**, int)+87) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #07 pc 000000000000c520  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so (main+1792) (BuildId: f4f80e4fdbeb0b43c8bc895833ad83e4fa31618f)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #08 pc 00000000000529ef  /apex/com.android.runtime/lib64/bionic/libc.so (__libc_init+95) (BuildId: fa337969c798946280caa45e2d71a2e7)
+---- processes (ps -A)
+  PID  PPID USER         LABEL                          NAME                       
+ 7820   363 u0_a193      u:r:untrusted_app:s0:c193,c256,c512,c768 org.logos.qrotest.a
+---- cache dir
+total 16
+drwxrws--x 2 u0_a193 u0_a193_cache u:object_r:app_data_file:s0:c193,c256,c512,c768  4096 2026-09-25 18:09 .
+drwx------ 5 u0_a193 u0_a193       u:object_r:app_data_file:s0:c193,c256,c512,c768  4096 2026-09-25 18:02 ..
+srwx------ 1 u0_a193 u0_a193_cache u:object_r:app_data_file:s0:c193,c256,c512,c768     0 2026-09-25 18:09 qro_t
+---- after force-stop: LEFTOVER helper processes:
+(none)
+
+==== R7-B-shim: org.logos.qrotest.b --es jvmMode shim
+Starting: Intent { cmp=org.logos.qrotest.b/org.logos.qrotest.MainActivity (has extras) }
+Status: ok
+Activity: org.logos.qrotest.b/org.logos.qrotest.MainActivity
+---- app log (tag qrotest)
+09-25 18:09:40.426  7968  7991 I qrotest : CONFIG flavor=nojar qtJar=false jvmMode=shim serverJvmMode=shim url=local:qro_t jniLib=qrotest_jni loadQtCore=false spawn=java
+09-25 18:09:40.426  7968  7991 I qrotest : pid=7968 uid=10194 TMPDIR=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:40.427  7968  7991 I qrotest : nativeLibraryDir=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:40.438  7968  7991 I qrotest : nativeLibraryDir contents: [libQt6Core_x86_64.so, libQt6Network_x86_64.so, libQt6RemoteObjects_x86_64.so, libc++_shared.so, libechoplugin.so, libqro_server.so, libqrotest_jni.so, libqrotest_jni_noonload.so]
+09-25 18:09:40.439  7968  7991 I qrotest : libqro_server.so exists=true canExecute=true size=675912
+09-25 18:09:40.439  7968  7991 I qrotest : libqro_server.so mode=100755
+09-25 18:09:40.440  7968  7991 I qrotest : HELPER started: Process[pid=7992, hasExited=false]
+09-25 18:09:40.448  7968  7994 I qrotest : child> [qro_server pid=7992] server: start ppid=7968 uid=10194 exe-arg0=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:40.449  7968  7994 I qrotest : child> [qro_server pid=7992] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:40.450  7968  7994 I qrotest : child> [qro_server pid=7992] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:40.452  7968  7994 I qrotest : child> [qro_server pid=7992] server: QDir::tempPath=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:40.453  7968  7994 I qrotest : child> [qro_server pid=7992] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:40.454  7968  7994 I qrotest : child> [qro_server pid=7992] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.b/cache/qro_t exists=1
+09-25 18:09:40.454  7968  7994 I qrotest : child> [qro_server pid=7992] server: READY
+09-25 18:09:40.454  7968  7991 I qrotest : helper READY seen=true
+09-25 18:09:40.457  7968  7991 I qrotest : System.loadLibrary(qrotest_jni) OK
+09-25 18:09:40.482  7968  7991 I qrotest : RESULT: OK echo:hello-from-client-pid-7968 (server pid 7992, plugin says 'hello from echoplugin') | sum=42 | 21 ms
+---- jni/child/QtCore/AndroidRuntime
+09-25 18:09:40.445  7992  7992 I qro_server: [pid=7992] server: start ppid=7968 uid=10194 exe-arg0=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:40.445  7992  7992 I qro_server: [pid=7992] server: env TMPDIR=/data/user/0/org.logos.qrotest.b/cache LD_LIBRARY_PATH=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64 HOME=<unset>
+09-25 18:09:40.447  7992  7992 I qro_server: [pid=7992] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:40.447  7992  7992 I QtCore  : Start
+09-25 18:09:40.447  7992  7992 I qro_server: [pid=7992] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+09-25 18:09:40.447  7992  7992 F QtCore  : initJNI failed
+09-25 18:09:40.447  7992  7992 I qro_server: [pid=7992] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:40.450  7992  7992 I qro_server: [pid=7992] server: QCoreApplication constructed, Qt 6.11.1
+09-25 18:09:40.450  7992  7992 I qro_server: [pid=7992] server: applicationFilePath=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:40.450  7992  7992 I qro_server: [pid=7992] server: applicationDirPath=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:40.450  7968  7994 I qrotest : child> [qro_server pid=7992] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:40.450  7992  7992 I qro_server: [pid=7992] server: QDir::tempPath=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:40.450  7992  7992 I qro_server: [pid=7992] server: libraryPaths=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:40.451  7992  7992 I qro_server: [pid=7992] server: QTime::currentTime=18:09:40.451
+09-25 18:09:40.451  7992  7992 I qro_server: [pid=7992] server: QPluginLoader file=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libechoplugin.so IID=org.logos.test.EchoInterface/1.0 MetaData={"name":"echoplugin","type":"core","version":"0.0.1"}
+09-25 18:09:40.451  7992  7992 I qro_server: [pid=7992] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:40.452  7992  7992 I qro_server: [pid=7992] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.b/cache/qro_t exists=1
+09-25 18:09:40.452  7992  7992 I qro_server: [pid=7992] server: enableRemoting(Echo)=1
+09-25 18:09:40.453  7992  7992 I qro_server: [pid=7992] server: READY
+09-25 18:09:40.457  7968  7991 I qrotest_jni: [pid=7968] jni: libqrotest_jni own JNI_OnLoad called (vm=0x7870390b8b50); QtCore g_javaVM=0x0
+09-25 18:09:40.458  7968  7991 I qrotest_jni: [pid=7968] jni: tid=7991 TMPDIR=/data/user/0/org.logos.qrotest.b/cache libart.so mappings in /proc/self/maps=4, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT) realVm=0x7870390b8b50 QtCore g_javaVM(before)=0x0 mode=shim
+09-25 18:09:40.459  7968  7991 I QtCore  : Start
+09-25 18:09:40.459  7968  7991 I qrotest_jni: [pid=7968] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+09-25 18:09:40.459  7968  7991 F QtCore  : initJNI failed
+09-25 18:09:40.459  7968  7991 I qrotest_jni: [pid=7968] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:40.459  7968  7991 I qrotest_jni: [pid=7968] jni: constructing QCoreApplication
+09-25 18:09:40.459  7968  7991 I qrotest_jni: [pid=7968] jni: QCoreApplication OK, Qt 6.11.1, isMainThread=1, applicationVersion=''
+09-25 18:09:40.459  7968  7991 I qrotest_jni: [pid=7968] client: connecting to local:qro_t at 18:09:40.460
+09-25 18:09:40.460  7968  7991 I qrotest_jni: [pid=7968] client: connectToNode accepted=1 lastError=0
+09-25 18:09:40.461  7968  7991 I qrotest_jni: [pid=7968] client: waitForSource=1 state=2 after 1 ms
+09-25 18:09:40.481  7968  7991 I qrotest_jni: [pid=7968] client: echo -> echo:hello-from-client-pid-7968 (server pid 7992, plugin says 'hello from echoplugin')
+09-25 18:09:40.481  7968  7991 I qrotest_jni: [pid=7968] client: callRemoteMethod(sum,[1,2,39]) -> 42
+09-25 18:09:40.481  7968  7991 I qrotest_jni: [pid=7968] jni: RESULT OK echo:hello-from-client-pid-7968 (server pid 7992, plugin says 'hello from echoplugin') | sum=42 | 21 ms
+---- avc
+09-25 18:09:40.437  7992  7992 W libqro_server.s: type=1400 audit(0.0:192): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:40.437  7992  7992 W libqro_server.s: type=1400 audit(0.0:193): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:40.437  7992  7992 W libqro_server.s: type=1400 audit(0.0:194): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:40.437  7992  7992 W libqro_server.s: type=1400 audit(0.0:195): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+AVC_SUMMARY app-domain denials: total=4 other-than-linker-tests-dir-search=0
+---- crash buffer
+---- processes (ps -A)
+  PID  PPID USER         LABEL                          NAME                       
+ 7968   363 u0_a194      u:r:untrusted_app:s0:c194,c256,c512,c768 org.logos.qrotest.b
+ 7992  7968 u0_a194      u:r:untrusted_app:s0:c194,c256,c512,c768 libqro_server.so
+---- cache dir
+total 16
+drwxrws--x 2 u0_a194 u0_a194_cache u:object_r:app_data_file:s0:c194,c256,c512,c768  4096 2026-09-25 18:09 .
+drwx------ 4 u0_a194 u0_a194       u:object_r:app_data_file:s0:c194,c256,c512,c768  4096 2026-09-25 18:01 ..
+srwx------ 1 u0_a194 u0_a194_cache u:object_r:app_data_file:s0:c194,c256,c512,c768     0 2026-09-25 18:09 qro_t
+---- after force-stop: LEFTOVER helper processes:
+(none)
+
+==== R8-A-nativespawn: org.logos.qrotest.a --es spawn native
+Starting: Intent { cmp=org.logos.qrotest.a/org.logos.qrotest.MainActivity (has extras) }
+Status: ok
+Activity: org.logos.qrotest.a/org.logos.qrotest.MainActivity
+---- app log (tag qrotest)
+09-25 18:09:43.948  8043  8065 I qrotest : CONFIG flavor=withjar qtJar=true jvmMode=none serverJvmMode=shim url=local:qro_t jniLib=qrotest_jni loadQtCore=true spawn=native
+09-25 18:09:43.949  8043  8065 I qrotest : pid=8043 uid=10193 TMPDIR=/data/user/0/org.logos.qrotest.a/cache
+09-25 18:09:43.949  8043  8065 I qrotest : nativeLibraryDir=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64
+09-25 18:09:43.964  8043  8065 I qrotest : nativeLibraryDir contents: [libQt6Core_x86_64.so, libQt6Network_x86_64.so, libQt6RemoteObjects_x86_64.so, libc++_shared.so, libechoplugin.so, libqro_server.so, libqrotest_jni.so, libqrotest_jni_noonload.so]
+09-25 18:09:43.964  8043  8065 I qrotest : libqro_server.so exists=true canExecute=true size=675912
+09-25 18:09:43.964  8043  8065 I qrotest : libqro_server.so mode=100755
+09-25 18:09:43.972  8043  8065 I qrotest : System.loadLibrary(Qt6Core_x86_64) OK (QtCore JNI_OnLoad ran)
+09-25 18:09:43.975  8043  8065 I qrotest : System.loadLibrary(qrotest_jni) OK
+09-25 18:09:43.976  8043  8065 I qrotest : HELPER posix_spawn pid=8067
+09-25 18:09:43.977  8043  8065 I qrotest : helper socket exists=true
+09-25 18:09:44.246  8043  8065 I qrotest : RESULT: OK echo:hello-from-client-pid-8043 (server pid 8067, plugin says 'hello from echoplugin') | sum=42 | 265 ms
+---- jni/child/QtCore/AndroidRuntime
+09-25 18:09:43.970  8043  8065 I QtCore  : Start
+09-25 18:09:43.975  8043  8065 I qrotest_jni: [pid=8043] jni: libqrotest_jni own JNI_OnLoad called (vm=0x7870390b8b50); QtCore g_javaVM=0x7870390b8b50
+09-25 18:09:43.975  8043  8065 I qrotest_jni: [pid=8043] jni: posix_spawn(/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so) rc=0 pid=8067 (env inherited: TMPDIR=/data/user/0/org.logos.qrotest.a/cache LD_LIBRARY_PATH=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64)
+09-25 18:09:43.979  8043  8065 I qrotest_jni: [pid=8043] jni: tid=8065 TMPDIR=/data/user/0/org.logos.qrotest.a/cache libart.so mappings in /proc/self/maps=4, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT) realVm=0x7870390b8b50 QtCore g_javaVM(before)=0x7870390b8b50 mode=none
+09-25 18:09:43.979  8043  8065 I qrotest_jni: [pid=8043] jvm-mode=none: no workaround
+09-25 18:09:43.979  8043  8065 I qrotest_jni: [pid=8043] jni: constructing QCoreApplication
+09-25 18:09:43.980  8043  8065 I qrotest_jni: [pid=8043] jni: QCoreApplication OK, Qt 6.11.1, isMainThread=1, applicationVersion=''
+09-25 18:09:43.981  8043  8065 I qrotest_jni: [pid=8043] client: connecting to local:qro_t at 18:09:43.981
+09-25 18:09:43.982  8043  8065 I qrotest_jni: [pid=8043] client: connectToNode accepted=1 lastError=0
+09-25 18:09:43.984  8067  8067 I qro_server: [pid=8067] server: start ppid=8043 uid=10193 exe-arg0=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so
+09-25 18:09:43.984  8067  8067 I qro_server: [pid=8067] server: env TMPDIR=/data/user/0/org.logos.qrotest.a/cache LD_LIBRARY_PATH=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64 HOME=<unset>
+09-25 18:09:43.984  8067  8067 I qro_server: [pid=8067] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:43.985  8067  8067 I QtCore  : Start
+09-25 18:09:43.985  8067  8067 I qro_server: [pid=8067] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+09-25 18:09:43.985  8067  8067 F QtCore  : initJNI failed
+09-25 18:09:43.985  8067  8067 I qro_server: [pid=8067] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:43.985  8067  8067 I qro_server: [pid=8067] server: QCoreApplication constructed, Qt 6.11.1
+09-25 18:09:43.985  8067  8067 I qro_server: [pid=8067] server: applicationFilePath=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so
+09-25 18:09:43.985  8067  8067 I qro_server: [pid=8067] server: applicationDirPath=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64
+09-25 18:09:43.985  8067  8067 I qro_server: [pid=8067] server: QDir::tempPath=/data/user/0/org.logos.qrotest.a/cache
+09-25 18:09:43.985  8067  8067 I qro_server: [pid=8067] server: libraryPaths=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64
+09-25 18:09:43.985  8067  8067 I qro_server: [pid=8067] server: QTime::currentTime=18:09:43.986
+09-25 18:09:43.986  8067  8067 I qro_server: [pid=8067] server: QPluginLoader file=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libechoplugin.so IID=org.logos.test.EchoInterface/1.0 MetaData={"name":"echoplugin","type":"core","version":"0.0.1"}
+09-25 18:09:43.987  8067  8067 I qro_server: [pid=8067] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:43.987  8067  8067 I qro_server: [pid=8067] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.a/cache/qro_t exists=1
+09-25 18:09:43.987  8067  8067 I qro_server: [pid=8067] server: enableRemoting(Echo)=1
+09-25 18:09:43.987  8067  8067 I qro_server: [pid=8067] server: READY
+09-25 18:09:44.246  8043  8065 I qrotest_jni: [pid=8043] client: waitForSource=1 state=2 after 265 ms
+09-25 18:09:44.246  8043  8065 I qrotest_jni: [pid=8043] client: echo -> echo:hello-from-client-pid-8043 (server pid 8067, plugin says 'hello from echoplugin')
+09-25 18:09:44.246  8043  8065 I qrotest_jni: [pid=8043] client: callRemoteMethod(sum,[1,2,39]) -> 42
+09-25 18:09:44.246  8043  8065 I qrotest_jni: [pid=8043] jni: RESULT OK echo:hello-from-client-pid-8043 (server pid 8067, plugin says 'hello from echoplugin') | sum=42 | 265 ms
+---- avc
+09-25 18:09:43.973  8067  8067 W libqro_server.s: type=1400 audit(0.0:196): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+09-25 18:09:43.973  8067  8067 W libqro_server.s: type=1400 audit(0.0:197): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+09-25 18:09:43.973  8067  8067 W libqro_server.s: type=1400 audit(0.0:198): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+09-25 18:09:43.973  8067  8067 W libqro_server.s: type=1400 audit(0.0:199): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c193,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.a
+AVC_SUMMARY app-domain denials: total=4 other-than-linker-tests-dir-search=0
+---- crash buffer
+---- processes (ps -A)
+  PID  PPID USER         LABEL                          NAME                       
+ 8043   363 u0_a193      u:r:untrusted_app:s0:c193,c256,c512,c768 org.logos.qrotest.a
+ 8067  8043 u0_a193      u:r:untrusted_app:s0:c193,c256,c512,c768 libqro_server.so
+---- cache dir
+total 16
+drwxrws--x 2 u0_a193 u0_a193_cache u:object_r:app_data_file:s0:c193,c256,c512,c768  4096 2026-09-25 18:09 .
+drwx------ 5 u0_a193 u0_a193       u:object_r:app_data_file:s0:c193,c256,c512,c768  4096 2026-09-25 18:02 ..
+srwx------ 1 u0_a193 u0_a193_cache u:object_r:app_data_file:s0:c193,c256,c512,c768     0 2026-09-25 18:09 qro_t
+---- after force-stop: LEFTOVER helper processes:
+(none)
+
+==== R9-B-nativespawn: org.logos.qrotest.b --es spawn native
+Starting: Intent { cmp=org.logos.qrotest.b/org.logos.qrotest.MainActivity (has extras) }
+Status: ok
+Activity: org.logos.qrotest.b/org.logos.qrotest.MainActivity
+---- app log (tag qrotest)
+09-25 18:09:48.468  8122  8144 I qrotest : CONFIG flavor=nojar qtJar=false jvmMode=realvm serverJvmMode=shim url=local:qro_t jniLib=qrotest_jni loadQtCore=false spawn=native
+09-25 18:09:48.468  8122  8144 I qrotest : pid=8122 uid=10194 TMPDIR=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:48.469  8122  8144 I qrotest : nativeLibraryDir=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:48.478  8122  8144 I qrotest : nativeLibraryDir contents: [libQt6Core_x86_64.so, libQt6Network_x86_64.so, libQt6RemoteObjects_x86_64.so, libc++_shared.so, libechoplugin.so, libqro_server.so, libqrotest_jni.so, libqrotest_jni_noonload.so]
+09-25 18:09:48.478  8122  8144 I qrotest : libqro_server.so exists=true canExecute=true size=675912
+09-25 18:09:48.478  8122  8144 I qrotest : libqro_server.so mode=100755
+09-25 18:09:48.481  8122  8144 I qrotest : System.loadLibrary(qrotest_jni) OK
+09-25 18:09:48.484  8122  8144 I qrotest : HELPER posix_spawn pid=8145
+09-25 18:09:48.485  8122  8144 I qrotest : helper socket exists=true
+09-25 18:09:48.754  8122  8144 I qrotest : RESULT: OK echo:hello-from-client-pid-8122 (server pid 8145, plugin says 'hello from echoplugin') | sum=42 | 263 ms
+---- jni/child/QtCore/AndroidRuntime
+09-25 18:09:48.481  8122  8144 I qrotest_jni: [pid=8122] jni: libqrotest_jni own JNI_OnLoad called (vm=0x7870390b8b50); QtCore g_javaVM=0x0
+09-25 18:09:48.484  8122  8144 I qrotest_jni: [pid=8122] jni: posix_spawn(/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so) rc=0 pid=8145 (env inherited: TMPDIR=/data/user/0/org.logos.qrotest.b/cache LD_LIBRARY_PATH=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64)
+09-25 18:09:48.487  8122  8144 I qrotest_jni: [pid=8122] jni: tid=8144 TMPDIR=/data/user/0/org.logos.qrotest.b/cache libart.so mappings in /proc/self/maps=4, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT) realVm=0x7870390b8b50 QtCore g_javaVM(before)=0x0 mode=realvm
+09-25 18:09:48.488  8122  8144 I QtCore  : Start
+09-25 18:09:48.489  8145  8145 I qro_server: [pid=8145] server: start ppid=8122 uid=10194 exe-arg0=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:48.489  8145  8145 I qro_server: [pid=8145] server: env TMPDIR=/data/user/0/org.logos.qrotest.b/cache LD_LIBRARY_PATH=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64 HOME=<unset>
+09-25 18:09:48.489  8145  8145 I qro_server: [pid=8145] server: libart.so mappings in /proc/self/maps=0, JNI_GetCreatedJavaVMs not visible via dlsym(RTLD_DEFAULT)
+09-25 18:09:48.489  8122  8144 I qrotest_jni: [pid=8122] qt-warning: java.lang.ClassNotFoundException: Didn't find class "org.qtproject.qt.android.QtNative" on path: DexPathList[[zip file "/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/base.apk"],nativeLibraryDirectories=[/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64, /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/base.apk!/lib/x86_64, /system/lib64, /system_ext/lib64]]
+09-25 18:09:48.489  8122  8144 I qrotest_jni: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java:259)
+09-25 18:09:48.489  8122  8144 I qrotest_jni: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:379)
+09-25 18:09:48.489  8122  8144 I qrotest_jni: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:312)
+09-25 18:09:48.489  8122  8144 I qrotest_jni: 	at org.logos.qrotest.NativeBridge.runClient(Native Method)
+09-25 18:09:48.489  8122  8144 I qrotest_jni: 	at org.logos.qrotest.MainActivity.runTest(MainActivity.kt:96)
+09-25 18:09:48.489  8122  8144 I qrotest_jni: 	at org.logos.qrotest.MainActivity.onCreate$lambda$2(MainActivity.kt:51)
+09-25 18:09:48.489  8122  8144 I qrotest_jni: 	at org.logos.qrotest.MainActivity$$ExternalSyntheticLambda3.run(D8$$SyntheticClass:0)
+09-25 18:09:48.489  8122  8144 I qrotest_jni: 	at java.lang.Thread.run(Thread.java:1012)
+09-25 18:09:48.489  8122  8144 F QtCore  : initJNI failed
+09-25 18:09:48.489  8122  8144 I qrotest_jni: [pid=8122] jni: QtCore JNI_OnLoad(realVm) returned -1; g_javaVM(after)=0x7870390b8b50
+09-25 18:09:48.489  8122  8144 I qrotest_jni: [pid=8122] jni: constructing QCoreApplication
+09-25 18:09:48.489  8145  8145 I QtCore  : Start
+09-25 18:09:48.489  8145  8145 I qro_server: [pid=8145] qt-critical: Failed to register natives methods for org/qtproject/qt/android/QtInputDelegate
+09-25 18:09:48.489  8145  8145 F QtCore  : initJNI failed
+09-25 18:09:48.489  8145  8145 I qro_server: [pid=8145] jvm-mode=shim: QtCore JNI_OnLoad(fakeVM) returned -1 (JNI_ERR=-1 expected; g_javaVM now set)
+09-25 18:09:48.489  8145  8145 I qro_server: [pid=8145] server: QCoreApplication constructed, Qt 6.11.1
+09-25 18:09:48.489  8122  8144 I qrotest_jni: [pid=8122] jni: QCoreApplication OK, Qt 6.11.1, isMainThread=1, applicationVersion=''
+09-25 18:09:48.489  8145  8145 I qro_server: [pid=8145] server: applicationFilePath=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqro_server.so
+09-25 18:09:48.489  8145  8145 I qro_server: [pid=8145] server: applicationDirPath=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:48.489  8145  8145 I qro_server: [pid=8145] server: QDir::tempPath=/data/user/0/org.logos.qrotest.b/cache
+09-25 18:09:48.490  8145  8145 I qro_server: [pid=8145] server: libraryPaths=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64
+09-25 18:09:48.490  8145  8145 I qro_server: [pid=8145] server: QTime::currentTime=18:09:48.490
+09-25 18:09:48.490  8122  8144 I qrotest_jni: [pid=8122] client: connecting to local:qro_t at 18:09:48.490
+09-25 18:09:48.490  8145  8145 I qro_server: [pid=8145] server: QPluginLoader file=/data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libechoplugin.so IID=org.logos.test.EchoInterface/1.0 MetaData={"name":"echoplugin","type":"core","version":"0.0.1"}
+09-25 18:09:48.490  8145  8145 I qro_server: [pid=8145] server: PLUGIN OK instance=EchoPlugin hello()=hello from echoplugin
+09-25 18:09:48.490  8122  8144 I qrotest_jni: [pid=8122] client: connectToNode accepted=1 lastError=0
+09-25 18:09:48.491  8145  8145 I qro_server: [pid=8145] server: setRegistryUrl(local:qro_t)=1 lastError=0 socket=/data/user/0/org.logos.qrotest.b/cache/qro_t exists=1
+09-25 18:09:48.491  8145  8145 I qro_server: [pid=8145] server: enableRemoting(Echo)=1
+09-25 18:09:48.491  8145  8145 I qro_server: [pid=8145] server: READY
+09-25 18:09:48.753  8122  8144 I qrotest_jni: [pid=8122] client: waitForSource=1 state=2 after 263 ms
+09-25 18:09:48.753  8122  8144 I qrotest_jni: [pid=8122] client: echo -> echo:hello-from-client-pid-8122 (server pid 8145, plugin says 'hello from echoplugin')
+09-25 18:09:48.753  8122  8144 I qrotest_jni: [pid=8122] client: callRemoteMethod(sum,[1,2,39]) -> 42
+---- avc
+09-25 18:09:48.481  8145  8145 W libqro_server.s: type=1400 audit(0.0:200): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:48.485  8145  8145 W libqro_server.s: type=1400 audit(0.0:201): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:48.485  8145  8145 W libqro_server.s: type=1400 audit(0.0:202): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+09-25 18:09:48.485  8145  8145 W libqro_server.s: type=1400 audit(0.0:203): avc:  denied  { search } for  name="tests" dev="dm-40" ino=65540 scontext=u:r:untrusted_app:s0:c194,c256,c512,c768 tcontext=u:object_r:shell_test_data_file:s0 tclass=dir permissive=0 app=org.logos.qrotest.b
+AVC_SUMMARY app-domain denials: total=4 other-than-linker-tests-dir-search=0
+---- crash buffer
+---- processes (ps -A)
+  PID  PPID USER         LABEL                          NAME                       
+ 8122   363 u0_a194      u:r:untrusted_app:s0:c194,c256,c512,c768 org.logos.qrotest.b
+ 8145  8122 u0_a194      u:r:untrusted_app:s0:c194,c256,c512,c768 libqro_server.so
+---- cache dir
+total 16
+drwxrws--x 2 u0_a194 u0_a194_cache u:object_r:app_data_file:s0:c194,c256,c512,c768  4096 2026-09-25 18:09 .
+drwx------ 4 u0_a194 u0_a194       u:object_r:app_data_file:s0:c194,c256,c512,c768  4096 2026-09-25 18:01 ..
+srwx------ 1 u0_a194 u0_a194_cache u:object_r:app_data_file:s0:c194,c256,c512,c768     0 2026-09-25 18:09 qro_t
+---- after force-stop: LEFTOVER helper processes:
+(none)
+2026-09-25T18:09:51+10:00

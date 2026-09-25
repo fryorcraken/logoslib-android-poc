@@ -1,0 +1,90 @@
+Rationale: opt-in feature webpki-roots on wallet and wallet-ffi; make_subclient() calls jsonrpsee HttpClientBuilder::with_custom_cert_store(rustls ClientConfig with ring provider + webpki_roots::TLS_SERVER_ROOTS), so HTTPS to the sequencer works in a process without a JavaVM (rustls-platform-verifier panics there).
+
+diff --git a/Cargo.lock b/Cargo.lock
+index bc454464b..d5822dabf 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -13688,6 +13688,7 @@ dependencies = [
+  "programs",
+  "rand 0.8.6",
+  "rpassword",
++ "rustls",
+  "sequencer_service_rpc",
+  "serde",
+  "serde_json",
+@@ -13698,6 +13699,7 @@ dependencies = [
+  "token_core",
+  "tokio",
+  "url",
++ "webpki-roots",
+  "zeroize",
+ ]
+ 
+diff --git a/lez/wallet-ffi/Cargo.toml b/lez/wallet-ffi/Cargo.toml
+index 7b9615766..9c68c89dc 100644
+--- a/lez/wallet-ffi/Cargo.toml
++++ b/lez/wallet-ffi/Cargo.toml
+@@ -29,3 +29,4 @@ cbindgen = "0.29"
+ [features]
+ default = ["prove"]
+ prove = ["lee/prove"]
++webpki-roots = ["wallet/webpki-roots"]
+diff --git a/lez/wallet/Cargo.toml b/lez/wallet/Cargo.toml
+index afd203ad8..1618e829a 100644
+--- a/lez/wallet/Cargo.toml
++++ b/lez/wallet/Cargo.toml
+@@ -47,11 +47,16 @@ indicatif = { version = "0.18.3", features = ["improved_unicode"] }
+ optfield = "0.4.0"
+ url.workspace = true
+ derive_more = { workspace = true, features = ["display"] }
++rustls = { version = "0.23", default-features = false, features = ["ring", "std", "tls12"], optional = true }
++webpki-roots = { version = "1", optional = true }
+ 
+ [features]
+ # Enables `keycard get-private-keys` command that prints sensitive secret keys to terminal.
+ # Never enable in production builds.
+ keycard-debug = []
++# Verify sequencer TLS against bundled Mozilla roots instead of the platform
++# verifier (which on Android needs a JavaVM + Context).
++webpki-roots = ["dep:rustls", "dep:webpki-roots"]
+ 
+ [dev-dependencies]
+ tempfile.workspace = true
+diff --git a/lez/wallet/src/multi_client.rs b/lez/wallet/src/multi_client.rs
+index ad0cb0930..18000d994 100644
+--- a/lez/wallet/src/multi_client.rs
++++ b/lez/wallet/src/multi_client.rs
+@@ -461,6 +461,10 @@ pub fn make_subclient(
+     basic_auth: &Option<BasicAuth>,
+ ) -> Result<SequencerClient> {
+     let mut builder = SequencerClientBuilder::default();
++    #[cfg(feature = "webpki-roots")]
++    {
++        builder = builder.with_custom_cert_store(webpki_tls_config());
++    }
+     if let Some(basic_auth) = &basic_auth {
+         builder = builder.set_headers(
+             std::iter::once((
+@@ -477,6 +481,22 @@ pub fn make_subclient(
+         .context("Failed to create sequencer client")
+ }
+ 
++/// rustls config trusting the bundled Mozilla root set (webpki-roots), for
++/// processes where rustls-platform-verifier cannot work (Android without JavaVM).
++#[cfg(feature = "webpki-roots")]
++fn webpki_tls_config() -> rustls::ClientConfig {
++    let roots = rustls::RootCertStore {
++        roots: webpki_roots::TLS_SERVER_ROOTS.to_vec(),
++    };
++    rustls::ClientConfig::builder_with_provider(std::sync::Arc::new(
++        rustls::crypto::ring::default_provider(),
++    ))
++    .with_safe_default_protocol_versions()
++    .expect("ring provider supports the default TLS versions")
++    .with_root_certificates(roots)
++    .with_no_client_auth()
++}
++
+ /// Calibrate statistics for one client. Takes `client` by value deliberately, cloning
+ /// `SequencerClient` is cheap.
+ pub async fn calibrate_client(

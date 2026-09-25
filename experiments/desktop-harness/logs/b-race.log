@@ -1,0 +1,79 @@
+== variant probe-worker ==
+run 01 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=28 first_rc=0 first_ms=2 first_result="" first_error=(null) good=1 attempts=2 good_after_load_ms=24 good_after_start_ms=69 later_ok=3/3
+run 02 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=29 first_rc=0 first_ms=2 first_result="" first_error=(null) good=1 attempts=2 good_after_load_ms=24 good_after_start_ms=68 later_ok=3/3
+run 03 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=23 first_rc=0 first_ms=2 first_result="" first_error=(null) good=1 attempts=2 good_after_load_ms=26 good_after_start_ms=64 later_ok=3/3
+run 04 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=24 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=46 later_ok=3/3
+run 05 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=25 first_rc=0 first_ms=2 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=43 later_ok=3/3
+run 06 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=26 first_rc=0 first_ms=2 first_result="" first_error=(null) good=1 attempts=2 good_after_load_ms=24 good_after_start_ms=66 later_ok=3/3
+run 07 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=30 first_rc=0 first_ms=1 first_result="" first_error=(null) good=1 attempts=2 good_after_load_ms=26 good_after_start_ms=71 later_ok=3/3
+run 08 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=30 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=48 later_ok=3/3
+run 09 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=25 first_rc=0 first_ms=2 first_result="" first_error=(null) good=1 attempts=2 good_after_load_ms=26 good_after_start_ms=65 later_ok=3/3
+run 10 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=25 first_rc=0 first_ms=2 first_result="" first_error=(null) good=1 attempts=2 good_after_load_ms=25 good_after_start_ms=68 later_ok=3/3
+run 11 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=27 first_rc=0 first_ms=2 first_result="" first_error=(null) good=1 attempts=2 good_after_load_ms=25 good_after_start_ms=68 later_ok=3/3
+run 12 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=23 first_rc=0 first_ms=2 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=40 later_ok=3/3
+run 13 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=24 first_rc=0 first_ms=1 first_result="" first_error=(null) good=1 attempts=2 good_after_load_ms=26 good_after_start_ms=66 later_ok=3/3
+run 14 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=24 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=4 good_after_start_ms=44 later_ok=3/3
+run 15 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=23 first_rc=0 first_ms=2 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=2 good_after_start_ms=39 later_ok=3/3
+run 16 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=26 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=4 good_after_start_ms=47 later_ok=3/3
+run 17 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=25 first_rc=0 first_ms=2 first_result="" first_error=(null) good=1 attempts=2 good_after_load_ms=25 good_after_start_ms=64 later_ok=3/3
+run 18 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=28 first_rc=0 first_ms=2 first_result="" first_error=(null) good=1 attempts=2 good_after_load_ms=26 good_after_start_ms=68 later_ok=3/3
+run 19 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=24 first_rc=0 first_ms=2 first_result="" first_error=(null) good=1 attempts=2 good_after_load_ms=25 good_after_start_ms=64 later_ok=3/3
+run 20 exit=0 RESULT target=lez_probe method=lez_version loader=worker load_rc=1 load_ms=25 first_rc=0 first_ms=2 first_result="" first_error=(null) good=1 attempts=2 good_after_load_ms=25 good_after_start_ms=68 later_ok=3/3
+== variant core-worker ==
+run 01 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=12 first_rc=0 first_ms=1 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=27 later_ok=3/3
+run 02 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=13 first_rc=0 first_ms=1 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=28 later_ok=3/3
+run 03 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=12 first_rc=0 first_ms=1 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=34 later_ok=3/3
+run 04 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=15 first_rc=0 first_ms=1 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=32 later_ok=3/3
+run 05 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=11 first_rc=0 first_ms=1 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=2 good_after_start_ms=29 later_ok=3/3
+run 06 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=12 first_rc=0 first_ms=1 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=30 later_ok=3/3
+run 07 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=12 first_rc=0 first_ms=1 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=25 later_ok=3/3
+run 08 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=15 first_rc=0 first_ms=0 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=0 good_after_start_ms=33 later_ok=3/3
+run 09 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=12 first_rc=0 first_ms=1 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=27 later_ok=3/3
+run 10 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=13 first_rc=0 first_ms=0 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=29 later_ok=3/3
+run 11 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=12 first_rc=0 first_ms=0 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=27 later_ok=3/3
+run 12 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=13 first_rc=0 first_ms=1 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=29 later_ok=3/3
+run 13 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=13 first_rc=0 first_ms=1 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=30 later_ok=3/3
+run 14 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=12 first_rc=0 first_ms=0 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=29 later_ok=3/3
+run 15 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=12 first_rc=0 first_ms=0 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=33 later_ok=3/3
+run 16 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=12 first_rc=0 first_ms=1 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=26 later_ok=3/3
+run 17 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=12 first_rc=0 first_ms=1 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=28 later_ok=3/3
+run 18 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=12 first_rc=0 first_ms=0 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=27 later_ok=3/3
+run 19 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=12 first_rc=0 first_ms=0 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=28 later_ok=3/3
+run 20 exit=0 RESULT target=lez_core method=version loader=worker load_rc=1 load_ms=15 first_rc=0 first_ms=1 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=1 good_after_start_ms=34 later_ok=3/3
+== variant probe-qt ==
+run 01 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=30 first_rc=0 first_ms=2 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=2 good_after_start_ms=47 later_ok=3/3
+run 02 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=26 first_rc=0 first_ms=2 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=2 good_after_start_ms=44 later_ok=3/3
+run 03 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=24 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=42 later_ok=3/3
+run 04 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=25 first_rc=0 first_ms=2 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=42 later_ok=3/3
+run 05 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=23 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=44 later_ok=3/3
+run 06 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=26 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=48 later_ok=3/3
+run 07 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=26 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=45 later_ok=3/3
+run 08 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=27 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=4 good_after_start_ms=45 later_ok=3/3
+run 09 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=31 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=48 later_ok=3/3
+run 10 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=25 first_rc=0 first_ms=2 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=2 good_after_start_ms=42 later_ok=3/3
+run 11 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=26 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=45 later_ok=3/3
+run 12 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=26 first_rc=0 first_ms=2 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=2 good_after_start_ms=46 later_ok=3/3
+run 13 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=26 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=44 later_ok=3/3
+run 14 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=25 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=47 later_ok=3/3
+run 15 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=25 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=43 later_ok=3/3
+run 16 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=28 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=46 later_ok=3/3
+run 17 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=25 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=43 later_ok=3/3
+run 18 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=26 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=42 later_ok=3/3
+run 19 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=26 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=44 later_ok=3/3
+run 20 exit=0 RESULT target=lez_probe method=lez_version loader=qt load_rc=1 load_ms=25 first_rc=0 first_ms=3 first_result="0.3.0" first_error=(null) good=1 attempts=1 good_after_load_ms=3 good_after_start_ms=42 later_ok=3/3
+== aggregate ==
+probe-worker: runs=20 first-call-bad=13 {'""': 13} eventually-good=20
+   load_ms min/med/max = 23/25.0/30
+   first-call latency ms min/med/max = 1/2.0/3
+   time from load-return to first good answer ms min/med/max = 2/24.5/26
+   attempts min/med/max = 1/2.0/2
+core-worker: runs=20 first-call-bad=0 {} eventually-good=20
+   load_ms min/med/max = 11/12.0/15
+   first-call latency ms min/med/max = 0/1.0/1
+   time from load-return to first good answer ms min/med/max = 0/1.0/2
+   attempts min/med/max = 1/1.0/1
+probe-qt: runs=20 first-call-bad=0 {} eventually-good=20
+   load_ms min/med/max = 23/26.0/31
+   first-call latency ms min/med/max = 2/3.0/3
+   time from load-return to first good answer ms min/med/max = 2/3.0/4
+   attempts min/med/max = 1/1.0/1

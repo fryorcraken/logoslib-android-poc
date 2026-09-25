@@ -1,0 +1,458 @@
+2026-09-25T18:08:52+10:00
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt:6 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt:6 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  CMakeLists.txt:6 (project)
+
+
+-- The CXX compiler identification is Clang 18.0.3
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  CMakeLists.txt:6 (project)
+
+
+-- Detecting CXX compiler ABI info
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/CMakeScratch/TryCompile-9bwGlJ/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/CMakeScratch/TryCompile-9bwGlJ/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/CMakeScratch/TryCompile-9bwGlJ/CMakeLists.txt:4 (project)
+
+
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found nlohmann_json: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake (found version "3.11.3")
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/CMakeScratch/TryCompile-5bx0PI/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/CMakeScratch/TryCompile-5bx0PI/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/CMakeScratch/TryCompile-5bx0PI/CMakeLists.txt:4 (project)
+
+
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/CMakeScratch/TryCompile-UIWyTS/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/CMakeScratch/TryCompile-UIWyTS/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/CMakeScratch/TryCompile-UIWyTS/CMakeLists.txt:4 (project)
+
+
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/CMakeScratch/TryCompile-5ig07M/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/CMakeScratch/TryCompile-5ig07M/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/CMakeScratch/TryCompile-5ig07M/CMakeLists.txt:4 (project)
+
+
+-- Looking for pthread_create in pthread - not found
+-- Check if compiler accepts -pthread
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/CMakeScratch/TryCompile-JcULyT/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/CMakeScratch/TryCompile-JcULyT/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64/CMakeFiles/CMakeScratch/TryCompile-JcULyT/CMakeLists.txt:4 (project)
+
+
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE
+CMake Warning (dev) at /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package):
+  Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+  --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/LogosContainerImpl/LogosContainerImplConfig.cmake:12 (find_dependency)
+  CMakeLists.txt:13 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Boost: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/Boost-1.87.0/BoostConfig.cmake (found version "1.87.0") found components: process
+CMake Warning (dev) at /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package):
+  Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+  --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/LogosFormatLoaderImpl/LogosFormatLoaderImplConfig.cmake:11 (find_dependency)
+  CMakeLists.txt:14 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Boost: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/Boost-1.87.0/BoostConfig.cmake (found version "1.87.0") found components: filesystem
+CMake Warning (dev) at CMakeLists.txt:40 (find_package):
+  Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+  --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Boost: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/Boost-1.87.0/BoostConfig.cmake (found version "1.87.0") found components: process
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: ${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64
+Change Dir: '${REPO_ROOT}/.work/experiments/ndk-runtime/build/smoke-x86_64'
+
+Run Build Command(s): /nix/store/7bgiqc706pzzb1gmwgpzdfg491w4a8nx-ninja-1.13.1/bin/ninja -v -j 16 -k 0
+[1/17] ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTEXT_NO_LIB -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_NO_LIB -DBOOST_PROCESS_NO_LIB -DBOOST_SYSTEM_NO_LIB -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -isystem ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIE -pthread -MD -MT CMakeFiles/ndk_smoke.dir/smoke_cli.cpp.o -MF CMakeFiles/ndk_smoke.dir/smoke_cli.cpp.o.d -o CMakeFiles/ndk_smoke.dir/smoke_cli.cpp.o -c ${REPO_ROOT}/.work/experiments/ndk-runtime/src/smoke/smoke_cli.cpp
+[2/17] ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTEXT_NO_LIB -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_NO_LIB -DBOOST_PROCESS_NO_LIB -DBOOST_SYSTEM_NO_LIB -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-container-subprocess/src -isystem ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIE -include ${REPO_ROOT}/.work/experiments/ndk-runtime/src/smoke/force_fd_enumeration.h -pthread -MD -MT CMakeFiles/ndk_smoke_fdenum.dir/smoke_cli.cpp.o -MF CMakeFiles/ndk_smoke_fdenum.dir/smoke_cli.cpp.o.d -o CMakeFiles/ndk_smoke_fdenum.dir/smoke_cli.cpp.o -c ${REPO_ROOT}/.work/experiments/ndk-runtime/src/smoke/smoke_cli.cpp
+[3/17] ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host -isystem ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIE -pthread -MD -MT CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/module_dll_search.cpp.o -MF CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/module_dll_search.cpp.o.d -o CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/module_dll_search.cpp.o -c ${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/module_dll_search.cpp
+[4/17] ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host -isystem ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIE -pthread -MD -MT CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/module_path.cpp.o -MF CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/module_path.cpp.o.d -o CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/module_path.cpp.o -c ${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/module_path.cpp
+[5/17] ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTEXT_NO_LIB -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_NO_LIB -DBOOST_PROCESS_NO_LIB -DBOOST_SYSTEM_NO_LIB -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -Dndkrt_activity_EXPORTS -isystem ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIC -pthread -MD -MT CMakeFiles/ndkrt_activity.dir/smoke_activity.cpp.o -MF CMakeFiles/ndkrt_activity.dir/smoke_activity.cpp.o.d -o CMakeFiles/ndkrt_activity.dir/smoke_activity.cpp.o -c ${REPO_ROOT}/.work/experiments/ndk-runtime/src/smoke/smoke_activity.cpp
+[6/17] ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host -isystem ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIE -pthread -MD -MT CMakeFiles/logos_host_probe.dir/host_probe.cpp.o -MF CMakeFiles/logos_host_probe.dir/host_probe.cpp.o.d -o CMakeFiles/logos_host_probe.dir/host_probe.cpp.o -c ${REPO_ROOT}/.work/experiments/ndk-runtime/src/smoke/host_probe.cpp
+[7/17] ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host -isystem ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIE -pthread -MD -MT CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/token_source.cpp.o -MF CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/token_source.cpp.o.d -o CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/token_source.cpp.o -c ${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/token_source.cpp
+[8/17] ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTEXT_NO_LIB -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_NO_LIB -DBOOST_PROCESS_NO_LIB -DBOOST_SYSTEM_NO_LIB -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-container-subprocess/src -isystem ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIE -include ${REPO_ROOT}/.work/experiments/ndk-runtime/src/smoke/force_fd_enumeration.h -pthread -MD -MT CMakeFiles/ndk_smoke_fdenum.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-container-subprocess/src/subprocess_container_factory.cpp.o -MF CMakeFiles/ndk_smoke_fdenum.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-container-subprocess/src/subprocess_container_factory.cpp.o.d -o CMakeFiles/ndk_smoke_fdenum.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-container-subprocess/src/subprocess_container_factory.cpp.o -c ${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-container-subprocess/src/subprocess_container_factory.cpp
+[9/17] ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTEXT_NO_LIB -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_NO_LIB -DBOOST_PROCESS_NO_LIB -DBOOST_SYSTEM_NO_LIB -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-container-subprocess/src -isystem ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIE -include ${REPO_ROOT}/.work/experiments/ndk-runtime/src/smoke/force_fd_enumeration.h -pthread -MD -MT CMakeFiles/ndk_smoke_fdenum.dir/smoke_container.cpp.o -MF CMakeFiles/ndk_smoke_fdenum.dir/smoke_container.cpp.o.d -o CMakeFiles/ndk_smoke_fdenum.dir/smoke_container.cpp.o -c ${REPO_ROOT}/.work/experiments/ndk-runtime/src/smoke/smoke_container.cpp
+[10/17] ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTEXT_NO_LIB -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_NO_LIB -DBOOST_PROCESS_NO_LIB -DBOOST_SYSTEM_NO_LIB -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -isystem ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIC -pthread -MD -MT CMakeFiles/smoke_core.dir/smoke_container.cpp.o -MF CMakeFiles/smoke_core.dir/smoke_container.cpp.o.d -o CMakeFiles/smoke_core.dir/smoke_container.cpp.o -c ${REPO_ROOT}/.work/experiments/ndk-runtime/src/smoke/smoke_container.cpp
+[11/17] : && /usr/bin/cmake -E rm -f libsmoke_core.a && ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libsmoke_core.a  CMakeFiles/smoke_core.dir/smoke_container.cpp.o && ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libsmoke_core.a && :
+[12/17] : && ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG -Wl,-z,max-page-size=16384 -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  -Wl,-z,max-page-size=16384 -Wl,--gc-sections    -Xlinker --dependency-file=CMakeFiles/ndk_smoke.dir/link.d CMakeFiles/ndk_smoke.dir/smoke_cli.cpp.o -o ndk_smoke  libsmoke_core.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/liblogos_container_subprocess.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_process.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_context.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_date_time.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/liblogos_module_loader_qt.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libspdlog.so  -pthread  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libfmt.so  -llog  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_filesystem.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_atomic.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_system.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libprocess_stats.a  -latomic -lm && :
+[13/17] : && ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -Wl,-z,max-page-size=16384 -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  -Wl,--gc-sections   -Xlinker -u -Xlinker ANativeActivity_onCreate -Xlinker --dependency-file=CMakeFiles/ndkrt_activity.dir/link.d -shared -Wl,-soname,libndkrt_activity.so -o libndkrt_activity.so CMakeFiles/ndkrt_activity.dir/smoke_activity.cpp.o  libsmoke_core.a  -landroid  -llog  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/liblogos_container_subprocess.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_process.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_context.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_date_time.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/liblogos_module_loader_qt.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libspdlog.so  -pthread  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libfmt.so  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_filesystem.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_atomic.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_system.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libprocess_stats.a  -llog  -latomic -lm && :
+[14/17] ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTEXT_NO_LIB -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_NO_LIB -DBOOST_PROCESS_NO_LIB -DBOOST_SYSTEM_NO_LIB -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-container-subprocess/src -isystem ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIE -include ${REPO_ROOT}/.work/experiments/ndk-runtime/src/smoke/force_fd_enumeration.h -pthread -MD -MT CMakeFiles/ndk_smoke_fdenum.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-container-subprocess/src/subprocess_container.cpp.o -MF CMakeFiles/ndk_smoke_fdenum.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-container-subprocess/src/subprocess_container.cpp.o.d -o CMakeFiles/ndk_smoke_fdenum.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-container-subprocess/src/subprocess_container.cpp.o -c ${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-container-subprocess/src/subprocess_container.cpp
+[15/17] : && ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG -Wl,-z,max-page-size=16384 -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  -Wl,-z,max-page-size=16384 -Wl,--gc-sections    -Xlinker --dependency-file=CMakeFiles/ndk_smoke_fdenum.dir/link.d CMakeFiles/ndk_smoke_fdenum.dir/smoke_cli.cpp.o CMakeFiles/ndk_smoke_fdenum.dir/smoke_container.cpp.o CMakeFiles/ndk_smoke_fdenum.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-container-subprocess/src/subprocess_container.cpp.o CMakeFiles/ndk_smoke_fdenum.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-container-subprocess/src/subprocess_container_factory.cpp.o -o ndk_smoke_fdenum  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_process.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/liblogos_module_loader_qt.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libprocess_stats.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_context.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_date_time.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libspdlog.so  -pthread  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libfmt.so  -llog  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_filesystem.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_atomic.a  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_system.a  -latomic -lm && :
+[16/17] ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host -isystem ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIE -pthread -MD -MT CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/command_line_parser.cpp.o -MF CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/command_line_parser.cpp.o.d -o CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/command_line_parser.cpp.o -c ${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/command_line_parser.cpp
+[17/17] : && ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android34 --sysroot=${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG -Wl,-z,max-page-size=16384 -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  -Wl,-z,max-page-size=16384 -Wl,--gc-sections    -Xlinker -rpath -Xlinker "\$ORIGIN" -Xlinker --dependency-file=CMakeFiles/logos_host_probe.dir/link.d CMakeFiles/logos_host_probe.dir/host_probe.cpp.o CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/command_line_parser.cpp.o CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/module_path.cpp.o CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/module_dll_search.cpp.o CMakeFiles/logos_host_probe.dir${REPO_ROOT}/.work/experiments/ndk-runtime/src/logos-module-loader-qt/src/host/token_source.cpp.o -o liblogos_host_probe.so  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libspdlog.so  -pthread  ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libfmt.so  -llog  -latomic -lm && :
+
+RESULT smoke build exit=0
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/libc++_shared.so
+  Type:                              DYN (Shared object file)
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x098930 0x098930 R   0x4000
+  LOAD           0x098930 0x000000000009c930 0x000000000009c930 0x08eb20 0x08eb20 R E 0x4000
+  LOAD           0x127450 0x000000000012f450 0x000000000012f450 0x009ac8 0x009bb0 RW  0x4000
+  LOAD           0x130f20 0x000000000013cf20 0x000000000013cf20 0x000238 0x007d50 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/libfmt.so
+  Type:                              DYN (Shared object file)
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x00a448 0x00a448 R   0x4000
+  LOAD           0x00a450 0x000000000000e450 0x000000000000e450 0x01c170 0x01c170 R E 0x4000
+  LOAD           0x0265c0 0x000000000002e5c0 0x000000000002e5c0 0x000780 0x000a40 RW  0x4000
+  LOAD           0x026d40 0x0000000000032d40 0x0000000000032d40 0x000020 0x000870 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/liblogos_host_probe.so
+  Type:                              DYN (Shared object file)
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x0191f4 0x0191f4 R   0x4000
+  LOAD           0x019200 0x000000000001d200 0x000000000001d200 0x047c60 0x047c60 R E 0x4000
+  LOAD           0x060e60 0x0000000000068e60 0x0000000000068e60 0x001ec0 0x0021a0 RW  0x4000
+  LOAD           0x062d20 0x000000000006ed20 0x000000000006ed20 0x000078 0x010eb0 RW  0x4000
+  0x000000000000001d (RUNPATH)      Library runpath: [$ORIGIN]
+  0x0000000000000001 (NEEDED)       Shared library: [libspdlog.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libfmt.so]
+  0x0000000000000001 (NEEDED)       Shared library: [liblog.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/liblogos_host_qt.so
+  Type:                              DYN (Shared object file)
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x0191f4 0x0191f4 R   0x4000
+  LOAD           0x019200 0x000000000001d200 0x000000000001d200 0x047c60 0x047c60 R E 0x4000
+  LOAD           0x060e60 0x0000000000068e60 0x0000000000068e60 0x001ec0 0x0021a0 RW  0x4000
+  LOAD           0x062d20 0x000000000006ed20 0x000000000006ed20 0x000078 0x010eb0 RW  0x4000
+  0x000000000000001d (RUNPATH)      Library runpath: [$ORIGIN]
+  0x0000000000000001 (NEEDED)       Shared library: [libspdlog.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libfmt.so]
+  0x0000000000000001 (NEEDED)       Shared library: [liblog.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/libndkrt_activity.so
+  Type:                              DYN (Shared object file)
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x032378 0x032378 R   0x4000
+  LOAD           0x032380 0x0000000000036380 0x0000000000036380 0x033050 0x033050 R E 0x4000
+  LOAD           0x0653d0 0x000000000006d3d0 0x000000000006d3d0 0x002ab8 0x002c30 RW  0x4000
+  LOAD           0x067e88 0x0000000000073e88 0x0000000000073e88 0x000128 0x000be8 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libandroid.so]
+  0x0000000000000001 (NEEDED)       Shared library: [liblog.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libspdlog.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libfmt.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/libspdlog.so
+  Type:                              DYN (Shared object file)
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x03b354 0x03b354 R   0x4000
+  LOAD           0x03b360 0x000000000003f360 0x000000000003f360 0x0341d0 0x0341d0 R E 0x4000
+  LOAD           0x06f530 0x0000000000077530 0x0000000000077530 0x003658 0x003ad0 RW  0x4000
+  LOAD           0x072b90 0x000000000007eb90 0x000000000007eb90 0x0000a0 0x000ac0 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libfmt.so]
+  0x0000000000000001 (NEEDED)       Shared library: [liblog.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/ndk_smoke
+  Type:                              DYN (Shared object file)
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x019e9c 0x019e9c R   0x4000
+  LOAD           0x019ea0 0x000000000001dea0 0x000000000001dea0 0x0309c0 0x0309c0 R E 0x4000
+  LOAD           0x04a860 0x0000000000052860 0x0000000000052860 0x0020b0 0x0027a0 RW  0x4000
+  LOAD           0x04c910 0x0000000000058910 0x0000000000058910 0x000108 0x000b80 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libspdlog.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libfmt.so]
+  0x0000000000000001 (NEEDED)       Shared library: [liblog.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/out/x86_64/ndk_smoke_fdenum
+  Type:                              DYN (Shared object file)
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x019ecc 0x019ecc R   0x4000
+  LOAD           0x019ed0 0x000000000001ded0 0x000000000001ded0 0x0307c0 0x0307c0 R E 0x4000
+  LOAD           0x04a690 0x0000000000052690 0x0000000000052690 0x0020b8 0x002970 RW  0x4000
+  LOAD           0x04c750 0x0000000000058750 0x0000000000058750 0x000108 0x000b80 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libspdlog.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libfmt.so]
+  0x0000000000000001 (NEEDED)       Shared library: [liblog.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+total 32204
+drwxr-xr-x. 1 fryorcraken fryorcraken     246 Sep 25 18:09 .
+drwxr-xr-x. 1 fryorcraken fryorcraken      12 Sep 25 17:37 ..
+-rwxr-xr-x. 1 fryorcraken fryorcraken 1617608 Sep 25 18:09 libc++_shared.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken 1153784 Sep 25 18:09 libfmt.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken 5564200 Sep 25 18:09 liblogos_host_probe.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken 5564200 Sep 25 18:09 liblogos_host_qt.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken 4930328 Sep 25 18:09 libndkrt_activity.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken 4716776 Sep 25 18:09 libspdlog.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken 4707224 Sep 25 18:09 ndk_smoke
+-rwxr-xr-x. 1 fryorcraken fryorcraken 4708808 Sep 25 18:09 ndk_smoke_fdenum
+RESULT sizes (bytes): libc++_shared.so=1617608 libfmt.so=1153784 liblogos_host_probe.so=5564200 liblogos_host_probe.stripped=407096 liblogos_host_qt.so=5564200 libndkrt_activity.so=4930328 libspdlog.so=4716776 ndk_smoke=4707224 ndk_smoke_fdenum=4708808 ndk_smoke.stripped=316160 
+== API28: upstream crash handler shape (unguarded ::backtrace)
+${REPO_ROOT}/.work/experiments/ndk-runtime/tmp/bt.cpp:2:34: error: no member named 'backtrace' in the global namespace
+    2 | int f() { void* fr[64]; return ::backtrace(fr, 64); }
+      |                                ~~^
+1 error generated.
+API28 backtrace: COMPILE ERROR (see above)
+== API28: subprocess_container.cpp
+API28 subprocess_container.cpp: compiles
+== API28: qt_plugin_format_loader.cpp
+API28 qt_plugin_format_loader.cpp: compiles
+API28 host/token_source.cpp: compiles
+API28 host/command_line_parser.cpp: compiles
+API28 host/module_path.cpp: compiles
+API28 host/module_dll_search.cpp: compiles
+== API28: libc symbols the API-34 prefix references that API-28 libc lacks
+API28 libboost_atomic.a: missing-at-28 libc-level symbols: atexit 
+API28 libboost_context.a: missing-at-28 libc-level symbols: none
+API28 libboost_date_time.a: missing-at-28 libc-level symbols: none
+API28 libboost_filesystem.a: missing-at-28 libc-level symbols: statx 
+API28 libboost_process.a: missing-at-28 libc-level symbols: none
+API28 libboost_system.a: missing-at-28 libc-level symbols: none
+API28 liblogos_container_subprocess.a: missing-at-28 libc-level symbols: pthread_cond_clockwait __tls_get_addr 
+API28 liblogos_module_loader_qt.a: missing-at-28 libc-level symbols: none
+API28 libprocess_stats.a: missing-at-28 libc-level symbols: none
+API28 libspdlog.so: missing-at-28 libc-level symbols: __tls_get_addr 
+API28 libfmt.so: missing-at-28 libc-level symbols: none
+API28 liblogos_host_probe.so: missing-at-28 libc-level symbols: backtrace 
+API28 ndk_smoke: missing-at-28 libc-level symbols: pthread_cond_clockwait __tls_get_addr 
+2026-09-25T18:09:05+10:00

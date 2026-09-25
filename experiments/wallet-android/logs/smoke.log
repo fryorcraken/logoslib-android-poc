@@ -1,0 +1,62 @@
+== build harness
+harness A exit=0
+harness B exit=0
+  0x0000000000000001 (NEEDED)     Shared library: [libwallet_ffi.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)     Shared library: [libc.so]
+== device
+List of devices attached
+emulator-5554          device product:sdk_gphone64_x86_64 model:sdk_gphone64_x86_64 device:emu64xa transport_id:11
+
+34
+== wait for network
+net up after 1 tries
+PING testnet.lez.logos.co (65.21.205.58) 56(84) bytes of data.
+64 bytes from static.58.205.21.65.clients.your-server.de (65.21.205.58): icmp_seq=1 ttl=255 time=499 ms
+== push
+${REPO_ROOT}/.work/experiments/wallet-android/smoke/A/./: 3 files pushed, 0 skipped. 101.9 MB/s (15015784 bytes in 0.141s)
+${REPO_ROOT}/.work/experiments/wallet-android/smoke/B/./: 2 files pushed, 0 skipped. 101.8 MB/s (15178848 bytes in 0.142s)
+/data/local/tmp/wsmoke/A:
+total 14696
+drwxrwxrwx 2 shell shell     4096 2026-09-25 17:15 .
+drwxrwxrwx 4 shell shell     4096 2026-09-25 17:15 ..
+-rwxrwxrwx 1 shell shell     7136 2026-09-25 17:15 libpcsclite.so
+-rwxrwxrwx 1 shell shell 14999376 2026-09-25 17:15 libwallet_ffi.so
+-rwxr-xr-x 1 shell shell     9272 2026-09-25 17:15 wallet_smoke
+
+/data/local/tmp/wsmoke/B:
+total 14852
+drwxrwxrwx 2 shell shell     4096 2026-09-25 17:15 .
+drwxrwxrwx 4 shell shell     4096 2026-09-25 17:15 ..
+-rwxrwxrwx 1 shell shell 15169576 2026-09-25 17:15 libwallet_ffi.so
+-rwxr-xr-x 1 shell shell     9272 2026-09-25 17:15 wallet_smoke
+================ run A  2026-09-25T17:15:06+10:00
+SMOKE start seq=https://testnet.lez.logos.co/
+SMOKE offline account_id_to_base58 = 7Z8ftDAzMvoyXnGEJye8DurzgQQXLAbYCaeeesM7UKHa
+Statistics not found, choosing empty
+
+thread 'tokio-rt-worker' (4416) panicked at ${HOME}/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rustls-platform-verifier-0.5.3/src/android.rs:87:10:
+Expect rustls-platform-verifier to be initialized
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+SMOKE create_new wallet=NULL mnemonic_words=0 ms=1503
+[wallet-ffi] Failed to create wallet: Failed to find leader
+EXIT=2
+adb-exit=0
+-- logcat (crash / rust / tls lines)
+-- written config
+{"sequencers":[{"sequencer_addr":"https://testnet.lez.logos.co/"}],"seq_poll_timeout":"12s","seq_tx_poll_max_blocks":5,"seq_poll_max_retries":5,"seq_block_poll_max_amount":100,"multi_sequencer_client_config":{"distribution_limit":1,"calibration_limit":1}}
+================ run B  2026-09-25T17:15:07+10:00
+SMOKE start seq=https://testnet.lez.logos.co/
+SMOKE offline account_id_to_base58 = 7Z8ftDAzMvoyXnGEJye8DurzgQQXLAbYCaeeesM7UKHa
+Statistics not found, choosing empty
+SMOKE create_new wallet=ok mnemonic_words=24 ms=1174
+SMOKE create_account_public err=0 id=Hxb2RG1vkWQRQX8HrQ6J5a11RDbBq7thfNyHFLre9T2j
+SMOKE get_sequencer_addr = https://testnet.lez.logos.co/
+SMOKE get_current_block_height err=0 height=24050 ms=656
+SMOKE done
+EXIT=0
+adb-exit=0
+-- logcat (crash / rust / tls lines)
+-- written config
+{"sequencers":[{"sequencer_addr":"https://testnet.lez.logos.co/"}],"seq_poll_timeout":"12s","seq_tx_poll_max_blocks":5,"seq_poll_max_retries":5,"seq_block_poll_max_amount":100,"multi_sequencer_client_config":{"distribution_limit":1,"calibration_limit":1}}
+DONE

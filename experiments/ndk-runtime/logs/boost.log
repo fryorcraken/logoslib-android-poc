@@ -1,0 +1,965 @@
++ date -Is
+2026-09-25T17:32:07+10:00
++ TARBALL=${REPO_ROOT}/.work/experiments/ndk-runtime/dl/boost_1_87_0.tar.bz2
++ '[' '!' -s ${REPO_ROOT}/.work/experiments/ndk-runtime/dl/boost_1_87_0.tar.bz2 ']'
++ sha256sum ${REPO_ROOT}/.work/experiments/ndk-runtime/dl/boost_1_87_0.tar.bz2
+af57be25cb4c4f4b413ed692fe378affb4352ea50fbe294a11ef548f4d527d89  ${REPO_ROOT}/.work/experiments/ndk-runtime/dl/boost_1_87_0.tar.bz2
++ '[' '!' -d ${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0 ']'
++ export TMPDIR=${REPO_ROOT}/.work/experiments/ndk-runtime/tmp
++ TMPDIR=${REPO_ROOT}/.work/experiments/ndk-runtime/tmp
++ mkdir -p ${REPO_ROOT}/.work/experiments/ndk-runtime/tmp
++ SHELL_CPP=${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/process/src/shell.cpp
++ '[' -f ${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/process/src/shell.cpp.orig ']'
++ cp ${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/process/src/shell.cpp ${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/process/src/shell.cpp.orig
++ cp ${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/process/src/shell.cpp.orig ${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/process/src/shell.cpp
++ sed -i 's/^#elif !defined(__OpenBSD__)$/#elif !defined(__OpenBSD__) \&\& !defined(__ANDROID__)/' ${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/process/src/shell.cpp
++ cd ${REPO_ROOT}/.work/experiments/ndk-runtime/src
++ diff -u boost_1_87_0/libs/process/src/shell.cpp.orig boost_1_87_0/libs/process/src/shell.cpp
++ cat ${REPO_ROOT}/.work/experiments/ndk-runtime/patches/boost-1.87.0-process-shell-android.diff
+--- boost_1_87_0/libs/process/src/shell.cpp.orig	2026-09-25 17:32:07.320861995 +1000
++++ boost_1_87_0/libs/process/src/shell.cpp	2026-09-25 17:32:07.323861964 +1000
+@@ -19,7 +19,7 @@
+ #if defined(BOOST_PROCESS_V2_WINDOWS)
+ #include <windows.h>
+ #include <shellapi.h>
+-#elif !defined(__OpenBSD__)
++#elif !defined(__OpenBSD__) && !defined(__ANDROID__)
+ #include <wordexp.h>
+ #endif
+ 
+@@ -30,7 +30,7 @@
+ {
+     return system_category();
+ }
+-#elif !defined(__OpenBSD__)
++#elif !defined(__OpenBSD__) && !defined(__ANDROID__)
+ 
+ struct shell_category_t final : public error_category
+ {
+@@ -99,7 +99,7 @@
+     return input_.c_str();
+ }
+ 
+-#elif !defined(__OpenBSD__)
++#elif !defined(__OpenBSD__) && !defined(__ANDROID__)
+ 
+ void shell::parse_()
+ {
++ cd ${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0
++ '[' '!' -x ./b2 ']'
++ cat
++ cat ${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/user-config.jam
+using clang : android
+  : ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang++
+  : <archiver>${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar
+    <ranlib>${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib
+    <compileflags>-fPIC
+    <compileflags>-ffunction-sections
+    <compileflags>-fdata-sections
+    <linkflags>-Wl,-z,max-page-size=16384
+    <linkflags>-Wl,--build-id=sha1
+  ;
++ B2ARGS=(--user-config="$BUILD/user-config.jam" --build-dir="$BUILD/obj" --prefix="$PREFIX" --layout=system toolset=clang-android target-os=android architecture=x86 address-model=64 abi=sysv binary-format=elf link=static,shared runtime-link=shared threading=multi variant=release cxxstd=17 --with-process --with-filesystem --with-system --with-context --with-atomic --with-date_time -j16 -d+2 install)
++ echo 'B2 INVOCATION: ./b2 --user-config=${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/user-config.jam --build-dir=${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj --prefix=${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64 --layout=system toolset=clang-android target-os=android architecture=x86 address-model=64 abi=sysv binary-format=elf link=static,shared runtime-link=shared threading=multi variant=release cxxstd=17 --with-process --with-filesystem --with-system --with-context --with-atomic --with-date_time -j16 -d+2 install'
+B2 INVOCATION: ./b2 --user-config=${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/user-config.jam --build-dir=${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj --prefix=${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64 --layout=system toolset=clang-android target-os=android architecture=x86 address-model=64 abi=sysv binary-format=elf link=static,shared runtime-link=shared threading=multi variant=release cxxstd=17 --with-process --with-filesystem --with-system --with-context --with-atomic --with-date_time -j16 -d+2 install
+++ date +%s
++ T0=1790321527
++ ./b2 --user-config=${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/user-config.jam --build-dir=${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj --prefix=${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64 --layout=system toolset=clang-android target-os=android architecture=x86 address-model=64 abi=sysv binary-format=elf link=static,shared runtime-link=shared threading=multi variant=release cxxstd=17 --with-process --with-filesystem --with-system --with-context --with-atomic --with-date_time -j16 -d+2 install
+Performing configuration checks
+
+    - default address-model    : 64-bit (cached) [1]
+    - default architecture     : x86 (cached) [1]
+    - BOOST_ARCH_WORD_BITS == 0.0.16 : no  (cached) [2]
+    - BOOST_ARCH_WORD_BITS == 0.0.32 : no  (cached) [2]
+    - BOOST_ARCH_WORD_BITS == 0.0.64 : no  (cached) [2]
+    - BOOST_ARCH_X86           : no  (cached) [2]
+    - BOOST_ARCH_IA64          : no  (cached) [2]
+    - BOOST_ARCH_SPARC         : no  (cached) [2]
+    - BOOST_ARCH_PPC           : no  (cached) [2]
+    - BOOST_ARCH_LOONGARCH     : no  (cached) [2]
+    - BOOST_ARCH_MIPS          : no  (cached) [2]
+    - BOOST_ARCH_PARISC        : no  (cached) [2]
+    - BOOST_ARCH_ARM           : no  (cached) [2]
+    - BOOST_ARCH_RISCV         : no  (cached) [2]
+    - BOOST_ARCH_SYS390        : no  (cached) [2]
+    - has std::atomic_ref      : no  (cached) [2]
+    - has statx                : yes (cached) [2]
+    - cxx11_rvalue_references  : yes (cached) [2]
+    - cxx11_scoped_enums       : yes (cached) [2]
+    - cxx11_noexcept           : yes (cached) [2]
+    - cxx11_nullptr            : yes (cached) [2]
+    - cxx11_defaulted_functions : yes (cached) [2]
+    - cxx11_defaulted_moves    : yes (cached) [2]
+    - cxx11_deleted_functions  : yes (cached) [2]
+    - cxx11_function_template_default_args : yes (cached) [2]
+    - cxx11_final              : yes (cached) [2]
+    - cxx11_override           : yes (cached) [2]
+    - has init_priority attribute : yes (cached) [2]
+    - has stat::st_blksize     : yes (cached) [2]
+    - has stat::st_mtim        : yes (cached) [2]
+    - has stat::st_mtimensec   : yes (cached) [2]
+    - has stat::st_mtimespec   : no  (cached) [2]
+    - has stat::st_birthtim    : no  (cached) [2]
+    - has stat::st_birthtimensec : no  (cached) [2]
+    - has stat::st_birthtimespec : no  (cached) [2]
+    - has fdopendir(O_NOFOLLOW) : yes (cached) [2]
+    - has dirent::d_type       : yes (cached) [2]
+    - has POSIX *at APIs       : yes (cached) [2]
+    - has fallocate            : yes (cached) [2]
+    - compiler supports SSE2   : yes (cached) [2]
+    - compiler supports SSE4.1 : yes (cached) [2]
+    - cxx11_static_assert      : yes (cached) [2]
+    - has std::atomic_ref      : no  (cached) [3]
+    - has statx                : yes (cached) [3]
+    - cxx11_rvalue_references  : yes (cached) [3]
+    - cxx11_scoped_enums       : yes (cached) [3]
+    - cxx11_noexcept           : yes (cached) [3]
+    - cxx11_nullptr            : yes (cached) [3]
+    - cxx11_defaulted_functions : yes (cached) [3]
+    - cxx11_defaulted_moves    : yes (cached) [3]
+    - cxx11_deleted_functions  : yes (cached) [3]
+    - cxx11_function_template_default_args : yes (cached) [3]
+    - cxx11_final              : yes (cached) [3]
+    - cxx11_override           : yes (cached) [3]
+    - has init_priority attribute : yes (cached) [3]
+    - has stat::st_blksize     : yes (cached) [3]
+    - has stat::st_mtim        : yes (cached) [3]
+    - has stat::st_mtimensec   : yes (cached) [3]
+    - has stat::st_mtimespec   : no  (cached) [3]
+    - has stat::st_birthtim    : no  (cached) [3]
+    - has stat::st_birthtimensec : no  (cached) [3]
+    - has stat::st_birthtimespec : no  (cached) [3]
+    - has fdopendir(O_NOFOLLOW) : yes (cached) [3]
+    - has dirent::d_type       : yes (cached) [3]
+    - has POSIX *at APIs       : yes (cached) [3]
+    - has fallocate            : yes (cached) [3]
+    - compiler supports SSE2   : yes (cached) [3]
+    - compiler supports SSE4.1 : yes (cached) [3]
+    - cxx11_static_assert      : yes (cached) [3]
+    - BOOST_ARCH_WORD_BITS == 0.0.16 : no  (cached) [3]
+    - BOOST_ARCH_WORD_BITS == 0.0.32 : no  (cached) [3]
+    - BOOST_ARCH_WORD_BITS == 0.0.64 : no  (cached) [3]
+    - BOOST_ARCH_X86           : no  (cached) [3]
+    - BOOST_ARCH_IA64          : no  (cached) [3]
+    - BOOST_ARCH_SPARC         : no  (cached) [3]
+    - BOOST_ARCH_PPC           : no  (cached) [3]
+    - BOOST_ARCH_LOONGARCH     : no  (cached) [3]
+    - BOOST_ARCH_MIPS          : no  (cached) [3]
+    - BOOST_ARCH_PARISC        : no  (cached) [3]
+    - BOOST_ARCH_ARM           : no  (cached) [3]
+    - BOOST_ARCH_RISCV         : no  (cached) [3]
+    - BOOST_ARCH_SYS390        : no  (cached) [3]
+    - BOOST_ARCH_WORD_BITS == 0.0.16 : no  (cached) [4]
+    - BOOST_ARCH_WORD_BITS == 0.0.32 : no  (cached) [4]
+    - BOOST_ARCH_WORD_BITS == 0.0.64 : no  (cached) [4]
+    - BOOST_ARCH_X86           : no  (cached) [4]
+    - BOOST_ARCH_IA64          : no  (cached) [4]
+    - BOOST_ARCH_SPARC         : no  (cached) [4]
+    - BOOST_ARCH_PPC           : no  (cached) [4]
+    - BOOST_ARCH_LOONGARCH     : no  (cached) [4]
+    - BOOST_ARCH_MIPS          : no  (cached) [4]
+    - BOOST_ARCH_PARISC        : no  (cached) [4]
+    - BOOST_ARCH_ARM           : no  (cached) [4]
+    - BOOST_ARCH_RISCV         : no  (cached) [4]
+    - BOOST_ARCH_SYS390        : no  (cached) [4]
+    - has std::atomic_ref      : no  (cached) [4]
+    - has -Wl,--no-undefined   : yes (cached) [4]
+    - has statx                : yes (cached) [4]
+    - cxx11_rvalue_references  : yes (cached) [4]
+    - cxx11_scoped_enums       : yes (cached) [4]
+    - cxx11_noexcept           : yes (cached) [4]
+    - cxx11_nullptr            : yes (cached) [4]
+    - cxx11_defaulted_functions : yes (cached) [4]
+    - cxx11_defaulted_moves    : yes (cached) [4]
+    - cxx11_deleted_functions  : yes (cached) [4]
+    - cxx11_function_template_default_args : yes (cached) [4]
+    - cxx11_final              : yes (cached) [4]
+    - cxx11_override           : yes (cached) [4]
+    - has init_priority attribute : yes (cached) [4]
+    - has stat::st_blksize     : yes (cached) [4]
+    - has stat::st_mtim        : yes (cached) [4]
+    - has stat::st_mtimensec   : yes (cached) [4]
+    - has stat::st_mtimespec   : no  (cached) [4]
+    - has stat::st_birthtim    : no  (cached) [4]
+    - has stat::st_birthtimensec : no  (cached) [4]
+    - has stat::st_birthtimespec : no  (cached) [4]
+    - has fdopendir(O_NOFOLLOW) : yes (cached) [4]
+    - has dirent::d_type       : yes (cached) [4]
+    - has POSIX *at APIs       : yes (cached) [4]
+    - has fallocate            : yes (cached) [4]
+    - compiler supports SSE2   : yes (cached) [4]
+    - compiler supports SSE4.1 : yes (cached) [4]
+    - cxx11_static_assert      : yes (cached) [4]
+    - has std::atomic_ref      : no  (cached) [5]
+    - has -Wl,--no-undefined   : yes (cached) [5]
+    - has statx                : yes (cached) [5]
+    - cxx11_rvalue_references  : yes (cached) [5]
+    - cxx11_scoped_enums       : yes (cached) [5]
+    - cxx11_noexcept           : yes (cached) [5]
+    - cxx11_nullptr            : yes (cached) [5]
+    - cxx11_defaulted_functions : yes (cached) [5]
+    - cxx11_defaulted_moves    : yes (cached) [5]
+    - cxx11_deleted_functions  : yes (cached) [5]
+    - cxx11_function_template_default_args : yes (cached) [5]
+    - cxx11_final              : yes (cached) [5]
+    - cxx11_override           : yes (cached) [5]
+    - has init_priority attribute : yes (cached) [5]
+    - has stat::st_blksize     : yes (cached) [5]
+    - has stat::st_mtim        : yes (cached) [5]
+    - has stat::st_mtimensec   : yes (cached) [5]
+    - has stat::st_mtimespec   : no  (cached) [5]
+    - has stat::st_birthtim    : no  (cached) [5]
+    - has stat::st_birthtimensec : no  (cached) [5]
+    - has stat::st_birthtimespec : no  (cached) [5]
+    - has fdopendir(O_NOFOLLOW) : yes (cached) [5]
+    - has dirent::d_type       : yes (cached) [5]
+    - has POSIX *at APIs       : yes (cached) [5]
+    - has fallocate            : yes (cached) [5]
+    - compiler supports SSE2   : yes (cached) [5]
+    - compiler supports SSE4.1 : yes (cached) [5]
+    - cxx11_static_assert      : yes (cached) [5]
+    - BOOST_ARCH_WORD_BITS == 0.0.16 : no  (cached) [5]
+    - BOOST_ARCH_WORD_BITS == 0.0.32 : no  (cached) [5]
+    - BOOST_ARCH_WORD_BITS == 0.0.64 : no  (cached) [5]
+    - BOOST_ARCH_X86           : no  (cached) [5]
+    - BOOST_ARCH_IA64          : no  (cached) [5]
+    - BOOST_ARCH_SPARC         : no  (cached) [5]
+    - BOOST_ARCH_PPC           : no  (cached) [5]
+    - BOOST_ARCH_LOONGARCH     : no  (cached) [5]
+    - BOOST_ARCH_MIPS          : no  (cached) [5]
+    - BOOST_ARCH_PARISC        : no  (cached) [5]
+    - BOOST_ARCH_ARM           : no  (cached) [5]
+    - BOOST_ARCH_RISCV         : no  (cached) [5]
+    - BOOST_ARCH_SYS390        : no  (cached) [5]
+
+[1] clang-android/target-os-android
+[2] clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/python-3.14/target-os-android/threading-multi/visibility-hidden
+[3] clang-linux-android/release/x86_64/cxxstd-17-iso/link-static/python-3.14/target-os-android/threading-multi/visibility-hidden
+[4] clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/python-3.14/target-os-android/threading-multi/visibility-hidden
+[5] clang-linux-android/release/x86_64/cxxstd-17-iso/python-3.14/target-os-android/threading-multi/visibility-hidden
+
+Component configuration:
+
+    - contract                 : not building
+    - date_time                : building
+    - exception                : not building
+    - graph                    : not building
+    - graph_parallel           : not building
+    - headers                  : not building
+    - locale                   : not building
+    - log                      : not building
+    - nowide                   : not building
+    - program_options          : not building
+    - regex                    : not building
+    - serialization            : not building
+    - test                     : not building
+    - thread                   : not building
+    - type_erasure             : not building
+    - winapi                   : not building
+    - wave                     : not building
+    - variant2                 : not building
+    - variant                  : not building
+    - uuid                     : not building
+    - url                      : not building
+    - unordered                : not building
+    - type_index               : not building
+    - tuple                    : not building
+    - timer                    : not building
+    - throw_exception          : not building
+    - system                   : building
+    - stl_interfaces           : not building
+    - stacktrace               : not building
+    - smart_ptr                : not building
+    - signals2                 : not building
+    - scope                    : not building
+    - redis                    : not building
+    - ratio                    : not building
+    - random                   : not building
+    - python                   : not building
+    - process                  : building
+    - predef                   : not building
+    - poly_collection          : not building
+    - pfr                      : not building
+    - parameter                : not building
+    - outcome                  : not building
+    - optional                 : not building
+    - mysql                    : not building
+    - multi_index              : not building
+    - msm                      : not building
+    - mpi                      : not building
+    - mp11                     : not building
+    - move                     : not building
+    - math                     : not building
+    - lockfree                 : not building
+    - lexical_cast             : not building
+    - lambda2                  : not building
+    - json                     : not building
+    - iterator                 : not building
+    - iostreams                : not building
+    - intrusive                : not building
+    - interprocess             : not building
+    - integer                  : not building
+    - heap                     : not building
+    - hana                     : not building
+    - geometry                 : not building
+    - function_types           : not building
+    - function                 : not building
+    - flyweight                : not building
+    - filesystem               : building
+    - fiber                    : not building
+    - endian                   : not building
+    - dll                      : not building
+    - detail                   : not building
+    - describe                 : not building
+    - crc                      : not building
+    - coroutine2               : not building
+    - coroutine                : not building
+    - core                     : not building
+    - conversion               : not building
+    - context                  : building
+    - container_hash           : not building
+    - container                : not building
+    - compat                   : not building
+    - cobalt                   : not building
+    - chrono                   : not building
+    - charconv                 : not building
+    - bind                     : not building
+    - bimap                    : not building
+    - beast                    : not building
+    - atomic                   : building
+    - assert                   : not building
+    - asio                     : not building
+    - any                      : not building
+
+clang-linux.compile.c++ ${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/shell.o
+
+    "${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang++"   -std=c++17 -fvisibility-inlines-hidden -fPIC -O3 -Wall -fvisibility=hidden -Wno-inline -m64 -fPIC -ffunction-sections -fdata-sections  -DBOOST_ALL_NO_LIB=1 -DBOOST_ASIO_NO_DEPRECATED -DBOOST_ATOMIC_DYN_LINK=1 -DBOOST_ATOMIC_NO_LIB=1 -DBOOST_COBALT_USE_STD_PMR=1 -DBOOST_CONTEXT_DYN_LINK=1 -DBOOST_CONTEXT_NO_LIB=1 -DBOOST_DATE_TIME_DYN_LINK=1 -DBOOST_DISABLE_ASSERTS -DBOOST_FILESYSTEM_DYN_LINK=1 -DBOOST_FILESYSTEM_NO_LIB=1 -DBOOST_PROCESS_DYN_LINK=1 -DBOOST_PROCESS_SOURCE=1 -DBOOST_SYSTEM_DYN_LINK=1 -DBOOST_SYSTEM_NO_LIB=1 -DDATE_TIME_INLINE -DNDEBUG   -I"." -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/asio/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/assert/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/atomic/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/container_hash/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/context/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/core/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/describe/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/detail/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/filesystem/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/function_types/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/iterator/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/move/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/mp11/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/optional/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/predef/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/process/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/scope/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/smart_ptr/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/system/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/throw_exception/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/type_index/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/variant2/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/winapi/include"  -c -o "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/shell.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/process/src/shell.cpp"
+
+clang-linux.compile.c++ ${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/shell.o
+
+    "${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang++"   -std=c++17 -fvisibility-inlines-hidden -O3 -Wall -fvisibility=hidden -Wno-inline -m64 -fPIC -ffunction-sections -fdata-sections  -DBOOST_ALL_NO_LIB=1 -DBOOST_ASIO_NO_DEPRECATED -DBOOST_ATOMIC_NO_LIB=1 -DBOOST_ATOMIC_STATIC_LINK=1 -DBOOST_COBALT_USE_STD_PMR=1 -DBOOST_CONTEXT_NO_LIB=1 -DBOOST_DISABLE_ASSERTS -DBOOST_FILESYSTEM_NO_LIB=1 -DBOOST_FILESYSTEM_STATIC_LINK=1 -DBOOST_PROCESS_SOURCE=1 -DBOOST_SYSTEM_NO_LIB=1 -DBOOST_SYSTEM_STATIC_LINK=1 -DDATE_TIME_INLINE -DNDEBUG   -I"." -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/asio/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/assert/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/atomic/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/container_hash/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/context/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/core/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/describe/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/detail/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/filesystem/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/function_types/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/iterator/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/move/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/mp11/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/optional/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/predef/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/process/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/scope/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/smart_ptr/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/system/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/throw_exception/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/type_index/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/variant2/include" -I"${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/winapi/include"  -c -o "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/shell.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/src/boost_1_87_0/libs/process/src/shell.cpp"
+
+RmTemps ${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/libboost_process.a(clean)
+
+    rm -f "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/libboost_process.a" 2>/dev/null >/dev/null
+
+clang-linux.archive ${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/libboost_process.a
+
+    "${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar"  rsc "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/libboost_process.a" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/detail/environment_posix.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/detail/environment_win.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/detail/last_error.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/detail/process_handle_windows.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/detail/throw_error.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/detail/utf8.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/ext/cmd.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/ext/cwd.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/ext/env.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/ext/exe.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/ext/proc_info.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/posix/close_handles.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/windows/default_launcher.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/environment.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/error.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/pid.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/shell.o"
+
+
+file ${REPO_ROOT}/.work/experiments/ndk-runtime/tmp/jam35cef22385.000
+# Generated by Boost 1.87.0
+
+if(TARGET Boost::process)
+  return()
+endif()
+
+if(Boost_VERBOSE OR Boost_DEBUG)
+  message(STATUS "Found boost_process ${boost_process_VERSION} at ${boost_process_DIR}")
+endif()
+
+mark_as_advanced(boost_process_DIR)
+
+# Compute the include and library directories relative to this file.
+
+get_filename_component(_BOOST_CMAKEDIR "${CMAKE_CURRENT_LIST_DIR}/../" REALPATH)
+
+# If the computed and the original directories are symlink-equivalent, use original
+if(EXISTS "${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake")
+  get_filename_component(_BOOST_CMAKEDIR_ORIGINAL "${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake" REALPATH)
+  if(_BOOST_CMAKEDIR STREQUAL _BOOST_CMAKEDIR_ORIGINAL)
+    set(_BOOST_CMAKEDIR "${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake")
+  endif()
+  unset(_BOOST_CMAKEDIR_ORIGINAL)
+endif()
+
+get_filename_component(_BOOST_INCLUDEDIR "${_BOOST_CMAKEDIR}/../../include/" ABSOLUTE)
+get_filename_component(_BOOST_LIBDIR "${_BOOST_CMAKEDIR}/../" ABSOLUTE)
+
+include(${CMAKE_CURRENT_LIST_DIR}/../BoostDetectToolset-1.87.0.cmake)
+
+if(Boost_DEBUG)
+  message(STATUS "Scanning ${CMAKE_CURRENT_LIST_DIR}/libboost_process-variant*.cmake")
+endif()
+
+file(GLOB __boost_variants "${CMAKE_CURRENT_LIST_DIR}/libboost_process-variant*.cmake")
+
+macro(_BOOST_SKIPPED fname reason)
+  if(Boost_VERBOSE OR Boost_DEBUG)
+    message(STATUS "  [ ] ${fname}")
+  endif()
+  list(APPEND __boost_skipped "${fname} (${reason})")
+endmacro()
+
+list(LENGTH __boost_variants _BOOST_SINGLE_VARIANT)
+if(NOT _BOOST_SINGLE_VARIANT EQUAL 1)
+  set(_BOOST_SINGLE_VARIANT 0)
+endif()
+
+foreach(f IN LISTS __boost_variants)
+  if(Boost_DEBUG)
+    message(STATUS "  Including ${f}")
+  endif()
+  include(${f})
+endforeach()
+
+unset(_BOOST_SINGLE_VARIANT)
+unset(_BOOST_LIBDIR)
+unset(_BOOST_INCLUDEDIR)
+unset(_BOOST_CMAKEDIR)
+
+if(NOT __boost_variants AND (Boost_VERBOSE OR Boost_DEBUG))
+  message(STATUS "  Library has no variants and is considered not found")
+endif()
+
+if(NOT TARGET Boost::process)
+  set(__boost_message "No suitable build variant has been found.")
+  if(__boost_skipped)
+    set(__boost_message "${__boost_message}\nThe following variants have been tried and rejected:")
+    foreach(s IN LISTS __boost_skipped)
+      set(__boost_message "${__boost_message}\n* ${s}")
+    endforeach()
+  endif()
+  set(boost_process_FOUND 0)
+  set(boost_process_NOT_FOUND_MESSAGE ${__boost_message})
+  unset(__boost_message)
+  unset(__boost_skipped)
+  unset(__boost_variants)
+  unset(_BOOST_PROCESS_DEPS)
+  return()
+endif()
+
+unset(__boost_skipped)
+unset(__boost_variants)
+
+if(_BOOST_PROCESS_DEPS)
+  list(REMOVE_DUPLICATES _BOOST_PROCESS_DEPS)
+  if(Boost_VERBOSE OR Boost_DEBUG)
+    message(STATUS "Adding boost_process dependencies: ${_BOOST_PROCESS_DEPS}")
+  endif()
+endif()
+
+foreach(dep_boost_process IN LISTS _BOOST_PROCESS_DEPS)
+  set(_BOOST_QUIET)
+  if(boost_process_FIND_QUIETLY)
+    set(_BOOST_QUIET QUIET)
+  endif()
+  set(_BOOST_REQUIRED)
+  if(boost_process_FIND_REQUIRED)
+    set(_BOOST_REQUIRED REQUIRED)
+  endif()
+  get_filename_component(_BOOST_CMAKEDIR "${CMAKE_CURRENT_LIST_DIR}/../" ABSOLUTE)
+  find_package(boost_${dep_boost_process} 1.87.0 EXACT CONFIG ${_BOOST_REQUIRED} ${_BOOST_QUIET} HINTS ${_BOOST_CMAKEDIR})
+  set_property(TARGET Boost::process APPEND PROPERTY INTERFACE_LINK_LIBRARIES Boost::${dep_boost_process})
+  unset(_BOOST_QUIET)
+  unset(_BOOST_REQUIRED)
+  unset(_BOOST_CMAKEDIR)
+  if(NOT boost_${dep_boost_process}_FOUND)
+    set(boost_process_FOUND 0)
+    set(boost_process_NOT_FOUND_MESSAGE "A required dependency, boost_${dep_boost_process}, has not been found.")
+    unset(_BOOST_PROCESS_DEPS)
+    return()
+  endif()
+endforeach()
+
+unset(_BOOST_PROCESS_DEPS)
+
+
+file ${REPO_ROOT}/.work/experiments/ndk-runtime/tmp/jam35cef22386.000
+# Generated by Boost 1.87.0
+
+set(PACKAGE_VERSION 1.87.0)
+
+if(PACKAGE_VERSION VERSION_LESS PACKAGE_FIND_VERSION)
+  set(PACKAGE_VERSION_COMPATIBLE FALSE)
+else()
+  set(PACKAGE_VERSION_COMPATIBLE TRUE)
+  if(PACKAGE_FIND_VERSION STREQUAL PACKAGE_VERSION)
+    set(PACKAGE_VERSION_EXACT TRUE)
+  endif()
+endif()
+
+
+file ${REPO_ROOT}/.work/experiments/ndk-runtime/tmp/jam35cef22387.000
+# Generated by Boost 1.87.0
+
+# address-model=64
+
+if(CMAKE_SIZEOF_VOID_P EQUAL 4)
+  _BOOST_SKIPPED("libboost_process.a" "64 bit, need 32")
+  return()
+endif()
+
+# layout=system
+
+# toolset=clang
+
+# link=static
+
+if(DEFINED Boost_USE_STATIC_LIBS)
+  if(NOT Boost_USE_STATIC_LIBS)
+    _BOOST_SKIPPED("libboost_process.a" "static, Boost_USE_STATIC_LIBS=${Boost_USE_STATIC_LIBS}")
+    return()
+  endif()
+else()
+  if(NOT WIN32 AND NOT _BOOST_SINGLE_VARIANT)
+    _BOOST_SKIPPED("libboost_process.a" "static, default is shared, set Boost_USE_STATIC_LIBS=ON to override")
+    return()
+  endif()
+endif()
+
+# runtime-link=shared
+
+if(Boost_USE_STATIC_RUNTIME)
+  _BOOST_SKIPPED("libboost_process.a" "shared runtime, Boost_USE_STATIC_RUNTIME=${Boost_USE_STATIC_RUNTIME}")
+  return()
+endif()
+
+# runtime-debugging=off
+
+if(Boost_USE_DEBUG_RUNTIME)
+  _BOOST_SKIPPED("libboost_process.a" "release runtime, Boost_USE_DEBUG_RUNTIME=${Boost_USE_DEBUG_RUNTIME}")
+  return()
+endif()
+
+# threading=multi
+
+# variant=release
+
+if(NOT "${Boost_USE_RELEASE_LIBS}" STREQUAL "" AND NOT Boost_USE_RELEASE_LIBS)
+  _BOOST_SKIPPED("libboost_process.a" "release, Boost_USE_RELEASE_LIBS=${Boost_USE_RELEASE_LIBS}")
+  return()
+endif()
+
+if(Boost_VERBOSE OR Boost_DEBUG)
+  message(STATUS "  [x] libboost_process.a")
+endif()
+
+# Create imported target Boost::process
+
+if(NOT TARGET Boost::process)
+  add_library(Boost::process STATIC IMPORTED)
+
+  set_target_properties(Boost::process PROPERTIES
+    INTERFACE_INCLUDE_DIRECTORIES "${_BOOST_INCLUDEDIR}"
+    INTERFACE_COMPILE_DEFINITIONS "BOOST_PROCESS_NO_LIB"
+  )
+endif()
+
+# Target file name: libboost_process.a
+
+get_target_property(__boost_imploc Boost::process IMPORTED_LOCATION_RELEASE)
+if(__boost_imploc)
+  message(SEND_ERROR "Target Boost::process already has an imported location '${__boost_imploc}', which is being overwritten with '${_BOOST_LIBDIR}/libboost_process.a'")
+endif()
+unset(__boost_imploc)
+
+set_property(TARGET Boost::process APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+
+set_target_properties(Boost::process PROPERTIES
+  IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE CXX
+  IMPORTED_LOCATION_RELEASE "${_BOOST_LIBDIR}/libboost_process.a"
+  )
+
+set_target_properties(Boost::process PROPERTIES
+  MAP_IMPORTED_CONFIG_MINSIZEREL Release
+  MAP_IMPORTED_CONFIG_RELWITHDEBINFO Release
+  )
+
+list(APPEND _BOOST_PROCESS_DEPS atomic context date_time filesystem system headers)
+
+text-action ${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/install/boost_process-config.cmake
+
+    cat "${REPO_ROOT}/.work/experiments/ndk-runtime/tmp/jam35cef22385.000" > "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/install/boost_process-config.cmake"
+
+text-action ${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/install/boost_process-config-version.cmake
+
+    cat "${REPO_ROOT}/.work/experiments/ndk-runtime/tmp/jam35cef22386.000" > "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/install/boost_process-config-version.cmake"
+
+text-action ${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/libboost_process-variant-static.cmake
+
+    cat "${REPO_ROOT}/.work/experiments/ndk-runtime/tmp/jam35cef22387.000" > "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/libboost_process-variant-static.cmake"
+
+common.copy ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_process.a
+
+    cp "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/libboost_process.a"  "${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_process.a"
+
+common.copy ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/boost_process-1.87.0/boost_process-config.cmake
+
+    cp "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/install/boost_process-config.cmake"  "${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/boost_process-1.87.0/boost_process-config.cmake"
+
+common.copy ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/boost_process-1.87.0/libboost_process-variant-static.cmake
+
+    cp "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/libboost_process-variant-static.cmake"  "${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/boost_process-1.87.0/libboost_process-variant-static.cmake"
+
+common.copy ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/boost_process-1.87.0/boost_process-config-version.cmake
+
+    cp "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/link-static/target-os-android/threading-multi/visibility-hidden/install/boost_process-config-version.cmake"  "${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/boost_process-1.87.0/boost_process-config-version.cmake"
+
+clang-linux.link.dll ${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/libboost_process.so
+
+    "${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android34-clang++"    -o "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/libboost_process.so" -Wl,-soname -Wl,"libboost_process.so" -shared -Wl,--start-group "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/detail/environment_posix.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/detail/environment_win.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/detail/last_error.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/detail/process_handle_windows.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/detail/throw_error.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/detail/utf8.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/ext/cmd.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/ext/cwd.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/ext/env.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/ext/exe.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/ext/proc_info.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/posix/close_handles.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/windows/default_launcher.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/environment.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/error.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/pid.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/shell.o" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/context/build/clang-linux-android/release/x86_64/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/libboost_context.so" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/date_time/build/clang-linux-android/release/x86_64/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/libboost_date_time.so" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/filesystem/build/clang-linux-android/release/x86_64/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/libboost_filesystem.so" "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/system/build/clang-linux-android/release/x86_64/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/libboost_system.so"  -Wl,-Bstatic  -Wl,-Bdynamic  -Wl,--end-group -fPIC -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -m64 -Wl,-z,max-page-size=16384 -Wl,--build-id=sha1 
+
+
+file ${REPO_ROOT}/.work/experiments/ndk-runtime/tmp/jam35cef22388.000
+# Generated by Boost 1.87.0
+
+if(TARGET Boost::process)
+  return()
+endif()
+
+if(Boost_VERBOSE OR Boost_DEBUG)
+  message(STATUS "Found boost_process ${boost_process_VERSION} at ${boost_process_DIR}")
+endif()
+
+mark_as_advanced(boost_process_DIR)
+
+# Compute the include and library directories relative to this file.
+
+get_filename_component(_BOOST_CMAKEDIR "${CMAKE_CURRENT_LIST_DIR}/../" REALPATH)
+
+# If the computed and the original directories are symlink-equivalent, use original
+if(EXISTS "${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake")
+  get_filename_component(_BOOST_CMAKEDIR_ORIGINAL "${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake" REALPATH)
+  if(_BOOST_CMAKEDIR STREQUAL _BOOST_CMAKEDIR_ORIGINAL)
+    set(_BOOST_CMAKEDIR "${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake")
+  endif()
+  unset(_BOOST_CMAKEDIR_ORIGINAL)
+endif()
+
+get_filename_component(_BOOST_INCLUDEDIR "${_BOOST_CMAKEDIR}/../../include/" ABSOLUTE)
+get_filename_component(_BOOST_LIBDIR "${_BOOST_CMAKEDIR}/../" ABSOLUTE)
+
+include(${CMAKE_CURRENT_LIST_DIR}/../BoostDetectToolset-1.87.0.cmake)
+
+if(Boost_DEBUG)
+  message(STATUS "Scanning ${CMAKE_CURRENT_LIST_DIR}/libboost_process-variant*.cmake")
+endif()
+
+file(GLOB __boost_variants "${CMAKE_CURRENT_LIST_DIR}/libboost_process-variant*.cmake")
+
+macro(_BOOST_SKIPPED fname reason)
+  if(Boost_VERBOSE OR Boost_DEBUG)
+    message(STATUS "  [ ] ${fname}")
+  endif()
+  list(APPEND __boost_skipped "${fname} (${reason})")
+endmacro()
+
+list(LENGTH __boost_variants _BOOST_SINGLE_VARIANT)
+if(NOT _BOOST_SINGLE_VARIANT EQUAL 1)
+  set(_BOOST_SINGLE_VARIANT 0)
+endif()
+
+foreach(f IN LISTS __boost_variants)
+  if(Boost_DEBUG)
+    message(STATUS "  Including ${f}")
+  endif()
+  include(${f})
+endforeach()
+
+unset(_BOOST_SINGLE_VARIANT)
+unset(_BOOST_LIBDIR)
+unset(_BOOST_INCLUDEDIR)
+unset(_BOOST_CMAKEDIR)
+
+if(NOT __boost_variants AND (Boost_VERBOSE OR Boost_DEBUG))
+  message(STATUS "  Library has no variants and is considered not found")
+endif()
+
+if(NOT TARGET Boost::process)
+  set(__boost_message "No suitable build variant has been found.")
+  if(__boost_skipped)
+    set(__boost_message "${__boost_message}\nThe following variants have been tried and rejected:")
+    foreach(s IN LISTS __boost_skipped)
+      set(__boost_message "${__boost_message}\n* ${s}")
+    endforeach()
+  endif()
+  set(boost_process_FOUND 0)
+  set(boost_process_NOT_FOUND_MESSAGE ${__boost_message})
+  unset(__boost_message)
+  unset(__boost_skipped)
+  unset(__boost_variants)
+  unset(_BOOST_PROCESS_DEPS)
+  return()
+endif()
+
+unset(__boost_skipped)
+unset(__boost_variants)
+
+if(_BOOST_PROCESS_DEPS)
+  list(REMOVE_DUPLICATES _BOOST_PROCESS_DEPS)
+  if(Boost_VERBOSE OR Boost_DEBUG)
+    message(STATUS "Adding boost_process dependencies: ${_BOOST_PROCESS_DEPS}")
+  endif()
+endif()
+
+foreach(dep_boost_process IN LISTS _BOOST_PROCESS_DEPS)
+  set(_BOOST_QUIET)
+  if(boost_process_FIND_QUIETLY)
+    set(_BOOST_QUIET QUIET)
+  endif()
+  set(_BOOST_REQUIRED)
+  if(boost_process_FIND_REQUIRED)
+    set(_BOOST_REQUIRED REQUIRED)
+  endif()
+  get_filename_component(_BOOST_CMAKEDIR "${CMAKE_CURRENT_LIST_DIR}/../" ABSOLUTE)
+  find_package(boost_${dep_boost_process} 1.87.0 EXACT CONFIG ${_BOOST_REQUIRED} ${_BOOST_QUIET} HINTS ${_BOOST_CMAKEDIR})
+  set_property(TARGET Boost::process APPEND PROPERTY INTERFACE_LINK_LIBRARIES Boost::${dep_boost_process})
+  unset(_BOOST_QUIET)
+  unset(_BOOST_REQUIRED)
+  unset(_BOOST_CMAKEDIR)
+  if(NOT boost_${dep_boost_process}_FOUND)
+    set(boost_process_FOUND 0)
+    set(boost_process_NOT_FOUND_MESSAGE "A required dependency, boost_${dep_boost_process}, has not been found.")
+    unset(_BOOST_PROCESS_DEPS)
+    return()
+  endif()
+endforeach()
+
+unset(_BOOST_PROCESS_DEPS)
+
+
+file ${REPO_ROOT}/.work/experiments/ndk-runtime/tmp/jam35cef22389.000
+# Generated by Boost 1.87.0
+
+set(PACKAGE_VERSION 1.87.0)
+
+if(PACKAGE_VERSION VERSION_LESS PACKAGE_FIND_VERSION)
+  set(PACKAGE_VERSION_COMPATIBLE FALSE)
+else()
+  set(PACKAGE_VERSION_COMPATIBLE TRUE)
+  if(PACKAGE_FIND_VERSION STREQUAL PACKAGE_VERSION)
+    set(PACKAGE_VERSION_EXACT TRUE)
+  endif()
+endif()
+
+
+file ${REPO_ROOT}/.work/experiments/ndk-runtime/tmp/jam35cef2238a.000
+# Generated by Boost 1.87.0
+
+# address-model=64
+
+if(CMAKE_SIZEOF_VOID_P EQUAL 4)
+  _BOOST_SKIPPED("libboost_process.so" "64 bit, need 32")
+  return()
+endif()
+
+# layout=system
+
+# toolset=clang
+
+# link=shared
+
+if(DEFINED Boost_USE_STATIC_LIBS)
+  if(Boost_USE_STATIC_LIBS)
+    _BOOST_SKIPPED("libboost_process.so" "shared, Boost_USE_STATIC_LIBS=${Boost_USE_STATIC_LIBS}")
+    return()
+  endif()
+else()
+  if(WIN32 AND NOT _BOOST_SINGLE_VARIANT)
+    _BOOST_SKIPPED("libboost_process.so" "shared, default on Windows is static, set Boost_USE_STATIC_LIBS=OFF to override")
+    return()
+  endif()
+endif()
+
+# runtime-link=shared
+
+if(Boost_USE_STATIC_RUNTIME)
+  _BOOST_SKIPPED("libboost_process.so" "shared runtime, Boost_USE_STATIC_RUNTIME=${Boost_USE_STATIC_RUNTIME}")
+  return()
+endif()
+
+# runtime-debugging=off
+
+if(Boost_USE_DEBUG_RUNTIME)
+  _BOOST_SKIPPED("libboost_process.so" "release runtime, Boost_USE_DEBUG_RUNTIME=${Boost_USE_DEBUG_RUNTIME}")
+  return()
+endif()
+
+# threading=multi
+
+# variant=release
+
+if(NOT "${Boost_USE_RELEASE_LIBS}" STREQUAL "" AND NOT Boost_USE_RELEASE_LIBS)
+  _BOOST_SKIPPED("libboost_process.so" "release, Boost_USE_RELEASE_LIBS=${Boost_USE_RELEASE_LIBS}")
+  return()
+endif()
+
+if(Boost_VERBOSE OR Boost_DEBUG)
+  message(STATUS "  [x] libboost_process.so")
+endif()
+
+# Create imported target Boost::process
+
+if(NOT TARGET Boost::process)
+  add_library(Boost::process SHARED IMPORTED)
+
+  set_target_properties(Boost::process PROPERTIES
+    INTERFACE_INCLUDE_DIRECTORIES "${_BOOST_INCLUDEDIR}"
+    INTERFACE_COMPILE_DEFINITIONS "BOOST_PROCESS_NO_LIB"
+  )
+endif()
+
+# Target file name: libboost_process.so
+
+get_target_property(__boost_imploc Boost::process IMPORTED_LOCATION_RELEASE)
+if(__boost_imploc)
+  message(SEND_ERROR "Target Boost::process already has an imported location '${__boost_imploc}', which is being overwritten with '${_BOOST_LIBDIR}/libboost_process.so'")
+endif()
+unset(__boost_imploc)
+
+set_property(TARGET Boost::process APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+
+set_target_properties(Boost::process PROPERTIES
+  IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE CXX
+  IMPORTED_LOCATION_RELEASE "${_BOOST_LIBDIR}/libboost_process.so"
+  )
+
+set_target_properties(Boost::process PROPERTIES
+  MAP_IMPORTED_CONFIG_MINSIZEREL Release
+  MAP_IMPORTED_CONFIG_RELWITHDEBINFO Release
+  )
+
+set_property(TARGET Boost::process APPEND
+  PROPERTY INTERFACE_COMPILE_DEFINITIONS "BOOST_PROCESS_DYN_LINK"
+  )
+
+list(APPEND _BOOST_PROCESS_DEPS atomic context date_time filesystem system headers)
+
+text-action ${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/install/boost_process-config.cmake
+
+    cat "${REPO_ROOT}/.work/experiments/ndk-runtime/tmp/jam35cef22388.000" > "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/install/boost_process-config.cmake"
+
+text-action ${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/install/boost_process-config-version.cmake
+
+    cat "${REPO_ROOT}/.work/experiments/ndk-runtime/tmp/jam35cef22389.000" > "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/install/boost_process-config-version.cmake"
+
+common.copy ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_process.so
+
+    cp "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/build/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/libboost_process.so"  "${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_process.so"
+
+text-action ${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/libboost_process-variant-shared.cmake
+
+    cat "${REPO_ROOT}/.work/experiments/ndk-runtime/tmp/jam35cef2238a.000" > "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/libboost_process-variant-shared.cmake"
+
+common.copy ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/boost_process-1.87.0/libboost_process-variant-shared.cmake
+
+    cp "${REPO_ROOT}/.work/experiments/ndk-runtime/build/boost-x86_64/obj/boost/bin.v2/libs/process/clang-linux-android/release/x86_64/boost.process.fs-boost/cxxstd-17-iso/target-os-android/threading-multi/visibility-hidden/libboost_process-variant-shared.cmake"  "${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/boost_process-1.87.0/libboost_process-variant-shared.cmake"
+
++ RC=0
+++ date +%s
++ T1=1790321540
++ echo 'B2 EXIT=0 WALL_SECONDS=13'
+B2 EXIT=0 WALL_SECONDS=13
++ set +x
+== installed libs
+-rw-r--r--. 1 fryorcraken fryorcraken   18346 Sep 25 17:31 libboost_atomic.a
+-rwxr-xr-x. 1 fryorcraken fryorcraken   14184 Sep 25 17:31 libboost_atomic.so
+-rw-r--r--. 1 fryorcraken fryorcraken   11146 Sep 25 17:31 libboost_context.a
+-rwxr-xr-x. 1 fryorcraken fryorcraken    9440 Sep 25 17:31 libboost_context.so
+-rw-r--r--. 1 fryorcraken fryorcraken    1338 Sep 25 17:31 libboost_date_time.a
+-rwxr-xr-x. 1 fryorcraken fryorcraken    5016 Sep 25 17:31 libboost_date_time.so
+-rw-r--r--. 1 fryorcraken fryorcraken  356820 Sep 25 17:31 libboost_filesystem.a
+-rwxr-xr-x. 1 fryorcraken fryorcraken  211224 Sep 25 17:31 libboost_filesystem.so
+-rw-r--r--. 1 fryorcraken fryorcraken  201282 Sep 25 17:32 libboost_process.a
+-rwxr-xr-x. 1 fryorcraken fryorcraken   98184 Sep 25 17:32 libboost_process.so
+-rw-r--r--. 1 fryorcraken fryorcraken    1308 Sep 25 17:31 libboost_system.a
+-rwxr-xr-x. 1 fryorcraken fryorcraken    4992 Sep 25 17:31 libboost_system.so
+== cmake configs
+Boost-1.87.0
+boost_atomic-1.87.0
+boost_context-1.87.0
+boost_date_time-1.87.0
+BoostDetectToolset-1.87.0.cmake
+boost_filesystem-1.87.0
+boost_headers-1.87.0
+boost_process-1.87.0
+boost_system-1.87.0
+fmt
+spdlog
+== ELF check (shared)
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_atomic.so
+  Machine:                           Advanced Micro Devices X86-64
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x00107c 0x00107c R   0x4000
+  LOAD           0x001080 0x0000000000005080 0x0000000000005080 0x000df0 0x000df0 R E 0x4000
+  LOAD           0x001e70 0x0000000000009e70 0x0000000000009e70 0x000240 0x001190 RW  0x4000
+  LOAD           0x0020b0 0x000000000000e0b0 0x000000000000e0b0 0x000010 0x004011 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+  0x000000000000000e (SONAME)       Library soname: [libboost_atomic.so]
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_context.so
+  Machine:                           Advanced Micro Devices X86-64
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x000bf4 0x000bf4 R   0x4000
+  LOAD           0x000c00 0x0000000000004c00 0x0000000000004c00 0x0003e0 0x0003e0 R E 0x4000
+  LOAD           0x000fe0 0x0000000000008fe0 0x0000000000008fe0 0x000220 0x001020 RW  0x4000
+  LOAD           0x001200 0x000000000000d200 0x000000000000d200 0x000008 0x000028 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+  0x000000000000000e (SONAME)       Library soname: [libboost_context.so]
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_date_time.so
+  Machine:                           Advanced Micro Devices X86-64
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x0005f4 0x0005f4 R   0x4000
+  LOAD           0x000600 0x0000000000004600 0x0000000000004600 0x0000c0 0x0000c0 R E 0x4000
+  LOAD           0x0006c0 0x00000000000086c0 0x00000000000086c0 0x0001e8 0x000940 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+  0x000000000000000e (SONAME)       Library soname: [libboost_date_time.so]
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_filesystem.so
+  Machine:                           Advanced Micro Devices X86-64
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x00ead8 0x00ead8 R   0x4000
+  LOAD           0x00eae0 0x0000000000012ae0 0x0000000000012ae0 0x018910 0x018910 R E 0x4000
+  LOAD           0x0273f0 0x000000000002f3f0 0x000000000002f3f0 0x000b98 0x000c10 RW  0x4000
+  LOAD           0x027f88 0x0000000000033f88 0x0000000000033f88 0x000120 0x000a28 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libboost_system.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libboost_atomic.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+  0x000000000000000e (SONAME)       Library soname: [libboost_filesystem.so]
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_process.so
+  Machine:                           Advanced Micro Devices X86-64
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x008074 0x008074 R   0x4000
+  LOAD           0x008080 0x000000000000c080 0x000000000000c080 0x0085d0 0x0085d0 R E 0x4000
+  LOAD           0x010650 0x0000000000018650 0x0000000000018650 0x000a80 0x0019b0 RW  0x4000
+  LOAD           0x0110d0 0x000000000001d0d0 0x000000000001d0d0 0x000060 0x0009d0 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libboost_context.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libboost_date_time.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libboost_filesystem.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libboost_system.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+  0x000000000000000e (SONAME)       Library soname: [libboost_process.so]
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_system.so
+  Machine:                           Advanced Micro Devices X86-64
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x0005e4 0x0005e4 R   0x4000
+  LOAD           0x0005f0 0x00000000000045f0 0x00000000000045f0 0x0000c0 0x0000c0 R E 0x4000
+  LOAD           0x0006b0 0x00000000000086b0 0x00000000000086b0 0x0001e8 0x000950 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+  0x000000000000000e (SONAME)       Library soname: [libboost_system.so]
+== sizes
+18346	${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_atomic.a
+14184	${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_atomic.so
+11146	${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_context.a
+9440	${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_context.so
+1338	${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_date_time.a
+5016	${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_date_time.so
+356820	${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_filesystem.a
+211224	${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_filesystem.so
+201282	${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_process.a
+98184	${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_process.so
+1308	${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_system.a
+4992	${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libboost_system.so
+2026-09-25T17:32:20+10:00

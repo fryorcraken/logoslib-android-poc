@@ -1,0 +1,96 @@
+compiler: g++ (GCC) 15.3.1 20260722 (Red Hat 15.3.1-1)
+--- build vectors-orig
+/nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core/path_normalizer.cpp: In static member function ‘static std::string lgx::PathNormalizer::toLowercase(const std::string&)’:
+/nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core/path_normalizer.cpp:109:16: warning: unused variable ‘status’ [-Wunused-variable]
+  109 |     UErrorCode status = U_ZERO_ERROR;
+      |                ^~~~~~
+exit=0
+--- build vectors-port
+exit=0
+
+== NEEDED / ICU symbols imported
+-- vectors-orig NEEDED:
+ 0x0000000000000001 (NEEDED)             Shared library: [libicuuc.so.76]
+ 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+-- vectors-orig undefined ICU symbols:
+U _ZN6icu_7611Normalizer214getNFCInstanceER10UErrorCode
+U _ZN6icu_7613UnicodeString7toLowerEv
+U _ZN6icu_7613UnicodeString8fromUTF8ENS_11StringPieceE
+U _ZN6icu_7613UnicodeStringD1Ev
+U _ZN6icu_767UMemorydlEPv
+U _ZN6icu_768ByteSink15GetAppendBufferEiiPciPi
+U _ZN6icu_768ByteSink5FlushEv
+U _ZN6icu_768ByteSinkD2Ev
+U _ZNK6icu_7613UnicodeString6toUTF8ERNS_8ByteSinkE
+-- vectors-port NEEDED:
+ 0x0000000000000001 (NEEDED)             Shared library: [libicuuc.so.76]
+ 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+-- vectors-port undefined ICU symbols:
+U unorm2_getNFCInstance_76
+U unorm2_isNormalized_76
+U unorm2_normalize_76
+U u_strFromUTF8WithSub_76
+U u_strToLower_76
+U u_strToUTF8WithSub_76
+
+== run + diff under several locales
+vectors-orig [unset] exit=0 ## 0 failure(s)
+vectors-port [unset] exit=0 ## 0 failure(s)
+   => [unset] orig and port outputs IDENTICAL (81 lines)
+vectors-orig [C.UTF-8] exit=0 ## 0 failure(s)
+vectors-port [C.UTF-8] exit=0 ## 0 failure(s)
+   => [C.UTF-8] orig and port outputs IDENTICAL (81 lines)
+vectors-orig [en_US.UTF-8] exit=0 ## 0 failure(s)
+vectors-port [en_US.UTF-8] exit=0 ## 0 failure(s)
+   => [en_US.UTF-8] orig and port outputs IDENTICAL (81 lines)
+vectors-orig [de_DE.UTF-8] exit=0 ## 0 failure(s)
+vectors-port [de_DE.UTF-8] exit=0 ## 0 failure(s)
+   => [de_DE.UTF-8] orig and port outputs IDENTICAL (81 lines)
+vectors-orig [tr_TR.UTF-8] exit=0 ## 0 failure(s)
+vectors-port [tr_TR.UTF-8] exit=0 ## 0 failure(s)
+   => [tr_TR.UTF-8] orig and port outputs IDENTICAL (81 lines)
+vectors-orig [lt_LT.UTF-8] exit=0 ## 0 failure(s)
+vectors-port [lt_LT.UTF-8] exit=0 ## 0 failure(s)
+   => [lt_LT.UTF-8] orig and port outputs IDENTICAL (81 lines)
+ALL_LOCALES_IDENTICAL=1
+-- locale sensitivity of toLowercase (capital-I-ascii / dotted-capital-I rows):
+${REPO_ROOT}/.work/experiments/lgx-icu/out/vectors-port.C.UTF-8.txt:dotted-capital-I       in=c4b07374616e62756c
+${REPO_ROOT}/.work/experiments/lgx-icu/out/vectors-port.C.UTF-8.txt-    nfc=c4b07374616e62756c isnfc=1 lower=69cc877374616e62756c valid=1 err=
+${REPO_ROOT}/.work/experiments/lgx-icu/out/vectors-port.C.UTF-8.txt:capital-I-ascii        in=4c494e55582d49363836
+${REPO_ROOT}/.work/experiments/lgx-icu/out/vectors-port.C.UTF-8.txt-    nfc=4c494e55582d49363836 isnfc=1 lower=6c696e75782d69363836 valid=1 err=
+--
+${REPO_ROOT}/.work/experiments/lgx-icu/out/vectors-port.tr_TR.UTF-8.txt:dotted-capital-I       in=c4b07374616e62756c
+${REPO_ROOT}/.work/experiments/lgx-icu/out/vectors-port.tr_TR.UTF-8.txt-    nfc=c4b07374616e62756c isnfc=1 lower=697374616e62756c valid=1 err=
+${REPO_ROOT}/.work/experiments/lgx-icu/out/vectors-port.tr_TR.UTF-8.txt:capital-I-ascii        in=4c494e55582d49363836
+${REPO_ROOT}/.work/experiments/lgx-icu/out/vectors-port.tr_TR.UTF-8.txt-    nfc=4c494e55582d49363836 isnfc=1 lower=6cc4b16e75782dc4b1363836 valid=1 err=
+--
+${REPO_ROOT}/.work/experiments/lgx-icu/out/vectors-orig.tr_TR.UTF-8.txt:dotted-capital-I       in=c4b07374616e62756c
+${REPO_ROOT}/.work/experiments/lgx-icu/out/vectors-orig.tr_TR.UTF-8.txt-    nfc=c4b07374616e62756c isnfc=1 lower=697374616e62756c valid=1 err=
+${REPO_ROOT}/.work/experiments/lgx-icu/out/vectors-orig.tr_TR.UTF-8.txt:capital-I-ascii        in=4c494e55582d49363836
+${REPO_ROOT}/.work/experiments/lgx-icu/out/vectors-orig.tr_TR.UTF-8.txt-    nfc=4c494e55582d49363836 isnfc=1 lower=6cc4b16e75782dc4b1363836 valid=1 err=
+
+== upstream gtest suites
+build gtest-pathnorm-orig exit=0
+build gtest-pathnorm-port exit=0
+build gtest-variant-port exit=0
+--- gtest-pathnorm-orig
+[==========] Running 21 tests from 1 test suite.
+[==========] 21 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 21 tests.
+exit=0
+--- gtest-pathnorm-port
+[==========] Running 21 tests from 1 test suite.
+[==========] 21 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 21 tests.
+exit=0
+--- gtest-variant-port
+[==========] Running 11 tests from 1 test suite.
+[==========] 11 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 11 tests.
+exit=0

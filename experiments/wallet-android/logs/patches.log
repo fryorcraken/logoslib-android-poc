@@ -1,0 +1,26 @@
+ Cargo.lock                     |  2 ++
+ lez/common/Cargo.toml          |  7 ++++++-
+ lez/common/src/config.rs       |  2 ++
+ lez/indexer/core/Cargo.toml    |  2 +-
+ lez/sequencer/core/Cargo.toml  |  2 +-
+ lez/wallet-ffi/Cargo.toml      |  1 +
+ lez/wallet/Cargo.toml          |  5 +++++
+ lez/wallet/src/multi_client.rs | 20 ++++++++++++++++++++
+ 8 files changed, 38 insertions(+), 3 deletions(-)
+   66 ${REPO_ROOT}/.work/experiments/wallet-android/patches/01b-common-bedrock-auth-feature.diff
+   51 ${REPO_ROOT}/.work/experiments/wallet-android/patches/01-common-drop-bedrock-http-client.diff
+   90 ${REPO_ROOT}/.work/experiments/wallet-android/patches/02-wallet-webpki-roots-feature.diff
+  154 ${REPO_ROOT}/.work/experiments/wallet-android/patches/all-combined.diff
+  361 total
+==> ${REPO_ROOT}/.work/experiments/wallet-android/patches/01b-common-bedrock-auth-feature.diff <==
+Rationale: non-breaking replacement for 01 - make logos-blockchain-common-http-client optional in lez/common behind feature bedrock-auth, enabled only by sequencer_core and indexer_core, so wallet-ffi's graph has no Bedrock crates.
+
+==> ${REPO_ROOT}/.work/experiments/wallet-android/patches/01-common-drop-bedrock-http-client.diff <==
+Rationale: minimal form asked for in X3 - drop lez/common's only Bedrock edge (logos-blockchain-common-http-client, used only by From<BasicAuth> for BasicAuthCredentials) so wallet-ffi stops pulling Bedrock circuits/rapidsnark/GMP. BREAKS sequencer_core/indexer_core (they use that From impl); prefer 01b.
+
+==> ${REPO_ROOT}/.work/experiments/wallet-android/patches/02-wallet-webpki-roots-feature.diff <==
+Rationale: opt-in feature webpki-roots on wallet and wallet-ffi; make_subclient() calls jsonrpsee HttpClientBuilder::with_custom_cert_store(rustls ClientConfig with ring provider + webpki_roots::TLS_SERVER_ROOTS), so HTTPS to the sequencer works in a process without a JavaVM (rustls-platform-verifier panics there).
+
+==> ${REPO_ROOT}/.work/experiments/wallet-android/patches/all-combined.diff <==
+Rationale: full working-copy state on top of logos-execution-zone d8596eb7 (v0.2.5-rc2) = 01b + 02.
+DONE

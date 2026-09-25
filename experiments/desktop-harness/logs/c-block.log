@@ -1,0 +1,219 @@
+================ 01-create-cal3-sync (block create sync pinger ${REPO_ROOT}/.work/experiments/desktop-harness/wallets/c1) TMPDIR=${REPO_ROOT}/.work/dh/c01
+exit=0 wall=3884 ms
+[     0 ms][main] desktop-harness mode=block TMPDIR=${REPO_ROOT}/.work/dh/c01 LOGOS_HOST_PATH=/nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/bin/logos_host
+[     1 ms][qt] QCoreApplication created on thread 139816186341056
+[    16 ms][qt] logos_core_start() returned
+[    16 ms][main] runtime up in 16 ms; protocol=0.9.0 mode=remote; qt thread=139816186341056
+[    40 ms][main] load(lez_probe) from this (non-Qt) thread -> 1 in 24 ms
+[    54 ms][main] load(ev_probe) from this (non-Qt) thread -> 1 in 14 ms
+[    54 ms][main] lp_client_create(lez_core) -> 0x2ef84d80 in 0 ms
+[    54 ms][main] lp_client_create(lez_probe) -> 0x2ef7c540 in 0 ms
+[    55 ms][main] lp_client_create(ev_probe) -> 0x2ef7abd0 in 1 ms
+[    59 ms][main] BLOCK kind=create style=sync pinger=pinger: L=create_new["${REPO_ROOT}/.work/experiments/desktop-harness/wallets/c1/wallet_config.json","${REPO_ROOT}/.work/experiments/desktop-harness/wallets/c1/storage.json","${HOME}/
+[   960 ms][C] C: lp_invoke(ping, timeout=60000) start=960 took=0 ms rc=0 result="pong" error=(null)
+[  2441 ms][pinger] slow ping: ping started at 559 took 1882 ms rc=0 result="pong"
+[  2441 ms][L] L: lp_invoke(create_new, timeout=60000) start=559 took=1882 ms rc=0 result="ozone return two box thank million midnight pair off master stay list sustain loan skate arrange music duck detail neglect steel unique echo great" error=(null)
+[  2441 ms][D] D: lp_invoke(lez_version, timeout=60000) start=910 took=1531 ms rc=0 result="0.3.0" error=(null)
+[  2441 ms][B] B: lp_invoke(version, timeout=60000) start=859 took=1582 ms rc=0 result="0.3.0" error=(null)
+[  2441 ms][main] SUMMARY sync: L 1882 ms | B 1582 ms | D 1531 ms | C 0 ms
+[  2441 ms][main] SUMMARY sync: L end=2441 B end=2441 D end=2441 C end=960
+[  2942 ms][main] PINGER during-L: ping x11854, avg 0.24 ms, max 1882 ms (started at 559), >100ms: 1, >1000ms: 1, bad results: 0
+[  2942 ms][main] (L was dispatched at 559 ms)
+[  2942 ms][main] post: lp_invoke(list_accounts, timeout=10000) start=2942 took=0 ms rc=0 result=[{"account_id":"3ee1a261e6d905b03e5255597540d1e795815d91aade2f365d470552d99de0c3","is_public":true},{"account_id":"c84482213d0881f286623d4abff33bfd4630d13db563c3609cc8e0a8a6b6b86e","is_public":false}] error=(null)
+[  3667 ms][main] post: lp_invoke(get_current_block_height, timeout=20000) start=2942 took=725 ms rc=0 result=23986 error=(null)
+[  3668 ms][qt] exec() returned 0; logos_core_cleanup()
+[  3868 ms][qt] cleanup done
+[  3868 ms][main] done (rc=0); shutdown took 200 ms
+================ 02-create-cal3-async (block create async pinger ${REPO_ROOT}/.work/experiments/desktop-harness/wallets/c2) TMPDIR=${REPO_ROOT}/.work/dh/c02
+exit=0 wall=4097 ms
+[     0 ms][main] desktop-harness mode=block TMPDIR=${REPO_ROOT}/.work/dh/c02 LOGOS_HOST_PATH=/nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/bin/logos_host
+[     1 ms][qt] QCoreApplication created on thread 140205985326784
+[    16 ms][qt] logos_core_start() returned
+[    16 ms][main] runtime up in 16 ms; protocol=0.9.0 mode=remote; qt thread=140205985326784
+[    39 ms][main] load(lez_probe) from this (non-Qt) thread -> 1 in 23 ms
+[    50 ms][main] load(ev_probe) from this (non-Qt) thread -> 1 in 11 ms
+[    51 ms][main] lp_client_create(lez_core) -> 0x23dc4500 in 1 ms
+[    51 ms][main] lp_client_create(lez_probe) -> 0x23dccb30 in 0 ms
+[    52 ms][main] lp_client_create(ev_probe) -> 0x23dc4950 in 1 ms
+[    55 ms][main] BLOCK kind=create style=async pinger=pinger: L=create_new["${REPO_ROOT}/.work/experiments/desktop-harness/wallets/c2/wallet_config.json","${REPO_ROOT}/.work/experiments/desktop-harness/wallets/c2/storage.json","${HOME}
+[   556 ms][main] L: lp_invoke_async(create_new, timeout=60000) rc=0; the dispatch call itself took 0 ms
+[   856 ms][main] B: lp_invoke_async(version, timeout=60000) rc=0; the dispatch call itself took 0 ms
+[   906 ms][main] D: lp_invoke_async(lez_version, timeout=60000) rc=0; the dispatch call itself took 0 ms
+[   956 ms][main] C: lp_invoke_async(ping, timeout=60000) rc=0; the dispatch call itself took 0 ms
+[   961 ms][main] C: async callback ok=1 after 0 ms (dispatched at 956) on thread qt-thread json="pong"
+[  2611 ms][main] B: async callback ok=1 after 1752 ms (dispatched at 856) on thread qt-thread json="0.3.0"
+[  2611 ms][main] D: async callback ok=1 after 1703 ms (dispatched at 906) on thread qt-thread json="0.3.0"
+[  2611 ms][main] L: async callback ok=1 after 2052 ms (dispatched at 556) on thread qt-thread json="art fresh swallow cruise impact merit stick record position sick crew depart bulk bright share gauge goddess put box subject choose dad news deer"
+[  2611 ms][main] SUMMARY async: L 2052 ms | B 1752 ms | D 1703 ms | C 0 ms (callback - dispatch)
+[  2611 ms][main] SUMMARY async: B finished 0 ms after L finished; D 1 ms; C finished 1652 ms BEFORE L
+[  3111 ms][main] PINGER during-L: ping x39799, avg 0.08 ms, max 2 ms (started at 2192), >100ms: 0, >1000ms: 0, bad results: 0
+[  3111 ms][main] (L was dispatched at 556 ms)
+[  3112 ms][main] post: lp_invoke(list_accounts, timeout=10000) start=3111 took=1 ms rc=0 result=[{"account_id":"52f212222e65cf14a60ad9a179353449c39dd29fdc11f3ee2e2b4a3892423b38","is_public":true},{"account_id":"26433a93303f358e336e50f13c23184d6617e9734d3217e7339e9ab2dfe14a03","is_public":false}] error=(null)
+[  3881 ms][main] post: lp_invoke(get_current_block_height, timeout=20000) start=3112 took=769 ms rc=0 result=23986 error=(null)
+[  3882 ms][qt] exec() returned 0; logos_core_cleanup()
+[  4082 ms][qt] cleanup done
+[  4082 ms][main] done (rc=0); shutdown took 200 ms
+================ 03-create-cal20-sync (block create sync pinger ${REPO_ROOT}/.work/experiments/desktop-harness/wallets/c3) TMPDIR=${REPO_ROOT}/.work/dh/c03
+exit=0 wall=10202 ms
+[     0 ms][main] desktop-harness mode=block TMPDIR=${REPO_ROOT}/.work/dh/c03 LOGOS_HOST_PATH=/nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/bin/logos_host
+[     0 ms][qt] QCoreApplication created on thread 140409427424960
+[    15 ms][qt] logos_core_start() returned
+[    15 ms][main] runtime up in 15 ms; protocol=0.9.0 mode=remote; qt thread=140409427424960
+[    38 ms][main] load(lez_probe) from this (non-Qt) thread -> 1 in 23 ms
+[    49 ms][main] load(ev_probe) from this (non-Qt) thread -> 1 in 11 ms
+[    50 ms][main] lp_client_create(lez_core) -> 0xe1ad500 in 1 ms
+[    50 ms][main] lp_client_create(lez_probe) -> 0xe1b5b30 in 0 ms
+[    51 ms][main] lp_client_create(ev_probe) -> 0xe1ad950 in 1 ms
+[    54 ms][main] BLOCK kind=create style=sync pinger=pinger: L=create_new["${REPO_ROOT}/.work/experiments/desktop-harness/wallets/c3/wallet_config.json","${REPO_ROOT}/.work/experiments/desktop-harness/wallets/c3/storage.json","${HOME}/
+[   955 ms][C] C: lp_invoke(ping, timeout=60000) start=954 took=1 ms rc=0 result="pong" error=(null)
+[  8740 ms][B] B: lp_invoke(version, timeout=60000) start=854 took=7886 ms rc=0 result="0.3.0" error=(null)
+[  8740 ms][pinger] slow ping: ping started at 854 took 7886 ms rc=0 result="pong"
+[  8740 ms][L] L: lp_invoke(create_new, timeout=60000) start=554 took=8186 ms rc=0 result="judge giggle width analyst garage lumber educate reason return awake husband aisle quantum nut have muscle truth road cheese tattoo negative treat walnut net" error=(null)
+[  8740 ms][D] D: lp_invoke(lez_version, timeout=60000) start=904 took=7836 ms rc=0 result="0.3.0" error=(null)
+[  8740 ms][main] SUMMARY sync: L 8186 ms | B 7886 ms | D 7836 ms | C 1 ms
+[  8740 ms][main] SUMMARY sync: L end=8740 B end=8740 D end=8740 C end=955
+[  9241 ms][main] PINGER during-L: ping x16691, avg 0.55 ms, max 7886 ms (started at 854), >100ms: 1, >1000ms: 1, bad results: 0
+[  9241 ms][main] (L was dispatched at 554 ms)
+[  9241 ms][main] post: lp_invoke(list_accounts, timeout=10000) start=9241 took=0 ms rc=0 result=[{"account_id":"4ac817a41510409de2ac24cef08b17703cb96519bccb5bf0dce92d4c539a5afc","is_public":true},{"account_id":"3a0eaf49bf5c03eb398dbff9eced6da88b3c49c45eb6cc541194e26e40cae4c5","is_public":false}] error=(null)
+[  9985 ms][main] post: lp_invoke(get_current_block_height, timeout=20000) start=9241 took=744 ms rc=0 result=23986 error=(null)
+[  9985 ms][qt] exec() returned 0; logos_core_cleanup()
+[ 10186 ms][qt] cleanup done
+[ 10186 ms][main] done (rc=0); shutdown took 201 ms
+================ 04-create-cal20-async (block create async pinger ${REPO_ROOT}/.work/experiments/desktop-harness/wallets/c4) TMPDIR=${REPO_ROOT}/.work/dh/c04
+exit=0 wall=10568 ms
+[     0 ms][main] desktop-harness mode=block TMPDIR=${REPO_ROOT}/.work/dh/c04 LOGOS_HOST_PATH=/nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/bin/logos_host
+[     0 ms][qt] QCoreApplication created on thread 140039903938240
+[    14 ms][qt] logos_core_start() returned
+[    14 ms][main] runtime up in 14 ms; protocol=0.9.0 mode=remote; qt thread=140039903938240
+[    39 ms][main] load(lez_probe) from this (non-Qt) thread -> 1 in 25 ms
+[    51 ms][main] load(ev_probe) from this (non-Qt) thread -> 1 in 12 ms
+[    52 ms][main] lp_client_create(lez_core) -> 0x210e6500 in 1 ms
+[    52 ms][main] lp_client_create(lez_probe) -> 0x210eeb30 in 0 ms
+[    53 ms][main] lp_client_create(ev_probe) -> 0x210e6b20 in 1 ms
+[    58 ms][main] BLOCK kind=create style=async pinger=pinger: L=create_new["${REPO_ROOT}/.work/experiments/desktop-harness/wallets/c4/wallet_config.json","${REPO_ROOT}/.work/experiments/desktop-harness/wallets/c4/storage.json","${HOME}
+[   559 ms][main] L: lp_invoke_async(create_new, timeout=60000) rc=0; the dispatch call itself took 0 ms
+[   859 ms][main] B: lp_invoke_async(version, timeout=60000) rc=0; the dispatch call itself took 0 ms
+[   909 ms][main] D: lp_invoke_async(lez_version, timeout=60000) rc=0; the dispatch call itself took 0 ms
+[   959 ms][main] C: lp_invoke_async(ping, timeout=60000) rc=0; the dispatch call itself took 0 ms
+[   964 ms][main] C: async callback ok=1 after 0 ms (dispatched at 959) on thread qt-thread json="pong"
+[  9110 ms][main] B: async callback ok=1 after 8249 ms (dispatched at 859) on thread qt-thread json="0.3.0"
+[  9110 ms][main] D: async callback ok=1 after 8200 ms (dispatched at 909) on thread qt-thread json="0.3.0"
+[  9110 ms][main] L: async callback ok=1 after 8549 ms (dispatched at 559) on thread qt-thread json="loan thrive energy feed teach pupil sleep super dune use setup lounge grass simple group mail divorce boil clever various sword issue poet welcome"
+[  9110 ms][main] SUMMARY async: L 8549 ms | B 8249 ms | D 8200 ms | C 0 ms (callback - dispatch)
+[  9110 ms][main] SUMMARY async: B finished 0 ms after L finished; D 1 ms; C finished 8149 ms BEFORE L
+[  9611 ms][main] PINGER during-L: ping x121959, avg 0.08 ms, max 2 ms (started at 575), >100ms: 0, >1000ms: 0, bad results: 0
+[  9611 ms][main] (L was dispatched at 559 ms)
+[  9611 ms][main] post: lp_invoke(list_accounts, timeout=10000) start=9611 took=0 ms rc=0 result=[{"account_id":"cb8961da0347aba0581ca0961f4a2efca105da9d52d26ca360ea4bf78915e363","is_public":true},{"account_id":"bd13f8bad052698e2d4908b4a9dbf865b82675fba46489fb975bd1a87972c317","is_public":false}] error=(null)
+[ 10351 ms][main] post: lp_invoke(get_current_block_height, timeout=20000) start=9611 took=740 ms rc=0 result=23987 error=(null)
+[ 10351 ms][qt] exec() returned 0; logos_core_cleanup()
+[ 10552 ms][qt] cleanup done
+[ 10552 ms][main] done (rc=0); shutdown took 201 ms
+================ 05-sleep-sync (block sleep sync pinger) TMPDIR=${REPO_ROOT}/.work/dh/c05
+exit=0 wall=7271 ms
+[     0 ms][main] desktop-harness mode=block TMPDIR=${REPO_ROOT}/.work/dh/c05 LOGOS_HOST_PATH=/nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/bin/logos_host
+[     0 ms][qt] QCoreApplication created on thread 139796695164608
+[    13 ms][qt] logos_core_start() returned
+[    13 ms][main] runtime up in 13 ms; protocol=0.9.0 mode=remote; qt thread=139796695164608
+[    37 ms][main] load(lez_probe) from this (non-Qt) thread -> 1 in 24 ms
+[    48 ms][main] load(ev_probe) from this (non-Qt) thread -> 1 in 11 ms
+[    48 ms][main] lp_client_create(lez_core) -> 0x32cb9500 in 0 ms
+[    49 ms][main] lp_client_create(lez_probe) -> 0x32cc1b30 in 1 ms
+[    49 ms][main] lp_client_create(ev_probe) -> 0x32cb9b20 in 0 ms
+[    52 ms][main] BLOCK kind=sleep style=sync pinger=pinger: L=sleep_ms[6000] B=same-module ping C=other-module version D=lez_probe.lez_version
+[   904 ms][D] D: lp_invoke(lez_version, timeout=60000) start=903 took=1 ms rc=0 result="0.3.0" error=(null)
+[   954 ms][C] C: lp_invoke(version, timeout=60000) start=953 took=1 ms rc=0 result="0.3.0" error=(null)
+[  6553 ms][pinger] slow ping: version started at 552 took 6001 ms rc=0 result="0.3.0"
+[  6553 ms][B] B: lp_invoke(ping, timeout=60000) start=852 took=5701 ms rc=0 result="pong" error=(null)
+[  6553 ms][L] L: lp_invoke(sleep_ms, timeout=60000) start=552 took=6001 ms rc=0 result=6000 error=(null)
+[  6553 ms][main] SUMMARY sync: L 6001 ms | B 5701 ms | D 1 ms | C 1 ms
+[  6553 ms][main] SUMMARY sync: L end=6553 B end=6553 D end=904 C end=954
+[  7053 ms][main] PINGER during-L: version x12136, avg 0.58 ms, max 6001 ms (started at 552), >100ms: 1, >1000ms: 1, bad results: 0
+[  7053 ms][main] (L was dispatched at 552 ms)
+[  7053 ms][qt] exec() returned 0; logos_core_cleanup()
+[  7254 ms][qt] cleanup done
+[  7254 ms][main] done (rc=0); shutdown took 201 ms
+================ 06-sleep-async (block sleep async pinger) TMPDIR=${REPO_ROOT}/.work/dh/c06
+exit=0 wall=7277 ms
+[     0 ms][main] desktop-harness mode=block TMPDIR=${REPO_ROOT}/.work/dh/c06 LOGOS_HOST_PATH=/nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/bin/logos_host
+[     0 ms][qt] QCoreApplication created on thread 140116762760896
+[    15 ms][qt] logos_core_start() returned
+[    15 ms][main] runtime up in 15 ms; protocol=0.9.0 mode=remote; qt thread=140116762760896
+[    37 ms][main] load(lez_probe) from this (non-Qt) thread -> 1 in 22 ms
+[    49 ms][main] load(ev_probe) from this (non-Qt) thread -> 1 in 12 ms
+[    49 ms][main] lp_client_create(lez_core) -> 0x20b19500 in 0 ms
+[    50 ms][main] lp_client_create(lez_probe) -> 0x20b21b30 in 1 ms
+[    50 ms][main] lp_client_create(ev_probe) -> 0x20b19950 in 0 ms
+[    54 ms][main] BLOCK kind=sleep style=async pinger=pinger: L=sleep_ms[6000] B=same-module ping C=other-module version D=lez_probe.lez_version
+[   554 ms][main] L: lp_invoke_async(sleep_ms, timeout=60000) rc=0; the dispatch call itself took 0 ms
+[   854 ms][main] B: lp_invoke_async(ping, timeout=60000) rc=0; the dispatch call itself took 0 ms
+[   904 ms][main] D: lp_invoke_async(lez_version, timeout=60000) rc=0; the dispatch call itself took 0 ms
+[   954 ms][main] C: lp_invoke_async(version, timeout=60000) rc=0; the dispatch call itself took 0 ms
+[   959 ms][main] C: async callback ok=1 after 0 ms (dispatched at 954) on thread qt-thread json="0.3.0"
+[  6555 ms][main] B: async callback ok=1 after 5700 ms (dispatched at 854) on thread qt-thread json="pong"
+[  6556 ms][main] D: async callback ok=1 after 1 ms (dispatched at 904) on thread qt-thread json="0.3.0"
+[  6556 ms][main] L: async callback ok=1 after 6000 ms (dispatched at 554) on thread qt-thread json=6000
+[  6556 ms][main] SUMMARY async: L 6000 ms | B 5700 ms | D 1 ms | C 0 ms (callback - dispatch)
+[  6556 ms][main] SUMMARY async: B finished 0 ms after L finished; D -5649 ms; C finished 5600 ms BEFORE L
+[  7056 ms][main] PINGER during-L: version x92606, avg 0.08 ms, max 2 ms (started at 90), >100ms: 0, >1000ms: 0, bad results: 0
+[  7056 ms][main] (L was dispatched at 554 ms)
+[  7056 ms][qt] exec() returned 0; logos_core_cleanup()
+[  7256 ms][qt] cleanup done
+[  7257 ms][main] done (rc=0); shutdown took 201 ms
+================ 07-sleep-sync-nopinger (block sleep sync nopinger) TMPDIR=${REPO_ROOT}/.work/dh/c07
+exit=0 wall=6279 ms
+[     0 ms][main] desktop-harness mode=block TMPDIR=${REPO_ROOT}/.work/dh/c07 LOGOS_HOST_PATH=/nix/store/7jcna50jgjmzx28nk6a14x5y6f5dwlrb-logos-liblogos/bin/logos_host
+[     1 ms][qt] QCoreApplication created on thread 140466901972672
+[    14 ms][qt] logos_core_start() returned
+[    14 ms][main] runtime up in 14 ms; protocol=0.9.0 mode=remote; qt thread=140466901972672
+[    44 ms][main] load(lez_probe) from this (non-Qt) thread -> 1 in 30 ms
+[    55 ms][main] load(ev_probe) from this (non-Qt) thread -> 1 in 11 ms
+[    56 ms][main] lp_client_create(lez_core) -> 0x33b78500 in 1 ms
+[    56 ms][main] lp_client_create(lez_probe) -> 0x33b80b30 in 0 ms
+[    56 ms][main] lp_client_create(ev_probe) -> 0x33b78950 in 0 ms
+[    59 ms][main] BLOCK kind=sleep style=sync pinger=nopinger: L=sleep_ms[6000] B=same-module ping C=other-module version D=lez_probe.lez_version
+[   411 ms][D] D: lp_invoke(lez_version, timeout=60000) start=410 took=1 ms rc=0 result="0.3.0" error=(null)
+[   460 ms][C] C: lp_invoke(version, timeout=60000) start=460 took=0 ms rc=0 result="0.3.0" error=(null)
+[  6060 ms][B] B: lp_invoke(ping, timeout=60000) start=359 took=5701 ms rc=0 result="pong" error=(null)
+[  6060 ms][L] L: lp_invoke(sleep_ms, timeout=60000) start=59 took=6001 ms rc=0 result=6000 error=(null)
+[  6060 ms][main] SUMMARY sync: L 6001 ms | B 5701 ms | D 1 ms | C 0 ms
+[  6060 ms][main] SUMMARY sync: L end=6060 B end=6060 D end=411 C end=460
+[  6061 ms][qt] exec() returned 0; logos_core_cleanup()
+[  6261 ms][qt] cleanup done
+[  6262 ms][main] done (rc=0); shutdown took 202 ms
+================ 08-qtbusy (qtbusy) TMPDIR=${REPO_ROOT}/.work/dh/c08
+exit=0 wall=17196 ms
+[     0 ms][main] desktop-harness mode=qtbusy TMPDIR=${REPO_ROOT}/.work/dh/c08 LOGOS_HOST_PATH=${REPO_ROOT}/.work/experiments/desktop-harness/bin/slow_host.sh
+[     1 ms][qt] QCoreApplication created on thread 139960144873152
+[    16 ms][qt] logos_core_start() returned
+[    16 ms][main] runtime up in 16 ms; protocol=0.9.0 mode=remote; qt thread=139960144873152
+[    33 ms][main] load(lez_core) from this (non-Qt) thread -> 1 in 17 ms
+[    33 ms][main] lp_client_create(lez_core) -> 0xea637e0 in 0 ms
+[    34 ms][main] --- (i) Qt thread blocked 3000 ms; sync lp_invoke(version, timeout=500)
+[    34 ms][qt] blocking Qt thread for 3000 ms
+[  3034 ms][qt] unblocked
+[  3034 ms][main] qt-blocked-sync: lp_invoke(version, timeout=500) start=134 took=2900 ms rc=0 result="0.3.0" error=(null)
+[  3535 ms][main] --- (ii) Qt thread blocked 3000 ms; lp_invoke_async(version, timeout=500)
+[  3535 ms][qt] blocking Qt thread for 3000 ms
+[  3635 ms][main] qt-blocked-async: lp_invoke_async(version, timeout=500) rc=0; the dispatch call itself took 0 ms
+[  6535 ms][qt] unblocked
+[  6538 ms][main] qt-blocked-async: async callback ok=1 after 2900 ms (dispatched at 3635) on thread qt-thread json="0.3.0"
+[  7038 ms][main] --- (iii) Qt thread blocked 2000 ms; lp_client_create + lp_client_destroy
+[  7038 ms][qt] blocking Qt thread for 2000 ms
+[  9040 ms][qt] unblocked
+[  9040 ms][main] lp_client_create(lez_core) -> 0xea63a90 in 1902 ms
+[  9540 ms][main] --- (iv) logos_core_load_module(lez_probe) ON the Qt thread (host start delayed by the SLOW wrapper) while a JNI-like thread pings lez_core.version
+[  9841 ms][qt] load(lez_probe) ON the Qt thread: start
+[ 12861 ms][main] during-qt-load-sync: lp_invoke(version, timeout=500) start=9941 took=2920 ms rc=0 result="0.3.0" error=(null)
+[ 12861 ms][main] during-qt-load-async: lp_invoke_async(version, timeout=500) rc=0; the dispatch call itself took 0 ms
+[ 12861 ms][qt] load(lez_probe) ON the Qt thread -> 1 in 3020 ms
+[ 12861 ms][pinger] slow ping: version started at 9841 took 3020 ms rc=0 result="0.3.0"
+[ 12866 ms][main] during-qt-load-async: async callback ok=1 after 0 ms (dispatched at 12861) on thread qt-thread json="0.3.0"
+[ 13366 ms][main] PINGER during-load-on-qt-thread: version x10723, avg 0.36 ms, max 3020 ms (started at 9841), >100ms: 1, >1000ms: 1, bad results: 0
+[ 13366 ms][main] --- (v) logos_core_load_module(ev_probe) from a NON-Qt thread (same SLOW wrapper) while a JNI-like thread pings lez_core.version
+[ 16679 ms][main] load(ev_probe) from this (non-Qt) thread -> 1 in 3013 ms
+[ 16980 ms][main] PINGER during-load-off-qt-thread: version x47471, avg 0.08 ms, max 22 ms (started at 15804), >100ms: 0, >1000ms: 0, bad results: 0
+[ 16980 ms][main] lp_client_create(ev_probe) -> 0xea61330 in 0 ms
+[ 16980 ms][main] after-worker-load: lp_invoke(ping, timeout=5000) start=16980 took=0 ms rc=0 result="pong" error=(null)
+[ 16981 ms][qt] exec() returned 0; logos_core_cleanup()
+[ 17181 ms][qt] cleanup done
+[ 17182 ms][main] done (rc=0); shutdown took 202 ms

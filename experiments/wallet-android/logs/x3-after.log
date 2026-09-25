@@ -1,0 +1,308 @@
+== cargo tree AFTER (updates Cargo.lock offline)
+exit=0
+  680 ${REPO_ROOT}/.work/experiments/wallet-android/out/tree-before.txt
+  430 ${REPO_ROOT}/.work/experiments/wallet-android/out/tree-after.txt
+ 1110 total
+== patch 01 diff
+ Cargo.lock               | 1 -
+ lez/common/Cargo.toml    | 1 -
+ lez/common/src/config.rs | 7 -------
+ 3 files changed, 9 deletions(-)
+49 ${REPO_ROOT}/.work/experiments/wallet-android/patches/01-common-drop-bedrock-http-client.diff
+== tree diff (before -> after), paths normalised
+250
+0
+== remaining bedrock-ish crates AFTER (expect none)
+keccak v0.2.0 (https://github.com/logos-blockchain/sponges?rev=3a56e99771beedf04946eab21a4a62adc2951377#3a56e997)
+grep-exit=0
+== native crates AFTER
+# 430 crates in tree, 44 with build script/links/-sys
+ahash	0.8.12	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+anyhow	1.0.103	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+authenticated_transfer_core	0.1.0	build.rs	-	-	path
+borsh	1.6.1	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+camino	1.2.2	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+cbindgen	0.29.3	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+curve25519-dalek	4.1.3	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+dirs-sys	0.5.0	-	-	SYS	registry+https://github.com/rust-lang/crates.io-index
+generic-array	0.14.7	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+getrandom	0.3.4	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+getrandom	0.4.2	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+httparse	1.10.1	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+icu_normalizer_data	2.2.0	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+icu_properties_data	2.2.0	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+jni-sys	0.3.1	build.rs	-	SYS	registry+https://github.com/rust-lang/crates.io-index
+jni-sys	0.4.1	-	-	SYS	registry+https://github.com/rust-lang/crates.io-index
+lee	0.1.0	build.rs	-	-	path
+libc	0.2.186	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+libm	0.2.16	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+linux-raw-sys	0.12.1	-	-	SYS	registry+https://github.com/rust-lang/crates.io-index
+num-bigint-dig	0.8.6	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+num-traits	0.2.19	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+paste	1.0.15	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+pcsc-sys	1.3.0	build.rs	links=pcsc	SYS	registry+https://github.com/rust-lang/crates.io-index
+portable-atomic	1.13.1	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+proc-macro2	1.0.106	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+programs	0.1.0	build.rs	-	-	path
+quote	1.0.45	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+ring	0.17.14	build.rs	links=ring_core_0_17_14_	-	registry+https://github.com/rust-lang/crates.io-index
+risc0-circuit-keccak	4.0.5	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+risc0-circuit-recursion	4.0.4	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+risc0-zkp	3.0.4	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+rustix	1.1.4	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+rustls	0.23.40	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+rustversion	1.0.22	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+serde	1.0.228	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+serde_core	1.0.228	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+serde_json	1.0.150	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+syn	1.0.109	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+thiserror	1.0.69	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+thiserror	2.0.18	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+wallet-ffi	0.1.0	build.rs	-	-	path
+zerocopy	0.8.50	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+zmij	1.0.21	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+== inverse trees for interesting crates
+--- -i pcsc-sys
+pcsc-sys v1.3.0
+└── pcsc v2.9.0
+    ├── keycard-rs v0.1.0 (https://github.com/keycard-tech/keycard-rs?rev=9535a657ba04b1e6916de51777e22b4837c1a84d#9535a657)
+    │   └── keycard_wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/keycard_wallet)
+    │       └── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet)
+    └── keycard_wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/keycard_wallet) (*)
+--- -i ring
+ring v0.17.14
+├── rustls v0.23.40
+│   ├── hyper-rustls v0.27.9
+│   │   └── jsonrpsee-http-client v0.26.0
+│   │       └── jsonrpsee v0.26.0
+│   ├── jsonrpsee-client-transport v0.26.0
+│   │   ├── jsonrpsee v0.26.0 (*)
+│   │   └── jsonrpsee-ws-client v0.26.0
+│   │       └── jsonrpsee v0.26.0 (*)
+│   ├── jsonrpsee-http-client v0.26.0 (*)
+│   ├── rustls-platform-verifier v0.5.3
+│   │   ├── jsonrpsee-client-transport v0.26.0 (*)
+│   │   └── jsonrpsee-http-client v0.26.0 (*)
+│   └── tokio-rustls v0.26.4
+│       ├── hyper-rustls v0.27.9 (*)
+│       └── jsonrpsee-client-transport v0.26.0 (*)
+└── rustls-webpki v0.103.13
+    ├── rustls v0.23.40 (*)
+    └── rustls-platform-verifier v0.5.3 (*)
+--- -i jni-sys@0.3.1
+jni-sys v0.3.1
+└── jni v0.21.1
+    └── rustls-platform-verifier v0.5.3
+        ├── jsonrpsee-client-transport v0.26.0
+        │   ├── jsonrpsee v0.26.0
+        │   └── jsonrpsee-ws-client v0.26.0
+        └── jsonrpsee-http-client v0.26.0
+            └── jsonrpsee v0.26.0 (*)
+--- -i jni-sys@0.4.1
+jni-sys v0.4.1
+└── jni-sys v0.3.1
+    └── jni v0.21.1
+        └── rustls-platform-verifier v0.5.3
+            ├── jsonrpsee-client-transport v0.26.0
+            └── jsonrpsee-http-client v0.26.0
+--- -i rustls-platform-verifier
+rustls-platform-verifier v0.5.3
+├── jsonrpsee-client-transport v0.26.0
+│   ├── jsonrpsee v0.26.0
+│   │   └── sequencer_service_rpc v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/sequencer/service/rpc)
+│   │       ├── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet)
+│   │       └── wallet-ffi v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet-ffi)
+│   └── jsonrpsee-ws-client v0.26.0
+│       └── jsonrpsee v0.26.0 (*)
+└── jsonrpsee-http-client v0.26.0
+    └── jsonrpsee v0.26.0 (*)
+--- -i netlink-sys
+error: package ID specification `netlink-sys` did not match any packages
+--- -i quinn
+error: package ID specification `quinn` did not match any packages
+
+help: a package with a similar name exists: `ruint`
+--- -i dirs-sys
+dirs-sys v0.5.0
+└── dirs v6.0.0
+    └── risc0-build v3.0.5
+        └── risc0-zkvm v3.0.5
+            ├── amm_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/amm/core)
+            ├── associated_token_account_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/associated_token_account/core)
+            ├── bridge_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/bridge/core)
+            ├── bridge_lock_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/bridge_lock/core)
+            ├── cross_zone_inbox_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/cross_zone_inbox/core)
+            ├── lee v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lee/state_machine)
+            └── lee_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lee/state_machine/core)
+--- -i risc0-circuit-recursion
+risc0-circuit-recursion v4.0.4
+├── risc0-circuit-keccak v4.0.5
+│   └── risc0-zkvm v3.0.5
+│       ├── amm_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/amm/core)
+│       │   └── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet)
+│       ├── associated_token_account_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/associated_token_account/core)
+│       │   └── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet) (*)
+│       ├── bridge_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/bridge/core)
+│       │   ├── common v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/common)
+│       │   ├── system_accounts v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/system_accounts)
+│       │   └── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet) (*)
+│       ├── bridge_lock_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/bridge_lock/core)
+│       │   └── common v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/common) (*)
+│       ├── cross_zone_inbox_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/cross_zone_inbox/core)
+│       │   └── common v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/common) (*)
+│       ├── lee v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lee/state_machine)
+│       │   ├── common v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/common) (*)
+│       │   ├── key_protocol v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lee/key_protocol)
+│       │   ├── keycard_wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/keycard_wallet)
+│       │   ├── programs v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs)
+│       │   ├── sequencer_service_protocol v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/sequencer/service/protocol)
+│       │   ├── testnet_initial_state v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/testnet_initial_state)
+│       │   ├── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet) (*)
+│       │   └── wallet-ffi v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet-ffi)
+│       └── lee_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lee/state_machine/core)
+--- -i risc0-zkvm
+risc0-zkvm v3.0.5
+├── amm_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/amm/core)
+│   └── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet)
+│       └── wallet-ffi v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet-ffi)
+├── associated_token_account_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/associated_token_account/core)
+│   └── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet) (*)
+├── bridge_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/bridge/core)
+│   ├── common v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/common)
+│   │   ├── key_protocol v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lee/key_protocol)
+│   │   │   ├── testnet_initial_state v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/testnet_initial_state)
+│   │   │   ├── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet) (*)
+│   │   │   └── wallet-ffi v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet-ffi)
+│   │   ├── sequencer_service_protocol v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/sequencer/service/protocol)
+│   │   │   └── sequencer_service_rpc v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/sequencer/service/rpc)
+│   │   ├── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet) (*)
+│   │   └── wallet-ffi v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet-ffi)
+│   ├── system_accounts v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/system_accounts)
+│   │   ├── common v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/common) (*)
+│   │   ├── testnet_initial_state v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/testnet_initial_state) (*)
+│   │   └── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet) (*)
+│   └── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet) (*)
+├── bridge_lock_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/bridge_lock/core)
+│   └── common v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/common) (*)
+├── cross_zone_inbox_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/cross_zone_inbox/core)
+│   └── common v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/common) (*)
+--- -i reqwest
+error: package ID specification `reqwest` did not match any packages
+--- -i jsonrpsee-http-client
+jsonrpsee-http-client v0.26.0
+└── jsonrpsee v0.26.0
+    └── sequencer_service_rpc v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/sequencer/service/rpc)
+        ├── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet)
+        │   └── wallet-ffi v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet-ffi)
+        └── wallet-ffi v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet-ffi)
+--- -i hyper-rustls
+hyper-rustls v0.27.9
+└── jsonrpsee-http-client v0.26.0
+    └── jsonrpsee v0.26.0
+        └── sequencer_service_rpc v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/sequencer/service/rpc)
+            ├── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet)
+            └── wallet-ffi v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet-ffi)
+--- -i openssl-sys
+error: package ID specification `openssl-sys` did not match any packages
+== features reaching risc0 crates (is 'prove' on anywhere?)
+risc0-circuit-recursion v4.0.4
+├── risc0-circuit-keccak v4.0.5
+│   └── risc0-zkvm v3.0.5
+└── risc0-zkvm v3.0.5 (*)
+risc0-zkvm v3.0.5
+├── risc0-zkvm feature "client"
+│   └── lee v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lee/state_machine)
+└── risc0-zkvm feature "std"
+    ├── amm_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/amm/core)
+    ├── associated_token_account_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/associated_token_account/core)
+    ├── bridge_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/bridge/core)
+    ├── bridge_lock_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/bridge_lock/core)
+    ├── cross_zone_inbox_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/programs/cross_zone_inbox/core)
+    ├── lee v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lee/state_machine) (*)
+    └── lee_core v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lee/state_machine/core)
+    └── risc0-zkvm feature "client" (*)
+lee v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lee/state_machine)
+└── lee feature "default"
+== same with default features (prove) for reference
+515 ${REPO_ROOT}/.work/experiments/wallet-android/out/tree-after-prove.txt
+> addchain v0.2.1
+> addr2line v0.24.2
+> adler2 v2.0.1
+> bitvec v1.0.1
+> bumpalo v3.20.3
+> cpp_demangle v0.4.5
+> crc32fast v1.5.0
+> crossbeam-deque v0.8.6
+> crossbeam-epoch v0.9.20
+> crossbeam-utils v0.8.21
+> directories v6.0.0
+> downloader v0.2.8
+> enum-map-derive v0.17.0
+> enum-map v2.7.3
+> erased-serde v0.4.10
+> fallible-iterator v0.3.0
+> ff_derive v0.13.1
+> flate2 v1.1.9
+> funty v2.0.0
+> gdbstub_arch v0.3.3
+> gdbstub v0.7.10
+> gimli v0.31.1
+> glob v0.3.3
+> hash32 v0.2.1
+> hashbrown v0.14.5
+> heapless v0.7.17
+> inventory v0.3.24
+> ipnet v2.12.0
+> itertools v0.10.5
+> itertools v0.11.0
+> jobserver v0.1.34
+> liblzma-sys v0.4.6
+> liblzma v0.4.6
+> lock_api v0.4.14
+> malachite-base v0.4.22
+> malachite-float v0.4.22
+> malachite-nz v0.4.22
+> malachite-q v0.4.22
+> malachite v0.4.22
+> managed v0.8.0
+> matrixmultiply v0.3.10
+> memmap2 v0.9.10
+> miniz_oxide v0.8.9
+> ndarray v0.16.1
+> num-bigint v0.3.3
+> num-complex v0.4.6
+> num-derive v0.4.2
+> nvtx v1.3.0
+> object v0.36.7
+> parking_lot_core v0.9.12
+> parking_lot v0.12.5
+> pastey v0.2.3
+> puffin v0.19.1
+> radium v0.7.0
+> rand_chacha v0.9.0
+> rawpointer v0.2.1
+> rayon-core v1.13.0
+> rayon v1.12.0
+> reqwest v0.12.28
+> ringbuffer v0.15.0
+> risc0-build-kernel v2.0.1
+> risc0-circuit-keccak-sys v4.0.2
+> risc0-circuit-recursion-sys v4.0.2
+> risc0-circuit-rv32im-sys v4.0.2
+> risc0-sys v1.5.0
+> rustc-demangle v0.1.27
+> ruzstd v0.7.3
+> ryu v1.0.23
+> safe_arch v0.7.4
+> scopeguard v1.2.0
+> serde_urlencoded v0.7.1
+> simd-adler32 v0.3.9
+> static_assertions v1.1.0
+> tap v1.0.1
+> tower-http v0.6.11
+> twox-hash v1.6.3
+> typed-arena v2.0.2
+> typeid v1.0.3
+> typetag-impl v0.2.22
+> typetag v0.2.22
+DONE

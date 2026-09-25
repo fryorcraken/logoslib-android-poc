@@ -1,0 +1,48 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -41,7 +41,24 @@
+     endif()
+ endif()
+ 
+-find_package(ICU REQUIRED COMPONENTS uc i18n)
++# liblgx uses only ICU's C API from the common library (unorm2_* NFC,
++# u_strFromUTF8WithSub/u_strToUTF8WithSub, u_strToLower) -- see
++# src/core/path_normalizer.cpp -- so libicui18n is not needed anywhere.
++# On Android that C API is the platform's own libicu.so (NDK stub, API 31+):
++# nothing ICU-related is built or shipped with the app.
++if(ANDROID)
++    find_library(LGX_ANDROID_ICU_LIBRARY NAMES icu)
++    if(NOT LGX_ANDROID_ICU_LIBRARY)
++        message(FATAL_ERROR
++            "liblgx: the NDK's libicu.so was not found. The ICU4C C API is "
++            "available to apps from Android API 31; build with ANDROID_PLATFORM "
++            ">= 31 (current: ${ANDROID_PLATFORM}).")
++    endif()
++    set(LGX_ICU_LIBRARIES ${LGX_ANDROID_ICU_LIBRARY})
++else()
++    find_package(ICU REQUIRED COMPONENTS uc)
++    set(LGX_ICU_LIBRARIES ICU::uc)
++endif()
+ 
+ # Try to find nlohmann_json first (for Nix and system installations)
+ # Fall back to FetchContent if not found
+@@ -107,8 +124,7 @@
+ 
+ target_link_libraries(lgx_core PUBLIC
+     ZLIB::ZLIB
+-    ICU::uc
+-    ICU::i18n
++    ${LGX_ICU_LIBRARIES}
+     nlohmann_json::nlohmann_json
+     semver::semver
+     ${SODIUM_LIBRARIES}
+@@ -141,8 +157,7 @@
+ 
+     target_link_libraries(lgx_shared PUBLIC
+         ZLIB::ZLIB
+-        ICU::uc
+-        ICU::i18n
++        ${LGX_ICU_LIBRARIES}
+         nlohmann_json::nlohmann_json
+         semver::semver
+         ${SODIUM_LIBRARIES}

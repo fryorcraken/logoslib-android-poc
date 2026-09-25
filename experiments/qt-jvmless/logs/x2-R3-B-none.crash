@@ -1,0 +1,61 @@
+--------- beginning of crash
+09-25 18:09:14.544  7575  7597 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0 in tid 7597 (logos-qt), pid 7575 (logos.qrotest.b)
+09-25 18:09:14.719  7604  7604 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+09-25 18:09:14.719  7604  7604 F DEBUG   : Build fingerprint: 'google/sdk_gphone64_x86_64/emu64xa:14/UE1A.230829.050/12077443:userdebug/dev-keys'
+09-25 18:09:14.719  7604  7604 F DEBUG   : Revision: '0'
+09-25 18:09:14.719  7604  7604 F DEBUG   : ABI: 'x86_64'
+09-25 18:09:14.719  7604  7604 F DEBUG   : Timestamp: 2026-09-25 18:09:14.571472293+1000
+09-25 18:09:14.719  7604  7604 F DEBUG   : Process uptime: 2s
+09-25 18:09:14.719  7604  7604 F DEBUG   : Cmdline: org.logos.qrotest.b
+09-25 18:09:14.719  7604  7604 F DEBUG   : pid: 7575, tid: 7597, name: logos-qt  >>> org.logos.qrotest.b <<<
+09-25 18:09:14.719  7604  7604 F DEBUG   : uid: 10194
+09-25 18:09:14.719  7604  7604 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000000000000000
+09-25 18:09:14.719  7604  7604 F DEBUG   : Cause: null pointer dereference
+09-25 18:09:14.719  7604  7604 F DEBUG   :     rax 0000000000000000  rbx 0000000000000000  rcx d21260db3125d3c8  rdx 0000000000000000
+09-25 18:09:14.719  7604  7604 F DEBUG   :     r8  0000786df82253b0  r9  0000000000000000  r10 3070000000022003  r11 0000000000000206
+09-25 18:09:14.719  7604  7604 F DEBUG   :     r12 0000786dfc7f5960  r13 0000786f190c0ad0  r14 0000786dfca150d8  r15 0000786dfca15230
+09-25 18:09:14.719  7604  7604 F DEBUG   :     rdi 0000786e990d8610  rsi 0000786dfca150d0
+09-25 18:09:14.719  7604  7604 F DEBUG   :     rbp 0000786eb90c0cd0  rsp 0000786dfca150a0  rip 0000786df8668c7e
+09-25 18:09:14.719  7604  7604 F DEBUG   : 41 total frames
+09-25 18:09:14.719  7604  7604 F DEBUG   : backtrace:
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #00 pc 0000000000530c7e  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libQt6Core_x86_64.so (QJniEnvironment::getJniEnv()+46) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #01 pc 00000000005364ff  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libQt6Core_x86_64.so (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #02 pc 00000000005364e6  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libQt6Core_x86_64.so (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #03 pc 00000000004fb042  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libQt6Core_x86_64.so (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #04 pc 0000000000393294  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libQt6Core_x86_64.so (QCoreApplicationPrivate::appVersion() const+470) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #05 pc 0000000000394496  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libQt6Core_x86_64.so (QCoreApplicationPrivate::init()+162) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #06 pc 00000000003943ab  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libQt6Core_x86_64.so (QCoreApplication::QCoreApplication(int&, char**, int)+87) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #07 pc 000000000000c4bf  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/lib/x86_64/libqrotest_jni.so (Java_org_logos_qrotest_NativeBridge_runClient+2127) (BuildId: d5313e58551ca708c6a518c521e63dcbff9a6e11)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #08 pc 0000000000391a4b  /apex/com.android.art/lib64/libart.so (art_quick_generic_jni_trampoline+219) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #09 pc 0000000000378826  /apex/com.android.art/lib64/libart.so (art_quick_invoke_static_stub+806) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #10 pc 00000000003c538f  /apex/com.android.art/lib64/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+255) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #11 pc 000000000056ddd0  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+2080) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #12 pc 000000000039b0a1  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+17169) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #13 pc 00000000003937a5  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+5) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #14 pc 0000000000001600  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/base.apk (org.logos.qrotest.MainActivity.runTest+0)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #15 pc 0000000000566017  /apex/com.android.art/lib64/libart.so (art::interpreter::Execute(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame&, art::JValue, bool, bool) (.__uniq.112435418011751916792819755956732575238)+647) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #16 pc 000000000056d13e  /apex/com.android.art/lib64/libart.so (art::interpreter::ArtInterpreterToInterpreterBridge(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*, art::JValue*)+110) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #17 pc 000000000056ea2d  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<true>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+1805) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #18 pc 000000000039ad6f  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+16351) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #19 pc 00000000003937a5  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+5) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #20 pc 000000000000143c  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/base.apk (org.logos.qrotest.MainActivity.onCreate$lambda$2+0)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #21 pc 0000000000566017  /apex/com.android.art/lib64/libart.so (art::interpreter::Execute(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame&, art::JValue, bool, bool) (.__uniq.112435418011751916792819755956732575238)+647) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #22 pc 000000000056d13e  /apex/com.android.art/lib64/libart.so (art::interpreter::ArtInterpreterToInterpreterBridge(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*, art::JValue*)+110) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #23 pc 000000000056ea2d  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<true>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+1805) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #24 pc 000000000039b2f7  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+17767) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #25 pc 00000000003937a5  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+5) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #26 pc 00000000000010ac  /data/app/~~apH8fpt6mOHWk9MyqCigeA==/org.logos.qrotest.b-samyR98NurPGxVzYw1kybA==/base.apk (org.logos.qrotest.MainActivity$$ExternalSyntheticLambda3.run+0)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #27 pc 0000000000566017  /apex/com.android.art/lib64/libart.so (art::interpreter::Execute(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame&, art::JValue, bool, bool) (.__uniq.112435418011751916792819755956732575238)+647) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #28 pc 000000000056d13e  /apex/com.android.art/lib64/libart.so (art::interpreter::ArtInterpreterToInterpreterBridge(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*, art::JValue*)+110) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #29 pc 000000000056ddb6  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+2054) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #30 pc 000000000039ae32  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+16546) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #31 pc 00000000003937a5  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+5) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #32 pc 000000000010ee0c  /apex/com.android.art/javalib/core-oj.jar (java.lang.Thread.run+0)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #33 pc 0000000000566017  /apex/com.android.art/lib64/libart.so (art::interpreter::Execute(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame&, art::JValue, bool, bool) (.__uniq.112435418011751916792819755956732575238)+647) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #34 pc 000000000091f056  /apex/com.android.art/lib64/libart.so (artQuickToInterpreterBridge+902) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #35 pc 0000000000391bdc  /apex/com.android.art/lib64/libart.so (art_quick_to_interpreter_bridge+140) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #36 pc 00000000003784c4  /apex/com.android.art/lib64/libart.so (art_quick_invoke_stub+756) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.719  7604  7604 F DEBUG   :       #37 pc 00000000003c535c  /apex/com.android.art/lib64/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+204) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.720  7604  7604 F DEBUG   :       #38 pc 0000000000853176  /apex/com.android.art/lib64/libart.so (art::Thread::CreateCallback(void*)+1510) (BuildId: b6dc79e02101ea00827a35a55ab6597a)
+09-25 18:09:14.720  7604  7604 F DEBUG   :       #39 pc 00000000000cd06a  /apex/com.android.runtime/lib64/bionic/libc.so (__pthread_start(void*)+58) (BuildId: fa337969c798946280caa45e2d71a2e7)
+09-25 18:09:14.720  7604  7604 F DEBUG   :       #40 pc 0000000000062d88  /apex/com.android.runtime/lib64/bionic/libc.so (__start_thread+56) (BuildId: fa337969c798946280caa45e2d71a2e7)

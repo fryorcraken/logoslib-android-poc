@@ -1,0 +1,21 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 43e5cf8..39d9a40 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -18,6 +18,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+ # Build src first
+ add_subdirectory(src)
+ 
++option(LOGOS_CONTAINER_SUBPROCESS_BUILD_TESTS "Build the test suite (needs GoogleTest)" ON)
++if(LOGOS_CONTAINER_SUBPROCESS_BUILD_TESTS)
+ # GoogleTest setup
+ find_package(GTest QUIET)
+ 
+@@ -37,6 +39,7 @@ include(GoogleTest)
+ 
+ # Add tests subdirectory
+ add_subdirectory(tests)
++endif()  # LOGOS_CONTAINER_SUBPROCESS_BUILD_TESTS
+ 
+ # Install rules
+ install(TARGETS logos_container_subprocess

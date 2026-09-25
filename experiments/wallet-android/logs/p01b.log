@@ -1,0 +1,60 @@
+== diffs
+ M Cargo.lock
+ M lez/common/Cargo.toml
+ M lez/common/src/config.rs
+ M lez/indexer/core/Cargo.toml
+ M lez/sequencer/core/Cargo.toml
+ M lez/wallet-ffi/Cargo.toml
+ M lez/wallet/Cargo.toml
+ M lez/wallet/src/multi_client.rs
+diff --git a/Cargo.lock b/Cargo.lock
+index bc454464b..33b9d5a2f 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -1815,7 +1815,6 @@ dependencies = [
+  "lee",
+  "lee_core",
+  "log",
+- "logos-blockchain-common-http-client",
+  "ping_core",
+  "programs",
+  "serde",
+@@ -13688,6 +13687,7 @@ dependencies = [
+  "programs",
+  "rand 0.8.6",
+  "rpassword",
++ "rustls",
+  "sequencer_service_rpc",
+  "serde",
+  "serde_json",
+@@ -13698,6 +13698,7 @@ dependencies = [
+  "token_core",
+  "tokio",
+  "url",
++ "webpki-roots",
+  "zeroize",
+ ]
+ 
+  64 ${REPO_ROOT}/.work/experiments/wallet-android/patches/01b-common-bedrock-auth-feature.diff
+ 160 ${REPO_ROOT}/.work/experiments/wallet-android/patches/all-combined.diff
+ 224 total
+== wallet-ffi tree (android, no-prove, webpki) must equal the 01 tree
+tree-diff-exit=0
+bedrock crates: 1
+== sequencer_core/indexer_core still get the conversion (host)
+common v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/common)
+├── common feature "bedrock-auth"
+common v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/common)
+├── common feature "bedrock-auth"
+== Android rebuild (no-prove + webpki + static pcsc stub)
+warning: lee@0.1.0: Generated module at ${REPO_ROOT}/.work/experiments/wallet-android/target/x86_64-linux-android/release/build/lee-bd626e5113693801/out/lee/privacy_preserving_circuit/mod.rs
+warning: programs@0.1.0: Generated module at ${REPO_ROOT}/.work/experiments/wallet-android/target/x86_64-linux-android/release/build/programs-ab4c31ede0aad253/out/lez/programs/mod.rs
+    Finished `release` profile [optimized] target(s) in 20.89s
+android-build-exit=0 seconds=21
+identical .so to the 01+02 build
+== host cargo check sequencer_core + indexer_core (default features)
+warning: lee@0.1.0: Generated module at ${REPO_ROOT}/.work/experiments/wallet-android/target/debug/build/lee-22508874bbf01d2b/out/lee/privacy_preserving_circuit/mod.rs
+warning: programs@0.1.0: Generated module at ${REPO_ROOT}/.work/experiments/wallet-android/target/debug/build/programs-f0597aace93a3225/out/lez/programs/mod.rs
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2m 29s
+host-check-exit=0 seconds=149
+DONE

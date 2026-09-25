@@ -1,0 +1,29 @@
+--------- beginning of crash
+09-25 18:09:26.485  7843  7843 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0 in tid 7843 (libqro_server.s), pid 7843 (libqro_server.s)
+09-25 18:09:26.509  7849  7849 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+09-25 18:09:26.509  7849  7849 F DEBUG   : Build fingerprint: 'google/sdk_gphone64_x86_64/emu64xa:14/UE1A.230829.050/12077443:userdebug/dev-keys'
+09-25 18:09:26.509  7849  7849 F DEBUG   : Revision: '0'
+09-25 18:09:26.509  7849  7849 F DEBUG   : ABI: 'x86_64'
+09-25 18:09:26.509  7849  7849 F DEBUG   : Timestamp: 2026-09-25 18:09:26.495551584+1000
+09-25 18:09:26.509  7849  7849 F DEBUG   : Process uptime: 1s
+09-25 18:09:26.509  7849  7849 F DEBUG   : Cmdline: /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so --jvm-mode=none --url=local:qro_t --plugin=/data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libechoplugin.so --exit-after-ms=120000
+09-25 18:09:26.509  7849  7849 F DEBUG   : pid: 7843, tid: 7843, name: libqro_server.s  >>> /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so <<<
+09-25 18:09:26.509  7849  7849 F DEBUG   : uid: 10193
+09-25 18:09:26.509  7849  7849 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000000000000000
+09-25 18:09:26.509  7849  7849 F DEBUG   : Cause: null pointer dereference
+09-25 18:09:26.509  7849  7849 F DEBUG   :     rax 0000000000000000  rbx 0000000000000000  rcx 952048ca5670be37  rdx 0000000000000000
+09-25 18:09:26.509  7849  7849 F DEBUG   :     r8  00007623d9da93b0  r9  0000000000000000  r10 823a000000034004  r11 0000000000000206
+09-25 18:09:26.509  7849  7849 F DEBUG   :     r12 00007ffd9600dd1c  r13 00007623a9cc2250  r14 00007ffd9600da28  r15 00007ffd9600db80
+09-25 18:09:26.509  7849  7849 F DEBUG   :     rdi 00007623b9cc3250  rsi 00007ffd9600da20
+09-25 18:09:26.509  7849  7849 F DEBUG   :     rbp 00007ffd9600dcd8  rsp 00007ffd9600d9f0  rip 00007623da1ecc7e
+09-25 18:09:26.509  7849  7849 F DEBUG   : 9 total frames
+09-25 18:09:26.509  7849  7849 F DEBUG   : backtrace:
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #00 pc 0000000000530c7e  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libQt6Core_x86_64.so (QJniEnvironment::getJniEnv()+46) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #01 pc 00000000005364ff  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libQt6Core_x86_64.so (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #02 pc 00000000005364e6  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libQt6Core_x86_64.so (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #03 pc 00000000004fb042  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libQt6Core_x86_64.so (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #04 pc 0000000000393294  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libQt6Core_x86_64.so (QCoreApplicationPrivate::appVersion() const+470) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #05 pc 0000000000394496  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libQt6Core_x86_64.so (QCoreApplicationPrivate::init()+162) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #06 pc 00000000003943ab  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libQt6Core_x86_64.so (QCoreApplication::QCoreApplication(int&, char**, int)+87) (BuildId: a90014bbda68a024aaf7b7b22f878e2cc0c52f83)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #07 pc 000000000000c520  /data/app/~~Qtg0yF97FwXEMO8TqEkR8w==/org.logos.qrotest.a-1WFAi3qyv2OY5JK1LgX5Hg==/lib/x86_64/libqro_server.so (main+1792) (BuildId: f4f80e4fdbeb0b43c8bc895833ad83e4fa31618f)
+09-25 18:09:26.509  7849  7849 F DEBUG   :       #08 pc 00000000000529ef  /apex/com.android.runtime/lib64/bionic/libc.so (__libc_init+95) (BuildId: fa337969c798946280caa45e2d71a2e7)

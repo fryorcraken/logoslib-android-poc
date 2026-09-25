@@ -1,0 +1,120 @@
+diff --git a/src/host/qt/android_nojvm_shim.h b/src/host/qt/android_nojvm_shim.h
+new file mode 100644
+index 0000000..0b68a29
+--- /dev/null
++++ b/src/host/qt/android_nojvm_shim.h
+@@ -0,0 +1,86 @@
++// Android only: make the official Qt-for-Android QtCore usable in logos_host_qt,
++// which runs as an executable exec'd from the app's nativeLibraryDir and therefore
++// has NO JavaVM.
++//
++// Stock Qt 6.11.1 QtCore crashes (SIGSEGV, null JavaVM) inside the
++// QCoreApplication constructor in such a process:
++//   QCoreApplicationPrivate::init()
++//     -> appVersion()                          qcoreapplication.cpp:202
++//     -> QLoggingRegistry::initializeRules()   qcoreapplication.cpp:827
++//          -> QStandardPaths::locateAll(GenericConfigLocation) -> QJniObject
++//   ... -> QJniEnvironment::getJniEnv()        qjnienvironment.cpp:70 (vm->GetEnv on nullptr)
++//
++// Fix: give QtCore a fake JavaVM whose JNIEnv returns 0/NULL for every call by
++// calling QtCore's own exported JNI_OnLoad with it. initJNI() stores
++// g_javaVM = vm as its first statement, then fails (FindClass -> NULL) and
++// returns JNI_ERR, which is ignored. Every JNI-backed Qt API then degrades to
++// "no context / invalid object" (empty QStandardPaths, empty applicationVersion,
++// C locale, only UTC-ish system time zone) instead of crashing.
++//
++// Verified on the x86_64 API 34 emulator with the official Qt 6.11.1 prebuilts
++// (logoslib-android-poc .work/experiments/qt-jvmless, nojvm_shim.h there).
++// Must be called before the QCoreApplication is constructed.
++#pragma once
++
++#if defined(__ANDROID__)
++
++#include <QtGlobal>
++
++#include <jni.h>
++
++#include <dlfcn.h>
++
++namespace logos_android_nojvm {
++
++inline void* nullStub() { return nullptr; }
++
++inline JNIEnv* fakeEnv();
++inline JavaVM* fakeVm();
++
++inline jint JNICALL vmDestroy(JavaVM*) { return JNI_OK; }
++inline jint JNICALL vmAttach(JavaVM*, JNIEnv** env, void*) { *env = fakeEnv(); return JNI_OK; }
++inline jint JNICALL vmDetach(JavaVM*) { return JNI_OK; }
++inline jint JNICALL vmGetEnv(JavaVM*, void** env, jint) { *env = fakeEnv(); return JNI_OK; }
++inline jint JNICALL envGetJavaVM(JNIEnv*, JavaVM** vm) { *vm = fakeVm(); return JNI_OK; }
++
++inline JNIEnv* fakeEnv()
++{
++    static void* table[sizeof(JNINativeInterface) / sizeof(void*)];
++    static _JNIEnv env;
++    static bool init = false;
++    if (!init) {
++        for (auto& slot : table) slot = reinterpret_cast<void*>(&nullStub);
++        auto* fns = reinterpret_cast<JNINativeInterface*>(table);
++        fns->GetJavaVM = &envGetJavaVM;
++        env.functions = fns;
++        init = true;
++    }
++    return &env;
++}
++
++inline JavaVM* fakeVm()
++{
++    static JNIInvokeInterface iface = {nullptr, nullptr, nullptr,
++                                       &vmDestroy, &vmAttach, &vmDetach, &vmGetEnv, &vmAttach};
++    static _JavaVM vm;
++    vm.functions = &iface;
++    return &vm;
++}
++
++// Returns QtCore's JNI_OnLoad result (JNI_ERR expected and harmless), or
++// -100/-101 if QtCore or its JNI_OnLoad could not be located.
++inline int primeQtCoreWithoutJvm()
++{
++    Dl_info info{};
++    if (!::dladdr(reinterpret_cast<void*>(&qVersion), &info) || !info.dli_fname) return -100;
++    void* h = ::dlopen(info.dli_fname, RTLD_NOW | RTLD_NOLOAD);
++    if (!h) return -100;
++    using OnLoad = jint (*)(JavaVM*, void*);
++    auto fn = reinterpret_cast<OnLoad>(::dlsym(h, "JNI_OnLoad"));
++    if (!fn) return -101;
++    return fn(fakeVm(), nullptr);
++}
++
++} // namespace logos_android_nojvm
++
++#endif // __ANDROID__
+diff --git a/src/host/qt/qt_app.cpp b/src/host/qt/qt_app.cpp
+index edc9612..d71d88d 100644
+--- a/src/host/qt/qt_app.cpp
++++ b/src/host/qt/qt_app.cpp
+@@ -2,6 +2,10 @@
+ #include <QCoreApplication>
+ #include <QSocketNotifier>
+ 
++#if defined(__ANDROID__)
++#include "android_nojvm_shim.h"
++#endif
++
+ #include <cerrno>
+ #include <csignal>
+ #include <cstring>
+@@ -39,6 +43,12 @@ namespace {
+ namespace QtApp {
+ 
+     void init(int argc, char* argv[]) {
++#if defined(__ANDROID__)
++        // logos_host_qt on Android is exec'd from nativeLibraryDir: no JavaVM.
++        // Without this, QCoreApplication's constructor dereferences a null
++        // JavaVM (see android_nojvm_shim.h). JNI_ERR (-1) is the expected result.
++        logos_android_nojvm::primeQtCoreWithoutJvm();
++#endif
+         s_app = new QCoreApplication(argc, argv);
+     }
+ 

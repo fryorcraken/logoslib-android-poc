@@ -1,0 +1,855 @@
+2026-09-25T17:30:09+10:00
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 26  834k   26  222k    0     0   228k      0  0:00:03 --:--:--  0:00:03  228k100  834k  100  834k    0     0   568k      0  0:00:01  0:00:01 --:--:-- 1243k
+1250e4cc58bf06ee631567523f48848dc4596133e163f02615c97f78bab6c811  ${REPO_ROOT}/.work/experiments/ndk-runtime/dl/fmt-10.2.1.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  4  269k    4 12833    0     0  23325      0  0:00:11 --:--:--  0:00:11 23325100  269k  100  269k    0     0   266k      0  0:00:01  0:00:01 --:--:--  556k
+7a80896357f3e8e920e85e92633b14ba0f229c506e6f978578bdc35ba09e9a5d  ${REPO_ROOT}/.work/experiments/ndk-runtime/dl/spdlog-1.15.2.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0 7864k    0 12833    0     0  23811      0  0:05:38 --:--:--  0:05:38 23811100 7864k  100 7864k    0     0  6358k      0  0:00:01  0:00:01 --:--:-- 11.0M
+0d8ef5af7f9794e3263480193c491549b2ba6cc74bb018906202ada498a79406  ${REPO_ROOT}/.work/experiments/ndk-runtime/dl/json-3.11.3.tar.gz
+=================== fmt configure
+CMD: cmake -S ${REPO_ROOT}/.work/experiments/ndk-runtime/src/fmt-10.2.1 -B ${REPO_ROOT}/.work/experiments/ndk-runtime/build/fmt-x86_64 -G Ninja -DCMAKE_MAKE_PROGRAM=/nix/store/7bgiqc706pzzb1gmwgpzdfg491w4a8nx-ninja-1.13.1/bin/ninja -DCMAKE_TOOLCHAIN_FILE=${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake -DANDROID_ABI=x86_64 -DANDROID_PLATFORM=android-34 -DANDROID_STL=c++_shared -DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON -DCMAKE_SHARED_LINKER_FLAGS=-Wl,-z,max-page-size=16384 -DCMAKE_EXE_LINKER_FLAGS=-Wl,-z,max-page-size=16384 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64 -DCMAKE_FIND_ROOT_PATH=${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64 -DCMAKE_PREFIX_PATH=${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64 -DCMAKE_FIND_ROOT_PATH_MODE_PACKAGE=BOTH -DBUILD_SHARED_LIBS=ON -DFMT_TEST=OFF -DFMT_DOC=OFF -DFMT_INSTALL=ON
+-- CMake version: 3.31.11
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt:137 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt:137 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/fmt-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  CMakeLists.txt:137 (project)
+
+
+-- The CXX compiler identification is Clang 18.0.3
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  CMakeLists.txt:137 (project)
+
+
+-- Detecting CXX compiler ABI info
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/fmt-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/fmt-x86_64/CMakeFiles/CMakeScratch/TryCompile-PwOCyt/CMakeLists.txt:2 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/fmt-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/fmt-x86_64/CMakeFiles/CMakeScratch/TryCompile-PwOCyt/CMakeLists.txt:2 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/fmt-x86_64/CMakeFiles/CMakeScratch/TryCompile-PwOCyt/CMakeLists.txt:2 (project)
+
+
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Version: 10.2.1
+-- Build type: Release
+-- Performing Test HAS_NULLPTR_WARNING
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/fmt-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/fmt-x86_64/CMakeFiles/CMakeScratch/TryCompile-SjWhIQ/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/fmt-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/fmt-x86_64/CMakeFiles/CMakeScratch/TryCompile-SjWhIQ/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/fmt-x86_64/CMakeFiles/CMakeScratch/TryCompile-SjWhIQ/CMakeLists.txt:3 (project)
+
+
+-- Performing Test HAS_NULLPTR_WARNING - Success
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: ${REPO_ROOT}/.work/experiments/ndk-runtime/build/fmt-x86_64
+[1/3] Building CXX object CMakeFiles/fmt.dir/src/os.cc.o
+In file included from ${REPO_ROOT}/.work/experiments/ndk-runtime/src/fmt-10.2.1/src/os.cc:13:
+In file included from ${REPO_ROOT}/.work/experiments/ndk-runtime/src/fmt-10.2.1/include/fmt/os.h:14:
+In file included from ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/system_error:150:
+In file included from ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__system_error/error_category.h:15:
+In file included from ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/string:625:
+In file included from ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/string_view:213:
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__fwd/string_view.h:22:41: warning: 'char_traits<fmt::detail::char8_type>' is deprecated: char_traits<T> for T not equal to char, wchar_t, char8_t, char16_t or char32_t is non-standard and is provided for a temporary period. It will be removed in LLVM 19, so please migrate off of it. [-Wdeprecated-declarations]
+   22 | template <class _CharT, class _Traits = char_traits<_CharT> >
+      |                                         ^
+${REPO_ROOT}/.work/experiments/ndk-runtime/src/fmt-10.2.1/include/fmt/core.h:361:26: note: in instantiation of default argument for 'basic_string_view<fmt::detail::char8_type>' required here
+  361 | template <typename Char> using std_string_view = std::basic_string_view<Char>;
+      |                          ^~~~~
+${REPO_ROOT}/.work/experiments/ndk-runtime/src/fmt-10.2.1/include/fmt/core.h:452:50: note: in instantiation of template type alias 'std_string_view' requested here
+  452 |                                       S, detail::std_string_view<Char>>::value)>
+      |                                                  ^
+${REPO_ROOT}/.work/experiments/ndk-runtime/src/fmt-10.2.1/include/fmt/format.h:737:57: note: in instantiation of template class 'fmt::basic_string_view<fmt::detail::char8_type>' requested here
+  737 | inline auto compute_width(basic_string_view<char8_type> s) -> size_t {
+      |                                                         ^
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__string/char_traits.h:81:8: note: 'char_traits<fmt::detail::char8_type>' has been explicitly marked deprecated here
+   81 | struct _LIBCPP_DEPRECATED_(
+      |        ^
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:916:53: note: expanded from macro '_LIBCPP_DEPRECATED_'
+  916 | #      define _LIBCPP_DEPRECATED_(m) __attribute__((__deprecated__(m)))
+      |                                                     ^
+1 warning generated.
+[2/3] Building CXX object CMakeFiles/fmt.dir/src/format.cc.o
+In file included from ${REPO_ROOT}/.work/experiments/ndk-runtime/src/fmt-10.2.1/src/format.cc:8:
+In file included from ${REPO_ROOT}/.work/experiments/ndk-runtime/src/fmt-10.2.1/include/fmt/format-inl.h:18:
+In file included from ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/locale:202:
+In file included from ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__locale:23:
+In file included from ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/string:625:
+In file included from ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/string_view:213:
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__fwd/string_view.h:22:41: warning: 'char_traits<fmt::detail::char8_type>' is deprecated: char_traits<T> for T not equal to char, wchar_t, char8_t, char16_t or char32_t is non-standard and is provided for a temporary period. It will be removed in LLVM 19, so please migrate off of it. [-Wdeprecated-declarations]
+   22 | template <class _CharT, class _Traits = char_traits<_CharT> >
+      |                                         ^
+${REPO_ROOT}/.work/experiments/ndk-runtime/src/fmt-10.2.1/include/fmt/core.h:361:26: note: in instantiation of default argument for 'basic_string_view<fmt::detail::char8_type>' required here
+  361 | template <typename Char> using std_string_view = std::basic_string_view<Char>;
+      |                          ^~~~~
+${REPO_ROOT}/.work/experiments/ndk-runtime/src/fmt-10.2.1/include/fmt/core.h:452:50: note: in instantiation of template type alias 'std_string_view' requested here
+  452 |                                       S, detail::std_string_view<Char>>::value)>
+      |                                                  ^
+${REPO_ROOT}/.work/experiments/ndk-runtime/src/fmt-10.2.1/include/fmt/format.h:737:57: note: in instantiation of template class 'fmt::basic_string_view<fmt::detail::char8_type>' requested here
+  737 | inline auto compute_width(basic_string_view<char8_type> s) -> size_t {
+      |                                                         ^
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__string/char_traits.h:81:8: note: 'char_traits<fmt::detail::char8_type>' has been explicitly marked deprecated here
+   81 | struct _LIBCPP_DEPRECATED_(
+      |        ^
+${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:916:53: note: expanded from macro '_LIBCPP_DEPRECATED_'
+  916 | #      define _LIBCPP_DEPRECATED_(m) __attribute__((__deprecated__(m)))
+      |                                                     ^
+1 warning generated.
+[3/3] Linking CXX shared library libfmt.so
+-- Install configuration: "Release"
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libfmt.so
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/fmt/args.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/fmt/chrono.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/fmt/color.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/fmt/compile.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/fmt/core.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/fmt/format.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/fmt/format-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/fmt/os.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/fmt/ostream.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/fmt/printf.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/fmt/ranges.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/fmt/std.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/fmt/xchar.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/fmt/fmt-config.cmake
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/fmt/fmt-config-version.cmake
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/fmt/fmt-targets.cmake
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/fmt/fmt-targets-release.cmake
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/pkgconfig/fmt.pc
+fmt OK WALL_SECONDS=2
+=================== spdlog configure
+CMD: cmake -S ${REPO_ROOT}/.work/experiments/ndk-runtime/src/spdlog-1.15.2 -B ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64 -G Ninja -DCMAKE_MAKE_PROGRAM=/nix/store/7bgiqc706pzzb1gmwgpzdfg491w4a8nx-ninja-1.13.1/bin/ninja -DCMAKE_TOOLCHAIN_FILE=${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake -DANDROID_ABI=x86_64 -DANDROID_PLATFORM=android-34 -DANDROID_STL=c++_shared -DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON -DCMAKE_SHARED_LINKER_FLAGS=-Wl,-z,max-page-size=16384 -DCMAKE_EXE_LINKER_FLAGS=-Wl,-z,max-page-size=16384 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64 -DCMAKE_FIND_ROOT_PATH=${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64 -DCMAKE_PREFIX_PATH=${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64 -DCMAKE_FIND_ROOT_PATH_MODE_PACKAGE=BOTH -DSPDLOG_BUILD_SHARED=ON -DSPDLOG_FMT_EXTERNAL=ON -DSPDLOG_BUILD_EXAMPLE=OFF -DSPDLOG_BUILD_TESTS=OFF -DSPDLOG_BUILD_BENCH=OFF -DSPDLOG_INSTALL=ON
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt:13 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt:13 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  CMakeLists.txt:13 (project)
+
+
+-- The CXX compiler identification is Clang 18.0.3
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  CMakeLists.txt:13 (project)
+
+
+-- Detecting CXX compiler ABI info
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-FX9tAi/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-FX9tAi/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-FX9tAi/CMakeLists.txt:3 (project)
+
+
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Build spdlog: 1.15.2
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-jXOV46/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-jXOV46/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-jXOV46/CMakeLists.txt:3 (project)
+
+
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-31uTOX/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-31uTOX/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-31uTOX/CMakeLists.txt:3 (project)
+
+
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-gD95js/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-gD95js/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-gD95js/CMakeLists.txt:3 (project)
+
+
+-- Looking for pthread_create in pthread - not found
+-- Check if compiler accepts -pthread
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-7jvyUJ/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-7jvyUJ/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-7jvyUJ/CMakeLists.txt:3 (project)
+
+
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE
+-- Build type: Release
+-- Looking for fwrite_unlocked
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-9RNpR1/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-9RNpR1/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64/CMakeFiles/CMakeScratch/TryCompile-9RNpR1/CMakeLists.txt:3 (project)
+
+
+-- Looking for fwrite_unlocked - found
+-- Generating install
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: ${REPO_ROOT}/.work/experiments/ndk-runtime/build/spdlog-x86_64
+[1/7] Building CXX object CMakeFiles/spdlog.dir/src/cfg.cpp.o
+[2/7] Building CXX object CMakeFiles/spdlog.dir/src/file_sinks.cpp.o
+[3/7] Building CXX object CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o
+[4/7] Building CXX object CMakeFiles/spdlog.dir/src/color_sinks.cpp.o
+[5/7] Building CXX object CMakeFiles/spdlog.dir/src/async.cpp.o
+[6/7] Building CXX object CMakeFiles/spdlog.dir/src/spdlog.cpp.o
+[7/7] Linking CXX shared library libspdlog.so
+-- Install configuration: "Release"
+-- Up-to-date: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/async.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/async_logger-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/async_logger.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/cfg
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/cfg/argv.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/cfg/env.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/cfg/helpers-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/cfg/helpers.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/common-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/common.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/backtracer-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/backtracer.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/circular_q.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/console_globals.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/file_helper-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/file_helper.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/fmt_helper.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/log_msg-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/log_msg.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/log_msg_buffer-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/log_msg_buffer.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/mpmc_blocking_q.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/null_mutex.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/os-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/os.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/periodic_worker-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/periodic_worker.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/registry-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/registry.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/synchronous_factory.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/tcp_client-windows.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/tcp_client.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/thread_pool-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/thread_pool.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/udp_client-windows.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/udp_client.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/details/windows_include.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/fmt
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/fmt/bin_to_hex.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/fmt/chrono.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/fmt/compile.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/fmt/fmt.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/fmt/ostr.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/fmt/ranges.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/fmt/std.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/fmt/xchar.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/formatter.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/fwd.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/logger-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/logger.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/mdc.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/pattern_formatter-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/pattern_formatter.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/android_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/ansicolor_sink-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/ansicolor_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/base_sink-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/base_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/basic_file_sink-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/basic_file_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/callback_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/daily_file_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/dist_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/dup_filter_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/hourly_file_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/kafka_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/mongo_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/msvc_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/null_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/ostream_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/qt_sinks.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/ringbuffer_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/rotating_file_sink-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/rotating_file_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/sink-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/stdout_color_sinks-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/stdout_color_sinks.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/stdout_sinks-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/stdout_sinks.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/syslog_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/systemd_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/tcp_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/udp_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/win_eventlog_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/wincolor_sink-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/sinks/wincolor_sink.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/spdlog-inl.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/spdlog.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/stopwatch.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/tweakme.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/spdlog/version.h
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libspdlog.so
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/pkgconfig/spdlog.pc
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/spdlog/spdlogConfigTargets.cmake
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/spdlog/spdlogConfigTargets-release.cmake
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/spdlog/spdlogConfig.cmake
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake/spdlog/spdlogConfigVersion.cmake
+spdlog OK WALL_SECONDS=5
+=================== nlohmann_json configure
+CMD: cmake -S ${REPO_ROOT}/.work/experiments/ndk-runtime/src/json-3.11.3 -B ${REPO_ROOT}/.work/experiments/ndk-runtime/build/nlohmann_json-x86_64 -G Ninja -DCMAKE_MAKE_PROGRAM=/nix/store/7bgiqc706pzzb1gmwgpzdfg491w4a8nx-ninja-1.13.1/bin/ninja -DCMAKE_TOOLCHAIN_FILE=${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake -DANDROID_ABI=x86_64 -DANDROID_PLATFORM=android-34 -DANDROID_STL=c++_shared -DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON -DCMAKE_SHARED_LINKER_FLAGS=-Wl,-z,max-page-size=16384 -DCMAKE_EXE_LINKER_FLAGS=-Wl,-z,max-page-size=16384 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64 -DCMAKE_FIND_ROOT_PATH=${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64 -DCMAKE_PREFIX_PATH=${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64 -DCMAKE_FIND_ROOT_PATH_MODE_PACKAGE=BOTH -DJSON_BuildTests=OFF -DJSON_Install=ON
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt:7 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt:7 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/nlohmann_json-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  CMakeLists.txt:7 (project)
+
+
+-- The CXX compiler identification is Clang 18.0.3
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  CMakeLists.txt:7 (project)
+
+
+-- Detecting CXX compiler ABI info
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/nlohmann_json-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/nlohmann_json-x86_64/CMakeFiles/CMakeScratch/TryCompile-nu7lbI/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  ${HOME}/android-ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/nlohmann_json-x86_64/CMakeFiles/3.31.11/CMakeSystem.cmake:6 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/nlohmann_json-x86_64/CMakeFiles/CMakeScratch/TryCompile-nu7lbI/CMakeLists.txt:4 (project)
+
+
+CMake Deprecation Warning at ${HOME}/android-ndk/android-ndk-r27c/build/cmake/flags.cmake:18 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Android-Clang.cmake:23 (include)
+  /usr/share/cmake/Modules/Platform/Android-Clang-CXX.cmake:1 (include)
+  /usr/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)
+  ${REPO_ROOT}/.work/experiments/ndk-runtime/build/nlohmann_json-x86_64/CMakeFiles/CMakeScratch/TryCompile-nu7lbI/CMakeLists.txt:4 (project)
+
+
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: ${HOME}/android-ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Using the multi-header code from ${REPO_ROOT}/.work/experiments/ndk-runtime/src/json-3.11.3/include/
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: ${REPO_ROOT}/.work/experiments/ndk-runtime/build/nlohmann_json-x86_64
+ninja: no work to do.
+-- Install configuration: "Release"
+-- Up-to-date: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/adl_serializer.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/byte_container_with_subtype.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/abi_macros.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/conversions
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/conversions/from_json.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/conversions/to_chars.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/conversions/to_json.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/exceptions.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/hash.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/input
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/input/binary_reader.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/input/input_adapters.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/input/json_sax.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/input/lexer.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/input/parser.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/input/position_t.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/iterators
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/iterators/internal_iterator.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/iterators/iter_impl.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/iterators/iteration_proxy.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/iterators/iterator_traits.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/iterators/json_reverse_iterator.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/iterators/primitive_iterator.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/json_custom_base_class.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/json_pointer.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/json_ref.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/macro_scope.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/macro_unscope.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/meta
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/meta/call_std
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/meta/call_std/begin.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/meta/call_std/end.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/meta/cpp_future.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/meta/detected.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/meta/identity_tag.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/meta/is_sax.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/meta/std_fs.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/meta/type_traits.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/meta/void_t.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/output
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/output/binary_writer.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/output/output_adapters.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/output/serializer.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/string_concat.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/string_escape.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/detail/value_t.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/json.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/json_fwd.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/ordered_map.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/thirdparty
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/thirdparty/hedley
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/thirdparty/hedley/hedley.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/share/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/share/cmake/nlohmann_json/nlohmann_jsonTargets.cmake
+-- Installing: ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/share/pkgconfig/nlohmann_json.pc
+nlohmann_json OK WALL_SECONDS=0
+== installed
+-rwxr-xr-x. 1 fryorcraken fryorcraken 1153784 Sep 25 17:30 libfmt.so
+-rwxr-xr-x. 1 fryorcraken fryorcraken 4716776 Sep 25 17:30 libspdlog.so
+${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/cmake:
+fmt
+spdlog
+
+${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/share/cmake:
+nlohmann_json
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libfmt.so
+  Machine:                           Advanced Micro Devices X86-64
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x00a448 0x00a448 R   0x4000
+  LOAD           0x00a450 0x000000000000e450 0x000000000000e450 0x01c170 0x01c170 R E 0x4000
+  LOAD           0x0265c0 0x000000000002e5c0 0x000000000002e5c0 0x000780 0x000a40 RW  0x4000
+  LOAD           0x026d40 0x0000000000032d40 0x0000000000032d40 0x000020 0x000870 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+  0x000000000000000e (SONAME)       Library soname: [libfmt.so]
+--- ${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libspdlog.so
+  Machine:                           Advanced Micro Devices X86-64
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x03b354 0x03b354 R   0x4000
+  LOAD           0x03b360 0x000000000003f360 0x000000000003f360 0x0341d0 0x0341d0 R E 0x4000
+  LOAD           0x06f530 0x0000000000077530 0x0000000000077530 0x003658 0x003ad0 RW  0x4000
+  LOAD           0x072b90 0x000000000007eb90 0x000000000007eb90 0x0000a0 0x000ac0 RW  0x4000
+  0x0000000000000001 (NEEDED)       Shared library: [libfmt.so]
+  0x0000000000000001 (NEEDED)       Shared library: [liblog.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]
+  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]
+1153784	${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libfmt.so
+4716776	${REPO_ROOT}/.work/experiments/ndk-runtime/prefix/x86_64/lib/libspdlog.so
+2026-09-25T17:30:20+10:00

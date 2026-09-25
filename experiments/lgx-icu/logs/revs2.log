@@ -1,0 +1,81 @@
+== A. liblogos flake.lock: root input logos-package-manager and parents of every lpm node
+  root.logos-package-manager -> logos-package-manager_5 rev=d88abaa1f3f5d4a4268d7cdfbec98d816e0a0385
+  logos-liblogos (logos-liblogos@b2a9a0ba).logos-package-manager -> logos-package-manager_3 rev=3ad200d4
+  nix-bundle-logos-module-install (nix-bundle-logos-module-install@63815316).logos-package-manager -> logos-package-manager rev=fb8fb6a8
+  nix-bundle-logos-module-install_2 (nix-bundle-logos-module-install@e1947b07).logos-package-manager -> logos-package-manager_2 rev=3ad200d4
+  nix-bundle-logos-module-install_3 (nix-bundle-logos-module-install@e1947b07).logos-package-manager -> logos-package-manager_4 rev=3ad200d4
+  root (None@None).logos-package-manager -> logos-package-manager_5 rev=d88abaa1
+
+== B. the probe's logoscore (6a0a2f4) closure: which lgx-lib / liblgx it runs
+/nix/store/j00icnw0v82svgazk1yz50kc17876gwx-lgx-lib-0.1.0
+/nix/store/q7ivq4n0brnryv7d6psycc82blb29ymi-logos-package-manager-lib-1.0.0-dev
+deriver: /nix/store/sjz2yd1n3vbm7gsjgl4bv58k3lcq0j79-logos-logoscore-cli.drv
+  3kvg2l3l937ylbr3n9k0kmbpibg33xzw-logos-package-manager-lib-1.0.0-dev.drv name= logos-package-manager-lib-1.0.0-dev src= /nix/store/51n5vvvz00yaac2g597zfn36qppa33x5-zjd0vqcwz5y1cmwyr8mwzrx56nswy8jj-source
+  d8f509jr36bylldrlssngd9siafh479s-lgx-0.1.0.drv name= lgx-0.1.0 src= /nix/store/p2v7crd13h7j1gjlplnfkg154j9y9naw-416a5wqisqs500gc2yzjs7bamwbv0l9r-source
+  hh3syjdv58n1fmwhsg7xrxdrm7gwrr5s-lgx-lib-0.1.0.drv name= lgx-lib-0.1.0 src= /nix/store/pc5rsvnfwv4247vz0hdih6gk8pss8crm-a8c4jc27823p2fk7hnnl16dra5phjpxp-source
+  hynaxz900ripip3h892z2rzdbg32k2hs-lgx-lib-0.1.0.drv name= lgx-lib-0.1.0 src= /nix/store/hgs0k7vgcc3flnafk6fh8ac9sr5sgi4g-7f6d5ba9jv4hkn2r923kxjxac271i5hn-source
+  nzik8b6p4m3wsiihrs48cc2s8dsfgcf9-lgx-lib-0.1.0.drv name= lgx-lib-0.1.0 src= /nix/store/skzg4j9c664zf4aa5z6pi055ibzxnb0x-rdzzxzbyjjf22gx3iypkc0655rl23cgf-source
+  sh8adrw487g6zq0yb805xpdx2mb73q1m-logos-package-manager-cli-1.0.0-dev.drv name= logos-package-manager-cli-1.0.0-dev src= /nix/store/51n5vvvz00yaac2g597zfn36qppa33x5-zjd0vqcwz5y1cmwyr8mwzrx56nswy8jj-source
+
+== C. candidate trees vs 7f6d5ba9 (4cdb302, lgpm 2c56ec7)
+-- vs rdzzxz (542305b, local lpm checkout 40930aa):
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/docs/spec.md and /nix/store/rdzzxzbyjjf22gx3iypkc0655rl23cgf-source/docs/spec.md differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/doctests/lgx-cli.test.yaml and /nix/store/rdzzxzbyjjf22gx3iypkc0655rl23cgf-source/doctests/lgx-cli.test.yaml differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/doctests/outputs/lgx-cli.md and /nix/store/rdzzxzbyjjf22gx3iypkc0655rl23cgf-source/doctests/outputs/lgx-cli.md differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/.github/smoke/lgx-cli.sh and /nix/store/rdzzxzbyjjf22gx3iypkc0655rl23cgf-source/.github/smoke/lgx-cli.sh differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/README.md and /nix/store/rdzzxzbyjjf22gx3iypkc0655rl23cgf-source/README.md differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/commands/merge_command.cpp and /nix/store/rdzzxzbyjjf22gx3iypkc0655rl23cgf-source/src/commands/merge_command.cpp differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core/manifest.cpp and /nix/store/rdzzxzbyjjf22gx3iypkc0655rl23cgf-source/src/core/manifest.cpp differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core/manifest.h and /nix/store/rdzzxzbyjjf22gx3iypkc0655rl23cgf-source/src/core/manifest.h differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/tests/test_manifest.cpp and /nix/store/rdzzxzbyjjf22gx3iypkc0655rl23cgf-source/tests/test_manifest.cpp differ
+-- vs ias6bmsz (49151f0, lpm d88abaa):
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/CMakeLists.txt and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/CMakeLists.txt differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/docs/project.md and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/docs/project.md differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/docs/spec.md and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/docs/spec.md differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/doctests/lgx-cli.test.yaml and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/doctests/lgx-cli.test.yaml differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/doctests/outputs/lgx-cli.md and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/doctests/outputs/lgx-cli.md differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/.github/smoke/lgx-cli.sh and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/.github/smoke/lgx-cli.sh differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/README.md and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/README.md differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/commands/merge_command.cpp and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/src/commands/merge_command.cpp differ
+Only in /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core: installed_package.cpp
+Only in /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core: installed_package.h
+Only in /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core: main_resolution.cpp
+Only in /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core: main_resolution.h
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core/manifest.cpp and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/src/core/manifest.cpp differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core/manifest.h and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/src/core/manifest.h differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core/package.cpp and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/src/core/package.cpp differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core/package.h and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/src/core/package.h differ
+Only in /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core: platform_variant.cpp
+Only in /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core: platform_variant.h
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/crypto/signing.cpp and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/src/crypto/signing.cpp differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/crypto/signing.h and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/src/crypto/signing.h differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/lgx.h and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/src/lgx.h differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/lib.cpp and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/src/lib.cpp differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/tests/CMakeLists.txt and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/tests/CMakeLists.txt differ
+Only in /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/tests: test_installed.cpp
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/tests/test_lib.cpp and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/tests/test_lib.cpp differ
+Only in /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/tests: test_main_resolution.cpp
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/tests/test_manifest.cpp and /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/tests/test_manifest.cpp differ
+Only in /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/tests: test_platform_variant.cpp
+-- path_normalizer.cpp/.h identical across 7f6d5ba9 / 49151f0 / 542305b / 1eae01c / 3cb520c?
+8db754f237d529f3a5299d042d83c8d1389d6e6d1239c8f56c648a8306596a6a  /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core/path_normalizer.cpp
+8db754f237d529f3a5299d042d83c8d1389d6e6d1239c8f56c648a8306596a6a  /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source/src/core/path_normalizer.cpp
+8db754f237d529f3a5299d042d83c8d1389d6e6d1239c8f56c648a8306596a6a  /nix/store/rdzzxzbyjjf22gx3iypkc0655rl23cgf-source/src/core/path_normalizer.cpp
+8db754f237d529f3a5299d042d83c8d1389d6e6d1239c8f56c648a8306596a6a  /nix/store/416a5wqisqs500gc2yzjs7bamwbv0l9r-source/src/core/path_normalizer.cpp
+8db754f237d529f3a5299d042d83c8d1389d6e6d1239c8f56c648a8306596a6a  /nix/store/418s1x65hgjgcw7yspxdf0i08qy2smka-source/src/core/path_normalizer.cpp
+-- where is the variant logic in 49151f0 (no platform_variant.cpp)?
+
+== D. copy 7f6d5ba9 (logos-package 4cdb302) into the experiment dir
+CMakeLists.txt
+docs
+doctests
+flake.lock
+flake.nix
+include
+LICENSE-APACHE-v2
+LICENSE-MIT
+nix
+README.md
+REVISION.lgx-icu
+src
+tests

@@ -1,5 +1,10 @@
 # Investigation: liblogos_core + LEZ modules on Android
 
+> **Update, 2026-09-25:** after this investigation, the target module changed from LEZ
+> (`lez_core`) to the Logos **blockchain module** (`blockchain_module`, an L1 node). The
+> findings on liblogos, Qt, calling routes and packaging (§4-§8) are module-agnostic and still
+> apply. §1-§3 describe LEZ and stay as the record behind that decision.
+
 Date: 2026-09-25. This is the source-grounded research that has to come before any Android
 build work. It answers the questions in the task brief, and each answer says how it was
 established:
@@ -453,18 +458,34 @@ Android build is being tested.
 
 ---
 
-## 8. Gating experiments
+## 8. Gating experiments: results
 
-Running now. Results will be recorded in [`experiments/`](../experiments):
+All six ran on 2026-09-25. Write-ups are in `research/exp-*.md`, evidence in
+[`experiments/`](../experiments), and patches in [`patches/`](../patches), grouped by the
+upstream repo they apply to. Nothing upstream was modified.
 
-| # | Question | Decides |
+| # | Question | Result |
 | --- | --- | --- |
-| X1 | Do QCoreApplication, QtRO over a local socket, and QPluginLoader work in a native executable with **no JVM** on the x86_64 emulator? | Subprocess route (A) vs in-process container (B) |
-| X2 | From a real APK: exec a helper from `nativeLibraryDir`, SELinux on the local socket, and whether `Qt6Android.jar` is needed | App bootstrap design |
-| X3/X4 | Does `wallet-ffi` build for `x86_64-linux-android` with the `lez/common` patch, no `prove` and a pcsclite stub? Size, NEEDED libs | Whether lez_core can run on Android at all |
-| X7 | `getPluginMethods` via `lp_invoke`, the first-call token race, blocking behaviour | JNI threading and timeout policy |
-| X8 | Can liblgx use the NDK's ICU C API instead of bundling ICU? | ~30 MB of APK |
-| X9 | Do Boost 1.87 and logos-container-subprocess compile with the NDK? | Remaining port effort for the runtime |
+| X1 | Does Qt work in a native executable with **no JVM** on the x86_64 API 34 emulator? | **Not as shipped.** The `QCoreApplication` constructor itself segfaults on a null JavaVM, through `appVersion()` and then `QLoggingRegistry` → `QStandardPaths`. **A ~60-line fix works with no Qt rebuild:** call QtCore's own exported `JNI_OnLoad` with a fake JavaVM whose functions return NULL. Qt stores the VM pointer before failing, and JNI-backed paths then return empty values. After the fix, `QCoreApplication`, `QPluginLoader`, QtRO over `local:` and `localabstract:`, and SIGTERM shutdown all work. JNI-backed APIs (`QStandardPaths`, system locale, named time zones) return empty values in the helper, so paths must come from the command line or the environment. — **experiment** |
+| X2 | From a real APK: exec from `nativeLibraryDir`, SELinux, and whether `Qt6Android.jar` is needed | **All pass.** An executable shipped as `lib*.so` with `useLegacyPackaging` runs through both `ProcessBuilder` and native `posix_spawn`. It runs in the app's own `untrusted_app` domain with no libart mapped. Parent↔child QtRO over a socket in `cacheDir` needs no SELinux change. `Qt6Android.jar` is **not** required: the JNI bridge defines its own `JNI_OnLoad` and calls QtCore's `JNI_OnLoad(realVM)`, ignoring its `JNI_ERR`. The helper always needs the fake-VM fix. — **experiment** |
+| X3/X4 | Does `wallet-ffi` (lez_core's native lib) build for Android? | **Yes**, for x86_64 and arm64 at API 34. It needs the `lez/common` patch, no `prove` and a pcsclite stub, and comes out at 13.8-15.2 MB stripped against 104 MB on desktop. With an opt-in `webpki-roots` feature it created a wallet and read testnet height 24050 over HTTPS with no JVM. — **experiment**. *LEZ is no longer the target module; kept for the record.* |
+| X7 | Host call policy | `lp_invoke(…, "getPluginMethods")` returns full signatures, so runtime introspection works. **The first-call race is real:** 13 of 20 first calls through a freshly loaded module returned `""`, and all were fine 20 ms later. Loading from a worker thread doesn't wedge the host. Sync `lp_invoke` nests an event loop, so a fast call can be held behind an unrelated slow one, and timeouts don't bound that wait. `lp_invoke_async` stayed at ≤2 ms over ~120k calls. `lp_subscribe` delivers events on the Qt thread in ~1 ms. — **experiment** |
+| X8 | Can liblgx drop ICU? | **Yes**, for API 31 and above. A six-function port of `path_normalizer.cpp` to the NDK's ICU C API is byte-identical on 30 test vectors and passes logos-package's 436/436 tests. NEEDED is only `libz`, `libicu` and `libc++_shared`. libsodium cross-builds in about 12 s. — **experiment** |
+| X9 | Does the Qt-free runtime compile with the NDK? | **Yes**, at API 34: Boost 1.87 (one `wordexp.h` patch), fmt, spdlog, nlohmann, logos-container(-subprocess), logos-module-loader, process-stats and the parent-side Qt-plugin loader. Only test-gate CMake options were needed, no source changes. The real `SubprocessContainer` spawned a stand-in host from a Java-free APK on the emulator: token over stdin, load status, SIGTERM, crash detection, pidfd, no fd leaks. On bionic, `posix_spawn` forks, and a missing host shows up as exit code 127. `logos_host.cpp` compiles unchanged at API 34. — **experiment** |
+
+**Decision: keep liblogos's subprocess container (route A) with minSdk 34.**
+- `logos_host_qt` ships as `liblogos_host_qt.so` in `nativeLibraryDir` and carries the no-JVM
+  fix (`patches/logos-module-loader-qt/*nojvm-shim.patch`).
+- Host discovery on Android uses patch C or `LOGOS_HOST_PATH`.
+- At API 34 no other source change is needed in the runtime.
+
+Route B, a new in-process container, is no longer needed for the PoC.
+
+Still untested:
+- the Android 12+ phantom-process limit on long-lived module children;
+- arm64 and 16 KB-page devices (the arm64 AVD does not boot on this host);
+- the emulator on this host only boots with its window hidden (`-qt-hide-window`); `-no-window`
+  segfaults.
 
 ---
 

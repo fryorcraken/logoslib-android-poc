@@ -1,0 +1,74 @@
+== 1. liblogos (local checkout) flake.lock
+7fee75b 2026-09-14T14:12:17-03:00 fix: hosts outlive the thread that loaded them (relock default-container) (#215)
+ lpm node logos-package-manager rev=fb8fb6a8cf76d996f0cc5f8fbac03c6dec3be2b1
+    -> logos-package: node=logos-package_2 rev=1eae01c2972dbd42cd11ad4c64a243ca45be8099 narHash=sha256-3ZuVhlfBA/dZvJeS9oxr4g4ASkGchYCrieZq/jG7Mk0=
+ lpm node logos-package-manager_2 rev=3ad200d485c2d4510e41681231291a4899def181
+    -> logos-package: node=logos-package_6 rev=3cb520c8eadde3d6d7810dee74bdd243f73f34e9 narHash=sha256-h2ex453W73qjkN8n6Bo9ywU5X22bssmyCMpQjR5LRzY=
+ lpm node logos-package-manager_3 rev=3ad200d485c2d4510e41681231291a4899def181
+    -> logos-package: node=logos-package_8 rev=3cb520c8eadde3d6d7810dee74bdd243f73f34e9 narHash=sha256-h2ex453W73qjkN8n6Bo9ywU5X22bssmyCMpQjR5LRzY=
+ lpm node logos-package-manager_4 rev=3ad200d485c2d4510e41681231291a4899def181
+    -> logos-package: node=logos-package_10 rev=3cb520c8eadde3d6d7810dee74bdd243f73f34e9 narHash=sha256-h2ex453W73qjkN8n6Bo9ywU5X22bssmyCMpQjR5LRzY=
+ lpm node logos-package-manager_5 rev=d88abaa1f3f5d4a4268d7cdfbec98d816e0a0385
+    -> logos-package: node=logos-package_12 rev=49151f003690333764d73f956d64e1245e2a0c38 narHash=sha256-v0Nbhy4YXm1d/luboCbIL4yNIgcfkRXVTs1jXucLoVY=
+
+== 2. local logos-package-manager checkout
+40930aa75b2f88b019e9251a6a9b738dd2c32723 2026-08-28T12:30:13-03:00 refactor: take the variant table and `main` resolution from logos-package (#41)
+  root.inputs.logos-package: node=logos-package rev=542305b1040771997251418a6bd1d4ac4f457950 narHash=sha256-NFsVZMfGO0FNQWD+JplmZwRe4nwZOKVd0iBOF1y5GQQ=
+
+== 3. nix flake metadata github:logos-co/logos-package-manager/d88abaa1f3f5d4a4268d7cdfbec98d816e0a0385
+exit=0
+source path: /nix/store/n5y4l9nh5ad2iw7rp3plzy6s3fp608dn-source
+lastModified=1787865382 rev=d88abaa1f3f5d4a4268d7cdfbec98d816e0a0385
+  root.inputs.logos-package: node=logos-package rev=49151f003690333764d73f956d64e1245e2a0c38 narHash=sha256-v0Nbhy4YXm1d/luboCbIL4yNIgcfkRXVTs1jXucLoVY=
+
+== 3. nix flake metadata github:logos-co/logos-package-manager/2c56ec7bf1e187523d6ed0cb2abde04737c24414
+exit=0
+source path: /nix/store/8vw0bbq4fwsh7p3pqrbyqarpjpqw3f1s-source
+lastModified=1790242607 rev=2c56ec7bf1e187523d6ed0cb2abde04737c24414
+  root.inputs.logos-package: node=logos-package rev=4cdb302051ebcd231eeaeeaa2011fcf857541ce4 narHash=sha256-EMV9DfMNBkcNoBQSFsfppl6yYA1Rh7Q3XA5Nt4HauYg=
+
+== 4. prefetch every distinct logos-package rev seen and map to store paths
+distinct logos-package revs: 1eae01c2972dbd42cd11ad4c64a243ca45be8099
+3cb520c8eadde3d6d7810dee74bdd243f73f34e9
+49151f003690333764d73f956d64e1245e2a0c38
+4cdb302051ebcd231eeaeeaa2011fcf857541ce4
+542305b1040771997251418a6bd1d4ac4f457950
+  1eae01c2972dbd42cd11ad4c64a243ca45be8099 -> /nix/store/416a5wqisqs500gc2yzjs7bamwbv0l9r-source
+  3cb520c8eadde3d6d7810dee74bdd243f73f34e9 -> /nix/store/418s1x65hgjgcw7yspxdf0i08qy2smka-source
+  49151f003690333764d73f956d64e1245e2a0c38 -> /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source
+  4cdb302051ebcd231eeaeeaa2011fcf857541ce4 -> /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source
+     ^^^ MATCHES candidate /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source
+  542305b1040771997251418a6bd1d4ac4f457950 -> /nix/store/rdzzxzbyjjf22gx3iypkc0655rl23cgf-source
+
+== 5. lgpm probe binary closure: liblgx / logos-package paths
+/nix/store/7rrg4ql1g94nmn5ylfsx6bv2gfh0nxws-logos-package-manager-cli-1.0.0-dev
+deriver: /nix/store/f2i7a4qv8fdl3zbbs5m8rys7i3594mnm-logos-package-manager-cli-1.0.0-dev.drv
+  hynaxz900ripip3h892z2rzdbg32k2hs-lgx-lib-0.1.0.drv name= lgx-lib-0.1.0 src= /nix/store/hgs0k7vgcc3flnafk6fh8ac9sr5sgi4g-7f6d5ba9jv4hkn2r923kxjxac271i5hn-source
+
+== 6. every logos-package source tree in the store (has src/lgx.h + platform_variant.cpp)
+  /nix/store/042fnz2wiv1zg2c6hwp96amhy31wic1y-0dgi584k8d3af4lgp7w3m0sx378vcg47-source pv= pn=8db754f237d5 cmake=12720931d10c hostVariant_refs=
+  /nix/store/18fhpjral1ds0f6rs4797x8s7alvgmxr-dlqhb2r4in89gkpz63fcy7sa8wcd0q8x-source pv= pn=8db754f237d5 cmake=94715332f008 hostVariant_refs=
+  /nix/store/35hnns00jbhwdmn19kcrvna9kw76r8fl-source pv= pn=8db754f237d5 cmake=94715332f008 hostVariant_refs=
+  /nix/store/416a5wqisqs500gc2yzjs7bamwbv0l9r-source pv= pn=8db754f237d5 cmake=9a1d91679fc8 hostVariant_refs=
+  /nix/store/418s1x65hgjgcw7yspxdf0i08qy2smka-source pv= pn=8db754f237d5 cmake=9a1d91679fc8 hostVariant_refs=
+  /nix/store/4k1x2kmmvgknrqx9napw2ly8953q6bwz-source pv= pn=8db754f237d5 cmake=7187ad850a68 hostVariant_refs=
+  /nix/store/7851qxvayhwah59zi41mrpcl10knmlij-ias6bmsz9p8vilcg0f473m03w4y0568n-source pv= pn=8db754f237d5 cmake=9a1d91679fc8 hostVariant_refs=
+  /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source pv=05e35b7dbcef pn=8db754f237d5 cmake=ab0a9800ebcf hostVariant_refs=1
+  /nix/store/a8c4jc27823p2fk7hnnl16dra5phjpxp-source pv=05e35b7dbcef pn=8db754f237d5 cmake=ab0a9800ebcf hostVariant_refs=1
+  /nix/store/cl45c4ygsymd50bgqd504mrz7x0xi631-418s1x65hgjgcw7yspxdf0i08qy2smka-source pv= pn=8db754f237d5 cmake=9a1d91679fc8 hostVariant_refs=
+  /nix/store/dlqhb2r4in89gkpz63fcy7sa8wcd0q8x-source pv= pn=8db754f237d5 cmake=94715332f008 hostVariant_refs=
+  /nix/store/hgs0k7vgcc3flnafk6fh8ac9sr5sgi4g-7f6d5ba9jv4hkn2r923kxjxac271i5hn-source pv=05e35b7dbcef pn=8db754f237d5 cmake=ab0a9800ebcf hostVariant_refs=1
+  /nix/store/ias6bmsz9p8vilcg0f473m03w4y0568n-source pv= pn=8db754f237d5 cmake=9a1d91679fc8 hostVariant_refs=
+  /nix/store/m46i6hfkbrwr3bhzqr20y11z2ygd7mnx-p40jnp5yxb21yjx7xqf3nw574rpmirsh-source pv= pn=8db754f237d5 cmake=1291a6d184ad hostVariant_refs=
+  /nix/store/mmgc3aj619wrzwybzjglvi65gqpiiqql-1sinj0mdj42srfgy4nagd080hyn3l969-source pv= pn=8db754f237d5 cmake=9be8897c6252 hostVariant_refs=
+  /nix/store/p2v7crd13h7j1gjlplnfkg154j9y9naw-416a5wqisqs500gc2yzjs7bamwbv0l9r-source pv= pn=8db754f237d5 cmake=9a1d91679fc8 hostVariant_refs=
+  /nix/store/p40jnp5yxb21yjx7xqf3nw574rpmirsh-source pv= pn=8db754f237d5 cmake=1291a6d184ad hostVariant_refs=
+  /nix/store/p4nyrkbk0vmkgqrp45hqssixn220pymw-source pv= pn=8db754f237d5 cmake=7187ad850a68 hostVariant_refs=
+  /nix/store/pc5rsvnfwv4247vz0hdih6gk8pss8crm-a8c4jc27823p2fk7hnnl16dra5phjpxp-source pv=05e35b7dbcef pn=8db754f237d5 cmake=ab0a9800ebcf hostVariant_refs=1
+  /nix/store/r8sa83h6b3rlpsp7s2bh2hkqjy0bl7kc-p4nyrkbk0vmkgqrp45hqssixn220pymw-source pv= pn=8db754f237d5 cmake=7187ad850a68 hostVariant_refs=
+  /nix/store/rdzzxzbyjjf22gx3iypkc0655rl23cgf-source pv=05e35b7dbcef pn=8db754f237d5 cmake=ab0a9800ebcf hostVariant_refs=1
+  /nix/store/skzg4j9c664zf4aa5z6pi055ibzxnb0x-rdzzxzbyjjf22gx3iypkc0655rl23cgf-source pv=05e35b7dbcef pn=8db754f237d5 cmake=ab0a9800ebcf hostVariant_refs=1
+  /nix/store/sw35g7wjangagvic0l8dscsdfrklya9v-4k1x2kmmvgknrqx9napw2ly8953q6bwz-source pv= pn=8db754f237d5 cmake=7187ad850a68 hostVariant_refs=
+  /nix/store/w1d9ikgfnid6l7cz65k5riq84n182iac-35hnns00jbhwdmn19kcrvna9kw76r8fl-source pv= pn=8db754f237d5 cmake=94715332f008 hostVariant_refs=
+  /nix/store/wqf56srvsz8cjlxyir5y3l3p2ma1kkhs-f5da4iyhcyd68b9xvg8rg38mlh51bq7r-source pv= pn=8db754f237d5 cmake=12720931d10c hostVariant_refs=
+  /nix/store/zchz6jdyhyxnp0zlk58v049c1vc62id0-7lk3hz1gfy9db7libjbkffnmbmcqw528-source pv= pn=8db754f237d5 cmake=7187ad850a68 hostVariant_refs=

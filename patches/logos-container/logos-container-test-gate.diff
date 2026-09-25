@@ -1,0 +1,21 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 94a39ee..c79816e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -14,6 +14,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+ # Build src first
+ add_subdirectory(src)
+ 
++option(LOGOS_CONTAINER_BUILD_TESTS "Build the test suite (needs GoogleTest)" ON)
++if(LOGOS_CONTAINER_BUILD_TESTS)
+ # GoogleTest setup
+ # Try to find GoogleTest via find_package first (for Nix and system installations)
+ find_package(GTest QUIET)
+@@ -35,6 +37,7 @@ include(GoogleTest)
+ 
+ # Add tests subdirectory
+ add_subdirectory(tests)
++endif()  # LOGOS_CONTAINER_BUILD_TESTS
+ 
+ # Header-only contract: nothing to install but the headers (mirrors
+ # process-stats so consumers use <logos_container/module_container.h>).

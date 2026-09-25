@@ -1,0 +1,55 @@
+nix build exit=0 in 13 s
+1988:logos-ev_probe-module-lib> Generated LIDL: ./generated_code/ev_probe.lidl (4 methods, 1 events)
+2000:logos-ev_probe-module-lib> Generated: ./generated_code/ev_probe_events_cdylib.cpp
+2055:logos-ev_probe-module-lib> [4/9] Building CXX object CMakeFiles/ev_probe_module_plugin.dir/generated_code/ev_probe_events_cdylib.cpp.o
+2062:logos-ev_probe-module-lib> Installed LIDL events sidecar: /nix/store/4cjrmgkf1q4nzmq7fkv1fnyldbrnjddn-logos-ev_probe-module-lib-0.0.1/share/logos/ev_probe.lidl
+logos-ev_probe-module-lib> checking for references to /build/ in /nix/store/4cjrmgkf1q4nzmq7fkv1fnyldbrnjddn-logos-ev_probe-module-lib-0.0.1...
+logos-ev_probe-module-lib> patching script interpreter paths in /nix/store/4cjrmgkf1q4nzmq7fkv1fnyldbrnjddn-logos-ev_probe-module-lib-0.0.1
+logos-ev_probe-module-lib> Running phase: postPatchMkspecs
+building '/nix/store/q9zz507vgjsx1g5bylgpc423rzavmkan-logos-ev_probe-module-lib-lgx-0.0.1.drv'...
+logos-ev_probe-module-lib-lgx> Running phase: patchPhase
+logos-ev_probe-module-lib-lgx> Running phase: updateAutotoolsGnuConfigScriptsPhase
+logos-ev_probe-module-lib-lgx> Running phase: configurePhase
+logos-ev_probe-module-lib-lgx> no configure script, doing nothing
+logos-ev_probe-module-lib-lgx> Running phase: buildPhase
+logos-ev_probe-module-lib-lgx> Created package: logos-ev_probe-module-lib.lgx
+logos-ev_probe-module-lib-lgx> Patching manifest from metadata...
+logos-ev_probe-module-lib-lgx> Adding variant linux-amd64-dev to logos-ev_probe-module-lib.lgx (main: ev_probe_plugin.so)...
+logos-ev_probe-module-lib-lgx> Added variant 'linux-amd64-dev' to logos-ev_probe-module-lib.lgx
+logos-ev_probe-module-lib-lgx> Done: logos-ev_probe-module-lib.lgx
+logos-ev_probe-module-lib-lgx> Running phase: installPhase
+total 712
+dr-xr-xr-x. 1 fryorcraken fryorcraken      58 Jan  1  1970 .
+drwxr-xr-x. 1 fryorcraken fryorcraken 3562958 Sep 25 14:43 ..
+-r--r--r--. 1 fryorcraken fryorcraken  726065 Jan  1  1970 logos-ev_probe-module-lib.lgx
+Installing from file: ${REPO_ROOT}/.work/experiments/desktop-harness/evprobe-lgx/logos-ev_probe-module-lib.lgx... done
+Installed to: ${REPO_ROOT}/.work/experiments/desktop-harness/modules
+lgpm exit=0
+total 2144
+drwxr-xr-x. 1 fryorcraken fryorcraken      76 Sep 25 14:43 .
+drwxr-xr-x. 1 fryorcraken fryorcraken      16 Sep 25 14:43 ..
+-rwxr-xr-x. 1 fryorcraken fryorcraken 2186632 Sep 25 14:43 ev_probe_plugin.so
+-rw-r--r--. 1 fryorcraken fryorcraken     660 Sep 25 14:43 manifest.json
+-rw-r--r--. 1 fryorcraken fryorcraken      15 Sep 25 14:43 variant
+{
+  "author": "desktop-harness",
+  "category": "test",
+  "dependencies": [],
+  "description": "desktop-harness: emits a typed event on demand and can block its dispatch thread",
+  "display_name": "Event Probe",
+  "hashes": {
+    "root": "f81692ec81ed83d545d31720b1730b01884f2d96b1458bceae8ee34f93607e9c",
+    "variants": "69203ccd94c35f48726caa9562841bf0c4f1be5639bd70f1faf9a70e23f2915e",
+    "variants/linux-amd64-dev": "3780a1f160342f1019a292fc7df7d18305e722c48fe69daa4f72ab30453f5abf"
+  },
+  "icon": "",
+  "main": {
+    "linux-amd64-dev": "ev_probe_plugin.so"
+  },
+  "manifestVersion": "0.3.0",
+  "name": "ev_probe",
+  "type": "core",
+  "version": "0.0.1"
+}
+${REPO_ROOT}/.work/experiments/desktop-harness/evprobe-lgx
+${REPO_ROOT}/.work/experiments/desktop-harness/evprobe-lgx/logos-ev_probe-module-lib.lgx

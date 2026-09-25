@@ -1,0 +1,25 @@
+0001-path_normalizer-use-icu-c-api.patch: 122 added / 27 removed lines
+0002-cmake-android-platform-libicu.patch: 20 added / 5 removed lines
+0003-platform_variant-android-branch.patch: 22 added / 2 removed lines
+== every other file unchanged?
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/CMakeLists.txt and ${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/CMakeLists.txt differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core/path_normalizer.cpp and ${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/path_normalizer.cpp differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/src/core/platform_variant.cpp and ${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/src/core/platform_variant.cpp differ
+Files /nix/store/7f6d5ba9jv4hkn2r923kxjxac271i5hn-source/tests/test_platform_variant.cpp and ${REPO_ROOT}/.work/experiments/lgx-icu/src/logos-package-4cdb302/tests/test_platform_variant.cpp differ
+== apply check on a pristine copy
+0001-path_normalizer-use-icu-c-api git-apply exit=0
+0002-cmake-android-platform-libicu git-apply exit=0
+0003-platform_variant-android-branch git-apply exit=0
+pristine+patches == patched tree: yes
+== does 0001 also apply to the other locked revs (path_normalizer.cpp is byte-identical there)?
+  ias6bmsz9p8vilcg0f473m03w4y0568n: git apply --check exit=0
+  rdzzxzbyjjf22gx3iypkc0655rl23cgf: git apply --check exit=0
+  416a5wqisqs500gc2yzjs7bamwbv0l9r: git apply --check exit=0
+  418s1x65hgjgcw7yspxdf0i08qy2smka: git apply --check exit=0
+total 28
+drwxr-xr-x. 1 fryorcraken fryorcraken   278 Sep 25 16:30 .
+drwxr-xr-x. 1 fryorcraken fryorcraken    94 Sep 25 16:31 ..
+-rw-r--r--. 1 fryorcraken fryorcraken  7235 Sep 25 16:31 0001-path_normalizer-use-icu-c-api.patch
+-rw-r--r--. 1 fryorcraken fryorcraken  1558 Sep 25 16:31 0002-cmake-android-platform-libicu.patch
+-rw-r--r--. 1 fryorcraken fryorcraken  2387 Sep 25 16:31 0003-platform_variant-android-branch.patch
+-rw-r--r--. 1 fryorcraken fryorcraken 11180 Sep 25 16:31 all-lgx-icu.patch

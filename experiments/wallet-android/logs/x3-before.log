@@ -1,0 +1,156 @@
+== toolchain / targets
+info: downloading 2 components
+rustc 1.94.0 (4a4ef493e 2026-03-02)
+cargo 1.94.0 (85eff7c80 2026-01-15)
+aarch64-linux-android
+x86_64-linux-android
+x86_64-unknown-linux-gnu
+== git status (must be clean)
+== cargo tree BEFORE (x86_64-linux-android)
+
+real	0m3.329s
+user	0m0.582s
+sys	0m0.420s
+exit=0
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded der v0.8.2
+  Downloaded h2 v0.4.18
+680 ${REPO_ROOT}/.work/experiments/wallet-android/out/tree-before.txt
+== cargo tree BEFORE with default features (prove) for reference
+744 ${REPO_ROOT}/.work/experiments/wallet-android/out/tree-before-prove.txt
+== cargo metadata (android filter)
+exit=0
+# 680 crates in tree, 63 with build script/links/-sys
+ahash	0.8.12	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+anyhow	1.0.103	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+async-io	2.6.0	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+authenticated_transfer_core	0.1.0	build.rs	-	-	path
+borsh	1.6.1	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+camino	1.2.2	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+cbindgen	0.29.3	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+crc32fast	1.5.0	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+crossbeam-epoch	0.9.20	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+crossbeam-utils	0.8.21	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+crunchy	0.2.4	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+curve25519-dalek	4.1.3	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+dirs-sys	0.5.0	-	-	SYS	registry+https://github.com/rust-lang/crates.io-index
+generic-array	0.14.7	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+getrandom	0.3.4	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+getrandom	0.4.2	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+httparse	1.10.1	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+icu_normalizer_data	2.2.0	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+icu_properties_data	2.2.0	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+jni-sys	0.3.1	build.rs	-	SYS	registry+https://github.com/rust-lang/crates.io-index
+jni-sys	0.4.1	-	-	SYS	registry+https://github.com/rust-lang/crates.io-index
+lee	0.1.0	build.rs	-	-	path
+libc	0.2.186	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+libm	0.2.16	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+linux-raw-sys	0.12.1	-	-	SYS	registry+https://github.com/rust-lang/crates.io-index
+logos-blockchain-circuits-poc-sys	0.5.6	build.rs	-	SYS	git+https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c439356435eb6a2f1f4a8daa973bd04bd0b088
+logos-blockchain-circuits-pol-sys	0.5.6	build.rs	-	SYS	git+https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c439356435eb6a2f1f4a8daa973bd04bd0b088
+logos-blockchain-circuits-poq-sys	0.5.6	build.rs	-	SYS	git+https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c439356435eb6a2f1f4a8daa973bd04bd0b088
+logos-blockchain-circuits-signature-sys	0.5.6	build.rs	-	SYS	git+https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c439356435eb6a2f1f4a8daa973bd04bd0b088
+netlink-sys	0.8.8	-	-	SYS	registry+https://github.com/rust-lang/crates.io-index
+num-bigint-dig	0.8.6	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+num-traits	0.2.19	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+oid-registry	0.8.1	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+parking_lot_core	0.9.12	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+paste	1.0.15	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+pcsc-sys	1.3.0	build.rs	links=pcsc	SYS	registry+https://github.com/rust-lang/crates.io-index
+portable-atomic	1.13.1	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+proc-macro-error	1.0.4	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+proc-macro-error-attr	1.0.4	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+proc-macro2	1.0.106	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+programs	0.1.0	build.rs	-	-	path
+quinn	0.11.9	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+quinn-udp	0.5.14	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+quote	1.0.45	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+ring	0.17.14	build.rs	links=ring_core_0_17_14_	-	registry+https://github.com/rust-lang/crates.io-index
+risc0-circuit-keccak	4.0.5	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+risc0-circuit-recursion	4.0.4	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+risc0-zkp	3.0.4	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+rust-rapidsnark	0.1.3	build.rs	-	-	git+https://github.com/logos-blockchain/logos-blockchain-rust-rapidsnark.git?rev=e91187f8ccb5bbfc7bb00dac88169112428da78f#e91187f8ccb5bbfc7bb00dac88169112428da78f
+rustix	1.1.4	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+rustls	0.23.40	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+rustversion	1.0.22	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+serde	1.0.228	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+serde_core	1.0.228	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+serde_json	1.0.150	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+snap	1.1.1	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+syn	1.0.109	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+thiserror	1.0.69	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+thiserror	2.0.18	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+tiny-keccak	2.0.2	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+wallet-ffi	0.1.0	build.rs	-	-	path
+zerocopy	0.8.50	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+zmij	1.0.21	build.rs	-	-	registry+https://github.com/rust-lang/crates.io-index
+== bedrock-ish crates BEFORE
+logos-blockchain-blend-crypto v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-blend-message v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-blend-proofs v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-chain-broadcast-service v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-chain-service v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-circuits-build v0.5.6 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c43935)
+logos-blockchain-circuits-common v0.5.6 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c43935)
+logos-blockchain-circuits-poc-sys v0.5.6 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c43935)
+logos-blockchain-circuits-pol-sys v0.5.6 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c43935)
+logos-blockchain-circuits-poq-sys v0.5.6 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c43935)
+logos-blockchain-circuits-prover v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-circuits-signature-sys v0.5.6 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c43935)
+logos-blockchain-circuits-types v0.5.6 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c43935)
+logos-blockchain-codec-macros v0.0.0 (proc-macro) (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-codec v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-common-http-client v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-core v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-cryptarchia-engine v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-cryptarchia-sync v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-dynamic-merkle v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-groth16 v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-http-api-common v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-key-management-system-keys v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-key-management-system-macros v0.0.0 (proc-macro) (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-ledger v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-libp2p v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-log-targets-macros v0.0.0 (proc-macro) (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-log-targets v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-merkle-tree v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-mmr v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-network-service v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-poc v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-pol v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-poq v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-poseidon2 v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-proofs-error v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-services-utils v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-storage-service v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-time-service v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-tracing v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-utils v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-utxotree v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-zksign v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+rust-rapidsnark v0.1.3 (https://github.com/logos-blockchain/logos-blockchain-rust-rapidsnark.git?rev=e91187f8ccb5bbfc7bb00dac88169112428da78f#e91187f8)
+logos-blockchain-circuits-build v0.5.6 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c43935)
+logos-blockchain-circuits-common v0.5.6 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c43935)
+logos-blockchain-circuits-poc-sys v0.5.6 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c43935)
+logos-blockchain-circuits-pol-sys v0.5.6 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c43935)
+logos-blockchain-circuits-poq-sys v0.5.6 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c43935)
+logos-blockchain-circuits-prover v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+logos-blockchain-circuits-signature-sys v0.5.6 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c43935)
+logos-blockchain-circuits-types v0.5.6 (https://github.com/logos-blockchain/logos-blockchain-circuits.git?tag=v0.5.6#07c43935)
+risc0-circuit-keccak v4.0.5
+risc0-circuit-recursion v4.0.4
+risc0-circuit-rv32im v4.0.4
+rust-rapidsnark v0.1.3 (https://github.com/logos-blockchain/logos-blockchain-rust-rapidsnark.git?rev=e91187f8ccb5bbfc7bb00dac88169112428da78f#e91187f8)
+== inverse: who pulls logos-blockchain-common-http-client
+logos-blockchain-common-http-client v0.0.0 (https://github.com/logos-blockchain/logos-blockchain.git?rev=da7bd3792df481858400b322a257502f6c45e369#da7bd379)
+└── common v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/common)
+    ├── key_protocol v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lee/key_protocol)
+    │   ├── testnet_initial_state v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/testnet_initial_state)
+    │   ├── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet)
+    │   └── wallet-ffi v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet-ffi)
+    ├── sequencer_service_protocol v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/sequencer/service/protocol)
+    │   └── sequencer_service_rpc v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/sequencer/service/rpc)
+    ├── wallet v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet) (*)
+    └── wallet-ffi v0.1.0 (${REPO_ROOT}/.work/experiments/wallet-android/lez/lez/wallet-ffi)
+DONE

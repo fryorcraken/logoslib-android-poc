@@ -1,0 +1,49 @@
+== desktop lez_core libwallet_ffi.so (825d2a4 lgx, default features incl. prove)
+${REPO_ROOT}/.work/probe/modules/lez_core/libwallet_ffi.so 108567024
+  [ 9] .rodata           PROGBITS        00000000000f0000 0f0000 450374c 00 AMS  0   0 4096
+  [15] .text             PROGBITS        000000000486db00 486cb00 1a20647 00  AX  0   0 64
+  0x0000000000000001 (NEEDED)       Shared library: [libpcsclite.so.1]
+  0x0000000000000001 (NEEDED)       Shared library: [libstdc++.so.6]
+  0x0000000000000001 (NEEDED)       Shared library: [libgcc_s.so.1]
+  0x0000000000000001 (NEEDED)       Shared library: [libm.so.6]
+  0x0000000000000001 (NEEDED)       Shared library: [libc.so.6]
+  0x0000000000000001 (NEEDED)       Shared library: [ld-linux-x86-64.so.2]
+zip local-file headers: 34
+recursion_zkr refs: 0
+exported wallet_ffi_*: 58
+== cargo tree: webpki-roots variant vs no-feature (x86_64-linux-android)
+431
+414a415
+> webpki-roots v1.0.7
+aws-lc crates in webpki tree: 0
+rustls v0.23.40
+├── hyper-rustls v0.27.9
+└── jsonrpsee-client-transport v0.26.0
+├── rustls feature "log"
+├── rustls feature "logging"
+├── rustls feature "ring"
+├── rustls feature "std"
+└── rustls feature "tls12"
+== cargo tree: aarch64 native crates (should equal x86_64 list)
+101d100
+< curve25519-dalek-derive v0.1.1
+tree-diff-exit=0
+== git state of working copy
+d8596eb734bf9c9ce801afb92df06098a2eb098a Merge pull request #837 from logos-blockchain/erhant/handle-nonzero-exit
+ M Cargo.lock
+ M lez/common/Cargo.toml
+ M lez/common/src/config.rs
+ M lez/wallet-ffi/Cargo.toml
+ M lez/wallet/Cargo.toml
+ M lez/wallet/src/multi_client.rs
+total 16
+drwxr-xr-x. 1 fryorcraken fryorcraken  182 Sep 25 14:41 .
+drwxr-xr-x. 1 fryorcraken fryorcraken   74 Sep 25 14:42 ..
+-rw-r--r--. 1 fryorcraken fryorcraken 1276 Sep 25 14:31 01-common-drop-bedrock-http-client.diff
+-rw-r--r--. 1 fryorcraken fryorcraken 2708 Sep 25 14:41 02-wallet-webpki-roots-feature.diff
+-rw-r--r--. 1 fryorcraken fryorcraken 4249 Sep 25 14:41 all-combined.diff
+== stop emulator started by this task
+OK
+List of devices attached
+
+DONE
