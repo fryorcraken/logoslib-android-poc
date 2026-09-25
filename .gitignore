@@ -1,0 +1,24 @@
+# Local Claude Code session config
+.claude/
+
+# Nix build output symlinks
+result
+result-*
+
+# Gradle / Android
+android/.gradle/
+android/local.properties
+android/**/build/
+android/**/.cxx/
+*.hprof
+
+# Native libraries and .lgx modules staged from Nix build output -- build
+# artifacts, not source; regenerate with the scripts under scripts/.
+android/**/src/main/jniLibs/
+android/**/src/main/assets/modules/
+
+# Scratch build output
+build/
+
+# Local research/build scratch (scripts, probe output)
+.work/
