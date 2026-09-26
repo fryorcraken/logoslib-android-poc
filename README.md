@@ -33,6 +33,40 @@ concept that has not yet run on real hardware; see
   07:D2:72:5C:66:A2:B0:8C:C4:89:A1:60:13:5F:2F:9F:ED:14:88:54:68:6B:F4:67:F1:CC:DF:43:4A:01:AF:B4
   ```
 
+### APK size, by component
+
+The v0.1.0 APK (arm64-v8a only) is **80.2 MB** (80,178,548 bytes). The table is measured from
+the published file with `unzip -v`. "In APK" is the compressed size each part takes in the
+download. "On device" is the size once extracted: native libraries are unpacked at install,
+and module files on the first Start.
+
+| Component | In APK | % of APK | On device |
+| --- | ---: | ---: | ---: |
+| **Blockchain node** (`liblogos_blockchain.so`, Rust; ~35.6 MB of it is embedded circuit data: zkeys, witness data, verification keys) | 44.9 MB | 56.0% | 82.2 MB |
+| **Kotlin/Java bytecode** (`classes*.dex`, mostly Compose/AndroidX; minify off, stored uncompressed) | 22.2 MB | 27.7% | 22.2 MB |
+| **Module plugins** (blockchain_module, bc_probe, capability_module, hello_module, each statically embedding the Logos SDK) + libfyaml | 3.5 MB | 4.3% | 10.8 MB |
+| **Qt 6.11.1** (Core, Network, RemoteObjects) | 3.3 MB | 4.2% | 9.1 MB |
+| **OpenSSL 3.5.4** (`libcrypto_3`, `libssl_3`) | 2.9 MB | 3.6% | 6.6 MB |
+| **Logos runtime** (`liblogos_core`, `liblogos_protocol`, `liblogos_qt_host`, `liblogos_host_qt`, `liblgx`, `libpackage_manager_lib`) | 2.2 MB | 2.7% | 5.9 MB |
+| C++ runtime and logging (`libc++_shared`, spdlog, fmt) | 0.6 MB | 0.8% | 1.9 MB |
+| This repo's JNI shim (`liblogos_jni`, 72 KB) and Compose's path lib | <0.1 MB | <0.1% | 0.1 MB |
+| Resources, manifests, signature, zip overhead | 0.6 MB | 0.7% | 0.6 MB |
+
+Takeaways:
+
+- **The node library is over half the download.** Its circuit data is compiled in with
+  `include_bytes!`, even though a follower node never proves. Loading the keys from files, or
+  leaving out circuits a follower does not use, would need upstream changes.
+- **The bytecode is the second-largest item, and the cheapest to cut.** Turning on R8 minify
+  would shrink it to a few MB. It is off because the JNI shim calls back into Kotlin by name;
+  keep rules for those calls would be needed first.
+- **The Logos runtime is small.** liblogos itself, the protocol, the module host and the
+  package library come to 2.2 MB compressed (5.9 MB on device), or 2.7% of the APK. Qt and
+  OpenSSL add about 6.2 MB compressed.
+- **Installed footprint is about 200 MB before any chain data:** the 80 MB APK, 23.7 MB of
+  native libraries and 93 MB of extracted modules. The devnet database then adds about 47 MB
+  at ~5,300 blocks and grows with the chain.
+
 ## Status
 
 **The Logos blockchain node runs as a liblogos module inside an Android app and syncs the
