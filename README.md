@@ -16,6 +16,23 @@ trade-off to
 `liblogos_core` and wraps each Nim library's C FFI directly. That approach needs a hand-written
 JNI shim per library and has no shared inter-module transport.
 
+## Install
+
+The latest release is an **arm64 APK for Android 14 or later**. It is a developer proof of
+concept that has not yet run on real hardware; see
+[`docs/release-0.1.0.md`](docs/release-0.1.0.md) for the walkthrough and GrapheneOS notes.
+
+- **Obtainium:** choose **Add app** and use `https://github.com/fryorcraken/logoslib-android-poc`.
+- **Manual:** download the `.apk` from the
+  [latest release](https://github.com/fryorcraken/logoslib-android-poc/releases/latest). It is
+  published alongside a `.sha256` file you can check it against.
+- **AppVerifier:** the signing certificate, the same for every release:
+
+  ```
+  com.fryorcraken.logoslib.demo
+  07:D2:72:5C:66:A2:B0:8C:C4:89:A1:60:13:5F:2F:9F:ED:14:88:54:68:6B:F4:67:F1:CC:DF:43:4A:01:AF:B4
+  ```
+
 ## Status
 
 **The Logos blockchain node runs as a liblogos module inside an Android app and syncs the

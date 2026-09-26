@@ -5,7 +5,33 @@
 | File | `logoslib-android-poc-0.1.0-arm64-v8a.apk`, 80,178,548 bytes |
 | SHA-256 | `d8551d327bceb3dbde51ce3c14a1f6bbcf7c6c6712b132b183c02a900b06e569` |
 | App | Logos Core Demo, `com.fryorcraken.logoslib.demo`, version 0.1.0 (code 1), arm64-v8a only |
-| Signed with | the Android debug certificate, SHA-256 `07d2725c66a2b08cc489a160135f2f9fed148854686bf467f1ccdf434a01afb4`. This is a POC convention, not a release key |
+| Signed with | the Android debug certificate of the build machine (POC convention, not a release key); fingerprint below |
+
+## Signing certificate (for AppVerifier)
+
+Paste this into [AppVerifier](https://github.com/soupslurpr/AppVerifier), or compare it with
+what AppVerifier shows for the installed app:
+
+```
+com.fryorcraken.logoslib.demo
+07:D2:72:5C:66:A2:B0:8C:C4:89:A1:60:13:5F:2F:9F:ED:14:88:54:68:6B:F4:67:F1:CC:DF:43:4A:01:AF:B4
+```
+
+This fingerprint is the SHA-256 of the signing certificate. It is not the APK file hash:
+that one is in the `.sha256` asset. Every release of this app is signed with the same
+certificate, so updates install over each other.
+
+## Install with Obtainium
+
+In Obtainium, choose **Add app** and paste the repo URL:
+
+```
+https://github.com/fryorcraken/logoslib-android-poc
+```
+
+Obtainium follows this repo's GitHub releases and installs the `.apk` asset. It does not use
+the `.sha256` asset. The tag `v0.1.0` matches the app's version name `0.1.0`. After
+installing, check the signing certificate with AppVerifier as above.
 
 ## What it is
 
@@ -41,7 +67,7 @@ Tested on:
 - **Not tested on real arm64 hardware, and not on GrapheneOS.** The GrapheneOS section
   below comes from reading GrapheneOS source code and documentation.
 
-## Install
+## Install manually
 
 1. Download `logoslib-android-poc-0.1.0-arm64-v8a.apk` and
    `logoslib-android-poc-0.1.0-arm64-v8a.apk.sha256` from the GitHub release.
