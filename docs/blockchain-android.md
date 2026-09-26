@@ -136,9 +136,10 @@ not cover. They are cosmetic.
 
 The app must ship `libc++_shared.so` from the NDK alongside the library.
 
-For arm64-v8a, the script's circuit steps have run: GMP, the witness libraries (AArch64,
-libc++), the LBC directory and rapidsnark. Its cargo step has not run yet. The experiment
-built the arm64 library with the same recipe (82 MB).
+For arm64-v8a the whole script has run (2026-09-26, with the DNS patch): cargo 338 s with
+`JOBS=8`, `liblogos_blockchain.so` 82,186,680 bytes, AArch64, the same NEEDED, SONAME, 16 KB
+alignment and 54 of 54 header functions, and the header identical to the pin's. It ships in
+the arm64-v8a release APK (`scripts/android/build-release.sh`).
 
 ## libfyaml
 

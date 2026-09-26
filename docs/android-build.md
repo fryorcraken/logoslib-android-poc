@@ -167,9 +167,9 @@ and `run-m5.sh` runs after (or instead of) `run-m4.sh`; see "M5/M6" below.
    process is left for port 5570.
 
 The steps for arm64-v8a are the same with `arm64-v8a` in place of `x86_64`. For an APK
-carrying both ABIs, stage both and pass `GRADLE_ARGS=-Plogos.abis=x86_64,arm64-v8a`. arm64
-builds and passes every static check, but it has not run on a device: the arm64 AVD does not
-boot on this host.
+carrying both ABIs, stage both and pass `GRADLE_ARGS=-Plogos.abis=x86_64,arm64-v8a`. The
+arm64 AVD does not boot on this host. The arm64 release APK has run only on the x86_64
+emulator under ARM translation, not on arm64 hardware (see "Release APK" below).
 
 ### By hand
 
@@ -422,6 +422,130 @@ old copy as dead space once (a 140.5 MB APK); `FORCE=1 build-apk.sh` builds clea
   UDP segmentation offload fails once (`quinn_udp: sendmsg error ... code: 5`). Neither
   stops the sync.
 
+## Release APK (v0.1.0, arm64-v8a)
+
+This is the file a phone user installs. The user-facing notes (install, first run,
+GrapheneOS) are in [`release-0.1.0.md`](release-0.1.0.md).
+
+```sh
+# after steps 1-3 and the four M5/M6 build lines above, all for arm64-v8a
+bash scripts/android/build-jni.sh arm64-v8a
+bash scripts/android/build-release.sh arm64-v8a    # stage + :demo-app:assembleRelease + 21 checks, ~30-45 s
+```
+
+`build-release.sh [abi ...]` defaults to arm64-v8a. Several ABIs give one multi-ABI APK. It:
+
+1. runs `stage.sh <abi> $RELEASE_MODULES` for each ABI. The default is all four modules;
+   `SKIP_STAGE=1` packages what is already staged.
+2. deletes the previous release APK, so the zip is written from scratch, then runs
+   `gradlew :demo-app:assembleRelease -Plogos.abis=<abis>`. `FORCE=1` adds `clean`, and
+   `GRADLE_ARGS` passes extra arguments. The release build type has minify off and is signed
+   with the debug key, the logos-android-wrap-poc convention.
+3. checks the APK, and copies it to `build/release/` only if every check passes:
+   - badging: package, versionName/versionCode from `demo-app/build.gradle.kts`, min/target
+     SDK from `libs.versions.toml`, native-code exactly the requested ABIs, not debuggable;
+   - `apksigner verify`, and `zipalign -c -P 16 -v 4`;
+   - extractNativeLibs is not false, and every `lib/` `.so` is deflated;
+   - `lib/<abi>` and `assets/modules/<abi>` are byte-identical to what was staged, with no
+     other ABI;
+   - `check-prefix.sh`, plus an llvm-readelf pass (e_machine, p_align 0x4000, no
+     `/nix/store`), on every ELF extracted from the APK;
+   - under 4 MiB of zip overhead, which catches dead space.
+
+Outputs go to `build/release/`: `logoslib-android-poc-<version>-<abis>.apk`, `.apk.sha256`
+(for `sha256sum -c`) and `.report.txt`. The report holds every check with its evidence,
+the per-entry sizes, the ELF table and the provenance of the native parts. The full log is
+`build/logs/build-release-<abi>.log`. The run ends with:
+
+```
+[PASS] no dead space in the zip -- APK 80178548 bytes - entries 80148051 stored bytes = 30497 bytes of headers, alignment and signing block
+-- build/release/logoslib-android-poc-0.1.0-arm64-v8a.apk: 80178548 bytes
+-- sha256 d8551d327bceb3dbde51ce3c14a1f6bbcf7c6c6712b132b183c02a900b06e569 (build/release/logoslib-android-poc-0.1.0-arm64-v8a.apk.sha256)
+build-release: OK (.../build/release/logoslib-android-poc-0.1.0-arm64-v8a.apk)
+```
+
+### Smoke test under ARM translation (x86_64 emulator)
+
+No arm64 device or bootable arm64 AVD was available. The x86_64 API 34 image
+(`delivery-demo`) lists `x86_64,arm64-v8a` and runs arm64 code two ways:
+
+- in the app process, through the native bridge (`ro.dalvik.vm.native.bridge=libndk_translation.so`);
+- in exec'd children, through binfmt_misc. With `ro.enable.native.bridge.exec=1`,
+  `/system/etc/init/ndk_translation.rc` registers `arm64_exe` and `arm64_dyn`. So an arm64
+  PIE such as `liblogos_host_qt.so` runs as
+  `/system/bin/ndk_translation_program_runner_binfmt_misc_arm64 <path> <args>`.
+
+By hand:
+
+```sh
+adb uninstall com.fryorcraken.logoslib.demo.test; adb uninstall com.fryorcraken.logoslib.demo   # a debug build, if any
+adb install --abi arm64-v8a build/release/logoslib-android-poc-0.1.0-arm64-v8a.apk
+adb shell am start -n com.fryorcraken.logoslib.demo/.MainActivity --ez autorun true                          # hello_module
+adb shell am start -n com.fryorcraken.logoslib.demo/.MainActivity --ez bc_autorun true --ez bc_fresh true    # node + bc_probe
+adb shell ps -A -o PID,PPID,NAME,ARGS | grep liblogos_host_qt
+adb logcat -s LogosDemo logos-jni logos-stdio
+```
+
+`run-m4.sh` and `run-m5.sh` do not apply here: they install the debug and test APKs, and
+use `run-as`, which a release build refuses.
+
+**The environment across the native bridge.** On the first try, every module host died
+right after exec, with `libc++abi: Pure virtual function called!` (SIGABRT). Just before
+that, QtRO had failed with `failed to listen on "local:logos_capability_module_..." ...
+socket path "/tmp/logos_capability_module_..."`, so the hosts had no `TMPDIR`.
+
+- The cause: the translated arm64 bionic keeps its own `environ`, copied when the bridge
+  starts up. So the `Os.setenv` calls LogosCore makes in the host (x86_64) libc never reach
+  liblogos or its `posix_spawn`. On an arm64 phone there is only one libc, and there this path
+  is the one verified natively on x86_64.
+- The fix: `LogosNative.nativeRun` now also receives the environment, and the shim
+  `setenv()`s any variable its own libc does not see. The log line
+  `logos-jni: nativeRun: environment: N of 4 variables had to be set` says `0 of 4`
+  natively (run-m4 x86_64, 18/18 again) and `4 of 4` under translation.
+- That first run also exercised patch C on its own: without `LOGOS_HOST_PATH`, liblogos
+  still found `liblogos_host_qt.so` next to `liblogos_core.so`.
+
+A `wrap.<package>` property cannot inject the variable instead: a wrapped app process starts
+without the native bridge, and loading the arm64 `libc++_shared.so` then fails with
+`is for EM_AARCH64 (183) instead of EM_X86_64 (62)`.
+
+Results with the final APK (sha256 `d8551d32...`), 2026-09-26:
+
+| What | Under translation (arm64 APK) | Native x86_64 (debug build, same code, same day) |
+| --- | --- | --- |
+| App process: JNI_OnLoad, QtCore priming, QCoreApplication, `logos_core_start` | OK; `start()` 907 ms on the first launch (extracts 93 MB), 425 ms after | OK; 47-51 ms |
+| capability_module, hello_module hosts | arm64 children via the binfmt_misc runner, PPID = app, `untrusted_app`, 93 MB RSS each | 14-16 MB RSS each |
+| hello autorun (load, ping, subscribe, fire, event) | `AUTORUN OK (ping=pong, event=tag-1)` in 1.16 s; load 213 ms, ping 34 ms after the load, event 5 ms | run-m4 18/18 |
+| Stop, then `am force-stop` | `stopped: true`, 0 children; no process left | same |
+| Node: load both modules, config, `start()` | 450 ms, 623 ms | 118 ms, 81 ms |
+| First peer, first `newBlock` | 2.75 s, 6.2 s | 2.1 s, 5.8 s |
+| Sync from genesis | Run 6: `BC AUTORUN OK`, 6,748 blocks, at the tip after 174.8 s (about 4.4 times native), crossing the epoch transitions at slots 108000, 144000, 180000 and 216000. Run 4: stalled at height 6000, see below | 6,744 blocks, at the tip after 39.9 s, crossing the same epoch transitions |
+| Restart on the synced directory (run 7, `bc_autorun` without `bc_fresh`) | `start()` replays 6,749 blocks in 147 s; peers at once; `BC AUTORUN OK` at height 6756 (lag 10) after 155 s | not re-measured (M5: 20.7-20.8 s for 5.27k blocks) |
+| bc_probe → blockchain_module | height 6748, then 6749 while following the head; hop 1-65 ms | height 6744, hop 0-4 ms |
+| Node `stop()`, then `am force-stop` | 365 ms; no process left | 110 ms; no process left |
+| Node host | 400-490 MB RSS, 95-145 % CPU while syncing, 0.5 % after | 120-186 MB RSS, 109-134 % CPU, 0.5 % after |
+
+**Run 4 stalled at height 6000.** About 11 s after the epoch 4-to-5 transition (slot 180000),
+all four peer connections dropped at once (`failed to send a block download request ...
+connection lost`). The node then logged `Error while starting download: channel closed`,
+got back only 1 peer and never resumed the download: height 6000 at 0.5 % CPU for 3 min,
+with the hosts alive. Run 6, on a fresh install, crossed the same point without a drop,
+and so did the native run.
+
+The epoch transitions are CPU-heavy: both translated runs stopped answering the demo's
+2 s polls for about 15 s around slot 108000. The likely cause is therefore a stall of about
+10 s or more that outlived the QUIC idle timeout, under translation's roughly 4-times
+slowdown, and a network blip cannot be ruled out. Either way, the node's initial block
+download did not recover after losing every peer. That is an upstream robustness gap that a
+phone could hit on a flaky network. The workaround is Stop node, then Start node, or
+reopening the app; `release-0.1.0.md` lists it.
+
+Evidence (not in git) is in `.work/logs/arm64-smoke/`: `run4-envfix`, `run6-arm64-bc2` and
+`run7-arm64-restart` (summary, logcat, ps, UI dumps), `run5-x86native` for the native
+column, and the top level for the first run without the fix. Screenshots are
+`build/screenshots/arm64-smoke-*.png`. The helper that drove these runs is
+`.work/scripts/arm64-smoke-run.sh`.
+
 ## Troubleshooting
 
 **The emulator crashes at boot with `-no-window`.** On this host
@@ -532,8 +656,10 @@ server under other sessions. The scripts use the SDK's adb; override with `ADB=.
 
 ## Known limits
 
-- **Only x86_64 has run on a device.** arm64-v8a builds and passes the static checks.
-  16 KB-page devices and API 35/36 are untested, although every LOAD segment is 16 KB-aligned.
+- **No arm64 hardware yet.** x86_64 has run natively on the emulator. The arm64-v8a release
+  APK passes the static checks and has run under ARM translation on the same emulator
+  ("Release APK" above), not on an arm64 device. 16 KB-page devices and API 35-37 are
+  untested, although every LOAD segment is 16 KB-aligned.
 - **Module plugins are `dlopen`ed from `filesDir`.** SELinux audits that as "granted execute
   on app_data_file". A future Android release could forbid it. The fallback is to ship
   plugins as `lib*.so` in `nativeLibraryDir` and point `main` there.
@@ -541,5 +667,6 @@ server under other sessions. The scripts use the SDK's adb; override with `ADB=.
   does not show that host discovery (patch C) works without it.
 - **The Android 12+ phantom-process limit** (32 children system-wide, background kills) is
   untested with long-lived module hosts.
-- **The APK is a debug build.** R8 and resource shrinking are off. The size table above is
-  dominated by debug dex.
+- **The M4/M5 APK is a debug build.** R8 and resource shrinking are off. The size table
+  above is dominated by debug dex. The v0.1.0 release APK has minify off too and is signed
+  with the debug key.

@@ -24,8 +24,11 @@ internal object LogosNative {
      * and exec() on the CALLING thread; returns exec()'s code once [nativeStop] quit the loop
      * (after unsubscribing, destroying lp clients and logos_core_cleanup()). Calls [onReady]
      * from inside the running loop. Returns a negative value if a runtime already ran.
+     * [env] is the environment [RuntimeEnv.apply] set with Os.setenv, flattened as key, value,
+     * ...; the shim sets a variable again only if its own libc does not see that value, which
+     * happens only under a native bridge (an arm64 APK translated on an x86_64 device).
      */
-    @JvmStatic external fun nativeRun(modulesDir: String, persistDir: String, appName: String, origin: String): Int
+    @JvmStatic external fun nativeRun(modulesDir: String, persistDir: String, appName: String, origin: String, env: Array<String>): Int
 
     /** Posts a quit to the Qt loop (queued). False if no loop is running. */
     @JvmStatic external fun nativeStop(): Boolean

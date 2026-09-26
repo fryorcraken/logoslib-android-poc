@@ -51,7 +51,8 @@ See [`docs/android-build.md`](docs/android-build.md) to build and run it, and
 | Node library `liblogos_blockchain.so` for Android, with L1 circuits built for Android | **Done** by a repo script (x86_64 run; arm64 built by the experiment): [`scripts/android/build-blockchain.sh`](scripts/android/build-blockchain.sh) |
 | Blockchain module on Android: devnet follower synced to the tip, `newBlock` events in Kotlin | **Done**, 17/17 checks on the emulator (M5) |
 | Inter-module call on Android: `bc_probe` → `blockchain_module` | **Done** (M6) |
-| arm64 phone, 16 KB-page device, phantom-process limit for a long-running node | Not tested: no arm64 emulator on this host |
+| arm64 release APK v0.1.0 | Built and checked by [`scripts/android/build-release.sh`](scripts/android/build-release.sh); smoke-tested under ARM translation on the x86_64 emulator. Release notes: [`docs/release-0.1.0.md`](docs/release-0.1.0.md) |
+| arm64 phone, 16 KB-page device, phantom-process limit for a long-running node | Not tested on hardware: no arm64 device, and the arm64 AVD does not boot on this host |
 
 ## Findings in brief
 

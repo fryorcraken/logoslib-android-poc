@@ -131,6 +131,13 @@ reports kernel time only (`patches/process-stats/`, a proposal).
    - `LOGOS_HOST_PATH` = `nativeLibraryDir/liblogos_host_qt.so`;
    - and `LOGOS_LOG_LEVEL` when `LogosConfig.logLevel` is set (`debug` lets the hosts'
      Qt debug lines, such as token requests, through to `logos-stdio`).
+
+   The same map is passed to `nativeRun`, and the shim `setenv()`s any variable its own libc
+   does not already see with that value. On a device of the APK's ABI, this is the libc
+   `Os.setenv` wrote to, so nothing is set (`logos-jni: nativeRun: environment: 0 of 4
+   ...`). Under a native bridge (the arm64 APK on the x86_64 emulator), the translated bionic
+   keeps its own `environ`, and without this step the hosts would get no `TMPDIR` and fail to
+   listen on `/tmp/...` (`4 of 4`).
 2. **Modules.** `assets/modules/<abi>/<module>/` is extracted to `filesDir/modules`. The
    module directories are made read-only. The extraction is re-done when the staged
    `modules.stamp`, the APK version or the module set changes.

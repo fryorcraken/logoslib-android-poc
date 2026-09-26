@@ -30,6 +30,7 @@
 #include <atomic>
 #include <cerrno>
 #include <cstdint>
+#include <cstdlib>
 #include <cstring>
 #include <map>
 #include <memory>
@@ -441,8 +442,31 @@ extern "C" JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void*)
 #define JNI_FN(name) Java_com_fryorcraken_logoslib_core_internal_LogosNative_##name
 
 extern "C" JNIEXPORT jint JNICALL JNI_FN(nativeRun)(JNIEnv* env, jclass, jstring jModulesDir, jstring jPersistDir,
-                                                      jstring jAppName, jstring jOrigin)
+                                                      jstring jAppName, jstring jOrigin, jobjectArray jEnv)
 {
+    // jEnv: the variables Kotlin already applied with Os.setenv, as key, value, key, value...
+    // Normally this libc is the one Os.setenv wrote to, every value matches and nothing is
+    // set. Under a native bridge (an arm64 APK on an x86_64 emulator: libndk_translation)
+    // this code runs on a translated bionic whose environ is a separate copy taken at bridge
+    // start-up, so liblogos, QDir::tempPath() and the module hosts liblogos posix_spawn()s
+    // would not see TMPDIR & co; set them here, before QCoreApplication and logos_core_start.
+    const jsize envLen = jEnv ? env->GetArrayLength(jEnv) : 0;
+    int reapplied = 0;
+    for (jsize i = 0; i + 1 < envLen; i += 2) {
+        auto jk = static_cast<jstring>(env->GetObjectArrayElement(jEnv, i));
+        auto jv = static_cast<jstring>(env->GetObjectArrayElement(jEnv, i + 1));
+        const std::string k = toUtf8(env, jk);
+        const std::string v = toUtf8(env, jv);
+        env->DeleteLocalRef(jk);
+        env->DeleteLocalRef(jv);
+        const char* cur = ::getenv(k.c_str());
+        if (k.empty() || (cur && v == cur)) continue;
+        if (::setenv(k.c_str(), v.c_str(), 1) == 0) ++reapplied;
+        else LOGW("nativeRun: setenv(%s) failed: %s", k.c_str(), std::strerror(errno));
+    }
+    LOGI("nativeRun: environment: %d of %d variables had to be set in this libc (non-zero only under a native bridge)",
+         reapplied, int(envLen / 2));
+
     const std::string modulesDir = toUtf8(env, jModulesDir);
     const std::string persistDir = toUtf8(env, jPersistDir);
     const std::string appName = toUtf8(env, jAppName);

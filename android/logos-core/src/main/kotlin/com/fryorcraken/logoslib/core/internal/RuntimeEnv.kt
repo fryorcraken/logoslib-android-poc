@@ -115,7 +115,9 @@ internal object RuntimeEnv {
 
     /**
      * Applies [variables] plus [extra] (e.g. `LOGOS_LOG_LEVEL`) with Os.setenv; must run
-     * before liblogos_jni.so is loaded. The module hosts inherit all of them.
+     * before liblogos_jni.so is loaded. The module hosts inherit all of them. The returned map
+     * also goes to LogosNative.nativeRun, which re-applies any variable its libc does not see
+     * (only under a native bridge, whose translated libc has its own environ).
      */
     fun apply(layout: Layout, extra: Map<String, String> = emptyMap()): Map<String, String> {
         val vars = LinkedHashMap(variables(layout))

@@ -151,7 +151,7 @@ internal object LogosRuntime : LogosNative.NativeSink {
         LogosNative.sink = this
         val readyDeferred = CompletableDeferred<Unit>()
         ready = readyDeferred
-        val thread = Thread(null, { runLoop(layout, config) }, "logos-qt", QT_THREAD_STACK_BYTES)
+        val thread = Thread(null, { runLoop(layout, config, env) }, "logos-qt", QT_THREAD_STACK_BYTES)
         loopThread = thread
         thread.start()
         withTimeoutOrNull(config.startTimeout) { readyDeferred.await() }
@@ -175,10 +175,11 @@ internal object LogosRuntime : LogosNative.NativeSink {
         )
     }
 
-    private fun runLoop(layout: Layout, config: LogosConfig) {
+    private fun runLoop(layout: Layout, config: LogosConfig, env: Map<String, String>) {
         var rc = Int.MIN_VALUE
         try {
-            rc = LogosNative.nativeRun(layout.modulesDir.path, layout.persistDir.path, "logos-android", config.originModule)
+            val flatEnv = env.flatMap { (k, v) -> listOf(k, v) }.toTypedArray()
+            rc = LogosNative.nativeRun(layout.modulesDir.path, layout.persistDir.path, "logos-android", config.originModule, flatEnv)
             Log.i(TAG, "Qt loop exited with $rc")
         } catch (t: Throwable) {
             Log.e(TAG, "nativeRun threw", t)
